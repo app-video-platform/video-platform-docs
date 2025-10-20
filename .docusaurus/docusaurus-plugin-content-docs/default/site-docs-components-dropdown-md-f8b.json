@@ -1,0 +1,26 @@
+{
+  "id": "components/dropdown",
+  "title": "GalDropdown",
+  "description": "GalDropdown (quick notes)",
+  "source": "@site/docs/components/dropdown.md",
+  "sourceDirName": "components",
+  "slug": "/components/dropdown",
+  "permalink": "/docs/components/dropdown",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/dropdown.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalDropdown"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalCtaSection",
+    "permalink": "/docs/components/cta-section"
+  },
+  "next": {
+    "title": "GalExpansionPanel",
+    "permalink": "/docs/components/expansion-panel"
+  }
+}

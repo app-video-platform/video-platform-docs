@@ -1,0 +1,26 @@
+{
+  "id": "components/icon",
+  "title": "GalIcon",
+  "description": "GalIcon (quick notes)",
+  "source": "@site/docs/components/icon.md",
+  "sourceDirName": "components",
+  "slug": "/components/icon",
+  "permalink": "/docs/components/icon",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/icon.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalIcon"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalGoogleSignInButton",
+    "permalink": "/docs/components/google-sign-in-button"
+  },
+  "next": {
+    "title": "OSMLocationSearch",
+    "permalink": "/docs/components/location-search"
+  }
+}

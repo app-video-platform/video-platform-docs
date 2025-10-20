@@ -1,0 +1,26 @@
+{
+  "id": "components/select",
+  "title": "GalSelect",
+  "description": "GalSelect (quick notes)",
+  "source": "@site/docs/components/select.md",
+  "sourceDirName": "components",
+  "slug": "/components/select",
+  "permalink": "/docs/components/select",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/select.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalSelect"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalSearch",
+    "permalink": "/docs/components/search"
+  },
+  "next": {
+    "title": "GalSocialMediaInput",
+    "permalink": "/docs/components/social-media-input"
+  }
+}

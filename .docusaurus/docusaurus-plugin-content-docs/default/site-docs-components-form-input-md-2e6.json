@@ -1,0 +1,26 @@
+{
+  "id": "components/form-input",
+  "title": "GalFormInput",
+  "description": "GalFormInput (quick notes)",
+  "source": "@site/docs/components/form-input.md",
+  "sourceDirName": "components",
+  "slug": "/components/form-input",
+  "permalink": "/docs/components/form-input",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/form-input.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalFormInput"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalFooter",
+    "permalink": "/docs/components/footer"
+  },
+  "next": {
+    "title": "GalGoogleSignInButton",
+    "permalink": "/docs/components/google-sign-in-button"
+  }
+}

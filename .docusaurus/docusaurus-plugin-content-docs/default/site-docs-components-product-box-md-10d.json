@@ -1,0 +1,26 @@
+{
+  "id": "components/product-box",
+  "title": "GalProductCard",
+  "description": "GalProductCard (quick notes)",
+  "source": "@site/docs/components/product-box.md",
+  "sourceDirName": "components",
+  "slug": "/components/product-box",
+  "permalink": "/docs/components/product-box",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/product-box.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalProductCard"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalPriceSelector",
+    "permalink": "/docs/components/price-selector"
+  },
+  "next": {
+    "title": "GalSearch",
+    "permalink": "/docs/components/search"
+  }
+}

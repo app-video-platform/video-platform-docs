@@ -1,0 +1,28 @@
+{
+  "id": "routing-map",
+  "title": "Routing Map",
+  "description": "This page lists major routes and what they do. Start with a small table and grow it.",
+  "source": "@site/docs/routing-map.md",
+  "sourceDirName": ".",
+  "slug": "/routing-map",
+  "permalink": "/docs/routing-map",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/routing-map.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "Routing Map"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Architecture Overview",
+    "permalink": "/docs/architecture-overview"
+  },
+  "next": {
+    "title": "Component Catalog",
+    "permalink": "/docs/category/component-catalog"
+  }
+}

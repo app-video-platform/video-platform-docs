@@ -1,0 +1,21 @@
+{
+  "id": "architecture/adr/routing-and-guards",
+  "title": "ADR 0001: Routing and Role Guards",
+  "description": "Date: 2025-10-20",
+  "source": "@site/docs/architecture/adr/0001-routing-and-guards.md",
+  "sourceDirName": "architecture/adr",
+  "slug": "/architecture/adr/routing-and-guards",
+  "permalink": "/docs/architecture/adr/routing-and-guards",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/architecture/adr/0001-routing-and-guards.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Architecture",
+    "permalink": "/docs/category/architecture"
+  }
+}

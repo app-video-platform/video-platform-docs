@@ -1,0 +1,28 @@
+{
+  "id": "state-slices",
+  "title": "State Slices (Index)",
+  "description": "Brief index of Redux Toolkit slices and selectors. Expand as needed.",
+  "source": "@site/docs/state-slices.md",
+  "sourceDirName": ".",
+  "slug": "/state-slices",
+  "permalink": "/docs/state-slices",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/state-slices.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "State Slices (Index)",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "spinner",
+    "permalink": "/docs/components/spinner"
+  },
+  "next": {
+    "title": "API Reference (Frontend-facing)",
+    "permalink": "/docs/api"
+  }
+}

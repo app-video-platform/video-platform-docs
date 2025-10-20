@@ -1,0 +1,28 @@
+{
+  "id": "terminology",
+  "title": "Terminology",
+  "description": "- Product: A course, consultation, or download package.",
+  "source": "@site/docs/terminology.md",
+  "sourceDirName": ".",
+  "slug": "/terminology",
+  "permalink": "/docs/terminology",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/terminology.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "title": "Terminology",
+    "sidebar_position": 9
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Key User Flows",
+    "permalink": "/docs/user-flows"
+  },
+  "next": {
+    "title": "Playbooks",
+    "permalink": "/docs/category/playbooks"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "components/search",
+  "title": "GalSearch",
+  "description": "GalSearch (quick notes)",
+  "source": "@site/docs/components/search.md",
+  "sourceDirName": "components",
+  "slug": "/components/search",
+  "permalink": "/docs/components/search",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/search.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalSearch"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalProductCard",
+    "permalink": "/docs/components/product-box"
+  },
+  "next": {
+    "title": "GalSelect",
+    "permalink": "/docs/components/select"
+  }
+}

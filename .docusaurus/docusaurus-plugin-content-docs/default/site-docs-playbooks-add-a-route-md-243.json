@@ -1,0 +1,28 @@
+{
+  "id": "playbooks/add-a-route",
+  "title": "Add a Route",
+  "description": "1. Create your page component under src/pages/....",
+  "source": "@site/docs/playbooks/add-a-route.md",
+  "sourceDirName": "playbooks",
+  "slug": "/playbooks/add-a-route",
+  "permalink": "/docs/playbooks/add-a-route",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/playbooks/add-a-route.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "sidebar_position": 10,
+    "title": "Add a Route"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Playbooks",
+    "permalink": "/docs/category/playbooks"
+  },
+  "next": {
+    "title": "UX Conventions",
+    "permalink": "/docs/ux-conventions"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ux-conventions",
+  "title": "UX Conventions",
+  "description": "Loading",
+  "source": "@site/docs/ux-conventions.md",
+  "sourceDirName": ".",
+  "slug": "/ux-conventions",
+  "permalink": "/docs/ux-conventions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/ux-conventions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {
+    "title": "UX Conventions",
+    "sidebar_position": 11
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add a Route",
+    "permalink": "/docs/playbooks/add-a-route"
+  },
+  "next": {
+    "title": "Architecture",
+    "permalink": "/docs/category/architecture"
+  }
+}

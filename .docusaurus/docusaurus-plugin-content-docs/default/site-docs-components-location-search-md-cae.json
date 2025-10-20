@@ -1,0 +1,26 @@
+{
+  "id": "components/location-search",
+  "title": "OSMLocationSearch",
+  "description": "OSMLocationSearch (quick notes)",
+  "source": "@site/docs/components/location-search.md",
+  "sourceDirName": "components",
+  "slug": "/components/location-search",
+  "permalink": "/docs/components/location-search",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/location-search.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "OSMLocationSearch"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalIcon",
+    "permalink": "/docs/components/icon"
+  },
+  "next": {
+    "title": "GalOTPInput",
+    "permalink": "/docs/components/otp-input"
+  }
+}

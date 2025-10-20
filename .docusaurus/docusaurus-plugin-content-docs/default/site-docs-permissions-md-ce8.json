@@ -1,0 +1,28 @@
+{
+  "id": "permissions",
+  "title": "Permissions & Guards",
+  "description": "Roles: Admin, Creator, User, (Visitor = unauthenticated)",
+  "source": "@site/docs/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/permissions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Permissions & Guards",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "API Reference (Frontend-facing)",
+    "permalink": "/docs/api"
+  },
+  "next": {
+    "title": "Key User Flows",
+    "permalink": "/docs/user-flows"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "user-flows",
+  "title": "Key User Flows",
+  "description": "Move item from Wishlist → Cart",
+  "source": "@site/docs/user-flows.md",
+  "sourceDirName": ".",
+  "slug": "/user-flows",
+  "permalink": "/docs/user-flows",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/user-flows.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Key User Flows",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Permissions & Guards",
+    "permalink": "/docs/permissions"
+  },
+  "next": {
+    "title": "Terminology",
+    "permalink": "/docs/terminology"
+  }
+}

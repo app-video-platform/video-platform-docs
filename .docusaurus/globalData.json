@@ -1,0 +1,203 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "getting-started",
+          "docs": [
+            {
+              "id": "api",
+              "path": "/docs/api",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "architecture-overview",
+              "path": "/docs/architecture-overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "architecture/adr/routing-and-guards",
+              "path": "/docs/architecture/adr/routing-and-guards",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/box-selector",
+              "path": "/docs/components/box-selector",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/breadcrumbs",
+              "path": "/docs/components/breadcrumbs",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/button",
+              "path": "/docs/components/button",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/checkbox-input",
+              "path": "/docs/components/checkbox-input",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/contact-form",
+              "path": "/docs/components/contact-form",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/cta-section",
+              "path": "/docs/components/cta-section",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/dropdown",
+              "path": "/docs/components/dropdown",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/expansion-panel",
+              "path": "/docs/components/expansion-panel",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/footer",
+              "path": "/docs/components/footer",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/form-input",
+              "path": "/docs/components/form-input",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/google-sign-in-button",
+              "path": "/docs/components/google-sign-in-button",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/icon",
+              "path": "/docs/components/icon",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/location-search",
+              "path": "/docs/components/location-search",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/otp-input",
+              "path": "/docs/components/otp-input",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/passwords-container",
+              "path": "/docs/components/passwords-container",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/price-selector",
+              "path": "/docs/components/price-selector",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/product-box",
+              "path": "/docs/components/product-box",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/search",
+              "path": "/docs/components/search",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/select",
+              "path": "/docs/components/select",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/social-media-input",
+              "path": "/docs/components/social-media-input",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/spinner",
+              "path": "/docs/components/spinner",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started",
+              "path": "/docs/getting-started",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "permissions",
+              "path": "/docs/permissions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "playbooks/add-a-route",
+              "path": "/docs/playbooks/add-a-route",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "routing-map",
+              "path": "/docs/routing-map",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "state-slices",
+              "path": "/docs/state-slices",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "terminology",
+              "path": "/docs/terminology",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "user-flows",
+              "path": "/docs/user-flows",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ux-conventions",
+              "path": "/docs/ux-conventions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/component-catalog",
+              "path": "/docs/category/component-catalog",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/playbooks",
+              "path": "/docs/category/playbooks",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/architecture",
+              "path": "/docs/category/architecture",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/getting-started",
+                "label": "getting-started"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

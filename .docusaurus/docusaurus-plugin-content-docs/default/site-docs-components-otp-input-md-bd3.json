@@ -1,0 +1,26 @@
+{
+  "id": "components/otp-input",
+  "title": "GalOTPInput",
+  "description": "GalOTPInput (quick notes)",
+  "source": "@site/docs/components/otp-input.md",
+  "sourceDirName": "components",
+  "slug": "/components/otp-input",
+  "permalink": "/docs/components/otp-input",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/otp-input.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalOTPInput"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "OSMLocationSearch",
+    "permalink": "/docs/components/location-search"
+  },
+  "next": {
+    "title": "GalPasswordsContainer",
+    "permalink": "/docs/components/passwords-container"
+  }
+}

@@ -7,11 +7,10 @@ This page lists major routes and what they do. Start with a small table and grow
 
 | Route | Access | Roles | Notes |
 |---|---|---|---|
-| `/` | public | — |  |
 | `/` | public | — | Index |
 | `/*` | public | — | NotFoundPage |
 | `/about` | public | — |  |
-| `/app` | public | — |  |
+| `/app` | public | — | Public for everyone. Used as a dashboard for all types of users. |
 | `/app` | protected | Admin, Creator, User | Index · Role-based landing: Creator→CreatorDashboard, Admin→AdminPage, else GalacticaHome |
 | `/app/*` | protected | — | Redirects to /app |
 | `/app/cart` | protected | Admin, Creator, User |  |
@@ -45,5 +44,4 @@ This page lists major routes and what they do. Start with a small table and grow
 | `/verify-email` | public | — |  |
 
 
-> Later, we’ll replace this with an auto-generated list.
 > Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20

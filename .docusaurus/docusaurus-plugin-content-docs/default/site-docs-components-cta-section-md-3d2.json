@@ -1,0 +1,26 @@
+{
+  "id": "components/cta-section",
+  "title": "GalCtaSection",
+  "description": "GalCtaSection (quick notes)",
+  "source": "@site/docs/components/cta-section.md",
+  "sourceDirName": "components",
+  "slug": "/components/cta-section",
+  "permalink": "/docs/components/cta-section",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/cta-section.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalCtaSection"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalContactForm",
+    "permalink": "/docs/components/contact-form"
+  },
+  "next": {
+    "title": "GalDropdown",
+    "permalink": "/docs/components/dropdown"
+  }
+}

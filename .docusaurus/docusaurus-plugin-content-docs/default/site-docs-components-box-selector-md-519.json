@@ -1,0 +1,26 @@
+{
+  "id": "components/box-selector",
+  "title": "GalBoxSelector",
+  "description": "GalBoxSelector (quick notes)",
+  "source": "@site/docs/components/box-selector.md",
+  "sourceDirName": "components",
+  "slug": "/components/box-selector",
+  "permalink": "/docs/components/box-selector",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/box-selector.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalBoxSelector"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Component Catalog",
+    "permalink": "/docs/category/component-catalog"
+  },
+  "next": {
+    "title": "GalBreadcrumbs",
+    "permalink": "/docs/components/breadcrumbs"
+  }
+}
