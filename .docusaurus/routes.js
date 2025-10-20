@@ -114,15 +114,15 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'f96'),
+    component: ComponentCreator('/docs', 'c0a'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', 'd77'),
+        component: ComponentCreator('/docs', '456'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', '225'),
+            component: ComponentCreator('/docs', 'a98'),
             routes: [
               {
                 path: '/docs/api',
@@ -263,6 +263,18 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/docs/components/rich-text-editor',
+                component: ComponentCreator('/docs/components/rich-text-editor', 'de9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/components/rte-menu-bar',
+                component: ComponentCreator('/docs/components/rte-menu-bar', '1de'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/docs/components/search',
                 component: ComponentCreator('/docs/components/search', '97d'),
                 exact: true,
@@ -283,6 +295,18 @@ export default [
               {
                 path: '/docs/components/spinner',
                 component: ComponentCreator('/docs/components/spinner', '3fe'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/components/tabs',
+                component: ComponentCreator('/docs/components/tabs', '92d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/components/uppy-file-uploader',
+                component: ComponentCreator('/docs/components/uppy-file-uploader', '4f1'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

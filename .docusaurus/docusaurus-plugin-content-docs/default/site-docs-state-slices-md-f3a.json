@@ -18,8 +18,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "spinner",
-    "permalink": "/docs/components/spinner"
+    "title": "GalUppyFileUploader",
+    "permalink": "/docs/components/uppy-file-uploader"
   },
   "next": {
     "title": "API Reference (Frontend-facing)",

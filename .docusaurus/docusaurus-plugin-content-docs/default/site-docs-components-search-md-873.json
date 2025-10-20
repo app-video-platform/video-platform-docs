@@ -16,8 +16,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalProductCard",
-    "permalink": "/docs/components/product-box"
+    "title": "GalRTEMenuBar",
+    "permalink": "/docs/components/rte-menu-bar"
   },
   "next": {
     "title": "GalSelect",

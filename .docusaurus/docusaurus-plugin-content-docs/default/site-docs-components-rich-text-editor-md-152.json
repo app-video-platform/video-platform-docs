@@ -1,0 +1,26 @@
+{
+  "id": "components/rich-text-editor",
+  "title": "GalRichTextEditor",
+  "description": "GalRichTextEditor (quick notes)",
+  "source": "@site/docs/components/rich-text-editor.md",
+  "sourceDirName": "components",
+  "slug": "/components/rich-text-editor",
+  "permalink": "/docs/components/rich-text-editor",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/rich-text-editor.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalRichTextEditor"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalProductCard",
+    "permalink": "/docs/components/product-box"
+  },
+  "next": {
+    "title": "GalRTEMenuBar",
+    "permalink": "/docs/components/rte-menu-bar"
+  }
+}

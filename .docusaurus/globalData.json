@@ -111,6 +111,16 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "components/rich-text-editor",
+              "path": "/docs/components/rich-text-editor",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/rte-menu-bar",
+              "path": "/docs/components/rte-menu-bar",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "components/search",
               "path": "/docs/components/search",
               "sidebar": "tutorialSidebar"
@@ -128,6 +138,16 @@
             {
               "id": "components/spinner",
               "path": "/docs/components/spinner",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/tabs",
+              "path": "/docs/components/tabs",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/uppy-file-uploader",
+              "path": "/docs/components/uppy-file-uploader",
               "sidebar": "tutorialSidebar"
             },
             {

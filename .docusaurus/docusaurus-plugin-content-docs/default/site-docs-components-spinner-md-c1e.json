@@ -1,7 +1,7 @@
 {
   "id": "components/spinner",
-  "title": "spinner",
-  "description": "",
+  "title": "GalSpinner",
+  "description": "GalSpinner (quick notes)",
   "source": "@site/docs/components/spinner.md",
   "sourceDirName": "components",
   "slug": "/components/spinner",
@@ -11,14 +11,16 @@
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/spinner.md",
   "tags": [],
   "version": "current",
-  "frontMatter": {},
+  "frontMatter": {
+    "title": "GalSpinner"
+  },
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "GalSocialMediaInput",
     "permalink": "/docs/components/social-media-input"
   },
   "next": {
-    "title": "State Slices (Index)",
-    "permalink": "/docs/state-slices"
+    "title": "GalTabs",
+    "permalink": "/docs/components/tabs"
   }
 }

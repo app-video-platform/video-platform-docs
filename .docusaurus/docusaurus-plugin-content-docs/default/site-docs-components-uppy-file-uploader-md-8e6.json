@@ -1,0 +1,26 @@
+{
+  "id": "components/uppy-file-uploader",
+  "title": "GalUppyFileUploader",
+  "description": "GalUppyFileUploader (quick notes)",
+  "source": "@site/docs/components/uppy-file-uploader.md",
+  "sourceDirName": "components",
+  "slug": "/components/uppy-file-uploader",
+  "permalink": "/docs/components/uppy-file-uploader",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/uppy-file-uploader.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalUppyFileUploader"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalTabs",
+    "permalink": "/docs/components/tabs"
+  },
+  "next": {
+    "title": "State Slices (Index)",
+    "permalink": "/docs/state-slices"
+  }
+}
