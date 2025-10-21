@@ -1,5 +1,5 @@
 ---
-title: UX Conventions
+title: 11 - UX Conventions
 sidebar_position: 11
 ---
 
@@ -23,4 +23,6 @@ sidebar_position: 11
 - Submit buttons: `type="submit"` + `disabled` when invalid or loading.
 
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

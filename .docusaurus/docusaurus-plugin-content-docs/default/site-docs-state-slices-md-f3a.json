@@ -1,6 +1,6 @@
 {
   "id": "state-slices",
-  "title": "State Slices (Index)",
+  "title": "5 - State Slices (Index)",
   "description": "Brief index of Redux Toolkit slices and selectors. Expand as needed.",
   "source": "@site/docs/state-slices.md",
   "sourceDirName": ".",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 5,
   "frontMatter": {
-    "title": "State Slices (Index)",
+    "title": "5 - State Slices (Index)",
     "sidebar_position": 5
   },
   "sidebar": "tutorialSidebar",
@@ -22,7 +22,7 @@
     "permalink": "/docs/components/uppy-file-uploader"
   },
   "next": {
-    "title": "API Reference (Frontend-facing)",
-    "permalink": "/docs/api"
+    "title": "API Layer (Frontend)",
+    "permalink": "/docs/api/"
   }
 }

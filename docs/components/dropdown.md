@@ -42,4 +42,6 @@ title: GalDropdown
 - You can add transitions or portals to improve UX.
 - Works well for both header menus and inline controls.
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

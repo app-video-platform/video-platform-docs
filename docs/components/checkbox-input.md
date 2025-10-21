@@ -30,4 +30,6 @@ title: GalCheckboxInput
 - To disable interaction, use `disabled={true}`.
 - For accessibility, avoid removing the label; if hidden visually, still provide it for screen readers.
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

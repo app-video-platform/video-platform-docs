@@ -52,4 +52,6 @@ export default function LessonEditor() {
     - Debounce `onChange` or add “Save” button for manual persistence.
     - Image upload handler with a custom menu action that inserts an `<img>` node.
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

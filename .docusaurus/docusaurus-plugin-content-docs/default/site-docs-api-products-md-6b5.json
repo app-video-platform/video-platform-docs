@@ -1,0 +1,28 @@
+{
+  "id": "api/products",
+  "title": "Products API",
+  "description": "File: src/api/services/products/products-api.ts",
+  "source": "@site/docs/api/products.md",
+  "sourceDirName": "api",
+  "slug": "/api/products",
+  "permalink": "/docs/api/products",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/api/products.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Products API",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Auth API",
+    "permalink": "/docs/api/auth"
+  },
+  "next": {
+    "title": "User API",
+    "permalink": "/docs/api/user"
+  }
+}

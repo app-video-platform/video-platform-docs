@@ -28,4 +28,6 @@ title: GalCtaSection
 - Can easily be extended to accept button labels or custom navigation targets as props.
 - Styling handled in `gal-cta-section.styles.scss`.
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

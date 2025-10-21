@@ -1,0 +1,28 @@
+{
+  "id": "api/user",
+  "title": "User API",
+  "description": "File: src/api/services/user/user-api.ts",
+  "source": "@site/docs/api/user.md",
+  "sourceDirName": "api",
+  "slug": "/api/user",
+  "permalink": "/docs/api/user",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/api/user.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "User API",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Products API",
+    "permalink": "/docs/api/products"
+  },
+  "next": {
+    "title": "Calendars API",
+    "permalink": "/docs/api/calendar"
+  }
+}

@@ -50,4 +50,6 @@ export default function SocialsSection() {
     - Swap text input for a platform-specific helper (e.g., only allow usernames, build full URL).
     - Persist to profile via API in the parent on `onChange`.
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

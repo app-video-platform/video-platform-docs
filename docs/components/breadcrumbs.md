@@ -36,4 +36,6 @@ function ProductsPage() {
 - Extend `labelMap` to add friendly names for new routes.
 - If editing a resource (`/edit/...`), only shows up to the edit segment.
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

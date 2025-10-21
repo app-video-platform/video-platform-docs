@@ -18,8 +18,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "State Slices (Index)",
-    "permalink": "/docs/state-slices"
+    "title": "user",
+    "permalink": "/docs/api/user"
   },
   "next": {
     "title": "Permissions & Guards",

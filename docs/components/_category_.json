@@ -1,8 +1,8 @@
 {
-  "label": "Component Catalog",
+  "label": "4 - Component Catalog",
   "position": 4,
   "link": {
-    "type": "generated-index",
-    "description": "Reusable Components used throughout the app. Our reusable UI components live in Storybook. **Storybook (local):** run `npm run storybook` in the app repo."
+    "type": "doc",
+    "id": "components/index"
   }
 }

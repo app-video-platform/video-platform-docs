@@ -1,0 +1,28 @@
+{
+  "id": "api/http-client",
+  "title": "Http Client (Axios)",
+  "description": "httpClient is a preconfigured axios instance used by all service modules.",
+  "source": "@site/docs/api/http-client.md",
+  "sourceDirName": "api",
+  "slug": "/api/http-client",
+  "permalink": "/docs/api/http-client",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/api/http-client.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Http Client (Axios)",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "API Layer (Frontend)",
+    "permalink": "/docs/api/"
+  },
+  "next": {
+    "title": "Auth API",
+    "permalink": "/docs/api/auth"
+  }
+}

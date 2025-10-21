@@ -29,4 +29,6 @@ title: GalContactForm
 - To reset fields after submit, set `formData` back to its initial state.
 - When adding validation, prefer native constraints (`required`) or React Hook Form for complex rules.
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

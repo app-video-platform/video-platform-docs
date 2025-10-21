@@ -1,0 +1,26 @@
+{
+  "id": "components/index",
+  "title": "Component Catalog",
+  "description": "Reusable Components used throughout the app.",
+  "source": "@site/docs/components/index.md",
+  "sourceDirName": "components",
+  "slug": "/components/",
+  "permalink": "/docs/components/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/components/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Component Catalog"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "3 - Routing Map",
+    "permalink": "/docs/routing-map"
+  },
+  "next": {
+    "title": "GalBoxSelector",
+    "permalink": "/docs/components/box-selector"
+  }
+}

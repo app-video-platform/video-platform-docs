@@ -30,4 +30,6 @@ import GalIcon from '@/components/gal-icon/gal-icon.component';
 - You can control hover effects and sizing globally via `.icon-container` in SCSS.
 - Example use cases: wishlist icons, feature lists, or dashboard controls.
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

@@ -29,4 +29,6 @@ title: GalBoxSelector
 - Can be extended to render custom content instead of plain text (`option`).
 - Consider memoizing `onSelect` for performance if used in large lists.
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

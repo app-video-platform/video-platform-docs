@@ -1,5 +1,5 @@
 # ADR 0001: Routing and Role Guards
-Date: 2025-10-20
+Date: Mon, 20 Oct 2025
 Status: Accepted
 
 ## Context
@@ -16,4 +16,6 @@ We use React Router v6 with a layout shell at `/app` and role-based access.
 
 
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

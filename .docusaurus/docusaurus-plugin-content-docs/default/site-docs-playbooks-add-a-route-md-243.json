@@ -18,11 +18,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Playbooks",
-    "permalink": "/docs/category/playbooks"
+    "title": "10 - Playbooks",
+    "permalink": "/docs/category/10---playbooks"
   },
   "next": {
-    "title": "UX Conventions",
+    "title": "11 - UX Conventions",
     "permalink": "/docs/ux-conventions"
   }
 }

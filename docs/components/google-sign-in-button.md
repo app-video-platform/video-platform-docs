@@ -39,4 +39,6 @@ REACT_APP_GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
 - The `<div ref={googleButton}>` is where Google injects its button.
 - You can style the outer container for layout but not the button itself (Google guidelines restrict it).
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

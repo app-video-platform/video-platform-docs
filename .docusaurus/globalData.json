@@ -11,8 +11,33 @@
           "mainDocId": "getting-started",
           "docs": [
             {
-              "id": "api",
-              "path": "/docs/api",
+              "id": "api/auth",
+              "path": "/docs/api/auth",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api/calendar",
+              "path": "/docs/api/calendar",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api/http-client",
+              "path": "/docs/api/http-client",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api/index",
+              "path": "/docs/api/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api/products",
+              "path": "/docs/api/products",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api/user",
+              "path": "/docs/api/user",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -83,6 +108,11 @@
             {
               "id": "components/icon",
               "path": "/docs/components/icon",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/index",
+              "path": "/docs/components/",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -191,18 +221,13 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/component-catalog",
-              "path": "/docs/category/component-catalog",
+              "id": "/category/10---playbooks",
+              "path": "/docs/category/10---playbooks",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/playbooks",
-              "path": "/docs/category/playbooks",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/architecture",
-              "path": "/docs/category/architecture",
+              "id": "/category/12---architecture",
+              "path": "/docs/category/12---architecture",
               "sidebar": "tutorialSidebar"
             }
           ],

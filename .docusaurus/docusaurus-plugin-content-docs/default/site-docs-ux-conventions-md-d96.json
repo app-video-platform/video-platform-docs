@@ -1,6 +1,6 @@
 {
   "id": "ux-conventions",
-  "title": "UX Conventions",
+  "title": "11 - UX Conventions",
   "description": "Loading",
   "source": "@site/docs/ux-conventions.md",
   "sourceDirName": ".",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 11,
   "frontMatter": {
-    "title": "UX Conventions",
+    "title": "11 - UX Conventions",
     "sidebar_position": 11
   },
   "sidebar": "tutorialSidebar",
@@ -22,7 +22,7 @@
     "permalink": "/docs/playbooks/add-a-route"
   },
   "next": {
-    "title": "Architecture",
-    "permalink": "/docs/category/architecture"
+    "title": "12 - Architecture",
+    "permalink": "/docs/category/12---architecture"
   }
 }

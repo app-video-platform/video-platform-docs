@@ -1,6 +1,6 @@
 {
   "id": "user-flows",
-  "title": "Key User Flows",
+  "title": "8 - Key User Flows",
   "description": "Move item from Wishlist → Cart",
   "source": "@site/docs/user-flows.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "version": "current",
   "sidebarPosition": 8,
   "frontMatter": {
-    "title": "Key User Flows",
+    "title": "8 - Key User Flows",
     "sidebar_position": 8
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Permissions & Guards",
+    "title": "7 - Permissions & Guards",
     "permalink": "/docs/permissions"
   },
   "next": {
-    "title": "Terminology",
+    "title": "9 - Terminology",
     "permalink": "/docs/terminology"
   }
 }

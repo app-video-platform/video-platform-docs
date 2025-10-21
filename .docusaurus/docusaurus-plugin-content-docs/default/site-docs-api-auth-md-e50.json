@@ -1,0 +1,28 @@
+{
+  "id": "api/auth",
+  "title": "Auth API",
+  "description": "File: src/api/services/auth/auth-api.ts",
+  "source": "@site/docs/api/auth.md",
+  "sourceDirName": "api",
+  "slug": "/api/auth",
+  "permalink": "/docs/api/auth",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/api/auth.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Auth API",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Http Client (Axios)",
+    "permalink": "/docs/api/http-client"
+  },
+  "next": {
+    "title": "Products API",
+    "permalink": "/docs/api/products"
+  }
+}

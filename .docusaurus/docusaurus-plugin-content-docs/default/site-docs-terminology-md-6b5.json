@@ -1,6 +1,6 @@
 {
   "id": "terminology",
-  "title": "Terminology",
+  "title": "9 - Terminology",
   "description": "- Product: A course, consultation, or download package.",
   "source": "@site/docs/terminology.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "version": "current",
   "sidebarPosition": 9,
   "frontMatter": {
-    "title": "Terminology",
+    "title": "9 - Terminology",
     "sidebar_position": 9
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Key User Flows",
+    "title": "8 - Key User Flows",
     "permalink": "/docs/user-flows"
   },
   "next": {
-    "title": "Playbooks",
-    "permalink": "/docs/category/playbooks"
+    "title": "10 - Playbooks",
+    "permalink": "/docs/category/10---playbooks"
   }
 }

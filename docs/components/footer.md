@@ -39,4 +39,6 @@ function Layout() {
 - Extendable: add real social media links or icons (e.g., `<a href="https://twitter.com/...">`).
 - Uses `.gal-footer` as the root class and `.footer-content` for internal layout.
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

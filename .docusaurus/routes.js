@@ -114,19 +114,49 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'c0a'),
+    component: ComponentCreator('/docs', 'c74'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '456'),
+        component: ComponentCreator('/docs', '756'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', 'a98'),
+            component: ComponentCreator('/docs', '460'),
             routes: [
               {
-                path: '/docs/api',
-                component: ComponentCreator('/docs/api', 'dfe'),
+                path: '/docs/api/',
+                component: ComponentCreator('/docs/api/', '5e5'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/api/auth',
+                component: ComponentCreator('/docs/api/auth', '322'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/api/calendar',
+                component: ComponentCreator('/docs/api/calendar', '35e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/api/http-client',
+                component: ComponentCreator('/docs/api/http-client', 'f31'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/api/products',
+                component: ComponentCreator('/docs/api/products', 'ec3'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/api/user',
+                component: ComponentCreator('/docs/api/user', '985'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -143,20 +173,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/category/architecture',
-                component: ComponentCreator('/docs/category/architecture', '6d1'),
+                path: '/docs/category/10---playbooks',
+                component: ComponentCreator('/docs/category/10---playbooks', 'f48'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/category/component-catalog',
-                component: ComponentCreator('/docs/category/component-catalog', 'eba'),
+                path: '/docs/category/12---architecture',
+                component: ComponentCreator('/docs/category/12---architecture', '46b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/category/playbooks',
-                component: ComponentCreator('/docs/category/playbooks', '1fa'),
+                path: '/docs/components/',
+                component: ComponentCreator('/docs/components/', '4e7'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

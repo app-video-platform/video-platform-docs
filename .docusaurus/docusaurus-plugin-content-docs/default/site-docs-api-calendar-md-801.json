@@ -1,0 +1,28 @@
+{
+  "id": "api/calendar",
+  "title": "Calendars API",
+  "description": "File: src/api/services/calendars/calendars-api.ts",
+  "source": "@site/docs/api/calendar.md",
+  "sourceDirName": "api",
+  "slug": "/api/calendar",
+  "permalink": "/docs/api/calendar",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/api/calendar.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "Calendars API",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "User API",
+    "permalink": "/docs/api/user"
+  },
+  "next": {
+    "title": "7 - Permissions & Guards",
+    "permalink": "/docs/permissions"
+  }
+}

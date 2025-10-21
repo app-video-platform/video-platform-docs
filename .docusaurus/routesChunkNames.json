@@ -249,22 +249,42 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-c0a": {
+  "/docs-c74": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---docsaba-d7c"
     }
   },
-  "/docs-456": {
+  "/docs-756": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---docs-005-788"
   },
-  "/docs-a98": {
+  "/docs-460": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/docs/api-dfe": {
+  "/docs/api/-5e5": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-api-5-fb-197"
+    "content": "content---docs-api-5-e-8-853"
+  },
+  "/docs/api/auth-322": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-api-authe-50-634"
+  },
+  "/docs/api/calendar-35e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-api-calendar-801-fc4"
+  },
+  "/docs/api/http-client-f31": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-api-http-client-775-8f0"
+  },
+  "/docs/api/products-ec3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-api-products-6-b-5-f65"
+  },
+  "/docs/api/user-985": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-api-user-778-b3c"
   },
   "/docs/architecture-overview-4a3": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -274,17 +294,17 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-architecture-adr-routing-and-guards-566-004"
   },
-  "/docs/category/architecture-6d1": {
+  "/docs/category/10---playbooks-f48": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---docs-category-architecturea-29-4ab"
+    "__props": "__props---docs-category-10-playbooks-761-b80"
   },
-  "/docs/category/component-catalog-eba": {
+  "/docs/category/12---architecture-46b": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---docs-category-component-catalog-3-d-0-4b6"
+    "__props": "__props---docs-category-12-architecture-4-cb-a5a"
   },
-  "/docs/category/playbooks-1fa": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---docs-category-playbooks-71-e-c85"
+  "/docs/components/-4e7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-components-bd-7-584"
   },
   "/docs/components/box-selector-4c3": {
     "__comp": "__comp---theme-doc-item-178-a40",

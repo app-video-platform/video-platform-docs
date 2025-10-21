@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Architecture Overview
+title: 2 - Architecture Overview
 ---
 
 A high-level picture of the **frontend architecture** and its integration layers.
@@ -66,4 +66,6 @@ sequenceDiagram
   C-->>U: navigates to /app
 ```
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

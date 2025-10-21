@@ -17,7 +17,7 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Component Catalog",
-    "permalink": "/docs/category/component-catalog"
+    "permalink": "/docs/components/"
   },
   "next": {
     "title": "GalBreadcrumbs",

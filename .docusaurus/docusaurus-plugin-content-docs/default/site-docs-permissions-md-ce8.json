@@ -1,6 +1,6 @@
 {
   "id": "permissions",
-  "title": "Permissions & Guards",
+  "title": "7 - Permissions & Guards",
   "description": "Roles: Admin, Creator, User, (Visitor = unauthenticated)",
   "source": "@site/docs/permissions.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "version": "current",
   "sidebarPosition": 7,
   "frontMatter": {
-    "title": "Permissions & Guards",
+    "title": "7 - Permissions & Guards",
     "sidebar_position": 7
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "API Reference (Frontend-facing)",
-    "permalink": "/docs/api"
+    "title": "Calendars API",
+    "permalink": "/docs/api/calendar"
   },
   "next": {
-    "title": "Key User Flows",
+    "title": "8 - Key User Flows",
     "permalink": "/docs/user-flows"
   }
 }

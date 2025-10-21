@@ -49,4 +49,6 @@ title: GalFormInput
     - `.toggle-password-btn`
 - Used in forms like [`GalContactForm`](contact-form.md) or onboarding steps.
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

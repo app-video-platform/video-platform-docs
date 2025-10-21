@@ -1,6 +1,6 @@
 {
   "id": "architecture-overview",
-  "title": "Architecture Overview",
+  "title": "2 - Architecture Overview",
   "description": "A high-level picture of the frontend architecture and its integration layers.",
   "source": "@site/docs/architecture-overview.md",
   "sourceDirName": ".",
@@ -14,15 +14,15 @@
   "sidebarPosition": 2,
   "frontMatter": {
     "sidebar_position": 2,
-    "title": "Architecture Overview"
+    "title": "2 - Architecture Overview"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Getting Started",
+    "title": "1 - Getting Started",
     "permalink": "/docs/getting-started"
   },
   "next": {
-    "title": "Routing Map",
+    "title": "3 - Routing Map",
     "permalink": "/docs/routing-map"
   }
 }

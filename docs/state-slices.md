@@ -1,5 +1,5 @@
 ---
-title: State Slices (Index)
+title: 5 - State Slices (Index)
 sidebar_position: 5
 ---
 
@@ -13,4 +13,6 @@ Brief index of Redux Toolkit slices and selectors. Expand as needed.
 | `shopCart` | `src/store/shopCart/*` | `addProductToCart`, `removeFromCart` | `selectAllShopCartProducts`, `selectShopCartTotal`, `selectCartCount`, `selectCartIds` | Derived total from items; cross-refs product data. |
 | `wishlist` | `src/store/wishlist/*` | `addToWishlist`, `removeFromWishlist`, `moveWishlistItemToCart` | `selectWishlistProducts`, `selectWishlistIds`, `selectWishlistCount`, `makeSelectIsInWishlist` | Interop with cart via “move to cart”. |
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025

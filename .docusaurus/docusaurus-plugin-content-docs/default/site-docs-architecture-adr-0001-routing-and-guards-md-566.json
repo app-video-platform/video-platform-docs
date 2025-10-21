@@ -1,7 +1,7 @@
 {
   "id": "architecture/adr/routing-and-guards",
   "title": "ADR 0001: Routing and Role Guards",
-  "description": "Date: 2025-10-20",
+  "description": "Date: Mon, 20 Oct 2025",
   "source": "@site/docs/architecture/adr/0001-routing-and-guards.md",
   "sourceDirName": "architecture/adr",
   "slug": "/architecture/adr/routing-and-guards",
@@ -15,7 +15,7 @@
   "frontMatter": {},
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Architecture",
-    "permalink": "/docs/category/architecture"
+    "title": "12 - Architecture",
+    "permalink": "/docs/category/12---architecture"
   }
 }

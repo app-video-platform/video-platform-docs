@@ -1,6 +1,6 @@
 {
   "id": "getting-started",
-  "title": "Getting Started",
+  "title": "1 - Getting Started",
   "description": "What is this?",
   "source": "@site/docs/getting-started.md",
   "sourceDirName": ".",
@@ -14,11 +14,11 @@
   "sidebarPosition": 1,
   "frontMatter": {
     "sidebar_position": 1,
-    "title": "Getting Started"
+    "title": "1 - Getting Started"
   },
   "sidebar": "tutorialSidebar",
   "next": {
-    "title": "Architecture Overview",
+    "title": "2 - Architecture Overview",
     "permalink": "/docs/architecture-overview"
   }
 }

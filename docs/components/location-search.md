@@ -51,4 +51,6 @@ GET https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={lon}&
     - Cache queries locally for performance.
 
 
-> Owner: @aleb, el Hijo del Diablo · Last reviewed: 2025-10-20
+<br></br>
+<br></br>
+> Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025
