@@ -1,7 +1,7 @@
 {
   "id": "api/index",
   "title": "API Layer (Frontend)",
-  "description": "The API Layer is a thin abstraction over axios that:",
+  "description": "Check out our Swagger/Openapi with out APIs here",
   "source": "@site/docs/api/index.md",
   "sourceDirName": "api",
   "slug": "/api/",

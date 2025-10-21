@@ -3,6 +3,8 @@ title: API Layer (Frontend)
 sidebar_position: 6
 ---
 
+Check out our Swagger/Openapi with out APIs [here](https://serious-debauchery.click/swagger-ui)
+
 The **API Layer** is a thin abstraction over `axios` that:
 
 - centralizes base URL, headers, credentials, and interceptors
