@@ -114,15 +114,15 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'c74'),
+    component: ComponentCreator('/docs', '793'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '756'),
+        component: ComponentCreator('/docs', '857'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', '460'),
+            component: ComponentCreator('/docs', 'e10'),
             routes: [
               {
                 path: '/docs/api/',
@@ -229,6 +229,12 @@ export default [
               {
                 path: '/docs/components/dropdown',
                 component: ComponentCreator('/docs/components/dropdown', '516'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/components/expansion-group',
+                component: ComponentCreator('/docs/components/expansion-group', 'e81'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

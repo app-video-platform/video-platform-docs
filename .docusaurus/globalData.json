@@ -86,6 +86,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "components/expansion-group",
+              "path": "/docs/components/expansion-group",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "components/expansion-panel",
               "path": "/docs/components/expansion-panel",
               "sidebar": "tutorialSidebar"

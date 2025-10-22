@@ -1,7 +1,7 @@
 {
   "id": "components/expansion-panel",
   "title": "GalExpansionPanel",
-  "description": "GalExpansionPanel (quick notes)",
+  "description": "GalExpansionPanel",
   "source": "@site/docs/components/expansion-panel.md",
   "sourceDirName": "components",
   "slug": "/components/expansion-panel",
@@ -16,8 +16,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalDropdown",
-    "permalink": "/docs/components/dropdown"
+    "title": "GalExpansionGroup",
+    "permalink": "/docs/components/expansion-group"
   },
   "next": {
     "title": "GalFooter",
