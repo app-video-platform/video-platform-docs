@@ -3,7 +3,7 @@ title: User API
 sidebar_position: 3
 ---
 
-**File:** `src/api/services/user/user-api.ts`  
+**File:** `src/core/api/services/user/user-api.tsx`
 **Depends on:** `src/api/http-client.ts`  
 **Used by:** `auth` slice (thunks: `getUserProfile`, `updateUserDetails`)
 
@@ -11,7 +11,7 @@ sidebar_position: 3
 
 ## Overview
 
-The **User API** handles profile retrieval and updates.  
+The **User API** handles profile retrieval and updates. Role values are consumed directly from the backend as uppercase canonical values: `ADMIN`, `CREATOR`, and `USER`.
 It uses the shared `httpClient` with CSRF and credentials support.
 
 | Function | Method & URL | Input | Output |
@@ -33,8 +33,9 @@ return response.data;
 ```
 
 - **Headers**: `{ 'X-CSRF-Force': true }` ensures CSRF interceptor runs even for GETs.
-- **Returns**: full `User` object with roles, onboarding state, etc.
+- **Returns**: full `User` object with roles, onboarding state, etc. `roles` is an array of backend-provided values such as `["USER"]`, `["CREATOR"]`, `["ADMIN"]`, or combinations.
 - **Used by**: `auth/getUserProfile` thunk.
+- **Routing**: login and Google sign-in flows should fetch this profile before role-based routing.
 
 
 ## `updateUserDetailsAPI(payload: UpdateUserRequest) → Promise<User>`
@@ -56,8 +57,8 @@ return response.data;
 
 | Model               | Path                                         | Description                                                |
 | ------------------- | -------------------------------------------- | ---------------------------------------------------------- |
-| `User`              | `src/api/models/user/user.ts`                | User profile object with id, name, roles, onboarding, etc. |
-| `UpdateUserRequest` | `src/api/models/user/update-user-request.ts` | Fields allowed for update                                  |
+| `User`              | `src/core/api/models/user/user.ts`           | User profile object with id, name, uppercase roles, onboarding, etc. |
+| `UpdateUserRequest` | `src/core/api/models/user/update-user-request.ts` | Fields allowed for update                                  |
 
 
 ## Example

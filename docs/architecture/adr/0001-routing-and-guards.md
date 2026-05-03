@@ -9,6 +9,9 @@ We use React Router v6 with a layout shell at `/app` and role-based access.
 - Keep top-level public routes under `/`
 - App shell at `/app` with `ProtectedRoute` role checks
 - Role-based index component resolution on `/app`
+- Use backend/API role values directly: `ADMIN`, `CREATOR`, and `USER`
+- When a user has multiple roles, resolve the primary role in this order: `ADMIN`, then `CREATOR`, then `USER`
+- Do not mutate Redux roles locally to preview a different role in normal app UI
 
 ## Consequences
 + Clear separation of public vs app routes

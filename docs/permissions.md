@@ -3,7 +3,9 @@ title: 7 - Permissions & Guards
 sidebar_position: 7
 ---
 
-Roles: **Admin**, **Creator**, **User**, (**Visitor** = unauthenticated)
+Roles: **`ADMIN`**, **`CREATOR`**, **`USER`**, (**Visitor** = unauthenticated)
+
+The frontend consumes role values from the backend exactly as uppercase API values. Do not map or rename them in API services.
 
 > Guarding is done with `<ProtectedRoute allowedRoles={[...]}/>`.
 
@@ -13,12 +15,12 @@ Roles: **Admin**, **Creator**, **User**, (**Visitor** = unauthenticated)
 ---
 
 ### Public (no auth required)
-| Capability / Route | Visitor | User | Creator | Admin |
+| Capability / Route | Visitor | `USER` | `CREATOR` | `ADMIN` |
 |---|:---:|:---:|:---:|:---:|
 | `/` Home & static pages (`/about`, `/contact`, `/pricing`) | ✅ | ✅ | ✅ | ✅ |
-| `/signup`, `/login` | ✅ | ✅ | ✅ | ✅ |
-| `/verify-email`, `/email-sent` | ✅ | ✅ | ✅ | ✅ |
-| `/forgot-password`, `/unauthorized` | ✅ | ✅ | ✅ | ✅ |
+| `/auth/signup`, `/auth/login` and legacy auth redirects | ✅ | ✅ | ✅ | ✅ |
+| `/auth/verify-email`, `/auth/email-sent` | ✅ | ✅ | ✅ | ✅ |
+| `/auth/forgot-password`, `/unauthorized` | ✅ | ✅ | ✅ | ✅ |
 | `/dev-dashboard` | ✅ | ✅ | ✅ | ✅ |
 | `__routes-dev` *(dev route)* | ✅ | ✅ | ✅ | ✅ |
 | `/app/explore`, `/app/explore/search` | ✅ | ✅ | ✅ | ✅ |
@@ -27,19 +29,18 @@ Roles: **Admin**, **Creator**, **User**, (**Visitor** = unauthenticated)
 ---
 
 ### Protected (auth required)
-These live under `/app/` inside a `<ProtectedRoute allowedRoles={[Admin, Creator, User]}>`.
+These live under `/app/` inside a `<ProtectedRoute allowedRoles={[UserRole.ADMIN, UserRole.CREATOR, UserRole.USER]}>`.
 
-| Capability / Route | Visitor | User | Creator | Admin |
+| Capability / Route | Visitor | `USER` | `CREATOR` | `ADMIN` |
 |---|:---:|:---:|:---:|:---:|
 | `/app` (index, role-based) | ❌ | ✅ | ✅ | ✅ |
 | `/app/settings` | ❌ | ✅ | ✅ | ✅ |
 | `/app/my-page-preview` | ❌ | ✅ | ✅ | ✅ |
 | `/app/cart` | ❌ | ✅ | ✅ | ✅ |
-| `/app/checkout` | ❌ | ✅ | ✅ | ✅ |
 
 **Role-specific sections inside `/app`:**
 
-| Capability / Route | Visitor | User | Creator | Admin |
+| Capability / Route | Visitor | `USER` | `CREATOR` | `ADMIN` |
 |---|:---:|:---:|:---:|:---:|
 | `/app/products/*` (product mgmt) | ❌ | ❌ | ✅ | ✅ |
 | `/app/sales`, `/app/marketing` | ❌ | ❌ | ✅ | ✅ |
@@ -48,19 +49,23 @@ These live under `/app/` inside a `<ProtectedRoute allowedRoles={[Admin, Creator
 ---
 
 ### Onboarding
-| Route | Visitor | User | Creator | Admin |
+| Route | Visitor | `USER` | `CREATOR` | `ADMIN` |
 |---|:---:|:---:|:---:|:---:|
 | `/onboarding` | ❌ | ✅ | ✅ | ✅ |
 
 ---
 
 ### Routing notes
-- **Role-based `/app` index:**  
-  - `Creator` → `<CreatorDashboard />`  
-  - `Admin` → `<AdminPage />`  
-  - otherwise (logged-in `User`) → `<GalacticaHome />`
+- **Role-based `/app` index:**
+  - `ADMIN` → `<AdminPage />`
+  - `CREATOR` → `<CreatorDashboard />`
+  - otherwise (logged-in `USER`) → `<GalacticaHome />`
+- Primary role precedence is `ADMIN`, then `CREATOR`, then `USER`.
+- `ProtectedRoute` redirects unauthenticated users to `/auth/login` and authenticated users without an allowed role to `/unauthorized`.
 - **Visitors** can browse the “shopfront” paths under `/app` (explore, store, product) but **cannot** access `/app` index or any protected subroutes.
-- **Library** is intentionally **User/Admin-only** (Creators are blocked).
+- **Library** is intentionally **`USER`/`ADMIN`-only** (`CREATOR` is blocked).
+- Product management, sales, and marketing are **`CREATOR`/`ADMIN`-only**.
+- The user dropdown displays the backend-provided primary role as read-only. It must not mutate Redux roles locally.
 - `__routes-dev` only exists when `process.env.NODE_ENV === 'development'`.
 - Fallback inside `/app`: any unknown subpath redirects to `/app`.
 
