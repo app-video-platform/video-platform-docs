@@ -3,7 +3,7 @@ title: Auth API
 sidebar_position: 2
 ---
 
-**File:** `src/api/services/auth/auth-api.ts`  
+**File:** `src/core/api/services/auth/auth-api.ts`
 **Depends on:** `src/api/http-client.ts`  
 **Used by:** `auth` slice thunks (`signupUser`, `signinUser`, `googleSignInUser`, `verifyEmail`, `logoutUser`, `getUserProfile` (separate user service), etc.)
 
@@ -25,6 +25,7 @@ Registers a new user.
 - **Body**: `RegisterRequest`
 - **Creds**: `withCredentials: false` (overrides per call)
 - **Returns**: success message (`string`)
+- **Role behavior**: public manual registration creates a normal `USER` account. The frontend does not choose or override the role.
 
 ```ts
 const res = await httpClient.post<string>('api/auth/register', userData, {
@@ -72,6 +73,7 @@ Google one-tap / OAuth sign-in.
 - **Method/URL**: `POST api/auth/googleSignIn`
 - **Body**: `{ idToken: string, ... }`
 - **Returns**: success message (`string`)
+- **Role behavior**: first Google sign-in creates a normal `USER` account when the Google email is verified. The frontend fetches `/api/user/userInfo` after sign-in to get backend-provided roles.
 
 ### `forgotPasswordAPI(email: string) → Promise<string>`
 
@@ -105,6 +107,7 @@ toast.success('Reset email sent');
 - All functions **return** `response.data` except `verifyEmailApi` (returns Axios response). For consistency, you may want to wrap it to return `data`.
 - `withCredentials` defaults to true on the client; specific calls override to `false` only when needed (e.g., public/register/verify).
 - Error handling: functions `throw` so callers can catch; Redux thunks convert to user-friendly messages using `extractErrorMessage`.
+- Role values come from `getUserProfile` after auth succeeds. They are uppercase API values: `ADMIN`, `CREATOR`, and `USER`.
 
 **Sequence (signin)**
 
