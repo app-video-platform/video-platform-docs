@@ -4,7 +4,7 @@ title: GalExpansionPanel
 
 ### GalExpansionPanel
 > Collapsible container component with accessible behavior and flexible headers.  
-> Often used standalone or as part of a [`GalExpansionGroup`](./GalExpansionGroup.md).
+> Often used standalone or as part of a [`GalExpansionGroup`](./expansion-group.md).
 
 ---
 
