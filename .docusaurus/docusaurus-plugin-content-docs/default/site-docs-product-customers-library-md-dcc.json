@@ -1,0 +1,28 @@
+{
+  "id": "product/customers/library",
+  "title": "Library",
+  "description": "Overview",
+  "source": "@site/docs/product/customers/library.md",
+  "sourceDirName": "product/customers",
+  "slug": "/product/customers/library",
+  "permalink": "/docs/product/customers/library",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/customers/library.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "title": "Library",
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Shopping Cart",
+    "permalink": "/docs/product/customers/shopping-cart"
+  },
+  "next": {
+    "title": "Customer Account Settings",
+    "permalink": "/docs/product/customers/customer-account-settings"
+  }
+}

@@ -8,231 +8,371 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "getting-started",
+          "mainDocId": "product/start-here/product-overview",
           "docs": [
             {
-              "id": "api/auth",
-              "path": "/docs/api/auth",
+              "id": "developer/api/auth",
+              "path": "/docs/developer/api/auth",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "api/calendar",
-              "path": "/docs/api/calendar",
+              "id": "developer/api/calendar",
+              "path": "/docs/developer/api/calendar",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "api/http-client",
-              "path": "/docs/api/http-client",
+              "id": "developer/api/http-client",
+              "path": "/docs/developer/api/http-client",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "api/index",
-              "path": "/docs/api/",
+              "id": "developer/api/index",
+              "path": "/docs/developer/api/",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "api/products",
-              "path": "/docs/api/products",
+              "id": "developer/api/products",
+              "path": "/docs/developer/api/products",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "api/user",
-              "path": "/docs/api/user",
+              "id": "developer/api/user",
+              "path": "/docs/developer/api/user",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "architecture-overview",
-              "path": "/docs/architecture-overview",
+              "id": "developer/architecture-notes",
+              "path": "/docs/developer/architecture-notes",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "architecture/adr/routing-and-guards",
-              "path": "/docs/architecture/adr/routing-and-guards",
+              "id": "developer/architecture/adr/routing-and-guards",
+              "path": "/docs/developer/architecture/adr/routing-and-guards",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/box-selector",
-              "path": "/docs/components/box-selector",
+              "id": "developer/components/box-selector",
+              "path": "/docs/developer/components/box-selector",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/breadcrumbs",
-              "path": "/docs/components/breadcrumbs",
+              "id": "developer/components/breadcrumbs",
+              "path": "/docs/developer/components/breadcrumbs",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/button",
-              "path": "/docs/components/button",
+              "id": "developer/components/button",
+              "path": "/docs/developer/components/button",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/checkbox-input",
-              "path": "/docs/components/checkbox-input",
+              "id": "developer/components/checkbox-input",
+              "path": "/docs/developer/components/checkbox-input",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/contact-form",
-              "path": "/docs/components/contact-form",
+              "id": "developer/components/contact-form",
+              "path": "/docs/developer/components/contact-form",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/cta-section",
-              "path": "/docs/components/cta-section",
+              "id": "developer/components/cta-section",
+              "path": "/docs/developer/components/cta-section",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/dropdown",
-              "path": "/docs/components/dropdown",
+              "id": "developer/components/dropdown",
+              "path": "/docs/developer/components/dropdown",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/expansion-group",
-              "path": "/docs/components/expansion-group",
+              "id": "developer/components/expansion-group",
+              "path": "/docs/developer/components/expansion-group",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/expansion-panel",
-              "path": "/docs/components/expansion-panel",
+              "id": "developer/components/expansion-panel",
+              "path": "/docs/developer/components/expansion-panel",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/footer",
-              "path": "/docs/components/footer",
+              "id": "developer/components/footer",
+              "path": "/docs/developer/components/footer",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/form-input",
-              "path": "/docs/components/form-input",
+              "id": "developer/components/form-input",
+              "path": "/docs/developer/components/form-input",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/google-sign-in-button",
-              "path": "/docs/components/google-sign-in-button",
+              "id": "developer/components/google-sign-in-button",
+              "path": "/docs/developer/components/google-sign-in-button",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/icon",
-              "path": "/docs/components/icon",
+              "id": "developer/components/icon",
+              "path": "/docs/developer/components/icon",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/index",
-              "path": "/docs/components/",
+              "id": "developer/components/index",
+              "path": "/docs/developer/components/",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/location-search",
-              "path": "/docs/components/location-search",
+              "id": "developer/components/location-search",
+              "path": "/docs/developer/components/location-search",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/otp-input",
-              "path": "/docs/components/otp-input",
+              "id": "developer/components/otp-input",
+              "path": "/docs/developer/components/otp-input",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/passwords-container",
-              "path": "/docs/components/passwords-container",
+              "id": "developer/components/passwords-container",
+              "path": "/docs/developer/components/passwords-container",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/price-selector",
-              "path": "/docs/components/price-selector",
+              "id": "developer/components/price-selector",
+              "path": "/docs/developer/components/price-selector",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/product-box",
-              "path": "/docs/components/product-box",
+              "id": "developer/components/product-box",
+              "path": "/docs/developer/components/product-box",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/rich-text-editor",
-              "path": "/docs/components/rich-text-editor",
+              "id": "developer/components/rich-text-editor",
+              "path": "/docs/developer/components/rich-text-editor",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/rte-menu-bar",
-              "path": "/docs/components/rte-menu-bar",
+              "id": "developer/components/rte-menu-bar",
+              "path": "/docs/developer/components/rte-menu-bar",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/search",
-              "path": "/docs/components/search",
+              "id": "developer/components/search",
+              "path": "/docs/developer/components/search",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/select",
-              "path": "/docs/components/select",
+              "id": "developer/components/select",
+              "path": "/docs/developer/components/select",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/social-media-input",
-              "path": "/docs/components/social-media-input",
+              "id": "developer/components/social-media-input",
+              "path": "/docs/developer/components/social-media-input",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/spinner",
-              "path": "/docs/components/spinner",
+              "id": "developer/components/spinner",
+              "path": "/docs/developer/components/spinner",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/tabs",
-              "path": "/docs/components/tabs",
+              "id": "developer/components/tabs",
+              "path": "/docs/developer/components/tabs",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "components/uppy-file-uploader",
-              "path": "/docs/components/uppy-file-uploader",
+              "id": "developer/components/uppy-file-uploader",
+              "path": "/docs/developer/components/uppy-file-uploader",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "getting-started",
-              "path": "/docs/getting-started",
+              "id": "developer/developer-overview",
+              "path": "/docs/developer/developer-overview",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "permissions",
-              "path": "/docs/permissions",
+              "id": "developer/frontend-api-reference",
+              "path": "/docs/developer/frontend-api-reference",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "playbooks/add-a-route",
-              "path": "/docs/playbooks/add-a-route",
+              "id": "developer/local-setup",
+              "path": "/docs/developer/local-setup",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "routing-map",
-              "path": "/docs/routing-map",
+              "id": "developer/playbooks/add-a-route",
+              "path": "/docs/developer/playbooks/add-a-route",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "state-slices",
-              "path": "/docs/state-slices",
+              "id": "developer/routing-and-access-reference",
+              "path": "/docs/developer/routing-and-access-reference",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "terminology",
-              "path": "/docs/terminology",
+              "id": "developer/state-reference",
+              "path": "/docs/developer/state-reference",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "user-flows",
-              "path": "/docs/user-flows",
+              "id": "developer/ux-conventions",
+              "path": "/docs/developer/ux-conventions",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "ux-conventions",
-              "path": "/docs/ux-conventions",
+              "id": "product/administrators/admin-overview",
+              "path": "/docs/product/administrators/admin-overview",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/10---playbooks",
-              "path": "/docs/category/10---playbooks",
+              "id": "product/administrators/audit-logs",
+              "path": "/docs/product/administrators/audit-logs",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/12---architecture",
-              "path": "/docs/category/12---architecture",
+              "id": "product/administrators/creating-products-for-creators",
+              "path": "/docs/product/administrators/creating-products-for-creators",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/administrators/managing-products",
+              "path": "/docs/product/administrators/managing-products",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/administrators/managing-users",
+              "path": "/docs/product/administrators/managing-users",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/core-concepts/authentication-and-onboarding",
+              "path": "/docs/product/core-concepts/authentication-and-onboarding",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/core-concepts/calendar-connections",
+              "path": "/docs/product/core-concepts/calendar-connections",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/core-concepts/local-vs-server-backed-features",
+              "path": "/docs/product/core-concepts/local-vs-server-backed-features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/core-concepts/product-statuses",
+              "path": "/docs/product/core-concepts/product-statuses",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/core-concepts/product-types",
+              "path": "/docs/product/core-concepts/product-types",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/core-concepts/search-and-discovery",
+              "path": "/docs/product/core-concepts/search-and-discovery",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/creators/consultation-products",
+              "path": "/docs/product/creators/consultation-products",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/creators/course-products",
+              "path": "/docs/product/creators/course-products",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/creators/creating-a-product",
+              "path": "/docs/product/creators/creating-a-product",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/creators/creator-overview",
+              "path": "/docs/product/creators/creator-overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/creators/creator-settings",
+              "path": "/docs/product/creators/creator-settings",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/creators/download-products",
+              "path": "/docs/product/creators/download-products",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/creators/managing-products",
+              "path": "/docs/product/creators/managing-products",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/creators/marketing-and-reviews",
+              "path": "/docs/product/creators/marketing-and-reviews",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/creators/sales-and-analytics-status",
+              "path": "/docs/product/creators/sales-and-analytics-status",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/customers/customer-account-settings",
+              "path": "/docs/product/customers/customer-account-settings",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/customers/customer-overview",
+              "path": "/docs/product/customers/customer-overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/customers/exploring-products",
+              "path": "/docs/product/customers/exploring-products",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/customers/library",
+              "path": "/docs/product/customers/library",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/customers/product-detail-pages",
+              "path": "/docs/product/customers/product-detail-pages",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/customers/shopping-cart",
+              "path": "/docs/product/customers/shopping-cart",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/customers/wishlist",
+              "path": "/docs/product/customers/wishlist",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/start-here/current-platform-status",
+              "path": "/docs/product/start-here/current-platform-status",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/start-here/glossary",
+              "path": "/docs/product/start-here/glossary",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/start-here/product-overview",
+              "path": "/docs/product/start-here/product-overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/start-here/roles-and-access",
+              "path": "/docs/product/start-here/roles-and-access",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -240,8 +380,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/docs/getting-started",
-                "label": "getting-started"
+                "path": "/docs/product/start-here/product-overview",
+                "label": "product/start-here/product-overview"
               }
             }
           }

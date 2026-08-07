@@ -1,0 +1,26 @@
+{
+  "id": "developer/components/checkbox-input",
+  "title": "GalCheckboxInput",
+  "description": "GalCheckboxInput (quick notes)",
+  "source": "@site/docs/developer/components/checkbox-input.md",
+  "sourceDirName": "developer/components",
+  "slug": "/developer/components/checkbox-input",
+  "permalink": "/docs/developer/components/checkbox-input",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/components/checkbox-input.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalCheckboxInput"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalButton",
+    "permalink": "/docs/developer/components/button"
+  },
+  "next": {
+    "title": "GalContactForm",
+    "permalink": "/docs/developer/components/contact-form"
+  }
+}

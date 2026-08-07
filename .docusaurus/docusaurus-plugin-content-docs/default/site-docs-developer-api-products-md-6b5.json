@@ -1,0 +1,28 @@
+{
+  "id": "developer/api/products",
+  "title": "Products API",
+  "description": "Locations",
+  "source": "@site/docs/developer/api/products.md",
+  "sourceDirName": "developer/api",
+  "slug": "/developer/api/products",
+  "permalink": "/docs/developer/api/products",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/api/products.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "Products API",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "User API",
+    "permalink": "/docs/developer/api/user"
+  },
+  "next": {
+    "title": "Calendars API",
+    "permalink": "/docs/developer/api/calendar"
+  }
+}

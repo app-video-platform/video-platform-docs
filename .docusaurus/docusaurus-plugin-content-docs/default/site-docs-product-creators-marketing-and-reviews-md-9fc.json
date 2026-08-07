@@ -1,0 +1,28 @@
+{
+  "id": "product/creators/marketing-and-reviews",
+  "title": "Marketing and Reviews",
+  "description": "Overview",
+  "source": "@site/docs/product/creators/marketing-and-reviews.md",
+  "sourceDirName": "product/creators",
+  "slug": "/product/creators/marketing-and-reviews",
+  "permalink": "/docs/product/creators/marketing-and-reviews",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/creators/marketing-and-reviews.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Marketing and Reviews",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Creator Settings",
+    "permalink": "/docs/product/creators/creator-settings"
+  },
+  "next": {
+    "title": "Sales and Analytics Status",
+    "permalink": "/docs/product/creators/sales-and-analytics-status"
+  }
+}

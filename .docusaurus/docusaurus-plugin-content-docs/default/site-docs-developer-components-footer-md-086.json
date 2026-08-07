@@ -1,0 +1,26 @@
+{
+  "id": "developer/components/footer",
+  "title": "GalFooter",
+  "description": "GalFooter (quick notes)",
+  "source": "@site/docs/developer/components/footer.md",
+  "sourceDirName": "developer/components",
+  "slug": "/developer/components/footer",
+  "permalink": "/docs/developer/components/footer",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/components/footer.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalFooter"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalExpansionPanel",
+    "permalink": "/docs/developer/components/expansion-panel"
+  },
+  "next": {
+    "title": "GalFormInput",
+    "permalink": "/docs/developer/components/form-input"
+  }
+}

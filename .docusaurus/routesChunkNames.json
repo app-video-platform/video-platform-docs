@@ -249,198 +249,310 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-793": {
+  "/docs-d0a": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---docsaba-d7c"
     }
   },
-  "/docs-857": {
+  "/docs-5c3": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---docs-005-788"
   },
-  "/docs-e10": {
+  "/docs-554": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/docs/api/-5e5": {
+  "/docs/developer/api/-4b8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-api-5-e-8-853"
+    "content": "content---docs-developer-api-eeb-7cc"
   },
-  "/docs/api/auth-322": {
+  "/docs/developer/api/auth-15c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-api-authe-50-634"
+    "content": "content---docs-developer-api-auth-657-6b4"
   },
-  "/docs/api/calendar-35e": {
+  "/docs/developer/api/calendar-72b": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-api-calendar-801-fc4"
+    "content": "content---docs-developer-api-calendarabd-867"
   },
-  "/docs/api/http-client-f31": {
+  "/docs/developer/api/http-client-821": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-api-http-client-775-8f0"
+    "content": "content---docs-developer-api-http-client-51-d-a80"
   },
-  "/docs/api/products-ec3": {
+  "/docs/developer/api/products-0cd": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-api-products-6-b-5-f65"
+    "content": "content---docs-developer-api-products-6-b-5-2cb"
   },
-  "/docs/api/user-985": {
+  "/docs/developer/api/user-f8d": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-api-user-778-b3c"
+    "content": "content---docs-developer-api-userc-9-a-4fd"
   },
-  "/docs/architecture-overview-4a3": {
+  "/docs/developer/architecture-notes-09e": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-architecture-overview-950-903"
+    "content": "content---docs-developer-architecture-notesb-40-319"
   },
-  "/docs/architecture/adr/routing-and-guards-703": {
+  "/docs/developer/architecture/adr/routing-and-guards-4eb": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-architecture-adr-routing-and-guards-566-004"
+    "content": "content---docs-developer-architecture-adr-routing-and-guards-755-871"
   },
-  "/docs/category/10---playbooks-f48": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---docs-category-10-playbooks-761-b80"
-  },
-  "/docs/category/12---architecture-46b": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---docs-category-12-architecture-4-cb-a5a"
-  },
-  "/docs/components/-4e7": {
+  "/docs/developer/components/-f2d": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-bd-7-584"
+    "content": "content---docs-developer-components-188-90d"
   },
-  "/docs/components/box-selector-4c3": {
+  "/docs/developer/components/box-selector-079": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-box-selector-519-bbd"
+    "content": "content---docs-developer-components-box-selector-52-a-232"
   },
-  "/docs/components/breadcrumbs-2be": {
+  "/docs/developer/components/breadcrumbs-2e0": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-breadcrumbs-083-aaa"
+    "content": "content---docs-developer-components-breadcrumbs-1-c-7-ac3"
   },
-  "/docs/components/button-d2e": {
+  "/docs/developer/components/button-254": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-button-9-eb-fd3"
+    "content": "content---docs-developer-components-buttona-88-a81"
   },
-  "/docs/components/checkbox-input-979": {
+  "/docs/developer/components/checkbox-input-a60": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-checkbox-input-8-c-2-9fa"
+    "content": "content---docs-developer-components-checkbox-inputc-51-5e9"
   },
-  "/docs/components/contact-form-ec0": {
+  "/docs/developer/components/contact-form-23f": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-contact-formc-34-c17"
+    "content": "content---docs-developer-components-contact-form-39-e-000"
   },
-  "/docs/components/cta-section-f02": {
+  "/docs/developer/components/cta-section-3dd": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-cta-section-3-d-2-73e"
+    "content": "content---docs-developer-components-cta-section-011-f56"
   },
-  "/docs/components/dropdown-516": {
+  "/docs/developer/components/dropdown-3a0": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-dropdownf-8-b-293"
+    "content": "content---docs-developer-components-dropdownf-2-b-b44"
   },
-  "/docs/components/expansion-group-e81": {
+  "/docs/developer/components/expansion-group-927": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-expansion-groupd-25-117"
+    "content": "content---docs-developer-components-expansion-group-8-f-7-43e"
   },
-  "/docs/components/expansion-panel-a4e": {
+  "/docs/developer/components/expansion-panel-974": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-expansion-panel-9-ff-190"
+    "content": "content---docs-developer-components-expansion-panel-21-d-572"
   },
-  "/docs/components/footer-15c": {
+  "/docs/developer/components/footer-5d3": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-footer-8-e-0-f9e"
+    "content": "content---docs-developer-components-footer-086-304"
   },
-  "/docs/components/form-input-5db": {
+  "/docs/developer/components/form-input-eb6": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-form-input-2-e-6-145"
+    "content": "content---docs-developer-components-form-inputac-8-449"
   },
-  "/docs/components/google-sign-in-button-e08": {
+  "/docs/developer/components/google-sign-in-button-da8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-google-sign-in-buttonfdb-520"
+    "content": "content---docs-developer-components-google-sign-in-button-5-d-0-cee"
   },
-  "/docs/components/icon-342": {
+  "/docs/developer/components/icon-850": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-icona-60-65f"
+    "content": "content---docs-developer-components-icone-82-8ef"
   },
-  "/docs/components/location-search-3fb": {
+  "/docs/developer/components/location-search-a9f": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-location-searchcae-517"
+    "content": "content---docs-developer-components-location-searchf-34-816"
   },
-  "/docs/components/otp-input-35d": {
+  "/docs/developer/components/otp-input-764": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-otp-inputbd-3-5da"
+    "content": "content---docs-developer-components-otp-inputc-23-b70"
   },
-  "/docs/components/passwords-container-69b": {
+  "/docs/developer/components/passwords-container-326": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-passwords-container-05-a-b28"
+    "content": "content---docs-developer-components-passwords-containereaa-7bf"
   },
-  "/docs/components/price-selector-091": {
+  "/docs/developer/components/price-selector-af4": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-price-selector-2-af-497"
+    "content": "content---docs-developer-components-price-selector-1-aa-2e2"
   },
-  "/docs/components/product-box-0fe": {
+  "/docs/developer/components/product-box-1c3": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-product-box-10-d-271"
+    "content": "content---docs-developer-components-product-box-0-ad-567"
   },
-  "/docs/components/rich-text-editor-de9": {
+  "/docs/developer/components/rich-text-editor-5d8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-rich-text-editor-152-aab"
+    "content": "content---docs-developer-components-rich-text-editor-2-e-7-9ca"
   },
-  "/docs/components/rte-menu-bar-1de": {
+  "/docs/developer/components/rte-menu-bar-557": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-rte-menu-bar-4-e-3-b1e"
+    "content": "content---docs-developer-components-rte-menu-bar-971-526"
   },
-  "/docs/components/search-97d": {
+  "/docs/developer/components/search-020": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-search-873-78b"
+    "content": "content---docs-developer-components-searchd-95-382"
   },
-  "/docs/components/select-9a3": {
+  "/docs/developer/components/select-20b": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-select-499-196"
+    "content": "content---docs-developer-components-select-419-712"
   },
-  "/docs/components/social-media-input-49c": {
+  "/docs/developer/components/social-media-input-052": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-social-media-input-205-ee7"
+    "content": "content---docs-developer-components-social-media-inpute-89-46c"
   },
-  "/docs/components/spinner-3fe": {
+  "/docs/developer/components/spinner-dc1": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-spinnerc-1-e-ff4"
+    "content": "content---docs-developer-components-spinnereb-8-37f"
   },
-  "/docs/components/tabs-92d": {
+  "/docs/developer/components/tabs-a04": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-tabs-00-a-8a8"
+    "content": "content---docs-developer-components-tabs-014-ea3"
   },
-  "/docs/components/uppy-file-uploader-4f1": {
+  "/docs/developer/components/uppy-file-uploader-d53": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-components-uppy-file-uploader-8-e-6-d85"
+    "content": "content---docs-developer-components-uppy-file-uploader-509-81d"
   },
-  "/docs/getting-started-2a1": {
+  "/docs/developer/developer-overview-46c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-getting-startedd-58-f94"
+    "content": "content---docs-developer-developer-overviewc-4-d-4da"
   },
-  "/docs/permissions-9d8": {
+  "/docs/developer/frontend-api-reference-775": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-permissionsce-8-e48"
+    "content": "content---docs-developer-frontend-api-reference-9-c-0-391"
   },
-  "/docs/playbooks/add-a-route-c53": {
+  "/docs/developer/local-setup-a5c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-playbooks-add-a-route-243-049"
+    "content": "content---docs-developer-local-setup-262-d3a"
   },
-  "/docs/routing-map-fdc": {
+  "/docs/developer/playbooks/add-a-route-03c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-routing-map-011-00a"
+    "content": "content---docs-developer-playbooks-add-a-route-84-b-73c"
   },
-  "/docs/state-slices-c9c": {
+  "/docs/developer/routing-and-access-reference-eef": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-state-slicesf-3-a-30f"
+    "content": "content---docs-developer-routing-and-access-referencea-66-ecb"
   },
-  "/docs/terminology-33a": {
+  "/docs/developer/state-reference-20a": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-terminology-6-b-5-9ae"
+    "content": "content---docs-developer-state-reference-0-ae-2b4"
   },
-  "/docs/user-flows-636": {
+  "/docs/developer/ux-conventions-182": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-user-flows-886-72f"
+    "content": "content---docs-developer-ux-conventionsaf-4-fea"
   },
-  "/docs/ux-conventions-8c1": {
+  "/docs/product/administrators/admin-overview-94e": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-ux-conventionsd-96-abb"
+    "content": "content---docs-product-administrators-admin-overview-0-cd-f4e"
+  },
+  "/docs/product/administrators/audit-logs-453": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-administrators-audit-logscd-6-920"
+  },
+  "/docs/product/administrators/creating-products-for-creators-6f4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-administrators-creating-products-for-creators-3-b-1-83a"
+  },
+  "/docs/product/administrators/managing-products-04b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-administrators-managing-productsade-551"
+  },
+  "/docs/product/administrators/managing-users-68b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-administrators-managing-users-372-ddb"
+  },
+  "/docs/product/core-concepts/authentication-and-onboarding-ed9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-core-concepts-authentication-and-onboarding-021-30b"
+  },
+  "/docs/product/core-concepts/calendar-connections-8e3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-core-concepts-calendar-connectionsa-73-85f"
+  },
+  "/docs/product/core-concepts/local-vs-server-backed-features-2ce": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-core-concepts-local-vs-server-backed-features-08-b-e50"
+  },
+  "/docs/product/core-concepts/product-statuses-8a1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-core-concepts-product-statusesd-64-b43"
+  },
+  "/docs/product/core-concepts/product-types-be9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-core-concepts-product-typesaff-d2f"
+  },
+  "/docs/product/core-concepts/search-and-discovery-e8f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-core-concepts-search-and-discovery-005-7fa"
+  },
+  "/docs/product/creators/consultation-products-f63": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-creators-consultation-products-6-ec-dc5"
+  },
+  "/docs/product/creators/course-products-efc": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-creators-course-products-5-eb-774"
+  },
+  "/docs/product/creators/creating-a-product-373": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-creators-creating-a-producte-8-b-1b5"
+  },
+  "/docs/product/creators/creator-overview-379": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-creators-creator-overview-4-a-4-cb3"
+  },
+  "/docs/product/creators/creator-settings-a9f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-creators-creator-settings-8-bb-169"
+  },
+  "/docs/product/creators/download-products-8df": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-creators-download-products-6-d-4-d2a"
+  },
+  "/docs/product/creators/managing-products-5ba": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-creators-managing-productsbb-8-0a7"
+  },
+  "/docs/product/creators/marketing-and-reviews-9f6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-creators-marketing-and-reviews-9-fc-e6b"
+  },
+  "/docs/product/creators/sales-and-analytics-status-9fb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-creators-sales-and-analytics-statuscc-7-6e5"
+  },
+  "/docs/product/customers/customer-account-settings-a09": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-customers-customer-account-settings-110-e52"
+  },
+  "/docs/product/customers/customer-overview-4eb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-customers-customer-overview-529-61f"
+  },
+  "/docs/product/customers/exploring-products-bd2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-customers-exploring-productsf-57-669"
+  },
+  "/docs/product/customers/library-f0c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-customers-librarydcc-f52"
+  },
+  "/docs/product/customers/product-detail-pages-2aa": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-customers-product-detail-pages-8-c-1-3fb"
+  },
+  "/docs/product/customers/shopping-cart-a42": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-customers-shopping-cart-4-fb-2db"
+  },
+  "/docs/product/customers/wishlist-100": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-customers-wishlistbda-943"
+  },
+  "/docs/product/start-here/current-platform-status-36c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-start-here-current-platform-status-085-2f2"
+  },
+  "/docs/product/start-here/glossary-64b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-start-here-glossary-803-0af"
+  },
+  "/docs/product/start-here/product-overview-409": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-start-here-product-overview-7-b-9-8bb"
+  },
+  "/docs/product/start-here/roles-and-access-889": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-start-here-roles-and-access-02-c-549"
   },
   "/-e5f": {
     "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",

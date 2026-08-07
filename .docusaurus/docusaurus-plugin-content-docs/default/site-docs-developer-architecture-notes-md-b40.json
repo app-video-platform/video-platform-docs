@@ -1,0 +1,28 @@
+{
+  "id": "developer/architecture-notes",
+  "title": "Architecture Notes",
+  "description": "Overview",
+  "source": "@site/docs/developer/architecture-notes.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/architecture-notes",
+  "permalink": "/docs/developer/architecture-notes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/architecture-notes.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Architecture Notes",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "UX Conventions",
+    "permalink": "/docs/developer/ux-conventions"
+  },
+  "next": {
+    "title": "API Service Index",
+    "permalink": "/docs/developer/api/"
+  }
+}

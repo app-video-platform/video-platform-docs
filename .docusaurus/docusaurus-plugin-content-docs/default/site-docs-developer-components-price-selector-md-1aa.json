@@ -1,0 +1,26 @@
+{
+  "id": "developer/components/price-selector",
+  "title": "GalPriceSelector",
+  "description": "GalPriceSelector (quick notes)",
+  "source": "@site/docs/developer/components/price-selector.md",
+  "sourceDirName": "developer/components",
+  "slug": "/developer/components/price-selector",
+  "permalink": "/docs/developer/components/price-selector",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/components/price-selector.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalPriceSelector"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalPasswordsContainer",
+    "permalink": "/docs/developer/components/passwords-container"
+  },
+  "next": {
+    "title": "GalProductCard",
+    "permalink": "/docs/developer/components/product-box"
+  }
+}

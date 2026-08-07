@@ -1,0 +1,28 @@
+{
+  "id": "product/core-concepts/product-statuses",
+  "title": "Product Statuses",
+  "description": "Overview",
+  "source": "@site/docs/product/core-concepts/product-statuses.md",
+  "sourceDirName": "product/core-concepts",
+  "slug": "/product/core-concepts/product-statuses",
+  "permalink": "/docs/product/core-concepts/product-statuses",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/core-concepts/product-statuses.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Product Statuses",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Product Types",
+    "permalink": "/docs/product/core-concepts/product-types"
+  },
+  "next": {
+    "title": "Authentication and Onboarding",
+    "permalink": "/docs/product/core-concepts/authentication-and-onboarding"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "developer/components/breadcrumbs",
+  "title": "GalBreadcrumbs",
+  "description": "GalBreadcrumbs (quick notes)",
+  "source": "@site/docs/developer/components/breadcrumbs.md",
+  "sourceDirName": "developer/components",
+  "slug": "/developer/components/breadcrumbs",
+  "permalink": "/docs/developer/components/breadcrumbs",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/components/breadcrumbs.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalBreadcrumbs"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalBoxSelector",
+    "permalink": "/docs/developer/components/box-selector"
+  },
+  "next": {
+    "title": "GalButton",
+    "permalink": "/docs/developer/components/button"
+  }
+}

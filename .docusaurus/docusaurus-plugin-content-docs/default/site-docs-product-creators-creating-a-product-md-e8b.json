@@ -1,0 +1,28 @@
+{
+  "id": "product/creators/creating-a-product",
+  "title": "Creating a Product",
+  "description": "Overview",
+  "source": "@site/docs/product/creators/creating-a-product.md",
+  "sourceDirName": "product/creators",
+  "slug": "/product/creators/creating-a-product",
+  "permalink": "/docs/product/creators/creating-a-product",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/creators/creating-a-product.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Creating a Product",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Managing Products",
+    "permalink": "/docs/product/creators/managing-products"
+  },
+  "next": {
+    "title": "Course Products",
+    "permalink": "/docs/product/creators/course-products"
+  }
+}

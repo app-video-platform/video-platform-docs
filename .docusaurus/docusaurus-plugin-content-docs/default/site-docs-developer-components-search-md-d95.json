@@ -1,0 +1,26 @@
+{
+  "id": "developer/components/search",
+  "title": "GalSearch",
+  "description": "GalSearch (quick notes)",
+  "source": "@site/docs/developer/components/search.md",
+  "sourceDirName": "developer/components",
+  "slug": "/developer/components/search",
+  "permalink": "/docs/developer/components/search",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/components/search.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalSearch"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalRTEMenuBar",
+    "permalink": "/docs/developer/components/rte-menu-bar"
+  },
+  "next": {
+    "title": "GalSelect",
+    "permalink": "/docs/developer/components/select"
+  }
+}

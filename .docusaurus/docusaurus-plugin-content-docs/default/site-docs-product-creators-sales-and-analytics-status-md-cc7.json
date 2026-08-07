@@ -1,0 +1,28 @@
+{
+  "id": "product/creators/sales-and-analytics-status",
+  "title": "Sales and Analytics Status",
+  "description": "Overview",
+  "source": "@site/docs/product/creators/sales-and-analytics-status.md",
+  "sourceDirName": "product/creators",
+  "slug": "/product/creators/sales-and-analytics-status",
+  "permalink": "/docs/product/creators/sales-and-analytics-status",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/creators/sales-and-analytics-status.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "title": "Sales and Analytics Status",
+    "sidebar_position": 9
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Marketing and Reviews",
+    "permalink": "/docs/product/creators/marketing-and-reviews"
+  },
+  "next": {
+    "title": "Calendar Connections",
+    "permalink": "/docs/product/core-concepts/calendar-connections"
+  }
+}

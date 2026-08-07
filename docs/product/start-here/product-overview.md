@@ -87,3 +87,5 @@ Some product discovery pages are public. Management pages require sign-in and th
 - [Roles and Access](./roles-and-access.md)
 - [Current Platform Status](./current-platform-status.md)
 - [Glossary](./glossary.md)
+- [Product Types](../core-concepts/product-types.md)
+- [Authentication and Onboarding](../core-concepts/authentication-and-onboarding.md)

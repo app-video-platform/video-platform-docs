@@ -1,0 +1,28 @@
+{
+  "id": "product/administrators/managing-users",
+  "title": "Managing Users",
+  "description": "Overview",
+  "source": "@site/docs/product/administrators/managing-users.md",
+  "sourceDirName": "product/administrators",
+  "slug": "/product/administrators/managing-users",
+  "permalink": "/docs/product/administrators/managing-users",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/administrators/managing-users.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Managing Users",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Admin Overview",
+    "permalink": "/docs/product/administrators/admin-overview"
+  },
+  "next": {
+    "title": "Managing Products",
+    "permalink": "/docs/product/administrators/managing-products"
+  }
+}

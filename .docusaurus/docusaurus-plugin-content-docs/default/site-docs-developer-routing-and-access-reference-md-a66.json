@@ -1,0 +1,28 @@
+{
+  "id": "developer/routing-and-access-reference",
+  "title": "Routing and Access Reference",
+  "description": "Overview",
+  "source": "@site/docs/developer/routing-and-access-reference.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/routing-and-access-reference",
+  "permalink": "/docs/developer/routing-and-access-reference",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/routing-and-access-reference.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Routing and Access Reference",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Local Setup",
+    "permalink": "/docs/developer/local-setup"
+  },
+  "next": {
+    "title": "Frontend API Reference",
+    "permalink": "/docs/developer/frontend-api-reference"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "developer/developer-overview",
+  "title": "Developer Overview",
+  "description": "Developer Documentation explains how the Video Platform frontend is structured and maintained.",
+  "source": "@site/docs/developer/developer-overview.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/developer-overview",
+  "permalink": "/docs/developer/developer-overview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/developer-overview.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Developer Overview",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Local vs Server-backed Features",
+    "permalink": "/docs/product/core-concepts/local-vs-server-backed-features"
+  },
+  "next": {
+    "title": "Local Setup",
+    "permalink": "/docs/developer/local-setup"
+  }
+}

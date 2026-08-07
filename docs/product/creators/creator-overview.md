@@ -61,4 +61,6 @@ For most product work, start with [Managing Products](./managing-products.md). T
 - [Course Products](./course-products.md)
 - [Download Products](./download-products.md)
 - [Consultation Products](./consultation-products.md)
+- [Marketing and Reviews](./marketing-and-reviews.md)
+- [Sales and Analytics Status](./sales-and-analytics-status.md)
 - [Current Platform Status](../start-here/current-platform-status.md)

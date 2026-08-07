@@ -1,0 +1,28 @@
+{
+  "id": "developer/api/http-client",
+  "title": "HTTP Client",
+  "description": "httpClient is the shared Axios instance used by frontend service modules.",
+  "source": "@site/docs/developer/api/http-client.md",
+  "sourceDirName": "developer/api",
+  "slug": "/developer/api/http-client",
+  "permalink": "/docs/developer/api/http-client",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/api/http-client.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "HTTP Client",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "API Service Index",
+    "permalink": "/docs/developer/api/"
+  },
+  "next": {
+    "title": "Auth API",
+    "permalink": "/docs/developer/api/auth"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "product/customers/wishlist",
+  "title": "Wishlist",
+  "description": "Overview",
+  "source": "@site/docs/product/customers/wishlist.md",
+  "sourceDirName": "product/customers",
+  "slug": "/product/customers/wishlist",
+  "permalink": "/docs/product/customers/wishlist",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/customers/wishlist.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Wishlist",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Product Detail Pages",
+    "permalink": "/docs/product/customers/product-detail-pages"
+  },
+  "next": {
+    "title": "Shopping Cart",
+    "permalink": "/docs/product/customers/shopping-cart"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "developer/state-reference",
+  "title": "State Reference",
+  "description": "Redux Toolkit state lives under src/core/store.",
+  "source": "@site/docs/developer/state-reference.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/state-reference",
+  "permalink": "/docs/developer/state-reference",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/state-reference.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "State Reference",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Frontend API Reference",
+    "permalink": "/docs/developer/frontend-api-reference"
+  },
+  "next": {
+    "title": "UX Conventions",
+    "permalink": "/docs/developer/ux-conventions"
+  }
+}

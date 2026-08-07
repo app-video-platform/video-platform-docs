@@ -1,0 +1,28 @@
+{
+  "id": "developer/frontend-api-reference",
+  "title": "Frontend API Reference",
+  "description": "Overview",
+  "source": "@site/docs/developer/frontend-api-reference.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/frontend-api-reference",
+  "permalink": "/docs/developer/frontend-api-reference",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/frontend-api-reference.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Frontend API Reference",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Routing and Access Reference",
+    "permalink": "/docs/developer/routing-and-access-reference"
+  },
+  "next": {
+    "title": "State Reference",
+    "permalink": "/docs/developer/state-reference"
+  }
+}

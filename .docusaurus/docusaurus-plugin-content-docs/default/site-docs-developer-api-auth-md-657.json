@@ -1,0 +1,28 @@
+{
+  "id": "developer/api/auth",
+  "title": "Auth API",
+  "description": "Location",
+  "source": "@site/docs/developer/api/auth.md",
+  "sourceDirName": "developer/api",
+  "slug": "/developer/api/auth",
+  "permalink": "/docs/developer/api/auth",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/api/auth.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Auth API",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "HTTP Client",
+    "permalink": "/docs/developer/api/http-client"
+  },
+  "next": {
+    "title": "User API",
+    "permalink": "/docs/developer/api/user"
+  }
+}

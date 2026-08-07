@@ -1,0 +1,26 @@
+{
+  "id": "developer/components/expansion-group",
+  "title": "GalExpansionGroup",
+  "description": "GalExpansionGroup",
+  "source": "@site/docs/developer/components/expansion-group.md",
+  "sourceDirName": "developer/components",
+  "slug": "/developer/components/expansion-group",
+  "permalink": "/docs/developer/components/expansion-group",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/components/expansion-group.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalExpansionGroup"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalDropdown",
+    "permalink": "/docs/developer/components/dropdown"
+  },
+  "next": {
+    "title": "GalExpansionPanel",
+    "permalink": "/docs/developer/components/expansion-panel"
+  }
+}

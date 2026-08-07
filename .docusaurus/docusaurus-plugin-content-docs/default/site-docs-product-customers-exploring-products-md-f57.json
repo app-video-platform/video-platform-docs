@@ -1,0 +1,28 @@
+{
+  "id": "product/customers/exploring-products",
+  "title": "Exploring Products",
+  "description": "Overview",
+  "source": "@site/docs/product/customers/exploring-products.md",
+  "sourceDirName": "product/customers",
+  "slug": "/product/customers/exploring-products",
+  "permalink": "/docs/product/customers/exploring-products",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/customers/exploring-products.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Exploring Products",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Customer Overview",
+    "permalink": "/docs/product/customers/customer-overview"
+  },
+  "next": {
+    "title": "Product Detail Pages",
+    "permalink": "/docs/product/customers/product-detail-pages"
+  }
+}

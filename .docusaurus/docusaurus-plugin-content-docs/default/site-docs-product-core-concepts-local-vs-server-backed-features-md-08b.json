@@ -1,0 +1,28 @@
+{
+  "id": "product/core-concepts/local-vs-server-backed-features",
+  "title": "Local vs Server-backed Features",
+  "description": "Overview",
+  "source": "@site/docs/product/core-concepts/local-vs-server-backed-features.md",
+  "sourceDirName": "product/core-concepts",
+  "slug": "/product/core-concepts/local-vs-server-backed-features",
+  "permalink": "/docs/product/core-concepts/local-vs-server-backed-features",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/core-concepts/local-vs-server-backed-features.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "title": "Local vs Server-backed Features",
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Search and Discovery",
+    "permalink": "/docs/product/core-concepts/search-and-discovery"
+  },
+  "next": {
+    "title": "Developer Overview",
+    "permalink": "/docs/developer/developer-overview"
+  }
+}

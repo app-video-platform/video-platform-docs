@@ -1,0 +1,28 @@
+{
+  "id": "product/start-here/current-platform-status",
+  "title": "Current Platform Status",
+  "description": "Overview",
+  "source": "@site/docs/product/start-here/current-platform-status.md",
+  "sourceDirName": "product/start-here",
+  "slug": "/product/start-here/current-platform-status",
+  "permalink": "/docs/product/start-here/current-platform-status",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/start-here/current-platform-status.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Current Platform Status",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Roles and Access",
+    "permalink": "/docs/product/start-here/roles-and-access"
+  },
+  "next": {
+    "title": "Glossary",
+    "permalink": "/docs/product/start-here/glossary"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "developer/local-setup",
+  "title": "Local Setup",
+  "description": "Repositories",
+  "source": "@site/docs/developer/local-setup.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/local-setup",
+  "permalink": "/docs/developer/local-setup",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/local-setup.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Local Setup",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Developer Overview",
+    "permalink": "/docs/developer/developer-overview"
+  },
+  "next": {
+    "title": "Routing and Access Reference",
+    "permalink": "/docs/developer/routing-and-access-reference"
+  }
+}

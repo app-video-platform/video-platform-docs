@@ -161,7 +161,7 @@ export default {
           ]
         }
       ],
-      "copyright": "Copyright © 2025 Video Platform Docs, Inc. Built with Docusaurus."
+      "copyright": "Copyright © 2026 Video Platform Docs, Inc. Built with Docusaurus."
     },
     "prism": {
       "theme": {

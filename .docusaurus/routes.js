@@ -114,283 +114,451 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '793'),
+    component: ComponentCreator('/docs', 'd0a'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '857'),
+        component: ComponentCreator('/docs', '5c3'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', 'e10'),
+            component: ComponentCreator('/docs', '554'),
             routes: [
               {
-                path: '/docs/api/',
-                component: ComponentCreator('/docs/api/', '5e5'),
+                path: '/docs/developer/api/',
+                component: ComponentCreator('/docs/developer/api/', '4b8'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/api/auth',
-                component: ComponentCreator('/docs/api/auth', '322'),
+                path: '/docs/developer/api/auth',
+                component: ComponentCreator('/docs/developer/api/auth', '15c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/api/calendar',
-                component: ComponentCreator('/docs/api/calendar', '35e'),
+                path: '/docs/developer/api/calendar',
+                component: ComponentCreator('/docs/developer/api/calendar', '72b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/api/http-client',
-                component: ComponentCreator('/docs/api/http-client', 'f31'),
+                path: '/docs/developer/api/http-client',
+                component: ComponentCreator('/docs/developer/api/http-client', '821'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/api/products',
-                component: ComponentCreator('/docs/api/products', 'ec3'),
+                path: '/docs/developer/api/products',
+                component: ComponentCreator('/docs/developer/api/products', '0cd'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/api/user',
-                component: ComponentCreator('/docs/api/user', '985'),
+                path: '/docs/developer/api/user',
+                component: ComponentCreator('/docs/developer/api/user', 'f8d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/architecture-overview',
-                component: ComponentCreator('/docs/architecture-overview', '4a3'),
+                path: '/docs/developer/architecture-notes',
+                component: ComponentCreator('/docs/developer/architecture-notes', '09e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/architecture/adr/routing-and-guards',
-                component: ComponentCreator('/docs/architecture/adr/routing-and-guards', '703'),
+                path: '/docs/developer/architecture/adr/routing-and-guards',
+                component: ComponentCreator('/docs/developer/architecture/adr/routing-and-guards', '4eb'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/category/10---playbooks',
-                component: ComponentCreator('/docs/category/10---playbooks', 'f48'),
+                path: '/docs/developer/components/',
+                component: ComponentCreator('/docs/developer/components/', 'f2d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/category/12---architecture',
-                component: ComponentCreator('/docs/category/12---architecture', '46b'),
+                path: '/docs/developer/components/box-selector',
+                component: ComponentCreator('/docs/developer/components/box-selector', '079'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/',
-                component: ComponentCreator('/docs/components/', '4e7'),
+                path: '/docs/developer/components/breadcrumbs',
+                component: ComponentCreator('/docs/developer/components/breadcrumbs', '2e0'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/box-selector',
-                component: ComponentCreator('/docs/components/box-selector', '4c3'),
+                path: '/docs/developer/components/button',
+                component: ComponentCreator('/docs/developer/components/button', '254'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/breadcrumbs',
-                component: ComponentCreator('/docs/components/breadcrumbs', '2be'),
+                path: '/docs/developer/components/checkbox-input',
+                component: ComponentCreator('/docs/developer/components/checkbox-input', 'a60'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/button',
-                component: ComponentCreator('/docs/components/button', 'd2e'),
+                path: '/docs/developer/components/contact-form',
+                component: ComponentCreator('/docs/developer/components/contact-form', '23f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/checkbox-input',
-                component: ComponentCreator('/docs/components/checkbox-input', '979'),
+                path: '/docs/developer/components/cta-section',
+                component: ComponentCreator('/docs/developer/components/cta-section', '3dd'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/contact-form',
-                component: ComponentCreator('/docs/components/contact-form', 'ec0'),
+                path: '/docs/developer/components/dropdown',
+                component: ComponentCreator('/docs/developer/components/dropdown', '3a0'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/cta-section',
-                component: ComponentCreator('/docs/components/cta-section', 'f02'),
+                path: '/docs/developer/components/expansion-group',
+                component: ComponentCreator('/docs/developer/components/expansion-group', '927'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/dropdown',
-                component: ComponentCreator('/docs/components/dropdown', '516'),
+                path: '/docs/developer/components/expansion-panel',
+                component: ComponentCreator('/docs/developer/components/expansion-panel', '974'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/expansion-group',
-                component: ComponentCreator('/docs/components/expansion-group', 'e81'),
+                path: '/docs/developer/components/footer',
+                component: ComponentCreator('/docs/developer/components/footer', '5d3'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/expansion-panel',
-                component: ComponentCreator('/docs/components/expansion-panel', 'a4e'),
+                path: '/docs/developer/components/form-input',
+                component: ComponentCreator('/docs/developer/components/form-input', 'eb6'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/footer',
-                component: ComponentCreator('/docs/components/footer', '15c'),
+                path: '/docs/developer/components/google-sign-in-button',
+                component: ComponentCreator('/docs/developer/components/google-sign-in-button', 'da8'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/form-input',
-                component: ComponentCreator('/docs/components/form-input', '5db'),
+                path: '/docs/developer/components/icon',
+                component: ComponentCreator('/docs/developer/components/icon', '850'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/google-sign-in-button',
-                component: ComponentCreator('/docs/components/google-sign-in-button', 'e08'),
+                path: '/docs/developer/components/location-search',
+                component: ComponentCreator('/docs/developer/components/location-search', 'a9f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/icon',
-                component: ComponentCreator('/docs/components/icon', '342'),
+                path: '/docs/developer/components/otp-input',
+                component: ComponentCreator('/docs/developer/components/otp-input', '764'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/location-search',
-                component: ComponentCreator('/docs/components/location-search', '3fb'),
+                path: '/docs/developer/components/passwords-container',
+                component: ComponentCreator('/docs/developer/components/passwords-container', '326'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/otp-input',
-                component: ComponentCreator('/docs/components/otp-input', '35d'),
+                path: '/docs/developer/components/price-selector',
+                component: ComponentCreator('/docs/developer/components/price-selector', 'af4'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/passwords-container',
-                component: ComponentCreator('/docs/components/passwords-container', '69b'),
+                path: '/docs/developer/components/product-box',
+                component: ComponentCreator('/docs/developer/components/product-box', '1c3'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/price-selector',
-                component: ComponentCreator('/docs/components/price-selector', '091'),
+                path: '/docs/developer/components/rich-text-editor',
+                component: ComponentCreator('/docs/developer/components/rich-text-editor', '5d8'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/product-box',
-                component: ComponentCreator('/docs/components/product-box', '0fe'),
+                path: '/docs/developer/components/rte-menu-bar',
+                component: ComponentCreator('/docs/developer/components/rte-menu-bar', '557'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/rich-text-editor',
-                component: ComponentCreator('/docs/components/rich-text-editor', 'de9'),
+                path: '/docs/developer/components/search',
+                component: ComponentCreator('/docs/developer/components/search', '020'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/rte-menu-bar',
-                component: ComponentCreator('/docs/components/rte-menu-bar', '1de'),
+                path: '/docs/developer/components/select',
+                component: ComponentCreator('/docs/developer/components/select', '20b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/search',
-                component: ComponentCreator('/docs/components/search', '97d'),
+                path: '/docs/developer/components/social-media-input',
+                component: ComponentCreator('/docs/developer/components/social-media-input', '052'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/select',
-                component: ComponentCreator('/docs/components/select', '9a3'),
+                path: '/docs/developer/components/spinner',
+                component: ComponentCreator('/docs/developer/components/spinner', 'dc1'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/social-media-input',
-                component: ComponentCreator('/docs/components/social-media-input', '49c'),
+                path: '/docs/developer/components/tabs',
+                component: ComponentCreator('/docs/developer/components/tabs', 'a04'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/spinner',
-                component: ComponentCreator('/docs/components/spinner', '3fe'),
+                path: '/docs/developer/components/uppy-file-uploader',
+                component: ComponentCreator('/docs/developer/components/uppy-file-uploader', 'd53'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/tabs',
-                component: ComponentCreator('/docs/components/tabs', '92d'),
+                path: '/docs/developer/developer-overview',
+                component: ComponentCreator('/docs/developer/developer-overview', '46c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/components/uppy-file-uploader',
-                component: ComponentCreator('/docs/components/uppy-file-uploader', '4f1'),
+                path: '/docs/developer/frontend-api-reference',
+                component: ComponentCreator('/docs/developer/frontend-api-reference', '775'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/getting-started',
-                component: ComponentCreator('/docs/getting-started', '2a1'),
+                path: '/docs/developer/local-setup',
+                component: ComponentCreator('/docs/developer/local-setup', 'a5c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/permissions',
-                component: ComponentCreator('/docs/permissions', '9d8'),
+                path: '/docs/developer/playbooks/add-a-route',
+                component: ComponentCreator('/docs/developer/playbooks/add-a-route', '03c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/playbooks/add-a-route',
-                component: ComponentCreator('/docs/playbooks/add-a-route', 'c53'),
+                path: '/docs/developer/routing-and-access-reference',
+                component: ComponentCreator('/docs/developer/routing-and-access-reference', 'eef'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/routing-map',
-                component: ComponentCreator('/docs/routing-map', 'fdc'),
+                path: '/docs/developer/state-reference',
+                component: ComponentCreator('/docs/developer/state-reference', '20a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/state-slices',
-                component: ComponentCreator('/docs/state-slices', 'c9c'),
+                path: '/docs/developer/ux-conventions',
+                component: ComponentCreator('/docs/developer/ux-conventions', '182'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/terminology',
-                component: ComponentCreator('/docs/terminology', '33a'),
+                path: '/docs/product/administrators/admin-overview',
+                component: ComponentCreator('/docs/product/administrators/admin-overview', '94e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/user-flows',
-                component: ComponentCreator('/docs/user-flows', '636'),
+                path: '/docs/product/administrators/audit-logs',
+                component: ComponentCreator('/docs/product/administrators/audit-logs', '453'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/ux-conventions',
-                component: ComponentCreator('/docs/ux-conventions', '8c1'),
+                path: '/docs/product/administrators/creating-products-for-creators',
+                component: ComponentCreator('/docs/product/administrators/creating-products-for-creators', '6f4'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/administrators/managing-products',
+                component: ComponentCreator('/docs/product/administrators/managing-products', '04b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/administrators/managing-users',
+                component: ComponentCreator('/docs/product/administrators/managing-users', '68b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/core-concepts/authentication-and-onboarding',
+                component: ComponentCreator('/docs/product/core-concepts/authentication-and-onboarding', 'ed9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/core-concepts/calendar-connections',
+                component: ComponentCreator('/docs/product/core-concepts/calendar-connections', '8e3'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/core-concepts/local-vs-server-backed-features',
+                component: ComponentCreator('/docs/product/core-concepts/local-vs-server-backed-features', '2ce'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/core-concepts/product-statuses',
+                component: ComponentCreator('/docs/product/core-concepts/product-statuses', '8a1'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/core-concepts/product-types',
+                component: ComponentCreator('/docs/product/core-concepts/product-types', 'be9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/core-concepts/search-and-discovery',
+                component: ComponentCreator('/docs/product/core-concepts/search-and-discovery', 'e8f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/consultation-products',
+                component: ComponentCreator('/docs/product/creators/consultation-products', 'f63'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/course-products',
+                component: ComponentCreator('/docs/product/creators/course-products', 'efc'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/creating-a-product',
+                component: ComponentCreator('/docs/product/creators/creating-a-product', '373'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/creator-overview',
+                component: ComponentCreator('/docs/product/creators/creator-overview', '379'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/creator-settings',
+                component: ComponentCreator('/docs/product/creators/creator-settings', 'a9f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/download-products',
+                component: ComponentCreator('/docs/product/creators/download-products', '8df'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/managing-products',
+                component: ComponentCreator('/docs/product/creators/managing-products', '5ba'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/marketing-and-reviews',
+                component: ComponentCreator('/docs/product/creators/marketing-and-reviews', '9f6'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/sales-and-analytics-status',
+                component: ComponentCreator('/docs/product/creators/sales-and-analytics-status', '9fb'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/customers/customer-account-settings',
+                component: ComponentCreator('/docs/product/customers/customer-account-settings', 'a09'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/customers/customer-overview',
+                component: ComponentCreator('/docs/product/customers/customer-overview', '4eb'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/customers/exploring-products',
+                component: ComponentCreator('/docs/product/customers/exploring-products', 'bd2'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/customers/library',
+                component: ComponentCreator('/docs/product/customers/library', 'f0c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/customers/product-detail-pages',
+                component: ComponentCreator('/docs/product/customers/product-detail-pages', '2aa'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/customers/shopping-cart',
+                component: ComponentCreator('/docs/product/customers/shopping-cart', 'a42'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/customers/wishlist',
+                component: ComponentCreator('/docs/product/customers/wishlist', '100'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/start-here/current-platform-status',
+                component: ComponentCreator('/docs/product/start-here/current-platform-status', '36c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/start-here/glossary',
+                component: ComponentCreator('/docs/product/start-here/glossary', '64b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/start-here/product-overview',
+                component: ComponentCreator('/docs/product/start-here/product-overview', '409'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/start-here/roles-and-access',
+                component: ComponentCreator('/docs/product/start-here/roles-and-access', '889'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }

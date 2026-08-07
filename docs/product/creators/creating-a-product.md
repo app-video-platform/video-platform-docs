@@ -21,7 +21,7 @@ Do not use this flow for memberships; memberships are not currently supported.
 
 This page is for Creators creating or editing products.
 
-Administrators can also create products for creators, but administrator-specific behavior is outside this batch.
+Administrators can also create products for creators from the Admin area.
 
 ## What you can do
 
@@ -64,6 +64,7 @@ After the shared setup, continue with the page for the selected product type:
 - [Course Products](./course-products.md)
 - [Download Products](./download-products.md)
 - [Consultation Products](./consultation-products.md)
+- [Creating Products for Creators](../administrators/creating-products-for-creators.md)
 
 ### Save behavior
 

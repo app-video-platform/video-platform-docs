@@ -1,0 +1,28 @@
+{
+  "id": "product/creators/course-products",
+  "title": "Course Products",
+  "description": "Overview",
+  "source": "@site/docs/product/creators/course-products.md",
+  "sourceDirName": "product/creators",
+  "slug": "/product/creators/course-products",
+  "permalink": "/docs/product/creators/course-products",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/creators/course-products.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Course Products",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Creating a Product",
+    "permalink": "/docs/product/creators/creating-a-product"
+  },
+  "next": {
+    "title": "Download Products",
+    "permalink": "/docs/product/creators/download-products"
+  }
+}

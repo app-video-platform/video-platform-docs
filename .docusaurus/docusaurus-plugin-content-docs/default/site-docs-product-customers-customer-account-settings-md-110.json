@@ -1,0 +1,28 @@
+{
+  "id": "product/customers/customer-account-settings",
+  "title": "Customer Account Settings",
+  "description": "Overview",
+  "source": "@site/docs/product/customers/customer-account-settings.md",
+  "sourceDirName": "product/customers",
+  "slug": "/product/customers/customer-account-settings",
+  "permalink": "/docs/product/customers/customer-account-settings",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/customers/customer-account-settings.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Customer Account Settings",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Library",
+    "permalink": "/docs/product/customers/library"
+  },
+  "next": {
+    "title": "Admin Overview",
+    "permalink": "/docs/product/administrators/admin-overview"
+  }
+}

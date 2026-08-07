@@ -1,0 +1,22 @@
+{
+  "id": "developer/playbooks/add-a-route",
+  "title": "Add a Route",
+  "description": "1. Create the page under the appropriate src/domains/.../pages area.",
+  "source": "@site/docs/developer/playbooks/add-a-route.md",
+  "sourceDirName": "developer/playbooks",
+  "slug": "/developer/playbooks/add-a-route",
+  "permalink": "/docs/developer/playbooks/add-a-route",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/playbooks/add-a-route.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Add a Route"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "ADR 0001: Routing and Role Guards",
+    "permalink": "/docs/developer/architecture/adr/routing-and-guards"
+  }
+}

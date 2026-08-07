@@ -1,0 +1,26 @@
+{
+  "id": "developer/components/tabs",
+  "title": "GalTabs",
+  "description": "GalTabs (quick notes)",
+  "source": "@site/docs/developer/components/tabs.md",
+  "sourceDirName": "developer/components",
+  "slug": "/developer/components/tabs",
+  "permalink": "/docs/developer/components/tabs",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/components/tabs.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "GalTabs"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalSpinner",
+    "permalink": "/docs/developer/components/spinner"
+  },
+  "next": {
+    "title": "GalUppyFileUploader",
+    "permalink": "/docs/developer/components/uppy-file-uploader"
+  }
+}
