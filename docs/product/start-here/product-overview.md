@@ -43,7 +43,7 @@ Creators can:
 - Create and manage products.
 - Build course, download, and consultation products.
 - Set product pricing.
-- Manage basic marketing review visibility workflows where available.
+- View and filter reviews by visibility where review data is available.
 - Connect a calendar provider from settings.
 
 End Users can:
