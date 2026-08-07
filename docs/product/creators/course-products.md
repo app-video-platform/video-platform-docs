@@ -93,4 +93,5 @@ The builder sidebar lists sections and lessons after they exist. Selecting an it
 - [Managing Products](./managing-products.md)
 - [Download Products](./download-products.md)
 - [Consultation Products](./consultation-products.md)
+- [Membership Products](./membership-products.md)
 - [Current Platform Status](../start-here/current-platform-status.md)

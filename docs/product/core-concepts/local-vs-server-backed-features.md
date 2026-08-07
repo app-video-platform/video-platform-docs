@@ -25,6 +25,7 @@ Major server-backed areas include:
 - Course sections and lesson shells.
 - Download section file upload.
 - Consultation setup fields.
+- Generic Membership product draft creation and shared product fields.
 - Product exploration and search.
 - Admin user, product, and audit listings.
 - Review listing and filtering.
@@ -34,10 +35,13 @@ Major browser-saved areas include:
 
 - Wishlist.
 - Shopping cart.
+- Membership included-product selection in the builder.
+- Membership recurring pricing controls in the builder.
 
 Major placeholder or incomplete areas include:
 
 - Checkout, payment, orders, and entitlements.
+- Membership subscriptions, entitlement logic, member access, and buyer-facing Membership flows.
 - Customer Library tabs for purchased products.
 - Sales and analytics reporting.
 - Email campaigns.

@@ -63,6 +63,12 @@ The signed-in customer area for owned or saved products.
 
 The current library has tabs for all products, courses, downloads, consultations, and wishlist. The wishlist tab has behavior; purchased-product tabs are not yet populated.
 
+### Membership product
+
+A product type for configuring a membership in the creator product builder.
+
+Creators can select existing Course and Download products in Membership Content and set a EUR recurring price with monthly or yearly billing controls. Included products and recurring pricing are not persisted yet, and there is no subscription, entitlement, member access, checkout, or buyer-facing Membership experience.
+
 ### Product
 
 An item a Creator can sell or configure.
@@ -72,8 +78,7 @@ The currently supported product types are:
 - Course
 - Download
 - Consultation
-
-Memberships are not currently supported.
+- Membership
 
 ### Product detail page
 

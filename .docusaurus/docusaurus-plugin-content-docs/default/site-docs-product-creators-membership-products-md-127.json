@@ -1,0 +1,28 @@
+{
+  "id": "product/creators/membership-products",
+  "title": "Membership Products",
+  "description": "Overview",
+  "source": "@site/docs/product/creators/membership-products.md",
+  "sourceDirName": "product/creators",
+  "slug": "/product/creators/membership-products",
+  "permalink": "/docs/product/creators/membership-products",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/creators/membership-products.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Membership Products",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Consultation Products",
+    "permalink": "/docs/product/creators/consultation-products"
+  },
+  "next": {
+    "title": "Creator Settings",
+    "permalink": "/docs/product/creators/creator-settings"
+  }
+}

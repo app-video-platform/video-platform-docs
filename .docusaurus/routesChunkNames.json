@@ -249,17 +249,17 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-d0a": {
+  "/docs-20d": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---docsaba-d7c"
     }
   },
-  "/docs-5c3": {
+  "/docs-a69": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---docs-005-788"
   },
-  "/docs-554": {
+  "/docs-d1a": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/docs/developer/api/-4b8": {
@@ -505,6 +505,10 @@
   "/docs/product/creators/marketing-and-reviews-9f6": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-product-creators-marketing-and-reviews-9-fc-e6b"
+  },
+  "/docs/product/creators/membership-products-b01": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-product-creators-membership-products-127-bd0"
   },
   "/docs/product/creators/sales-and-analytics-status-9fb": {
     "__comp": "__comp---theme-doc-item-178-a40",

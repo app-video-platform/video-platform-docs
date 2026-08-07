@@ -23,7 +23,7 @@ Administrators can:
 - Select a Creator owner from the creator owner list.
 - Start product creation for that Creator.
 - Choose a product type.
-- Create Course, Download, or Consultation products.
+- Create Course, Download, Consultation, or Membership products.
 - Continue into the shared product builder.
 
 ## How it works
@@ -35,9 +35,8 @@ The Admin then chooses a product type and enters the initial product title. Once
 ## Current limitations
 
 - Admin-created products inherit the current product-builder limitations.
-- Course lesson content, product media persistence, publishing, and customer purchase/access behavior are not complete.
+- Course lesson content, product media persistence, publishing, Membership-specific persistence, and customer purchase/access behavior are not complete.
 - The Admin creation flow requires selecting a Creator owner before starting.
-- Membership products are not available.
 
 ## Related pages
 
@@ -46,3 +45,4 @@ The Admin then chooses a product type and enters the initial product title. Once
 - [Course Products](../creators/course-products.md)
 - [Download Products](../creators/download-products.md)
 - [Consultation Products](../creators/consultation-products.md)
+- [Membership Products](../creators/membership-products.md)
