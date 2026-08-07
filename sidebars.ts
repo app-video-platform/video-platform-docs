@@ -28,6 +28,18 @@ const sidebars: SidebarsConfig = {
             'product/start-here/glossary',
           ],
         },
+        {
+          type: 'category',
+          label: 'For Creators',
+          items: [
+            'product/creators/creator-overview',
+            'product/creators/managing-products',
+            'product/creators/creating-a-product',
+            'product/creators/course-products',
+            'product/creators/download-products',
+            'product/creators/consultation-products',
+          ],
+        },
       ],
     },
     {
