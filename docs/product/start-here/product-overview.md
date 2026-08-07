@@ -41,7 +41,7 @@ Creators can:
 
 - View a creator dashboard.
 - Create and manage products.
-- Build course, download, and consultation products.
+- Build course, download, consultation, and membership products.
 - Set product pricing.
 - View and filter reviews by visibility where review data is available.
 - Connect a calendar provider from settings.
@@ -79,8 +79,8 @@ Some product discovery pages are public. Management pages require sign-in and th
 - The user library exists, but most library tabs do not yet show purchased content.
 - Storefront pages exist as routes, but the current storefront screen is mostly a placeholder.
 - Course lessons can be created, but some lesson content editors are not fully persisted.
+- Membership products can be created in the frontend builder, but included products and recurring pricing are not persisted and do not create subscriptions or member access.
 - Sales, analytics, messages, email campaigns, and live-session management are visible in places but not production-ready workflows.
-- Membership products are not implemented and should not be documented as a supported product type.
 
 ## Related pages
 

@@ -114,15 +114,15 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'd0a'),
+    component: ComponentCreator('/docs', '20d'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '5c3'),
+        component: ComponentCreator('/docs', 'a69'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', '554'),
+            component: ComponentCreator('/docs', 'd1a'),
             routes: [
               {
                 path: '/docs/developer/api/',
@@ -487,6 +487,12 @@ export default [
               {
                 path: '/docs/product/creators/marketing-and-reviews',
                 component: ComponentCreator('/docs/product/creators/marketing-and-reviews', '9f6'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/membership-products',
+                component: ComponentCreator('/docs/product/creators/membership-products', 'b01'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

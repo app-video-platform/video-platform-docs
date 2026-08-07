@@ -9,13 +9,12 @@ sidebar_position: 3
 
 Creators use the product creation flow to create an initial draft and then configure the product in the builder.
 
-The shared creation flow supports three product types:
+The shared creation flow supports four product types:
 
 - Course
 - Download
 - Consultation
-
-Do not use this flow for memberships; memberships are not currently supported.
+- Membership
 
 ## Who can use this
 
@@ -35,7 +34,7 @@ Creators can:
 - Edit shared product details.
 - Set product pricing.
 - Upload product media from the Media area.
-- Configure product-specific details for Course, Download, or Consultation products.
+- Configure product-specific details for Course, Download, Consultation, or Membership products.
 
 ## How it works
 
@@ -57,6 +56,8 @@ Course and Download products also show **Sections**.
 
 Consultation products show **Consultation Details** instead of Sections.
 
+Membership products show **Membership Content** instead of Sections.
+
 ### Configure the product type
 
 After the shared setup, continue with the page for the selected product type:
@@ -64,6 +65,7 @@ After the shared setup, continue with the page for the selected product type:
 - [Course Products](./course-products.md)
 - [Download Products](./download-products.md)
 - [Consultation Products](./consultation-products.md)
+- [Membership Products](./membership-products.md)
 - [Creating Products for Creators](../administrators/creating-products-for-creators.md)
 
 ### Save behavior
@@ -76,7 +78,7 @@ Creators may see loading or saving behavior while changes are being processed.
 
 - Product media selection is visible, but product image persistence is not complete enough to treat uploaded media as reliably available on product cards or public product pages.
 - The builder saves products as drafts. A complete creator publishing workflow is not currently available.
-- Product type-specific areas do not all have the same maturity. Course lesson content has important limitations, while download file upload and consultation setup fields are more complete.
+- Product type-specific areas do not all have the same maturity. Course lesson content has important limitations, download file upload and consultation setup fields are more complete, and Membership included products and recurring pricing are frontend-only.
 - The product detail page includes some placeholder information and inactive purchase buttons, so creators should not treat it as a finished customer purchase experience.
 
 ## Related pages
@@ -86,3 +88,4 @@ Creators may see loading or saving behavior while changes are being processed.
 - [Course Products](./course-products.md)
 - [Download Products](./download-products.md)
 - [Consultation Products](./consultation-products.md)
+- [Membership Products](./membership-products.md)

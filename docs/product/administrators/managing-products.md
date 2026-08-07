@@ -32,7 +32,7 @@ Administrators can:
 
 ## How it works
 
-The Admin Products page includes filters for product search, owner ID, product type, and product status. Supported product types are Course, Download, and Consultation. Visible status filters are Draft, Published, and Hidden.
+The Admin Products page includes filters for product search, owner ID, product type, and product status. Supported product types are Course, Download, Consultation, and Membership. Visible status filters are Draft, Published, and Hidden.
 
 Each product row shows the product owner name when available and the owner ID. Admins can view the customer-facing product detail page, open the edit flow, or delete the product.
 

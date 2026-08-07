@@ -316,6 +316,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "product/creators/membership-products",
+              "path": "/docs/product/creators/membership-products",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "product/creators/sales-and-analytics-status",
               "path": "/docs/product/creators/sales-and-analytics-status",
               "sidebar": "tutorialSidebar"

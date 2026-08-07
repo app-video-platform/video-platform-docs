@@ -72,4 +72,5 @@ Use the Remove action on an uploaded file to delete it from the section.
 - [Managing Products](./managing-products.md)
 - [Course Products](./course-products.md)
 - [Consultation Products](./consultation-products.md)
+- [Membership Products](./membership-products.md)
 - [Current Platform Status](../start-here/current-platform-status.md)

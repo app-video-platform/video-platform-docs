@@ -36,6 +36,7 @@ Supported product type filters are:
 - Course
 - Download Packages
 - Consultation Sessions
+- Memberships
 
 Supported status filters are:
 
@@ -65,3 +66,4 @@ Opening an existing product takes the creator to the product page or product edi
 - [Course Products](./course-products.md)
 - [Download Products](./download-products.md)
 - [Consultation Products](./consultation-products.md)
+- [Membership Products](./membership-products.md)

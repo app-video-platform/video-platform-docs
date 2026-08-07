@@ -77,5 +77,6 @@ The cancellation policy lets creators choose from the available policy options.
 - [Managing Products](./managing-products.md)
 - [Course Products](./course-products.md)
 - [Download Products](./download-products.md)
+- [Membership Products](./membership-products.md)
 - [Calendar Connections](../core-concepts/calendar-connections.md)
 - [Current Platform Status](../start-here/current-platform-status.md)
