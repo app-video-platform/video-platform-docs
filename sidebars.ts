@@ -30,6 +30,17 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
+          label: 'For Customers',
+          items: [
+            'product/customers/customer-overview',
+            'product/customers/exploring-products',
+            'product/customers/product-detail-pages',
+            'product/customers/wishlist',
+            'product/customers/shopping-cart',
+            'product/customers/library',
+ },
+        {
+          type: 'category',
           label: 'For Creators',
           items: [
             'product/creators/creator-overview',
