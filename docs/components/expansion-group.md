@@ -3,7 +3,7 @@ title: GalExpansionGroup
 ---
 
 ### GalExpansionGroup
-> Groups multiple [`GalExpansionPanel`](./GalExpansionPanel.md) components together.  
+> Groups multiple [`GalExpansionPanel`](./expansion-panel.md) components together.  
 > Provides coordinated expansion behavior — for example, **radio-style selection** (only one panel open at a time) or independent expansion.
 
 ---
@@ -23,7 +23,7 @@ title: GalExpansionGroup
 | `defaultValue?` | `string \| null` | — | Uncontrolled initial selected value (used in radio mode). |
 | `onValueChange?` | `(val: string) => void` | — | Callback fired when selection changes in radio mode. |
 | `name?` | `string` | auto-generated | Optional name for the internal radio group (useful in forms). |
-| `children` | `ReactNode` | — | The set of [`GalExpansionPanel`](./GalExpansionPanel.md) elements to group. |
+| `children` | `ReactNode` | — | The set of [`GalExpansionPanel`](./expansion-panel.md) elements to group. |
 
 ---
 
