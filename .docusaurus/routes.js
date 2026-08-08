@@ -114,15 +114,15 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '20d'),
+    component: ComponentCreator('/docs', 'c3a'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', 'a69'),
+        component: ComponentCreator('/docs', '938'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', 'd1a'),
+            component: ComponentCreator('/docs', '7fc'),
             routes: [
               {
                 path: '/docs/developer/api/',
@@ -161,14 +161,32 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/developer/architecture-notes',
-                component: ComponentCreator('/docs/developer/architecture-notes', '09e'),
+                path: '/docs/developer/architecture/',
+                component: ComponentCreator('/docs/developer/architecture/', '8a9'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/developer/architecture/adr/routing-and-guards',
                 component: ComponentCreator('/docs/developer/architecture/adr/routing-and-guards', '4eb'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/architecture/application-structure',
+                component: ComponentCreator('/docs/developer/architecture/application-structure', '337'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/architecture/routing-and-access',
+                component: ComponentCreator('/docs/developer/architecture/routing-and-access', '20d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/architecture/state-and-data-flow',
+                component: ComponentCreator('/docs/developer/architecture/state-and-data-flow', '7bf'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

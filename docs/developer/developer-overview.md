@@ -7,7 +7,7 @@ sidebar_position: 1
 
 Developer Documentation explains how the Video Platform frontend is structured and maintained.
 
-Product Documentation explains what Administrators, Creators, and End Users can do. Developer Documentation is for implementation references, local setup, routing, API wrappers, state, shared UI, architecture notes, and playbooks.
+Product Documentation explains what Administrators, Creators, and End Users can do. Developer Documentation is for implementation references, local setup, routing, API wrappers, state, shared UI, architecture, and playbooks.
 
 ## Main references
 
@@ -17,7 +17,7 @@ Product Documentation explains what Administrators, Creators, and End Users can 
 - [State Reference](./state-reference.md)
 - [Component Catalog](./components/index.md)
 - [UX Conventions](./ux-conventions.md)
-- [Architecture Notes](./architecture-notes.md)
+- [Architecture](./architecture/index.md)
 - [Add a Route](./playbooks/add-a-route.md)
 
 ## Source of truth

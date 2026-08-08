@@ -22,11 +22,11 @@ For slice-level details, see the [State Reference](../state-reference.md). For e
 
 ## Typical request flow
 
-Most Redux-backed server interactions follow this shape:
+Most Redux-backed server interactions follow this architecture:
 
 ```mermaid
 flowchart TD
-  Component["Component / feature hook"] --> Thunk["Async thunk"]
+  Component["UI component or feature hook"] --> Thunk["Async thunk"]
   Thunk --> Service["Service"]
   Service --> Client["Axios httpClient"]
   Client --> Backend["Backend API"]
@@ -38,6 +38,34 @@ flowchart TD
 ```
 
 For React Query-backed search flows, the component calls a query function that uses the same product services and Axios client.
+
+## Sign-in flow example
+
+Sign-in follows the same pattern, with auth state and routing layered around the API call:
+
+```mermaid
+sequenceDiagram
+  participant U as User
+  participant UI as Sign-in page
+  participant Store as Redux auth state
+  participant Thunk as Auth thunks
+  participant Service as Auth service
+  participant HTTP as Axios client
+  participant API as Backend API
+
+  U->>UI: Submit credentials
+  UI->>Thunk: dispatch signinUser
+  Thunk->>Service: signInUser(credentials)
+  Service->>HTTP: POST api/auth/login
+  HTTP->>API: Send request
+  API-->>HTTP: Login result
+  HTTP-->>Service: Response data
+  Service-->>Thunk: Success or error
+  Thunk->>Store: Update loading/error state
+  UI->>Thunk: dispatch getUserProfile
+  Thunk->>Store: Store profile and logged-in state
+  UI->>U: Navigate to /app or /onboarding
+```
 
 ## Redux Toolkit
 

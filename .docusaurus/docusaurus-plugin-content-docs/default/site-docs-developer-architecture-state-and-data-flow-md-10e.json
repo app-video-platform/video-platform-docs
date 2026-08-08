@@ -1,0 +1,28 @@
+{
+  "id": "developer/architecture/state-and-data-flow",
+  "title": "State and Data Flow",
+  "description": "The application uses Redux Toolkit as its main shared state layer. Backend calls are wrapped in services under core/api/services.",
+  "source": "@site/docs/developer/architecture/state-and-data-flow.md",
+  "sourceDirName": "developer/architecture",
+  "slug": "/developer/architecture/state-and-data-flow",
+  "permalink": "/docs/developer/architecture/state-and-data-flow",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/architecture/state-and-data-flow.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "State and Data Flow",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Routing and Access",
+    "permalink": "/docs/developer/architecture/routing-and-access"
+  },
+  "next": {
+    "title": "ADR 0001: Routing and Role Guards",
+    "permalink": "/docs/developer/architecture/adr/routing-and-guards"
+  }
+}

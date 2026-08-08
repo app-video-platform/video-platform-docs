@@ -1,0 +1,28 @@
+{
+  "id": "developer/architecture/application-structure",
+  "title": "Application Structure",
+  "description": "The frontend is organized around route-facing domains, core infrastructure, shared code, and global styles.",
+  "source": "@site/docs/developer/architecture/application-structure.md",
+  "sourceDirName": "developer/architecture",
+  "slug": "/developer/architecture/application-structure",
+  "permalink": "/docs/developer/architecture/application-structure",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/architecture/application-structure.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Application Structure",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Architecture Overview",
+    "permalink": "/docs/developer/architecture/"
+  },
+  "next": {
+    "title": "Routing and Access",
+    "permalink": "/docs/developer/architecture/routing-and-access"
+  }
+}

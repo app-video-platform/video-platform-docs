@@ -41,13 +41,28 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "developer/architecture-notes",
-              "path": "/docs/developer/architecture-notes",
+              "id": "developer/architecture/adr/routing-and-guards",
+              "path": "/docs/developer/architecture/adr/routing-and-guards",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "developer/architecture/adr/routing-and-guards",
-              "path": "/docs/developer/architecture/adr/routing-and-guards",
+              "id": "developer/architecture/application-structure",
+              "path": "/docs/developer/architecture/application-structure",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/architecture/index",
+              "path": "/docs/developer/architecture/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/architecture/routing-and-access",
+              "path": "/docs/developer/architecture/routing-and-access",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/architecture/state-and-data-flow",
+              "path": "/docs/developer/architecture/state-and-data-flow",
               "sidebar": "tutorialSidebar"
             },
             {

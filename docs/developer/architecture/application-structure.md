@@ -46,6 +46,20 @@ New route pages usually belong under the domain that owns the user experience: c
 
 Larger app workflows are grouped under `domains/app/features`, such as `product-form`, `settings`, `onboarding`, `marketing`, and `smart-search`.
 
+## Architectural layers
+
+The folder structure maps to a few practical layers:
+
+| Layer | Main location | Responsibility |
+|---|---|---|
+| UI | `src/domains`, `src/shared/ui` | Pages, layouts, app widgets, and reusable components. |
+| Routing | `src/App.tsx`, `src/domains/*/routes` | Marketing, auth, app, onboarding, and guarded route trees. |
+| State | `src/core/store` | Shared Redux Toolkit state, async thunks, selectors, and listener middleware. |
+| API layer | `src/core/api` | Typed models, service wrappers, Axios client, interceptors, and local mocks. |
+| Browser persistence | `src/core/store` | Local persistence for cart and wishlist state. |
+
+These are descriptive layers, not enforced module boundaries.
+
 ## `core`
 
 `core` contains application-wide infrastructure used across domains.
@@ -81,7 +95,7 @@ It currently provides reset, base styles, variables, typography, breakpoints, sp
 
 Component-level styles usually live next to the component that uses them. Global styles should stay limited to app-wide foundations.
 
-## How the areas interact
+## How code usually connects
 
 Domains compose UI and use shared infrastructure:
 

@@ -92,7 +92,6 @@ const sidebars: SidebarsConfig = {
         'developer/frontend-api-reference',
         'developer/state-reference',
         'developer/ux-conventions',
-        'developer/architecture-notes',
         {
           type: 'category',
           label: 'Frontend API Reference',

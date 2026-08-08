@@ -20,7 +20,7 @@
     "permalink": "/docs/developer/components/tabs"
   },
   "next": {
-    "title": "ADR 0001: Routing and Role Guards",
-    "permalink": "/docs/developer/architecture/adr/routing-and-guards"
+    "title": "Architecture Overview",
+    "permalink": "/docs/developer/architecture/"
   }
 }

@@ -1,0 +1,28 @@
+{
+  "id": "developer/architecture/routing-and-access",
+  "title": "Routing and Access",
+  "description": "The frontend uses React Router v6. Routing is split by domain instead of one flat route file.",
+  "source": "@site/docs/developer/architecture/routing-and-access.md",
+  "sourceDirName": "developer/architecture",
+  "slug": "/developer/architecture/routing-and-access",
+  "permalink": "/docs/developer/architecture/routing-and-access",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/architecture/routing-and-access.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Routing and Access",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Application Structure",
+    "permalink": "/docs/developer/architecture/application-structure"
+  },
+  "next": {
+    "title": "State and Data Flow",
+    "permalink": "/docs/developer/architecture/state-and-data-flow"
+  }
+}

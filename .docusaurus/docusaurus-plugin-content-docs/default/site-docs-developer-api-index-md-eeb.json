@@ -18,8 +18,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Architecture Notes",
-    "permalink": "/docs/developer/architecture-notes"
+    "title": "UX Conventions",
+    "permalink": "/docs/developer/ux-conventions"
   },
   "next": {
     "title": "HTTP Client",

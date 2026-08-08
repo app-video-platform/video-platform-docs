@@ -15,8 +15,8 @@
   "frontMatter": {},
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalUppyFileUploader",
-    "permalink": "/docs/developer/components/uppy-file-uploader"
+    "title": "State and Data Flow",
+    "permalink": "/docs/developer/architecture/state-and-data-flow"
   },
   "next": {
     "title": "Add a Route",
