@@ -35,8 +35,13 @@ Major browser-saved areas include:
 
 - Wishlist.
 - Shopping cart.
-- Membership included-product selection in the builder.
+
+Major frontend-only session state areas include:
+
+- Membership native Posts, Videos, and Resources in the builder.
+- Membership included-product relationships in the builder.
 - Membership recurring pricing controls in the builder.
+- Membership content ordering and readiness feedback in the builder.
 
 Major placeholder or incomplete areas include:
 
@@ -55,6 +60,8 @@ Major placeholder or incomplete areas include:
 Server-backed areas are the safest to document as persistent when the frontend clearly calls backend-backed workflows.
 
 Browser-saved areas can persist on the same device and browser, but they should not be described as account-synchronized features.
+
+Frontend-only session state can survive local UI interactions, such as switching builder tabs, but should not be described as durable. In the current Membership builder, Membership-specific content, included Product relationships, recurring pricing, ordering, and readiness state are lost on full page refresh or reload.
 
 Placeholder areas may be visible in navigation or tabs, but should be documented only as current limitations unless they have meaningful user-facing behavior.
 

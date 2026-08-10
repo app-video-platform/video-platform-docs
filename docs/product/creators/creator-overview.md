@@ -34,7 +34,7 @@ Creators can currently:
 - Configure course sections and lessons.
 - Configure download sections and upload files.
 - Configure consultation details such as duration, meeting method, buffers, maximum sessions per day, confirmation message, and cancellation policy.
-- Configure Membership Content by selecting existing Course and Download products.
+- Configure Membership Content with native Posts, Videos, Resources, and included existing Course and Download products.
 - Configure Membership recurring pricing controls in the builder.
 
 ## How it works
@@ -54,7 +54,7 @@ For most product work, start with [Managing Products](./managing-products.md). T
 - Storefront preview exists as an entry point, but the public storefront experience is not complete yet.
 - Sales, analytics, marketing campaigns, messages, and customer booking flows are outside the current core product creation workflow.
 - Some course lesson content editors are visible but not fully persisted yet.
-- Membership included products and recurring pricing are frontend-only and are not persisted through the current Product API.
+- Membership-native content, included products, recurring pricing, ordering, and readiness feedback are frontend-only and are not persisted through the current Product API.
 
 ## Related pages
 

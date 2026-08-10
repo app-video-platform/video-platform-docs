@@ -65,9 +65,9 @@ The current library has tabs for all products, courses, downloads, consultations
 
 ### Membership product
 
-A product type for configuring a membership in the creator product builder.
+A product type for configuring a membership content hub in the creator product builder.
 
-Creators can select existing Course and Download products in Membership Content and set a EUR recurring price with monthly or yearly billing controls. Included products and recurring pricing are not persisted yet, and there is no subscription, entitlement, member access, checkout, or buyer-facing Membership experience.
+Creators can add native Posts, Videos, and Resources, reference existing Course and Download products, order the unified Membership feed, and set a EUR recurring price with monthly or yearly billing controls. Membership-specific content, included Product relationships, recurring pricing, ordering, and readiness state are not persisted yet, and there is no subscription, entitlement, publishing, member access, checkout, or buyer-facing Membership experience.
 
 ### Product
 

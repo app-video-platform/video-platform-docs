@@ -49,14 +49,14 @@ The Continue button is disabled until the product has the required initial infor
 After the draft exists, the builder shows shared areas for product setup:
 
 - **Basics**: edit title, product type display, and description.
-- **Pricing**: choose free or paid pricing and enter a price when paid.
+- **Pricing**: choose free or paid pricing and enter a price when paid. Membership products use a Membership-specific recurring pricing control instead.
 - **Media**: select product image files.
 
 Course and Download products also show **Sections**.
 
 Consultation products show **Consultation Details** instead of Sections.
 
-Membership products show **Membership Content** instead of Sections.
+Membership products show **Membership Content** instead of Sections. Membership Content can contain native Posts, Videos, and Resources, plus referenced existing Course and Download products.
 
 ### Configure the product type
 
@@ -78,7 +78,7 @@ Creators may see loading or saving behavior while changes are being processed.
 
 - Product media selection is visible, but product image persistence is not complete enough to treat uploaded media as reliably available on product cards or public product pages.
 - The builder saves products as drafts. A complete creator publishing workflow is not currently available.
-- Product type-specific areas do not all have the same maturity. Course lesson content has important limitations, download file upload and consultation setup fields are more complete, and Membership included products and recurring pricing are frontend-only.
+- Product type-specific areas do not all have the same maturity. Course lesson content has important limitations, download file upload and consultation setup fields are more complete, and Membership-native content, included products, recurring pricing, ordering, and readiness state are frontend-only.
 - The product detail page includes some placeholder information and inactive purchase buttons, so creators should not treat it as a finished customer purchase experience.
 
 ## Related pages
