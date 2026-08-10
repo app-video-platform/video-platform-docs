@@ -79,7 +79,7 @@ Some product discovery pages are public. Management pages require sign-in and th
 - The user library exists, but most library tabs do not yet show purchased content.
 - Storefront pages exist as routes, but the current storefront screen is mostly a placeholder.
 - Course lessons can be created, but some lesson content editors are not fully persisted.
-- Membership products can be created in the frontend builder, but included products and recurring pricing are not persisted and do not create subscriptions or member access.
+- Membership products can be created in the frontend builder with native content, included Courses/Downloads, ordering, recurring pricing, and readiness feedback, but Membership-specific data is not persisted and does not create subscriptions, publishing, or member access.
 - Sales, analytics, messages, email campaigns, and live-session management are visible in places but not production-ready workflows.
 
 ## Related pages

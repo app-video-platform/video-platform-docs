@@ -21,7 +21,7 @@ Product services are split across:
 
 | Function | Method and URL | Notes |
 |---|---|---|
-| `createProductAPI` | `POST api/products` | Creates Course, Download, or Consultation products from a draft payload. |
+| `createProductAPI` | `POST api/products` | Creates Course, Download, Consultation, or Membership products from a draft payload. |
 | `updateProductDetailsAPI` | `PATCH api/products/:id` | Updates shared product details. |
 | `deleteProductAPI` | `DELETE api/products/:productId` | Deletes by product ID. |
 | `getAllProductsByUserIdAPI` | `GET api/products?userId=` | Creator/admin product retrieval by user. |
@@ -55,6 +55,8 @@ Product services are split across:
 
 ## Types
 
-Current product types are `COURSE`, `DOWNLOAD`, and `CONSULTATION`.
+Current frontend product types are `COURSE`, `DOWNLOAD`, `CONSULTATION`, and `MEMBERSHIP`.
 
 Current product statuses represented in frontend types are `DRAFT`, `PUBLISHED`, and `HIDDEN`.
+
+Membership uses the shared Product create/update shape for core Product fields only. There is currently no Product API payload for Membership-native Posts, Videos, Resources, included Product relationships, recurring pricing, feed ordering, readiness state, or Membership publishing.

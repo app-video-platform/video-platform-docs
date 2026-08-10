@@ -26,7 +26,7 @@ The strongest areas of the current frontend are:
 - Course and download section management.
 - Download file upload and removal for download products.
 - Consultation setup fields.
-- Membership product creation, Membership Content selection, and recurring pricing controls in the frontend builder.
+- Membership product creation, native Membership Content, included Product selection, unified ordering, recurring pricing controls, and readiness feedback in the frontend builder.
 - Product exploration and search.
 - Local wishlist and shopping cart behavior.
 - Admin user management.
@@ -42,7 +42,7 @@ The strongest areas of the current frontend are:
 | Course products | Sections and lesson shells can be created, but video, article, and quiz lesson content are not fully persisted. |
 | Download products | Creator-side file upload exists, but customer delivery through the library is not implemented. |
 | Consultation products | Setup fields exist, but booking, availability, rescheduling, and customer session management are not implemented. |
-| Membership products | Creator-side Membership setup exists. Included products and recurring pricing are frontend-only and are not persisted through the current Product API. |
+| Membership products | Creator-side Membership setup exists for native Posts, Videos, Resources, included Course/Download products, unified ordering, recurring pricing, and readiness feedback. Membership-specific data is frontend-only session state and is not persisted through the current Product API. |
 | Wishlist | Works in the browser and persists locally, but is not tied to a backend user account. |
 | Shopping cart | Works in the browser and persists locally, but checkout and payment are not implemented. |
 | Library | The library shell and tabs exist; wishlist has behavior, but purchased courses, downloads, and consultations are not shown. |
@@ -58,7 +58,7 @@ Do not describe the following as supported product capabilities:
 
 - Checkout.
 - Payment processing.
-- Membership subscriptions, entitlement logic, member access, or buyer-facing Membership flows.
+- Membership subscriptions, entitlement logic, real publishing, member access, or buyer-facing Membership flows.
 - Customer access to purchased course/download/consultation content.
 - Complete creator storefront publishing.
 - Complete sales analytics.

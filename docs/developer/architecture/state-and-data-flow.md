@@ -94,6 +94,10 @@ Not all state belongs in Redux.
 
 Local UI state stays in components or feature hooks when it does not need to be shared globally. The product builder is the richest example: it uses feature hooks and a facade to coordinate form state, loading, autosave, sidebar navigation, and product actions before crossing into Redux and services.
 
+Membership builder state is intentionally local to the product form page. `useMembershipBuilderState` owns native Membership content, included Product feed entries, ordering mode, and manual movement behavior. This lets Membership-specific state survive switching between builder tabs while the product form remains mounted, but it is not persisted across a full page refresh.
+
+The Membership feed combines two separate concepts only for presentation: native Membership content and included standalone Products. `MembershipFeedEntry` provides the stable feed identity plus relationship metadata such as `addedAt` and optional ordering position/state. Membership-specific data currently remains outside Product DTOs, `ProductDraft`, Redux product state, and Product autosave payloads.
+
 ## Persistence and side effects
 
 The cart and wishlist are browser-saved with `localStorage`.
