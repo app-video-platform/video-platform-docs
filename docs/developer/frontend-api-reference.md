@@ -38,4 +38,6 @@ The current service layer lives under `src/core/api/` in `video-platform-ui`.
 
 The frontend currently calls APIs for authentication, profile loading, product creation and editing, product search, course sections, lesson shells, download file upload, review listing and filtering, calendar connection initiation, and Admin user/product/audit management.
 
+There is not yet a dedicated production Customer API client for the Creator Customers area. The current Customer list and detail screens use deterministic inspection fixtures when mock mode is enabled and otherwise show that customer data is unavailable.
+
 Do not document backend capabilities here unless the frontend currently calls them.

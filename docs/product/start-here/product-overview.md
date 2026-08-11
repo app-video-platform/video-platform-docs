@@ -43,6 +43,7 @@ Creators can:
 - Create and manage products.
 - Build course, download, consultation, and membership products.
 - Set product pricing.
+- Review customer relationship records in the Customers area when inspection fixtures are enabled.
 - View and filter reviews by visibility where review data is available.
 - Connect a calendar provider from settings.
 
@@ -80,6 +81,7 @@ Some product discovery pages are public. Management pages require sign-in and th
 - Storefront pages exist as routes, but the current storefront screen is mostly a placeholder.
 - Course lessons can be created, but some lesson content editors are not fully persisted.
 - Membership products can be created in the frontend builder with native content, included Courses/Downloads, ordering, recurring pricing, and readiness feedback, but Membership-specific data is not persisted and does not create subscriptions, publishing, or member access.
+- Creator Customers has routes, list controls, and detail tabs, but customer-domain records are fixture-backed in inspection/mock mode until production Customer APIs are connected.
 - Sales, analytics, messages, email campaigns, and live-session management are visible in places but not production-ready workflows.
 
 ## Related pages

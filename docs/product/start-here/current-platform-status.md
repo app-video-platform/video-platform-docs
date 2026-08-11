@@ -27,6 +27,7 @@ The strongest areas of the current frontend are:
 - Download file upload and removal for download products.
 - Consultation setup fields.
 - Membership product creation, native Membership Content, included Product selection, unified ordering, recurring pricing controls, and readiness feedback in the frontend builder.
+- Creator Customers routes, list controls, and read-only detail tabs when inspection fixtures are enabled.
 - Product exploration and search.
 - Local wishlist and shopping cart behavior.
 - Admin user management.
@@ -48,6 +49,7 @@ The strongest areas of the current frontend are:
 | Library | The library shell and tabs exist; wishlist has behavior, but purchased courses, downloads, and consultations are not shown. |
 | Storefront | The route exists and fetches creator products, but the rendered storefront is mostly empty. |
 | Creator dashboard | Shows profile and product highlights; audience and sales sections are empty. |
+| Creator Customers | Routes, list search/filter/sort controls, responsive list/card presentation, and read-only detail tabs exist. Customer-domain records such as purchases, access, notes, tags, waitlist details, spend, and orders are currently deterministic inspection fixtures behind mock mode, not production-backed data. |
 | Marketing and reviews | Reviews can be listed and filtered, but reply and moderation controls are incomplete in the UI. Other marketing tabs are mostly placeholders. |
 | Settings | Several settings tabs render forms without saving changes. Calendar connection is the clearest backend-backed setting. |
 | Sales and analytics | Sales content is placeholder data. Analytics and messages navigation exists, but those workflows are not implemented as full pages. |
@@ -60,6 +62,7 @@ Do not describe the following as supported product capabilities:
 - Payment processing.
 - Membership subscriptions, entitlement logic, real publishing, member access, or buyer-facing Membership flows.
 - Customer access to purchased course/download/consultation content.
+- Production-backed Creator customer management, customer profiles, customer purchase history, access management, notes editing, customer deletion, exporting, bulk actions, messaging, or impersonation.
 - Complete creator storefront publishing.
 - Complete sales analytics.
 - Email campaigns.

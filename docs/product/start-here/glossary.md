@@ -45,6 +45,12 @@ Creators can create course sections and lesson shells. Some lesson content types
 
 A signed-in user who can create and manage products.
 
+### Creator Customers
+
+A creator-facing area for reviewing customer relationship records.
+
+The current frontend includes a Customers list and Customer Detail tabs. Detailed customer-domain records are available only as inspection fixtures in mock mode until production Customer APIs are connected.
+
 ### Download product
 
 A product type for selling downloadable files.

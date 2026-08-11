@@ -316,6 +316,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "product/creators/customers",
+              "path": "/docs/product/creators/customers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "product/creators/download-products",
               "path": "/docs/product/creators/download-products",
               "sidebar": "tutorialSidebar"

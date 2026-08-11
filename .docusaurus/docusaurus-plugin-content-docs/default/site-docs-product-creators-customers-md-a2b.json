@@ -1,0 +1,28 @@
+{
+  "id": "product/creators/customers",
+  "title": "Customers",
+  "description": "Overview",
+  "source": "@site/docs/product/creators/customers.md",
+  "sourceDirName": "product/creators",
+  "slug": "/product/creators/customers",
+  "permalink": "/docs/product/creators/customers",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/creators/customers.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Customers",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Membership Products",
+    "permalink": "/docs/product/creators/membership-products"
+  },
+  "next": {
+    "title": "Creator Settings",
+    "permalink": "/docs/product/creators/creator-settings"
+  }
+}

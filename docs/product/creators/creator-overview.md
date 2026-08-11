@@ -28,6 +28,7 @@ Creators can currently:
 
 - View a creator dashboard.
 - See creator-owned products.
+- Open the Customers area and inspect available customer relationship records.
 - Create new products.
 - Edit existing products.
 - Configure shared product details such as title, description, pricing, and media.
@@ -39,7 +40,7 @@ Creators can currently:
 
 ## How it works
 
-Creators usually start from the creator dashboard or the Products area.
+Creators usually start from the creator dashboard, Products area, or Customers area.
 
 The product workflow has two levels:
 
@@ -48,10 +49,13 @@ The product workflow has two levels:
 
 For most product work, start with [Managing Products](./managing-products.md). To create a new product, continue to [Creating a Product](./creating-a-product.md).
 
+For customer relationship review, start with [Customers](./customers.md).
+
 ## Current limitations
 
 - The dashboard includes audience and sales sections, but they do not yet show real performance data.
 - Storefront preview exists as an entry point, but the public storefront experience is not complete yet.
+- Customer relationship details are visible in the Customers area only when deterministic inspection fixtures are enabled; dedicated production Customer APIs are not connected yet.
 - Sales, analytics, marketing campaigns, messages, and customer booking flows are outside the current core product creation workflow.
 - Some course lesson content editors are visible but not fully persisted yet.
 - Membership-native content, included products, recurring pricing, ordering, and readiness feedback are frontend-only and are not persisted through the current Product API.
@@ -64,6 +68,7 @@ For most product work, start with [Managing Products](./managing-products.md). T
 - [Download Products](./download-products.md)
 - [Consultation Products](./consultation-products.md)
 - [Membership Products](./membership-products.md)
+- [Customers](./customers.md)
 - [Marketing and Reviews](./marketing-and-reviews.md)
 - [Sales and Analytics Status](./sales-and-analytics-status.md)
 - [Current Platform Status](../start-here/current-platform-status.md)

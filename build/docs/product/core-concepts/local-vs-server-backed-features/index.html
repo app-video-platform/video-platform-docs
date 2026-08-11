@@ -5,8 +5,8 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Local vs Server-backed Features | Video Platform App</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://luxury-klepon-a62307.netlify.app/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://luxury-klepon-a62307.netlify.app/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://luxury-klepon-a62307.netlify.app/docs/product/core-concepts/local-vs-server-backed-features"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Local vs Server-backed Features | Video Platform App"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luxury-klepon-a62307.netlify.app/docs/product/core-concepts/local-vs-server-backed-features"><link data-rh="true" rel="alternate" href="https://luxury-klepon-a62307.netlify.app/docs/product/core-concepts/local-vs-server-backed-features" hreflang="en"><link data-rh="true" rel="alternate" href="https://luxury-klepon-a62307.netlify.app/docs/product/core-concepts/local-vs-server-backed-features" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Local vs Server-backed Features","item":"https://luxury-klepon-a62307.netlify.app/docs/product/core-concepts/local-vs-server-backed-features"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Video Platform App RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Video Platform App Atom Feed"><link rel="stylesheet" href="/assets/css/styles.353a480a.css">
-<script src="/assets/js/runtime~main.2566a46e.js" defer="defer"></script>
-<script src="/assets/js/main.dffd9b13.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.6a4fe022.js" defer="defer"></script>
+<script src="/assets/js/main.d7b9cba4.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -37,12 +37,22 @@
 <ul>
 <li class="">Wishlist.</li>
 <li class="">Shopping cart.</li>
-<li class="">Membership included-product selection in the builder.</li>
+</ul>
+<p>Major frontend-only session state areas include:</p>
+<ul>
+<li class="">Membership native Posts, Videos, and Resources in the builder.</li>
+<li class="">Membership included-product relationships in the builder.</li>
 <li class="">Membership recurring pricing controls in the builder.</li>
+<li class="">Membership content ordering and readiness feedback in the builder.</li>
+</ul>
+<p>Major inspection fixture-backed areas include:</p>
+<ul>
+<li class="">Creator Customers list and detail records when mock mode is enabled.</li>
 </ul>
 <p>Major placeholder or incomplete areas include:</p>
 <ul>
 <li class="">Checkout, payment, orders, and entitlements.</li>
+<li class="">Production Customer APIs for creator customer management, purchase history, access records, notes, waitlist details, spend, and order data.</li>
 <li class="">Membership subscriptions, entitlement logic, member access, and buyer-facing Membership flows.</li>
 <li class="">Customer Library tabs for purchased products.</li>
 <li class="">Sales and analytics reporting.</li>
@@ -55,7 +65,9 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-it-works">How it works<a href="#how-it-works" class="hash-link" aria-label="Direct link to How it works" title="Direct link to How it works" translate="no">​</a></h2>
 <p>Server-backed areas are the safest to document as persistent when the frontend clearly calls backend-backed workflows.</p>
 <p>Browser-saved areas can persist on the same device and browser, but they should not be described as account-synchronized features.</p>
+<p>Frontend-only session state can survive local UI interactions, such as switching builder tabs, but should not be described as durable. In the current Membership builder, Membership-specific content, included Product relationships, recurring pricing, ordering, and readiness state are lost on full page refresh or reload.</p>
 <p>Placeholder areas may be visible in navigation or tabs, but should be documented only as current limitations unless they have meaningful user-facing behavior.</p>
+<p>Inspection fixture-backed areas can demonstrate the intended screen behavior for reviewers, but they should not be described as production-backed customer data.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="current-limitations">Current limitations<a href="#current-limitations" class="hash-link" aria-label="Direct link to Current limitations" title="Direct link to Current limitations" translate="no">​</a></h2>
 <ul>
 <li class="">This page is a product-level maturity summary, not a guarantee of backend behavior outside the current frontend.</li>
