@@ -29,6 +29,7 @@ Creators can currently:
 - View a creator dashboard.
 - See creator-owned products.
 - Open the Customers area and inspect available customer relationship records.
+- Open the Sales area and inspect available order records.
 - Create new products.
 - Edit existing products.
 - Configure shared product details such as title, description, pricing, and media.
@@ -40,7 +41,7 @@ Creators can currently:
 
 ## How it works
 
-Creators usually start from the creator dashboard, Products area, or Customers area.
+Creators usually start from the creator dashboard, Products area, Customers area, or Sales area.
 
 The product workflow has two levels:
 
@@ -51,12 +52,15 @@ For most product work, start with [Managing Products](./managing-products.md). T
 
 For customer relationship review, start with [Customers](./customers.md).
 
+For order review, start with [Sales](./sales.md).
+
 ## Current limitations
 
 - The dashboard includes audience and sales sections, but they do not yet show real performance data.
 - Storefront preview exists as an entry point, but the public storefront experience is not complete yet.
 - Customer relationship details are visible in the Customers area only when deterministic inspection fixtures are enabled; dedicated production Customer APIs are not connected yet.
-- Sales, analytics, marketing campaigns, messages, and customer booking flows are outside the current core product creation workflow.
+- Sales order and financial details are visible in the Sales area only when deterministic inspection fixtures are enabled; dedicated production Sales APIs are not connected yet.
+- Analytics, marketing campaigns, messages, and customer booking flows are outside the current core product creation workflow.
 - Some course lesson content editors are visible but not fully persisted yet.
 - Membership-native content, included products, recurring pricing, ordering, and readiness feedback are frontend-only and are not persisted through the current Product API.
 
@@ -70,5 +74,5 @@ For customer relationship review, start with [Customers](./customers.md).
 - [Membership Products](./membership-products.md)
 - [Customers](./customers.md)
 - [Marketing and Reviews](./marketing-and-reviews.md)
-- [Sales and Analytics Status](./sales-and-analytics-status.md)
+- [Sales](./sales.md)
 - [Current Platform Status](../start-here/current-platform-status.md)

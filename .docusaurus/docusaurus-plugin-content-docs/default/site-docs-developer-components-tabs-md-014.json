@@ -16,8 +16,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalSpinner",
-    "permalink": "/docs/developer/components/spinner"
+    "title": "Status Badge",
+    "permalink": "/docs/developer/components/status-badge"
   },
   "next": {
     "title": "GalUppyFileUploader",

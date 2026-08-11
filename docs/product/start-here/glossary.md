@@ -92,6 +92,12 @@ A public page for viewing an individual product.
 
 The current page shows some real product information, but also includes placeholder fields and inactive purchase buttons.
 
+### Sales
+
+A creator-facing area for reviewing sales metrics, order records, and contextual order detail.
+
+The current frontend includes the Sales workspace and read-only order detail. Financial-domain records are available only as inspection fixtures in mock mode until production order, payment, refund, subscription, renewal, and entitlement APIs are connected.
+
 ### Storefront
 
 A public creator page route intended to show a creator profile and products.

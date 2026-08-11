@@ -62,5 +62,5 @@ Other Marketing tabs currently show headers or internal planning content rather 
 
 - [Creator Overview](./creator-overview.md)
 - [Managing Products](./managing-products.md)
-- [Sales and Analytics Status](./sales-and-analytics-status.md)
+- [Sales](./sales.md)
 - [Current Platform Status](../start-here/current-platform-status.md)

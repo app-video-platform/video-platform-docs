@@ -26,6 +26,16 @@ sidebar_position: 6
 - Empty states should explain what the user can do next.
 - Placeholder tabs should not look like completed workflows.
 
+## Pages, Drawers, and Dialogs
+
+Use pages for substantial destinations or workspaces, especially when a resource needs meaningful navigation depth or its own working context.
+
+Use drawers for contextual inspection or interaction that should retain the parent workspace. Drawers are useful when the user benefits from keeping list, filter, or dashboard context visible while inspecting a selected item.
+
+Use modals or dialogs for short focused tasks, decisions, confirmations, or temporary workflow interruptions.
+
+These are design and architecture guidelines, not rigid rules. Dedicated detail pages and contextual drawers can both be correct depending on the workflow.
+
 ## Forms
 
 - Use client validation before submitting.

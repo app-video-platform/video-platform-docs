@@ -206,17 +206,17 @@
     },
     "content": "393be207"
   },
-  "/docs-86b": {
+  "/docs-37e": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/docs-10a": {
+  "/docs-083": {
     "__comp": "a7bd4aaa",
     "__props": "0058b4c6"
   },
-  "/docs-c7b": {
+  "/docs-14b": {
     "__comp": "a94703ab"
   },
   "/docs/developer/api/-4b8": {
@@ -291,6 +291,10 @@
     "__comp": "17896441",
     "content": "0114c3a9"
   },
+  "/docs/developer/components/drawer-2ef": {
+    "__comp": "17896441",
+    "content": "6994bb2a"
+  },
   "/docs/developer/components/dropdown-3a0": {
     "__comp": "17896441",
     "content": "f2b87e80"
@@ -362,6 +366,10 @@
   "/docs/developer/components/spinner-dc1": {
     "__comp": "17896441",
     "content": "eb871cdd"
+  },
+  "/docs/developer/components/status-badge-dc4": {
+    "__comp": "17896441",
+    "content": "9b990bd0"
   },
   "/docs/developer/components/tabs-a04": {
     "__comp": "17896441",
@@ -483,9 +491,9 @@
     "__comp": "17896441",
     "content": "127a2a6e"
   },
-  "/docs/product/creators/sales-and-analytics-status-9fb": {
+  "/docs/product/creators/sales-b83": {
     "__comp": "17896441",
-    "content": "cc75993e"
+    "content": "0779560c"
   },
   "/docs/product/customers/customer-account-settings-a09": {
     "__comp": "17896441",

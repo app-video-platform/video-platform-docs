@@ -55,5 +55,5 @@ On smaller screens, the customer list changes from a table-like layout into stac
 
 - [Creator Overview](./creator-overview.md)
 - [Membership Products](./membership-products.md)
-- [Sales and Analytics Status](./sales-and-analytics-status.md)
+- [Sales](./sales.md)
 - [Local vs Server-backed Features](../core-concepts/local-vs-server-backed-features.md)

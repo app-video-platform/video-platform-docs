@@ -1,0 +1,88 @@
+---
+title: Sales
+sidebar_position: 9
+---
+
+# Sales
+
+## Overview
+
+The Sales area lets creators review recent order activity and inspect contextual order details from the creator workspace.
+
+Creators can open Sales from the app navigation at `/app/sales`. The current frontend includes a sales overview, metrics, an orders ledger, list refinement controls, pagination, and an order detail drawer.
+
+## Who can use this
+
+This page is for signed-in users with the Creator role.
+
+Administrators can also access the Sales route.
+
+## What you can do
+
+Creators can currently:
+
+- View sales overview metrics for Revenue, Orders, Refunds, and Failed payments.
+- Search orders by customer name, customer email, or order ID.
+- Filter orders by date range, status, and product.
+- Sort orders by newest first, oldest first, amount high to low, or amount low to high.
+- Page through the orders ledger when more than one page of results is available.
+- Open contextual order detail without leaving the Sales workspace.
+- Open linked customer or product workspaces when the order has linked customer or product IDs.
+
+The orders ledger shows order date, customer, product, status, type, and amount.
+
+## How it works
+
+The date filter supports Today, Last 7 days, Last 30 days, and Last 90 days.
+
+The current order statuses are:
+
+- Paid
+- Failed
+- Refunded
+- Pending
+
+The current order types are:
+
+- One-time
+- Subscription
+- Renewal
+
+Refunds are represented on the original order. The current creator UI does not show a separate refund ledger or separate refund record page.
+
+If there are no orders, the page shows an empty state with a link back to Products. If a search or filter returns no matches, the page shows a no-result state with a clear action.
+
+On desktop, filters are visible in the toolbar. On smaller screens, filters move into a drawer, and the orders ledger changes into a stacked card-style layout.
+
+## Order detail
+
+Selecting an order opens a detail drawer while keeping the Sales workspace visible in the background. The URL stores the selected order in the `order` query parameter, so a selected order can be deep-linked or restored on refresh when the fixture data contains that order.
+
+Order detail can show:
+
+- Order amount, type, date, and status.
+- Customer name and email, with a link to the customer profile when available.
+- Product name and type, with a link to the product workspace when available.
+- Payment provider, payment method, transaction ID, payment date, and currency when available.
+- Order summary rows.
+- Access result.
+- Subscription or renewal context for subscription-related orders.
+- Refund amount, refund date, reason, and access result for refunded orders.
+- Failed-payment message and retry timing for failed orders.
+
+## Current limitations
+
+- Sales order, payment, refund, subscription, renewal, and access data is deterministic frontend fixture data behind the project's mock-mode strategy.
+- Outside mock mode, the Sales area shows that sales data is unavailable until order, payment, refund, and entitlement APIs are connected.
+- The current frontend does not establish production order, payment, refund, subscription, renewal, entitlement, server pagination, or payment-provider normalization contracts.
+- Creators cannot issue refunds, retry charges, change subscriptions, grant access, revoke access, export orders, or perform bulk actions from the current Sales UI.
+- The metrics and comparison labels are fixture-backed and should not be treated as production financial reporting.
+- Checkout and payment completion are not implemented in the customer purchase flow.
+- Analytics and Messages navigation entries are visible elsewhere in the app, but complete standalone Analytics or Messages pages are not implemented in the current router.
+
+## Related pages
+
+- [Creator Overview](./creator-overview.md)
+- [Customers](./customers.md)
+- [Current Platform Status](../start-here/current-platform-status.md)
+- [Local vs Server-backed Features](../core-concepts/local-vs-server-backed-features.md)

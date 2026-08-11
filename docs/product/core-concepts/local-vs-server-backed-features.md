@@ -46,14 +46,16 @@ Major frontend-only session state areas include:
 Major inspection fixture-backed areas include:
 
 - Creator Customers list and detail records when mock mode is enabled.
+- Creator Sales metrics, order ledger, and order detail records when mock mode is enabled.
 
 Major placeholder or incomplete areas include:
 
 - Checkout, payment, orders, and entitlements.
 - Production Customer APIs for creator customer management, purchase history, access records, notes, waitlist details, spend, and order data.
+- Production Sales APIs for order, payment, refund, subscription, renewal, entitlement, server pagination, payment-provider normalization, and safe financial mutation contracts.
 - Membership subscriptions, entitlement logic, member access, and buyer-facing Membership flows.
 - Customer Library tabs for purchased products.
-- Sales and analytics reporting.
+- Analytics reporting.
 - Email campaigns.
 - Messages.
 - Live-session booking and scheduling.
@@ -70,7 +72,7 @@ Frontend-only session state can survive local UI interactions, such as switching
 
 Placeholder areas may be visible in navigation or tabs, but should be documented only as current limitations unless they have meaningful user-facing behavior.
 
-Inspection fixture-backed areas can demonstrate the intended screen behavior for reviewers, but they should not be described as production-backed customer data.
+Inspection fixture-backed areas can demonstrate the intended screen behavior for reviewers, but they should not be described as production-backed customer or financial data.
 
 ## Current limitations
 
@@ -82,5 +84,5 @@ Inspection fixture-backed areas can demonstrate the intended screen behavior for
 - [Current Platform Status](../start-here/current-platform-status.md)
 - [Wishlist](../customers/wishlist.md)
 - [Shopping Cart](../customers/shopping-cart.md)
-- [Sales and Analytics Status](../creators/sales-and-analytics-status.md)
+- [Sales](../creators/sales.md)
 - [Calendar Connections](./calendar-connections.md)

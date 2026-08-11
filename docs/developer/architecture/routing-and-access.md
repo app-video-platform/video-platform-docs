@@ -38,6 +38,14 @@ Public app routes include product discovery and product detail experiences, such
 
 Protected app routes use `ProtectedRoute` and require a logged-in user with one of the allowed roles.
 
+## Contextual detail navigation
+
+Some workspaces keep the parent route mounted while the URL identifies a selected contextual resource.
+
+The Sales workspace uses this pattern: `/app/sales` remains the page route, and a selected order is represented with query state such as `/app/sales?order=ORD-2026-00124`. The page uses the query value to open contextual order detail while preserving the surrounding Sales list, filters, and metrics.
+
+Use this pattern when the user benefits from retaining collection context, and when deep linking, refresh, and browser navigation should preserve the selected resource. Do not treat it as the default for every detail experience. A substantial detail destination, such as Customer Detail, can remain a dedicated route when it needs its own page context.
+
 ## Role-based routing
 
 Roles are represented by the `UserRole` enum:

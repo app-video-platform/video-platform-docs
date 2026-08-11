@@ -52,7 +52,7 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app/customers` | protected | Creator, Admin | Creator Customers list | Shows unavailable state unless mock inspection data is enabled |
 | `/app/customers/:customerId` | protected | Creator, Admin | Creator Customer detail | Read-only detail tabs backed by inspection fixtures in mock mode |
 | `/app/marketing` | protected | Creator, Admin | Marketing area | Mostly incomplete except reviews |
-| `/app/sales` | protected | Creator, Admin | Sales page | Placeholder static content |
+| `/app/sales` | protected | Creator, Admin | Creator Sales workspace | Uses `order` query param for contextual order detail; data unavailable outside mock inspection mode |
 | `/app/settings` | protected | Admin, Creator, User | Settings tabs | Most save flows incomplete |
 | `/app/my-page-preview` | protected | Admin, Creator, User | User page preview |  |
 | `/app/*` | protected | - | App fallback | Redirects to `/app` |

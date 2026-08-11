@@ -79,15 +79,15 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '86b'),
+    component: ComponentCreator('/docs', '37e'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '10a'),
+        component: ComponentCreator('/docs', '083'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', 'c7b'),
+            component: ComponentCreator('/docs', '14b'),
             routes: [
               {
                 path: '/docs/developer/api/',
@@ -198,6 +198,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/docs/developer/components/drawer',
+                component: ComponentCreator('/docs/developer/components/drawer', '2ef'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/docs/developer/components/dropdown',
                 component: ComponentCreator('/docs/developer/components/dropdown', '3a0'),
                 exact: true,
@@ -302,6 +308,12 @@ export default [
               {
                 path: '/docs/developer/components/spinner',
                 component: ComponentCreator('/docs/developer/components/spinner', 'dc1'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/components/status-badge',
+                component: ComponentCreator('/docs/developer/components/status-badge', 'dc4'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -486,8 +498,8 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/product/creators/sales-and-analytics-status',
-                component: ComponentCreator('/docs/product/creators/sales-and-analytics-status', '9fb'),
+                path: '/docs/product/creators/sales',
+                component: ComponentCreator('/docs/product/creators/sales', 'b83'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

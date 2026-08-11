@@ -87,6 +87,10 @@ It currently includes:
 
 Add code to `shared` when multiple domains can reasonably reuse it. If a component is only used inside app shell or creator/admin/customer flows, prefer `domains/app/components` or the relevant `domains/app/features` area.
 
+Shared UI should own reusable interaction and presentation behavior, not feature-specific business meaning. For example, the shared Drawer owns generic drawer infrastructure such as overlay, close behavior, Escape handling, focus management and restoration, scroll locking, and responsive full-screen mobile presentation. A feature such as Sales owns its own order-detail content.
+
+Similarly, shared status presentation primitives own reusable visual and semantic presentation. Feature code should map domain-specific business statuses, such as order or product states, into shared presentation props. Do not turn a feature-specific status mapping into a generic shared business component unless multiple domains truly share the same business meaning.
+
 ## `styles`
 
 `styles` contains the global SCSS foundation imported by the application entry point.

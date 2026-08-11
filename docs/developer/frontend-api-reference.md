@@ -40,4 +40,6 @@ The frontend currently calls APIs for authentication, profile loading, product c
 
 There is not yet a dedicated production Customer API client for the Creator Customers area. The current Customer list and detail screens use deterministic inspection fixtures when mock mode is enabled and otherwise show that customer data is unavailable.
 
+There is not yet a dedicated production Sales API client for the complete creator financial domain. The current Sales metrics, order ledger, and order detail use deterministic inspection fixtures when mock mode is enabled and otherwise show that sales data is unavailable. Backend work is still needed for orders, payments, refunds, subscriptions and renewals, entitlements/access, server pagination, payment-provider normalization, and safe financial mutation contracts.
+
 Do not document backend capabilities here unless the frontend currently calls them.

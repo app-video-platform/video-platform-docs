@@ -16,8 +16,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalCtaSection",
-    "permalink": "/docs/developer/components/cta-section"
+    "title": "Drawer",
+    "permalink": "/docs/developer/components/drawer"
   },
   "next": {
     "title": "GalExpansionGroup",
