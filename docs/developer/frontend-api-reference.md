@@ -23,6 +23,12 @@ The current service layer lives under `src/core/api/` in `video-platform-ui`.
 | Product sections | `src/core/api/services/products/product-sections-api.ts` |
 | Product lessons | `src/core/api/services/products/product-lessons-api.ts` |
 | Download files | `src/core/api/services/products/product-download-files-api.ts` |
+| Creator Customers | `src/core/api/services/customers/customers-api.ts` |
+| Creator Sales | `src/core/api/services/sales/sales-api.ts` |
+| Creator Analytics | `src/core/api/services/analytics/analytics-api.ts` |
+| Creator Dashboard | `src/core/api/services/dashboard/dashboard-api.ts` |
+| Storefront | `src/core/api/services/storefront/storefront-api.ts` |
+| Membership | `src/core/api/services/membership/membership-api.ts` |
 | Calendar services | `src/core/api/services/calendar/calendar-api.ts` |
 | Admin services | `src/core/api/services/admin/admin-api.ts` |
 
@@ -36,12 +42,22 @@ The current service layer lives under `src/core/api/` in `video-platform-ui`.
 
 ## Current scope
 
-The frontend currently calls APIs for authentication, profile loading, product creation and editing, product search, course sections, lesson shells, download file upload, review listing and filtering, calendar connection initiation, and Admin user/product/audit management.
+The frontend currently calls APIs for authentication, profile loading, product creation and editing, product search, course sections, lesson shells, download file upload, review listing and filtering, calendar connection initiation, Admin user/product/audit management, and Creator data surfaces.
 
-There is not yet a dedicated production Customer API client for the Creator Customers area. The current Customer list and detail screens use deterministic inspection fixtures when mock mode is enabled and otherwise show that customer data is unavailable.
+Several Creator data surfaces now have frontend-defined contracts, services, thunks, and Redux slices. Their production backend endpoints are still pending unless a feature-specific page says otherwise.
 
-There is not yet a dedicated production Sales API client for the complete creator financial domain. The current Sales metrics, order ledger, and order detail use deterministic inspection fixtures when mock mode is enabled and otherwise show that sales data is unavailable. Backend work is still needed for orders, payments, refunds, subscriptions and renewals, entitlements/access, server pagination, payment-provider normalization, and safe financial mutation contracts.
+Current backend-pending frontend contracts include:
 
-There is not yet a dedicated production Analytics API client or Redux data architecture. The current Creator Analytics metrics, charts, rankings, and summary panels use deterministic inspection fixtures when mock mode is enabled and otherwise show that analytics data is unavailable.
+- Creator Customers list and Customer Detail.
+- Creator Sales summary, Orders page, and Order Detail.
+- Creator Analytics aggregate overview with `7d`, `30d`, and `90d` period queries.
+- Creator Dashboard aggregate summary.
+- Public Storefront read model and Creator Storefront configuration/update.
+- Membership aggregate, configuration update, native content create/update/delete, and feed ordering.
+- Product recurring-pricing extension using `price`, `pricingModel`, `billingInterval`, and `currency`.
+
+Ownership boundaries matter for these contracts. Product remains authoritative for Product identity, type, name, description, status, image, price amount, pricing model, billing interval, and currency. Membership owns Membership configuration, native content, included Product associations, and feed/order metadata. Storefront configuration owns featured Product ID and Product ordering; User/Profile owns Creator profile fields, and Product owns catalogue data.
+
+Local development may substitute ignored HTTP mocks at the Axios boundary when `REACT_APP_USE_MOCKS=true`. Feature components should not branch on mock mode for Creator business data.
 
 Do not document backend capabilities here unless the frontend currently calls them.

@@ -56,7 +56,7 @@ On desktop, filters are visible in the toolbar. On smaller screens, filters move
 
 ## Order detail
 
-Selecting an order opens a detail drawer while keeping the Sales workspace visible in the background. The URL stores the selected order in the `order` query parameter, so a selected order can be deep-linked or restored on refresh when the fixture data contains that order.
+Selecting an order opens a detail drawer while keeping the Sales workspace visible in the background. The URL stores the selected order in the `order` query parameter, so a selected order can be deep-linked or restored on refresh when the Sales detail contract has data for that order.
 
 Order detail can show:
 
@@ -72,11 +72,11 @@ Order detail can show:
 
 ## Current limitations
 
-- Sales order, payment, refund, subscription, renewal, and access data is deterministic frontend fixture data behind the project's mock-mode strategy.
-- Outside mock mode, the Sales area shows that sales data is unavailable until order, payment, refund, and entitlement APIs are connected.
-- The current frontend does not establish production order, payment, refund, subscription, renewal, entitlement, server pagination, or payment-provider normalization contracts.
+- Frontend contracts exist for Sales summary, Orders page, and Order Detail, but production backend endpoints are not implemented yet.
+- When production Sales endpoints are unavailable, the Sales area shows that sales data is unavailable until order, payment, refund, and entitlement APIs are connected.
+- The current frontend does not establish provider-safe financial mutation contracts for refunds, payment retries, subscription changes, or entitlement changes.
 - Creators cannot issue refunds, retry charges, change subscriptions, grant access, revoke access, export orders, or perform bulk actions from the current Sales UI.
-- The metrics and comparison labels are fixture-backed and should not be treated as production financial reporting.
+- Metrics and comparison labels should not be treated as production financial reporting until production Sales endpoints provide the data.
 - Checkout and payment completion are not implemented in the customer purchase flow.
 - Messages navigation is visible elsewhere in the app, but a complete standalone Messages page is not implemented in the current router.
 

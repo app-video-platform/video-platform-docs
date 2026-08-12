@@ -44,7 +44,7 @@ src/
 
 New route pages usually belong under the domain that owns the user experience: creator/admin/customer screens in `domains/app`, auth screens in `domains/auth`, and public marketing screens in `domains/marketing`.
 
-Larger app workflows are grouped under `domains/app/features`, such as `product-form`, `settings`, `onboarding`, `marketing`, and `smart-search`.
+Larger app workflows are grouped under `domains/app/features`, such as `product-form`, `settings`, `onboarding`, `marketing`, `smart-search`, and `storefront`.
 
 ## Architectural layers
 
@@ -92,6 +92,10 @@ Shared UI should own reusable interaction and presentation behavior, not feature
 Similarly, shared status presentation primitives own reusable visual and semantic presentation. Feature code should map domain-specific business statuses, such as order or product states, into shared presentation props. Do not turn a feature-specific status mapping into a generic shared business component unless multiple domains truly share the same business meaning.
 
 Shared chart primitives own reusable visualization presentation and infrastructure, such as chart sizing, tooltips, legends, empty states, accessibility labels, responsive behavior, and design tokens. Feature code owns domain-specific analytics meaning, including metric selection, series labels, comparison copy, ranking logic, and insights.
+
+Storefront presentation is shared between the Creator management preview and the public Storefront route. The shared Storefront feature owns the public presentation and view-model shaping; route pages own loading, access, and composition with User/Profile, Product, and Storefront config/read-model state. Storefront config owns featured Product ID and Product ordering only.
+
+Membership remains Product-scoped rather than becoming a separate sellable root. Product owns the generic sellable shell and recurring-pricing metadata, while Membership owns content, included Product associations, and feed/order configuration through backend-pending contracts.
 
 ## `styles`
 

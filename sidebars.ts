@@ -63,6 +63,7 @@ const sidebars: SidebarsConfig = {
             'product/creators/download-products',
             'product/creators/consultation-products',
             'product/creators/membership-products',
+            'product/creators/storefront',
             'product/creators/customers',
             'product/creators/creator-settings',
             'product/creators/marketing-and-reviews',

@@ -43,9 +43,10 @@ Creators can:
 - Create and manage products.
 - Build course, download, consultation, and membership products.
 - Set product pricing.
-- Review customer relationship records in the Customers area when inspection fixtures are enabled.
-- Review sales metrics and order records in the Sales area when inspection fixtures are enabled.
-- Review analytics metrics, charts, and summaries in the Analytics area when inspection fixtures are enabled.
+- Review customer relationship records in the Customers area when the frontend Customer contract has data available.
+- Review sales metrics and order records in the Sales area when the frontend Sales contracts have data available.
+- Review analytics metrics, charts, and summaries in the Analytics area when the frontend Analytics aggregate contract has data available.
+- Manage a fixed public Storefront, review product visibility, copy the Storefront link, and inspect the live preview.
 - View and filter reviews by visibility where review data is available.
 - Connect a calendar provider from settings.
 
@@ -63,7 +64,7 @@ Visitors who are not signed in can:
 - View the public marketing site.
 - Browse product exploration pages.
 - View product detail pages.
-- View public storefront routes, although storefront content is currently limited.
+- View public Storefront pages for creators.
 
 ## How it works
 
@@ -80,12 +81,12 @@ Some product discovery pages are public. Management pages require sign-in and th
 - Checkout and payment are not implemented.
 - The shopping cart and wishlist are stored in the browser, not in a user account.
 - The user library exists, but most library tabs do not yet show purchased content.
-- Storefront pages exist as routes, but the current storefront screen is mostly a placeholder.
+- Storefront featured product selection and product ordering have frontend contracts, but the production Storefront configuration backend is not implemented yet.
 - Course lessons can be created, but some lesson content editors are not fully persisted.
-- Membership products can be created in the frontend builder with native content, included Courses/Downloads, ordering, recurring pricing, and readiness feedback, but Membership-specific data is not persisted and does not create subscriptions, publishing, or member access.
-- Creator Customers has routes, list controls, and detail tabs, but customer-domain records are fixture-backed in inspection/mock mode until production Customer APIs are connected.
-- Creator Sales has routes, list controls, metrics, and order detail, but financial-domain records are fixture-backed in inspection/mock mode until production order, payment, refund, subscription, renewal, and entitlement APIs are connected.
-- Creator Analytics has routes, preset period selection, metrics, charts, and summary panels, but analytics-domain records are fixture-backed in inspection/mock mode until production Analytics APIs are connected.
+- Membership products can be created in the frontend builder with native content, included Courses/Downloads, ordering, recurring pricing, and readiness feedback, but production Membership backend endpoints, subscriptions, publishing, and member access are not implemented yet.
+- Creator Customers has routes, list controls, detail tabs, and frontend Customer contracts, but production customer-domain endpoints are not implemented yet.
+- Creator Sales has routes, list controls, metrics, order detail, and frontend Sales contracts, but production order, payment, refund, subscription, renewal, and entitlement endpoints are not implemented yet.
+- Creator Analytics has routes, preset period selection, metrics, charts, summary panels, and a frontend aggregate contract, but the production Analytics endpoint is not implemented yet.
 - Messages, email campaigns, and live-session management are visible in places but not production-ready workflows.
 
 ## Related pages

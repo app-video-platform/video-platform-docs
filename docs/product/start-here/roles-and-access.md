@@ -55,6 +55,7 @@ Creators can:
 - Access the creator dashboard.
 - Create and manage products.
 - Edit course, download, and consultation product details.
+- Manage the Creator Storefront.
 - Access creator marketing screens.
 - Access sales, analytics, and settings screens.
 - Complete onboarding screens.
@@ -92,6 +93,7 @@ Access is based on the user's active role.
 | Cart | No | Yes | Yes | Yes |
 | Library | No | Yes | No | Yes |
 | Creator product management | No | No | Yes | Yes |
+| Creator Storefront management | No | No | Yes | Yes |
 | Creator marketing | No | No | Yes | Yes |
 | Sales page | No | No | Yes | Yes |
 | Analytics page | No | No | Yes | Yes |
@@ -102,7 +104,7 @@ Access is based on the user's active role.
 - The cart route is protected even though product browsing is public.
 - The product detail page shows purchase buttons, but checkout is not implemented.
 - Some navigation items point to areas that are not fully implemented, such as messages.
-- Storefront routes are public, but the current storefront page does not yet present a complete creator storefront.
+- Storefront featured product selection and product ordering have frontend contracts, but the production Storefront configuration backend is not implemented yet.
 - Password reset screens are visible, but the full reset workflow is not currently connected end to end.
 
 ## Related pages

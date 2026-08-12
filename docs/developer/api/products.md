@@ -59,4 +59,6 @@ Current frontend product types are `COURSE`, `DOWNLOAD`, `CONSULTATION`, and `ME
 
 Current product statuses represented in frontend types are `DRAFT`, `PUBLISHED`, and `HIDDEN`.
 
-Membership uses the shared Product create/update shape for core Product fields only. There is currently no Product API payload for Membership-native Posts, Videos, Resources, included Product relationships, recurring pricing, feed ordering, readiness state, or Membership publishing.
+Membership uses the shared Product create/update shape for core Product fields and Product-owned recurring-pricing metadata. The current frontend Product contract carries `price`, `pricingModel`, `billingInterval`, and `currency`; production backend support for those recurring-pricing fields is still pending.
+
+Membership-native Posts, Videos, Resources, included Product relationships, feed ordering, and Membership configuration are owned by Product-scoped Membership contracts, not by Product `details` payloads. Membership readiness is derived in the frontend and is not persisted by Product or Membership APIs.

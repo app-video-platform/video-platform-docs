@@ -32,7 +32,7 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app/explore/search` | public | - | Product search results |  |
 | `/app/product/:id` | public | - | Product detail page |  |
 | `/app/product/:id/:type` | public | - | Product detail page | Type param is accepted |
-| `/app/store/:creatorId` | public | - | Creator storefront route | Rendered storefront is limited |
+| `/app/store/:creatorId` | public | - | Public creator Storefront | Shows the creator profile and published products; draft and hidden products are withheld |
 | `/app/cart` | protected | Admin, Creator, User | Shopping cart | No checkout |
 | `/app/library` | protected | User, Admin | Library shell |  |
 | `/app/library/all-products` | protected | User, Admin | Library tab | Currently empty |
@@ -49,13 +49,14 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app/products/create` | protected | Creator, Admin | Create product |  |
 | `/app/products/edit/:id` | protected | Creator, Admin | Edit product |  |
 | `/app/products/edit/:type/:id` | protected | Creator, Admin | Edit product legacy-compatible route |  |
-| `/app/customers` | protected | Creator, Admin | Creator Customers list | Shows unavailable state unless mock inspection data is enabled |
-| `/app/customers/:customerId` | protected | Creator, Admin | Creator Customer detail | Read-only detail tabs backed by inspection fixtures in mock mode |
+| `/app/storefront` | protected | Creator, Admin | Creator Storefront management | Uses User/Profile, Product summaries, and the backend-pending Creator Storefront config contract |
+| `/app/customers` | protected | Creator, Admin | Creator Customers list | Uses backend-pending Customer list contract |
+| `/app/customers/:customerId` | protected | Creator, Admin | Creator Customer detail | Uses backend-pending Customer detail contract; current detail tabs are read-only |
 | `/app/marketing` | protected | Creator, Admin | Marketing area | Mostly incomplete except reviews |
-| `/app/sales` | protected | Creator, Admin | Creator Sales workspace | Uses `order` query param for contextual order detail; data unavailable outside mock inspection mode |
-| `/app/analytics` | protected | Creator, Admin | Creator Analytics workspace | Data unavailable outside mock inspection mode |
+| `/app/sales` | protected | Creator, Admin | Creator Sales workspace | Uses `order` query param for contextual order detail and backend-pending Sales contracts |
+| `/app/analytics` | protected | Creator, Admin | Creator Analytics workspace | Uses backend-pending aggregate Analytics overview contract |
 | `/app/settings` | protected | Admin, Creator, User | Settings tabs | Most save flows incomplete |
-| `/app/my-page-preview` | protected | Admin, Creator, User | User page preview |  |
+| `/app/my-page-preview` | protected | Admin, Creator, User | Legacy Storefront preview route | Redirects to `/app/storefront` |
 | `/app/*` | protected | - | App fallback | Redirects to `/app` |
 
 ## Guarding pattern

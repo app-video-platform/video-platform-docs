@@ -23,6 +23,7 @@ Customers can:
 
 - Browse available products.
 - Search for products.
+- Open public creator Storefront pages.
 - Use search suggestions.
 - Open product detail pages.
 - Save products to a wishlist.
@@ -32,7 +33,7 @@ Customers can:
 
 ## How it works
 
-The current customer journey starts with product discovery. Customers can browse the Explore page, search for products, and open product detail pages to review more information.
+The current customer journey starts with product discovery. Customers can browse the Explore page, search for products, open public creator Storefront pages, and open product detail pages to review more information.
 
 From product discovery areas, customers can save products to a wishlist or add them to the shopping cart. Wishlist and cart items are saved in the browser so they remain available across browser sessions on the same device.
 
@@ -45,7 +46,7 @@ The Library area is available to signed-in End Users. Today, the most useful Lib
 - Wishlist and cart items are saved in the browser, not synchronized to a backend user account.
 - The Library does not yet show purchased courses, downloads, or consultations.
 - The signed-in customer home area is still a placeholder experience.
-- Creator storefront routes exist, but storefront content is currently limited.
+- Storefront pages show published products and link to product detail pages, but they do not complete checkout, payment, or post-purchase access.
 
 ## Related pages
 

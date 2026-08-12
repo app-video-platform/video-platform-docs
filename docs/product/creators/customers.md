@@ -45,9 +45,9 @@ On smaller screens, the customer list changes from a table-like layout into stac
 
 ## Current limitations
 
-- Dedicated production Customer APIs and contracts are not connected yet.
-- Detailed customer-domain information such as purchases, access records, notes, tags, waitlist details, spend, order counts, and relationship history is currently fixture-backed in inspection/mock mode.
-- Outside inspection/mock mode, the Customers area shows an unavailable state until customer, purchase, membership, waitlist, access, and notes APIs exist.
+- Frontend Customer list and detail contracts exist, but dedicated production Customer endpoints are not implemented yet.
+- Detailed customer-domain information such as purchases, access records, notes, tags, waitlist details, spend, order counts, and relationship history is available only when the frontend contract receives data, such as through local mock support.
+- When production Customer endpoints are unavailable, the Customers area shows an unavailable state until customer, purchase, membership, waitlist, access, and notes APIs exist.
 - Access and Notes are read-only. Creators cannot grant or revoke access or add, edit, or delete notes from the current UI.
 - Creators cannot manually add customers, edit customer profiles, send messages, export customers, delete customers, perform bulk actions, or impersonate customers from this area.
 

@@ -13,7 +13,7 @@ For slice-level details, see the [State Reference](../state-reference.md). For e
 
 | Pattern | Current use |
 |---|---|
-| Redux Toolkit store | Shared application state, including auth, products, admin data, reviews, notifications, cart, and wishlist. |
+| Redux Toolkit store | Shared application state, including auth, products, admin data, Creator data surfaces, reviews, notifications, cart, and wishlist. |
 | Async thunks | Common pattern for backend-backed actions such as login, profile loading, product operations, and admin operations. |
 | Services | API layer functions that call the shared Axios client and return response data. |
 | React Query | Used narrowly for product search and autocomplete flows. It is provided globally but is not the default data layer everywhere. |
@@ -88,15 +88,19 @@ They are manually written wrappers around the shared Axios client. The client ha
 
 This keeps most components and thunks from constructing raw HTTP requests.
 
+Current Creator data surfaces use the production-shaped path from component to Redux, thunk, service, Axios, and then either backend or a local HTTP mock when mock mode is enabled. Feature components should not select business fixtures directly based on mock mode.
+
 ## Local state and feature state
 
 Not all state belongs in Redux.
 
 Local UI state stays in components or feature hooks when it does not need to be shared globally. The product builder is the richest example: it uses feature hooks and a facade to coordinate form state, loading, autosave, sidebar navigation, and product actions before crossing into Redux and services.
 
-Membership builder state is intentionally local to the product form page. `useMembershipBuilderState` owns native Membership content, included Product feed entries, ordering mode, and manual movement behavior. This lets Membership-specific state survive switching between builder tabs while the product form remains mounted, but it is not persisted across a full page refresh.
+Membership domain state is Product-scoped and stored in the Membership Redux slice. Native Membership content, included Product feed entries, ordering mode, and manual movement behavior cross into Membership thunks and backend-pending services.
 
-The Membership feed combines two separate concepts only for presentation: native Membership content and included standalone Products. `MembershipFeedEntry` provides the stable feed identity plus relationship metadata such as `addedAt` and optional ordering position/state. Membership-specific data currently remains outside Product DTOs, `ProductDraft`, Redux product state, and Product autosave payloads.
+The Membership feed combines two separate concepts: native Membership content and included standalone Products. `MembershipFeedEntry` provides the stable feed identity plus relationship metadata such as `addedAt` and optional ordering position/state. Product remains authoritative for product identity, name, description, status, image, and recurring-pricing fields; Membership owns configuration, native content, included Product associations, and feed/order metadata.
+
+Membership editor drafts, selected File objects, chooser state, picker state, active editor state, active builder tab, and readiness evaluation remain local UI state.
 
 ## Persistence and side effects
 
@@ -112,6 +116,7 @@ Use this as a practical guide:
 |---|---|
 | Shared auth/session/user state | Redux auth slice. |
 | Backend-backed product/admin/review state | Redux thunk + API service, unless the existing feature already uses React Query. |
+| Backend-pending Creator data contracts | Redux thunk + API service + Axios, with local HTTP mocks only at the Axios boundary. |
 | Search/autocomplete server state | Existing React Query pattern. |
 | Form draft and UI interaction state | Local component or feature hook. |
 | Reusable browser-saved cart/wishlist behavior | Existing Redux slices and persistence patterns. |

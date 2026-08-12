@@ -31,6 +31,7 @@ Creators can currently:
 - Open the Customers area and inspect available customer relationship records.
 - Open the Sales area and inspect available order records.
 - Open the Analytics area and inspect available business performance summaries.
+- Open the Storefront area, copy the public Storefront link, review product visibility, and inspect the live public presentation.
 - Create new products.
 - Edit existing products.
 - Configure shared product details such as title, description, pricing, and media.
@@ -42,7 +43,7 @@ Creators can currently:
 
 ## How it works
 
-Creators usually start from the creator dashboard, Products area, Customers area, Sales area, or Analytics area.
+Creators usually start from the creator dashboard, Products area, Storefront area, Customers area, Sales area, or Analytics area.
 
 The product workflow has two levels:
 
@@ -50,6 +51,8 @@ The product workflow has two levels:
 - **Product-specific setup**: configure course content, download files, consultation details, or membership content depending on the selected product type.
 
 For most product work, start with [Managing Products](./managing-products.md). To create a new product, continue to [Creating a Product](./creating-a-product.md).
+
+For the creator's public page, start with [Storefront](./storefront.md).
 
 For customer relationship review, start with [Customers](./customers.md).
 
@@ -60,13 +63,13 @@ For business performance review, start with [Analytics](./analytics.md).
 ## Current limitations
 
 - The dashboard includes audience and sales sections, but they do not yet show real performance data.
-- Storefront preview exists as an entry point, but the public storefront experience is not complete yet.
-- Customer relationship details are visible in the Customers area only when deterministic inspection fixtures are enabled; dedicated production Customer APIs are not connected yet.
-- Sales order and financial details are visible in the Sales area only when deterministic inspection fixtures are enabled; dedicated production Sales APIs are not connected yet.
-- Analytics business data is visible in the Analytics area only when deterministic inspection fixtures are enabled; dedicated production Analytics APIs are not connected yet.
+- Storefront featured product selection and product ordering have frontend contracts, but the production Storefront configuration backend is not implemented yet.
+- Customer relationship details have frontend list/detail contracts, but dedicated production Customer APIs are not implemented yet.
+- Sales order and financial details have frontend summary/order contracts, but production Sales and order APIs are not implemented yet.
+- Analytics business data has a frontend aggregate contract, but the production Analytics API is not implemented yet.
 - Marketing campaigns, messages, and customer booking flows are outside the current core product creation workflow.
 - Some course lesson content editors are visible but not fully persisted yet.
-- Membership-native content, included products, recurring pricing, ordering, and readiness feedback are frontend-only and are not persisted through the current Product API.
+- Membership-native content, included products, recurring pricing, ordering, and readiness feedback have frontend contracts where appropriate, but production backend integration remains pending.
 
 ## Related pages
 
@@ -76,6 +79,7 @@ For business performance review, start with [Analytics](./analytics.md).
 - [Download Products](./download-products.md)
 - [Consultation Products](./consultation-products.md)
 - [Membership Products](./membership-products.md)
+- [Storefront](./storefront.md)
 - [Customers](./customers.md)
 - [Marketing and Reviews](./marketing-and-reviews.md)
 - [Sales](./sales.md)

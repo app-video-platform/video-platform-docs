@@ -26,6 +26,7 @@ Customers can:
 - See search suggestions while typing.
 - Open a search results page.
 - Move through search result pages using pagination controls.
+- Open public creator Storefront pages when a Storefront link is available.
 - Open a product detail page from product discovery areas.
 - Save products to the wishlist from product cards.
 - Add products to the shopping cart from product cards.
@@ -44,7 +45,7 @@ Wishlist and cart actions help customers collect products for later review. Thes
 - Wishlist and cart items are saved in the browser and are not synchronized across devices.
 - Adding a product to the cart does not reserve, buy, or grant access to the product.
 - Product discovery may show creator or storefront information only when that information is available in the product data.
-- Storefront pages are not yet complete customer-facing storefronts.
+- Storefront pages show published products and link to product detail pages, but they do not complete checkout, payment, or post-purchase access.
 
 ## Related pages
 

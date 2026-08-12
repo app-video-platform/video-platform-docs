@@ -27,7 +27,7 @@ A record of administrative activity, such as role changes or admin product actio
 
 A creator-facing area for reviewing business performance metrics, charts, rankings, and summary panels.
 
-The current frontend includes the Analytics workspace with preset reporting periods. Analytics-domain records are available only as inspection fixtures in mock mode until production Analytics APIs are connected.
+The current frontend includes the Analytics workspace with preset reporting periods and a frontend aggregate read-model contract. The production Analytics endpoint is not implemented yet.
 
 ### Cart
 
@@ -55,7 +55,7 @@ A signed-in user who can create and manage products.
 
 A creator-facing area for reviewing customer relationship records.
 
-The current frontend includes a Customers list and Customer Detail tabs. Detailed customer-domain records are available only as inspection fixtures in mock mode until production Customer APIs are connected.
+The current frontend includes a Customers list, Customer Detail tabs, and frontend Customer list/detail contracts. Production Customer endpoints are not implemented yet.
 
 ### Download product
 
@@ -79,7 +79,7 @@ The current library has tabs for all products, courses, downloads, consultations
 
 A product type for configuring a membership content hub in the creator product builder.
 
-Creators can add native Posts, Videos, and Resources, reference existing Course and Download products, order the unified Membership feed, and set a EUR recurring price with monthly or yearly billing controls. Membership-specific content, included Product relationships, recurring pricing, ordering, and readiness state are not persisted yet, and there is no subscription, entitlement, publishing, member access, checkout, or buyer-facing Membership experience.
+Creators can add native Posts, Videos, and Resources, reference existing Course and Download products, order the unified Membership feed, and set a EUR recurring price with monthly or yearly billing controls. Membership configuration/content/feed and Product recurring-pricing frontend contracts exist, but production backend support, subscriptions, entitlements, publishing, member access, checkout, and buyer-facing Membership flows are not implemented yet.
 
 ### Product
 
@@ -102,13 +102,13 @@ The current page shows some real product information, but also includes placehol
 
 A creator-facing area for reviewing sales metrics, order records, and contextual order detail.
 
-The current frontend includes the Sales workspace and read-only order detail. Financial-domain records are available only as inspection fixtures in mock mode until production order, payment, refund, subscription, renewal, and entitlement APIs are connected.
+The current frontend includes the Sales workspace, read-only order detail, and frontend Sales summary/order contracts. Production order, payment, refund, subscription, renewal, and entitlement endpoints are not implemented yet.
 
 ### Storefront
 
-A public creator page route intended to show a creator profile and products.
+A creator's fixed public page for showing profile information and published products.
 
-The current storefront route exists, but the page is not yet a complete storefront experience.
+Creators manage the Storefront from the Creator area and can copy the public URL, review product visibility, choose a featured product, adjust product order, and preview the customer-facing page. Frontend Storefront read-model and Creator config contracts exist, but production backend endpoints are not implemented yet.
 
 ### Visitor
 

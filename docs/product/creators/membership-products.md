@@ -9,7 +9,7 @@ sidebar_position: 7
 
 Membership products let creators configure a membership-style content hub in the current frontend builder.
 
-The current Membership builder supports shared product setup, native member-only content, including existing Course and Download products, unified content ordering, recurring pricing controls, and readiness feedback. It does not yet create a real subscription, entitlement, checkout, publish action, or member-access experience.
+The current Membership builder supports shared product setup, native member-only content, including existing Course and Download products, unified content ordering, recurring pricing controls, and readiness feedback. The frontend now has data contracts for Membership configuration, content, and feed updates, but the production backend endpoints are still pending. Membership does not yet create a real subscription, entitlement, checkout, publish action, or member-access experience.
 
 ## Who can use this
 
@@ -23,7 +23,7 @@ Creators can:
 - Use shared product settings such as basics, pricing, and media.
 - Open Membership Content in the builder.
 - Add native Posts, Videos, and Resources.
-- Edit or delete native Membership content while the builder page remains open.
+- Edit or delete native Membership content.
 - Select existing Course and Download products to include.
 - See native content and included products in one Membership content feed.
 - Remove products from the included-products list.
@@ -80,7 +80,7 @@ Manual ordering does not use drag-and-drop in the current implementation.
 
 ### Configure recurring pricing
 
-Membership products use a recurring pricing UI instead of the standard one-time price selector.
+Membership products use a recurring pricing UI instead of the standard one-time price selector. Recurring pricing remains Product-owned: the Membership uses the Product price amount together with pricing model, billing interval, and currency fields.
 
 The Pricing area includes:
 
@@ -108,16 +108,15 @@ Non-blocking warnings include:
 - No native content.
 - No included Products.
 
-When the readiness check passes, the Membership Publish button becomes clickable, but clicking it only shows a message that Membership publishing is waiting for persistence support. It does not call a Membership publish API or mutate Product status.
+When the readiness check passes, the Membership Publish button remains disabled with copy explaining that Membership publishing is waiting for persistence support. It does not call a Membership publish API or mutate Product status.
 
 ## Current limitations
 
-- Native Posts, Videos, and Resources are stored only in the current frontend builder state and are not persisted yet.
-- Included Product relationships are stored only in the current frontend builder state and are not persisted yet.
-- Recurring pricing is stored only in the current frontend builder state and is not persisted yet.
-- Membership ordering is stored only in the current frontend builder state and is not persisted yet.
-- Membership-specific state survives switching between builder tabs while the page remains open, but it is lost on full page refresh or reload.
-- The current Product API does not include Membership-specific native content, recurring pricing, ordering, or included-product relationship fields.
+- Membership configuration, native Posts, Videos, Resources, included Product associations, and feed ordering have frontend contracts, services, and shared state, but the production backend Membership endpoints are not implemented yet.
+- Recurring Membership pricing participates in the frontend Product create/edit/autosave contract, but the production backend Product contract for recurring pricing fields is still pending.
+- Video and Resource editors persist metadata and file-reference shapes through the Membership content contract, but real binary asset upload for Membership media is still backend-pending.
+- Editor drafts, selected File objects, chooser state, picker state, and the active builder tab remain local UI state.
+- Readiness feedback is derived in the frontend. Backend Membership readiness validation is not implemented yet.
 - No real subscription or Stripe checkout flow exists for Membership products yet.
 - No entitlement or member access logic exists yet.
 - No buyer-facing Membership experience exists yet.

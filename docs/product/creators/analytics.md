@@ -48,12 +48,11 @@ On smaller screens, the Analytics layout collapses from multi-column grids into 
 
 ## Current limitations
 
-- Analytics business data is deterministic frontend fixture data behind the project's mock-mode strategy.
-- Outside mock mode, the Analytics area shows that analytics data is unavailable until production Analytics APIs are connected.
-- The current frontend does not establish production Analytics API, Redux, or backend data contracts.
+- A frontend aggregate Analytics contract exists for the current Analytics workspace, but the production backend endpoint is not implemented yet.
+- When production Analytics data is unavailable, the Analytics area shows that analytics data is unavailable until the aggregate endpoint is connected.
 - Preset period selection is limited to Last 7 days, Last 30 days, and Last 90 days. It is not a custom date-range system.
 - The current UI does not provide traffic analytics, conversion funnels, attribution/source analytics, payouts, tax analytics, disputes, cohorts, course/content engagement analytics, exports, report building, custom dashboards, or custom dashboard configuration.
-- Analytics values and comparisons are fixture-backed and should not be treated as production reporting.
+- Analytics values and comparisons should not be treated as production reporting until production Analytics endpoints provide the data.
 
 ## Related pages
 
