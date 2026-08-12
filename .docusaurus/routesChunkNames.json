@@ -206,17 +206,17 @@
     },
     "content": "393be207"
   },
-  "/docs-37e": {
+  "/docs-6ee": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/docs-083": {
+  "/docs-12e": {
     "__comp": "a7bd4aaa",
     "__props": "0058b4c6"
   },
-  "/docs-14b": {
+  "/docs-d56": {
     "__comp": "a94703ab"
   },
   "/docs/developer/api/-4b8": {
@@ -278,6 +278,10 @@
   "/docs/developer/components/button-254": {
     "__comp": "17896441",
     "content": "a88b4b1c"
+  },
+  "/docs/developer/components/chart-bf4": {
+    "__comp": "17896441",
+    "content": "822551ed"
   },
   "/docs/developer/components/checkbox-input-a60": {
     "__comp": "17896441",
@@ -450,6 +454,10 @@
   "/docs/product/core-concepts/search-and-discovery-e8f": {
     "__comp": "17896441",
     "content": "005b067b"
+  },
+  "/docs/product/creators/analytics-8ed": {
+    "__comp": "17896441",
+    "content": "78e39c1c"
   },
   "/docs/product/creators/consultation-products-f63": {
     "__comp": "17896441",

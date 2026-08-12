@@ -1,0 +1,26 @@
+{
+  "id": "developer/components/chart",
+  "title": "Chart",
+  "description": "Overview",
+  "source": "@site/docs/developer/components/chart.md",
+  "sourceDirName": "developer/components",
+  "slug": "/developer/components/chart",
+  "permalink": "/docs/developer/components/chart",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/components/chart.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Chart"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GalButton",
+    "permalink": "/docs/developer/components/button"
+  },
+  "next": {
+    "title": "GalCheckboxInput",
+    "permalink": "/docs/developer/components/checkbox-input"
+  }
+}

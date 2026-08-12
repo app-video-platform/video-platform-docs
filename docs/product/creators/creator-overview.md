@@ -30,6 +30,7 @@ Creators can currently:
 - See creator-owned products.
 - Open the Customers area and inspect available customer relationship records.
 - Open the Sales area and inspect available order records.
+- Open the Analytics area and inspect available business performance summaries.
 - Create new products.
 - Edit existing products.
 - Configure shared product details such as title, description, pricing, and media.
@@ -41,7 +42,7 @@ Creators can currently:
 
 ## How it works
 
-Creators usually start from the creator dashboard, Products area, Customers area, or Sales area.
+Creators usually start from the creator dashboard, Products area, Customers area, Sales area, or Analytics area.
 
 The product workflow has two levels:
 
@@ -54,13 +55,16 @@ For customer relationship review, start with [Customers](./customers.md).
 
 For order review, start with [Sales](./sales.md).
 
+For business performance review, start with [Analytics](./analytics.md).
+
 ## Current limitations
 
 - The dashboard includes audience and sales sections, but they do not yet show real performance data.
 - Storefront preview exists as an entry point, but the public storefront experience is not complete yet.
 - Customer relationship details are visible in the Customers area only when deterministic inspection fixtures are enabled; dedicated production Customer APIs are not connected yet.
 - Sales order and financial details are visible in the Sales area only when deterministic inspection fixtures are enabled; dedicated production Sales APIs are not connected yet.
-- Analytics, marketing campaigns, messages, and customer booking flows are outside the current core product creation workflow.
+- Analytics business data is visible in the Analytics area only when deterministic inspection fixtures are enabled; dedicated production Analytics APIs are not connected yet.
+- Marketing campaigns, messages, and customer booking flows are outside the current core product creation workflow.
 - Some course lesson content editors are visible but not fully persisted yet.
 - Membership-native content, included products, recurring pricing, ordering, and readiness feedback are frontend-only and are not persisted through the current Product API.
 
@@ -75,4 +79,5 @@ For order review, start with [Sales](./sales.md).
 - [Customers](./customers.md)
 - [Marketing and Reviews](./marketing-and-reviews.md)
 - [Sales](./sales.md)
+- [Analytics](./analytics.md)
 - [Current Platform Status](../start-here/current-platform-status.md)

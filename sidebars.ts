@@ -67,6 +67,7 @@ const sidebars: SidebarsConfig = {
             'product/creators/creator-settings',
             'product/creators/marketing-and-reviews',
             'product/creators/sales',
+            'product/creators/analytics',
           ],
         },
         {

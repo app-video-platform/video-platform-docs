@@ -78,11 +78,12 @@ Order detail can show:
 - Creators cannot issue refunds, retry charges, change subscriptions, grant access, revoke access, export orders, or perform bulk actions from the current Sales UI.
 - The metrics and comparison labels are fixture-backed and should not be treated as production financial reporting.
 - Checkout and payment completion are not implemented in the customer purchase flow.
-- Analytics and Messages navigation entries are visible elsewhere in the app, but complete standalone Analytics or Messages pages are not implemented in the current router.
+- Messages navigation is visible elsewhere in the app, but a complete standalone Messages page is not implemented in the current router.
 
 ## Related pages
 
 - [Creator Overview](./creator-overview.md)
 - [Customers](./customers.md)
+- [Analytics](./analytics.md)
 - [Current Platform Status](../start-here/current-platform-status.md)
 - [Local vs Server-backed Features](../core-concepts/local-vs-server-backed-features.md)

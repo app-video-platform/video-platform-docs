@@ -46,7 +46,7 @@ End Users can:
 - Manage account settings screens.
 - Complete onboarding screens.
 
-End Users cannot access creator product management, creator marketing, sales, or admin pages.
+End Users cannot access creator product management, creator marketing, sales, analytics, or admin pages.
 
 ### Creators
 
@@ -56,7 +56,7 @@ Creators can:
 - Create and manage products.
 - Edit course, download, and consultation product details.
 - Access creator marketing screens.
-- Access sales and settings screens.
+- Access sales, analytics, and settings screens.
 - Complete onboarding screens.
 
 Creators cannot access the user library in the current role setup.
@@ -94,13 +94,14 @@ Access is based on the user's active role.
 | Creator product management | No | No | Yes | Yes |
 | Creator marketing | No | No | Yes | Yes |
 | Sales page | No | No | Yes | Yes |
+| Analytics page | No | No | Yes | Yes |
 | Admin area | No | No | No | Yes |
 
 ## Current limitations
 
 - The cart route is protected even though product browsing is public.
 - The product detail page shows purchase buttons, but checkout is not implemented.
-- Some navigation items point to areas that are not fully implemented, such as analytics and messages.
+- Some navigation items point to areas that are not fully implemented, such as messages.
 - Storefront routes are public, but the current storefront page does not yet present a complete creator storefront.
 - Password reset screens are visible, but the full reset workflow is not currently connected end to end.
 

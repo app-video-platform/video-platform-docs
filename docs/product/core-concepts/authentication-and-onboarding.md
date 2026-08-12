@@ -53,7 +53,7 @@ Role routing sends Administrators to Admin, Creators to the Creator dashboard, a
 
 - Forgot password shows a multi-step reset interface, but the visible flow does not currently call the backend reset endpoint.
 - The expired email verification message links to a resend-verification path that is not currently documented as a complete workflow.
-- Onboarding copy mentions analytics, but analytics is not implemented as a complete product area.
+- Onboarding copy mentions analytics; current Creator Analytics exists as an inspection fixture-backed frontend experience rather than production-backed analytics reporting.
 - Some settings/profile fields outside onboarding are visible but not confirmed as persisted.
 
 ## Related pages

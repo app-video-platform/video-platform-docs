@@ -45,6 +45,7 @@ Creators can:
 - Set product pricing.
 - Review customer relationship records in the Customers area when inspection fixtures are enabled.
 - Review sales metrics and order records in the Sales area when inspection fixtures are enabled.
+- Review analytics metrics, charts, and summaries in the Analytics area when inspection fixtures are enabled.
 - View and filter reviews by visibility where review data is available.
 - Connect a calendar provider from settings.
 
@@ -84,7 +85,8 @@ Some product discovery pages are public. Management pages require sign-in and th
 - Membership products can be created in the frontend builder with native content, included Courses/Downloads, ordering, recurring pricing, and readiness feedback, but Membership-specific data is not persisted and does not create subscriptions, publishing, or member access.
 - Creator Customers has routes, list controls, and detail tabs, but customer-domain records are fixture-backed in inspection/mock mode until production Customer APIs are connected.
 - Creator Sales has routes, list controls, metrics, and order detail, but financial-domain records are fixture-backed in inspection/mock mode until production order, payment, refund, subscription, renewal, and entitlement APIs are connected.
-- Analytics, messages, email campaigns, and live-session management are visible in places but not production-ready workflows.
+- Creator Analytics has routes, preset period selection, metrics, charts, and summary panels, but analytics-domain records are fixture-backed in inspection/mock mode until production Analytics APIs are connected.
+- Messages, email campaigns, and live-session management are visible in places but not production-ready workflows.
 
 ## Related pages
 

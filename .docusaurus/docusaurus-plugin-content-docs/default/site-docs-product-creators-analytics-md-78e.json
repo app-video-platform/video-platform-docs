@@ -1,0 +1,28 @@
+{
+  "id": "product/creators/analytics",
+  "title": "Analytics",
+  "description": "Overview",
+  "source": "@site/docs/product/creators/analytics.md",
+  "sourceDirName": "product/creators",
+  "slug": "/product/creators/analytics",
+  "permalink": "/docs/product/creators/analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/creators/analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "title": "Analytics",
+    "sidebar_position": 10
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sales",
+    "permalink": "/docs/product/creators/sales"
+  },
+  "next": {
+    "title": "Calendar Connections",
+    "permalink": "/docs/product/core-concepts/calendar-connections"
+  }
+}

@@ -23,6 +23,12 @@ A signed-in user who can manage platform users, products, and admin audit histor
 
 A record of administrative activity, such as role changes or admin product actions.
 
+### Creator Analytics
+
+A creator-facing area for reviewing business performance metrics, charts, rankings, and summary panels.
+
+The current frontend includes the Analytics workspace with preset reporting periods. Analytics-domain records are available only as inspection fixtures in mock mode until production Analytics APIs are connected.
+
 ### Cart
 
 A browser-stored list of products an End User has added while shopping.

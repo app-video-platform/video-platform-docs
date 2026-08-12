@@ -42,4 +42,6 @@ There is not yet a dedicated production Customer API client for the Creator Cust
 
 There is not yet a dedicated production Sales API client for the complete creator financial domain. The current Sales metrics, order ledger, and order detail use deterministic inspection fixtures when mock mode is enabled and otherwise show that sales data is unavailable. Backend work is still needed for orders, payments, refunds, subscriptions and renewals, entitlements/access, server pagination, payment-provider normalization, and safe financial mutation contracts.
 
+There is not yet a dedicated production Analytics API client or Redux data architecture. The current Creator Analytics metrics, charts, rankings, and summary panels use deterministic inspection fixtures when mock mode is enabled and otherwise show that analytics data is unavailable.
+
 Do not document backend capabilities here unless the frontend currently calls them.

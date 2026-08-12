@@ -29,6 +29,7 @@ The strongest areas of the current frontend are:
 - Membership product creation, native Membership Content, included Product selection, unified ordering, recurring pricing controls, and readiness feedback in the frontend builder.
 - Creator Customers routes, list controls, and read-only detail tabs when inspection fixtures are enabled.
 - Creator Sales routes, sales metrics, order ledger controls, and read-only order detail when inspection fixtures are enabled.
+- Creator Analytics route, period selection, metrics, charts, rankings, and summary panels when inspection fixtures are enabled.
 - Product exploration and search.
 - Local wishlist and shopping cart behavior.
 - Admin user management.
@@ -52,9 +53,10 @@ The strongest areas of the current frontend are:
 | Creator dashboard | Shows profile and product highlights; audience and sales sections are empty. |
 | Creator Customers | Routes, list search/filter/sort controls, responsive list/card presentation, and read-only detail tabs exist. Customer-domain records such as purchases, access, notes, tags, waitlist details, spend, and orders are currently deterministic inspection fixtures behind mock mode, not production-backed data. |
 | Creator Sales | Routes, sales metrics, order search/filter/sort controls, responsive ledger/card presentation, and read-only contextual order detail exist. Order, payment, refund, subscription, renewal, and access records are currently deterministic inspection fixtures behind mock mode, not production-backed financial data. |
+| Creator Analytics | Route, 7/30/90-day period selection, business metrics, performance visualization, product performance, customer growth, membership health, and payment health views exist. Analytics records are currently deterministic inspection fixtures behind mock mode, not production-backed analytics data. |
 | Marketing and reviews | Reviews can be listed and filtered, but reply and moderation controls are incomplete in the UI. Other marketing tabs are mostly placeholders. |
 | Settings | Several settings tabs render forms without saving changes. Calendar connection is the clearest backend-backed setting. |
-| Analytics and messages | Analytics and messages navigation exists, but those workflows are not implemented as full pages. |
+| Messages | Messages navigation exists in places, but a standalone Messages page is not implemented in the current router. |
 
 ## What should not be documented as available
 
@@ -66,8 +68,8 @@ Do not describe the following as supported product capabilities:
 - Customer access to purchased course/download/consultation content.
 - Production-backed Creator customer management, customer profiles, customer purchase history, access management, notes editing, customer deletion, exporting, bulk actions, messaging, or impersonation.
 - Production-backed Creator financial reporting, order management, payment processing, refund issuing, charge retries, subscription changes, financial exporting, or access mutation from Sales.
+- Production-backed Creator analytics reporting, custom date ranges, traffic analytics, conversion funnels, attribution/source analytics, payouts, tax analytics, disputes, cohorts, course/content engagement analytics, exports, report building, or custom dashboards.
 - Complete creator storefront publishing.
-- Complete sales analytics.
 - Email campaigns.
 - Direct messaging.
 - Live-session booking or scheduling.

@@ -79,15 +79,15 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '37e'),
+    component: ComponentCreator('/docs', '6ee'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '083'),
+        component: ComponentCreator('/docs', '12e'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', '14b'),
+            component: ComponentCreator('/docs', 'd56'),
             routes: [
               {
                 path: '/docs/developer/api/',
@@ -176,6 +176,12 @@ export default [
               {
                 path: '/docs/developer/components/button',
                 component: ComponentCreator('/docs/developer/components/button', '254'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/components/chart',
+                component: ComponentCreator('/docs/developer/components/chart', 'bf4'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -434,6 +440,12 @@ export default [
               {
                 path: '/docs/product/core-concepts/search-and-discovery',
                 component: ComponentCreator('/docs/product/core-concepts/search-and-discovery', 'e8f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/analytics',
+                component: ComponentCreator('/docs/product/creators/analytics', '8ed'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
