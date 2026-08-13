@@ -1,9 +1,9 @@
 ---
-title: GalSearch
+title: Search
 ---
 
-### GalSearch (quick notes)
-- **Location:** `src/domains/app/components/gal-search/`
+### Search (quick notes)
+- **Location:** `src/domains/app/components/search/`
 - **Props:**
   - `value: string` — current text input value (controlled)
   - `onChange(value)` — called on each keystroke or change
@@ -22,7 +22,7 @@ title: GalSearch
 
 ### Example
 ```tsx
-import GalSearch from '@/components/gal-search/gal-search.component';
+import { Search } from '@/domains/app/components';
 
 function ProductExplorer() {
   const [query, setQuery] = useState('');
@@ -32,7 +32,7 @@ function ProductExplorer() {
   };
 
   return (
-    <GalSearch
+    <Search
       value={query}
       onChange={setQuery}
       onSearch={handleSearch}
@@ -44,7 +44,7 @@ function ProductExplorer() {
 
 
 ### Notes
-- Internally uses [`GalIcon`](icon.md) with `CiSearch` icon from `react-icons/ci`.
+- Internally uses [`Icon`](icon.md) with `CiSearch` icon from `react-icons/ci`.
 - CSS structure:
     - `.search-form` — outer wrapper
     - `.search-input` — text field

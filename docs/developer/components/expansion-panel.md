@@ -1,15 +1,14 @@
 ---
-title: GalExpansionPanel
+title: LegacyExpansionPanel
 ---
 
-### GalExpansionPanel
+### LegacyExpansionPanel
 > Collapsible container component with accessible behavior and flexible headers.  
-> Often used standalone or as part of a [`GalExpansionGroup`](./expansion-group.md).
 
 ---
 
 #### Location
-`src/shared/ui/gal-expansion-panel/`
+`src/shared/ui/legacy-expansion-panel/`
 
 ---
 
@@ -17,14 +16,11 @@ title: GalExpansionPanel
 
 | Prop | Type | Default | Description |
 |------|------|----------|-------------|
-| `header` | `ReactNode` | — | Content displayed in the clickable header. Can include icons, text, or custom layouts. |
+| `header` | `string` | — | Text displayed in the clickable header. |
 | `children` | `ReactNode` | — | Content rendered inside the panel when expanded. |
 | `defaultExpanded?` | `boolean` | `false` | Sets the initial expanded state (uncontrolled mode). |
-| `expanded?` | `boolean` | — | Controlled open state. Use together with `onExpandedChange`. |
-| `onExpandedChange?` | `(isOpen: boolean) => void` | — | Callback fired when expanded/collapsed (standalone or non-group use). |
 | `disabled?` | `boolean` | `false` | Disables toggle interaction. |
-| `value?` | `string` | — | Unique identifier when used inside a `GalExpansionGroup` (radio behavior). |
-| `showGroupRadio?` | `boolean` | `true` | When used in a radio group, shows the built-in radio input. Set `false` to render custom headers. |
+| `onToggle?` | `(isOpen: boolean) => void` | — | Callback fired when the panel opens or closes. |
 
 ---
 
@@ -32,38 +28,9 @@ title: GalExpansionPanel
 
 #### Standalone (Uncontrolled)
 ```tsx
-<GalExpansionPanel header="More information" defaultExpanded>
+<LegacyExpansionPanel header="More information" defaultExpanded>
   <p>This section contains additional details for advanced users.</p>
-</GalExpansionPanel>
-```
-
-### Controlled (External State)
-
-```tsx
-const [open, setOpen] = useState(false);
-
-<GalExpansionPanel
-  header={<span>Controlled panel</span>}
-  expanded={open}
-  onExpandedChange={setOpen}
->
-  <p>Content controlled by external state.</p>
-</GalExpansionPanel>
-```
-
-
-### In a Radio Group
-See [`GalExpansionGroup`](expansion-group.md) for full example.
-
-```tsx
-<GalExpansionGroup mode="radio" value={section} onValueChange={setSection}>
-  <GalExpansionPanel
-    value="profile"
-    header="Profile"
-  >
-    <p>Profile preferences.</p>
-  </GalExpansionPanel>
-</GalExpansionGroup>
+</LegacyExpansionPanel>
 ```
 
 ### Accessibility
@@ -77,27 +44,25 @@ See [`GalExpansionGroup`](expansion-group.md) for full example.
 ### Behavior
 
 - Expands/collapses smoothly using a CSS transition on `max-height` based on `ref.scrollHeight`.
-- When used in a `GalExpansionGroup` with `mode="radio"`, selecting a panel opens it and closes the others.
-- Can be controlled externally for custom animation or programmatic open/close.
+- Maintains its own open/closed state.
+- Calls `onToggle` when the panel state changes.
 
 ### Style Classes
 
 | Class                             | Purpose                               |
 | --------------------------------- | ------------------------------------- |
-| `.expansion-panel`                | Base wrapper                          |
+| `.legacy-expansion-panel`         | Base wrapper                          |
 | `.expansion-panel__header`        | Clickable header button               |
 | `.expansion-panel__icon`          | Arrow icon container                  |
 | `.expansion-panel__content`       | Collapsible region                    |
 | `.expansion-panel__content-inner` | Inner wrapper for padding/content     |
 | `.expanded` / `.collapsed`        | State indicators for arrow rotation   |
+| `.open`                           | Expanded content state                |
 | `.disabled`                       | Disabled visual and interaction state |
 
 
 ### Notes
 
-- Works seamlessly with `GalExpansionGroup` for grouped or radio-style panels.
-- Use `showGroupRadio={false}` when building fully custom headers (e.g., with icons and your own selection visuals).
-- Use `expanded`/`onExpandedChange` for controlled React state integrations such as form validation or guided setup flows.
 - Keep content lightweight for smoother animation performance.
 
 <br></br>

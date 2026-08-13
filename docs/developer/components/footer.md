@@ -1,8 +1,8 @@
 ---
-title: GalFooter
+title: Footer
 ---
 
-### GalFooter (quick notes)
+### Footer (quick notes)
 - **Location:** `src/domains/marketing/shared/components/footer/`
 - **Props:** *(none — static layout component)*
 - **Usage:**
@@ -16,13 +16,13 @@ title: GalFooter
 
 ### Example
 ```tsx
-import GalFooter from '@/components/gal-footer/gal-footer.component';
+import { Footer } from '@/domains/marketing/shared';
 
 function Layout() {
   return (
     <>
       {/* main content */}
-      <GalFooter />
+      <Footer />
     </>
   );
 }
@@ -37,7 +37,7 @@ function Layout() {
     3. **Company** (legal and about)
     4. **Socials** (external links)
 - Extendable: add real social media links or icons (e.g., `<a href="https://twitter.com/...">`).
-- Uses `.gal-footer` as the root class and `.footer-content` for internal layout.
+- Uses `.vp-footer` as the root class with BEM-style child classes such as `.vp-footer__inner`.
 
 <br></br>
 <br></br>

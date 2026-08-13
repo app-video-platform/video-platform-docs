@@ -1,9 +1,9 @@
 ---
-title: GalSocialMediaInput
+title: SocialMediaInput
 ---
 
-### GalSocialMediaInput (quick notes)
-- **Location:** `src/domains/app/components/gal-social-media-input/`
+### SocialMediaInput (quick notes)
+- **Location:** `src/domains/app/components/social-media-input/`
 - **Props:**
   - `initialSocialLinks?: SocialMediaLink[]` — prefilled links (e.g., from user profile)
   - `onChange(links: SocialMediaLink[])` — fired whenever the internal list changes
@@ -18,12 +18,12 @@ title: GalSocialMediaInput
 
 ### Example
 ```tsx
-import GalSocialMediaInput from '@/components/gal-social-media-input/gal-social-media-input.component';
-import { SocialPlatforms } from '@/api/models/socials/social-media-link';
+import { SocialMediaInput } from '@/domains/app/components';
+import { SocialPlatforms } from 'core/api/models';
 
 export default function SocialsSection() {
   return (
-    <GalSocialMediaInput
+    <SocialMediaInput
       initialSocialLinks={[
         { id: null, platform: SocialPlatforms.IG, url: 'https://instagram.com/myhandle' },
         { id: null, platform: SocialPlatforms.YT, url: 'https://youtube.com/@mychannel' },

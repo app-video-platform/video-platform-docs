@@ -1,9 +1,9 @@
 ---
-title: GalBoxSelector
+title: BoxSelector
 ---
 
-### GalBoxSelector (quick notes)
-- **Location:** `src/domains/app/components/gal-box-selector/`
+### BoxSelector (quick notes)
+- **Location:** `src/domains/app/components/box-selector/`
 - **Props:** `selectedOption`, `onSelect`, `disabledOptions`, `availableOptions`
 - **Usage:** 
   - Displays a list of selectable boxes for choosing a `ProductType` or `LessonType`.
@@ -15,7 +15,7 @@ title: GalBoxSelector
 
 ### Example
 ```tsx
-<GalBoxSelector
+<BoxSelector
   selectedOption="Course"
   onSelect={(option) => console.log(option)}
   availableOptions={['Course', 'Lesson', 'Bundle']}

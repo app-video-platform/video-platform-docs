@@ -1,9 +1,9 @@
 ---
-title: GalDropdown
+title: Dropdown
 ---
 
-### GalDropdown (quick notes)
-- **Location:** `src/shared/ui/gal-dropdown/`
+### Dropdown (quick notes)
+- **Location:** `src/shared/ui/dropdown/`
 - **Props:** 
   - `customClassName` — additional class name(s) for the dropdown menu.
   - `trigger` — render prop that receives `{ open, toggle }` to render the toggle element.
@@ -18,7 +18,7 @@ title: GalDropdown
 
 ### Example
 ```tsx
-<GalDropdown
+<Dropdown
   customClassName="menu-container"
   trigger={({ open, toggle }) => (
     <button onClick={toggle}>

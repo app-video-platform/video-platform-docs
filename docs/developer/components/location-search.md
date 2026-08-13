@@ -3,9 +3,9 @@ title: OSMLocationSearch
 ---
 
 ### OSMLocationSearch (quick notes)
-- **Location:** `src/domains/app/components/gal-location-search/`
+- **Location:** `src/domains/app/components/location-search/`
 - **Props:**  
-  - `onSelect(place: GalLocation)` — callback fired when a location is chosen.  
+  - `onSelect(place: LocationSearchPlace)` — callback fired when a location is chosen.  
 - **Usage:**  
   - Provides a search box for users to look up locations (cities, countries, regions) using **OpenStreetMap Nominatim** API.  
   - Once a user selects a suggestion, it fetches structured details (city + country) via reverse geocoding and returns them in the callback.
@@ -15,9 +15,9 @@ title: OSMLocationSearch
 
 ### Example
 ```tsx
-import { OSMLocationSearch, GalLocation } from '@/components/osm-location-search/osm-location-search.component';
+import { OSMLocationSearch, LocationSearchPlace } from '@/domains/app/components';
 
-const handleSelect = (place: GalLocation) => {
+const handleSelect = (place: LocationSearchPlace) => {
   console.log('Selected place:', place);
 };
 

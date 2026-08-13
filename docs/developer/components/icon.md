@@ -1,9 +1,9 @@
 ---
-title: GalIcon
+title: Icon
 ---
 
-### GalIcon (quick notes)
-- **Location:** `src/shared/ui/gal-icon/`
+### Icon (quick notes)
+- **Location:** `src/shared/ui/icon/`
 - **Props:**  
   - `icon` — React icon component from `react-icons` (required)  
   - `color?` — icon color (default: `'black'`)  
@@ -18,9 +18,9 @@ title: GalIcon
 ### Example
 ```tsx
 import { FaRegHeart } from 'react-icons/fa';
-import GalIcon from '@/components/gal-icon/gal-icon.component';
+import { Icon } from '@/shared/ui';
 
-<GalIcon icon={FaRegHeart} color="crimson" size={20} />;
+<Icon icon={FaRegHeart} color="crimson" size={20} />;
 ```
 
 ### Notes

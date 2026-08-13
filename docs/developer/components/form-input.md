@@ -1,8 +1,8 @@
 ---
-title: GalFormInput
+title: Input
 ---
 
-### GalFormInput (quick notes)
+### Input (quick notes)
 - **Location:** `src/shared/ui/input/`
 - **Props:**  
   - `label?` — field label text  
@@ -23,7 +23,7 @@ title: GalFormInput
 
 ### Example
 ```tsx
-<GalFormInput
+<Input
   label="Password"
   name="password"
   value={password}
@@ -40,14 +40,14 @@ title: GalFormInput
 ### Notes
 - When `passwordField.isMainField` is `true`, the component displays validation hints (min length, upper/lowercase, number, symbol).
 - When `passwordField.isFieldPassword` is `true`, it adds a toggle button using icons from `lucide-react`.
-- `GalAutoResizeTextarea` is used for `inputType="textarea"` to auto-grow message fields.
+- Multiline fields use the separate Textarea component rather than a legacy auto-resize input helper.
 - CSS class structure:
     - `.group`
     - `.form-input`
     - `.form-input-label`
     - `.password-rules`
     - `.toggle-password-btn`
-- Used in forms like [`GalContactForm`](contact-form.md) or onboarding steps.
+- Used in forms like [`ContactForm`](contact-form.md) or onboarding steps.
 
 <br></br>
 <br></br>

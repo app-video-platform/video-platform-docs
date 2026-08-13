@@ -1,8 +1,8 @@
 ---
-title: GalCheckboxInput
+title: CheckboxInput
 ---
 
-### GalCheckboxInput (quick notes)
+### CheckboxInput (quick notes)
 - **Location:** `src/shared/ui/checkbox-input/`
 - **Props:** `label`, `name`, `checked`, `onChange`, `disabled`
 - **Usage:** 
@@ -15,7 +15,7 @@ title: GalCheckboxInput
 
 ### Example
 ```tsx
-<GalCheckboxInput
+<CheckboxInput
   label="Receive notifications"
   name="notifications"
   checked={checked}

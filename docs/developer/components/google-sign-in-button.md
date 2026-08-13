@@ -1,9 +1,9 @@
 ---
-title: GalGoogleSignInButton
+title: GoogleSignInButton
 ---
 
-### GalGoogleSignInButton (quick notes)
-- **Location:** `src/domains/app/components/gal-google-sign-in-button/`
+### GoogleSignInButton (quick notes)
+- **Location:** `src/domains/app/components/google-sign-in-button/`
 - **Props:** *(none — all handled internally)*
 - **Usage:**
   - Renders the Google Sign-In button using the **Google Identity Services (GSI)** SDK.
@@ -15,7 +15,7 @@ title: GalGoogleSignInButton
 
 ### Example
 ```tsx
-<GalGoogleSignInButton />
+<GoogleSignInButton />
 ```
 
 ### Notes

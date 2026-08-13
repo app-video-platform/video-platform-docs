@@ -1,14 +1,14 @@
 ---
-title: GalRTEMenuBar
+title: RTEMenuBar
 ---
 
-### GalRTEMenuBar (quick notes)
-- **Location:** `src/shared/ui/rich-text-editor/gal-rte-menu-bar/`
+### RTEMenuBar (quick notes)
+- **Location:** `src/shared/ui/rich-text-editor/rte-menu-bar/`
 - **Props:**
   - `editor: Editor | null` — TipTap editor instance; required for commands.
 - **Usage:**
   - Toolbar for TipTap’s rich text editor. Handles formatting actions (bold, italic, headings, lists, image insertion).
-  - Built to work directly with the `editor` instance created in `GalRichTextEditor`.
+  - Built to work directly with the `editor` instance created in `RichTextEditor`.
 - **A11y:**
   - Each formatting option is a `<button>`.
   - Add `aria-pressed={editor.isActive(...)?true:false}` for accessible state toggles.
@@ -19,7 +19,7 @@ title: GalRTEMenuBar
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
-import GalRTEMenuBar from '@/components/gal-rich-text-editor/gal-rte-menu-bar/gal-rte-menu-bar.component';
+import { RTEMenuBar } from '@/shared/ui';
 
 export default function EditorWithMenu() {
   const editor = useEditor({
@@ -29,7 +29,7 @@ export default function EditorWithMenu() {
 
   return (
     <div className="editor-wrapper">
-      <GalRTEMenuBar editor={editor} />
+      <RTEMenuBar editor={editor} />
       <EditorContent editor={editor} />
     </div>
   );

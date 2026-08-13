@@ -1,9 +1,9 @@
 ---
-title: GalBreadcrumbs
+title: Breadcrumbs
 ---
 
-### GalBreadcrumbs (quick notes)
-- **Location:** `src/shared/ui/gal-breadcrumb/`
+### Breadcrumbs (quick notes)
+- **Location:** `src/shared/ui/breadcrumb/`
 - **Props:** *(none — uses `useLocation` internally)*
 - **Usage:** 
   - Displays a breadcrumb trail based on the current URL path.
@@ -17,12 +17,12 @@ title: GalBreadcrumbs
 ### Example
 ```tsx
 // Example usage within a page
-import GalBreadcrumbs from '@/components/gal-breadcrumbs/gal-breadcrumbs.component';
+import { Breadcrumbs } from '@/shared/ui';
 
 function ProductsPage() {
   return (
     <div>
-      <GalBreadcrumbs />
+      <Breadcrumbs />
       <h1>Products</h1>
     </div>
   );

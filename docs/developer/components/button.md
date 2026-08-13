@@ -1,8 +1,8 @@
 ---
-title: GalButton
+title: Button
 ---
 
-### GalButton (quick notes)
+### Button (quick notes)
 - **Location:** `src/shared/ui/button/`
 - **Props:** `text`, `type`, `htmlType`, `onClick`, `customClassName`, `disabled`
 - **Usage:** Core button used across flows like Wishlist, Cart, and Product forms.
@@ -13,7 +13,7 @@ title: GalButton
 
 ### Example
 ```tsx
-<GalButton 
+<Button 
   text="Add to Cart"
   type="primary"
   onClick={() => alert('Item added!')}

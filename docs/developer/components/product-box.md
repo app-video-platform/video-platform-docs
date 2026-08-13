@@ -1,9 +1,9 @@
 ---
-title: GalProductCard
+title: ProductBox
 ---
 
-### GalProductCard (quick notes)
-- **Location:** `src/domains/app/components/gal-product-box/`
+### ProductBox (quick notes)
+- **Location:** `src/domains/app/components/product-box/`
 - **Props:**
   - `product: ProductMinimised` — minimal product object containing:
     - `id: string`
@@ -25,8 +25,8 @@ title: GalProductCard
 
 ### Example
 ```tsx
-import GalProductCard from '@/components/gal-product-card/gal-product-card.component';
-import { ProductMinimised } from '@/api/models/product/product';
+import { ProductBox } from '@/domains/app/components';
+import { ProductMinimised } from 'core/api/models';
 
 const mockProduct: ProductMinimised = {
   id: 'abc123',
@@ -35,13 +35,13 @@ const mockProduct: ProductMinimised = {
   price: 59,
 };
 
-<GalProductCard product={mockProduct} />;
+<ProductBox product={mockProduct} />;
 ```
 
 
 ### Notes
 - Uses a static placeholder image (`assets/image-placeholder.png`) as a fallback.
-- Uses [`GalButton`](button.md) for navigation.
+- Uses [`Button`](button.md) for navigation.
 - CSS structure:
     - `.product-card`
     - `.product-card-image`

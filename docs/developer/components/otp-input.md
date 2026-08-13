@@ -1,9 +1,9 @@
 ---
-title: GalOTPInput
+title: OTPInput
 ---
 
-### GalOTPInput (quick notes)
-- **Location:** `src/shared/ui/gal-otp-input/`
+### OTPInput (quick notes)
+- **Location:** `src/shared/ui/otp-input/`
 - **Props:**
   - `value?` — the current OTP string (controlled input)
   - `onChange(otp: string)` — callback when digits change
@@ -19,7 +19,7 @@ title: GalOTPInput
 
 ### Example
 ```tsx
-import GalOTPInput from '@/components/gal-otp-input/gal-otp-input.component';
+import { OTPInput } from '@/shared/ui';
 
 function VerifyEmail() {
   const [otp, setOtp] = useState('');
@@ -27,7 +27,7 @@ function VerifyEmail() {
   return (
     <div>
       <p>Enter the verification code sent to your email:</p>
-      <GalOTPInput value={otp} onChange={setOtp} numInputs={6} />
+      <OTPInput value={otp} onChange={setOtp} numInputs={6} />
       <button disabled={otp.length < 6}>Verify</button>
     </div>
   );

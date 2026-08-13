@@ -1,9 +1,9 @@
 ---
-title: GalUppyFileUploader
+title: UppyFileUploader
 ---
 
-### GalUppyFileUploader (quick notes)
-- **Location:** `src/shared/ui/gal-uppy-file-uploader/`
+### UppyFileUploader (quick notes)
+- **Location:** `src/shared/ui/uppy-file-uploader/`
 - **Props:**
   - `onFilesChange?(files: File[])` — emits native `File` objects when files are added/removed
   - `allowedFileTypes?: string[]` — e.g. `['image/*']`, `['video/*','audio/*']`
@@ -19,14 +19,14 @@ title: GalUppyFileUploader
 
 ### Example
 ```tsx
-import GalUppyFileUploader from '@/components/gal-uppy-file-uploader/gal-uppy-file-uploader.component';
+import { UppyFileUploader } from '@/shared/ui';
 
 function MediaStep() {
   const [files, setFiles] = useState<File[]>([]);
 
   return (
     <div>
-      <GalUppyFileUploader
+      <UppyFileUploader
         allowedFileTypes={['image/*']}
         maxNumberOfFiles={5}
         maxFileSize={5 * 1024 * 1024}

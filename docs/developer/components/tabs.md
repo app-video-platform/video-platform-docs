@@ -1,8 +1,8 @@
 ---
-title: GalTabs
+title: Tabs
 ---
 
-### GalTabs (quick notes)
+### Tabs (quick notes)
 - **Location:** `src/shared/ui/tabs/`
 - **Props:**
   - `items`: `TabItem[]` — array of `{ label: string; content: ReactNode }`
@@ -17,7 +17,7 @@ title: GalTabs
 
 ### Example
 ```tsx
-import GalTabs, { TabItem } from '@/components/gal-tabs/gal-tabs.component';
+import { Tabs, TabItem } from '@/shared/ui';
 
 const items: TabItem[] = [
   { label: 'Overview', content: <p>This is the overview section.</p> },
@@ -26,19 +26,19 @@ const items: TabItem[] = [
 ];
 
 function ProductTabs() {
-  return <GalTabs items={items} defaultIndex={0} />;
+  return <Tabs items={items} defaultIndex={0} />;
 }
 ```
 
 
 ### Notes
 - The active tab is controlled internally via state.
-- Styling handled through `gal-tabs.styles.scss`, typically defining:
-    - `.gal-tabs` — wrapper
-    - `.gal-tabs-header` — flex container for buttons
-    - `.gal-tab-button` — base tab styles
-    - `.gal-tab-button__active` — active tab highlight
-    - `.gal-tab-content` — panel area
+- Styling handled through `tabs.styles.scss`, typically defining:
+    - `.tabs` — wrapper
+    - `.tabs-header` — flex container for buttons
+    - `.tab-button` — base tab styles
+    - `.tab-button__active` — active tab highlight
+    - `.tab-content` — panel area
 - To extend:
     - Add props like `onTabChange(index: number)` for parent callbacks.
     - Support keyboard navigation (`ArrowLeft`/`ArrowRight`).

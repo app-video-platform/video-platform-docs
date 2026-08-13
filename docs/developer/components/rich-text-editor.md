@@ -1,15 +1,15 @@
 ---
-title: GalRichTextEditor
+title: RichTextEditor
 ---
 
-### GalRichTextEditor (quick notes)
+### RichTextEditor (quick notes)
 - **Location:** `src/shared/ui/rich-text-editor/`
 - **Props:**
   - `initialContent?: JSONContent` — TipTap document to seed the editor
   - `onChange?(content: JSONContent)` — fired on every editor update with TipTap JSON
 - **Usage:**
   - A TipTap-based rich text editor with `StarterKit` + `Image` extensions.
-  - Renders a toolbar via `GalRTEMenuBar` and the editable surface via `EditorContent`.
+  - Renders a toolbar via `RTEMenuBar` and the editable surface via `EditorContent`.
   - Emits the whole **TipTap JSON document** on every change so callers can persist it.
 - **A11y:**
   - TipTap’s content area is a contenteditable element. Provide a visible label or heading for screen readers (e.g., `<label htmlFor>`, or an aria-label on the container).
@@ -17,7 +17,7 @@ title: GalRichTextEditor
 
 ### Example
 ```tsx
-import GalRichTextEditor from '@/components/gal-rich-text-editor/gal-rich-text-editor.component';
+import { RichTextEditor } from '@/shared/ui';
 import type { JSONContent } from '@tiptap/react';
 
 export default function LessonEditor() {
@@ -26,7 +26,7 @@ export default function LessonEditor() {
   return (
     <div>
       <h2>Write your lesson</h2>
-      <GalRichTextEditor
+      <RichTextEditor
         initialContent={{
           type: 'doc',
           content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Hello!' }] }],

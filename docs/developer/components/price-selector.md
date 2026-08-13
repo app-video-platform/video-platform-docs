@@ -1,23 +1,23 @@
 ---
-title: GalPriceSelector
+title: PriceSelector
 ---
 
-### GalPriceSelector (quick notes)
-- **Location:** `src/domains/app/components/gal-price-selector/`
+### PriceSelector (quick notes)
+- **Location:** `src/domains/app/components/price-selector/`
 - **Props:**
   - `price: 'free' | number` — current selected price or `'free'` for free mode
   - `setPrice(price)` — callback to update the price value in the parent component
 - **Usage:**
   - Provides a simple toggle between **Free** and **Paid** options.
-  - When **Paid** is selected, displays a numeric input for entering the price (via [`GalFormInput`](form-input.md)).
+  - When **Paid** is selected, displays a numeric input for entering the price (via [`Input`](form-input.md)).
 - **A11y:**
   - Uses native `<input type="radio">` elements for correct accessibility and keyboard navigation.
   - Labels (“Free”, “Paid”) are associated directly with the inputs.
-  - The price input uses a labeled [`GalFormInput`](form-input.md).
+  - The price input uses a labeled [`Input`](form-input.md).
 
 ### Example
 ```tsx
-import GalPriceSelector from '@/components/gal-price-selector/gal-price-selector.component';
+import { PriceSelector } from '@/domains/app/components';
 
 function ProductPricing() {
   const [price, setPrice] = useState<'free' | number>('free');
@@ -25,7 +25,7 @@ function ProductPricing() {
   return (
     <div>
       <h3>Set product pricing</h3>
-      <GalPriceSelector price={price} setPrice={setPrice} />
+      <PriceSelector price={price} setPrice={setPrice} />
       <p>
         Current value: {price === 'free' ? 'Free' : `$${price.toFixed(2)}`}
       </p>
@@ -37,7 +37,7 @@ function ProductPricing() {
 ### Notes
 - Internally uses `useState` to track the current mode (`free` or `paid`).
 - When the mode changes to `'free'`, it automatically resets the price state to `'free'`.
-- When the mode is `'paid'`, a controlled [`GalFormInput`](form-input.md) is rendered for numeric entry.
+- When the mode is `'paid'`, a controlled [`Input`](form-input.md) is rendered for numeric entry.
 - CSS hooks:
     - `.price-selector`
     - `.price-radio-group`

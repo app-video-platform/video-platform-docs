@@ -1,9 +1,9 @@
 ---
-title: GalSpinner
+title: Spinner
 ---
 
-### GalSpinner (quick notes)
-- **Location:** `src/shared/ui/gal-spinner/`
+### Spinner (quick notes)
+- **Location:** `src/shared/ui/spinner/`
 - **Props:** _(none)_
 - **Usage:**
   - Minimal visual loading indicator used across the app (buttons, modals, and pages).
@@ -14,12 +14,12 @@ title: GalSpinner
 
 ### Example
 ```tsx
-import GalSpinner from '@/components/gal-spinner/gal-spinner.component';
+import { Spinner } from '@/shared/ui';
 
 function LoadingSection() {
   return (
     <div className="centered-container">
-      <GalSpinner />
+      <Spinner />
       <p>Loading your content...</p>
     </div>
   );
@@ -28,7 +28,7 @@ function LoadingSection() {
 
 
 ### Notes
-- Style is defined in `gal-spinner.styles.scss `using a CSS animation for rotation (typically `@keyframes spin`).
+- Style is defined in `spinner.styles.scss` using a CSS animation for rotation.
 - Keeps logic minimal: no props or states.
 - To adapt:
   - Add size or color props if needed (`small`, `medium`, `large`, `color`).

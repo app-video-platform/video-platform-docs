@@ -1,8 +1,8 @@
 ---
-title: GalSelect
+title: Select
 ---
 
-### GalSelect (quick notes)
+### Select (quick notes)
 - **Location:** `src/shared/ui/select/`
 - **Props:**
   - `label?` — optional field label
@@ -13,7 +13,7 @@ title: GalSelect
   - `onChange(e)` — callback fired when selection changes
   - `...otherProps` — additional HTML props (e.g., `className`, `id`)
 - **Usage:**
-  - A stylized `<select>` input component with floating label behavior (like `GalFormInput`).
+  - A stylized `<select>` input component with floating label behavior (like `Input`).
   - Used throughout product creation forms, onboarding steps, and filters.
 - **A11y:**
   - Fully keyboard accessible (Tab, Arrow keys, Enter).
@@ -22,9 +22,9 @@ title: GalSelect
 
 ### Example
 ```tsx
-import GalSelect, { GalSelectOption } from '@/components/gal-select/gal-select.component';
+import { Select, SelectOption } from '@/shared/ui';
 
-const options: GalSelectOption[] = [
+const options: SelectOption[] = [
   { value: 'course', label: 'Course' },
   { value: 'consultation', label: 'Consultation' },
   { value: 'download', label: 'Download Package' },
@@ -34,7 +34,7 @@ function ProductTypeSelect() {
   const [type, setType] = useState('');
 
   return (
-    <GalSelect
+    <Select
       label="Product Type"
       name="type"
       value={type}
@@ -56,9 +56,9 @@ function ProductTypeSelect() {
 - Supports any data type for values (`string` or `number`).
 - Matches the styling conventions of other Gal form controls for visual consistency.
 - Often paired with:
-    - [`GalFormInput`](form-input.md)
-    - [`GalCheckboxInput`](checkbox-input.md)
-    - [`GalPriceSelector`](price-selector.md)
+    - [`Input`](form-input.md)
+    - [`CheckboxInput`](checkbox-input.md)
+    - [`PriceSelector`](price-selector.md)
 
 <br></br>
 <br></br>

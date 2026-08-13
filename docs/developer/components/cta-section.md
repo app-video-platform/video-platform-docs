@@ -1,8 +1,8 @@
 ---
-title: GalCtaSection
+title: CTASection
 ---
 
-### GalCtaSection (quick notes)
+### CTASection (quick notes)
 - **Location:** `src/domains/marketing/shared/components/cta-section/`
 - **Props:** `headerText`, `descriptionText`
 - **Usage:** 
@@ -10,11 +10,11 @@ title: GalCtaSection
   - Used in landing and marketing pages to guide users to key routes (`/pricing` and `/about`).
 - **A11y:**
   - Uses semantic `<section>` to denote a distinct page region.
-  - Buttons are proper `<button>` elements via [`GalButton`](button.md), ensuring keyboard focus and ARIA support.
+  - Buttons are proper `<button>` elements via [`Button`](button.md), ensuring keyboard focus and ARIA support.
 
 ### Example
 ```tsx
-<GalCtaSection
+<CTASection
   headerText="Start creating today"
   descriptionText="Join hundreds of creators building and selling their digital content."
 />
@@ -26,7 +26,7 @@ title: GalCtaSection
 - Primary button → `/pricing`
 - Secondary button → `/about`
 - Can easily be extended to accept button labels or custom navigation targets as props.
-- Styling handled in `gal-cta-section.styles.scss`.
+- Styling handled in `cta-section.styles.scss`.
 
 <br></br>
 <br></br>

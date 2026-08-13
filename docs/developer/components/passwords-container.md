@@ -1,9 +1,9 @@
 ---
-title: GalPasswordsContainer
+title: PasswordsContainer
 ---
 
-### GalPasswordsContainer (quick notes)
-- **Location:** `src/domains/app/components/gal-passwords-container/`
+### PasswordsContainer (quick notes)
+- **Location:** `src/domains/app/components/passwords-container/`
 - **Props:**
   - `passwordInput: string` — controlled value of the main password field
   - `confirmPasswordInput: string` — controlled value of the confirmation field
@@ -23,7 +23,7 @@ title: GalPasswordsContainer
 
 ### Example
 ```tsx
-import GalPasswordsContainer from '@/components/gal-passwords-container/gal-passwords-container.component';
+import { PasswordsContainer } from '@/domains/app/components';
 
 function SignUpForm() {
   const [form, setForm] = useState({
@@ -42,7 +42,7 @@ function SignUpForm() {
   };
 
   return (
-    <GalPasswordsContainer
+    <PasswordsContainer
       passwordInput={form.password}
       confirmPasswordInput={form.confirmPassword}
       passwordErrors={errors.password}
@@ -55,7 +55,7 @@ function SignUpForm() {
 
 
 ### Notes
-- Internally reuses [`GalFormInput`](form-input.md) for each field.
+- Internally reuses [`Input`](form-input.md) for each field.
 - Password rules (like “At least 8 characters”) are dynamically colored:
     - `green` → valid rule
     - `red` / `grey` → still unmet
