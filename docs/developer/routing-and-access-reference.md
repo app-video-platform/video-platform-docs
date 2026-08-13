@@ -30,8 +30,8 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app` | protected | Admin, Creator, User | Role-based app home | Admin, Creator, or End User landing |
 | `/app/explore` | public | - | Explore products |  |
 | `/app/explore/search` | public | - | Product search results |  |
-| `/app/product/:id` | public | - | Product detail page |  |
-| `/app/product/:id/:type` | public | - | Product detail page | Type param is accepted |
+| `/app/product/:id` | public | - | Public product detail page | Shows some Product data but still contains placeholder buyer-facing content |
+| `/app/product/:id/:type` | public | - | Public product detail page | Type param is accepted; redirects to the ID-only route when it conflicts with loaded Product data |
 | `/app/store/:creatorId` | public | - | Public creator Storefront | Shows the creator profile, persisted Storefront theme, and published products; draft and hidden products are withheld |
 | `/app/cart` | protected | Admin, Creator, User | Shopping cart | No checkout |
 | `/app/library` | protected | User, Admin | Library shell |  |
@@ -46,9 +46,10 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app/admin/products/create` | protected | Admin | Create product for creator | Requires selected owner |
 | `/app/admin/audit` | protected | Admin | Admin audit log |  |
 | `/app/products` | protected | Creator, Admin | Product list |  |
+| `/app/products/:productId` | protected | Creator, Admin | Product Overview | Read-only Creator/Admin inspection page inside `CreatorAppShell`; uses the existing single-Product read path |
 | `/app/products/create` | protected | Creator, Admin | Create product |  |
-| `/app/products/edit/:id` | protected | Creator, Admin | Edit product |  |
-| `/app/products/edit/:type/:id` | protected | Creator, Admin | Edit product legacy-compatible route |  |
+| `/app/products/edit/:id` | protected | Creator, Admin | Product Workspace | Focused editing/building environment outside `CreatorAppShell` |
+| `/app/products/edit/:type/:id` | protected | Creator, Admin | Product Workspace legacy-compatible route | Type-bearing edit route where applicable |
 | `/app/storefront` | protected | Creator, Admin | Creator Storefront Builder | Uses the Creator shell with the sidebar collapsed; composes User/Profile, Product summaries, and the backend-pending Creator Storefront config contract for theme, featured Product, and Product ordering |
 | `/app/customers` | protected | Creator, Admin | Creator Customers list | Uses backend-pending Customer list contract |
 | `/app/customers/:customerId` | protected | Creator, Admin | Creator Customer detail | Uses backend-pending Customer detail contract; current detail tabs are read-only |

@@ -32,6 +32,8 @@ Product services are split across:
 | `fetchProducts` | `GET /api/products/search?term=&page=&size=&sort=` | Search results and autocomplete. |
 | `addImageToProductAPI` | `POST api/products/image?productId=` | Product image upload hook; product image persistence is still limited in the UI. |
 
+Creator Product Overview uses `getProductByIdAPI` through the existing single-Product read path. It does not have a dedicated Product Overview backend endpoint.
+
 ## Sections and lessons
 
 | Function | Method and URL |

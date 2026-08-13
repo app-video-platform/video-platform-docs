@@ -46,6 +46,8 @@ New route pages usually belong under the domain that owns the user experience: c
 
 Larger app workflows are grouped under `domains/app/features`, such as `product-form`, `settings`, `onboarding`, `marketing`, `smart-search`, and `storefront`.
 
+Creator Product Overview and Product Workspace are intentionally separate route experiences. Product Overview routes live in the normal Creator management shell for read-only inspection, while Product Workspace routes use the focused product editing shell outside the normal Creator shell.
+
 ## Architectural layers
 
 The folder structure maps to a few practical layers:
@@ -92,6 +94,8 @@ Shared UI should own reusable interaction and presentation behavior, not feature
 Similarly, shared status presentation primitives own reusable visual and semantic presentation. Feature code should map domain-specific business statuses, such as order or product states, into shared presentation props. Do not turn a feature-specific status mapping into a generic shared business component unless multiple domains truly share the same business meaning.
 
 Shared chart primitives own reusable visualization presentation and infrastructure, such as chart sizing, tooltips, legends, empty states, accessibility labels, responsive behavior, and design tokens. Feature code owns domain-specific analytics meaning, including metric selection, series labels, comparison copy, ranking logic, and insights.
+
+Product Overview reuses the existing single-Product read path and Product state. It does not introduce a dedicated Product Overview API or state slice. Product identity links in Creator management generally target Product Overview; explicit edit/build actions target Product Workspace.
 
 Storefront presentation is shared between the Creator Storefront Builder and the public Storefront route. The shared Storefront feature owns the public presentation, theme application, and view-model shaping; route pages own loading, access, draft composition, and composition with User/Profile, Product, and Storefront config/read-model state. Storefront config owns theme, featured Product ID, and Product ordering. User/Profile owns public profile fields and public email.
 

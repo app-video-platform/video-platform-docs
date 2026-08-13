@@ -11,6 +11,8 @@ Product detail pages show more information about a selected product.
 
 The page uses real product data for the product name, type, price, description, and course outline when those fields are available. Some visible page details are still placeholder content and should not be treated as reliable product information.
 
+These public product detail pages are different from the Creator Product Overview. They are also not the finished customizable product landing-page experience.
+
 ## Who can use this
 
 Visitors and signed-in users can open product detail pages.
@@ -41,6 +43,7 @@ If the signed-in user owns the product, the page shows an edit action. If the si
 - The visible Buy Now action does not complete a purchase.
 - The Add to Cart action on the product detail page is not currently a complete cart action.
 - Ratings, customer counts, creator display details, language, last updated text, duration, included benefits, and imagery include placeholder or hardcoded content.
+- Product detail pages do not provide creator landing-page customization or SEO controls.
 - Product detail pages do not grant access to purchased course, download, or consultation content.
 
 ## Related pages

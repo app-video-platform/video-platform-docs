@@ -44,6 +44,8 @@ The current service layer lives under `src/core/api/` in `video-platform-ui`.
 
 The frontend currently calls APIs for authentication, profile loading, product creation and editing, product search, course sections, lesson shells, download file upload, review listing and filtering, calendar connection initiation, Admin user/product/audit management, and Creator data surfaces.
 
+Creator Product Overview reuses the existing Product detail retrieval path. It does not add a dedicated Product Overview service, endpoint, Redux slice, or backend contract.
+
 Several Creator data surfaces now have frontend-defined contracts, services, thunks, and Redux slices. Their production backend endpoints are still pending unless a feature-specific page says otherwise.
 
 Current backend-pending frontend contracts include:

@@ -41,6 +41,7 @@ Creators can:
 
 - View a creator dashboard.
 - Create and manage products.
+- Inspect individual products from Product Overview pages.
 - Build course, download, consultation, and membership products.
 - Set product pricing.
 - Review customer relationship records in the Customers area when the frontend Customer contract has data available.
@@ -81,6 +82,7 @@ Some product discovery pages are public. Management pages require sign-in and th
 - Checkout and payment are not implemented.
 - The shopping cart and wishlist are stored in the browser, not in a user account.
 - The user library exists, but most library tabs do not yet show purchased content.
+- Creator Product Overview pages are read-only and do not include product-specific analytics, orders, customer counts, landing-page customization, SEO controls, or publishing management.
 - Storefront theme, featured product selection, product ordering, and public read-model contracts exist in the frontend, but the production Storefront backend endpoints are not implemented yet.
 - Course lessons can be created, but some lesson content editors are not fully persisted.
 - Membership products can be created in the frontend builder with native content, included Courses/Downloads, ordering, recurring pricing, and readiness feedback, but production Membership backend endpoints, subscriptions, publishing, and member access are not implemented yet.

@@ -9,6 +9,8 @@ sidebar_position: 3
 
 Creators use the product creation flow to create an initial draft and then configure the product in the builder.
 
+After a product exists, creators can inspect it from Product Overview and use explicit edit actions to return to the Product Workspace.
+
 The shared creation flow supports four product types:
 
 - Course
@@ -31,6 +33,7 @@ Creators can:
 - Enter an initial product title.
 - Create the initial draft product.
 - Enter the full product builder after the draft is created.
+- Return to Product Overview for read-only product inspection after the product exists.
 - Edit shared product details.
 - Set product pricing.
 - Upload product media from the Media area.
@@ -46,7 +49,7 @@ The Continue button is disabled until the product has the required initial infor
 
 ### Use the shared builder areas
 
-After the draft exists, the builder shows shared areas for product setup:
+After the draft exists, the Product Workspace shows shared areas for product setup:
 
 - **Basics**: edit title, product type display, and description.
 - **Pricing**: choose free or paid one-time pricing for most products. Membership products use a Membership-specific recurring pricing control for amount, EUR currency, and monthly or yearly billing interval.
@@ -74,12 +77,19 @@ The builder autosaves shared product details after changes. Sections and lessons
 
 Creators may see loading or saving behavior while changes are being processed.
 
+### Overview vs Workspace
+
+Product Overview is a read-only management page for inspecting product identity, status, pricing, dates, and type-specific summaries. Product Workspace is the focused editing environment for changing product details and content.
+
+Product identity links generally open Product Overview. Explicit edit/build actions open Product Workspace.
+
 ## Current limitations
 
 - Product media selection is visible, but product image persistence is not complete enough to treat uploaded media as reliably available on product cards or public product pages.
 - The builder saves products as drafts. A complete creator publishing workflow is not currently available.
 - Product type-specific areas do not all have the same maturity. Course lesson content has important limitations, download file upload and consultation setup fields are more complete, and Membership content/feed/pricing now has frontend data contracts while production backend integration remains pending.
-- The product detail page includes some placeholder information and inactive purchase buttons, so creators should not treat it as a finished customer purchase experience.
+- Product Overview is read-only and does not provide product analytics, orders, customers, access management, publish/unpublish controls, landing-page customization, or SEO controls.
+- The public product detail page includes some placeholder information and inactive purchase buttons, so creators should not treat it as a finished customer purchase experience or customizable landing page.
 
 ## Related pages
 

@@ -34,7 +34,7 @@ Administrators can:
 
 The Admin Products page includes filters for product search, owner ID, product type, and product status. Supported product types are Course, Download, Consultation, and Membership. Visible status filters are Draft, Published, and Hidden.
 
-Each product row shows the product owner name when available and the owner ID. Admins can view the customer-facing product detail page, open the edit flow, or delete the product.
+Each product row shows the product owner name when available and the owner ID. Admins can view the current customer-facing product detail page, open the edit flow, or delete the product.
 
 Creating a product from this area starts with selecting a creator owner. After that, the shared product builder is used.
 
@@ -43,6 +43,7 @@ Creating a product from this area starts with selecting a creator owner. After t
 - Product editing uses the same builder as Creator product management and inherits the same limitations.
 - Deleting a product is available from the Admin table, but the UI does not show a separate recovery or archive workflow.
 - Admin filters include owner ID rather than a full creator search experience in the product filter bar.
+- The customer-facing product detail page still contains placeholder or hardcoded content and is not a finished customizable landing page.
 - Product media, publishing, checkout, and customer access limitations still apply to products managed by Admins.
 
 ## Related pages

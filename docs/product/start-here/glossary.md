@@ -98,6 +98,18 @@ A public page for viewing an individual product.
 
 The current page shows some real product information, but also includes placeholder fields and inactive purchase buttons.
 
+### Product Overview
+
+A Creator/Admin management page for inspecting one product.
+
+The current Product Overview is read-only. It shows product identity, status, pricing, dates, and type-specific summaries, and provides explicit navigation to edit the product in Product Workspace.
+
+### Product Workspace
+
+The focused Creator/Admin editing environment for building or changing a product.
+
+Product Workspace is separate from Product Overview. Product identity links generally open Product Overview, while explicit edit/build actions open Product Workspace.
+
 ### Sales
 
 A creator-facing area for reviewing sales metrics, order records, and contextual order detail.

@@ -28,13 +28,13 @@ Legacy auth paths still redirect into `/auth`, including `/signin`, `/signup`, `
 
 Marketing routes render through `MarketingLayout`, which provides the public navigation and footer.
 
-App routes render through `AppLayout`, which provides the app header and, for creator/admin management areas, the sidebar. The app layout also wraps public app routes such as product discovery and product detail pages.
+App routes render through `AppLayout`, which provides the app header and, for creator/admin management areas, the sidebar. Creator Product Overview routes render inside the Creator management shell. Product Workspace edit/create routes intentionally bypass the normal Creator shell and use the focused editing workspace. Public app routes such as product discovery and product detail pages use the marketplace-style app layout.
 
 ## Public and protected app routes
 
 The `/app` route tree contains both public and protected routes.
 
-Public app routes include product discovery and product detail experiences, such as explore, search, product detail, and storefront pages.
+Public app routes include product discovery and product detail experiences, such as explore, search, product detail, and storefront pages. The current public product detail route is distinct from Creator Product Overview and still contains placeholder buyer-facing content.
 
 Protected app routes use `ProtectedRoute` and require a logged-in user with one of the allowed roles.
 
