@@ -55,8 +55,9 @@ Product Overview is separate from the Product Workspace:
 
 - **Product Overview** is for inspection and navigation.
 - **Product Workspace** is for editing and building the product.
+- **Product Landing Page Builder** is for product-specific public presentation settings.
 
-Use **Edit product** from Product Overview, or another explicit edit/build action, to enter the Product Workspace. Published products also show **View public page**, which opens the current buyer-facing product detail page.
+Use **Edit product** from Product Overview, or another explicit edit/build action, to enter the Product Workspace. Use **Edit landing page** to open the Product Landing Page Builder. Published products also show **View public page**, which opens the public Product Landing Page.
 
 The current Product Overview shows type-specific read-only summaries:
 
@@ -67,13 +68,34 @@ The current Product Overview shows type-specific read-only summaries:
 
 Creator product navigation follows this rule: product identity links open Product Overview, while explicit edit/build actions open Product Workspace. This applies to the Products list and relevant Creator surfaces such as Dashboard, Analytics, and Sales where the implementation uses product identity links.
 
+## Landing page builder
+
+The Product Landing Page Builder is the Creator area for configuring the public presentation of a single product.
+
+Creators can currently:
+
+- Add or edit additional marketing/about copy.
+- Choose whether the hero media appears on the left or right.
+- Show or hide supported secondary sections: About, What's included, and Creator.
+- Move those supported sections up or down.
+- Preview the actual shared public Product Landing Page presentation while editing.
+- Save the full landing-page configuration.
+- Reset unsaved changes back to the last persisted or default configuration.
+
+Builder edits update the live preview immediately, but they remain local until the creator selects **Save**. **Reset** discards unsaved landing-page configuration changes.
+
+The Landing Page Builder is not the canonical Product editor. Product name, description, type, status, price, thumbnail, and product-specific contents/settings remain Product-owned and are changed in Product Workspace. Creator identity remains User/Profile-owned. Product Landing Page configuration owns only product-specific public presentation settings, such as marketing copy, hero layout, section visibility, and section order.
+
+Public Product Landing Pages inherit the creator's Storefront theme when available and otherwise use the platform/default Storefront theme. The current Landing Page Builder does not provide product-specific theme overrides.
+
 ## Current limitations
 
 - Search, filtering, and sorting are applied to the products already loaded in the product list.
 - Product images are shown when available, but media persistence is not complete enough to treat product imagery as reliable everywhere.
 - The list can show statuses such as Published and Hidden, but the creator builder currently saves products as drafts and does not provide a complete publishing workflow.
-- Product Overview does not provide product-specific revenue analytics, order history, customer counts, subscriber or member counts, conversion data, charts, ratings, reviews, Storefront visibility controls, access management, duplicate/archive actions, publish/unpublish controls, landing-page customization, or SEO controls.
-- The public product detail page opened by **View public page** still includes placeholder or hardcoded buyer-facing content and inactive purchase actions. It is not the future customizable product landing-page experience.
+- Product Overview does not provide product-specific revenue analytics, order history, customer counts, subscriber or member counts, conversion data, charts, ratings, reviews, Storefront visibility controls, access management, duplicate/archive actions, publish/unpublish controls, inline landing-page editing, or SEO controls.
+- Product Landing Page Builder does not provide arbitrary page-builder blocks, galleries, slideshows, promo video, presentations, custom domains, slugs, SEO controls, Product-specific theme overrides, checkout, free access fulfillment, waitlists, subscriptions, or entitlement/access management.
+- Landing-page configuration has a frontend contract and local mock support, but production persistence and a dedicated public Product read model are still backend-pending.
 - Product deletion is supported from product management flows, but the Products list itself is primarily focused on viewing and opening products.
 
 ## Related pages

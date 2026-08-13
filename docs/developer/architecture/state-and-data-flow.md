@@ -104,6 +104,8 @@ Membership editor drafts, selected File objects, chooser state, picker state, ac
 
 Storefront Builder keeps unsaved Storefront configuration changes in local UI state until Save. Theme, featured Product selection, and Product ordering are saved through the Storefront config thunk/service path. Inline public profile edits, including public email, use the User/Profile update path rather than the Storefront config path.
 
+Product Landing Page Builder keeps unsaved landing-page configuration changes in local UI state until Save. Marketing description, hero layout, supported section visibility, and supported section order are saved through the Product Landing Page config thunk/service path. Canonical Product fields continue through Product state/services; Storefront theme and User/Profile or public Storefront Creator identity are composed into the public view model rather than copied into landing-page config.
+
 ## Persistence and side effects
 
 The cart and wishlist are browser-saved with `localStorage`.
@@ -120,5 +122,5 @@ Use this as a practical guide:
 | Backend-backed product/admin/review state | Redux thunk + API service, unless the existing feature already uses React Query. |
 | Backend-pending Creator data contracts | Redux thunk + API service + Axios, with local HTTP mocks only at the Axios boundary. |
 | Search/autocomplete server state | Existing React Query pattern. |
-| Form draft and UI interaction state | Local component or feature hook, including unsaved Storefront Builder config drafts. |
+| Form draft and UI interaction state | Local component or feature hook, including unsaved Storefront Builder and Product Landing Page Builder config drafts. |
 | Reusable browser-saved cart/wishlist behavior | Existing Redux slices and persistence patterns. |

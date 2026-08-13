@@ -64,7 +64,7 @@ Use the Remove action on an uploaded file to delete it from the section.
 
 - Download product setup is creator-facing. Customer delivery through the user library is not implemented yet.
 - Uploaded files can be managed inside Download sections, but the current documentation should not describe a complete buyer download experience.
-- Product media and public product page presentation still have limitations shared with other product types.
+- Product media and public Product Landing Page presentation still have limitations shared with other product types.
 
 ## Related pages
 

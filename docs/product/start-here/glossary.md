@@ -92,17 +92,23 @@ The currently supported product types are:
 - Consultation
 - Membership
 
-### Product detail page
+### Product Landing Page
 
 A public page for viewing an individual product.
 
-The current page shows some real product information, but also includes placeholder fields and inactive purchase buttons.
+The current Product Landing Page renders published Products with real Product information, type-specific summaries, inherited Storefront/default theme, and unavailable purchase/access states when commerce is not connected.
+
+### Product Landing Page Builder
+
+A Creator/Admin management area for configuring product-specific public presentation settings.
+
+The current builder owns landing-page marketing copy, hero layout, supported section visibility, and supported section order. It does not edit canonical Product fields, Creator profile data, Storefront theme, checkout, access, SEO, custom domains, or arbitrary page-builder blocks.
 
 ### Product Overview
 
 A Creator/Admin management page for inspecting one product.
 
-The current Product Overview is read-only. It shows product identity, status, pricing, dates, and type-specific summaries, and provides explicit navigation to edit the product in Product Workspace.
+The current Product Overview is read-only. It shows product identity, status, pricing, dates, and type-specific summaries, and provides explicit navigation to edit the product in Product Workspace or edit public presentation in Product Landing Page Builder.
 
 ### Product Workspace
 
@@ -126,7 +132,7 @@ Creators use the Storefront Builder from the Creator area to edit supported publ
 
 Someone using the public site without signing in.
 
-Visitors can browse public pages, explore products, search products, and view product detail pages.
+Visitors can browse public pages, explore products, search products, and view Product Landing Pages.
 
 ### Wishlist
 

@@ -34,6 +34,7 @@ Creators can currently:
 - Open the Storefront Builder, edit supported public profile fields, set public email, customize the Storefront presentation, review product visibility, choose a featured product, order products, and open or copy the public Storefront link.
 - Create new products.
 - Open Product Overview pages for read-only product inspection.
+- Edit Product Landing Page presentation settings for individual products.
 - Edit existing products.
 - Configure shared product details such as title, description, pricing, and media.
 - Configure course sections and lessons.
@@ -49,6 +50,7 @@ Creators usually start from the creator dashboard, Products area, Storefront are
 The product workflow has two levels:
 
 - **Product Overview**: inspect a product's identity, status, pricing, dates, and type-specific summary from the normal Creator area.
+- **Product Landing Page Builder**: configure product-specific public presentation settings such as marketing copy, hero layout, section visibility, and section order.
 - **Shared product setup**: choose a product type, create the initial draft, edit basic information, set pricing, and add media.
 - **Product-specific setup**: configure course content, download files, consultation details, or membership content depending on the selected product type.
 
@@ -67,7 +69,8 @@ For business performance review, start with [Analytics](./analytics.md).
 ## Current limitations
 
 - The dashboard includes audience and sales sections, but they do not yet show real performance data.
-- Product Overview is read-only and does not include product-scoped analytics, order history, customer counts, subscriber counts, landing-page customization, SEO controls, or publish/unpublish management.
+- Product Overview is read-only and does not include product-scoped analytics, order history, customer counts, subscriber counts, inline landing-page editing, SEO controls, or publish/unpublish management.
+- Product Landing Page Builder does not provide checkout, free access fulfillment, subscriptions, waitlists, entitlements, arbitrary page-builder blocks, Product-specific theme overrides, SEO controls, slugs, custom domains, galleries, slideshows, promo video, or analytics.
 - Storefront theme, featured product selection, product ordering, and public read-model contracts exist in the frontend, but the production Storefront backend endpoints are not implemented yet.
 - Customer relationship details have frontend list/detail contracts, but dedicated production Customer APIs are not implemented yet.
 - Sales order and financial details have frontend summary/order contracts, but production Sales and order APIs are not implemented yet.

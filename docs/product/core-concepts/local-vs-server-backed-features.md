@@ -43,6 +43,7 @@ Major frontend-defined, backend-pending contract areas include:
 - Creator Analytics aggregate overview.
 - Creator Dashboard aggregate summary.
 - Public Storefront read model and Creator Storefront configuration, including theme, featured Product selection, and Product ordering.
+- Product Landing Page configuration for marketing copy, hero layout, supported section visibility, and supported section order.
 - Product recurring-pricing fields for Membership products.
 - Membership aggregate, configuration, native content CRUD, included Product associations, and feed ordering.
 
@@ -50,6 +51,7 @@ Major frontend-only session state areas include:
 
 - Form drafts and UI interaction state.
 - Unsaved Storefront Builder configuration drafts before Save.
+- Unsaved Product Landing Page Builder configuration drafts before Save.
 - Membership editor drafts, selected File objects, chooser state, picker state, active editor state, and active builder tab.
 - Membership readiness feedback, which is derived from current Product and Membership state rather than persisted.
 
@@ -60,6 +62,7 @@ Major placeholder or incomplete areas include:
 - Production Sales APIs for order, payment, refund, subscription, renewal, entitlement, server pagination, payment-provider normalization, and safe financial mutation contracts.
 - Production Analytics and Dashboard aggregate endpoints for revenue, order, customer, membership, payment, activity, and product-performance data.
 - Production Storefront endpoints for public read models and Creator configuration, plus arbitrary page-building, custom domains, SEO settings, password protection, and Storefront analytics.
+- Production Product Landing Page config persistence, a dedicated public Product read model, server-side public Product visibility enforcement, public Creator payloads, checkout/access/waitlist state, SEO, slugs, custom domains, analytics, Product-specific theme overrides, and arbitrary page-builder blocks.
 - Production Product support for recurring-pricing fields and production Membership endpoints for content, included Product associations, feed ordering, binary asset upload, subscriptions, entitlements, and member access.
 - Membership subscriptions, entitlement logic, member access, and buyer-facing Membership flows.
 - Customer Library tabs for purchased products.
@@ -82,7 +85,7 @@ Local development may serve deterministic data through ignored HTTP mocks at the
 
 Placeholder areas may be visible in navigation or tabs, but should be documented only as current limitations unless they have meaningful user-facing behavior.
 
-Local mock data can demonstrate intended screen behavior for reviewers, but it should not be described as production-backed customer, financial, analytics, dashboard, Storefront, or Membership data.
+Local mock data can demonstrate intended screen behavior for reviewers, but it should not be described as production-backed customer, financial, analytics, dashboard, Storefront, Product Landing Page, or Membership data.
 
 ## Current limitations
 

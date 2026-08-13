@@ -9,7 +9,7 @@ sidebar_position: 3
 
 Administrators can manage products across the platform from the Admin Products area.
 
-This area is for finding products, reviewing product ownership, opening product pages, editing products, deleting products, and starting product creation for a selected creator.
+This area is for finding products, reviewing product ownership, opening public Product Landing Pages, editing products, deleting products, and starting product creation for a selected creator.
 
 ## Who can use this
 
@@ -25,7 +25,7 @@ Administrators can:
 - Filter products by product type.
 - Filter products by product status.
 - See product title, owner, type, status, price, and updated date.
-- Open a product detail page.
+- Open a public Product Landing Page.
 - Open the product builder to edit a product.
 - Delete a product after confirming the action.
 - Start creating a new product for a selected creator.
@@ -34,7 +34,7 @@ Administrators can:
 
 The Admin Products page includes filters for product search, owner ID, product type, and product status. Supported product types are Course, Download, Consultation, and Membership. Visible status filters are Draft, Published, and Hidden.
 
-Each product row shows the product owner name when available and the owner ID. Admins can view the current customer-facing product detail page, open the edit flow, or delete the product.
+Each product row shows the product owner name when available and the owner ID. Admins can view the current public Product Landing Page, open the edit flow, or delete the product.
 
 Creating a product from this area starts with selecting a creator owner. After that, the shared product builder is used.
 
@@ -43,8 +43,8 @@ Creating a product from this area starts with selecting a creator owner. After t
 - Product editing uses the same builder as Creator product management and inherits the same limitations.
 - Deleting a product is available from the Admin table, but the UI does not show a separate recovery or archive workflow.
 - Admin filters include owner ID rather than a full creator search experience in the product filter bar.
-- The customer-facing product detail page still contains placeholder or hardcoded content and is not a finished customizable landing page.
-- Product media, publishing, checkout, and customer access limitations still apply to products managed by Admins.
+- Public Product Landing Pages do not complete checkout, fulfillment, subscriptions, waitlists, or entitlement/access creation.
+- Product media, publishing, Product Landing Page Builder, checkout, and customer access limitations still apply to products managed by Admins.
 
 ## Related pages
 
@@ -52,4 +52,4 @@ Creating a product from this area starts with selecting a creator owner. After t
 - [Creating Products for Creators](./creating-products-for-creators.md)
 - [Creating a Product](../creators/creating-a-product.md)
 - [Managing Products](../creators/managing-products.md)
-- [Product Detail Pages](../customers/product-detail-pages.md)
+- [Product Landing Pages](../customers/product-detail-pages.md)

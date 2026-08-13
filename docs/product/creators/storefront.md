@@ -82,7 +82,7 @@ Public profile fields are different: they are owned by User/Profile data. Produc
 
 ## Public Storefront
 
-The public Storefront page applies the persisted Storefront theme and presents the creator profile, a featured product when one is available, and the creator's public product cards. Product cards link to the public product detail page for that product.
+The public Storefront page applies the persisted Storefront theme and presents the creator profile, a featured product when one is available, and the creator's public product cards. Product cards link to the public Product Landing Page for that product.
 
 The current Storefront presentation supports the product types used by the product catalog:
 

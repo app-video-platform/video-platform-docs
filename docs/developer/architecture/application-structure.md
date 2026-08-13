@@ -46,7 +46,7 @@ New route pages usually belong under the domain that owns the user experience: c
 
 Larger app workflows are grouped under `domains/app/features`, such as `product-form`, `settings`, `onboarding`, `marketing`, `smart-search`, and `storefront`.
 
-Creator Product Overview and Product Workspace are intentionally separate route experiences. Product Overview routes live in the normal Creator management shell for read-only inspection, while Product Workspace routes use the focused product editing shell outside the normal Creator shell.
+Creator Product Overview, Product Landing Page Builder, and Product Workspace are intentionally separate route experiences. Product Overview routes live in the normal Creator management shell for read-only inspection. Product Landing Page Builder routes also live in Creator management, request sidebar collapse, and use the shared public Product Landing Page presentation as the live editing surface. Product Workspace routes use the focused product editing shell outside the normal Creator shell.
 
 ## Architectural layers
 
@@ -96,6 +96,8 @@ Similarly, shared status presentation primitives own reusable visual and semanti
 Shared chart primitives own reusable visualization presentation and infrastructure, such as chart sizing, tooltips, legends, empty states, accessibility labels, responsive behavior, and design tokens. Feature code owns domain-specific analytics meaning, including metric selection, series labels, comparison copy, ranking logic, and insights.
 
 Product Overview reuses the existing single-Product read path and Product state. It does not introduce a dedicated Product Overview API or state slice. Product identity links in Creator management generally target Product Overview; explicit edit/build actions target Product Workspace.
+
+Product Landing Page presentation is shared between the public Product route and the Creator Product Landing Page Builder. The shared feature owns public presentation and view-model shaping. Route pages own loading, access, public visibility handling, draft composition, and composition with Product, Product Landing Page config, Storefront theme, and User/Profile or public Storefront data. Product Landing Page config owns only marketing description, hero layout, supported section visibility, and supported section order.
 
 Storefront presentation is shared between the Creator Storefront Builder and the public Storefront route. The shared Storefront feature owns the public presentation, theme application, and view-model shaping; route pages own loading, access, draft composition, and composition with User/Profile, Product, and Storefront config/read-model state. Storefront config owns theme, featured Product ID, and Product ordering. User/Profile owns public profile fields and public email.
 

@@ -21,7 +21,7 @@ The strongest areas of the current frontend are:
 
 - Account signup, sign-in, email verification, and Google sign-in.
 - Role-based app access.
-- Creator product listing, Product Overview inspection pages, and product creation.
+- Creator product listing, Product Overview inspection pages, Product Landing Page Builder, and product creation.
 - Product editing for core product fields.
 - Course and download section management.
 - Download file upload and removal for download products.
@@ -42,8 +42,8 @@ The strongest areas of the current frontend are:
 
 | Feature area | Current status |
 |---|---|
-| Product Overview | Creator/Admin Product Overview pages exist at `/app/products/:productId` for read-only product inspection, type-specific summaries, Edit product navigation, and published-only public-page navigation. They reuse existing Product data and do not include product-scoped analytics, orders, customers, access management, publish/unpublish controls, landing-page customization, SEO, or a new backend endpoint. |
-| Public product detail pages | Real product data is shown, but some visible fields are hardcoded and purchase buttons are not connected to checkout. These pages are not the future customizable product landing-page experience. |
+| Product Overview | Creator/Admin Product Overview pages exist at `/app/products/:productId` for read-only product inspection, type-specific summaries, Edit product navigation, Product Landing Page Builder navigation, and published-only public-page navigation. They reuse existing Product data and do not include product-scoped analytics, orders, customers, access management, publish/unpublish controls, inline landing-page editing, SEO, or a new backend endpoint. |
+| Product Landing Pages | Product Landing Page V2 exists for public published products and uses real Product data, type-specific summaries, inherited Storefront/default theme, public visibility guarding in the frontend, and unavailable purchase/access states. Creator Product Landing Page Builder supports marketing copy, hero layout, supported section visibility, section order, and Save/Reset draft behavior. Production landing-page config persistence, a dedicated public Product read model, server-side visibility enforcement, checkout, fulfillment, subscriptions, waitlists, entitlements, SEO, custom domains, and arbitrary page-builder blocks are pending or unsupported. |
 | Course products | Sections and lesson shells can be created, but video, article, and quiz lesson content are not fully persisted. |
 | Download products | Creator-side file upload exists, but customer delivery through the library is not implemented. |
 | Consultation products | Setup fields exist, but booking, availability, rescheduling, and customer session management are not implemented. |
@@ -66,7 +66,8 @@ Do not describe the following as supported product capabilities:
 
 - Checkout.
 - Payment processing.
-- Product Overview product-scoped revenue analytics, orders, customer counts, subscriber/member counts, conversion, charts, ratings/reviews, Storefront visibility controls, access management, duplicate/archive, publish/unpublish management, landing-page customization, SEO controls, or dedicated Product Overview backend APIs.
+- Product Overview product-scoped revenue analytics, orders, customer counts, subscriber/member counts, conversion, charts, ratings/reviews, Storefront visibility controls, access management, duplicate/archive, publish/unpublish management, inline landing-page editing, SEO controls, or dedicated Product Overview backend APIs.
+- Product Landing Page checkout, payments, free access fulfillment, Membership subscription checkout, waitlists, entitlement/access creation, ratings/reviews, landing-page analytics, SEO controls, slugs, custom domains, galleries, slideshows, promo video, presentations, arbitrary page-builder blocks, Product-specific theme overrides, production config persistence, or production public Product read model/server-side visibility enforcement.
 - Production-backed Membership native content, included Product associations, recurring pricing, subscriptions, entitlement logic, real publishing, member access, binary Video/Resource upload, or buyer-facing Membership flows.
 - Customer access to purchased course/download/consultation content.
 - Production-backed Creator customer management, customer profiles, customer purchase history, access management, notes editing, customer deletion, exporting, bulk actions, messaging, or impersonation.

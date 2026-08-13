@@ -42,6 +42,7 @@ Creators can:
 - View a creator dashboard.
 - Create and manage products.
 - Inspect individual products from Product Overview pages.
+- Configure product-specific public presentation in Product Landing Page Builder.
 - Build course, download, consultation, and membership products.
 - Set product pricing.
 - Review customer relationship records in the Customers area when the frontend Customer contract has data available.
@@ -55,7 +56,7 @@ End Users can:
 
 - Browse available products.
 - Search products.
-- View product detail pages.
+- View public Product Landing Pages.
 - Add products to a wishlist.
 - Add products to a shopping cart.
 - Move products between wishlist and cart.
@@ -64,7 +65,7 @@ Visitors who are not signed in can:
 
 - View the public marketing site.
 - Browse product exploration pages.
-- View product detail pages.
+- View public Product Landing Pages.
 - View public Storefront pages for creators.
 
 ## How it works
@@ -82,7 +83,8 @@ Some product discovery pages are public. Management pages require sign-in and th
 - Checkout and payment are not implemented.
 - The shopping cart and wishlist are stored in the browser, not in a user account.
 - The user library exists, but most library tabs do not yet show purchased content.
-- Creator Product Overview pages are read-only and do not include product-specific analytics, orders, customer counts, landing-page customization, SEO controls, or publishing management.
+- Creator Product Overview pages are read-only and do not include product-specific analytics, orders, customer counts, inline landing-page editing, SEO controls, or publishing management.
+- Product Landing Page Builder supports a narrow presentation configuration only. It does not provide checkout, fulfillment, subscriptions, waitlists, entitlements, SEO controls, custom domains, arbitrary page-builder blocks, Product-specific theme overrides, or production-backed public Product read models.
 - Storefront theme, featured product selection, product ordering, and public read-model contracts exist in the frontend, but the production Storefront backend endpoints are not implemented yet.
 - Course lessons can be created, but some lesson content editors are not fully persisted.
 - Membership products can be created in the frontend builder with native content, included Courses/Downloads, ordering, recurring pricing, and readiness feedback, but production Membership backend endpoints, subscriptions, publishing, and member access are not implemented yet.

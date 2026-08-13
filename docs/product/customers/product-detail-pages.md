@@ -1,50 +1,51 @@
 ---
-title: Product Detail Pages
+title: Product Landing Pages
 sidebar_position: 3
 ---
 
-# Product Detail Pages
+# Product Landing Pages
 
 ## Overview
 
-Product detail pages show more information about a selected product.
+Product Landing Pages are public pages for viewing an individual product.
 
-The page uses real product data for the product name, type, price, description, and course outline when those fields are available. Some visible page details are still placeholder content and should not be treated as reliable product information.
-
-These public product detail pages are different from the Creator Product Overview. They are also not the finished customizable product landing-page experience.
+The current page uses real product information where it is available, including product name, type, description, price, product image, and type-specific summaries. It is different from the Creator Product Overview and Product Workspace.
 
 ## Who can use this
 
-Visitors and signed-in users can open product detail pages.
+Visitors and signed-in users can open public Product Landing Pages for products that are published.
 
-Creators and Administrators who own or manage a product may see management actions instead of customer purchase actions.
+Draft and Hidden products are not rendered as normal public Product Landing Pages.
 
 ## What you can do
 
-Customers can:
+Customers and visitors can:
 
-- Review the product name, product type, price, and description.
-- Review course sections and lesson listings for course products when they exist.
-- See customer purchase actions on products they do not own.
-
-Product owners can:
-
-- Open the product editing flow from the product detail page.
+- Review the product name, type, description, image, and price.
+- See recurring Membership pricing when it is configured.
+- Review type-specific public summaries when the product has supporting data.
+- See an honest unavailable state for purchase, free access, or Membership checkout when commerce is not connected.
 
 ## How it works
 
-The product detail page loads the selected product and presents the available product information. For course products, the page can show a course outline with sections and lessons.
+Published products render through the public Product Landing Page. The page inherits the Creator's Storefront theme when available and otherwise uses the platform/default Storefront theme.
 
-If the signed-in user owns the product, the page shows an edit action. If the signed-in user does not own the product, the page shows customer-facing purchase actions.
+The page can show type-specific summaries:
+
+- **Course**: module/section count, lesson count, curriculum outline, lesson titles, and lesson types.
+- **Download**: section count, file/resource count when available, section outline, and file names. It does not expose storage URLs or technical file metadata.
+- **Consultation**: public-relevant configured details such as duration, meeting method, buffers, daily availability, booking messages, policies, and connected calendar availability when present.
+- **Membership**: conservative product information and recurring pricing. It does not show subscriber counts, active members, revenue, entitlement state, or Membership feed details.
+
+Creators configure product-specific public presentation from the Product Landing Page Builder. Product-owned fields such as name, description, price, product status, thumbnail, and product contents are edited from Product Workspace instead.
 
 ## Current limitations
 
 - Checkout and payment are not implemented.
-- The visible Buy Now action does not complete a purchase.
-- The Add to Cart action on the product detail page is not currently a complete cart action.
-- Ratings, customer counts, creator display details, language, last updated text, duration, included benefits, and imagery include placeholder or hardcoded content.
-- Product detail pages do not provide creator landing-page customization or SEO controls.
-- Product detail pages do not grant access to purchased course, download, or consultation content.
+- Paid Product purchase, free Product fulfillment, Membership subscription checkout, waitlists, and entitlement/access creation are not implemented.
+- Ratings, reviews, customer counts, subscriber/member counts, landing-page analytics, SEO controls, slugs, custom domains, galleries, slideshows, promo video, presentations, and arbitrary page-builder blocks are not part of the current Product Landing Page.
+- Product-specific theme overrides are not supported; Product Landing Pages inherit the Creator Storefront theme or use the default Storefront theme.
+- Public Product Landing Pages currently use transitional frontend data composition. A dedicated production public Product read model and server-side visibility enforcement are still backend-pending.
 
 ## Related pages
 

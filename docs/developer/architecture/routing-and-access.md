@@ -28,13 +28,13 @@ Legacy auth paths still redirect into `/auth`, including `/signin`, `/signup`, `
 
 Marketing routes render through `MarketingLayout`, which provides the public navigation and footer.
 
-App routes render through `AppLayout`, which provides the app header and, for creator/admin management areas, the sidebar. Creator Product Overview routes render inside the Creator management shell. Product Workspace edit/create routes intentionally bypass the normal Creator shell and use the focused editing workspace. Public app routes such as product discovery and product detail pages use the marketplace-style app layout.
+App routes render through `AppLayout`, which provides the app header and, for creator/admin management areas, the sidebar. Creator Product Overview routes render inside the Creator management shell. Product Landing Page Builder routes also render inside the Creator management shell and request sidebar collapse. Product Workspace edit/create routes intentionally bypass the normal Creator shell and use the focused editing workspace. Public app routes such as product discovery and Product Landing Pages use the marketplace-style app layout.
 
 ## Public and protected app routes
 
 The `/app` route tree contains both public and protected routes.
 
-Public app routes include product discovery and product detail experiences, such as explore, search, product detail, and storefront pages. The current public product detail route is distinct from Creator Product Overview and still contains placeholder buyer-facing content.
+Public app routes include product discovery and Product Landing Page experiences, such as explore, search, product landing pages, and storefront pages. The current public Product route is distinct from Creator Product Overview and renders only published Products in the frontend. That frontend guard is not a security boundary; production public Product visibility still needs server-side enforcement in a dedicated public read model.
 
 Protected app routes use `ProtectedRoute` and require a logged-in user with one of the allowed roles.
 

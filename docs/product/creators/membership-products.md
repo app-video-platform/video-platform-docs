@@ -121,7 +121,7 @@ When the readiness check passes, the Membership Publish button remains disabled 
 - No entitlement or member access logic exists yet.
 - No buyer-facing Membership experience exists yet.
 - Real Membership publishing is not implemented yet.
-- Membership media and public product page presentation still have limitations shared with other product types.
+- Membership media and public Product Landing Page presentation still have limitations shared with other product types.
 
 ## Related pages
 

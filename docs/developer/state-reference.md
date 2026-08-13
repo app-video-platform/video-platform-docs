@@ -16,6 +16,7 @@ Redux Toolkit state lives under `src/core/store`.
 | `sales` | `src/core/store/sales-store/*` | `selectCreatorSalesSummary`, `selectCreatorOrders`, `selectCurrentCreatorOrder` | Backend-pending Sales summary, Orders page, and Order Detail contracts. |
 | `analytics` | `src/core/store/analytics-store/*` | `selectAnalyticsOverview`, `selectAnalyticsLoading`, `selectAnalyticsError` | Backend-pending Creator Analytics aggregate overview contract. |
 | `dashboard` | `src/core/store/dashboard-store/*` | `selectCreatorDashboardSummary`, `selectCreatorDashboardLoading`, `selectCreatorDashboardError` | Backend-pending Creator Dashboard aggregate summary contract. |
+| `productLandingPage` | `src/core/store/product-landing-page-store/*` | `selectPublicProductLandingPageConfigByProductId`, `selectCreatorProductLandingPageConfigByProductId` | Backend-pending public and Creator Product Landing Page config contracts. |
 | `storefront` | `src/core/store/storefront-store/*` | `selectPublicStorefrontByCreatorId`, `selectCreatorStorefrontConfig` | Backend-pending public Storefront read model and Creator Storefront config contracts, including theme, featured Product, and Product ordering. |
 | `membership` | `src/core/store/membership-store/*` | `selectMembershipAggregateByProductId`, `selectMembershipLoading`, `selectMembershipSaving` | Backend-pending Product-scoped Membership aggregate, content, and feed contracts. |
 | `reviews` | `src/core/store/reviews-store/*` | `selectAllReviews` | Creator Marketing Reviews list and filters. |
@@ -35,4 +36,6 @@ Membership editor drafts, selected File objects, chooser state, picker state, ac
 
 Storefront public read-model data and persisted Creator config live in the `storefront` slice. The Builder keeps unsaved config changes as local draft UI state until Save dispatches the Storefront config update. User/Profile remains the source for Creator profile fields and public email, and Product state remains the source for creator product summaries.
 
-Customers, Sales, Analytics, Dashboard, Storefront, and Membership use Redux thunks and services that call Axios. Local mock support, when enabled, intercepts at the Axios boundary rather than replacing feature component data flow.
+Product Landing Page public and Creator config data lives in the `productLandingPage` slice. The Creator Landing Page Builder keeps unsaved config changes as local draft UI state until Save dispatches the full config update. Product remains the source for canonical Product fields; Storefront config supplies inherited theme; User/Profile or public Storefront data supplies Creator identity when available.
+
+Customers, Sales, Analytics, Dashboard, Storefront, Product Landing Page, and Membership use Redux thunks and services that call Axios. Local mock support, when enabled, intercepts at the Axios boundary rather than replacing feature component data flow.

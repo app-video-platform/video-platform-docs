@@ -25,7 +25,7 @@ Users can:
 - Open a search results page.
 - Move through paginated search results.
 - Open public creator Storefront pages when a Storefront link is available.
-- Open product detail pages from discovery areas.
+- Open Product Landing Pages from discovery areas.
 
 ## How it works
 
@@ -33,7 +33,7 @@ Explore loads product summaries and presents them as product cards. Search sugge
 
 Product cards can include customer actions such as saving to wishlist or adding to cart, but those actions do not complete a purchase.
 
-Public Storefront pages present a creator profile and that creator's published products. Storefront product cards link to the product detail page.
+Public Storefront pages present a creator profile and that creator's published products. Storefront product cards link to Product Landing Pages.
 
 ## Current limitations
 
@@ -45,6 +45,6 @@ Public Storefront pages present a creator profile and that creator's published p
 ## Related pages
 
 - [Exploring Products](../customers/exploring-products.md)
-- [Product Detail Pages](../customers/product-detail-pages.md)
+- [Product Landing Pages](../customers/product-detail-pages.md)
 - [Wishlist](../customers/wishlist.md)
 - [Shopping Cart](../customers/shopping-cart.md)
