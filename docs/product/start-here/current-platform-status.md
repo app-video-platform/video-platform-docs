@@ -27,7 +27,7 @@ The strongest areas of the current frontend are:
 - Download file upload and removal for download products.
 - Consultation setup fields.
 - Membership product creation, native Membership Content, included Product selection, unified ordering, recurring pricing controls, readiness feedback, and frontend Membership data contracts.
-- Creator Storefront management, public Storefront pages, published-product visibility, copyable public URL, live preview, featured product selection, and ordering controls.
+- Creator Storefront Builder, public Storefront pages, inline public profile editing, public email, live customization, published-product visibility, copyable public URL, featured product selection, ordering controls, and draft Save/Reset behavior.
 - Creator Customers routes, list controls, read-only detail tabs, and frontend Customer list/detail contracts.
 - Creator Sales routes, sales metrics, order ledger controls, read-only order detail, and frontend Sales summary/order contracts.
 - Creator Analytics route, period selection, metrics, charts, rankings, summary panels, and a frontend aggregate Analytics contract.
@@ -50,7 +50,7 @@ The strongest areas of the current frontend are:
 | Wishlist | Works in the browser and persists locally, but is not tied to a backend user account. |
 | Shopping cart | Works in the browser and persists locally, but checkout and payment are not implemented. |
 | Library | The library shell and tabs exist; wishlist has behavior, but purchased courses, downloads, and consultations are not shown. |
-| Storefront | Creator Storefront management and public Storefront pages exist. Published products are shown publicly; draft and hidden products are withheld. Frontend public read-model and Creator config contracts exist for featured product selection and ordering, but production backend endpoints are pending. |
+| Storefront | Creator Storefront Builder and public Storefront pages exist. The Builder uses the shared public presentation, supports inline public profile editing, public email, Light/Dark appearance, accent color, Modern/Classic/Friendly typography, featured product selection, product ordering, and draft Save/Reset behavior. Published products are shown publicly; draft and hidden products are withheld. Frontend public read-model and Creator config contracts exist, but production backend endpoints are pending. |
 | Creator dashboard | Shows profile and product highlights through a frontend aggregate summary contract, but the production backend endpoint is pending for business metrics and activity data. |
 | Creator Customers | Routes, list search/filter/sort controls, responsive list/card presentation, read-only detail tabs, and frontend Customer list/detail contracts exist. Production backend endpoints are pending for customer-domain records such as purchases, access, notes, tags, waitlist details, spend, and orders. |
 | Creator Sales | Routes, sales metrics, order search/filter/sort controls, responsive ledger/card presentation, read-only contextual order detail, and frontend Sales summary/order contracts exist. Production backend endpoints are pending for order, payment, refund, subscription, renewal, and access records. |
@@ -70,7 +70,7 @@ Do not describe the following as supported product capabilities:
 - Production-backed Creator customer management, customer profiles, customer purchase history, access management, notes editing, customer deletion, exporting, bulk actions, messaging, or impersonation.
 - Production-backed Creator financial reporting, order management, payment processing, refund issuing, charge retries, subscription changes, financial exporting, or access mutation from Sales.
 - Production-backed Creator analytics reporting, custom date ranges, traffic analytics, conversion funnels, attribution/source analytics, payouts, tax analytics, disputes, cohorts, course/content engagement analytics, exports, report building, or custom dashboards.
-- Production-backed Storefront configuration for featured product selection or manual ordering, plus layout, theming, custom domains, SEO settings, password protection, or Storefront analytics.
+- Production-backed Storefront public read-model and configuration endpoints for theme, featured product selection, or manual ordering; arbitrary page-building, drag-and-drop sections, custom content blocks, custom CSS, custom domains, SEO settings, password protection, or Storefront analytics.
 - Email campaigns.
 - Direct messaging.
 - Live-session booking or scheduling.

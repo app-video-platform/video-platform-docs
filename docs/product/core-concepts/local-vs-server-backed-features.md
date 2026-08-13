@@ -42,13 +42,14 @@ Major frontend-defined, backend-pending contract areas include:
 - Creator Sales summary, Orders page, and Order Detail.
 - Creator Analytics aggregate overview.
 - Creator Dashboard aggregate summary.
-- Public Storefront read model and Creator Storefront configuration.
+- Public Storefront read model and Creator Storefront configuration, including theme, featured Product selection, and Product ordering.
 - Product recurring-pricing fields for Membership products.
 - Membership aggregate, configuration, native content CRUD, included Product associations, and feed ordering.
 
 Major frontend-only session state areas include:
 
 - Form drafts and UI interaction state.
+- Unsaved Storefront Builder configuration drafts before Save.
 - Membership editor drafts, selected File objects, chooser state, picker state, active editor state, and active builder tab.
 - Membership readiness feedback, which is derived from current Product and Membership state rather than persisted.
 
@@ -58,7 +59,7 @@ Major placeholder or incomplete areas include:
 - Production Customer APIs for creator customer management, purchase history, access records, notes, waitlist details, spend, and order data.
 - Production Sales APIs for order, payment, refund, subscription, renewal, entitlement, server pagination, payment-provider normalization, and safe financial mutation contracts.
 - Production Analytics and Dashboard aggregate endpoints for revenue, order, customer, membership, payment, activity, and product-performance data.
-- Production Storefront endpoints for public read models and Creator configuration, plus layout, theming, custom domains, SEO settings, password protection, and Storefront analytics.
+- Production Storefront endpoints for public read models and Creator configuration, plus arbitrary page-building, custom domains, SEO settings, password protection, and Storefront analytics.
 - Production Product support for recurring-pricing fields and production Membership endpoints for content, included Product associations, feed ordering, binary asset upload, subscriptions, entitlements, and member access.
 - Membership subscriptions, entitlement logic, member access, and buyer-facing Membership flows.
 - Customer Library tabs for purchased products.

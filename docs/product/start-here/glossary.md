@@ -106,9 +106,9 @@ The current frontend includes the Sales workspace, read-only order detail, and f
 
 ### Storefront
 
-A creator's fixed public page for showing profile information and published products.
+A creator's public page for showing public profile information and published products.
 
-Creators manage the Storefront from the Creator area and can copy the public URL, review product visibility, choose a featured product, adjust product order, and preview the customer-facing page. Frontend Storefront read-model and Creator config contracts exist, but production backend endpoints are not implemented yet.
+Creators use the Storefront Builder from the Creator area to edit supported public profile fields, set public email, customize appearance, choose a featured product, adjust product order, save or reset Storefront configuration changes, and open or copy the public URL. Frontend Storefront read-model and Creator config contracts exist, but production backend endpoints are not implemented yet.
 
 ### Visitor
 

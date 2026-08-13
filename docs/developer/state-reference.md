@@ -16,7 +16,7 @@ Redux Toolkit state lives under `src/core/store`.
 | `sales` | `src/core/store/sales-store/*` | `selectCreatorSalesSummary`, `selectCreatorOrders`, `selectCurrentCreatorOrder` | Backend-pending Sales summary, Orders page, and Order Detail contracts. |
 | `analytics` | `src/core/store/analytics-store/*` | `selectAnalyticsOverview`, `selectAnalyticsLoading`, `selectAnalyticsError` | Backend-pending Creator Analytics aggregate overview contract. |
 | `dashboard` | `src/core/store/dashboard-store/*` | `selectCreatorDashboardSummary`, `selectCreatorDashboardLoading`, `selectCreatorDashboardError` | Backend-pending Creator Dashboard aggregate summary contract. |
-| `storefront` | `src/core/store/storefront-store/*` | `selectPublicStorefrontByCreatorId`, `selectCreatorStorefrontConfig` | Backend-pending public Storefront read model and Creator Storefront config contracts. |
+| `storefront` | `src/core/store/storefront-store/*` | `selectPublicStorefrontByCreatorId`, `selectCreatorStorefrontConfig` | Backend-pending public Storefront read model and Creator Storefront config contracts, including theme, featured Product, and Product ordering. |
 | `membership` | `src/core/store/membership-store/*` | `selectMembershipAggregateByProductId`, `selectMembershipLoading`, `selectMembershipSaving` | Backend-pending Product-scoped Membership aggregate, content, and feed contracts. |
 | `reviews` | `src/core/store/reviews-store/*` | `selectAllReviews` | Creator Marketing Reviews list and filters. |
 | `notifications` | `src/core/store/notifications/*` | `selectNotifications` | In-memory notification list. |
@@ -33,6 +33,6 @@ Membership domain data is stored in the `membership` slice by Product ID. Native
 
 Membership editor drafts, selected File objects, chooser state, picker state, active editor state, active builder tab, and derived readiness feedback remain local UI state.
 
-Storefront public read-model data and Creator config live in the `storefront` slice. User/Profile remains the source for Creator profile fields in management, and Product state remains the source for creator product summaries.
+Storefront public read-model data and persisted Creator config live in the `storefront` slice. The Builder keeps unsaved config changes as local draft UI state until Save dispatches the Storefront config update. User/Profile remains the source for Creator profile fields and public email, and Product state remains the source for creator product summaries.
 
 Customers, Sales, Analytics, Dashboard, Storefront, and Membership use Redux thunks and services that call Axios. Local mock support, when enabled, intercepts at the Axios boundary rather than replacing feature component data flow.

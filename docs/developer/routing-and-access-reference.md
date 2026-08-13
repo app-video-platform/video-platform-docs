@@ -32,7 +32,7 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app/explore/search` | public | - | Product search results |  |
 | `/app/product/:id` | public | - | Product detail page |  |
 | `/app/product/:id/:type` | public | - | Product detail page | Type param is accepted |
-| `/app/store/:creatorId` | public | - | Public creator Storefront | Shows the creator profile and published products; draft and hidden products are withheld |
+| `/app/store/:creatorId` | public | - | Public creator Storefront | Shows the creator profile, persisted Storefront theme, and published products; draft and hidden products are withheld |
 | `/app/cart` | protected | Admin, Creator, User | Shopping cart | No checkout |
 | `/app/library` | protected | User, Admin | Library shell |  |
 | `/app/library/all-products` | protected | User, Admin | Library tab | Currently empty |
@@ -49,7 +49,7 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app/products/create` | protected | Creator, Admin | Create product |  |
 | `/app/products/edit/:id` | protected | Creator, Admin | Edit product |  |
 | `/app/products/edit/:type/:id` | protected | Creator, Admin | Edit product legacy-compatible route |  |
-| `/app/storefront` | protected | Creator, Admin | Creator Storefront management | Uses User/Profile, Product summaries, and the backend-pending Creator Storefront config contract |
+| `/app/storefront` | protected | Creator, Admin | Creator Storefront Builder | Uses the Creator shell with the sidebar collapsed; composes User/Profile, Product summaries, and the backend-pending Creator Storefront config contract for theme, featured Product, and Product ordering |
 | `/app/customers` | protected | Creator, Admin | Creator Customers list | Uses backend-pending Customer list contract |
 | `/app/customers/:customerId` | protected | Creator, Admin | Creator Customer detail | Uses backend-pending Customer detail contract; current detail tabs are read-only |
 | `/app/marketing` | protected | Creator, Admin | Marketing area | Mostly incomplete except reviews |

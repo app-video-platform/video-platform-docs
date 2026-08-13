@@ -102,6 +102,8 @@ The Membership feed combines two separate concepts: native Membership content an
 
 Membership editor drafts, selected File objects, chooser state, picker state, active editor state, active builder tab, and readiness evaluation remain local UI state.
 
+Storefront Builder keeps unsaved Storefront configuration changes in local UI state until Save. Theme, featured Product selection, and Product ordering are saved through the Storefront config thunk/service path. Inline public profile edits, including public email, use the User/Profile update path rather than the Storefront config path.
+
 ## Persistence and side effects
 
 The cart and wishlist are browser-saved with `localStorage`.
@@ -118,5 +120,5 @@ Use this as a practical guide:
 | Backend-backed product/admin/review state | Redux thunk + API service, unless the existing feature already uses React Query. |
 | Backend-pending Creator data contracts | Redux thunk + API service + Axios, with local HTTP mocks only at the Axios boundary. |
 | Search/autocomplete server state | Existing React Query pattern. |
-| Form draft and UI interaction state | Local component or feature hook. |
+| Form draft and UI interaction state | Local component or feature hook, including unsaved Storefront Builder config drafts. |
 | Reusable browser-saved cart/wishlist behavior | Existing Redux slices and persistence patterns. |

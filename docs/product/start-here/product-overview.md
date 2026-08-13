@@ -46,7 +46,7 @@ Creators can:
 - Review customer relationship records in the Customers area when the frontend Customer contract has data available.
 - Review sales metrics and order records in the Sales area when the frontend Sales contracts have data available.
 - Review analytics metrics, charts, and summaries in the Analytics area when the frontend Analytics aggregate contract has data available.
-- Manage a fixed public Storefront, review product visibility, copy the Storefront link, and inspect the live preview.
+- Use the Storefront Builder to edit public profile fields, set public email, customize the Storefront presentation, review product visibility, choose a featured product, order products, and open or copy the public Storefront link.
 - View and filter reviews by visibility where review data is available.
 - Connect a calendar provider from settings.
 
@@ -81,7 +81,7 @@ Some product discovery pages are public. Management pages require sign-in and th
 - Checkout and payment are not implemented.
 - The shopping cart and wishlist are stored in the browser, not in a user account.
 - The user library exists, but most library tabs do not yet show purchased content.
-- Storefront featured product selection and product ordering have frontend contracts, but the production Storefront configuration backend is not implemented yet.
+- Storefront theme, featured product selection, product ordering, and public read-model contracts exist in the frontend, but the production Storefront backend endpoints are not implemented yet.
 - Course lessons can be created, but some lesson content editors are not fully persisted.
 - Membership products can be created in the frontend builder with native content, included Courses/Downloads, ordering, recurring pricing, and readiness feedback, but production Membership backend endpoints, subscriptions, publishing, and member access are not implemented yet.
 - Creator Customers has routes, list controls, detail tabs, and frontend Customer contracts, but production customer-domain endpoints are not implemented yet.

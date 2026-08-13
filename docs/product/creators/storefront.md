@@ -7,15 +7,15 @@ sidebar_position: 8
 
 ## Overview
 
-The Creator Storefront is the fixed public page a creator can share with customers.
+The Creator Storefront is the public page a creator can share with customers.
 
-Creators use the Storefront management area to review the public profile summary, see which products are eligible for the public page, copy the Storefront link, choose a featured product, adjust product order, and compare changes against a live preview.
+Creators edit it from the Storefront Builder at `/app/storefront`. The Builder renders the same Storefront presentation used by the public page, so changes are made directly in the customer-facing layout instead of in a separate preview panel.
 
-Customers and visitors use the public Storefront page to view the creator profile and browse published products.
+Customers and visitors use the public Storefront page at `/app/store/:creatorId` to view the creator profile and browse published products.
 
 ## Who can use this
 
-The Storefront management area is available from the Creator navigation. It is a protected Creator/Admin route, with the active Creator profile and creator-owned products driving the management view.
+The Storefront Builder is available from the Creator navigation. It is a protected Creator/Admin route and uses the active Creator profile, creator-owned products, and Creator Storefront configuration.
 
 The public Storefront page can be opened by visitors and signed-in users.
 
@@ -24,55 +24,98 @@ The public Storefront page can be opened by visitors and signed-in users.
 Creators can:
 
 - Open **Storefront** from the Creator navigation.
-- Review the Storefront status.
+- Edit public-facing profile fields inline in the Storefront layout.
+- Set a public email that is separate from the login email.
 - Copy the public Storefront URL.
 - Open the public Storefront in a new tab.
-- Review the public profile summary used by the Storefront.
-- See how many products are public and how many are draft or hidden.
-- See each product's type and status.
+- See which products are public and which are draft or hidden.
 - Set a published product as featured.
 - Move products up or down.
-- Use the live preview to compare the management view with the customer-facing presentation.
+- Customize Storefront appearance, accent color, and typography.
+- Save Storefront configuration changes together.
+- Reset unsaved Storefront configuration changes back to the persisted configuration.
 
-Profile information comes from the existing account/profile data already available to the app. Profile editing is handled by the existing account/profile flows, not by the Storefront page.
+Opening the Builder collapses the Creator sidebar so the Storefront editing surface has more room.
+
+## Public profile fields
+
+The Storefront Builder supports inline editing for these public-facing profile fields:
+
+- Display name.
+- Title.
+- Tagline.
+- Bio.
+- Website.
+- Public email.
+
+Public email is a profile field, not the account login email. If a creator has not set a public email, the public-facing email value falls back to the login email. Editing the public email does not change the login email.
+
+The same public-email concept is also surfaced in Settings. Storefront Builder edits save the public email through the profile/user data path, while Storefront configuration remains responsible for Storefront-specific presentation settings.
+
+Profile image editing is not part of the current Storefront Builder because a reusable persisted profile-image upload flow is not available there.
+
+## Customization
+
+Creators can customize the current Storefront presentation with:
+
+- **Appearance**: Light or Dark.
+- **Accent color**: a brand color used by Storefront presentation elements.
+- **Typography**: Modern, Classic, or Friendly.
+
+Customization updates the Builder live. On wider screens the customization controls appear as a floating panel; on smaller screens they open in a mobile drawer.
+
+This is not a general page builder. The current Builder does not support arbitrary drag-and-drop sections, custom content blocks, custom CSS, spacing controls, custom layouts, custom templates beyond the implemented appearance/color/typography options, custom domains, or SEO configuration.
+
+## Storefront configuration
+
+Storefront configuration owns:
+
+- Theme settings.
+- Featured Product selection.
+- Product ordering.
+
+These settings are edited as a draft in the Builder. Changing the featured product, product order, appearance, accent color, or typography updates the Builder immediately, but those Storefront configuration changes persist together only when the creator selects **Save changes**.
+
+Selecting **Reset changes** restores the persisted Storefront configuration and discards unsaved Storefront configuration changes.
+
+Public profile fields are different: they are owned by User/Profile data. Product identity, type, status, price, image, and catalogue details are owned by Product data.
 
 ## Public Storefront
 
-The public Storefront page is available at `/app/store/:creatorId`.
-
-It presents the creator profile, a featured product when one is available, and the creator's public product cards. Product cards link to the public product detail page for that product.
+The public Storefront page applies the persisted Storefront theme and presents the creator profile, a featured product when one is available, and the creator's public product cards. Product cards link to the public product detail page for that product.
 
 The current Storefront presentation supports the product types used by the product catalog:
 
-- Course
-- Download
-- Consultation
-- Membership
+- Course.
+- Download.
+- Consultation.
+- Membership.
 
 ## Product visibility
 
 Only products with **Published** status appear on the public Storefront.
 
-Draft and Hidden products are shown in the management area so creators can understand why they are not public, but they are not shown on the customer-facing Storefront page.
+Draft and Hidden products are shown in the Builder so creators can understand why they are not public, but they are not shown on the customer-facing Storefront page.
 
 ## Responsive behavior
 
-The Storefront management page uses a controls-and-preview layout on wider screens and collapses into a stacked presentation on smaller screens.
+The Builder uses the shared Storefront presentation rather than a separate preview. Supporting controls such as the product ordering strip and customization controls adapt for smaller screens, including a mobile customization drawer.
 
-The public Storefront adapts its hero, featured product, and product grid so the page remains usable on desktop and mobile.
+The public Storefront adapts its hero, featured product, contact section, and product grid so the page remains usable on desktop and mobile.
 
 ## Current limitations
 
-- The Storefront uses a fixed layout. There is no page builder, theme editor, custom layout, custom domain, password protection, or SEO configuration workflow.
-- Featured product selection and product ordering have frontend configuration contracts, but the production backend Storefront configuration endpoint is not implemented yet.
-- The public Storefront uses a frontend public read-model contract. Production backend support for that read model is still pending.
-- Profile fields remain owned by account/profile data, and product identity, status, price, and media remain owned by Product data.
-- The Storefront does not add, edit, publish, delete, or bulk-update products. Product creation and product status changes happen in the product management workflow.
-- Storefront analytics, customer messaging, customer impersonation, and access grants are not part of the current Storefront experience.
+- Storefront public read-model and Creator Storefront configuration contracts exist in the frontend, including theme, featured Product selection, and Product ordering, but the dedicated production backend endpoints are still pending.
+- Deterministic local HTTP mocks may provide Storefront data for development and inspection when mock mode is enabled. Mock data should not be treated as production-backed Storefront data.
+- The Builder does not provide arbitrary page-building, drag-and-drop sections, custom content blocks, custom CSS, spacing controls, custom domains, SEO configuration, password protection, or Storefront analytics.
+- Profile image inline editing is not part of the current Builder.
+- Product identity, status, price, media, and publishing remain part of Product management. The Storefront does not add, edit, publish, delete, or bulk-update products.
+- Storefront customer messaging, customer impersonation, and access grants are not part of the current Storefront experience.
 
 ## Related pages
 
 - [Creator Overview](./creator-overview.md)
+- [Creator Settings](./creator-settings.md)
 - [Managing Products](./managing-products.md)
 - [Membership Products](./membership-products.md)
 - [Product Statuses](../core-concepts/product-statuses.md)

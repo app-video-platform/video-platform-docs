@@ -31,7 +31,7 @@ Creators can currently:
 - Open the Customers area and inspect available customer relationship records.
 - Open the Sales area and inspect available order records.
 - Open the Analytics area and inspect available business performance summaries.
-- Open the Storefront area, copy the public Storefront link, review product visibility, and inspect the live public presentation.
+- Open the Storefront Builder, edit supported public profile fields, set public email, customize the Storefront presentation, review product visibility, choose a featured product, order products, and open or copy the public Storefront link.
 - Create new products.
 - Edit existing products.
 - Configure shared product details such as title, description, pricing, and media.
@@ -63,7 +63,7 @@ For business performance review, start with [Analytics](./analytics.md).
 ## Current limitations
 
 - The dashboard includes audience and sales sections, but they do not yet show real performance data.
-- Storefront featured product selection and product ordering have frontend contracts, but the production Storefront configuration backend is not implemented yet.
+- Storefront theme, featured product selection, product ordering, and public read-model contracts exist in the frontend, but the production Storefront backend endpoints are not implemented yet.
 - Customer relationship details have frontend list/detail contracts, but dedicated production Customer APIs are not implemented yet.
 - Sales order and financial details have frontend summary/order contracts, but production Sales and order APIs are not implemented yet.
 - Analytics business data has a frontend aggregate contract, but the production Analytics API is not implemented yet.

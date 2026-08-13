@@ -52,11 +52,11 @@ Current backend-pending frontend contracts include:
 - Creator Sales summary, Orders page, and Order Detail.
 - Creator Analytics aggregate overview with `7d`, `30d`, and `90d` period queries.
 - Creator Dashboard aggregate summary.
-- Public Storefront read model and Creator Storefront configuration/update.
+- Public Storefront read model and Creator Storefront configuration/update, including theme, featured Product selection, and Product ordering.
 - Membership aggregate, configuration update, native content create/update/delete, and feed ordering.
 - Product recurring-pricing extension using `price`, `pricingModel`, `billingInterval`, and `currency`.
 
-Ownership boundaries matter for these contracts. Product remains authoritative for Product identity, type, name, description, status, image, price amount, pricing model, billing interval, and currency. Membership owns Membership configuration, native content, included Product associations, and feed/order metadata. Storefront configuration owns featured Product ID and Product ordering; User/Profile owns Creator profile fields, and Product owns catalogue data.
+Ownership boundaries matter for these contracts. Product remains authoritative for Product identity, type, name, description, status, image, price amount, pricing model, billing interval, and currency. Membership owns Membership configuration, native content, included Product associations, and feed/order metadata. Storefront configuration owns theme, featured Product ID, and Product ordering. User/Profile owns Creator profile fields and public email, and Product owns catalogue data.
 
 Local development may substitute ignored HTTP mocks at the Axios boundary when `REACT_APP_USE_MOCKS=true`. Feature components should not branch on mock mode for Creator business data.
 

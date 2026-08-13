@@ -93,7 +93,7 @@ Similarly, shared status presentation primitives own reusable visual and semanti
 
 Shared chart primitives own reusable visualization presentation and infrastructure, such as chart sizing, tooltips, legends, empty states, accessibility labels, responsive behavior, and design tokens. Feature code owns domain-specific analytics meaning, including metric selection, series labels, comparison copy, ranking logic, and insights.
 
-Storefront presentation is shared between the Creator management preview and the public Storefront route. The shared Storefront feature owns the public presentation and view-model shaping; route pages own loading, access, and composition with User/Profile, Product, and Storefront config/read-model state. Storefront config owns featured Product ID and Product ordering only.
+Storefront presentation is shared between the Creator Storefront Builder and the public Storefront route. The shared Storefront feature owns the public presentation, theme application, and view-model shaping; route pages own loading, access, draft composition, and composition with User/Profile, Product, and Storefront config/read-model state. Storefront config owns theme, featured Product ID, and Product ordering. User/Profile owns public profile fields and public email.
 
 Membership remains Product-scoped rather than becoming a separate sellable root. Product owns the generic sellable shell and recurring-pricing metadata, while Membership owns content, included Product associations, and feed/order configuration through backend-pending contracts.
 
