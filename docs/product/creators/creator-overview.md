@@ -77,7 +77,8 @@ For business performance review, start with [Analytics](./analytics.md).
 - Analytics business data has a frontend aggregate contract, but the production Analytics API is not implemented yet.
 - Marketing campaigns, messages, and customer booking flows are outside the current core product creation workflow.
 - Some course lesson content editors are visible but not fully persisted yet.
-- Membership-native content, included products, recurring pricing, ordering, and readiness feedback have frontend contracts where appropriate, but production backend integration remains pending.
+- Membership authoring is persisted, but binary media, Product publishing,
+  subscriptions, checkout, entitlements, and member access remain unavailable.
 
 ## Related pages
 

@@ -79,10 +79,9 @@ The current library has tabs for all products, courses, downloads, consultations
 
 ### Membership product
 
-A frontend product-builder type for configuring a membership content hub. It is
-not a persisted Product type in the current production backend.
+A persisted Product type for configuring a membership content hub.
 
-Creators can add native Posts, Videos, and Resources, reference existing Course and Download products, order the unified Membership feed, and set a EUR recurring price with monthly or yearly billing controls. Membership configuration/content/feed and Product recurring-pricing frontend contracts exist, but production backend support, subscriptions, entitlements, publishing, member access, checkout, and buyer-facing Membership flows are not implemented yet.
+Creators can persist native Posts and Video/Resource metadata, reference existing Course and Download products, order the unified Membership feed, and set a EUR recurring price with monthly or yearly billing controls. Binary media, subscriptions, entitlements, publishing, member access, checkout, and buyer-facing Membership flows are not implemented yet.
 
 ### Product
 

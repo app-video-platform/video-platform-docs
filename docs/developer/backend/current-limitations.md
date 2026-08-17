@@ -11,7 +11,9 @@ sidebar_position: 11
 - Google sign-in
 - User profile and social-link updates
 - single-role enforcement and Admin role replacement
-- Course, Download, and Consultation Product persistence
+- Course, Download, Consultation, and Membership Product persistence
+- Membership recurring pricing, config, native content metadata, included
+  Course/Download associations, and feed ordering
 - Product ownership and Admin cross-owner rules
 - Product search and summaries
 - nested Course/Download section authoring
@@ -54,9 +56,6 @@ The frontend contains services, models, Redux state, or local HTTP mocks for
 these areas, but the current backend does not implement their production
 contracts:
 
-- Membership Product persistence
-- recurring Product pricing metadata for Membership
-- Membership configuration, native content, included Products, and feed order
 - Creator Dashboard aggregate data
 - Creator Customers list and detail data
 - Creator Sales summaries, orders, and order details
@@ -72,8 +71,9 @@ contracts:
 - taxes, coupons, disputes, invoices, or marketplace payouts
 - subscriptions and renewals
 - buyer-facing Membership access
+- Membership Product publishing and one-time checkout
 - exposed Admin entitlement grant/revoke operations
-- generalized media asset lifecycle for Membership and other rich media
+- Membership binary media upload/delivery and a generalized rich-media asset lifecycle
 - complete booking, availability, rescheduling, and consultation-session
   management
 

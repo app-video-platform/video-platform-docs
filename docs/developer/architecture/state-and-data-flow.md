@@ -96,7 +96,7 @@ Not all state belongs in Redux.
 
 Local UI state stays in components or feature hooks when it does not need to be shared globally. The product builder is the richest example: it uses feature hooks and a facade to coordinate form state, loading, autosave, sidebar navigation, and product actions before crossing into Redux and services.
 
-Membership domain state is Product-scoped and stored in the Membership Redux slice. Native Membership content, included Product feed entries, ordering mode, and manual movement behavior cross into Membership thunks and backend-pending services.
+Membership domain state is Product-scoped and stored in the Membership Redux slice. Native Membership content, included Product feed entries, ordering mode, and manual movement behavior cross into Membership thunks and implemented backend services.
 
 The Membership feed combines two separate concepts: native Membership content and included standalone Products. `MembershipFeedEntry` provides the stable feed identity plus relationship metadata such as `addedAt` and optional ordering position/state. Product remains authoritative for product identity, name, description, status, image, and recurring-pricing fields; Membership owns configuration, native content, included Product associations, and feed/order metadata.
 

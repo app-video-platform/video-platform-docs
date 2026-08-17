@@ -101,7 +101,7 @@ Product Landing Page presentation is shared between the public Product route and
 
 Storefront presentation is shared between the Creator Storefront Builder and the public Storefront route. The shared Storefront feature owns the public presentation, theme application, and view-model shaping; route pages own loading, access, draft composition, and composition with User/Profile, Product, and Storefront config/read-model state. Storefront config owns theme, featured Product ID, and Product ordering. User/Profile owns public profile fields and public email.
 
-Membership remains Product-scoped rather than becoming a separate sellable root. Product owns the generic sellable shell and recurring-pricing metadata, while Membership owns content, included Product associations, and feed/order configuration through backend-pending contracts.
+Membership remains Product-scoped rather than becoming a separate sellable root. Product owns the generic sellable shell and recurring-pricing metadata, while Membership owns content, included Product associations, and feed/order configuration through implemented authoring contracts.
 
 ## `styles`
 

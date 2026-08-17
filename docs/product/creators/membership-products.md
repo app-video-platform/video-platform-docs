@@ -7,9 +7,9 @@ sidebar_position: 7
 
 ## Overview
 
-Membership products let creators configure a membership-style content hub in the current frontend builder and local/mock-backed development flows.
+Membership products let creators persist a membership-style content hub from the current builder.
 
-The current Membership builder supports shared product setup, native member-only content, including existing Course and Download products, unified content ordering, recurring pricing controls, and readiness feedback. The frontend now has data contracts for Membership configuration, content, and feed updates, but the production backend endpoints are still pending. Membership does not yet create a real subscription, entitlement, checkout, publish action, or member-access experience.
+The Membership builder and backend support shared Product setup, native content metadata, included Course and Download Products, unified content ordering, recurring pricing configuration, and readiness feedback. Membership does not yet create a subscription, entitlement, checkout, published Product, or member-access experience.
 
 ## Who can use this
 
@@ -19,7 +19,7 @@ This page is for Creators configuring Membership products.
 
 Creators can:
 
-- Select Membership in the shared frontend product creation flow. Production backend Product creation for Membership is not supported yet.
+- Select Membership in the shared product creation flow and persist a Draft Product.
 - Use shared product settings such as basics, pricing, and media.
 - Open Membership Content in the builder.
 - Add native Posts, Videos, and Resources.
@@ -38,9 +38,8 @@ Creators can:
 ### Create the product
 
 Start from [Creating a Product](./creating-a-product.md), choose Membership, and
-enter a title. Continuing into a working Membership builder currently depends
-on frontend mock/backend-pending behavior; the production backend rejects
-`MEMBERSHIP` as an unsupported Product type.
+enter a title. The backend creates a Draft Membership and the builder saves its
+supported Product, content, configuration, and feed data.
 
 Membership products use the shared builder areas:
 
@@ -62,7 +61,11 @@ Use **+ Add Content** to add:
 - Resource
 - Existing Product
 
-Native Posts, Videos, and Resources are Membership-only content types in the builder. They can be created, edited, deleted, and marked Draft, Published, or Hidden while the builder page remains open.
+Native Posts, Videos, and Resources are Membership-only content types. They can be created, edited, deleted, persisted, and marked Draft, Published, or Hidden.
+
+For Videos and Resources, the current backend saves the selected file's name,
+MIME type, size, and a server-generated file reference. It does not upload or
+deliver the binary file yet.
 
 Existing Products are separate standalone products that the Membership references. Adding a Course or Download to a Membership does not convert that product into Membership-native content.
 
@@ -111,16 +114,13 @@ Non-blocking warnings include:
 - No native content.
 - No included Products.
 
-When the readiness check passes, the Membership Publish button remains disabled with copy explaining that Membership publishing is waiting for persistence support. It does not call a Membership publish API or mutate Product status.
+When the readiness check passes, the Membership Publish button remains disabled. It does not call a Membership publish API or mutate Product status; the backend also rejects attempts to set a Membership Product to Published.
 
 ## Current limitations
 
-- Membership configuration, native Posts, Videos, Resources, included Product associations, and feed ordering have frontend contracts, services, and shared state, but the production backend Membership endpoints are not implemented yet.
-- There is no Membership Product entity, strategy handler, repository, or Liquibase table in the current backend.
-- Recurring Membership pricing participates in the frontend Product create/edit/autosave contract, but the production backend Product contract for recurring pricing fields is still pending.
-- Video and Resource editors persist metadata and file-reference shapes through the Membership content contract, but real binary asset upload for Membership media is still backend-pending.
+- Video and Resource selection persists metadata only; the binary file is not uploaded or available to members.
 - Editor drafts, selected File objects, chooser state, picker state, and the active builder tab remain local UI state.
-- Readiness feedback is derived in the frontend. Backend Membership readiness validation is not implemented yet.
+- Readiness feedback is derived in the frontend and is not a backend publishing check.
 - No real subscription or Stripe checkout flow exists for Membership products yet.
 - No entitlement or member access logic exists yet.
 - No buyer-facing Membership experience exists yet.

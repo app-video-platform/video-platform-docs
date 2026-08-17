@@ -43,7 +43,9 @@ The production backend currently includes:
 - registration, email verification, login, logout, refresh, and Google sign-in
 - authenticated profile and social-link management
 - one active role per user and Admin role replacement
-- Course, Download, and Consultation Product persistence
+- Course, Download, Consultation, and Membership Product persistence
+- Membership recurring-price, content-metadata, included-Product, and feed
+  authoring for Creators/Admins
 - owner-or-Admin Product mutation rules
 - Product search and summary reads
 - canonical nested section, lesson, and Download file authoring
@@ -60,8 +62,8 @@ The production backend currently includes:
 
 The backend does not currently provide complete production support for:
 
-- Membership Products or Membership content
-- recurring Membership pricing fields
+- Membership publishing, binary media upload/delivery, subscriptions,
+  entitlements, checkout, or member access
 - production Stripe or other real-provider checkout
 - customer-facing paid checkout integration
 - partial refunds, taxes, coupons, payouts, or payment retries

@@ -30,6 +30,8 @@ Major server-backed areas include:
 - Admin user, product, and audit listings.
 - Calendar provider discovery and connection initiation.
 - Free Product enrollment, active entitlements, access checks, and protected Download delivery in the backend.
+- Membership Product and recurring-pricing persistence, native content metadata,
+  included Product associations, and feed ordering.
 
 Major browser-saved areas include:
 
@@ -44,8 +46,6 @@ Major frontend-defined, backend-pending contract areas include:
 - Creator Dashboard aggregate summary.
 - Public Storefront read model and Creator Storefront configuration, including theme, featured Product selection, and Product ordering.
 - Product Landing Page configuration for marketing copy, hero layout, supported section visibility, and supported section order.
-- Product recurring-pricing fields for Membership products.
-- Membership aggregate, configuration, native content CRUD, included Product associations, and feed ordering.
 
 Major backend capabilities not yet exposed as complete frontend workflows
 include:
@@ -77,8 +77,8 @@ Major placeholder or incomplete areas include:
 - Production Analytics and Dashboard aggregate endpoints for revenue, order, customer, membership, payment, activity, and product-performance data.
 - Production Storefront endpoints for public read models and Creator configuration, plus arbitrary page-building, custom domains, SEO settings, password protection, and Storefront analytics.
 - Production Product Landing Page config persistence, a dedicated public Product read model, server-side public Product visibility enforcement, public Creator payloads, checkout/access/waitlist state, SEO, slugs, custom domains, analytics, Product-specific theme overrides, and arbitrary page-builder blocks.
-- Production Product support for recurring-pricing fields and production Membership endpoints for content, included Product associations, feed ordering, binary asset upload, subscriptions, entitlements, and member access.
-- Membership subscriptions, entitlement logic, member access, and buyer-facing Membership flows.
+- Membership binary asset upload/delivery, Product publishing, subscriptions,
+  entitlement logic, member access, and buyer-facing Membership flows.
 - Customer Library tabs backed by the entitlement API.
 - Email campaigns.
 - Messages.
@@ -93,7 +93,7 @@ Some backend capabilities intentionally remain listed as incomplete product
 flows because the current frontend does not call them. Backend implementation
 alone does not make a feature available to users.
 
-Frontend-defined, backend-pending contracts describe current frontend requirements and data flow, but they should not be described as production-backed capabilities until the backend implements them.
+Frontend-defined, backend-pending contracts describe current frontend requirements and data flow, but they should not be described as production-backed capabilities until the backend implements them. The Membership authoring contracts are now implemented; stale frontend comments may still describe them as pending.
 
 Browser-saved areas can persist on the same device and browser, but they should not be described as account-synchronized features.
 
@@ -103,7 +103,7 @@ Local development may serve deterministic data through ignored HTTP mocks at the
 
 Placeholder areas may be visible in navigation or tabs, but should be documented only as current limitations unless they have meaningful user-facing behavior.
 
-Local mock data can demonstrate intended screen behavior for reviewers, but it should not be described as production-backed customer, financial, analytics, dashboard, Storefront, Product Landing Page, or Membership data.
+Local mock data can demonstrate intended screen behavior for reviewers, but it should not be described as production-backed customer, financial, analytics, dashboard, Storefront, or Product Landing Page data. Membership authoring persistence should be distinguished from its still-missing subscription and member-access lifecycle.
 
 ## Current limitations
 

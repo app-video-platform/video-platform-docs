@@ -26,7 +26,7 @@ The strongest areas of the current frontend are:
 - Course and download section management.
 - Download file upload and removal for download products.
 - Consultation setup fields.
-- Frontend Membership creation screens, native Membership Content, included Product selection, unified ordering, recurring pricing controls, readiness feedback, and backend-pending Membership contracts.
+- Membership creation, persisted native content metadata, included Product selection, unified ordering, recurring pricing configuration, and readiness feedback.
 - Creator Storefront Builder, public Storefront pages, inline public profile editing, public email, live customization, published-product visibility, copyable public URL, featured product selection, ordering controls, and draft Save/Reset behavior.
 - Creator Customers routes, list controls, read-only detail tabs, and frontend Customer list/detail contracts.
 - Creator Sales routes, sales metrics, order ledger controls, read-only order detail, and frontend Sales summary/order contracts.
@@ -47,7 +47,7 @@ The strongest areas of the current frontend are:
 | Course products | Sections and lesson shells can be created. The backend persists Quiz definitions and attempts, but the current frontend does not yet provide a complete reliable Video, Article, Quiz delivery, and customer learning workflow. |
 | Download products | Creator-side file upload and backend authorized Download delivery exist, but the frontend Library does not expose customer delivery. |
 | Consultation products | Setup fields exist, but booking, availability, rescheduling, and customer session management are not implemented. |
-| Membership products | Creator-side Membership setup exists for native Posts, Videos, Resources, included Course/Download products, unified ordering, recurring pricing, and readiness feedback. Membership configuration/content/feed and Product recurring-pricing frontend contracts exist, but production backend endpoints are pending. |
+| Membership products | Creator/Admin Membership authoring is persisted for Draft/Hidden Products, recurring pricing configuration, native Posts and Video/Resource metadata, included same-owner Course/Download Products, and feed ordering. Binary media, Membership publishing, subscriptions, checkout, entitlements, and member access are unavailable. |
 | Wishlist | Works in the browser and persists locally, but is not tied to a backend user account. |
 | Shopping cart | Works in the browser and persists locally. Free-only carts can use backend enrollment. The backend now has a one-time paid Order/payment foundation, but paid checkout is not connected in the frontend and no production payment provider is configured. |
 | Library | The backend can list active Product entitlements, but the frontend Library shell does not consume that API. Wishlist has behavior; owned Courses, Downloads, and Consultations are not shown. |
@@ -68,7 +68,7 @@ Do not describe the following as supported product capabilities:
 - Production payment processing.
 - Product Overview product-scoped revenue analytics, orders, customer counts, subscriber/member counts, conversion, charts, ratings/reviews, Storefront visibility controls, access management, duplicate/archive, publish/unpublish management, inline landing-page editing, SEO controls, or dedicated Product Overview backend APIs.
 - Product Landing Page checkout, payments, frontend free-enrollment/access integration, Membership subscription checkout, waitlists, ratings/reviews, landing-page analytics, SEO controls, slugs, custom domains, galleries, slideshows, promo video, presentations, arbitrary page-builder blocks, Product-specific theme overrides, production config persistence, or a dedicated production public Product read model.
-- Production-backed Membership native content, included Product associations, recurring pricing, subscriptions, entitlement logic, real publishing, member access, binary Video/Resource upload, or buyer-facing Membership flows.
+- Membership binary Video/Resource upload or delivery, subscriptions, checkout, entitlement logic, Product publishing, member access, or buyer-facing Membership flows.
 - Frontend customer access to purchased Course/Download/Consultation content. The backend can fulfill paid purchase entitlements, but the frontend Library and delivery flows do not consume them end to end.
 - Production-backed Creator customer management, customer profiles, customer purchase history, access management, notes editing, customer deletion, exporting, bulk actions, messaging, or impersonation.
 - Production-backed Creator financial reporting, order management, payment processing, refund issuing, charge retries, subscription changes, financial exporting, or access mutation from Sales.

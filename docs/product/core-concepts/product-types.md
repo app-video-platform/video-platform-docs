@@ -16,9 +16,8 @@ The current frontend presents four product types:
 
 Each product type uses the shared product creation flow, then adds type-specific setup areas in the builder.
 
-The production backend currently persists Course, Download, and Consultation.
-Membership is a frontend builder capability with backend-pending contracts, so
-it is not a production-persisted Product type yet.
+The backend persists all four Product types. Membership persistence currently
+covers Creator/Admin authoring, not publishing, subscriptions, or member access.
 
 ## Who can use this
 
@@ -49,9 +48,7 @@ Membership products do not use Course or Download sections. Native Membership co
 - Course lesson content does not yet fully support persisted video, article, assignment, and quiz workflows.
 - Download file upload exists for creator setup, but customer delivery through the Library is not implemented.
 - Consultation setup exists, but customer booking, availability, rescheduling, and session management are not complete.
-- Selecting or configuring Membership in the frontend does not create a supported production backend Product; Membership persistence endpoints and tables are pending.
-- Membership configuration, native content, included Product relationships, and feed ordering have frontend contracts, but production backend Membership endpoints are still pending.
-- Recurring Membership pricing participates in the frontend Product create/edit/autosave contract, but production backend support for the recurring pricing fields is still pending.
+- Membership Video and Resource selections persist file metadata only; binary upload and delivery are not implemented.
 - Membership readiness feedback is frontend-derived, and there is no subscription, entitlement, member access, checkout, real publishing, or buyer-facing Membership experience yet.
 
 ## Related pages

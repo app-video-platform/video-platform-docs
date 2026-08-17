@@ -51,12 +51,26 @@ enforces one role per user.
 | `course_products` | Shared Product fields for Course Products | Belongs to owner User; owner deletion cascades |
 | `download_products` | Shared Product fields for Download Products | Belongs to owner User; owner deletion cascades |
 | `consultation_products` | Shared Product fields plus consultation configuration | Belongs to owner User; several setup fields are nullable for drafts |
+| `membership_products` | Shared Product fields plus Membership ordering mode | Belongs to owner User; recurring EUR pricing; Draft/Hidden only |
 
 There is no `products` table. JPA `TABLE_PER_CLASS` inheritance means each
 concrete Product table stores the shared columns.
 
-Current backend Product types are Course, Download, and Consultation. There is
-no Membership Product table.
+All concrete Product tables store `pricing_model`, `billing_interval`, and
+`currency`. Existing Products were backfilled to `ONE_TIME`, no interval, and
+`EUR`; Membership uses `RECURRING` with `MONTH` or `YEAR`.
+
+### Membership authoring
+
+| Table | Purpose | Important relationships/constraints |
+|---|---|---|
+| `membership_content` | Post bodies or Video/Resource file metadata | Belongs to Membership and cascades with it; type-specific shape checks |
+| `membership_feed_entries` | Unified native-content and included-Product feed | Belongs to Membership; unique content/Product associations; positive optional manual position |
+
+Included Product IDs cannot use one database foreign key because Products use
+table-per-class storage. The service validates existence, owner, and allowed
+Course/Download type, and removes feed references before an included Product is
+deleted.
 
 ### Course content
 
@@ -134,6 +148,7 @@ PostgreSQL extensions and indexes include:
   audit logs, and entitlements
 - Commerce Order buyer/Creator/status lookups and Order-item/payment-event
   relationships
+- Membership owner, content, feed ordering, and included-Product lookups
 
 Consultation Product search indexing is not implemented alongside the Course
 and Download trigram indexes in the current migration set.

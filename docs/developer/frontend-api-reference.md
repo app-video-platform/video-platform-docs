@@ -63,15 +63,19 @@ Current backend-pending frontend contracts include:
 - Creator Dashboard aggregate summary.
 - Product Landing Page config reads and Creator config updates.
 - Public Storefront read model and Creator Storefront configuration/update, including theme, featured Product selection, and Product ordering.
-- Membership aggregate, configuration update, native content create/update/delete, and feed ordering.
-- Product recurring-pricing extension using `price`, `pricingModel`, `billingInterval`, and `currency`.
 
 Ownership boundaries matter for these frontend contracts. The current backend
 Product contract is authoritative for Product identity, type, name,
 description, status, image, price amount, and supported type-specific content.
-The frontend's pricing model, billing interval, currency extension, Product
-Landing Page config, Membership, Storefront, and several Creator aggregate
-contracts remain backend-pending.
+The backend now implements the frontend's Product pricing model, billing
+interval, currency extension, and Membership authoring contracts. Product
+Landing Page config, Storefront, and several Creator aggregate contracts remain
+backend-pending.
+
+Membership service comments that still say `BACKEND CONTRACT NOT YET
+IMPLEMENTED` are stale. The runtime routes are implemented, but binary media,
+Membership publishing, checkout, subscriptions, entitlements, and member access
+remain unavailable.
 
 Local development may substitute ignored HTTP mocks at the Axios boundary when `REACT_APP_USE_MOCKS=true`. Feature components should not branch on mock mode for Creator business data.
 

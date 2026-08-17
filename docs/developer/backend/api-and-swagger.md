@@ -91,6 +91,29 @@ data, with protected Course content and Download URLs removed. Summary and
 search paths do not all apply the same publication filtering; do not treat them
 as a finalized public-catalogue contract without reviewing the implementation.
 
+Generic Product request, response, and summary schemas include `pricingModel`,
+`billingInterval`, and `currency`. Membership Product publishing is rejected
+with HTTP 409.
+
+## Membership authoring routes
+
+These routes require Creator/Admin and enforce owner-or-Admin access. The GET
+operation has method-level protection despite the general public Product GET
+matcher.
+
+| Method | Path | Purpose |
+|---|---|---|
+| GET | `/api/products/{productId}/membership` | Load the complete Membership aggregate |
+| PATCH | `/api/products/{productId}/membership` | Update ordering configuration |
+| POST | `/api/products/{productId}/membership/content` | Create native content and its feed entry |
+| PATCH | `/api/products/{productId}/membership/content/{contentId}` | Merge a native content update |
+| DELETE | `/api/products/{productId}/membership/content/{contentId}` | Delete content and its feed entry |
+| PUT | `/api/products/{productId}/membership/feed` | Transactionally replace included Products and feed order |
+
+Video and Resource bodies contain metadata only. The backend generates file IDs
+and ignores client-provided URLs; there is no binary upload or public media URL
+in this contract.
+
 ## Canonical Product authoring routes
 
 These routes require Creator/Admin and enforce owner-or-Admin access.
@@ -151,7 +174,7 @@ there is no production payment-provider adapter.
 
 | Method | Path | Access | Purpose |
 |---|---|---|---|
-| POST | `/api/commerce/checkout-sessions` | Authenticated | Create an idempotent one-time checkout for published paid Products from one Creator |
+| POST | `/api/commerce/checkout-sessions` | Authenticated | Create an idempotent one-time checkout for eligible published paid Products from one Creator; Membership/recurring Products are rejected |
 | GET | `/api/commerce/orders/{orderId}` | Buyer/Admin | Read Order and payment-attempt status |
 | POST | `/api/dev/commerce/orders/{orderId}/simulate` | Admin, dev/test only | Simulate paid, failed, or fully refunded payment events |
 

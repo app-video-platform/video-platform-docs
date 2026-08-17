@@ -33,6 +33,7 @@ The backend accepts at most 20 unique Products. Every Product must be:
 - owned by the same Creator
 - not owned by the buyer
 - not already covered by an active entitlement
+- a one-time Product, not Membership or another recurring-price Product
 
 Free Products continue to use the entitlement enrollment endpoint. Checkout
 uses backend Product prices and stores amounts as EUR minor units. Frontend
@@ -74,7 +75,8 @@ Never enable the fake simulation endpoint in a deployed production profile.
 
 ## Current boundaries
 
-- One-time Course, Download, and Consultation purchases only.
+- One-time Course, Download, and Consultation purchases only. Membership and
+  recurring-price Products are explicitly rejected.
 - One Creator per checkout.
 - EUR only.
 - Full Order refunds only; partial refunds are unsupported.

@@ -67,8 +67,8 @@ audit text.
 - There are no custom permissions beyond the three roles.
 - There is no exposed Admin entitlement grant/revoke API.
 - There is no Product archive/recovery workflow.
-- Membership cannot be created as a persisted backend Product even if the
-  frontend Admin form displays it.
+- Admins can author Memberships across owners, but Membership publishing,
+  checkout, subscriptions, entitlements, and member access are unavailable.
 
 ## Related pages
 
@@ -76,4 +76,3 @@ audit text.
 - [Products and Authoring](./products-and-authoring.md)
 - [Admin Overview](../../product/administrators/admin-overview.md)
 - [Audit Logs](../../product/administrators/audit-logs.md)
-

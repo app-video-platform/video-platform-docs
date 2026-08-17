@@ -18,7 +18,7 @@ Redux Toolkit state lives under `src/core/store`.
 | `dashboard` | `src/core/store/dashboard-store/*` | `selectCreatorDashboardSummary`, `selectCreatorDashboardLoading`, `selectCreatorDashboardError` | Backend-pending Creator Dashboard aggregate summary contract. |
 | `productLandingPage` | `src/core/store/product-landing-page-store/*` | `selectPublicProductLandingPageConfigByProductId`, `selectCreatorProductLandingPageConfigByProductId` | Backend-pending public and Creator Product Landing Page config contracts. |
 | `storefront` | `src/core/store/storefront-store/*` | `selectPublicStorefrontByCreatorId`, `selectCreatorStorefrontConfig` | Backend-pending public Storefront read model and Creator Storefront config contracts, including theme, featured Product, and Product ordering. |
-| `membership` | `src/core/store/membership-store/*` | `selectMembershipAggregateByProductId`, `selectMembershipLoading`, `selectMembershipSaving` | Backend-pending Product-scoped Membership aggregate, content, and feed contracts. |
+| `membership` | `src/core/store/membership-store/*` | `selectMembershipAggregateByProductId`, `selectMembershipLoading`, `selectMembershipSaving` | Backend-backed Product-scoped Membership aggregate, content-metadata, and feed authoring. |
 | `reviews` | `src/core/store/reviews-store/*` | `selectAllReviews` | Creator Marketing Reviews list and filters. |
 | `notifications` | `src/core/store/notifications/*` | `selectNotifications` | In-memory notification list. |
 | `shopCart` | `src/core/store/shop-cart/*` | `selectAllShopCartProducts`, `selectShopCartTotal`, `selectCartCount`, `selectCartIds` | Browser-saved cart. No checkout/payment state. |

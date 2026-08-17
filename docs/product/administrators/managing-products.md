@@ -33,9 +33,9 @@ Administrators can:
 ## How it works
 
 The Admin Products page includes filters for product search, owner ID, product
-type, and product status. The frontend includes Course, Download, Consultation,
-and Membership filters; the current backend persists only Course, Download, and
-Consultation. Visible status filters are Draft, Published, and Hidden.
+type, and product status. Course, Download, Consultation, and Membership filters
+are backed by the current Product model. Visible status filters are Draft,
+Published, and Hidden, although Membership Products cannot be Published.
 
 Each product row shows the product owner name when available and the owner ID. Admins can view the current public Product Landing Page, open the edit flow, or delete the product.
 
@@ -48,7 +48,8 @@ Creating a product from this area starts with selecting a creator owner. After t
 - Admin filters include owner ID rather than a full creator search experience in the product filter bar.
 - Public Product Landing Pages do not call the backend's free-enrollment/access APIs and do not complete checkout, paid fulfillment, subscriptions, or waitlists.
 - Product media, publishing, Product Landing Page Builder, checkout, and customer access limitations still apply to products managed by Admins.
-- Membership rows can exist in frontend mock/contract data, but Membership is not a persisted backend Product type.
+- Membership authoring rows are persisted, but Membership publishing, checkout,
+  subscriptions, entitlements, and member access are unavailable.
 
 ## Related pages
 

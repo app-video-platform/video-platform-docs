@@ -21,7 +21,7 @@ Product services are split across:
 
 | Function | Method and URL | Notes |
 |---|---|---|
-| `createProductAPI` | `POST api/products` | Sends Course, Download, Consultation, or Membership frontend drafts. The current backend accepts only Course, Download, and Consultation. |
+| `createProductAPI` | `POST api/products` | Creates Course, Download, Consultation, or Membership drafts. |
 | `updateProductDetailsAPI` | `PATCH api/products/:id` | Updates shared product details. |
 | `deleteProductAPI` | `DELETE api/products/:productId` | Deletes by product ID. |
 | `getAllProductsByUserIdAPI` | `GET api/products?userId=` | Creator/admin product retrieval by user. |
@@ -73,15 +73,14 @@ The public Product route still composes available Product, config, theme, and Cr
 
 Current frontend product types are `COURSE`, `DOWNLOAD`, `CONSULTATION`, and `MEMBERSHIP`.
 
-Current backend Product types are `COURSE`, `DOWNLOAD`, and `CONSULTATION`.
-Sending `MEMBERSHIP` to the generic Product endpoint is not a supported
-production backend flow.
+Current backend Product types are `COURSE`, `DOWNLOAD`, `CONSULTATION`, and
+`MEMBERSHIP`.
 
 Current product statuses represented in frontend types are `DRAFT`, `PUBLISHED`, and `HIDDEN`.
 
-Membership uses the shared Product create/update shape for core Product fields and Product-owned recurring-pricing metadata. The current frontend Product contract carries `price`, `pricingModel`, `billingInterval`, and `currency`; production backend support for those recurring-pricing fields is still pending.
+Membership uses the shared Product create/update shape for core Product fields and Product-owned recurring-pricing metadata. The Product contract carries `price`, `pricingModel`, `billingInterval`, and `currency`; the backend persists those fields and defaults Membership to recurring EUR monthly pricing.
 
-Membership-native Posts, Videos, Resources, included Product relationships, feed ordering, and Membership configuration are owned by Product-scoped Membership contracts, not by Product `details` payloads. Membership readiness is derived in the frontend and is not persisted by Product or Membership APIs.
+Membership-native Posts, Videos, Resources, included Product relationships, feed ordering, and Membership configuration are owned by implemented Product-scoped Membership contracts, not by Product `details` payloads. Video/Resource bodies persist metadata only. Membership readiness is derived in the frontend and is not persisted by Product or Membership APIs.
 
 See [Backend Products and Authoring](../backend/products-and-authoring.md) for
 persisted Product rules and [Backend API and Swagger](../backend/api-and-swagger.md)

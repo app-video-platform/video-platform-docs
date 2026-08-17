@@ -7,19 +7,17 @@ sidebar_position: 5
 
 ## Supported Product model
 
-The backend currently persists three Product types:
+The backend currently persists four Product types:
 
 | Type | Type-specific model |
 |---|---|
 | `COURSE` | Ordered sections containing lessons |
 | `DOWNLOAD` | Ordered sections containing files |
 | `CONSULTATION` | Consultation configuration fields |
+| `MEMBERSHIP` | Recurring-price authoring, native content metadata, included Products, and feed ordering |
 
-Supported statuses are `DRAFT`, `PUBLISHED`, and `HIDDEN`.
-
-`MEMBERSHIP` exists in the frontend but is not a backend Product type. The
-backend does not currently persist Membership configuration, content, feed
-ordering, subscriptions, or recurring-pricing metadata.
+Supported statuses are `DRAFT`, `PUBLISHED`, and `HIDDEN`. Membership Products
+are intentionally limited to `DRAFT` and `HIDDEN`; publishing returns HTTP 409.
 
 ## Shared Product fields
 
@@ -31,6 +29,7 @@ Concrete Product entities share these concepts:
 - type and status
 - owning User
 - price
+- pricing model, optional billing interval, and currency
 - customer count
 - created and updated timestamps
 
@@ -65,14 +64,19 @@ Both a typed `PUT /api/products` and canonical
 `PATCH /api/products/{productId}` currently exist. Prefer the canonical ID path
 for new partial-update integrations while preserving existing consumers.
 
+Membership defaults to `RECURRING`, `MONTH`, and `EUR`; its Draft price may be
+zero for the frontend's two-step creation flow. Other Product types default to
+`ONE_TIME`, no billing interval, and `EUR`.
+
 ## Deletion
 
 Product deletion:
 
 1. Resolves the concrete Product and checks authorization.
 2. Deletes entitlement records for the Product.
-3. Dispatches deletion through the type handler.
-4. Records an Admin audit event when the current actor is an Admin.
+3. Removes references from Membership feeds when deleting an included Course or Download.
+4. Dispatches deletion through the type handler.
+5. Records an Admin audit event when the current actor is an Admin.
 
 Concrete Product child records use cascade/orphan behavior and database foreign
 keys where configured. Deletion changes require both JPA and migration review.
@@ -131,6 +135,29 @@ passed.
 Every submission persists an attempt with points, percentage, pass result, and
 normalized answers.
 
+## Membership authoring
+
+Membership aggregate routes are rooted at
+`/api/products/{productId}/membership`. Every operation requires Creator/Admin
+authentication plus owner-or-Admin access, including GET operations.
+
+The aggregate contains configuration, native content, feed entries, and an
+updated timestamp. Configuration currently owns only `orderingMode`.
+
+- Native types are `POST`, `VIDEO`, and `RESOURCE`.
+- Native statuses are `DRAFT`, `PUBLISHED`, and `HIDDEN`.
+- Content type is immutable after creation.
+- Video/Resource payloads persist server-generated `fileId` plus filename, MIME
+  type, and size. Client URLs are ignored and no binary upload occurs.
+- Content creation and its feed entry are one transaction; deletion removes both.
+- Included Products must be unique same-owner Course or Download Products.
+- Manual ordering stores normalized one-based positions. Newest-first ignores
+  client order and uses server-owned `addedAt` values.
+
+This is Creator authoring persistence only. Membership Product publishing,
+checkout, subscriptions, entitlements, buyer feeds, and media delivery remain
+unimplemented.
+
 ## Search and discovery
 
 Product search uses Spring Data pagination and PostgreSQL trigram indexes for
@@ -153,4 +180,3 @@ checking frontend usage and providing a migration path.
 - [Persistence and Data Model](./persistence-and-data-model.md)
 - [Entitlements and Content Access](./entitlements-and-content-access.md)
 - [Frontend Products API](../api/products.md)
-
