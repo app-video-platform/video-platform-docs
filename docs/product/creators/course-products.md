@@ -83,7 +83,7 @@ The builder sidebar lists sections and lessons after they exist. Selecting an it
 
 - Video file selection is visible, but video upload and persistence are not complete.
 - Article content is edited in the page, but it is not reliably persisted as lesson content.
-- Quiz editing is visible and changes the lesson state in the builder, but quiz data is not fully persisted through the current lesson save behavior.
+- The backend persists Quiz definitions, questions, options, scoring rules, and attempts. The current frontend builder/player integration is not yet verified as a complete customer Quiz workflow.
 - Assignment content is not a usable lesson type in the current selector. Do not document Assignment as supported.
 - Course products can be structured, but they are not yet a complete customer learning experience with reliable media, article, and quiz delivery.
 

@@ -37,11 +37,16 @@ Product statuses appear most clearly in the Admin Products area, where Admins ca
 
 The product builder currently creates and edits products, but the frontend does not present a complete publish workflow with clear status transition controls.
 
+For direct full-Product backend reads, callers without owner, Administrator, or
+active-entitlement access can read only Published Products. Protected Course
+content and Download URLs are removed. Some Product summary and search
+endpoints do not apply the same status filtering yet.
+
 ## Current limitations
 
 - Do not treat Draft, Published, and Hidden as a complete creator publishing lifecycle.
 - The frontend does not currently provide a finished publish/unpublish workflow for Creators.
-- Customer-facing discovery can show products returned by the backend, but the frontend alone does not confirm the full rules for when each status appears to customers.
+- Public catalogue visibility is not consistently enforced across every backend summary/search route.
 
 ## Related pages
 

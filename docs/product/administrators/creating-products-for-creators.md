@@ -23,7 +23,8 @@ Administrators can:
 - Select a Creator owner from the creator owner list.
 - Start product creation for that Creator.
 - Choose a product type.
-- Create Course, Download, Consultation, or Membership products.
+- Create backend-persisted Course, Download, or Consultation products.
+- Open the frontend Membership builder option, with the limitation that the current backend does not persist Membership Products.
 - Continue into the shared product builder.
 
 ## How it works
@@ -35,7 +36,9 @@ The Admin then chooses a product type and enters the initial product title. Once
 ## Current limitations
 
 - Admin-created products inherit the current product-builder limitations.
+- The backend accepts Admin-created Products only when the selected owner exists and has exactly the Creator role.
 - Course lesson content, product media persistence, publishing, Membership-specific persistence, and customer purchase/access behavior are not complete.
+- Membership is selectable in the frontend but is not a supported persisted backend Product type.
 - The Admin creation flow requires selecting a Creator owner before starting.
 
 ## Related pages

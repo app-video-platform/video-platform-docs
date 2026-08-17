@@ -23,13 +23,13 @@ Major server-backed areas include:
 - Role-based access and Admin role changes.
 - Creator product creation and product editing.
 - Course sections and lesson shells.
+- Course Quiz definitions, validation, scoring, and attempt persistence in the backend.
 - Download section file upload.
 - Consultation setup fields.
-- Generic Membership product draft creation and shared product fields.
 - Product exploration and search.
 - Admin user, product, and audit listings.
-- Review listing and filtering.
 - Calendar provider discovery and connection initiation.
+- Free Product enrollment, active entitlements, access checks, and protected Download delivery in the backend.
 
 Major browser-saved areas include:
 
@@ -47,6 +47,16 @@ Major frontend-defined, backend-pending contract areas include:
 - Product recurring-pricing fields for Membership products.
 - Membership aggregate, configuration, native content CRUD, included Product associations, and feed ordering.
 
+Major backend capabilities not yet exposed as complete frontend workflows
+include:
+
+- Free Product enrollment.
+- Loading the signed-in user's active entitlement library.
+- Product access checks.
+- Authorized customer Download delivery.
+- Connected-calendar listing and disconnection.
+- End-to-end customer Quiz play and submission.
+
 Major frontend-only session state areas include:
 
 - Form drafts and UI interaction state.
@@ -57,7 +67,8 @@ Major frontend-only session state areas include:
 
 Major placeholder or incomplete areas include:
 
-- Checkout, payment, orders, and entitlements.
+- Checkout, payment, and orders.
+- Frontend integration for free enrollment, entitlements, protected content, and authorized downloads.
 - Production Customer APIs for creator customer management, purchase history, access records, notes, waitlist details, spend, and order data.
 - Production Sales APIs for order, payment, refund, subscription, renewal, entitlement, server pagination, payment-provider normalization, and safe financial mutation contracts.
 - Production Analytics and Dashboard aggregate endpoints for revenue, order, customer, membership, payment, activity, and product-performance data.
@@ -65,7 +76,7 @@ Major placeholder or incomplete areas include:
 - Production Product Landing Page config persistence, a dedicated public Product read model, server-side public Product visibility enforcement, public Creator payloads, checkout/access/waitlist state, SEO, slugs, custom domains, analytics, Product-specific theme overrides, and arbitrary page-builder blocks.
 - Production Product support for recurring-pricing fields and production Membership endpoints for content, included Product associations, feed ordering, binary asset upload, subscriptions, entitlements, and member access.
 - Membership subscriptions, entitlement logic, member access, and buyer-facing Membership flows.
-- Customer Library tabs for purchased products.
+- Customer Library tabs backed by the entitlement API.
 - Email campaigns.
 - Messages.
 - Live-session booking and scheduling.
@@ -74,6 +85,10 @@ Major placeholder or incomplete areas include:
 ## How it works
 
 Server-backed areas are the safest to document as production-persistent when the frontend clearly calls implemented backend workflows.
+
+Some backend capabilities intentionally remain listed as incomplete product
+flows because the current frontend does not call them. Backend implementation
+alone does not make a feature available to users.
 
 Frontend-defined, backend-pending contracts describe current frontend requirements and data flow, but they should not be described as production-backed capabilities until the backend implements them.
 

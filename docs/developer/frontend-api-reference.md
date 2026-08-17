@@ -40,10 +40,16 @@ The current service layer lives under `src/core/api/` in `video-platform-ui`.
 - [User API](./api/user.md)
 - [Products API](./api/products.md)
 - [Calendars API](./api/calendar.md)
+- [Backend API and Swagger](./backend/api-and-swagger.md)
 
 ## Current scope
 
-The frontend currently calls APIs for authentication, profile loading, product creation and editing, product search, course sections, lesson shells, download file upload, review listing and filtering, calendar connection initiation, Admin user/product/audit management, and Creator data surfaces.
+The frontend currently calls APIs for authentication, profile loading, Product
+creation and editing, Product search, Course sections, lesson shells, Download
+file upload, calendar connection initiation, Admin user/Product/audit
+management, and Creator data surfaces. Some service wrappers target
+backend-pending contracts or routes that are not implemented by the current
+production backend.
 
 Creator Product Overview reuses the existing Product detail retrieval path. It does not add a dedicated Product Overview service, endpoint, Redux slice, or backend contract.
 
@@ -60,8 +66,15 @@ Current backend-pending frontend contracts include:
 - Membership aggregate, configuration update, native content create/update/delete, and feed ordering.
 - Product recurring-pricing extension using `price`, `pricingModel`, `billingInterval`, and `currency`.
 
-Ownership boundaries matter for these contracts. Product remains authoritative for Product identity, type, name, description, status, image, price amount, pricing model, billing interval, currency, and type-specific content/settings. Product Landing Page config owns only marketing description, hero layout, supported section visibility, and supported section order. Membership owns Membership configuration, native content, included Product associations, and feed/order metadata. Storefront configuration owns theme, featured Product ID, and Product ordering. User/Profile owns Creator profile fields and public email, and Product owns catalogue data.
+Ownership boundaries matter for these frontend contracts. The current backend
+Product contract is authoritative for Product identity, type, name,
+description, status, image, price amount, and supported type-specific content.
+The frontend's pricing model, billing interval, currency extension, Product
+Landing Page config, Membership, Storefront, and several Creator aggregate
+contracts remain backend-pending.
 
 Local development may substitute ignored HTTP mocks at the Axios boundary when `REACT_APP_USE_MOCKS=true`. Feature components should not branch on mock mode for Creator business data.
 
-Do not document backend capabilities here unless the frontend currently calls them.
+This section documents frontend clients, including backend-pending clients. Use
+[Backend API and Swagger](./backend/api-and-swagger.md) to determine whether a
+matching production endpoint exists.

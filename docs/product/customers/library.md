@@ -9,7 +9,10 @@ sidebar_position: 6
 
 The Library is the signed-in customer area for saved and owned products.
 
-Today, the Library exists as a customer-facing shell. The Wishlist tab contains useful product management behavior. The purchased-product tabs are present but do not yet show owned course, download, or consultation content.
+Today, the Library exists as a customer-facing shell. The Wishlist tab contains
+useful product management behavior. The backend can return the signed-in user's
+active Product entitlements, but the Library does not yet use that API to show
+owned Course, Download, or Consultation content.
 
 ## Who can use this
 
@@ -39,14 +42,16 @@ The Library currently includes tabs for:
 
 The Library presents product categories as tabs. The Wishlist tab connects to the same wishlist used from product discovery areas and customer navigation.
 
-The All products, Courses, Download Packages, and Consultation sessions tabs are visible but do not currently render useful purchased-product content.
+The All products, Courses, Download Packages, and Consultation sessions tabs are
+visible but do not currently render entitlement-backed Product content.
 
 ## Current limitations
 
 - The Library does not yet show purchased products.
 - Customers cannot currently access owned course lessons, download files, or consultation sessions from the Library.
 - The Wishlist tab is the only Library tab with meaningful product behavior today.
-- The Library should not be treated as proof that checkout, payment, orders, or entitlements are implemented.
+- The backend stores active/revoked Product entitlements and supports free Product enrollment, but the Library is not integrated with those endpoints.
+- Checkout, payment, orders, and paid entitlement creation are not implemented.
 
 ## Related pages
 

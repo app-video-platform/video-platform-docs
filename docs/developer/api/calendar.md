@@ -21,3 +21,7 @@ sidebar_position: 6
 The Settings Calendar tab loads providers, lets the user choose one, and opens the returned authorization URL in a new tab or window.
 
 Connected-calendar listing, disconnect, and sync management are not currently implemented in the frontend.
+
+The backend does implement authenticated list and disconnect routes. See
+[Backend Integrations and Files](../backend/integrations-and-files.md). Their
+presence does not make those controls available in the current UI.

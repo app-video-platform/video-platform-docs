@@ -11,12 +11,16 @@ Creators use the product creation flow to create an initial draft and then confi
 
 After a product exists, creators can inspect it from Product Overview, use explicit edit actions to return to Product Workspace, and use Product Landing Page Builder for product-specific public presentation settings.
 
-The shared creation flow supports four product types:
+The shared frontend creation flow presents four product types:
 
 - Course
 - Download
 - Consultation
 - Membership
+
+Course, Download, and Consultation are supported by the production backend.
+Membership is available in the frontend builder, but its Product creation and
+domain persistence contracts are not implemented by the current backend.
 
 ## Who can use this
 
@@ -89,6 +93,7 @@ Product identity links generally open Product Overview. Explicit edit/build acti
 - Product media selection is visible, but product image persistence is not complete enough to treat uploaded media as reliably available on product cards or public product pages.
 - The builder saves products as drafts. A complete creator publishing workflow is not currently available.
 - Product type-specific areas do not all have the same maturity. Course lesson content has important limitations, download file upload and consultation setup fields are more complete, and Membership content/feed/pricing now has frontend data contracts while production backend integration remains pending.
+- Attempting to create a Membership through the production generic Product API is not supported by the current backend.
 - Product Overview is read-only and does not provide product analytics, orders, customers, access management, publish/unpublish controls, inline landing-page editing, or SEO controls.
 - Product Landing Page Builder does not edit canonical Product fields, Creator profile fields, Storefront theme, checkout, access, subscriptions, waitlists, SEO, custom domains, or arbitrary page-builder blocks.
 - Product Landing Page configuration has frontend contracts, but production persistence and a dedicated public Product read model are still backend-pending.

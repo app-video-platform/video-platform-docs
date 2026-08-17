@@ -61,7 +61,9 @@ The current frontend includes a Customers list, Customer Detail tabs, and fronte
 
 A product type for selling downloadable files.
 
-Creators can create sections and upload files. Customer delivery through the library is not implemented yet.
+Creators can create sections and upload files. The backend can authorize a
+short-lived customer Download URL for an entitled user, but the frontend
+Library does not expose that delivery flow yet.
 
 ### End User
 
@@ -77,7 +79,8 @@ The current library has tabs for all products, courses, downloads, consultations
 
 ### Membership product
 
-A product type for configuring a membership content hub in the creator product builder.
+A frontend product-builder type for configuring a membership content hub. It is
+not a persisted Product type in the current production backend.
 
 Creators can add native Posts, Videos, and Resources, reference existing Course and Download products, order the unified Membership feed, and set a EUR recurring price with monthly or yearly billing controls. Membership configuration/content/feed and Product recurring-pricing frontend contracts exist, but production backend support, subscriptions, entitlements, publishing, member access, checkout, and buyer-facing Membership flows are not implemented yet.
 

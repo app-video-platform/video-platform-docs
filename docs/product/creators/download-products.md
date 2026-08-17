@@ -62,7 +62,7 @@ Use the Remove action on an uploaded file to delete it from the section.
 
 ## Current limitations
 
-- Download product setup is creator-facing. Customer delivery through the user library is not implemented yet.
+- The backend can issue a short-lived Download URL after an entitlement/owner/Admin access check, but customer delivery is not integrated into the frontend Library.
 - Uploaded files can be managed inside Download sections, but the current documentation should not describe a complete buyer download experience.
 - Product media and public Product Landing Page presentation still have limitations shared with other product types.
 

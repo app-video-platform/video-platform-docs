@@ -7,7 +7,7 @@ sidebar_position: 7
 
 ## Overview
 
-Membership products let creators configure a membership-style content hub in the current frontend builder.
+Membership products let creators configure a membership-style content hub in the current frontend builder and local/mock-backed development flows.
 
 The current Membership builder supports shared product setup, native member-only content, including existing Course and Download products, unified content ordering, recurring pricing controls, and readiness feedback. The frontend now has data contracts for Membership configuration, content, and feed updates, but the production backend endpoints are still pending. Membership does not yet create a real subscription, entitlement, checkout, publish action, or member-access experience.
 
@@ -19,7 +19,7 @@ This page is for Creators configuring Membership products.
 
 Creators can:
 
-- Create a Membership product from the shared product creation flow.
+- Select Membership in the shared frontend product creation flow. Production backend Product creation for Membership is not supported yet.
 - Use shared product settings such as basics, pricing, and media.
 - Open Membership Content in the builder.
 - Add native Posts, Videos, and Resources.
@@ -37,7 +37,10 @@ Creators can:
 
 ### Create the product
 
-Start from [Creating a Product](./creating-a-product.md), choose Membership, enter a title, and continue into the builder.
+Start from [Creating a Product](./creating-a-product.md), choose Membership, and
+enter a title. Continuing into a working Membership builder currently depends
+on frontend mock/backend-pending behavior; the production backend rejects
+`MEMBERSHIP` as an unsupported Product type.
 
 Membership products use the shared builder areas:
 
@@ -113,6 +116,7 @@ When the readiness check passes, the Membership Publish button remains disabled 
 ## Current limitations
 
 - Membership configuration, native Posts, Videos, Resources, included Product associations, and feed ordering have frontend contracts, services, and shared state, but the production backend Membership endpoints are not implemented yet.
+- There is no Membership Product entity, strategy handler, repository, or Liquibase table in the current backend.
 - Recurring Membership pricing participates in the frontend Product create/edit/autosave contract, but the production backend Product contract for recurring pricing fields is still pending.
 - Video and Resource editors persist metadata and file-reference shapes through the Membership content contract, but real binary asset upload for Membership media is still backend-pending.
 - Editor drafts, selected File objects, chooser state, picker state, and the active builder tab remain local UI state.

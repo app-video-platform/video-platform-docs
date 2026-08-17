@@ -2,20 +2,47 @@
 
 Guidance for Codex sessions maintaining the Video Platform documentation.
 
+## Multi-Repository Project Routing
+
+This repository is the Primary source folder in the `video-platform-all` Codex
+project. The project also contains these sibling repositories:
+
+- `../video-platform`: Spring Boot backend.
+- `../video-platform-ui`: React and TypeScript frontend.
+- `../video-platform-UI-docs`: Docusaurus documentation.
+
+Before inspecting or modifying backend files, read completely:
+
+- `../video-platform/AGENTS.md`
+- `../video-platform/PROJECT_CONTEXT.md`
+
+Before inspecting or modifying frontend files, read completely:
+
+- `../video-platform-ui/AGENTS.md`
+- `../video-platform-ui/PROJECT_CONTEXT.md`
+
+For documentation-only work, follow this repository's instructions.
+
+When work spans multiple repositories, apply each repository's instructions to
+files within that repository. If instructions conflict, the instructions in the
+repository that owns the affected file take precedence for that file.
+
 ## Repository Purpose
 
 This repository contains the documentation site for the Video Platform App.
 The documentation should describe the current product accurately and help the
 right audience find the right information quickly.
 
-The implementation lives in the sibling `video-platform-ui` repository.
-`video-platform-ui` is always the source of truth.
+The implementation lives in the sibling `video-platform-ui` frontend and
+`video-platform` backend repositories. Use the repository that owns the
+behavior as the source of truth.
 
 ## Core Principles
 
 Document the product, not the implementation.
 
-Verify capabilities against `video-platform-ui` before documenting them.
+Verify capabilities against `video-platform-ui`, `video-platform`, or both
+before documenting them.
 
 Never invent unsupported features.
 
@@ -40,10 +67,19 @@ Use `video-platform-ui` to verify:
 - feature flags, mocks, fallbacks, and local-only behavior
 - current limitations
 
+Use `video-platform` to verify:
+
+- API paths, methods, request and response contracts
+- persisted business rules and validation
+- authentication, authorization, roles, ownership, and entitlements
+- entities, relationships, tables, constraints, and Liquibase migrations
+- file access and external service integrations
+- server-backed capabilities and current backend limitations
+
 Treat comments, TODOs, roadmap notes, tickets, and old docs as context only.
 
 Treat tests as supporting evidence, not a replacement for inspecting the
-current UI implementation.
+current frontend and backend implementation.
 
 If a feature exists only in plans or unmerged work, do not document it as
 available.
@@ -130,9 +166,10 @@ Use `Related pages` for high-value cross-links, not exhaustive link lists.
 
 ## Documentation Workflow
 
-After every merged feature or product change:
+After every merged frontend or backend feature or product change:
 
-1. Inspect the implementation in `video-platform-ui`.
+1. Inspect the affected implementation in `video-platform-ui`,
+   `video-platform`, or both.
 2. Determine whether documentation changes are required.
 3. If no documentation changes are needed, explicitly report that.
 4. If changes are required, update only the affected pages.
@@ -155,10 +192,14 @@ Do not reorganize the docs tree unless the requested change requires it.
 
 ## Inspecting Implementation
 
-Start in `video-platform-ui`.
+Start in the repository that owns the changed behavior. Inspect both
+`video-platform-ui` and `video-platform` when documenting an end-to-end flow.
 
-Find the relevant route, page, component, state, API client, mock data,
-validation schema, and permission checks.
+For frontend behavior, find the relevant route, page, component, state, API
+client, mock data, validation schema, and permission checks.
+
+For backend behavior, find the relevant controller, DTO, service, entity,
+repository, migration, security rule, integration, and OpenAPI description.
 
 Check whether behavior is local-only, mocked, server-backed, disabled, or
 feature-flagged.
@@ -259,19 +300,22 @@ Future or planned functionality should only be documented when clearly marked as
 Responsibilities are divided between repositories:
 
 - `video-platform-ui`
-  - implementation
-  - architecture
-  - product behavior
+  - frontend implementation and architecture
+  - routes, screens, UI terminology, and client-side behavior
 
-- `video-platform-docs`
+- `video-platform`
+  - backend implementation and architecture
+  - APIs, persisted business logic, security, integrations, and database schema
+
+- `video-platform-UI-docs`
   - product documentation
   - developer documentation
 
-Changes to implementation belong in the UI repository.
+Changes to implementation belong in the owning frontend or backend repository.
 
 Changes to documentation belong here.
 
-Do not modify implementation code from this repository.
+Do not place implementation code in this documentation repository.
 
 ## When Unsure
 
