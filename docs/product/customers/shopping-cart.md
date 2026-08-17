@@ -9,7 +9,7 @@ sidebar_position: 5
 
 The shopping cart lets customers collect products before checkout.
 
-The current cart experience supports adding products from discovery pages, viewing cart contents, removing items, moving items to the wishlist, and seeing a displayed total. Checkout and payment are not implemented.
+The current cart experience supports adding products from discovery pages, viewing cart contents, removing items, moving items to the wishlist, seeing a displayed total, and enrolling in a cart that contains only free Products. Paid checkout is not connected.
 
 ## Who can use this
 
@@ -37,8 +37,10 @@ The cart page shows each item with its title, price, and supporting display info
 
 ## Current limitations
 
-- Checkout and payment are not implemented.
-- The checkout button is visible but does not complete an order.
+- A cart containing only free Products can add them to the signed-in user's
+  entitlement Library.
+- Paid checkout and payment-provider redirection are not connected to the
+  frontend.
 - Cart items are saved in the browser and are not synchronized to a backend account.
 - Products in the cart are not reserved, purchased, or granted as owned content.
 - Product images and ratings shown in cart areas include placeholder content.

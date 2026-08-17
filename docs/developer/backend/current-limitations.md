@@ -24,6 +24,10 @@ sidebar_position: 11
 - entitlement library and access checks
 - protected Product response filtering
 - authorized, short-lived Download URLs
+- one-time Commerce Order, Order-item, payment-attempt, and payment-event
+  persistence
+- fake dev/test payment success, failure, and full-refund processing
+- paid entitlement creation and full-refund entitlement revocation
 - OpenAPI generation under the `docs` profile
 
 ## Backend exists, frontend is not complete
@@ -37,6 +41,8 @@ flows in the current frontend:
 - authorized customer Download delivery
 - full connected-calendar listing and disconnection
 - persisted Quiz play/submission integration across the customer learning UI
+- one-time paid checkout session creation and Order-status reads
+- paid entitlement fulfillment through the development/test fake gateway
 
 Document them as backend capabilities in Developer Documentation, but keep the
 corresponding Product Documentation limitations until the UI exposes and tests
@@ -60,10 +66,10 @@ contracts:
 
 ## Not implemented
 
-- checkout and payment processing
-- order persistence
-- paid entitlement creation
-- refunds and payment retries
+- Stripe or another production payment-provider adapter
+- customer-facing paid checkout integration
+- partial refunds and payment retries
+- taxes, coupons, disputes, invoices, or marketplace payouts
 - subscriptions and renewals
 - buyer-facing Membership access
 - exposed Admin entitlement grant/revoke operations
@@ -97,4 +103,3 @@ When backend support is added, update this page together with the relevant
 domain page, Swagger, backend `PROJECT_CONTEXT.md`, frontend contract, and
 Product Documentation. Do not move a feature into "implemented" based only on
 a DTO, enum, mock, or planned route.
-

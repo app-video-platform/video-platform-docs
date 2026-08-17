@@ -100,30 +100,36 @@ experience.
 
 ## Deletion and revocation
 
-Deleting a Product removes entitlement rows before deleting the Product because
-the entitlement table stores a Product UUID without a cross-table Product
-foreign key.
+Deleting a Product removes non-purchase entitlement rows before deleting the
+Product because the entitlement table stores a Product UUID without a
+cross-table Product foreign key. A Product with an active purchase entitlement
+or unexpired pending checkout cannot be deleted; creators should hide it.
 
 Revocation marks an existing entitlement `REVOKED` and records `revoked_at`.
 There is no current controller route for Admin grant/revoke operations.
 
-## Missing commerce layer
+## Commerce relationship
 
-The backend does not currently implement:
+The backend commerce foundation now creates `PURCHASE` entitlements only after
+an idempotent successful payment event. Purchase entitlements reference their
+originating Order item, so a full refund revokes only access created by that
+Order.
 
-- checkout or payment-provider processing
-- order persistence
-- paid entitlement creation after payment confirmation
-- refunds driving entitlement revocation
+The backend still does not implement:
+
+- a production Stripe or other real payment-provider adapter
+- customer-facing paid checkout integration
+- partial refunds or payment retries
 - subscriptions or recurring entitlement renewal
 - Membership access
 
-Do not equate the `PURCHASE` source enum with a completed purchase workflow.
+The fake gateway is limited to explicit development/test configuration and is
+not a production payment mechanism.
 
 ## Related pages
 
 - [Authentication and Security](./authentication-and-security.md)
 - [Products and Authoring](./products-and-authoring.md)
+- [Commerce and Payments](./commerce-and-payments.md)
 - [Download Products](../../product/creators/download-products.md)
 - [Library](../../product/customers/library.md)
-

@@ -51,6 +51,8 @@ The production backend currently includes:
 - calendar connection infrastructure
 - Admin user, Product, and audit queries
 - free Product enrollment and active entitlement storage
+- provider-neutral one-time Commerce Orders, fake dev/test payment transitions,
+  paid entitlement creation, and full-refund revocation
 - protected Course content filtering and authorized Download delivery
 - generated OpenAPI documentation under the `docs` profile
 
@@ -60,7 +62,9 @@ The backend does not currently provide complete production support for:
 
 - Membership Products or Membership content
 - recurring Membership pricing fields
-- checkout, payment processing, orders, or paid entitlement creation
+- production Stripe or other real-provider checkout
+- customer-facing paid checkout integration
+- partial refunds, taxes, coupons, payouts, or payment retries
 - Creator Dashboard, Customers, Sales, or Analytics aggregate APIs
 - Storefront configuration or public Storefront read models
 - Product Landing Page configuration persistence
@@ -76,6 +80,7 @@ boundary between implemented backend behavior and frontend-pending contracts.
 - [Authentication and Security](./authentication-and-security.md)
 - [Products and Authoring](./products-and-authoring.md)
 - [Entitlements and Content Access](./entitlements-and-content-access.md)
+- [Commerce and Payments](./commerce-and-payments.md)
 - [Persistence and Data Model](./persistence-and-data-model.md)
 - [Integrations and Files](./integrations-and-files.md)
 - [Administration and Audit](./administration-and-audit.md)
@@ -93,4 +98,3 @@ Use the backend implementation in `video-platform` as the source of truth:
 - Springdoc annotations for generated API documentation
 
 Tests support these sources but do not replace implementation inspection.
-

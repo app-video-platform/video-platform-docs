@@ -98,11 +98,24 @@ API responses, logs, or documentation examples.
 | Table | Purpose | Important relationships/constraints |
 |---|---|---|
 | `admin_audit_logs` | Admin role/Product action history | Indexed by actor, target, action, and creation time |
-| `product_entitlements` | User access to a Product UUID | Unique user/Product pair; status/source enums; user deletion cascades |
+| `product_entitlements` | User access to a Product UUID | Unique user/Product pair; status/source enums; purchase grants can reference the originating Commerce Order item; user deletion cascades |
 
 `product_entitlements.product_id` cannot have a normal foreign key to one
 concrete Product table because Products use table-per-class storage. Product
 deletion therefore explicitly removes entitlement records in the service.
+
+### Commerce
+
+| Table | Purpose | Important relationships/constraints |
+|---|---|---|
+| `commerce_orders` | One-time buyer checkout and lifecycle | Belongs to one buyer and one Creator; unique buyer/idempotency-key pair; stores EUR minor-unit totals |
+| `commerce_order_items` | Immutable Product and price snapshots | Belongs to an Order; unique Product per Order; quantity is currently fixed at one |
+| `commerce_payment_attempts` | Provider checkout/payment state | One attempt per Order in the current foundation; unique provider session and payment identifiers |
+| `commerce_payment_events` | Idempotent normalized payment events | Unique provider/event identifier; belongs to an Order |
+
+Commerce Order items reference Product UUIDs without a database foreign key
+because Products use table-per-class storage. Active purchase entitlements and
+unexpired pending Orders therefore block Product deletion in the service.
 
 ### Legacy table
 
@@ -119,6 +132,8 @@ PostgreSQL extensions and indexes include:
 - trigram indexes on user first and last names
 - relationship and lookup indexes for sections, lessons, quizzes, calendars,
   audit logs, and entitlements
+- Commerce Order buyer/Creator/status lookups and Order-item/payment-event
+  relationships
 
 Consultation Product search indexing is not implemented alongside the Course
 and Download trigram indexes in the current migration set.
@@ -136,5 +151,5 @@ Do not infer the final schema from one migration file in isolation.
 - [Architecture](./architecture.md)
 - [Products and Authoring](./products-and-authoring.md)
 - [Entitlements and Content Access](./entitlements-and-content-access.md)
+- [Commerce and Payments](./commerce-and-payments.md)
 - [Testing and Deployment](./testing-and-deployment.md)
-

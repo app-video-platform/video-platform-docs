@@ -28,6 +28,7 @@ submit methods disabled.
 |---|---|
 | Public | No application JWT is required by the main security chain |
 | Authenticated | Any authenticated role |
+| Buyer/Admin | The Order's buyer or an Administrator |
 | Creator/Admin | Method-level `CREATOR` or `ADMIN` role check |
 | Admin | Method-level `ADMIN` role check |
 | Owner/Admin | Role check plus service-level Product ownership enforcement |
@@ -142,6 +143,21 @@ All entitlement routes require authentication through the main security chain.
 | GET | `/api/entitlements/products/{productId}/access` | Check current access |
 | GET | `/api/entitlements/products/{productId}/files/{fileId}/download` | Create an authorized Download URL |
 
+## Commerce routes
+
+Commerce checkout routes require authentication. Checkout is currently backed
+only by the fake gateway in explicitly configured `dev` and `test` profiles;
+there is no production payment-provider adapter.
+
+| Method | Path | Access | Purpose |
+|---|---|---|---|
+| POST | `/api/commerce/checkout-sessions` | Authenticated | Create an idempotent one-time checkout for published paid Products from one Creator |
+| GET | `/api/commerce/orders/{orderId}` | Buyer/Admin | Read Order and payment-attempt status |
+| POST | `/api/dev/commerce/orders/{orderId}/simulate` | Admin, dev/test only | Simulate paid, failed, or fully refunded payment events |
+
+See [Commerce and Payments](./commerce-and-payments.md) for validation,
+fulfillment, and configuration boundaries.
+
 ## Calendar routes
 
 | Method | Path | Access | Purpose |
@@ -173,4 +189,3 @@ When changing an API:
 4. Run the OpenAPI integration test.
 5. Update this page only when routes, permissions, ownership, lifecycle, or
    integration meaning changed.
-

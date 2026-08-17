@@ -123,7 +123,7 @@ Product Workspace is separate from Product Overview. Product identity links gene
 
 A creator-facing area for reviewing sales metrics, order records, and contextual order detail.
 
-The current frontend includes the Sales workspace, read-only order detail, and frontend Sales summary/order contracts. Production order, payment, refund, subscription, renewal, and entitlement endpoints are not implemented yet.
+The current frontend includes the Sales workspace, read-only order detail, and frontend Sales summary/order contracts. Its production summary/order read endpoints are not implemented yet; the backend one-time Commerce foundation does not yet expose Creator Sales reporting.
 
 ### Storefront
 

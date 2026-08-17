@@ -41,8 +41,8 @@ Creators configure product-specific public presentation from the Product Landing
 
 ## Current limitations
 
-- Checkout and payment are not implemented.
-- Paid Product purchase, frontend free-enrollment/access integration, Membership subscription checkout, and waitlists are not implemented. The backend has free Product enrollment and access APIs, but this page does not call them.
+- Customer-facing checkout and production payment processing are not implemented.
+- Paid Product purchase, frontend free-enrollment/access integration, Membership subscription checkout, and waitlists are not implemented. The backend has free Product enrollment/access APIs and a one-time paid Commerce foundation, but this page does not call them.
 - Ratings, reviews, customer counts, subscriber/member counts, landing-page analytics, SEO controls, slugs, custom domains, galleries, slideshows, promo video, presentations, and arbitrary page-builder blocks are not part of the current Product Landing Page.
 - Product-specific theme overrides are not supported; Product Landing Pages inherit the Creator Storefront theme or use the default Storefront theme.
 - Public Product Landing Pages currently use transitional frontend data composition. Direct Product reads apply backend visibility/content protection, but a dedicated public Product read model and persisted landing-page configuration are still backend-pending.

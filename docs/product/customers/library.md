@@ -51,7 +51,9 @@ visible but do not currently render entitlement-backed Product content.
 - Customers cannot currently access owned course lessons, download files, or consultation sessions from the Library.
 - The Wishlist tab is the only Library tab with meaningful product behavior today.
 - The backend stores active/revoked Product entitlements and supports free Product enrollment, but the Library is not integrated with those endpoints.
-- Checkout, payment, orders, and paid entitlement creation are not implemented.
+- The backend can create paid purchase entitlements after a successful Commerce
+  payment event, but paid checkout and the Library are not connected to that
+  flow in the frontend.
 
 ## Related pages
 

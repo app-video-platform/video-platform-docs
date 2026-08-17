@@ -56,6 +56,8 @@ include:
 - Authorized customer Download delivery.
 - Connected-calendar listing and disconnection.
 - End-to-end customer Quiz play and submission.
+- One-time paid Commerce Order creation, Order-status reads, and paid entitlement
+  fulfillment. The backend currently uses only a development/test fake gateway.
 
 Major frontend-only session state areas include:
 
@@ -67,7 +69,8 @@ Major frontend-only session state areas include:
 
 Major placeholder or incomplete areas include:
 
-- Checkout, payment, and orders.
+- Customer-facing paid checkout, production payment-provider integration, and
+  purchase-history UI.
 - Frontend integration for free enrollment, entitlements, protected content, and authorized downloads.
 - Production Customer APIs for creator customer management, purchase history, access records, notes, waitlist details, spend, and order data.
 - Production Sales APIs for order, payment, refund, subscription, renewal, entitlement, server pagination, payment-provider normalization, and safe financial mutation contracts.

@@ -271,6 +271,13 @@ Do not leave obsolete screenshots, names, or role descriptions in affected
 pages.
 Do not introduce formatting that conflicts with the existing docs style.
 
+## Version Control Naming
+
+- Branch names, commit messages, and pull/merge request titles and descriptions
+  must describe only the product or engineering change.
+- Do not include references to AI assistants, language models, generation
+  tools, or names such as AI, GPT, ChatGPT, or Codex in that metadata.
+
 ## Change Discipline
 
 Make the smallest documentation change that accurately reflects the product.

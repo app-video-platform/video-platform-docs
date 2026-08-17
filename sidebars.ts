@@ -138,6 +138,7 @@ const sidebars: SidebarsConfig = {
             'developer/backend/authentication-and-security',
             'developer/backend/products-and-authoring',
             'developer/backend/entitlements-and-content-access',
+            'developer/backend/commerce-and-payments',
             'developer/backend/persistence-and-data-model',
             'developer/backend/integrations-and-files',
             'developer/backend/administration-and-audit',

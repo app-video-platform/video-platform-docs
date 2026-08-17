@@ -80,7 +80,7 @@ Some product discovery pages are public. Management pages require sign-in and th
 
 ## Current limitations
 
-- Checkout and payment are not implemented.
+- Customer-facing checkout and production payment processing are not implemented.
 - The shopping cart and wishlist are stored in the browser, not in a user account.
 - The user library exists, but most library tabs do not yet show purchased content.
 - Creator Product Overview pages are read-only and do not include product-specific analytics, orders, customer counts, inline landing-page editing, SEO controls, or publishing management.
@@ -89,7 +89,7 @@ Some product discovery pages are public. Management pages require sign-in and th
 - Course lessons can be created, but some lesson content editors are not fully persisted.
 - Membership can be selected and configured in frontend/mock-backed flows with native content, included Courses/Downloads, ordering, recurring pricing, and readiness feedback, but the production backend does not accept Membership as a Product type and has no Membership persistence, subscriptions, publishing, or member access.
 - Creator Customers has routes, list controls, detail tabs, and frontend Customer contracts, but production customer-domain endpoints are not implemented yet.
-- Creator Sales has routes, list controls, metrics, order detail, and frontend Sales contracts, but production order, payment, refund, subscription, renewal, and entitlement endpoints are not implemented yet.
+- Creator Sales has routes, list controls, metrics, order detail, and frontend Sales contracts, but its production summary/order read endpoints are not implemented yet. The backend Commerce foundation does not yet expose Creator Sales reporting.
 - Creator Analytics has routes, preset period selection, metrics, charts, summary panels, and a frontend aggregate contract, but the production Analytics endpoint is not implemented yet.
 - Messages, email campaigns, and live-session management are visible in places but not production-ready workflows.
 

@@ -49,7 +49,7 @@ The strongest areas of the current frontend are:
 | Consultation products | Setup fields exist, but booking, availability, rescheduling, and customer session management are not implemented. |
 | Membership products | Creator-side Membership setup exists for native Posts, Videos, Resources, included Course/Download products, unified ordering, recurring pricing, and readiness feedback. Membership configuration/content/feed and Product recurring-pricing frontend contracts exist, but production backend endpoints are pending. |
 | Wishlist | Works in the browser and persists locally, but is not tied to a backend user account. |
-| Shopping cart | Works in the browser and persists locally, but checkout and payment are not implemented. |
+| Shopping cart | Works in the browser and persists locally. Free-only carts can use backend enrollment. The backend now has a one-time paid Order/payment foundation, but paid checkout is not connected in the frontend and no production payment provider is configured. |
 | Library | The backend can list active Product entitlements, but the frontend Library shell does not consume that API. Wishlist has behavior; owned Courses, Downloads, and Consultations are not shown. |
 | Storefront | Creator Storefront Builder and public Storefront pages exist. The Builder uses the shared public presentation, supports inline public profile editing, public email, Light/Dark appearance, accent color, Modern/Classic/Friendly typography, featured product selection, product ordering, and draft Save/Reset behavior. Published products are shown publicly; draft and hidden products are withheld. Frontend public read-model and Creator config contracts exist, but production backend endpoints are pending. |
 | Creator dashboard | Shows profile and product highlights through a frontend aggregate summary contract, but the production backend endpoint is pending for business metrics and activity data. |
@@ -64,12 +64,12 @@ The strongest areas of the current frontend are:
 
 Do not describe the following as supported product capabilities:
 
-- Checkout.
-- Payment processing.
+- Customer-facing paid checkout.
+- Production payment processing.
 - Product Overview product-scoped revenue analytics, orders, customer counts, subscriber/member counts, conversion, charts, ratings/reviews, Storefront visibility controls, access management, duplicate/archive, publish/unpublish management, inline landing-page editing, SEO controls, or dedicated Product Overview backend APIs.
 - Product Landing Page checkout, payments, frontend free-enrollment/access integration, Membership subscription checkout, waitlists, ratings/reviews, landing-page analytics, SEO controls, slugs, custom domains, galleries, slideshows, promo video, presentations, arbitrary page-builder blocks, Product-specific theme overrides, production config persistence, or a dedicated production public Product read model.
 - Production-backed Membership native content, included Product associations, recurring pricing, subscriptions, entitlement logic, real publishing, member access, binary Video/Resource upload, or buyer-facing Membership flows.
-- Customer access to purchased course/download/consultation content. The backend currently supports free enrollment and entitlement checks, not paid purchase fulfillment.
+- Frontend customer access to purchased Course/Download/Consultation content. The backend can fulfill paid purchase entitlements, but the frontend Library and delivery flows do not consume them end to end.
 - Production-backed Creator customer management, customer profiles, customer purchase history, access management, notes editing, customer deletion, exporting, bulk actions, messaging, or impersonation.
 - Production-backed Creator financial reporting, order management, payment processing, refund issuing, charge retries, subscription changes, financial exporting, or access mutation from Sales.
 - Production-backed Creator analytics reporting, custom date ranges, traffic analytics, conversion funnels, attribution/source analytics, payouts, tax analytics, disputes, cohorts, course/content engagement analytics, exports, report building, or custom dashboards.
