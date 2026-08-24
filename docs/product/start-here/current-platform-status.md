@@ -28,9 +28,9 @@ The strongest areas of the current frontend are:
 - Consultation setup fields.
 - Membership creation, persisted native content metadata, included Product selection, unified ordering, recurring pricing configuration, and readiness feedback.
 - Creator Storefront Builder, public Storefront pages, inline public profile editing, public email, live customization, published-product visibility, copyable public URL, featured product selection, ordering controls, and draft Save/Reset behavior.
-- Creator Customers routes, list controls, read-only detail tabs, and frontend Customer list/detail contracts.
-- Creator Sales routes, sales metrics, order ledger controls, read-only order detail, and frontend Sales summary/order contracts.
-- Creator Analytics route, period selection, metrics, charts, rankings, summary panels, and a frontend aggregate Analytics contract.
+- Creator Customers routes and server-backed read models from completed Orders and Product access.
+- Creator Sales routes and server-backed summary, Order ledger, and read-only Order detail.
+- Creator Analytics route and server-backed Commerce performance, Product ranking, customer growth, and payment health.
 - Product exploration and search.
 - Local wishlist and shopping cart behavior.
 - Admin user management.
@@ -53,9 +53,9 @@ The strongest areas of the current frontend are:
 | Library | The backend can list active Product entitlements, but the frontend Library shell does not consume that API. Wishlist has behavior; owned Courses, Downloads, and Consultations are not shown. |
 | Storefront | Creator Storefront Builder and public Storefront pages exist. The Builder uses the shared public presentation, supports inline public profile editing, public email, Light/Dark appearance, accent color, Modern/Classic/Friendly typography, featured product selection, product ordering, and draft Save/Reset behavior. Published products are shown publicly; draft and hidden products are withheld. Frontend public read-model and Creator config contracts exist, but production backend endpoints are pending. |
 | Creator dashboard | Shows profile and product highlights through a frontend aggregate summary contract, but the production backend endpoint is pending for business metrics and activity data. |
-| Creator Customers | Routes, list search/filter/sort controls, responsive list/card presentation, read-only detail tabs, and frontend Customer list/detail contracts exist. Production backend endpoints are pending for customer-domain records such as purchases, access, notes, tags, waitlist details, spend, and orders. |
-| Creator Sales | Routes, sales metrics, order search/filter/sort controls, responsive ledger/card presentation, read-only contextual order detail, and frontend Sales summary/order contracts exist. Production backend endpoints are pending for order, payment, refund, subscription, renewal, and access records. |
-| Creator Analytics | Route, 7/30/90-day period selection, business metrics, performance visualization, product performance, customer growth, membership health, payment health, and a frontend aggregate read-model contract exist. The production backend endpoint is pending. |
+| Creator Customers | Creator-only backend list/detail reporting covers paid/refunded buyers and free, purchased, or manually granted Product access. Membership/waitlist relationships, editable notes/tags, exports, and mutations are unavailable. The frontend still needs to recognize free-enrollment access and remove Administrator access to this route. |
+| Creator Sales | Creator-only backend reporting covers retained revenue, paid Orders, full refunds, failures, filters, pagination, immutable item snapshots, payment context, and entitlement-derived access. The frontend still needs multi-Product `items` rendering and must remove Administrator access. Production payments, subscriptions, refund/retry actions, exports, taxes, and payouts are unavailable. |
+| Creator Analytics | Creator-only backend reporting covers 7/30/90-day Commerce performance, Product ranking, lifetime/new customers, refund rate, and failures. Membership data is intentionally empty. The frontend must remove Administrator access; custom ranges, Membership analytics, traffic/conversion analytics, taxes, payouts, and exports are unavailable. |
 | Marketing and reviews | Reviews can be listed and filtered, but reply and moderation controls are incomplete in the UI. Other marketing tabs are mostly placeholders. |
 | Settings | Several settings tabs render forms without saving changes. Calendar connection is the clearest backend-backed setting. |
 | Messages | Messages navigation exists in places, but a standalone Messages page is not implemented in the current router. |
@@ -70,9 +70,9 @@ Do not describe the following as supported product capabilities:
 - Product Landing Page checkout, payments, frontend free-enrollment/access integration, Membership subscription checkout, waitlists, ratings/reviews, landing-page analytics, SEO controls, slugs, custom domains, galleries, slideshows, promo video, presentations, arbitrary page-builder blocks, Product-specific theme overrides, production config persistence, or a dedicated production public Product read model.
 - Membership binary Video/Resource upload or delivery, subscriptions, checkout, entitlement logic, Product publishing, member access, or buyer-facing Membership flows.
 - Frontend customer access to purchased Course/Download/Consultation content. The backend can fulfill paid purchase entitlements, but the frontend Library and delivery flows do not consume them end to end.
-- Production-backed Creator customer management, customer profiles, customer purchase history, access management, notes editing, customer deletion, exporting, bulk actions, messaging, or impersonation.
-- Production-backed Creator financial reporting, order management, payment processing, refund issuing, charge retries, subscription changes, financial exporting, or access mutation from Sales.
-- Production-backed Creator analytics reporting, custom date ranges, traffic analytics, conversion funnels, attribution/source analytics, payouts, tax analytics, disputes, cohorts, course/content engagement analytics, exports, report building, or custom dashboards.
+- Creator customer mutations, Membership/waitlist relationships, notes/tags editing, customer deletion, exporting, bulk actions, messaging, or impersonation.
+- Creator payment processing, refund issuing, charge retries, subscription changes, financial exporting, taxes, payouts, or access mutation from Sales.
+- Membership analytics, custom Analytics date ranges, traffic analytics, conversion funnels, attribution/source analytics, payouts, tax analytics, disputes, cohorts, course/content engagement analytics, exports, report building, or custom dashboards.
 - Production-backed Storefront public read-model and configuration endpoints for theme, featured product selection, or manual ordering; arbitrary page-building, drag-and-drop sections, custom content blocks, custom CSS, custom domains, SEO settings, password protection, or Storefront analytics.
 - Email campaigns.
 - Direct messaging.

@@ -7,7 +7,7 @@ sidebar_position: 9
 
 ## Overview
 
-The Sales area lets creators review recent order activity and inspect contextual order details from the creator workspace.
+The Sales area lets creators review server-backed one-time order activity and inspect contextual order details from the creator workspace.
 
 Creators can open Sales from the app navigation at `/app/sales`. The current frontend includes a sales overview, metrics, an orders ledger, list refinement controls, pagination, and an order detail drawer.
 
@@ -15,7 +15,7 @@ Creators can open Sales from the app navigation at `/app/sales`. The current fro
 
 This page is for signed-in users with the Creator role.
 
-Administrators can also access the Sales route.
+The reporting APIs accept Creator accounts only. Administrators and End Users receive an access-denied response.
 
 ## What you can do
 
@@ -42,11 +42,9 @@ The current order statuses are:
 - Refunded
 - Pending
 
-The current order types are:
+The backend currently reports one-time Orders. Subscription and renewal values remain part of the frontend presentation contract but are not produced by the current backend.
 
-- One-time
-- Subscription
-- Renewal
+Retained Revenue and Orders count only Orders that are currently Paid. Fully refunded Orders are excluded from retained revenue and reported through Refunds instead. Financial comparisons use the immediately preceding equal-length UTC period.
 
 Refunds are represented on the original order. The current creator UI does not show a separate refund ledger or separate refund record page.
 
@@ -70,14 +68,17 @@ Order detail can show:
 - Refund amount, refund date, reason, and access result for refunded orders.
 - Failed-payment message and retry timing for failed orders.
 
+For Orders containing more than one Product, the backend returns every immutable Order-item snapshot and its access result. Historical names, types, prices, and line totals remain available even when the current Product changes.
+
 ## Current limitations
 
-- Frontend contracts exist for Sales summary, Orders page, and Order Detail, but production backend endpoints are not implemented yet.
-- When production Sales endpoints are unavailable, the Sales area shows that sales data is unavailable until order, payment, refund, and entitlement APIs are connected.
+- Sales summary, Order list, and Order detail are now server-backed for one-time Commerce Orders.
+- The current frontend still assumes one Product and one access result per Order. Multi-Product Orders require the frontend to render the backend `items` collection.
+- The frontend currently exposes this workspace to Administrators even though the reporting APIs are Creator-only.
 - The current frontend does not establish provider-safe financial mutation contracts for refunds, payment retries, subscription changes, or entitlement changes.
 - Creators cannot issue refunds, retry charges, change subscriptions, grant access, revoke access, export orders, or perform bulk actions from the current Sales UI.
-- Metrics and comparison labels should not be treated as production financial reporting until production Sales endpoints provide the data.
-- Checkout and payment completion are not implemented in the customer purchase flow.
+- No production payment provider is configured, and paid checkout is not connected in the customer purchase flow.
+- Subscriptions, renewals, partial refunds, taxes, payouts, and financial exports are not supported.
 - Messages navigation is visible elsewhere in the app, but a complete standalone Messages page is not implemented in the current router.
 
 ## Related pages

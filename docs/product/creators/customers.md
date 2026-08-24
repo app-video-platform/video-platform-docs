@@ -15,7 +15,7 @@ Creators can open the Customers page from the creator navigation, refine the lis
 
 This page is for signed-in users with the Creator role.
 
-Administrators can also access the Customers route.
+The reporting APIs accept Creator accounts only. Administrators and End Users receive an access-denied response.
 
 ## What you can do
 
@@ -32,7 +32,9 @@ Customer rows summarize the customer's name or email, relationship status, relat
 
 ## How it works
 
-The list supports relationship statuses for Active member, Past due, Buyer, and Waitlist customers. The product filter is built from products represented in the customer list. The membership filter supports Active, Past due, Cancelled, and No membership states.
+The backend currently returns Buyer relationships with No membership. Active member, Past due, Waitlist, and other Membership filters remain visible frontend options but return an empty result until those domains exist.
+
+A customer is included after a paid or refunded Order, or after free, purchased, or manually granted access to one of the Creator's Products. A user whose only interaction is a pending, failed, or expired checkout is not a customer. Spend counts retained Paid Orders, while completed Order count includes Paid and Refunded Orders.
 
 Opening a customer shows a Customer Detail page with a back link to the Customers list, identity information, relationship status, and summary metrics. The detail page organizes customer information into these tabs:
 
@@ -45,9 +47,11 @@ On smaller screens, the customer list changes from a table-like layout into stac
 
 ## Current limitations
 
-- Frontend Customer list and detail contracts exist, but dedicated production Customer endpoints are not implemented yet.
-- Detailed customer-domain information such as purchases, access records, notes, tags, waitlist details, spend, order counts, and relationship history is available only when the frontend contract receives data, such as through local mock support.
-- When production Customer endpoints are unavailable, the Customers area shows an unavailable state until customer, purchase, membership, waitlist, access, and notes APIs exist.
+- Customer list/detail, spend, completed Orders, Product history, access history, and recent Commerce activity are server-backed.
+- Membership relationships and waitlists are not implemented, so their filters return no results.
+- Notes and tags are returned as empty read-only collections. Phone, language, timezone, and avatar data are omitted because they are not supported by the current backend profile.
+- Free enrollment is returned as a truthful access source, but the frontend type and label still need to recognize it.
+- The frontend currently exposes this workspace to Administrators even though the reporting APIs are Creator-only.
 - Access and Notes are read-only. Creators cannot grant or revoke access or add, edit, or delete notes from the current UI.
 - Creators cannot manually add customers, edit customer profiles, send messages, export customers, delete customers, perform bulk actions, or impersonate customers from this area.
 

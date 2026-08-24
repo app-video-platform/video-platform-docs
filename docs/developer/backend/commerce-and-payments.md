@@ -43,6 +43,26 @@ totals are display values and are never trusted.
 Administrator. Order items retain the Product title, type, Creator, and price
 from the time checkout was created.
 
+## Creator reporting
+
+Creator-only read APIs reuse Commerce, payment-attempt, immutable Order-item,
+Product, User, and entitlement data without separate reporting tables:
+
+- `GET /api/creator/sales/summary`
+- `GET /api/creator/orders`
+- `GET /api/creator/orders/{orderId}`
+- `GET /api/creator/customers`
+- `GET /api/creator/customers/{customerId}`
+- `GET /api/creator/analytics/overview`
+
+The authenticated Creator ID is the only scope input. Cross-Creator detail
+lookups return `404`; Admin and User roles receive `403`.
+
+Ledger filters use Order creation time. Retained revenue and paid Order counts
+use `paid_at`, refunds use `refunded_at`, and failures use `failed_at`. Reports
+use equal UTC comparison periods through an injectable Clock. Fully refunded
+Orders do not contribute to retained revenue.
+
 ## Payment gateway boundary
 
 `PaymentGateway` isolates provider session creation from Order and entitlement
@@ -82,8 +102,9 @@ Never enable the fake simulation endpoint in a deployed production profile.
 - Full Order refunds only; partial refunds are unsupported.
 - No customer-facing paid checkout integration yet.
 - No Membership subscriptions or renewals.
-- No Creator Sales aggregate/read endpoints yet.
 - No taxes, coupons, payouts, disputes, invoices, or payment retries.
+- No reporting exports, editable Customer notes/tags, waitlists, or Membership
+  analytics.
 
 Products with an unexpired pending checkout or active purchase entitlement
 cannot be deleted. Creators should use the Hidden status instead.
