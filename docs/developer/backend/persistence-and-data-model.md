@@ -148,6 +148,9 @@ PostgreSQL extensions and indexes include:
   audit logs, and entitlements
 - Commerce Order buyer/Creator/status lookups and Order-item/payment-event
   relationships
+- Creator/payment-date indexes for paid, failed, and refunded reporting;
+  Creator/buyer/status aggregation; and entitlement Product/user/status and
+  purchase-item relationships
 - Membership owner, content, feed ordering, and included-Product lookups
 
 Consultation Product search indexing is not implemented alongside the Course

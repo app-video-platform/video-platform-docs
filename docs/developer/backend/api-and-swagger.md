@@ -29,6 +29,7 @@ submit methods disabled.
 | Public | No application JWT is required by the main security chain |
 | Authenticated | Any authenticated role |
 | Buyer/Admin | The Order's buyer or an Administrator |
+| Creator | Method-level `CREATOR` role check; authenticated Creator ID defines scope |
 | Creator/Admin | Method-level `CREATOR` or `ADMIN` role check |
 | Admin | Method-level `ADMIN` role check |
 | Owner/Admin | Role check plus service-level Product ownership enforcement |
@@ -180,6 +181,23 @@ there is no production payment-provider adapter.
 
 See [Commerce and Payments](./commerce-and-payments.md) for validation,
 fulfillment, and configuration boundaries.
+
+## Creator reporting routes
+
+All reporting routes require the Creator role. They do not accept a Creator ID
+from the caller.
+
+| Method | Path | Access | Purpose |
+|---|---|---|---|
+| GET | `/api/creator/sales/summary?period=today\|7d\|30d\|90d` | Creator | Retained revenue, paid Orders, refunds, failures, and prior-period comparisons |
+| GET | `/api/creator/orders` | Creator | Search, filter, sort, and paginate the one-time Order ledger |
+| GET | `/api/creator/orders/{orderId}` | Creator | Read an owned Order with item snapshots, payment context, and access results |
+| GET | `/api/creator/customers` | Creator | Search, filter, sort, and paginate qualifying customers |
+| GET | `/api/creator/customers/{customerId}` | Creator | Read purchase, entitlement, and recent activity history |
+| GET | `/api/creator/analytics/overview?period=7d\|30d\|90d` | Creator | Read aggregate performance, Product ranking, customer growth, and payment health |
+
+Order and Customer details return `404` when the record is outside the current
+Creator's relationship scope.
 
 ## Calendar routes
 

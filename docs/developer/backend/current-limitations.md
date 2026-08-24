@@ -30,6 +30,11 @@ sidebar_position: 11
   persistence
 - fake dev/test payment success, failure, and full-refund processing
 - paid entitlement creation and full-refund entitlement revocation
+- Creator-only Sales summary and Order ledger/detail reporting
+- Creator-only Customer list/detail reporting from completed Orders and
+  Product entitlements
+- Creator-only Analytics overview for Commerce performance, Product ranking,
+  customer growth, refunds, and failures
 - OpenAPI generation under the `docs` profile
 
 ## Backend exists, frontend is not complete
@@ -57,9 +62,6 @@ these areas, but the current backend does not implement their production
 contracts:
 
 - Creator Dashboard aggregate data
-- Creator Customers list and detail data
-- Creator Sales summaries, orders, and order details
-- Creator Analytics aggregate data
 - public Storefront read model and Creator Storefront configuration
 - Product Landing Page configuration persistence
 
@@ -70,6 +72,8 @@ contracts:
 - partial refunds and payment retries
 - taxes, coupons, disputes, invoices, or marketplace payouts
 - subscriptions and renewals
+- Membership/waitlist Customer relationships and Membership analytics
+- editable Customer notes/tags and reporting exports
 - buyer-facing Membership access
 - Membership Product publishing and one-time checkout
 - exposed Admin entitlement grant/revoke operations
