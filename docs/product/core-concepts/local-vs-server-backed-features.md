@@ -32,32 +32,26 @@ Major server-backed areas include:
 - Free Product enrollment, active entitlements, access checks, and protected Download delivery in the backend.
 - Membership Product and recurring-pricing persistence, native content metadata,
   included Product associations, and feed ordering.
+- Creator Customers, Sales, Analytics, and Dashboard reporting.
+- Creator Storefront configuration and anonymous public Storefront reads.
+- Product Landing Page presentation configuration and published-only public reads.
+- Profile-owned public email that is separate from login email.
+- Product-page free enrollment, access checks, and one-time checkout initiation.
 
 Major browser-saved areas include:
 
 - Wishlist.
 - Shopping cart.
 
-Major frontend-defined, backend-pending contract areas include:
-
-- Creator Customers list and Customer Detail.
-- Creator Sales summary, Orders page, and Order Detail.
-- Creator Analytics aggregate overview.
-- Creator Dashboard aggregate summary.
-- Public Storefront read model and Creator Storefront configuration, including theme, featured Product selection, and Product ordering.
-- Product Landing Page configuration for marketing copy, hero layout, supported section visibility, and supported section order.
-
 Major backend capabilities not yet exposed as complete frontend workflows
 include:
 
-- Free Product enrollment.
 - Loading the signed-in user's active entitlement library.
-- Product access checks.
 - Authorized customer Download delivery.
 - Connected-calendar listing and disconnection.
 - End-to-end customer Quiz play and submission.
-- One-time paid Commerce Order creation, Order-status reads, and paid entitlement
-  fulfillment. The backend currently uses only a development/test fake gateway.
+- Production-provider payment completion. The current backend uses only a
+  development/test fake gateway.
 
 Major frontend-only session state areas include:
 
@@ -69,14 +63,12 @@ Major frontend-only session state areas include:
 
 Major placeholder or incomplete areas include:
 
-- Customer-facing paid checkout, production payment-provider integration, and
-  purchase-history UI.
-- Frontend integration for free enrollment, entitlements, protected content, and authorized downloads.
-- Production Customer APIs for creator customer management, purchase history, access records, notes, waitlist details, spend, and order data.
-- Production Sales APIs for order, payment, refund, subscription, renewal, entitlement, server pagination, payment-provider normalization, and safe financial mutation contracts.
-- Production Analytics and Dashboard aggregate endpoints for revenue, order, customer, membership, payment, activity, and product-performance data.
-- Production Storefront endpoints for public read models and Creator configuration, plus arbitrary page-building, custom domains, SEO settings, password protection, and Storefront analytics.
-- Production Product Landing Page config persistence, a dedicated public Product read model, server-side public Product visibility enforcement, public Creator payloads, checkout/access/waitlist state, SEO, slugs, custom domains, analytics, Product-specific theme overrides, and arbitrary page-builder blocks.
+- Production payment-provider integration and purchase-history UI.
+- Customer mutations, editable notes/tags, waitlists, and Membership relationship data.
+- Refund/retry/subscription mutations and reporting exports.
+- Membership and traffic/conversion analytics.
+- Arbitrary Storefront page building, custom domains, SEO settings, password protection, and Storefront analytics.
+- A dedicated combined public Product read model, waitlists, SEO, slugs, custom domains, landing-page analytics, Product-specific theme overrides, and arbitrary page-builder blocks.
 - Membership binary asset upload/delivery, Product publishing, subscriptions,
   entitlement logic, member access, and buyer-facing Membership flows.
 - Customer Library tabs backed by the entitlement API.
@@ -93,7 +85,7 @@ Some backend capabilities intentionally remain listed as incomplete product
 flows because the current frontend does not call them. Backend implementation
 alone does not make a feature available to users.
 
-Frontend-defined, backend-pending contracts describe current frontend requirements and data flow, but they should not be described as production-backed capabilities until the backend implements them. The Membership authoring contracts are now implemented; stale frontend comments may still describe them as pending.
+Frontend comments can lag behind implemented backend contracts. Verify the live services and backend before treating a comment as a current limitation.
 
 Browser-saved areas can persist on the same device and browser, but they should not be described as account-synchronized features.
 
@@ -103,7 +95,7 @@ Local development may serve deterministic data through ignored HTTP mocks at the
 
 Placeholder areas may be visible in navigation or tabs, but should be documented only as current limitations unless they have meaningful user-facing behavior.
 
-Local mock data can demonstrate intended screen behavior for reviewers, but it should not be described as production-backed customer, financial, analytics, dashboard, Storefront, or Product Landing Page data. Membership authoring persistence should be distinguished from its still-missing subscription and member-access lifecycle.
+Local mock data can demonstrate screen behavior for reviewers, but it is not production data. Membership authoring persistence should be distinguished from its still-missing subscription and member-access lifecycle.
 
 ## Current limitations
 

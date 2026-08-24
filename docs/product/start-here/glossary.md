@@ -27,7 +27,7 @@ A record of administrative activity, such as role changes or admin product actio
 
 A creator-facing area for reviewing business performance metrics, charts, rankings, and summary panels.
 
-The current frontend includes the Analytics workspace with preset reporting periods and a frontend aggregate read-model contract. The production Analytics endpoint is not implemented yet.
+The Analytics workspace uses Creator-only backend reporting for preset 7-, 30-, and 90-day periods. Membership subscription analytics remains unavailable.
 
 ### Cart
 
@@ -98,7 +98,7 @@ The currently supported product types are:
 
 A public page for viewing an individual product.
 
-The current Product Landing Page renders published Products with real Product information, type-specific summaries, inherited Storefront/default theme, and unavailable purchase/access states when commerce is not connected.
+The current Product Landing Page renders published Products with real Product information, persisted presentation settings, inherited Storefront/default theme, free enrollment/access checks, and eligible one-time checkout initiation.
 
 ### Product Landing Page Builder
 
@@ -122,13 +122,13 @@ Product Workspace is separate from Product Overview. Product identity links gene
 
 A creator-facing area for reviewing sales metrics, order records, and contextual order detail.
 
-The current frontend includes the Sales workspace, read-only order detail, and frontend Sales summary/order contracts. Its production summary/order read endpoints are not implemented yet; the backend one-time Commerce foundation does not yet expose Creator Sales reporting.
+The Sales workspace uses Creator-only backend summary, Order ledger, and Order-detail reporting from one-time Commerce and entitlement data.
 
 ### Storefront
 
 A creator's public page for showing public profile information and published products.
 
-Creators use the Storefront Builder from the Creator area to edit supported public profile fields, set public email, customize appearance, choose a featured product, adjust product order, save or reset Storefront configuration changes, and open or copy the public URL. Frontend Storefront read-model and Creator config contracts exist, but production backend endpoints are not implemented yet.
+Creators use the Storefront Builder to edit supported public profile fields, set public email, customize appearance, choose a featured Product, adjust Product order, and save or reset backend-persisted Storefront configuration. The public read model includes only published Products and explicitly public profile fields.
 
 ### Visitor
 

@@ -47,16 +47,16 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app/admin/audit` | protected | Admin | Admin audit log |  |
 | `/app/products` | protected | Creator, Admin | Product list |  |
 | `/app/products/:productId` | protected | Creator, Admin | Product Overview | Read-only Creator/Admin inspection page inside `CreatorAppShell`; links to Product Workspace, Landing Page Builder, and public page where available |
-| `/app/products/:productId/landing-page` | protected | Creator, Admin | Product Landing Page Builder | Creator shell route with collapsed sidebar; edits backend-pending landing-page config through local draft Save/Reset and shared public preview |
+| `/app/products/:productId/landing-page` | protected | Creator, Admin | Product Landing Page Builder | Creator shell route with collapsed sidebar; persists a local draft through Save/Reset and shared public preview |
 | `/app/products/create` | protected | Creator, Admin | Create product |  |
 | `/app/products/edit/:id` | protected | Creator, Admin | Product Workspace | Focused editing/building environment outside `CreatorAppShell` |
 | `/app/products/edit/:type/:id` | protected | Creator, Admin | Product Workspace legacy-compatible route | Type-bearing edit route where applicable |
-| `/app/storefront` | protected | Creator, Admin | Creator Storefront Builder | Uses the Creator shell with the sidebar collapsed; composes User/Profile, Product summaries, and the backend-pending Creator Storefront config contract for theme, featured Product, and Product ordering |
-| `/app/customers` | protected | Creator, Admin | Creator Customers list | Uses backend-pending Customer list contract |
-| `/app/customers/:customerId` | protected | Creator, Admin | Creator Customer detail | Uses backend-pending Customer detail contract; current detail tabs are read-only |
+| `/app/storefront` | protected | Creator, Admin | Creator Storefront Builder | Frontend metadata still includes Admin, but the Builder and backend configuration API are Creator-only; composes Profile, Product summaries, and persisted Storefront configuration |
+| `/app/customers` | protected | Creator, Admin | Creator Customers list | Backend reporting is Creator-only; frontend Admin route metadata is stale |
+| `/app/customers/:customerId` | protected | Creator, Admin | Creator Customer detail | Backend reporting is Creator-only; current detail tabs are read-only |
 | `/app/marketing` | protected | Creator, Admin | Marketing area | Mostly incomplete except reviews |
-| `/app/sales` | protected | Creator, Admin | Creator Sales workspace | Uses `order` query param for contextual order detail and backend-pending Sales contracts |
-| `/app/analytics` | protected | Creator, Admin | Creator Analytics workspace | Uses backend-pending aggregate Analytics overview contract |
+| `/app/sales` | protected | Creator, Admin | Creator Sales workspace | Uses `order` query param and Creator-only backend reporting; frontend Admin route metadata is stale |
+| `/app/analytics` | protected | Creator, Admin | Creator Analytics workspace | Uses Creator-only backend aggregate reporting; frontend Admin route metadata is stale |
 | `/app/settings` | protected | Admin, Creator, User | Settings tabs | Most save flows incomplete |
 | `/app/my-page-preview` | protected | Admin, Creator, User | Legacy Storefront preview route | Redirects to `/app/storefront` |
 | `/app/*` | protected | - | App fallback | Redirects to `/app` |

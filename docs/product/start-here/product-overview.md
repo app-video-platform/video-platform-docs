@@ -80,17 +80,15 @@ Some product discovery pages are public. Management pages require sign-in and th
 
 ## Current limitations
 
-- Customer-facing checkout and production payment processing are not implemented.
+- Free enrollment and one-time checkout initiation are integrated, but production payment completion is unavailable without a real provider.
 - The shopping cart and wishlist are stored in the browser, not in a user account.
 - The user library exists, but most library tabs do not yet show purchased content.
 - Creator Product Overview pages are read-only and do not include product-specific analytics, orders, customer counts, inline landing-page editing, SEO controls, or publishing management.
-- Product Landing Page Builder supports a narrow presentation configuration only. It does not provide checkout, fulfillment, subscriptions, waitlists, entitlements, SEO controls, custom domains, arbitrary page-builder blocks, Product-specific theme overrides, or production-backed public Product read models.
-- Storefront theme, featured product selection, product ordering, and public read-model contracts exist in the frontend, but the production Storefront backend endpoints are not implemented yet.
+- Product Landing Page Builder persists a narrow presentation configuration. It does not provide subscriptions, waitlists, SEO controls, custom domains, arbitrary page-builder blocks, Product-specific theme overrides, or a combined public Product read model.
+- Storefront theme, featured Product selection, ordering, public profile email, and the public Storefront read model are backend-supported.
 - Course lessons can be created, but some lesson content editors are not fully persisted.
 - Membership authoring persists native content metadata, included Courses/Downloads, ordering, and recurring pricing. Binary media, subscriptions, checkout, publishing, entitlements, and member access are not implemented.
-- Creator Customers has routes, list controls, detail tabs, and frontend Customer contracts, but production customer-domain endpoints are not implemented yet.
-- Creator Sales has routes, list controls, metrics, order detail, and frontend Sales contracts, but its production summary/order read endpoints are not implemented yet. The backend Commerce foundation does not yet expose Creator Sales reporting.
-- Creator Analytics has routes, preset period selection, metrics, charts, summary panels, and a frontend aggregate contract, but the production Analytics endpoint is not implemented yet.
+- Creator Customers, Sales, Analytics, and Dashboard reporting are backend-supported for Creator accounts. Subscription and Membership reporting remains unavailable.
 - Messages, email campaigns, and live-session management are visible in places but not production-ready workflows.
 
 ## Related pages

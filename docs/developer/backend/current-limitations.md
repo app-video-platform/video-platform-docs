@@ -35,6 +35,11 @@ sidebar_position: 11
   Product entitlements
 - Creator-only Analytics overview for Commerce performance, Product ranking,
   customer growth, refunds, and failures
+- Creator-only Dashboard summary from Commerce, Customer, Product, and payment data
+- Creator Storefront configuration and anonymous public Storefront read models
+- Product Landing Page presentation configuration for Creator/Admin management
+  and anonymous reads of published Products
+- profile-owned public email that is separate from login email
 - OpenAPI generation under the `docs` profile
 
 ## Backend exists, frontend is not complete
@@ -55,20 +60,10 @@ Document them as backend capabilities in Developer Documentation, but keep the
 corresponding Product Documentation limitations until the UI exposes and tests
 the full workflow.
 
-## Frontend contracts without production backend support
-
-The frontend contains services, models, Redux state, or local HTTP mocks for
-these areas, but the current backend does not implement their production
-contracts:
-
-- Creator Dashboard aggregate data
-- public Storefront read model and Creator Storefront configuration
-- Product Landing Page configuration persistence
-
 ## Not implemented
 
 - Stripe or another production payment-provider adapter
-- customer-facing paid checkout integration
+- production-provider checkout completion
 - partial refunds and payment retries
 - taxes, coupons, disputes, invoices, or marketplace payouts
 - subscriptions and renewals

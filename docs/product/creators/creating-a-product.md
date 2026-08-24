@@ -95,7 +95,7 @@ Product identity links generally open Product Overview. Explicit edit/build acti
 - Product type-specific areas do not all have the same maturity. Course lesson content has important limitations, Download file upload and Consultation setup fields are more complete, and Membership authoring persists content metadata, included Products, feed order, and recurring pricing but not binary media or publishing.
 - Product Overview is read-only and does not provide product analytics, orders, customers, access management, publish/unpublish controls, inline landing-page editing, or SEO controls.
 - Product Landing Page Builder does not edit canonical Product fields, Creator profile fields, Storefront theme, checkout, access, subscriptions, waitlists, SEO, custom domains, or arbitrary page-builder blocks.
-- Product Landing Page configuration has frontend contracts, but production persistence and a dedicated public Product read model are still backend-pending.
+- Product Landing Page configuration is backend-persisted. A dedicated combined public Product read model remains unavailable.
 
 ## Related pages
 

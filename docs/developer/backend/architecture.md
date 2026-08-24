@@ -53,7 +53,7 @@ A typical request follows this sequence:
 ## Product strategy
 
 The abstract `Product` entity uses JPA `TABLE_PER_CLASS` inheritance. There is
-no shared `products` table; Course, Download, and Consultation each have a
+no shared `products` table; Course, Download, Consultation, and Membership each have a
 concrete Product table containing the common columns.
 
 `ProductService` dispatches type-specific behavior through
@@ -62,6 +62,7 @@ concrete Product table containing the common columns.
 - `CourseProductHandler`
 - `DownloadProductHandler`
 - `ConsultationProductHandler`
+- `MembershipProductHandler`
 
 Adding a Product type requires more than adding an enum value. A complete type
 needs DTOs, an entity/table, repository, converter, strategy handler,
@@ -77,6 +78,10 @@ authorization behavior, migration, tests, and OpenAPI updates.
 | `ProductEntitlementService` | Enrollment, library queries, grant/revoke primitives |
 | `ProductFileAccessService` | Authorized, time-limited Download URLs |
 | `AdminAuditService` | Records and queries Admin actions |
+| `StorefrontService` | Creator configuration and public Storefront read models |
+| `ProductLandingPageService` | Published-only public presentation and owner/Admin configuration |
+| `CreatorDashboardService` | Fixed 30-day Creator reporting summary |
+| `ProductPresentationCleanupService` | Removes presentation references before Product deletion |
 | `SecurityConfig` | Security chain, CORS, public routes, and filter order |
 | `OpenApiDefaultResponsesConfig` | Adds shared authentication responses to OpenAPI operations |
 
@@ -106,4 +111,3 @@ distinguished from client errors and should not disclose internal detail.
 - [Products and Authoring](./products-and-authoring.md)
 - [Persistence and Data Model](./persistence-and-data-model.md)
 - [Current Backend Coverage](./current-limitations.md)
-

@@ -47,15 +47,14 @@ The current service layer lives under `src/core/api/` in `video-platform-ui`.
 The frontend currently calls APIs for authentication, profile loading, Product
 creation and editing, Product search, Course sections, lesson shells, Download
 file upload, calendar connection initiation, Admin user/Product/audit
-management, and Creator data surfaces. Some service wrappers target
-backend-pending contracts or routes that are not implemented by the current
-production backend.
+management, Creator reporting, Storefront, Product Landing Page presentation,
+Commerce checkout, and entitlement surfaces.
 
 Creator Product Overview reuses the existing Product detail retrieval path. It does not add a dedicated Product Overview service, endpoint, Redux slice, or backend contract.
 
-Several Creator data surfaces now have frontend-defined contracts, services, thunks, and Redux slices. Their production backend endpoints are still pending unless a feature-specific page says otherwise.
+Creator data surfaces use frontend-defined contracts, services, thunks, and Redux slices backed by current backend endpoints.
 
-Current backend-pending frontend contracts include:
+Current backend-backed frontend contracts include:
 
 - Creator Customers list and Customer Detail.
 - Creator Sales summary, Orders page, and Order Detail.
@@ -67,10 +66,10 @@ Current backend-pending frontend contracts include:
 Ownership boundaries matter for these frontend contracts. The current backend
 Product contract is authoritative for Product identity, type, name,
 description, status, image, price amount, and supported type-specific content.
-The backend now implements the frontend's Product pricing model, billing
-interval, currency extension, and Membership authoring contracts. Product
-Landing Page config, Storefront, and several Creator aggregate contracts remain
-backend-pending.
+The backend implements the frontend's Product pricing model, billing interval,
+currency extension, Membership authoring, Product Landing Page configuration,
+Storefront, Creator reporting, and Dashboard contracts. A combined public
+Product read model and production payment provider remain unavailable.
 
 Membership service comments that still say `BACKEND CONTRACT NOT YET
 IMPLEMENTED` are stale. The runtime routes are implemented, but binary media,
@@ -79,6 +78,6 @@ remain unavailable.
 
 Local development may substitute ignored HTTP mocks at the Axios boundary when `REACT_APP_USE_MOCKS=true`. Feature components should not branch on mock mode for Creator business data.
 
-This section documents frontend clients, including backend-pending clients. Use
+This section documents frontend clients. Use
 [Backend API and Swagger](./backend/api-and-swagger.md) to determine whether a
 matching production endpoint exists.

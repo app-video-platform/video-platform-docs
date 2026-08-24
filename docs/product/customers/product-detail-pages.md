@@ -24,7 +24,10 @@ Customers and visitors can:
 - Review the product name, type, description, image, and price.
 - See recurring Membership pricing when it is configured.
 - Review type-specific public summaries when the product has supporting data.
-- See an honest unavailable state for purchase, free access, or Membership checkout when commerce is not connected.
+- Enroll in a published free Product after signing in.
+- Check existing Product access and open protected content when access is active.
+- Start one-time checkout for eligible paid Products when commerce is configured.
+- See an honest unavailable state when paid commerce or Membership checkout is unavailable.
 
 ## How it works
 
@@ -41,11 +44,11 @@ Creators configure product-specific public presentation from the Product Landing
 
 ## Current limitations
 
-- Customer-facing checkout and production payment processing are not implemented.
-- Paid Product purchase, frontend free-enrollment/access integration, Membership subscription checkout, and waitlists are not implemented. The backend has free Product enrollment/access APIs and a one-time paid Commerce foundation, but this page does not call them.
+- Free enrollment and Product access checks are connected. Paid one-time checkout uses the provider-neutral Commerce foundation, but no production payment provider is configured.
+- Membership subscription checkout and waitlists are not implemented.
 - Ratings, reviews, customer counts, subscriber/member counts, landing-page analytics, SEO controls, slugs, custom domains, galleries, slideshows, promo video, presentations, and arbitrary page-builder blocks are not part of the current Product Landing Page.
 - Product-specific theme overrides are not supported; Product Landing Pages inherit the Creator Storefront theme or use the default Storefront theme.
-- Public Product Landing Pages currently use transitional frontend data composition. Direct Product reads apply backend visibility/content protection, but a dedicated public Product read model and persisted landing-page configuration are still backend-pending.
+- Product Landing Page presentation configuration is backend-persisted. The page still composes Product and Creator/Storefront data through separate reads rather than a dedicated combined public Product read model.
 
 ## Related pages
 

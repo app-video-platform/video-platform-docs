@@ -9,7 +9,7 @@ sidebar_position: 7
 
 Creators can use Settings to view and edit account, profile, payment, calendar, privacy, notification, and subscription screens.
 
-Most settings tabs are visible forms in the current frontend. Calendar connection is the clearest backend-backed settings workflow.
+Most settings tabs are visible forms. Profile updates and calendar connection initiation are backend-backed; several other tabs remain presentation-only.
 
 ## Who can use this
 
@@ -50,7 +50,7 @@ The Account tab shows password, preference, and delete-account sections. Payment
 
 ## Current limitations
 
-- Profile Save shows a success toast, but profile changes are not confirmed as persisted.
+- Profile name, public presentation fields, public email, and social links persist through the authenticated profile API. Omitted social links remain unchanged; clearing the list removes them.
 - Change picture, remove picture, password change, account preferences, delete account, payment provider connection, subscription, privacy, and notification settings are visible but not confirmed as saved workflows.
 - The Payment Methods tab does not complete payment-provider onboarding.
 - Calendar connection can be initiated, but connected-calendar management is not complete.

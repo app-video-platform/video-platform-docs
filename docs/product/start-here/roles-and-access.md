@@ -93,18 +93,18 @@ Access is based on the user's active role.
 | Cart | No | Yes | Yes | Yes |
 | Library | No | Yes | No | Yes |
 | Creator product management | No | No | Yes | Yes |
-| Creator Storefront Builder | No | No | Yes | Yes |
+| Creator Storefront Builder | No | No | Yes | No |
 | Creator marketing | No | No | Yes | Yes |
-| Sales page | No | No | Yes | Yes |
-| Analytics page | No | No | Yes | Yes |
+| Sales page | No | No | Yes | No |
+| Analytics page | No | No | Yes | No |
 | Admin area | No | No | No | Yes |
 
 ## Current limitations
 
 - The cart route is protected even though product browsing is public.
-- Public Product Landing Pages show pricing and unavailable purchase/access states, but checkout is not implemented.
+- Public Product Landing Pages support signed-in free enrollment, access checks, and eligible one-time checkout initiation. Production payment completion is unavailable without a real provider.
 - Some navigation items point to areas that are not fully implemented, such as messages.
-- Storefront theme, featured product selection, product ordering, and public read-model contracts exist in the frontend, but the production Storefront backend endpoints are not implemented yet.
+- The frontend still exposes some Creator reporting and Storefront route metadata to Administrators even though those backend endpoints intentionally require the Creator role.
 - Password reset screens are visible, but the full reset workflow is not currently connected end to end.
 
 ## Related pages

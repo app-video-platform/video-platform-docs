@@ -46,7 +46,7 @@ Product Landing Page config services live under `src/core/api/services/product-l
 
 The current config model contains `marketingDescription`, `heroLayout`, `visibleSections`, and `sectionOrder`. Product Landing Page config must not duplicate canonical Product fields, Creator profile fields, Storefront theme, checkout/access state, SEO, slugs, or custom-domain data.
 
-The public Product route still composes available Product, config, theme, and Creator/profile inputs through frontend/backend-pending paths. A dedicated production public Product read model is still needed for public-safe Product presentation and server-enforced visibility.
+The public Product route composes the protected Product read, persisted landing-page configuration, and public Storefront theme/profile data. A dedicated combined public Product read model is still unavailable; public Product and landing-page reads independently enforce Published visibility.
 
 ## Sections and lessons
 
