@@ -40,13 +40,13 @@ Product Landing Page config services live under `src/core/api/services/product-l
 
 | Function | Method and URL | Notes |
 |---|---|---|
-| `getPublicProductLandingPageConfigAPI` | `GET api/products/:productId/landing-page` | Backend-pending public-safe landing-page config read. |
-| `getCreatorProductLandingPageConfigAPI` | `GET api/creator/products/:productId/landing-page` | Backend-pending Creator config read. |
-| `updateCreatorProductLandingPageConfigAPI` | `PATCH api/creator/products/:productId/landing-page` | Backend-pending Creator config update. |
+| `getPublicProductLandingPageConfigAPI` | `GET api/products/:productId/landing-page` | Server-backed public-safe landing-page config read. |
+| `getCreatorProductLandingPageConfigAPI` | `GET api/creator/products/:productId/landing-page` | Server-backed Creator config read. |
+| `updateCreatorProductLandingPageConfigAPI` | `PATCH api/creator/products/:productId/landing-page` | Server-backed Creator config update. |
 
-The current config model contains `marketingDescription`, `heroLayout`, `visibleSections`, and `sectionOrder`. Product Landing Page config must not duplicate canonical Product fields, Creator profile fields, Storefront theme, checkout/access state, SEO, slugs, or custom-domain data.
+The current config model contains `marketingDescription`, `heroLayout`, `visibleSections`, and `sectionOrder`. If `visibleSections` is absent, the frontend uses the default section set; if it is an explicit empty array, the empty selection is preserved. Product Landing Page config must not duplicate canonical Product fields, Creator profile fields, Storefront theme, checkout/access state, SEO, slugs, or custom-domain data.
 
-The public Product route still composes available Product, config, theme, and Creator/profile inputs through frontend/backend-pending paths. A dedicated production public Product read model is still needed for public-safe Product presentation and server-enforced visibility.
+The public Product route still composes available Product, config, theme, and Creator/profile inputs. A dedicated production public Product read model is still needed for public-safe Product presentation and server-enforced visibility.
 
 ## Sections and lessons
 

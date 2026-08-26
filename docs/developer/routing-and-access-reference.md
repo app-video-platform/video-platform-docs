@@ -30,10 +30,10 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app` | protected | Admin, Creator, User | Role-based app home | Admin, Creator, or End User landing |
 | `/app/explore` | public | - | Explore products |  |
 | `/app/explore/search` | public | - | Product search results |  |
-| `/app/product/:id` | public | - | Public Product Landing Page | Renders published Products through the shared Product Landing Page presentation; checkout/access remains unavailable |
+| `/app/product/:id` | public | - | Public Product Landing Page | Renders published Products and current purchase/access actions where supported; Membership checkout remains unavailable |
 | `/app/product/:id/:type` | public | - | Public Product Landing Page compatibility route | Redirects to the ID-only route when the type segment conflicts with loaded Product data |
 | `/app/store/:creatorId` | public | - | Public creator Storefront | Shows the creator profile, persisted Storefront theme, and published products; draft and hidden products are withheld |
-| `/app/cart` | protected | Admin, Creator, User | Shopping cart | No checkout |
+| `/app/cart` | protected | Admin, Creator, User | Shopping cart | Uses free enrollment for free-only carts and Commerce checkout session creation for paid carts |
 | `/app/library` | protected | User, Admin | Library shell |  |
 | `/app/library/all-products` | protected | User, Admin | Library tab | Currently empty |
 | `/app/library/my-consultation` | protected | User, Admin | Library tab | Currently empty |
@@ -47,16 +47,16 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app/admin/audit` | protected | Admin | Admin audit log |  |
 | `/app/products` | protected | Creator, Admin | Product list |  |
 | `/app/products/:productId` | protected | Creator, Admin | Product Overview | Read-only Creator/Admin inspection page inside `CreatorAppShell`; links to Product Workspace, Landing Page Builder, and public page where available |
-| `/app/products/:productId/landing-page` | protected | Creator, Admin | Product Landing Page Builder | Creator shell route with collapsed sidebar; edits backend-pending landing-page config through local draft Save/Reset and shared public preview |
+| `/app/products/:productId/landing-page` | protected | Creator, Admin | Product Landing Page Builder | Creator shell route with collapsed sidebar; edits server-backed landing-page config through local draft Save/Reset and shared public preview |
 | `/app/products/create` | protected | Creator, Admin | Create product |  |
 | `/app/products/edit/:id` | protected | Creator, Admin | Product Workspace | Focused editing/building environment outside `CreatorAppShell` |
 | `/app/products/edit/:type/:id` | protected | Creator, Admin | Product Workspace legacy-compatible route | Type-bearing edit route where applicable |
-| `/app/storefront` | protected | Creator, Admin | Creator Storefront Builder | Uses the Creator shell with the sidebar collapsed; composes User/Profile, Product summaries, and the backend-pending Creator Storefront config contract for theme, featured Product, and Product ordering |
-| `/app/customers` | protected | Creator, Admin | Creator Customers list | Uses backend-pending Customer list contract |
-| `/app/customers/:customerId` | protected | Creator, Admin | Creator Customer detail | Uses backend-pending Customer detail contract; current detail tabs are read-only |
+| `/app/storefront` | protected | Creator | Creator Storefront Builder | Uses the Creator shell with the sidebar collapsed; composes User/Profile, Product summaries, and the server-backed Creator Storefront config contract for theme, featured Product, and Product ordering |
+| `/app/customers` | protected | Creator | Creator Customers list | Uses server-backed Customer list contract |
+| `/app/customers/:customerId` | protected | Creator | Creator Customer detail | Uses server-backed Customer detail contract; current detail tabs are read-only |
 | `/app/marketing` | protected | Creator, Admin | Marketing area | Mostly incomplete except reviews |
-| `/app/sales` | protected | Creator, Admin | Creator Sales workspace | Uses `order` query param for contextual order detail and backend-pending Sales contracts |
-| `/app/analytics` | protected | Creator, Admin | Creator Analytics workspace | Uses backend-pending aggregate Analytics overview contract |
+| `/app/sales` | protected | Creator | Creator Sales workspace | Uses `order` query param for contextual order detail and server-backed Sales contracts |
+| `/app/analytics` | protected | Creator | Creator Analytics workspace | Uses server-backed aggregate Analytics overview contract |
 | `/app/settings` | protected | Admin, Creator, User | Settings tabs | Most save flows incomplete |
 | `/app/my-page-preview` | protected | Admin, Creator, User | Legacy Storefront preview route | Redirects to `/app/storefront` |
 | `/app/*` | protected | - | App fallback | Redirects to `/app` |

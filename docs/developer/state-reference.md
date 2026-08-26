@@ -12,16 +12,16 @@ Redux Toolkit state lives under `src/core/store`.
 | `auth` | `src/core/store/auth-store/*` | `selectAuthUser`, `selectAuthLoading`, `selectAuthError`, `selectIsUserLoggedIn` | Signup, email verification, sign-in, Google sign-in, profile load/update, logout, onboarding state, and dev role switching. |
 | `products` | `src/core/store/product-store/*` | `selectAllProducts`, `selectProductsLoading`, `selectProductsError`, `selectCurrentProduct`, `selectProductsByType`, `selectTopThreeProducts` | Product CRUD, sections, lessons, download files, owner/product queries, and current product editing state. |
 | `admin` | `src/core/store/admin-store/*` | `selectAdminUsersPage`, `selectAdminProductsPage`, `selectAdminAuditPage`, `selectAdminLoading`, `selectAdminError` | Admin user list, role update, product list, and audit log pages. |
-| `customers` | `src/core/store/customers-store/*` | `selectCreatorCustomersPage`, `selectCreatorCustomers`, `selectCurrentCreatorCustomer` | Backend-pending Creator Customer list and detail contracts. |
-| `sales` | `src/core/store/sales-store/*` | `selectCreatorSalesSummary`, `selectCreatorOrders`, `selectCurrentCreatorOrder` | Backend-pending Sales summary, Orders page, and Order Detail contracts. |
-| `analytics` | `src/core/store/analytics-store/*` | `selectAnalyticsOverview`, `selectAnalyticsLoading`, `selectAnalyticsError` | Backend-pending Creator Analytics aggregate overview contract. |
-| `dashboard` | `src/core/store/dashboard-store/*` | `selectCreatorDashboardSummary`, `selectCreatorDashboardLoading`, `selectCreatorDashboardError` | Backend-pending Creator Dashboard aggregate summary contract. |
-| `productLandingPage` | `src/core/store/product-landing-page-store/*` | `selectPublicProductLandingPageConfigByProductId`, `selectCreatorProductLandingPageConfigByProductId` | Backend-pending public and Creator Product Landing Page config contracts. |
-| `storefront` | `src/core/store/storefront-store/*` | `selectPublicStorefrontByCreatorId`, `selectCreatorStorefrontConfig` | Backend-pending public Storefront read model and Creator Storefront config contracts, including theme, featured Product, and Product ordering. |
+| `customers` | `src/core/store/customers-store/*` | `selectCreatorCustomersPage`, `selectCreatorCustomers`, `selectCurrentCreatorCustomer` | Server-backed Creator Customer list and detail contracts. |
+| `sales` | `src/core/store/sales-store/*` | `selectCreatorSalesSummary`, `selectCreatorOrders`, `selectCurrentCreatorOrder` | Server-backed Sales summary, Orders page, and Order Detail contracts, including multi-Product Order items. |
+| `analytics` | `src/core/store/analytics-store/*` | `selectAnalyticsOverview`, `selectAnalyticsLoading`, `selectAnalyticsError` | Server-backed Creator Analytics aggregate overview contract. |
+| `dashboard` | `src/core/store/dashboard-store/*` | `selectCreatorDashboardSummary`, `selectCreatorDashboardLoading`, `selectCreatorDashboardError` | Server-backed Creator Dashboard aggregate summary contract. |
+| `productLandingPage` | `src/core/store/product-landing-page-store/*` | `selectPublicProductLandingPageConfigByProductId`, `selectCreatorProductLandingPageConfigByProductId` | Server-backed public and Creator Product Landing Page config contracts. |
+| `storefront` | `src/core/store/storefront-store/*` | `selectPublicStorefrontByCreatorId`, `selectCreatorStorefrontConfig` | Server-backed public Storefront read model and Creator Storefront config contracts, including theme, featured Product, and Product ordering. |
 | `membership` | `src/core/store/membership-store/*` | `selectMembershipAggregateByProductId`, `selectMembershipLoading`, `selectMembershipSaving` | Backend-backed Product-scoped Membership aggregate, content-metadata, and feed authoring. |
 | `reviews` | `src/core/store/reviews-store/*` | `selectAllReviews` | Creator Marketing Reviews list and filters. |
 | `notifications` | `src/core/store/notifications/*` | `selectNotifications` | In-memory notification list. |
-| `shopCart` | `src/core/store/shop-cart/*` | `selectAllShopCartProducts`, `selectShopCartTotal`, `selectCartCount`, `selectCartIds` | Browser-saved cart. No checkout/payment state. |
+| `shopCart` | `src/core/store/shop-cart/*` | `selectAllShopCartProducts`, `selectShopCartTotal`, `selectCartCount`, `selectCartIds` | Browser-saved cart used by the current free-enrollment and paid-checkout flow; payment/order records stay in backend APIs, not Redux. |
 | `wishlist` | `src/core/store/wishlist/*` | `selectWishlistProducts`, `selectWishlistIds`, `selectWishlistCount`, `makeSelectIsInWishlist` | Browser-saved wishlist with cart interop. |
 
 ## Persistence notes

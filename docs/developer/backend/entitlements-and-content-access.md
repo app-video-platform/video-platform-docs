@@ -118,7 +118,6 @@ Order.
 The backend still does not implement:
 
 - a production Stripe or other real payment-provider adapter
-- customer-facing paid checkout integration
 - partial refunds or payment retries
 - subscriptions or recurring entitlement renewal
 - Membership access

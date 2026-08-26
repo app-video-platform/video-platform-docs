@@ -24,11 +24,13 @@ Customers and visitors can:
 - Review the product name, type, description, image, and price.
 - See recurring Membership pricing when it is configured.
 - Review type-specific public summaries when the product has supporting data.
-- See an honest unavailable state for purchase, free access, or Membership checkout when commerce is not connected.
+- Use the current purchase/access actions where supported, or see an honest unavailable state when a Product type or commerce path is not connected.
 
 ## How it works
 
 Published products render through the public Product Landing Page. The page inherits the Creator's Storefront theme when available and otherwise uses the platform/default Storefront theme.
+
+Product-specific landing-page configuration is server-backed for the current marketing copy, hero layout, supported section visibility, and supported section order behavior.
 
 The page can show type-specific summaries:
 
@@ -41,11 +43,11 @@ Creators configure product-specific public presentation from the Product Landing
 
 ## Current limitations
 
-- Customer-facing checkout and production payment processing are not implemented.
-- Paid Product purchase, frontend free-enrollment/access integration, Membership subscription checkout, and waitlists are not implemented. The backend has free Product enrollment/access APIs and a one-time paid Commerce foundation, but this page does not call them.
+- Customer-facing purchase/access paths exist for free enrollment and Cart checkout, but no production payment provider is configured.
+- Membership subscription checkout and waitlists are not implemented.
 - Ratings, reviews, customer counts, subscriber/member counts, landing-page analytics, SEO controls, slugs, custom domains, galleries, slideshows, promo video, presentations, and arbitrary page-builder blocks are not part of the current Product Landing Page.
 - Product-specific theme overrides are not supported; Product Landing Pages inherit the Creator Storefront theme or use the default Storefront theme.
-- Public Product Landing Pages currently use transitional frontend data composition. Direct Product reads apply backend visibility/content protection, but a dedicated public Product read model and persisted landing-page configuration are still backend-pending.
+- Public Product Landing Pages currently use transitional frontend data composition. Direct Product reads apply backend visibility/content protection, but a dedicated public Product read model is still not part of the current implementation.
 
 ## Related pages
 

@@ -56,6 +56,7 @@ Creators can:
 - Create and manage products.
 - Edit course, download, and consultation product details.
 - Manage the Creator Storefront.
+- Access Customers.
 - Access creator marketing screens.
 - Access sales, analytics, and settings screens.
 - Complete onboarding screens.
@@ -86,17 +87,18 @@ Access is based on the user's active role.
 | Sign in, sign up, email verification | Yes | Yes | Yes | Yes |
 | Explore and search products | Yes | Yes | Yes | Yes |
 | Product Landing Pages | Yes | Yes | Yes | Yes |
-| Storefront routes | Yes | Yes | Yes | Yes |
+| Public Storefront routes | Yes | Yes | Yes | Yes |
 | App home | No | Yes | Yes | Yes |
 | Onboarding | No | Yes | Yes | Yes |
 | Settings | No | Yes | Yes | Yes |
 | Cart | No | Yes | Yes | Yes |
 | Library | No | Yes | No | Yes |
 | Creator product management | No | No | Yes | Yes |
-| Creator Storefront Builder | No | No | Yes | Yes |
+| Creator Storefront Builder | No | No | Yes | No |
 | Creator marketing | No | No | Yes | Yes |
-| Sales page | No | No | Yes | Yes |
-| Analytics page | No | No | Yes | Yes |
+| Customers page | No | No | Yes | No |
+| Sales page | No | No | Yes | No |
+| Analytics page | No | No | Yes | No |
 | Admin area | No | No | No | Yes |
 
 ## Current limitations
@@ -104,7 +106,6 @@ Access is based on the user's active role.
 - The cart route is protected even though product browsing is public.
 - Public Product Landing Pages show pricing and unavailable purchase/access states, but checkout is not implemented.
 - Some navigation items point to areas that are not fully implemented, such as messages.
-- Storefront theme, featured product selection, product ordering, and public read-model contracts exist in the frontend, but the production Storefront backend endpoints are not implemented yet.
 - Password reset screens are visible, but the full reset workflow is not currently connected end to end.
 
 ## Related pages

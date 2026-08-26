@@ -57,18 +57,14 @@ the full workflow.
 
 ## Frontend contracts without production backend support
 
-The frontend contains services, models, Redux state, or local HTTP mocks for
-these areas, but the current backend does not implement their production
-contracts:
-
-- Creator Dashboard aggregate data
-- public Storefront read model and Creator Storefront configuration
-- Product Landing Page configuration persistence
+The previously backend-pending Creator Dashboard, Storefront, and Product
+Landing Page configuration contracts are now implemented. No current
+frontend-owned contract in this page's scope is listed as production-backend
+unsupported here.
 
 ## Not implemented
 
 - Stripe or another production payment-provider adapter
-- customer-facing paid checkout integration
 - partial refunds and payment retries
 - taxes, coupons, disputes, invoices, or marketplace payouts
 - subscriptions and renewals
