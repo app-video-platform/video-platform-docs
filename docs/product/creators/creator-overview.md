@@ -68,10 +68,14 @@ For business performance review, start with [Analytics](./analytics.md).
 
 ## Current limitations
 
-- The dashboard includes server-backed audience, sales, activity, product, and attention summaries, but it is not a custom reporting workspace.
+- The dashboard includes server-backed 30-day audience, Sales, activity,
+  Product, payment, and attention summaries, but it is not a custom reporting
+  workspace. Active Memberships remain unavailable until subscription tracking
+  exists.
 - Product Overview is read-only and does not include product-scoped analytics, order history, customer counts, subscriber counts, inline landing-page editing, SEO controls, or publish/unpublish management.
 - Product Landing Page Builder does not provide checkout, free access fulfillment, subscriptions, waitlists, entitlements, arbitrary page-builder blocks, Product-specific theme overrides, SEO controls, slugs, custom domains, galleries, slideshows, promo video, or analytics.
 - Creator Storefront, Customer, Sales, Analytics, and Dashboard data use server-backed API paths for their current read/configuration behavior.
+- Membership relationships and subscription analytics remain unavailable.
 - Marketing campaigns, messages, and customer booking flows are outside the current core product creation workflow.
 - Some course lesson content editors are visible but not fully persisted yet.
 - Membership authoring is persisted, but binary media, Product publishing,

@@ -9,7 +9,7 @@ sidebar_position: 5
 
 The shopping cart lets customers collect products before checkout.
 
-The current cart experience supports adding products from discovery pages, viewing cart contents, removing items, moving items to the wishlist, seeing a displayed total, and enrolling in a cart that contains only free Products. Paid checkout is not connected.
+The current cart supports adding Products, viewing and removing items, moving items to the wishlist, displaying totals, enrolling in free Products, and starting backend checkout for eligible one-time paid Products.
 
 ## Who can use this
 
@@ -28,6 +28,8 @@ Customers can:
 - See a displayed total for cart items.
 - Move cart items to the wishlist.
 - Remove cart items where removal is working correctly.
+- Enroll in a cart containing only free Products.
+- Start checkout for eligible paid Course, Download, or Consultation Products.
 
 ## How it works
 
@@ -35,14 +37,15 @@ Adding a product to the cart places it in the browser's saved cart. The cart dro
 
 The cart page shows each item with its title, price, and supporting display information. Customers can move an item to the wishlist or remove it from the cart. The page also shows a total based on the products currently in the cart.
 
+Checkout prices and eligibility are recalculated by the backend. A paid checkout grants access only after a verified successful payment event.
+
 ## Current limitations
 
 - A cart containing only free Products can add them to the signed-in user's
   entitlement Library.
-- Paid checkout and payment-provider redirection are not connected to the
-  frontend.
+- No production payment provider is configured, so paid checkout cannot complete in production. Provider redirection is used when a configured gateway returns a checkout URL.
 - Cart items are saved in the browser and are not synchronized to a backend account.
-- Products in the cart are not reserved, purchased, or granted as owned content.
+- Cart placement does not reserve or grant a Product. Free enrollment or a successful paid event creates access.
 - Product images and ratings shown in cart areas include placeholder content.
 - Removing the first item in the cart may not work correctly in the current frontend.
 

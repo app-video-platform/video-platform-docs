@@ -99,7 +99,8 @@ Product Preview uses the owner's Creator Storefront configuration for creator-ow
 - The list can show statuses such as Published and Hidden, but the creator builder currently saves products as drafts and does not provide a complete publishing workflow.
 - Product Overview does not provide product-specific revenue analytics, order history, customer counts, subscriber or member counts, conversion data, charts, ratings, reviews, Storefront visibility controls, access management, duplicate/archive actions, publish/unpublish controls, inline landing-page editing, or SEO controls.
 - Product Landing Page Builder does not provide arbitrary page-builder blocks, galleries, slideshows, promo video, presentations, custom domains, slugs, SEO controls, Product-specific theme overrides, checkout, free access fulfillment, waitlists, subscriptions, or entitlement/access management.
-- A dedicated public Product read model is still not part of the current Product Landing Page implementation.
+- Landing-page configuration is backend-persisted, while a dedicated combined
+  public Product read model remains unavailable.
 - Product deletion is supported from product management flows, but the Products list itself is primarily focused on viewing and opening products.
 
 ## Related pages

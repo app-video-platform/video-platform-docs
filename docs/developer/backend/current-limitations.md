@@ -35,6 +35,11 @@ sidebar_position: 11
   Product entitlements
 - Creator-only Analytics overview for Commerce performance, Product ranking,
   customer growth, refunds, and failures
+- Creator-only Dashboard summary from Commerce, Customer, Product, and payment data
+- Creator Storefront configuration and anonymous public Storefront read models
+- Product Landing Page presentation configuration for Creator/Admin management
+  and anonymous reads of published Products
+- profile-owned public email that is separate from login email
 - OpenAPI generation under the `docs` profile
 
 ## Backend exists, frontend is not complete
@@ -42,13 +47,10 @@ sidebar_position: 11
 These capabilities exist in the backend but are not complete end-to-end product
 flows in the current frontend:
 
-- free Product enrollment
 - entitlement-backed Library data
-- Product access checks
 - authorized customer Download delivery
 - full connected-calendar listing and disconnection
 - persisted Quiz play/submission integration across the customer learning UI
-- one-time paid checkout session creation and Order-status reads
 - paid entitlement fulfillment through the development/test fake gateway
 
 Document them as backend capabilities in Developer Documentation, but keep the
@@ -65,6 +67,7 @@ unsupported here.
 ## Not implemented
 
 - Stripe or another production payment-provider adapter
+- production-provider checkout completion
 - partial refunds and payment retries
 - taxes, coupons, disputes, invoices, or marketplace payouts
 - subscriptions and renewals

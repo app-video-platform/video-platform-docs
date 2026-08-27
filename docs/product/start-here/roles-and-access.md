@@ -104,7 +104,7 @@ Access is based on the user's active role.
 ## Current limitations
 
 - The cart route is protected even though product browsing is public.
-- Public Product Landing Pages show pricing and unavailable purchase/access states, but checkout is not implemented.
+- Public Product Landing Pages support signed-in free enrollment, access checks, and eligible one-time checkout initiation. Production payment completion is unavailable without a real provider.
 - Some navigation items point to areas that are not fully implemented, such as messages.
 - Password reset screens are visible, but the full reset workflow is not currently connected end to end.
 

@@ -47,12 +47,13 @@ The current service layer lives under `src/core/api/` in `video-platform-ui`.
 The frontend currently calls APIs for authentication, profile loading, Product
 creation and editing, Product search, Course sections, lesson shells, Download
 file upload, calendar connection initiation, Admin user/Product/audit
-management, and Creator data surfaces. Some service wrappers target contracts or
-routes that are not implemented by the current production backend.
+management, Creator reporting, Storefront, Product Landing Page presentation,
+Commerce checkout, and entitlement surfaces.
 
 Creator Product Overview reuses the existing Product detail retrieval path. It does not add a dedicated Product Overview service, endpoint, Redux slice, or backend contract.
 
-Several Creator data surfaces now have frontend-defined contracts, services, thunks, and Redux slices backed by production endpoints.
+Creator data surfaces use frontend-defined contracts, services, thunks, and
+Redux slices backed by current backend endpoints.
 
 Current server-backed Creator and presentation contracts include:
 
@@ -66,10 +67,10 @@ Current server-backed Creator and presentation contracts include:
 Ownership boundaries matter for these frontend contracts. The current backend
 Product contract is authoritative for Product identity, type, name,
 description, status, image, price amount, and supported type-specific content.
-The backend now implements the frontend's Product pricing model, billing
-interval, currency extension, Membership authoring contracts, Product Landing
-Page configuration, Storefront contracts, and the current Creator reporting
-contracts listed above.
+The backend implements the frontend's Product pricing model, billing interval,
+currency extension, Membership authoring, Product Landing Page configuration,
+Storefront, Creator reporting, and Dashboard contracts. A combined public
+Product read model and production payment provider remain unavailable.
 
 Membership service comments that still say `BACKEND CONTRACT NOT YET
 IMPLEMENTED` are stale. The runtime routes are implemented, but binary media,

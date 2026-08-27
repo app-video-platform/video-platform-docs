@@ -32,26 +32,21 @@ Major server-backed areas include:
 - Free Product enrollment, active entitlements, access checks, and protected Download delivery in the backend.
 - Membership Product and recurring-pricing persistence, native content metadata,
   included Product associations, and feed ordering.
+- Creator Customers, Sales, Analytics, and Dashboard reporting.
+- Creator Storefront configuration and anonymous public Storefront reads.
+- Product Landing Page presentation configuration and published-only public reads.
+- Profile-owned public email that is separate from login email.
+- Product-page free enrollment, access checks, and one-time checkout initiation.
 
 Major browser-saved areas include:
 
 - Wishlist.
 - Shopping cart.
 
-Major server-backed Creator and presentation areas include:
-
-- Creator Customers list and Customer Detail.
-- Creator Sales summary, Orders page, and Order Detail.
-- Creator Analytics aggregate overview.
-- Creator Dashboard aggregate summary.
-- Public Storefront read model and Creator Storefront configuration, including theme, featured Product selection, and Product ordering.
-- Product Landing Page configuration for marketing copy, hero layout, supported section visibility, and supported section order.
-
 Major backend capabilities not yet exposed as complete frontend workflows
 include:
 
 - Loading the signed-in user's active entitlement library.
-- Product access checks.
 - Authorized customer Download delivery.
 - Connected-calendar listing and disconnection.
 - End-to-end customer Quiz play and submission.
@@ -66,10 +61,14 @@ Major frontend-only session state areas include:
 
 Major placeholder or incomplete areas include:
 
-- Production payment-provider integration and purchase-history UI beyond the current Cart/Order status path.
-- Creator-side safe financial mutation contracts for refund issuing, payment retries, subscriptions, exports, taxes, and payouts.
-- Storefront arbitrary page-building, custom domains, SEO settings, password protection, and Storefront analytics.
-- A dedicated public Product read model, Product Landing Page checkout/access/waitlist state in the shared landing-page presentation, SEO, slugs, custom domains, analytics, Product-specific theme overrides, and arbitrary page-builder blocks.
+- Production payment-provider integration and purchase-history UI beyond the
+  current Cart/Order-status path.
+- Customer mutations, editable notes/tags, waitlists, and Membership relationship data.
+- Creator-side refund/retry/subscription mutations, reporting exports, taxes,
+  and payouts.
+- Membership and traffic/conversion analytics.
+- Arbitrary Storefront page building, custom domains, SEO settings, password protection, and Storefront analytics.
+- A dedicated combined public Product read model, waitlists, SEO, slugs, custom domains, landing-page analytics, Product-specific theme overrides, and arbitrary page-builder blocks.
 - Membership binary asset upload/delivery, Product publishing, subscriptions,
   entitlement logic, member access, and buyer-facing Membership flows.
 - Customer Library tabs backed by the entitlement API.

@@ -74,7 +74,7 @@ An Order can contain more than one Product. The Sales UI renders every immutable
 - Sales summary, Order list, and Order detail are now server-backed for one-time Commerce Orders.
 - The current frontend does not establish provider-safe financial mutation contracts for refunds, payment retries, subscription changes, or entitlement changes.
 - Creators cannot issue refunds, retry charges, change subscriptions, grant access, revoke access, export orders, or perform bulk actions from the current Sales UI.
-- No production payment provider is configured, and paid checkout is not connected in the customer purchase flow.
+- The customer Cart can start eligible paid checkout, but no production payment provider is configured, so payment cannot complete in production.
 - Subscriptions, renewals, partial refunds, taxes, payouts, and financial exports are not supported.
 - Messages navigation is visible elsewhere in the app, but a complete standalone Messages page is not implemented in the current router.
 

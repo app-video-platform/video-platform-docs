@@ -27,13 +27,17 @@ A record of administrative activity, such as role changes or admin product actio
 
 A creator-facing area for reviewing business performance metrics, charts, rankings, and summary panels.
 
-The current frontend includes a server-backed Analytics workspace with preset reporting periods, metrics, charts, rankings, and summary panels.
+The current frontend includes a Creator-only, server-backed Analytics workspace
+with preset 7-, 30-, and 90-day periods, metrics, charts, rankings, and summary
+panels. Membership subscription analytics remains unavailable.
 
 ### Cart
 
 A browser-stored list of products an End User has added while shopping.
 
-The current cart is frontend-only and does not complete checkout or payment.
+The cart contents are browser-saved. Free-only carts use backend enrollment and
+eligible paid carts can create backend checkout sessions, but production payment
+completion is unavailable without a configured provider.
 
 ### Consultation product
 
@@ -98,7 +102,7 @@ The currently supported product types are:
 
 A public page for viewing an individual product.
 
-The current Product Landing Page renders published Products with real Product information, type-specific summaries, inherited Storefront/default theme, and unavailable purchase/access states when commerce is not connected.
+The current Product Landing Page renders published Products with real Product information, persisted presentation settings, inherited Storefront/default theme, free enrollment/access checks, and eligible one-time checkout initiation.
 
 ### Product Landing Page Builder
 
@@ -122,13 +126,19 @@ Product Workspace is separate from Product Overview. Product identity links gene
 
 A creator-facing area for reviewing sales metrics, order records, and contextual order detail.
 
-The current frontend includes a server-backed Sales workspace, read-only Order detail, summary metrics, and itemized multi-Product Order reporting.
+The current frontend includes a Creator-only, server-backed Sales workspace,
+summary metrics, an Order ledger, read-only Order detail, and itemized
+multi-Product reporting from one-time Commerce and entitlement data.
 
 ### Storefront
 
 A creator's public page for showing public profile information and published products.
 
-Creators use the server-backed Storefront Builder from the Creator area to edit supported public profile fields, set public email, customize appearance, choose a featured product, adjust product order, save or reset Storefront configuration changes, and open or copy the public URL.
+Creators use the server-backed Storefront Builder to edit supported public
+profile fields, set public email, customize appearance, choose a featured
+Product, adjust Product order, save or reset configuration, and open or copy
+the public URL. The public read model includes only published Products and
+explicitly public profile fields.
 
 ### Visitor
 

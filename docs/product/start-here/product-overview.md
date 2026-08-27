@@ -45,9 +45,9 @@ Creators can:
 - Configure product-specific public presentation in Product Landing Page Builder.
 - Build backend-persisted Course, Download, Consultation, and Membership products.
 - Set product pricing.
-- Review customer relationship records in the Customers area when the frontend Customer contract has data available.
-- Review sales metrics and order records in the Sales area when the frontend Sales contracts have data available.
-- Review analytics metrics, charts, and summaries in the Analytics area when the frontend Analytics aggregate contract has data available.
+- Review server-backed customer relationship records in the Customers area.
+- Review server-backed Sales metrics and itemized Order records.
+- Review server-backed Analytics metrics, charts, and summaries.
 - Use the Storefront Builder to edit public profile fields, set public email, customize the Storefront presentation, review product visibility, choose a featured product, order products, and open or copy the public Storefront link.
 - View and filter reviews by visibility where review data is available.
 - Connect a calendar provider from settings.
@@ -60,6 +60,8 @@ End Users can:
 - Add products to a wishlist.
 - Add products to a shopping cart.
 - Move products between wishlist and cart.
+- Enroll in eligible free Products and initiate checkout for eligible paid
+  Products after signing in.
 
 Visitors who are not signed in can:
 
@@ -80,17 +82,20 @@ Some product discovery pages are public. Management pages require sign-in and th
 
 ## Current limitations
 
-- Customer-facing purchase/access paths exist for free enrollment and Cart checkout, but no production payment provider is configured.
+- Customer-facing free enrollment, access checks, and paid Cart checkout
+  initiation are integrated, but production payment completion is unavailable
+  without a configured provider.
 - The shopping cart and wishlist are stored in the browser, not in a user account.
 - The user library exists, but most library tabs do not yet show purchased content.
 - Creator Product Overview pages are read-only and do not include product-specific analytics, orders, customer counts, inline landing-page editing, SEO controls, or publishing management.
-- Product Landing Page Builder supports a narrow persisted presentation configuration only. It does not provide checkout, fulfillment, subscriptions, waitlists, entitlements, SEO controls, custom domains, arbitrary page-builder blocks, Product-specific theme overrides, or a dedicated public Product read model.
-- Storefront theme, featured product selection, product ordering, and public read-model behavior are server-backed for the current Storefront experience.
+- Product Landing Page Builder persists a narrow presentation configuration. It does not provide subscriptions, waitlists, SEO controls, custom domains, arbitrary page-builder blocks, Product-specific theme overrides, or a combined public Product read model.
+- Storefront theme, featured Product selection, ordering, public profile email, and the public Storefront read model are backend-supported.
 - Course lessons can be created, but some lesson content editors are not fully persisted.
 - Membership authoring persists native content metadata, included Courses/Downloads, ordering, and recurring pricing. Binary media, subscriptions, checkout, publishing, entitlements, and member access are not implemented.
 - Creator Customers has server-backed routes, list controls, and detail tabs for the current Customer reporting behavior.
 - Creator Sales has server-backed routes, list controls, metrics, multi-Product Order detail, and summary/order reads for the current Sales reporting behavior.
 - Creator Analytics has server-backed routes, preset period selection, metrics, charts, summary panels, and aggregate reporting for the current Analytics behavior.
+- Subscription and Membership reporting remains unavailable.
 - Messages, email campaigns, and live-session management are visible in places but not production-ready workflows.
 
 ## Related pages

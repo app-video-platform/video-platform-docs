@@ -9,7 +9,7 @@ sidebar_position: 1
 
 Customers can use Video Platform App to discover products, inspect Product Landing Pages, save products for later, and collect products in a shopping cart.
 
-The current customer experience supports browsing and planning a purchase journey. The full purchase, payment, and post-purchase access flow is not complete yet.
+The current customer experience supports browsing, free enrollment, Product access checks, and starting eligible one-time checkout. Production payment completion and Library delivery remain incomplete.
 
 ## Who can use this
 
@@ -28,6 +28,8 @@ Customers can:
 - Open Product Landing Pages.
 - Save products to a wishlist.
 - Add products to a shopping cart from product discovery pages.
+- Enroll in published free Products after signing in.
+- Start checkout for eligible one-time paid Products.
 - Move products between wishlist and cart in supported areas.
 - Open the Library area and view the Wishlist tab.
 
@@ -41,12 +43,12 @@ The Library area is available to signed-in End Users. Today, the most useful Lib
 
 ## Current limitations
 
-- Checkout and payment are not implemented.
-- Buying a product does not currently create an order or grant access to owned content.
+- One-time checkout creates backend Orders, but no production payment provider is configured.
+- Access is granted after free enrollment or a successful verified paid event; the Library does not yet present the complete owned-content journey.
 - Wishlist and cart items are saved in the browser, not synchronized to a backend user account.
 - The Library does not yet show purchased courses, downloads, or consultations.
 - The signed-in customer home area is still a placeholder experience.
-- Storefront pages show published products and link to Product Landing Pages, but they do not complete checkout, payment, or post-purchase access.
+- Storefront pages show published Products and link to Product Landing Pages, where enrollment, access checks, and eligible checkout initiation occur.
 
 ## Related pages
 

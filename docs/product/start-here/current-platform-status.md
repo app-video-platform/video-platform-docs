@@ -43,16 +43,16 @@ The strongest areas of the current frontend are:
 | Feature area | Current status |
 |---|---|
 | Product Overview | Creator/Admin Product Overview pages exist at `/app/products/:productId` for read-only product inspection, type-specific summaries, Edit product navigation, Product Landing Page Builder navigation, and published-only public-page navigation. They reuse existing Product data and do not include product-scoped analytics, orders, customers, access management, publish/unpublish controls, inline landing-page editing, SEO, or a new backend endpoint. |
-| Product Landing Pages | Product Landing Page V2 exists for public published products and uses real Product data, persisted landing-page configuration, type-specific summaries, inherited Storefront/default theme, and unavailable purchase/access states in the shared landing-page presentation. Direct backend Product reads protect Draft/Hidden Products and redact protected content. A dedicated public Product read model, checkout, fulfillment UI, subscriptions, waitlists, SEO, custom domains, and arbitrary page-builder blocks are unsupported. |
+| Product Landing Pages | Product Landing Page V2 exists for public published Products, uses backend-persisted presentation configuration, inherits the Storefront/default theme, and connects free enrollment, access checks, and eligible one-time checkout initiation. Direct Product reads protect Draft/Hidden Products and redact protected content. A combined public Product read model, production payment provider, subscriptions, waitlists, SEO, custom domains, and arbitrary page-builder blocks remain unsupported. |
 | Course products | Sections and lesson shells can be created. The backend persists Quiz definitions and attempts, but the current frontend does not yet provide a complete reliable Video, Article, Quiz delivery, and customer learning workflow. |
 | Download products | Creator-side file upload and backend authorized Download delivery exist, but the frontend Library does not expose customer delivery. |
 | Consultation products | Setup fields exist, but booking, availability, rescheduling, and customer session management are not implemented. |
 | Membership products | Creator/Admin Membership authoring is persisted for Draft/Hidden Products, recurring pricing configuration, native Posts and Video/Resource metadata, included same-owner Course/Download Products, and feed ordering. Binary media, Membership publishing, subscriptions, checkout, entitlements, and member access are unavailable. |
 | Wishlist | Works in the browser and persists locally, but is not tied to a backend user account. |
-| Shopping cart | Works in the browser and persists locally. Free-only carts can use backend enrollment. The backend now has a one-time paid Order/payment foundation, but paid checkout is not connected in the frontend and no production payment provider is configured. |
+| Shopping cart | Cart contents persist locally. Free-only carts use backend enrollment, and eligible paid carts create backend checkout sessions. No production payment provider is configured, so paid checkout cannot complete in production. |
 | Library | The backend can list active Product entitlements, but the frontend Library shell does not consume that API. Wishlist has behavior; owned Courses, Downloads, and Consultations are not shown. |
 | Storefront | Creator Storefront Builder and public Storefront pages are server-backed. The Creator-only Builder uses the shared public presentation, supports inline public profile editing, public email, Light/Dark appearance, accent color, Modern/Classic/Friendly typography, featured product selection, product ordering, and draft Save/Reset behavior. Published products are shown publicly; draft and hidden products are withheld. |
-| Creator dashboard | The Creator Dashboard aggregate is server-backed for the current summary, recent activity, top products, and needs-attention presentation. |
+| Creator dashboard | The Creator Dashboard aggregate is server-backed for the current 30-day summary, recent activity, top Products, and needs-attention presentation. Active Memberships are unavailable until subscription tracking exists. |
 | Creator Customers | Creator-only backend list/detail reporting covers paid/refunded buyers and free, purchased, or manually granted Product access, including Free enrollment as an access source. Membership/waitlist relationships, editable notes/tags, exports, and mutations are unavailable. |
 | Creator Sales | Creator-only backend reporting covers retained revenue, paid Orders, full refunds, failures, filters, pagination, immutable item snapshots, payment context, entitlement-derived access, and multi-Product Order itemization. Production payments, subscriptions, refund/retry actions, exports, taxes, and payouts are unavailable. |
 | Creator Analytics | Creator-only backend reporting covers 7/30/90-day Commerce performance, Product ranking, lifetime/new customers, refund rate, and failures. Membership data is intentionally empty. Custom ranges, Membership analytics, traffic/conversion analytics, taxes, payouts, and exports are unavailable. |
@@ -64,16 +64,16 @@ The strongest areas of the current frontend are:
 
 Do not describe the following as supported product capabilities:
 
-- Customer-facing paid checkout.
+- Customer-facing paid checkout completion.
 - Production payment processing.
 - Product Overview product-scoped revenue analytics, orders, customer counts, subscriber/member counts, conversion, charts, ratings/reviews, Storefront visibility controls, access management, duplicate/archive, publish/unpublish management, inline landing-page editing, SEO controls, or dedicated Product Overview backend APIs.
-- Product Landing Page checkout, payments, Membership subscription checkout, waitlists, ratings/reviews, landing-page analytics, SEO controls, slugs, custom domains, galleries, slideshows, promo video, presentations, arbitrary page-builder blocks, Product-specific theme overrides, or a dedicated production public Product read model.
+- Production-provider payment completion, Membership subscription checkout, waitlists, ratings/reviews, landing-page analytics, SEO controls, slugs, custom domains, galleries, slideshows, promo video, presentations, arbitrary page-builder blocks, Product-specific theme overrides, or a dedicated combined public Product read model.
 - Membership binary Video/Resource upload or delivery, subscriptions, checkout, entitlement logic, Product publishing, member access, or buyer-facing Membership flows.
 - Frontend customer access to purchased Course/Download/Consultation content. The backend can fulfill paid purchase entitlements, but the frontend Library and delivery flows do not consume them end to end.
 - Creator customer mutations, Membership/waitlist relationships, notes/tags editing, customer deletion, exporting, bulk actions, messaging, or impersonation.
 - Creator payment processing, refund issuing, charge retries, subscription changes, financial exporting, taxes, payouts, or access mutation from Sales.
 - Membership analytics, custom Analytics date ranges, traffic analytics, conversion funnels, attribution/source analytics, payouts, tax analytics, disputes, cohorts, course/content engagement analytics, exports, report building, or custom dashboards.
-- Storefront arbitrary page-building, drag-and-drop sections, custom content blocks, custom CSS, custom domains, SEO settings, password protection, or Storefront analytics.
+- Arbitrary Storefront page-building, drag-and-drop sections, custom content blocks, custom CSS, custom domains, SEO settings, password protection, or Storefront analytics.
 - Email campaigns.
 - Direct messaging.
 - Live-session booking or scheduling.
