@@ -40,13 +40,16 @@ Product Landing Page config services live under `src/core/api/services/product-l
 
 | Function | Method and URL | Notes |
 |---|---|---|
-| `getPublicProductLandingPageConfigAPI` | `GET api/products/:productId/landing-page` | Backend-pending public-safe landing-page config read. |
-| `getCreatorProductLandingPageConfigAPI` | `GET api/creator/products/:productId/landing-page` | Backend-pending Creator config read. |
-| `updateCreatorProductLandingPageConfigAPI` | `PATCH api/creator/products/:productId/landing-page` | Backend-pending Creator config update. |
+| `getPublicProductLandingPageConfigAPI` | `GET api/products/:productId/landing-page` | Server-backed public-safe landing-page config read. |
+| `getCreatorProductLandingPageConfigAPI` | `GET api/creator/products/:productId/landing-page` | Server-backed Creator config read. |
+| `updateCreatorProductLandingPageConfigAPI` | `PATCH api/creator/products/:productId/landing-page` | Server-backed Creator config update. |
 
-The current config model contains `marketingDescription`, `heroLayout`, `visibleSections`, and `sectionOrder`. Product Landing Page config must not duplicate canonical Product fields, Creator profile fields, Storefront theme, checkout/access state, SEO, slugs, or custom-domain data.
+The current config model contains `marketingDescription`, `heroLayout`, `visibleSections`, and `sectionOrder`. If `visibleSections` is absent, the frontend uses the default section set; if it is an explicit empty array, the empty selection is preserved. Product Landing Page config must not duplicate canonical Product fields, Creator profile fields, Storefront theme, checkout/access state, SEO, slugs, or custom-domain data.
 
-The public Product route composes the protected Product read, persisted landing-page configuration, and public Storefront theme/profile data. A dedicated combined public Product read model is still unavailable; public Product and landing-page reads independently enforce Published visibility.
+The public Product route composes the protected Product read, persisted
+landing-page configuration, and public Storefront theme/profile data. A
+dedicated combined public Product read model is still unavailable; the
+individual public Product and landing-page reads enforce Published visibility.
 
 ## Sections and lessons
 

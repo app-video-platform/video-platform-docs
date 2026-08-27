@@ -51,7 +51,6 @@ On smaller screens, the Analytics layout collapses from multi-column grids into 
 
 - The aggregate Analytics endpoint is server-backed from Commerce Orders, immutable Order items, and entitlements.
 - Membership summary and trend data remain empty until Membership commerce exists.
-- The frontend currently exposes this workspace to Administrators even though the reporting API is Creator-only.
 - Preset period selection is limited to Last 7 days, Last 30 days, and Last 90 days. It is not a custom date-range system.
 - The current UI does not provide traffic analytics, conversion funnels, attribution/source analytics, payouts, tax analytics, disputes, cohorts, course/content engagement analytics, exports, report building, custom dashboards, or custom dashboard configuration.
 

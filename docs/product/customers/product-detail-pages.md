@@ -33,6 +33,8 @@ Customers and visitors can:
 
 Published products render through the public Product Landing Page. The page inherits the Creator's Storefront theme when available and otherwise uses the platform/default Storefront theme.
 
+Product-specific landing-page configuration is server-backed for the current marketing copy, hero layout, supported section visibility, and supported section order behavior.
+
 The page can show type-specific summaries:
 
 - **Course**: module/section count, lesson count, curriculum outline, lesson titles, and lesson types.
@@ -44,7 +46,9 @@ Creators configure product-specific public presentation from the Product Landing
 
 ## Current limitations
 
-- Free enrollment and Product access checks are connected. Paid one-time checkout uses the provider-neutral Commerce foundation, but no production payment provider is configured.
+- Customer-facing purchase/access paths exist for free enrollment, access
+  checks, and paid Cart checkout initiation, but no production payment provider
+  is configured.
 - Membership subscription checkout and waitlists are not implemented.
 - Ratings, reviews, customer counts, subscriber/member counts, landing-page analytics, SEO controls, slugs, custom domains, galleries, slideshows, promo video, presentations, and arbitrary page-builder blocks are not part of the current Product Landing Page.
 - Product-specific theme overrides are not supported; Product Landing Pages inherit the Creator Storefront theme or use the default Storefront theme.

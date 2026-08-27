@@ -18,9 +18,10 @@ The shared frontend creation flow presents four product types:
 - Consultation
 - Membership
 
-Course, Download, and Consultation are supported by the production backend.
-Membership is available in the frontend builder, but its Product creation and
-domain persistence contracts are not implemented by the current backend.
+All four Product types have backend authoring persistence. Membership supports
+recurring pricing, native content metadata, included Products, and feed
+ordering, but not publishing, subscriptions, checkout, entitlements, or member
+access.
 
 ## Who can use this
 
@@ -95,7 +96,9 @@ Product identity links generally open Product Overview. Explicit edit/build acti
 - Product type-specific areas do not all have the same maturity. Course lesson content has important limitations, Download file upload and Consultation setup fields are more complete, and Membership authoring persists content metadata, included Products, feed order, and recurring pricing but not binary media or publishing.
 - Product Overview is read-only and does not provide product analytics, orders, customers, access management, publish/unpublish controls, inline landing-page editing, or SEO controls.
 - Product Landing Page Builder does not edit canonical Product fields, Creator profile fields, Storefront theme, checkout, access, subscriptions, waitlists, SEO, custom domains, or arbitrary page-builder blocks.
-- Product Landing Page configuration is backend-persisted. A dedicated combined public Product read model remains unavailable.
+- Product Landing Page configuration is backend-persisted for the current
+  presentation settings, but a dedicated combined public Product read model is
+  still unavailable.
 
 ## Related pages
 

@@ -65,11 +65,7 @@ The backend does not currently provide complete production support for:
 - Membership publishing, binary media upload/delivery, subscriptions,
   entitlements, checkout, or member access
 - production Stripe or other real-provider checkout
-- customer-facing paid checkout integration
 - partial refunds, taxes, coupons, payouts, or payment retries
-- Creator Dashboard, Customers, Sales, or Analytics aggregate APIs
-- Storefront configuration or public Storefront read models
-- Product Landing Page configuration persistence
 - subscriptions or member access
 
 See [Current Backend Coverage](./current-limitations.md) for the detailed

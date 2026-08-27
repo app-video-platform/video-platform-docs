@@ -68,11 +68,14 @@ For business performance review, start with [Analytics](./analytics.md).
 
 ## Current limitations
 
-- The Dashboard uses server-backed 30-day Sales, Customer, Product, and payment data. Active Memberships remain unavailable until subscription tracking exists.
+- The dashboard includes server-backed 30-day audience, Sales, activity,
+  Product, payment, and attention summaries, but it is not a custom reporting
+  workspace. Active Memberships remain unavailable until subscription tracking
+  exists.
 - Product Overview is read-only and does not include product-scoped analytics, order history, customer counts, subscriber counts, inline landing-page editing, SEO controls, or publish/unpublish management.
 - Product Landing Page Builder does not provide checkout, free access fulfillment, subscriptions, waitlists, entitlements, arbitrary page-builder blocks, Product-specific theme overrides, SEO controls, slugs, custom domains, galleries, slideshows, promo video, or analytics.
-- Storefront theme, featured product selection, product ordering, public profile fields, and the public Storefront read model are backend-persisted.
-- Customer, Sales, and Analytics inspection data is server-backed. Membership relationships and subscription analytics remain unavailable.
+- Creator Storefront, Customer, Sales, Analytics, and Dashboard data use server-backed API paths for their current read/configuration behavior.
+- Membership relationships and subscription analytics remain unavailable.
 - Marketing campaigns, messages, and customer booking flows are outside the current core product creation workflow.
 - Some course lesson content editors are visible but not fully persisted yet.
 - Membership authoring is persisted, but binary media, Product publishing,

@@ -100,7 +100,7 @@ Never enable the fake simulation endpoint in a deployed production profile.
 - One Creator per checkout.
 - EUR only.
 - Full Order refunds only; partial refunds are unsupported.
-- No customer-facing paid checkout integration yet.
+- Customer-facing paid checkout uses the current Cart integration, but no production payment provider is configured.
 - No Membership subscriptions or renewals.
 - No taxes, coupons, payouts, disputes, invoices, or payment retries.
 - No reporting exports, editable Customer notes/tags, waitlists, or Membership

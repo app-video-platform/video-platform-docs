@@ -52,12 +52,13 @@ Commerce checkout, and entitlement surfaces.
 
 Creator Product Overview reuses the existing Product detail retrieval path. It does not add a dedicated Product Overview service, endpoint, Redux slice, or backend contract.
 
-Creator data surfaces use frontend-defined contracts, services, thunks, and Redux slices backed by current backend endpoints.
+Creator data surfaces use frontend-defined contracts, services, thunks, and
+Redux slices backed by current backend endpoints.
 
-Current backend-backed frontend contracts include:
+Current server-backed Creator and presentation contracts include:
 
 - Creator Customers list and Customer Detail.
-- Creator Sales summary, Orders page, and Order Detail.
+- Creator Sales summary, Orders page, and Order Detail. Sales Orders use authoritative `items` for multi-Product line items, per-item amounts, and per-item access results.
 - Creator Analytics aggregate overview with `7d`, `30d`, and `90d` period queries.
 - Creator Dashboard aggregate summary.
 - Product Landing Page config reads and Creator config updates.
@@ -78,6 +79,6 @@ remain unavailable.
 
 Local development may substitute ignored HTTP mocks at the Axios boundary when `REACT_APP_USE_MOCKS=true`. Feature components should not branch on mock mode for Creator business data.
 
-This section documents frontend clients. Use
-[Backend API and Swagger](./backend/api-and-swagger.md) to determine whether a
-matching production endpoint exists.
+This section documents frontend clients, including both server-backed and any
+remaining backend-pending clients. Use [Backend API and Swagger](./backend/api-and-swagger.md)
+to determine whether a matching production endpoint exists.

@@ -50,8 +50,6 @@ include:
 - Authorized customer Download delivery.
 - Connected-calendar listing and disconnection.
 - End-to-end customer Quiz play and submission.
-- Production-provider payment completion. The current backend uses only a
-  development/test fake gateway.
 
 Major frontend-only session state areas include:
 
@@ -63,9 +61,11 @@ Major frontend-only session state areas include:
 
 Major placeholder or incomplete areas include:
 
-- Production payment-provider integration and purchase-history UI.
+- Production payment-provider integration and purchase-history UI beyond the
+  current Cart/Order-status path.
 - Customer mutations, editable notes/tags, waitlists, and Membership relationship data.
-- Refund/retry/subscription mutations and reporting exports.
+- Creator-side refund/retry/subscription mutations, reporting exports, taxes,
+  and payouts.
 - Membership and traffic/conversion analytics.
 - Arbitrary Storefront page building, custom domains, SEO settings, password protection, and Storefront analytics.
 - A dedicated combined public Product read model, waitlists, SEO, slugs, custom domains, landing-page analytics, Product-specific theme overrides, and arbitrary page-builder blocks.
@@ -85,7 +85,7 @@ Some backend capabilities intentionally remain listed as incomplete product
 flows because the current frontend does not call them. Backend implementation
 alone does not make a feature available to users.
 
-Frontend comments can lag behind implemented backend contracts. Verify the live services and backend before treating a comment as a current limitation.
+Frontend-defined, backend-pending contracts describe current frontend requirements and data flow, but they should not be described as production-backed capabilities until the backend implements them. The Creator reporting, Storefront, Product Landing Page configuration, and Membership authoring contracts are now implemented; stale frontend comments may still describe older work as pending.
 
 Browser-saved areas can persist on the same device and browser, but they should not be described as account-synchronized features.
 
@@ -95,7 +95,7 @@ Local development may serve deterministic data through ignored HTTP mocks at the
 
 Placeholder areas may be visible in navigation or tabs, but should be documented only as current limitations unless they have meaningful user-facing behavior.
 
-Local mock data can demonstrate screen behavior for reviewers, but it is not production data. Membership authoring persistence should be distinguished from its still-missing subscription and member-access lifecycle.
+Local mock data can demonstrate intended screen behavior for reviewers, but it should not override the production data paths for customer, financial, analytics, dashboard, Storefront, or Product Landing Page data. Membership authoring persistence should be distinguished from its still-missing subscription and member-access lifecycle.
 
 ## Current limitations
 

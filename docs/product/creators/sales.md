@@ -23,13 +23,13 @@ Creators can currently:
 
 - View sales overview metrics for Revenue, Orders, Refunds, and Failed payments.
 - Search orders by customer name, customer email, or order ID.
-- Filter orders by date range, status, and product.
+- Filter orders by date range, status, and product. Product filtering checks every item in an Order.
 - Sort orders by newest first, oldest first, amount high to low, or amount low to high.
 - Page through the orders ledger when more than one page of results is available.
 - Open contextual order detail without leaving the Sales workspace.
 - Open linked customer or product workspaces when the order has linked customer or product IDs.
 
-The orders ledger shows order date, customer, product, status, type, and amount.
+The orders ledger shows order date, customer, every ordered Product, per-item line amount and access result, order status, order type, and the Order total.
 
 ## How it works
 
@@ -60,24 +60,21 @@ Order detail can show:
 
 - Order amount, type, date, and status.
 - Customer name and email, with a link to the customer profile when available.
-- Product name and type, with a link to the product workspace when available.
+- Itemized Products, including Product name, type, line amount, access result, optional access detail, and a link to the product workspace when available.
 - Payment provider, payment method, transaction ID, payment date, and currency when available.
 - Order summary rows.
-- Access result.
 - Subscription or renewal context for subscription-related orders.
-- Refund amount, refund date, reason, and access result for refunded orders.
+- Refund amount, refund date, and reason for refunded orders.
 - Failed-payment message and retry timing for failed orders.
 
-For Orders containing more than one Product, the backend returns every immutable Order-item snapshot and its access result. Historical names, types, prices, and line totals remain available even when the current Product changes.
+An Order can contain more than one Product. The Sales UI renders every immutable Order-item snapshot and its access result. Historical names, types, prices, and line totals remain available even when the current Product changes.
 
 ## Current limitations
 
 - Sales summary, Order list, and Order detail are now server-backed for one-time Commerce Orders.
-- The current frontend still assumes one Product and one access result per Order. Multi-Product Orders require the frontend to render the backend `items` collection.
-- The frontend currently exposes this workspace to Administrators even though the reporting APIs are Creator-only.
 - The current frontend does not establish provider-safe financial mutation contracts for refunds, payment retries, subscription changes, or entitlement changes.
 - Creators cannot issue refunds, retry charges, change subscriptions, grant access, revoke access, export orders, or perform bulk actions from the current Sales UI.
-- No production payment provider is configured, and paid checkout is not connected in the customer purchase flow.
+- The customer Cart can start eligible paid checkout, but no production payment provider is configured, so payment cannot complete in production.
 - Subscriptions, renewals, partial refunds, taxes, payouts, and financial exports are not supported.
 - Messages navigation is visible elsewhere in the app, but a complete standalone Messages page is not implemented in the current router.
 

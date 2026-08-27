@@ -36,6 +36,8 @@ The backend currently returns Buyer relationships with No membership. Active mem
 
 A customer is included after a paid or refunded Order, or after free, purchased, or manually granted access to one of the Creator's Products. A user whose only interaction is a pending, failed, or expired checkout is not a customer. Spend counts retained Paid Orders, while completed Order count includes Paid and Refunded Orders.
 
+Access records can show Purchased, Membership, Manual grant, or Free enrollment as the access source.
+
 Opening a customer shows a Customer Detail page with a back link to the Customers list, identity information, relationship status, and summary metrics. The detail page organizes customer information into these tabs:
 
 - **Overview**: contact details, customer-since date, relationship summary, product summary, tags, and recent activity.
@@ -50,8 +52,6 @@ On smaller screens, the customer list changes from a table-like layout into stac
 - Customer list/detail, spend, completed Orders, Product history, access history, and recent Commerce activity are server-backed.
 - Membership relationships and waitlists are not implemented, so their filters return no results.
 - Notes and tags are returned as empty read-only collections. Phone, language, timezone, and avatar data are omitted because they are not supported by the current backend profile.
-- Free enrollment is returned as a truthful access source, but the frontend type and label still need to recognize it.
-- The frontend currently exposes this workspace to Administrators even though the reporting APIs are Creator-only.
 - Access and Notes are read-only. Creators cannot grant or revoke access or add, edit, or delete notes from the current UI.
 - Creators cannot manually add customers, edit customer profiles, send messages, export customers, delete customers, perform bulk actions, or impersonate customers from this area.
 

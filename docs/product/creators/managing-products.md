@@ -88,6 +88,10 @@ The Landing Page Builder is not the canonical Product editor. Product name, desc
 
 Public Product Landing Pages inherit the creator's Storefront theme when available and otherwise use the platform/default Storefront theme. The current Landing Page Builder does not provide product-specific theme overrides.
 
+Landing-page configuration is persisted. If a saved configuration omits `visibleSections`, the frontend uses the default sections; if it explicitly saves an empty section selection, the empty selection is preserved.
+
+Product Preview uses the owner's Creator Storefront configuration for creator-owner previews. Administrator previews use the Product owner's public Storefront theme and fall back to the default Storefront theme when public theme data is unavailable.
+
 ## Current limitations
 
 - Search, filtering, and sorting are applied to the products already loaded in the product list.
@@ -95,7 +99,8 @@ Public Product Landing Pages inherit the creator's Storefront theme when availab
 - The list can show statuses such as Published and Hidden, but the creator builder currently saves products as drafts and does not provide a complete publishing workflow.
 - Product Overview does not provide product-specific revenue analytics, order history, customer counts, subscriber or member counts, conversion data, charts, ratings, reviews, Storefront visibility controls, access management, duplicate/archive actions, publish/unpublish controls, inline landing-page editing, or SEO controls.
 - Product Landing Page Builder does not provide arbitrary page-builder blocks, galleries, slideshows, promo video, presentations, custom domains, slugs, SEO controls, Product-specific theme overrides, checkout, free access fulfillment, waitlists, subscriptions, or entitlement/access management.
-- Landing-page configuration is backend-persisted, while a dedicated combined public Product read model remains unavailable.
+- Landing-page configuration is backend-persisted, while a dedicated combined
+  public Product read model remains unavailable.
 - Product deletion is supported from product management flows, but the Products list itself is primarily focused on viewing and opening products.
 
 ## Related pages

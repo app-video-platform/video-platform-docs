@@ -46,7 +46,7 @@ Creating a product from this area starts with selecting a creator owner. After t
 - Product editing uses the same builder as Creator product management and inherits the same limitations.
 - Deleting a product is available from the Admin table, but the UI does not show a separate recovery or archive workflow.
 - Admin filters include owner ID rather than a full creator search experience in the product filter bar.
-- Public Product Landing Pages do not call the backend's free-enrollment/access APIs and do not complete checkout, paid fulfillment, subscriptions, or waitlists.
+- Public Product pages can use the current free-enrollment and Cart checkout paths where supported, but production payment-provider integration, Membership checkout, subscriptions, and waitlists remain unavailable.
 - Product media, publishing, Product Landing Page Builder, checkout, and customer access limitations still apply to products managed by Admins.
 - Membership authoring rows are persisted, but Membership publishing, checkout,
   subscriptions, entitlements, and member access are unavailable.
