@@ -9,10 +9,8 @@ sidebar_position: 6
 
 The Library is the signed-in customer area for saved and owned products.
 
-Today, the Library exists as a customer-facing shell. The Wishlist tab contains
-useful product management behavior. The backend can return the signed-in user's
-active Product entitlements, but the Library does not yet use that API to show
-owned Course, Download, or Consultation content.
+The Product tabs load the signed-in user's active backend entitlements. The
+Wishlist tab continues to use the browser-saved wishlist.
 
 ## Who can use this
 
@@ -29,6 +27,8 @@ Customers can:
 - View and manage wishlisted products from the Wishlist tab.
 - Move wishlist products to the shopping cart.
 - Remove products from the wishlist.
+- View entitled Products in All products or the matching Product-type tab.
+- Open an entitled Product from its Library card.
 
 The Library currently includes tabs for:
 
@@ -42,18 +42,13 @@ The Library currently includes tabs for:
 
 The Library presents product categories as tabs. The Wishlist tab connects to the same wishlist used from product discovery areas and customer navigation.
 
-The All products, Courses, Download Packages, and Consultation sessions tabs are
-visible but do not currently render entitlement-backed Product content.
+The All products, Courses, Download Packages, and Consultation sessions tabs
+query active entitlements and render the matching Products.
 
 ## Current limitations
 
-- The Library does not yet show purchased products.
-- Customers cannot currently access owned course lessons, download files, or consultation sessions from the Library.
-- The Wishlist tab is the only Library tab with meaningful product behavior today.
-- The backend stores active/revoked Product entitlements and supports free Product enrollment, but the Library is not integrated with those endpoints.
-- The frontend can start eligible paid checkout and the backend can create
-  purchase entitlements after a successful verified payment event, but the
-  Library does not yet render those entitlements as owned content.
+- The Library lists owned Products, but complete lesson playback, Download delivery actions, and Consultation booking/session management are not all finished end to end.
+- Wishlist and Cart data remain browser-local rather than account-synchronized.
 
 ## Related pages
 

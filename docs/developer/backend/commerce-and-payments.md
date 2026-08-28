@@ -16,9 +16,10 @@ The backend persists a provider-neutral foundation for one-time paid purchases:
 - Full-refund handling that revokes only entitlements created by that Order.
 - Expiration of abandoned pending Orders.
 
-This foundation is not a production payment integration. No Stripe account,
-Stripe SDK adapter, hosted Checkout session, or verified Stripe webhook is
-configured yet.
+This foundation is not a real payment integration. No Stripe account, Stripe
+SDK adapter, hosted Checkout session, or verified Stripe webhook is configured.
+The deployed functional-test environment can complete checkout automatically
+through the fake provider without charging a card.
 
 ## Checkout contract
 
@@ -77,11 +78,21 @@ logic. A future Stripe adapter should:
 The normalized event processor owns Order state changes and entitlement
 fulfillment. Provider adapters must not grant or revoke entitlements directly.
 
-## Local fake payments
+## Fake payments
 
-The fake gateway exists only under the `dev` and `test` Spring profiles. Both
-commerce and fake simulation require explicit configuration; they are disabled
-by default.
+The fake gateway is available in any Spring profile when
+`COMMERCE_PROVIDER=fake`. With commerce enabled and
+`COMMERCE_FAKE_AUTO_SUCCESS=true`, checkout saves the Order and payment attempt,
+then submits a deterministic `PAID` event through the normal event processor.
+The same request returns a `PAID` Order, grants purchase entitlements, and feeds
+Sales, Customers, Dashboard, and Analytics. Retries remain idempotent.
+
+This mode is intentionally available to all signed-in buyers that pass normal
+checkout validation. Every paid Product is effectively free while it is
+active. It must be presented as test payment/no charge in the UI.
+
+Local dev/test failure and refund simulation remains separately gated by
+`COMMERCE_FAKE_ENABLED=true`.
 
 An Administrator can simulate a local outcome with:
 
@@ -100,7 +111,7 @@ Never enable the fake simulation endpoint in a deployed production profile.
 - One Creator per checkout.
 - EUR only.
 - Full Order refunds only; partial refunds are unsupported.
-- Customer-facing paid checkout uses the current Cart integration, but no production payment provider is configured.
+- Customer-facing paid checkout completes in fake mode, but no card is charged and no real payment provider is configured.
 - No Membership subscriptions or renewals.
 - No taxes, coupons, payouts, disputes, invoices, or payment retries.
 - No reporting exports, editable Customer notes/tags, waitlists, or Membership

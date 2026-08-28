@@ -28,6 +28,7 @@ Creators can:
 - Set a maximum number of sessions per day.
 - Write a confirmation message.
 - Choose a cancellation policy.
+- Configure enabled weekdays and one or more ordered time windows for each day.
 - Use shared product settings such as basics, pricing, and media.
 
 Supported meeting methods are:
@@ -64,11 +65,16 @@ The confirmation message is the message shown or sent after booking in the inten
 
 The cancellation policy lets creators choose from the available policy options.
 
+Weekly availability is saved with the Consultation. The builder always shows
+all seven weekdays, including disabled days. A draft can be incomplete, but
+publishing requires at least one enabled window with a start time before its
+end time and no overlapping windows on the same day.
+
 ## Current limitations
 
 - Creators can configure consultation product details, but customers cannot complete a full booking flow in the current frontend.
-- Calendar availability, time-slot selection, rescheduling, cancellation by customers, and session management are not complete.
-- Connected calendars can be initiated from settings, but consultation availability is not yet connected into a finished booking experience.
+- Weekly creator availability is persisted, but customer time-slot selection, rescheduling, cancellation by customers, and session management are not complete.
+- Connected calendars can be initiated from settings, but neither connected calendars nor persisted weekly availability provide a finished booking experience yet.
 - The confirmation message can be configured, but the full customer notification flow should not be documented as available yet.
 
 ## Related pages

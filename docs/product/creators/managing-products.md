@@ -63,7 +63,7 @@ The current Product Overview shows type-specific read-only summaries:
 
 - **Course**: section/module count, lesson count, and a compact section outline.
 - **Download**: section count, file count when file data is available, and a compact section outline.
-- **Consultation**: configured appointment details such as duration, meeting method, buffers, maximum sessions per day, messages, policies, and calendar information when present.
+- **Consultation**: configured appointment details such as duration, meeting method, persisted weekly availability, buffers, maximum sessions per day, messages, policies, and calendar information when present.
 - **Membership**: generic Product information and configured recurring pricing. It does not show subscriber, member, or revenue metrics.
 
 Creator product navigation follows this rule: product identity links open Product Overview, while explicit edit/build actions open Product Workspace. This applies to the Products list and relevant Creator surfaces such as Dashboard, Analytics, and Sales where the implementation uses product identity links.
@@ -95,10 +95,10 @@ Product Preview uses the owner's Creator Storefront configuration for creator-ow
 ## Current limitations
 
 - Search, filtering, and sorting are applied to the products already loaded in the product list.
-- Product images are shown when available, but media persistence is not complete enough to treat product imagery as reliable everywhere.
-- The list can show statuses such as Published and Hidden, but the creator builder currently saves products as drafts and does not provide a complete publishing workflow.
+- Product thumbnails, ordered galleries, and promo videos are persisted and returned with Product data. Some compact list surfaces use only the thumbnail.
+- Course, Download, and Consultation products can be published from Product Workspace after readiness validation. Membership publishing remains unavailable.
 - Product Overview does not provide product-specific revenue analytics, order history, customer counts, subscriber or member counts, conversion data, charts, ratings, reviews, Storefront visibility controls, access management, duplicate/archive actions, publish/unpublish controls, inline landing-page editing, or SEO controls.
-- Product Landing Page Builder does not provide arbitrary page-builder blocks, galleries, slideshows, promo video, presentations, custom domains, slugs, SEO controls, Product-specific theme overrides, checkout, free access fulfillment, waitlists, subscriptions, or entitlement/access management.
+- Product Landing Page Builder does not provide arbitrary page-builder blocks, slideshows, presentations, custom domains, slugs, SEO controls, Product-specific theme overrides, checkout settings, waitlists, subscriptions, or entitlement/access management. Gallery and promo-video content are Product-owned and managed in Product Workspace.
 - Landing-page configuration is backend-persisted, while a dedicated combined
   public Product read model remains unavailable.
 - Product deletion is supported from product management flows, but the Products list itself is primarily focused on viewing and opening products.

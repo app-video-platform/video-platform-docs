@@ -65,9 +65,9 @@ The current frontend includes a server-backed Customers list and Customer Detail
 
 A product type for selling downloadable files.
 
-Creators can create sections and upload files. The backend can authorize a
-short-lived customer Download URL for an entitled user, but the frontend
-Library does not expose that delivery flow yet.
+Creators can create sections and upload files. The Library lists entitled
+Download Products, while the complete customer download-action experience is
+still limited.
 
 ### End User
 

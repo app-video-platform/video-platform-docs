@@ -53,8 +53,9 @@ record.
 entitlements, ordered by creation time. An optional Product type parameter
 filters the result.
 
-The backend capability exists, but the current frontend Library does not yet
-consume it for purchased/owned Course, Download, or Consultation tabs.
+The frontend Library consumes this endpoint for All Products, Course, Download,
+and Consultation tabs. Opening the Product is separate from type-specific
+content delivery or booking behavior.
 
 ## Access decision
 
@@ -122,8 +123,10 @@ The backend still does not implement:
 - subscriptions or recurring entitlement renewal
 - Membership access
 
-The fake gateway is limited to explicit development/test configuration and is
-not a production payment mechanism.
+The fake gateway can run in any explicitly configured profile and can
+auto-complete checkout. It creates authoritative test entitlements and
+reporting records, but it does not charge money and is not a real payment
+mechanism.
 
 ## Related pages
 

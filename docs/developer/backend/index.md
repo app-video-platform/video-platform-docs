@@ -44,6 +44,7 @@ The production backend currently includes:
 - authenticated profile and social-link management
 - one active role per user and Admin role replacement
 - Course, Download, Consultation, and Membership Product persistence
+- persisted Consultation weekly availability, Product Media, and publication validation
 - Membership recurring-price, content-metadata, included-Product, and feed
   authoring for Creators/Admins
 - owner-or-Admin Product mutation rules
@@ -53,8 +54,9 @@ The production backend currently includes:
 - calendar connection infrastructure
 - Admin user, Product, and audit queries
 - free Product enrollment and active entitlement storage
-- provider-neutral one-time Commerce Orders, fake dev/test payment transitions,
-  paid entitlement creation, and full-refund revocation
+- provider-neutral one-time Commerce Orders, automatic fake success when
+  configured, dev/test failure/refund simulation, paid entitlement creation,
+  and full-refund revocation
 - protected Course content filtering and authorized Download delivery
 - generated OpenAPI documentation under the `docs` profile
 

@@ -36,18 +36,20 @@ Creators and Administrators can create:
 
 ## How it works
 
-All product types share basic setup fields such as title, description, pricing, and media. Membership remains a Product; it is not a separate root sellable entity.
+All product types share basic setup fields such as title, description, pricing,
+thumbnail, gallery, and promo video. Membership remains a Product; it is not a
+separate root sellable entity.
 
-Course products can include sections and lesson shells. Download products can include sections with downloadable files. Consultation products include fields for duration, meeting method, buffers, daily session limits, confirmation messaging, and cancellation policy. Membership products include a Membership Content area with native Posts, Videos, and Resources, existing Course and Download product references, a unified feed, Newest first or Manual ordering, and a recurring pricing UI for EUR monthly or yearly pricing.
+Course products can include sections and lesson shells. Download products can include sections with downloadable files. Consultation products include fields for duration, meeting method, persisted weekly availability, buffers, daily session limits, confirmation messaging, and cancellation policy. Membership products include a Membership Content area with native Posts, Videos, and Resources, existing Course and Download product references, a unified feed, Newest first or Manual ordering, and a recurring pricing UI for EUR monthly or yearly pricing.
 
 Membership products do not use Course or Download sections. Native Membership content and included standalone Products remain separate domain concepts; they are combined in the Membership feed shown by the builder.
 
 ## Current limitations
 
-- Product media selection is visible, but product images are not reliably shown across customer-facing product cards and pages.
+- Product thumbnails, galleries, and promo videos are backend-persisted; compact surfaces may display only the thumbnail.
 - Course lesson content does not yet fully support persisted video, article, assignment, and quiz workflows.
 - Download file upload exists for creator setup, but customer delivery through the Library is not implemented.
-- Consultation setup exists, but customer booking, availability, rescheduling, and session management are not complete.
+- Consultation setup and creator weekly availability persist, but customer booking, time-slot selection, rescheduling, and session management are not complete.
 - Membership Video and Resource selections persist file metadata only; binary upload and delivery are not implemented.
 - Membership readiness feedback is frontend-derived, and there is no subscription, entitlement, member access, checkout, real publishing, or buyer-facing Membership experience yet.
 

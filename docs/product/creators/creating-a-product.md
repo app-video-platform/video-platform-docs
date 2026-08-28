@@ -59,7 +59,7 @@ After the draft exists, the Product Workspace shows shared areas for product set
 
 - **Basics**: edit title, product type display, and description.
 - **Pricing**: choose free or paid one-time pricing for most products. Membership products use a Membership-specific recurring pricing control for amount, EUR currency, and monthly or yearly billing interval.
-- **Media**: select product image files.
+- **Media**: upload a thumbnail, an ordered image gallery, and an optional promotional video.
 
 Course and Download products also show **Sections**.
 
@@ -83,6 +83,13 @@ The builder autosaves shared product details after changes. Sections and lessons
 
 Creators may see loading or saving behavior while changes are being processed.
 
+The **Publish** action checks the current Product for blockers. The backend
+repeats these checks before accepting Published status, so stale or bypassed
+frontend state cannot publish an incomplete Product. Course products need
+content, Download products need a confirmed file, and Consultation products
+need complete paid-session details and at least one valid weekly availability
+window. Membership publishing remains unavailable.
+
 ### Overview vs Workspace
 
 Product Overview is a read-only management page for inspecting product identity, status, pricing, dates, and type-specific summaries. Product Workspace is the focused editing environment for changing product details and content. Product Landing Page Builder is the Creator area for product-specific public presentation settings such as marketing copy, hero layout, section visibility, and section ordering.
@@ -91,9 +98,9 @@ Product identity links generally open Product Overview. Explicit edit/build acti
 
 ## Current limitations
 
-- Product media selection is visible, but product image persistence is not complete enough to treat uploaded media as reliably available on product cards or public product pages.
-- The builder saves products as drafts. A complete creator publishing workflow is not currently available.
-- Product type-specific areas do not all have the same maturity. Course lesson content has important limitations, Download file upload and Consultation setup fields are more complete, and Membership authoring persists content metadata, included Products, feed order, and recurring pricing but not binary media or publishing.
+- Product media is persisted and publicly delivered through the Product CDN. Images support JPEG, PNG, WebP, and GIF up to 10 MB; promo videos support MP4 and WebM up to 100 MB; galleries support up to 20 images.
+- Course, Download, and Consultation products can be published after their readiness blockers are resolved. Membership products remain Draft or Hidden.
+- Product type-specific areas do not all have the same maturity. Course lesson delivery still has important limitations, while Download file upload and Consultation configuration are persisted. Membership authoring persists content metadata, included Products, feed order, and recurring pricing but not binary member content or publishing.
 - Product Overview is read-only and does not provide product analytics, orders, customers, access management, publish/unpublish controls, inline landing-page editing, or SEO controls.
 - Product Landing Page Builder does not edit canonical Product fields, Creator profile fields, Storefront theme, checkout, access, subscriptions, waitlists, SEO, custom domains, or arbitrary page-builder blocks.
 - Product Landing Page configuration is backend-persisted for the current

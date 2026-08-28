@@ -36,7 +36,7 @@ The Admin then chooses a product type and enters the initial product title. Once
 
 - Admin-created products inherit the current product-builder limitations.
 - The backend accepts Admin-created Products only when the selected owner exists and has exactly the Creator role.
-- Course lesson content, product media persistence, publishing, and customer purchase/access behavior are not complete.
+- Product Media and publication validation are persisted. Course/customer content consumption still has incomplete areas.
 - Membership authoring is persisted, but binary media, publishing,
   subscriptions, checkout, entitlements, and member access are unavailable.
 - The Admin creation flow requires selecting a Creator owner before starting.

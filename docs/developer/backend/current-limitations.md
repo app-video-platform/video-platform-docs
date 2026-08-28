@@ -12,6 +12,9 @@ sidebar_position: 11
 - User profile and social-link updates
 - single-role enforcement and Admin role replacement
 - Course, Download, Consultation, and Membership Product persistence
+- normalized Consultation weekday/window availability persistence
+- Spaces-backed Product thumbnail, gallery, and promo-video lifecycle
+- server-authoritative publication validation for Product mutations
 - Membership recurring pricing, config, native content metadata, included
   Course/Download associations, and feed ordering
 - Product ownership and Admin cross-owner rules
@@ -28,7 +31,8 @@ sidebar_position: 11
 - authorized, short-lived Download URLs
 - one-time Commerce Order, Order-item, payment-attempt, and payment-event
   persistence
-- fake dev/test payment success, failure, and full-refund processing
+- automatic fake checkout success in any configured Spring profile
+- dev/test fake payment failure and full-refund simulation
 - paid entitlement creation and full-refund entitlement revocation
 - Creator-only Sales summary and Order ledger/detail reporting
 - Creator-only Customer list/detail reporting from completed Orders and
@@ -47,11 +51,10 @@ sidebar_position: 11
 These capabilities exist in the backend but are not complete end-to-end product
 flows in the current frontend:
 
-- entitlement-backed Library data
+- Product-type customer delivery after Library entitlement listing
 - authorized customer Download delivery
 - full connected-calendar listing and disconnection
 - persisted Quiz play/submission integration across the customer learning UI
-- paid entitlement fulfillment through the development/test fake gateway
 
 Document them as backend capabilities in Developer Documentation, but keep the
 corresponding Product Documentation limitations until the UI exposes and tests
@@ -59,15 +62,15 @@ the full workflow.
 
 ## Frontend contracts without production backend support
 
-The previously backend-pending Creator Dashboard, Storefront, and Product
-Landing Page configuration contracts are now implemented. No current
-frontend-owned contract in this page's scope is listed as production-backend
-unsupported here.
+The previously backend-pending Creator Dashboard, Storefront, Product Landing
+Page configuration, Product Media, Consultation availability, publishing, and
+fake-checkout contracts are implemented. Remaining frontend work is contract
+cleanup and clearer test-payment messaging rather than a missing backend route.
 
 ## Not implemented
 
 - Stripe or another production payment-provider adapter
-- production-provider checkout completion
+- real charged checkout through a production payment provider
 - partial refunds and payment retries
 - taxes, coupons, disputes, invoices, or marketplace payouts
 - subscriptions and renewals
@@ -77,8 +80,7 @@ unsupported here.
 - Membership Product publishing and one-time checkout
 - exposed Admin entitlement grant/revoke operations
 - Membership binary media upload/delivery and a generalized rich-media asset lifecycle
-- complete booking, availability, rescheduling, and consultation-session
-  management
+- customer booking, time-slot selection, rescheduling, and consultation-session management
 
 ## Known technical risks
 
@@ -94,7 +96,7 @@ unsupported here.
 - Spring Data JPA has an explicit version outside normal parent management
 - legacy and canonical authoring routes coexist
 - public summary/search visibility semantics are inconsistent
-- object deletion and storage cleanup are not a complete lifecycle
+- legacy Download-file object deletion is not a complete lifecycle; Product marketing media has explicit best-effort cleanup
 - provider classes do not guarantee complete OAuth support for every calendar
   provider
 - the local Java 25 default is incompatible with the current compiler/Lombok

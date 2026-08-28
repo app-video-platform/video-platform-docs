@@ -93,8 +93,19 @@ search paths do not all apply the same publication filtering; do not treat them
 as a finalized public-catalogue contract without reviewing the implementation.
 
 Generic Product request, response, and summary schemas include `pricingModel`,
-`billingInterval`, and `currency`. Membership Product publishing is rejected
-with HTTP 409.
+`billingInterval`, and `currency`; full responses also expose `imageUrl`,
+`galleryImages`, and `promoVideo`. Publication readiness failures return HTTP
+422 with field-keyed issues, including Membership publication rejection.
+
+Product Media mutations require owner/Admin access:
+
+| Method | Path | Purpose |
+|---|---|---|
+| POST, DELETE | `/api/products/image?productId=...` | Replace or remove thumbnail |
+| POST | `/api/products/{productId}/media/gallery` | Upload gallery image |
+| DELETE | `/api/products/{productId}/media/gallery/{imageId}` | Remove gallery image |
+| PUT | `/api/products/{productId}/media/gallery/order` | Replace complete gallery order |
+| POST, DELETE | `/api/products/{productId}/media/promo-video` | Replace or remove promo video |
 
 ## Membership authoring routes
 
@@ -169,9 +180,9 @@ All entitlement routes require authentication through the main security chain.
 
 ## Commerce routes
 
-Commerce checkout routes require authentication. Checkout is currently backed
-only by the fake gateway in explicitly configured `dev` and `test` profiles;
-there is no production payment-provider adapter.
+Commerce checkout routes require authentication. The fake gateway can run in
+any profile when configured. In automatic-success mode it returns a paid Order
+and grants entitlements in the same checkout request; there is no real payment-provider adapter.
 
 | Method | Path | Access | Purpose |
 |---|---|---|---|

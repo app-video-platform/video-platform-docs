@@ -29,7 +29,7 @@ Customers can:
 - Move cart items to the wishlist.
 - Remove cart items where removal is working correctly.
 - Enroll in a cart containing only free Products.
-- Start checkout for eligible paid Course, Download, or Consultation Products.
+- Complete test checkout for eligible paid Course, Download, or Consultation Products.
 
 ## How it works
 
@@ -37,13 +37,16 @@ Adding a product to the cart places it in the browser's saved cart. The cart dro
 
 The cart page shows each item with its title, price, and supporting display information. Customers can move an item to the wishlist or remove it from the cart. The page also shows a total based on the products currently in the cart.
 
-Checkout prices and eligibility are recalculated by the backend. A paid checkout grants access only after a verified successful payment event.
+Checkout prices and eligibility are recalculated by the backend. In the current
+deployed test environment, the fake provider records a successful payment event
+immediately, grants access, clears the Cart, and opens the Library. No card
+details are collected and no charge is made.
 
 ## Current limitations
 
 - A cart containing only free Products can add them to the signed-in user's
   entitlement Library.
-- No production payment provider is configured, so paid checkout cannot complete in production. Provider redirection is used when a configured gateway returns a checkout URL.
+- Paid checkout is a test-payment flow while the fake provider is active. It creates authoritative Orders and entitlements but does not charge money. Provider redirection remains supported when a future configured gateway returns a checkout URL.
 - Cart items are saved in the browser and are not synchronized to a backend account.
 - Cart placement does not reserve or grant a Product. Free enrollment or a successful paid event creates access.
 - Product images and ratings shown in cart areas include placeholder content.

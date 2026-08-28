@@ -26,13 +26,28 @@ Deleting current file metadata does not visibly remove the object from storage
 in the file service. Treat object lifecycle cleanup as a maintenance gap when
 changing deletion behavior.
 
+### Product marketing media
+
+Product thumbnails, galleries, and promo videos use a separate raw-body flow.
+The frontend sends the file to the backend, which validates ownership, MIME
+type, size, and gallery count before streaming it to Spaces. This flow does not
+use browser presigned uploads.
+
+Objects use owner/Product-scoped keys and public CDN URLs. Metadata is stored in
+`product_media` and returned in Product responses with immediate `READY`
+status. Image limits are 10 MB for JPEG, PNG, WebP, or GIF; promo-video limits
+are 100 MB for MP4 or WebM; gallery count is 20. These defaults are runtime
+configurable. Replacement, removal, reorder, and Product deletion are handled
+server-side. Failed object cleanup is logged after active metadata is removed.
+
 ### Customer download flow
 
 Permanent object/CDN URLs are removed from Product responses. Authorized
 delivery uses the entitlement endpoint, verifies Product/file ownership, and
 creates a ten-minute presigned GET URL.
 
-The frontend Library does not currently expose this backend flow.
+The Library lists entitled Products. Authorized file delivery still depends on
+the customer Download experience exposing the download action.
 
 ## Email
 
@@ -97,4 +112,3 @@ configuration. Never copy current tracked values into Docusaurus.
 - [Entitlements and Content Access](./entitlements-and-content-access.md)
 - [Calendar Connections](../../product/core-concepts/calendar-connections.md)
 - [Download Products](../../product/creators/download-products.md)
-

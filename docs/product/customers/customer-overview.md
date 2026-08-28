@@ -39,14 +39,15 @@ The current customer journey starts with product discovery. Customers can browse
 
 From product discovery areas, customers can save products to a wishlist or add them to the shopping cart. Wishlist and cart items are saved in the browser so they remain available across browser sessions on the same device.
 
-The Library area is available to signed-in End Users. Today, the most useful Library section is Wishlist. The other Library tabs exist but do not yet show purchased products.
+The Library area is available to signed-in End Users. Product tabs list active
+entitlements, while Wishlist shows browser-saved wishlist items.
 
 ## Current limitations
 
-- One-time checkout creates backend Orders, but no production payment provider is configured.
-- Access is granted after free enrollment or a successful verified paid event; the Library does not yet present the complete owned-content journey.
+- One-time checkout uses automatic fake success in the deployed functional-test environment. It creates real test Orders and access without charging a card.
+- Access is granted after free enrollment or a successful payment event and appears in the Library.
 - Wishlist and cart items are saved in the browser, not synchronized to a backend user account.
-- The Library does not yet show purchased courses, downloads, or consultations.
+- Product-type consumption after opening a Library item is not complete for every Course, Download, and Consultation workflow.
 - The signed-in customer home area is still a placeholder experience.
 - Storefront pages show published Products and link to Product Landing Pages, where enrollment, access checks, and eligible checkout initiation occur.
 

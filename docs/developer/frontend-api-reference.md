@@ -66,11 +66,20 @@ Current server-backed Creator and presentation contracts include:
 
 Ownership boundaries matter for these frontend contracts. The current backend
 Product contract is authoritative for Product identity, type, name,
-description, status, image, price amount, and supported type-specific content.
+description, status, Product Media, price amount, and supported type-specific content.
 The backend implements the frontend's Product pricing model, billing interval,
 currency extension, Membership authoring, Product Landing Page configuration,
 Storefront, Creator reporting, and Dashboard contracts. A combined public
-Product read model and production payment provider remain unavailable.
+Product read model and real payment provider remain unavailable. The current
+deployed checkout may use backend fake auto-success; frontend UI should label
+that flow clearly as test payment/no charge.
+
+The Commerce item typing is currently looser and differently named than the
+backend DTO. Frontend `productTitle`/`amountMinor` correspond to backend
+`productName` and `unitAmountMinor`/`lineTotalMinor`; the backend also returns
+`itemId` and `quantity`. Current Cart completion uses Order status and total, so
+the flow works, but these interfaces and fixtures should be aligned before new
+item-level UI depends on them.
 
 Membership service comments that still say `BACKEND CONTRACT NOT YET
 IMPLEMENTED` are stale. The runtime routes are implemented, but binary media,
