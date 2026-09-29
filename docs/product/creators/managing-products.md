@@ -92,13 +92,27 @@ Landing-page configuration is persisted. If a saved configuration omits `visible
 
 Product Preview uses the owner's Creator Storefront configuration for creator-owner previews. Administrator previews use the Product owner's public Storefront theme and fall back to the default Storefront theme when public theme data is unavailable.
 
+## Product Workspace, media, and readiness
+
+Use **Edit product** to open the focused Product Workspace. The current workspace areas are:
+
+- **Basics** for Product identity and description.
+- **Pricing** for free/one-time pricing or Membership recurring pricing.
+- A Product-type-specific area: Curriculum, Files, Availability, or Content.
+- **Media** for Product-owned thumbnail, gallery, and promo video.
+- **Readiness** for known publish blockers, warnings, and backend readiness feedback.
+
+Product media is generic Product presentation media. Images support JPEG, PNG, WebP, and GIF up to 10 MB each. Promo videos support MP4 and WebM up to 100 MB. Galleries can contain up to 20 images and support ordering/removal. Product media is separate from Course lesson videos, Download deliverables, and Membership Video/Resource binary content.
+
+For supported non-Membership Products, Publish uses the Product Workspace readiness flow and then updates the Product with `status: PUBLISHED`. Backend readiness validation is authoritative and can return field-specific errors that appear in the Readiness area. Membership readiness can be shown, but Membership Product publishing remains unavailable. Unpublish is not implemented.
+
 ## Current limitations
 
 - Search, filtering, and sorting are applied to the products already loaded in the product list.
-- Product images are shown when available, but media persistence is not complete enough to treat product imagery as reliable everywhere.
-- The list can show statuses such as Published and Hidden, but the creator builder currently saves products as drafts and does not provide a complete publishing workflow.
+- Product media supports Product thumbnail, gallery, and promo video, but it does not cover Course lesson-video delivery or Membership native Video/Resource binary delivery.
+- The list can show statuses such as Published and Hidden. Supported non-Membership Products can be published from Product Workspace; Membership publishing and Unpublish are not available.
 - Product Overview does not provide product-specific revenue analytics, order history, customer counts, subscriber or member counts, conversion data, charts, ratings, reviews, Storefront visibility controls, access management, duplicate/archive actions, publish/unpublish controls, inline landing-page editing, or SEO controls.
-- Product Landing Page Builder does not provide arbitrary page-builder blocks, galleries, slideshows, promo video, presentations, custom domains, slugs, SEO controls, Product-specific theme overrides, checkout, free access fulfillment, waitlists, subscriptions, or entitlement/access management.
+- Product Landing Page Builder does not provide arbitrary page-builder blocks, slideshows, presentations, custom domains, slugs, SEO controls, Product-specific theme overrides, checkout configuration, waitlists, subscriptions, or entitlement/access management.
 - A dedicated public Product read model is still not part of the current Product Landing Page implementation.
 - Product deletion is supported from product management flows, but the Products list itself is primarily focused on viewing and opening products.
 

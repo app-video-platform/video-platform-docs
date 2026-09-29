@@ -42,14 +42,11 @@ sidebar_position: 11
 These capabilities exist in the backend but are not complete end-to-end product
 flows in the current frontend:
 
-- free Product enrollment
 - entitlement-backed Library data
-- Product access checks
-- authorized customer Download delivery
 - full connected-calendar listing and disconnection
 - persisted Quiz play/submission integration across the customer learning UI
-- one-time paid checkout session creation and Order-status reads
-- paid entitlement fulfillment through the development/test fake gateway
+- complete production-provider paid checkout
+- full paid purchase-history and Library integration beyond the current Cart/Order status path
 
 Document them as backend capabilities in Developer Documentation, but keep the
 corresponding Product Documentation limitations until the UI exposes and tests
@@ -68,7 +65,7 @@ unsupported here.
 - partial refunds and payment retries
 - taxes, coupons, disputes, invoices, or marketplace payouts
 - subscriptions and renewals
-- Membership/waitlist Customer relationships and Membership analytics
+- Membership/waitlist Customer relationships
 - editable Customer notes/tags and reporting exports
 - buyer-facing Membership access
 - Membership Product publishing and one-time checkout

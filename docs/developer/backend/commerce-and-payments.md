@@ -26,6 +26,11 @@ configured yet.
 buyer. It requires an `Idempotency-Key` header and a body containing Product
 IDs.
 
+The current frontend stores a generated checkout idempotency key in browser
+session storage for the sorted Product-ID cart signature. Retrying an unchanged
+cart within the current TTL reuses the key; changing the cart creates a new
+checkout identity.
+
 The backend accepts at most 20 unique Products. Every Product must be:
 
 - published
@@ -100,7 +105,7 @@ Never enable the fake simulation endpoint in a deployed production profile.
 - One Creator per checkout.
 - EUR only.
 - Full Order refunds only; partial refunds are unsupported.
-- Customer-facing paid checkout uses the current Cart integration, but no production payment provider is configured.
+- Paid customer checkout uses the current Cart integration, but no production payment provider is configured.
 - No Membership subscriptions or renewals.
 - No taxes, coupons, payouts, disputes, invoices, or payment retries.
 - No reporting exports, editable Customer notes/tags, waitlists, or Membership

@@ -22,10 +22,12 @@ Creators can currently:
 - Create a Course product from the shared product creation flow.
 - Add course sections.
 - Edit section titles and descriptions.
+- Move sections up or down where ordering controls are shown.
 - Remove sections.
 - Add lessons inside a section.
 - Edit lesson titles and descriptions.
 - Select lesson types.
+- Move lessons up or down where ordering controls are shown.
 - Remove lessons.
 - Navigate between sections and lessons from the builder sidebar after they exist.
 - Create quiz questions in the quiz editor interface.
@@ -42,13 +44,13 @@ Available lesson types in the lesson selector are:
 
 Course content is organized into sections. A section can have a title and description.
 
-New blank sections appear in the builder. Once a section has a title, it can be created and then edited. Existing sections can be removed.
+Creators add sections explicitly with the Add section surface. Once a section has the required title, it can be created and then edited. Existing sections can be renamed, described, reordered, or removed.
 
 Section title, description, and position changes are saved after the section exists.
 
 ### Lessons
 
-Lessons are added inside sections. A lesson needs a title and lesson type before it becomes a created lesson.
+Lessons are added explicitly inside sections. A lesson needs a title and lesson type before it becomes a created lesson.
 
 After a lesson exists, creators can edit the lesson description and choose the content area for the selected lesson type.
 
@@ -59,6 +61,8 @@ Video lessons show a video file uploader. Creators can select a video file in th
 ### Article lessons
 
 Article lessons show a rich text editor for writing article content.
+
+Article content is saved through the current lesson service path as serialized rich-text content. This is separate from durable Course lesson video storage.
 
 ### Quiz lessons
 
@@ -79,10 +83,14 @@ Quiz lessons show a quiz editor. Creators can configure:
 
 The builder sidebar lists sections and lessons after they exist. Selecting an item moves the creator back to the Sections area and scrolls to that section or lesson.
 
+### Readiness
+
+Course readiness requires at least one section and at least one lesson. Product media warnings, such as a missing thumbnail, are separate from Course curriculum blockers.
+
 ## Current limitations
 
 - Video file selection is visible, but video upload and persistence are not complete.
-- Article content is edited in the page, but it is not reliably persisted as lesson content.
+- Article content is persisted through the current lesson content path, but the complete customer learning/player flow is still limited.
 - The backend persists Quiz definitions, questions, options, scoring rules, and attempts. The current frontend builder/player integration is not yet verified as a complete customer Quiz workflow.
 - Assignment content is not a usable lesson type in the current selector. Do not document Assignment as supported.
 - Course products can be structured, but they are not yet a complete customer learning experience with reliable media, article, and quiz delivery.

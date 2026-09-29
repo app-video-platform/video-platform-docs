@@ -57,8 +57,10 @@ End Users can:
 - Browse available products.
 - Search products.
 - View public Product Landing Pages.
+- Enroll in free Products where supported.
 - Add products to a wishlist.
 - Add products to a shopping cart.
+- Check out eligible paid non-Membership carts through the current test Commerce flow.
 - Move products between wishlist and cart.
 
 Visitors who are not signed in can:
@@ -80,11 +82,11 @@ Some product discovery pages are public. Management pages require sign-in and th
 
 ## Current limitations
 
-- Customer-facing purchase/access paths exist for free enrollment and Cart checkout, but no production payment provider is configured.
+- Customer-facing purchase/access paths exist for free enrollment and eligible paid Cart checkout, but no production payment provider or real charging is configured.
 - The shopping cart and wishlist are stored in the browser, not in a user account.
 - The user library exists, but most library tabs do not yet show purchased content.
 - Creator Product Overview pages are read-only and do not include product-specific analytics, orders, customer counts, inline landing-page editing, SEO controls, or publishing management.
-- Product Landing Page Builder supports a narrow persisted presentation configuration only. It does not provide checkout, fulfillment, subscriptions, waitlists, entitlements, SEO controls, custom domains, arbitrary page-builder blocks, Product-specific theme overrides, or a dedicated public Product read model.
+- Product Landing Page Builder supports a narrow persisted presentation configuration only. It does not configure checkout, fulfillment, subscriptions, waitlists, entitlements, SEO controls, custom domains, arbitrary page-builder blocks, Product-specific theme overrides, or a dedicated public Product read model.
 - Storefront theme, featured product selection, product ordering, and public read-model behavior are server-backed for the current Storefront experience.
 - Course lessons can be created, but some lesson content editors are not fully persisted.
 - Membership authoring persists native content metadata, included Courses/Downloads, ordering, and recurring pricing. Binary media, subscriptions, checkout, publishing, entitlements, and member access are not implemented.

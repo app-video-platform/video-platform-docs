@@ -26,6 +26,7 @@ Major server-backed areas include:
 - Course Quiz definitions, validation, scoring, and attempt persistence in the backend.
 - Download section file upload.
 - Consultation setup fields.
+- Product media upload/persistence for thumbnail, gallery, and promo video through Product media APIs.
 - Product exploration and search.
 - Admin user, product, and audit listings.
 - Calendar provider discovery and connection initiation.
@@ -51,8 +52,7 @@ Major backend capabilities not yet exposed as complete frontend workflows
 include:
 
 - Loading the signed-in user's active entitlement library.
-- Product access checks.
-- Authorized customer Download delivery.
+- Complete Library access to owned Course, Download, and Consultation content.
 - Connected-calendar listing and disconnection.
 - End-to-end customer Quiz play and submission.
 
@@ -69,8 +69,8 @@ Major placeholder or incomplete areas include:
 - Production payment-provider integration and purchase-history UI beyond the current Cart/Order status path.
 - Creator-side safe financial mutation contracts for refund issuing, payment retries, subscriptions, exports, taxes, and payouts.
 - Storefront arbitrary page-building, custom domains, SEO settings, password protection, and Storefront analytics.
-- A dedicated public Product read model, Product Landing Page checkout/access/waitlist state in the shared landing-page presentation, SEO, slugs, custom domains, analytics, Product-specific theme overrides, and arbitrary page-builder blocks.
-- Membership binary asset upload/delivery, Product publishing, subscriptions,
+- A dedicated public Product read model, waitlist state in the shared landing-page presentation, SEO, slugs, custom domains, analytics, Product-specific theme overrides, and arbitrary page-builder blocks.
+- Membership binary asset upload/delivery, Membership Product publishing, subscriptions,
   entitlement logic, member access, and buyer-facing Membership flows.
 - Customer Library tabs backed by the entitlement API.
 - Email campaigns.

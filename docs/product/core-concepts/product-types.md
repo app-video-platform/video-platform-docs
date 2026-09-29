@@ -38,15 +38,17 @@ Creators and Administrators can create:
 
 All product types share basic setup fields such as title, description, pricing, and media. Membership remains a Product; it is not a separate root sellable entity.
 
-Course products can include sections and lesson shells. Download products can include sections with downloadable files. Consultation products include fields for duration, meeting method, buffers, daily session limits, confirmation messaging, and cancellation policy. Membership products include a Membership Content area with native Posts, Videos, and Resources, existing Course and Download product references, a unified feed, Newest first or Manual ordering, and a recurring pricing UI for EUR monthly or yearly pricing.
+Course products can include sections and lessons. Download products can include file groups with downloadable files. Consultation products include fields for duration, meeting method, weekly availability, buffers, daily session limits, confirmation messaging, and cancellation policy. Membership products include a Membership Content area with native Posts, Videos, and Resources, existing Course and Download product references, a unified feed, Newest first or Manual ordering, and a recurring pricing UI for EUR monthly or yearly pricing.
 
 Membership products do not use Course or Download sections. Native Membership content and included standalone Products remain separate domain concepts; they are combined in the Membership feed shown by the builder.
 
+Product media is shared across all Product types and currently covers thumbnail images, gallery images, and a Product-level promo video. Image files can be JPEG, PNG, WebP, or GIF up to 10 MB each. Promo videos can be MP4 or WebM up to 100 MB. Galleries can contain up to 20 images total.
+
 ## Current limitations
 
-- Product media selection is visible, but product images are not reliably shown across customer-facing product cards and pages.
-- Course lesson content does not yet fully support persisted video, article, assignment, and quiz workflows.
-- Download file upload exists for creator setup, but customer delivery through the Library is not implemented.
+- Product media does not cover Course lesson-video storage, Download deliverable files, or Membership native Video/Resource binary delivery.
+- Course lesson content does not yet fully support durable video delivery or a complete customer learning/player workflow.
+- Download file upload exists for creator setup, and authorized Product-page delivery exists where the current user has access or owns the Product. Customer Library delivery is not fully integrated.
 - Consultation setup exists, but customer booking, availability, rescheduling, and session management are not complete.
 - Membership Video and Resource selections persist file metadata only; binary upload and delivery are not implemented.
 - Membership readiness feedback is frontend-derived, and there is no subscription, entitlement, member access, checkout, real publishing, or buyer-facing Membership experience yet.

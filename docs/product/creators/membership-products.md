@@ -63,9 +63,9 @@ Use **+ Add Content** to add:
 
 Native Posts, Videos, and Resources are Membership-only content types. They can be created, edited, deleted, persisted, and marked Draft, Published, or Hidden.
 
-For Videos and Resources, the current backend saves the selected file's name,
-MIME type, size, and a server-generated file reference. It does not upload or
-deliver the binary file yet.
+For Videos and Resources, the current builder saves selected file metadata such
+as name, MIME type, size, and any reference returned by the current authoring
+contract. It does not upload or deliver the binary file to members yet.
 
 Existing Products are separate standalone products that the Membership references. Adding a Course or Download to a Membership does not convert that product into Membership-native content.
 
@@ -98,7 +98,7 @@ The Pricing area includes:
 
 ### Check readiness
 
-Memberships have frontend readiness feedback in the builder header. This feedback is guidance only; it does not publish the Membership or change the Product status.
+Memberships participate in the Product Workspace Readiness experience. This feedback is guidance only; it does not publish the Membership or change the Product status.
 
 Blocking conditions are:
 
@@ -114,18 +114,18 @@ Non-blocking warnings include:
 - No native content.
 - No included Products.
 
-When the readiness check passes, the Membership Publish button remains disabled. It does not call a Membership publish API or mutate Product status; the backend also rejects attempts to set a Membership Product to Published.
+When the readiness check passes, Product-level Membership publishing remains disabled. It does not call a Membership publish API or mutate Product status.
 
 ## Current limitations
 
 - Video and Resource selection persists metadata only; the binary file is not uploaded or available to members.
 - Editor drafts, selected File objects, chooser state, picker state, and the active builder tab remain local UI state.
-- Readiness feedback is derived in the frontend and is not a backend publishing check.
+- Readiness feedback can be evaluated in the shared Product Readiness experience, but it is not a Membership publishing capability.
 - No real subscription or Stripe checkout flow exists for Membership products yet.
 - No entitlement or member access logic exists yet.
 - No buyer-facing Membership experience exists yet.
 - Real Membership publishing is not implemented yet.
-- Membership media and public Product Landing Page presentation still have limitations shared with other product types.
+- Generic Product media support does not provide Membership native Video/Resource binary upload or member delivery.
 
 ## Related pages
 

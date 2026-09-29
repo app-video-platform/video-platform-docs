@@ -78,11 +78,11 @@ These settings are edited as a draft in the Builder. Changing the featured produ
 
 Selecting **Reset changes** restores the persisted Storefront configuration and discards unsaved Storefront configuration changes.
 
-Public profile fields are different: they are owned by User/Profile data. Product identity, type, status, price, image, and catalogue details are owned by Product data.
+Public profile fields are different: they are owned by User/Profile data. Product identity, type, status, price, thumbnail/canonical Product media, and catalogue details are owned by Product data.
 
 ## Public Storefront
 
-The public Storefront page applies the persisted Storefront theme and presents the creator profile, a featured product when one is available, and the creator's public product cards. Product cards link to the public Product Landing Page for that product.
+The public Storefront page applies the persisted Storefront theme and presents the creator profile, a featured product when one is available, and the creator's public product cards. Product cards use current Product thumbnail/canonical media where available and link to the public Product Landing Page for that product.
 
 The current Storefront presentation supports the product types used by the product catalog:
 

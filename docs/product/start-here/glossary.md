@@ -33,13 +33,13 @@ The current frontend includes a server-backed Analytics workspace with preset re
 
 A browser-stored list of products an End User has added while shopping.
 
-The current cart is frontend-only and does not complete checkout or payment.
+The current cart is browser-saved and supports free enrollment plus paid Commerce checkout for eligible non-Membership carts. Current checkout is test/fake-payment oriented and does not represent production real charging.
 
 ### Consultation product
 
 A product type for selling a one-to-one session or service.
 
-Creators can configure details such as meeting duration, meeting method, buffers, daily session limits, confirmation message, and cancellation policy. Customer booking is not implemented yet.
+Creators can configure details such as meeting duration, meeting method, weekly availability, buffers, daily session limits, confirmation message, and cancellation policy. Customer booking is not implemented yet.
 
 ### Course product
 
@@ -98,7 +98,7 @@ The currently supported product types are:
 
 A public page for viewing an individual product.
 
-The current Product Landing Page renders published Products with real Product information, type-specific summaries, inherited Storefront/default theme, and unavailable purchase/access states when commerce is not connected.
+The current Product Landing Page renders published Products with real Product information, Product presentation media where available, type-specific summaries, inherited Storefront/default theme, and route-level purchase/access actions where supported.
 
 ### Product Landing Page Builder
 

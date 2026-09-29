@@ -54,7 +54,6 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app/storefront` | protected | Creator | Creator Storefront Builder | Uses the Creator shell with the sidebar collapsed; composes User/Profile, Product summaries, and the server-backed Creator Storefront config contract for theme, featured Product, and Product ordering |
 | `/app/customers` | protected | Creator | Creator Customers list | Uses server-backed Customer list contract |
 | `/app/customers/:customerId` | protected | Creator | Creator Customer detail | Uses server-backed Customer detail contract; current detail tabs are read-only |
-| `/app/marketing` | protected | Creator, Admin | Marketing area | Mostly incomplete except reviews |
 | `/app/sales` | protected | Creator | Creator Sales workspace | Uses `order` query param for contextual order detail and server-backed Sales contracts |
 | `/app/analytics` | protected | Creator | Creator Analytics workspace | Uses server-backed aggregate Analytics overview contract |
 | `/app/settings` | protected | Admin, Creator, User | Settings tabs | Most save flows incomplete |

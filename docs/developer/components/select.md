@@ -54,7 +54,7 @@ function ProductTypeSelect() {
     - `.form-input`
     - `.form-input-label`
 - Supports any data type for values (`string` or `number`).
-- Matches the styling conventions of other Gal form controls for visual consistency.
+- Matches the styling conventions of the current form controls for visual consistency.
 - Often paired with:
     - [`Input`](form-input.md)
     - [`CheckboxInput`](checkbox-input.md)

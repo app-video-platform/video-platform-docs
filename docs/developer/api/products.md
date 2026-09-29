@@ -30,9 +30,34 @@ Product services are split across:
 | `getAllProductsMinimalAPI` | `GET api/products/get-all-products-min` | Product summaries for discovery. |
 | `getAllProductsMinimalByUserAPI` | `GET api/products/get-all-products-min?userId=` | Product summaries for a user. |
 | `fetchProducts` | `GET /api/products/search?term=&page=&size=&sort=` | Search results and autocomplete. |
-| `addImageToProductAPI` | `POST api/products/image?productId=` | Frontend hook without a matching current backend controller route; Product image persistence remains incomplete. |
 
 Creator Product Overview uses `getProductByIdAPI` through the existing single-Product read path. It does not have a dedicated Product Overview backend endpoint.
+
+Publishing supported non-Membership Products uses the same Product update path with `status: PUBLISHED`. Frontend readiness provides immediate guidance, but backend readiness validation is authoritative. Backend readiness failures are surfaced as HTTP `422` responses with a top-level message and field-path/message errors.
+
+Membership Products remain excluded from Product-level publishing even though Membership readiness can be evaluated in the frontend.
+
+## Product media
+
+Product presentation media is Product-owned and separate from Course lesson video storage, Download deliverables, and Membership native Video/Resource binary delivery.
+
+| Function | Method and URL | Notes |
+|---|---|---|
+| `addImageToProductAPI` | `POST api/products/image?productId=` | Uploads/replaces the Product thumbnail using the raw-file Product media API. |
+| `removeImageFromProductAPI` | `DELETE api/products/image?productId=` | Removes the Product thumbnail. |
+| `addProductGalleryImageAPI` | `POST api/products/:productId/media/gallery` | Adds a Product gallery image. |
+| `removeProductGalleryImageAPI` | `DELETE api/products/:productId/media/gallery/:imageId` | Removes a Product gallery image. |
+| `reorderProductGalleryImagesAPI` | `PUT api/products/:productId/media/gallery/order` | Persists gallery ordering from an ordered image ID list. |
+| `addProductPromoVideoAPI` | `POST api/products/:productId/media/promo-video` | Uploads a Product-level promo video. |
+| `removeProductPromoVideoAPI` | `DELETE api/products/:productId/media/promo-video` | Removes the Product-level promo video. |
+
+Current frontend validation matches the Product media contract:
+
+- images: JPEG, PNG, WebP, or GIF up to 10 MB
+- promo video: MP4 or WebM up to 100 MB
+- gallery: up to 20 images total
+
+The frontend sends selected raw files to these Product media APIs. Spaces persistence is backend-owned behind the API boundary; direct browser-to-Spaces upload is not the current Product media architecture.
 
 ## Product Landing Page config
 
