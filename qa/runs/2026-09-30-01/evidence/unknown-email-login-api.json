@@ -1,0 +1,10 @@
+{
+  "observed_at": "2026-09-30T11:24:19.111851+00:00",
+  "request": "POST /api/auth/login with random unused .invalid email and synthetic credential",
+  "http_status": "404",
+  "cookie_names": [],
+  "response": {
+    "message": "No account with email: qa-negative-4eccdda14b46411fb3ca7bf317598dee@example.invalid",
+    "status": 404
+  }
+}

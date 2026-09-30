@@ -1,0 +1,8 @@
+{
+  "observed_at": "2026-09-30T11:12:23.347824+00:00",
+  "restricted_command_available": true,
+  "synthetic_missing_owner_lines": [
+    "\u001b[36m2026-09-30T10:50:23.106539559Z app[web.1]:\u001b[0m 2026-09-30 10:50:23 [http-nio-8080-exec-16] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA-2026-09-30-01 Missing owner"
+  ],
+  "note": "No whole log stream saved. Absence of a matching line does not prove no request."
+}

@@ -1,0 +1,23 @@
+# Fixtures
+
+- OWNER-A: existing owner-authorized Gmail-linked application account; initial role CREATOR. Login email and credentials are omitted from reports.
+- Existing owner products: use read-only for initial navigation. Do not edit their content.
+- New content prefix: QA-2026-09-30-01.
+- Guest: separate in-app browser session, no login. One synthetic Consultation remains in its local cart. Independent second owner, entitlement, payment and recovery fixtures are not established yet. A second signed-in profile has been requested.
+- Owner local Cart and Wishlist: cleared after testing. Current role restored to CREATOR after the approved role cycle; database verifies zero buyer orders.
+
+- OWNER-A ID: a1ebdc7a-d497-4334-9fed-309aec071b25.
+- Course: ddd5bb80-183e-48d5-84cd-8819ca082a58, QA-2026-09-30-01 Course, DRAFT, price 0.00. Retain for BUG-001 retest.
+
+- Download: a7991427-a5f7-4e48-a241-0e1a82b52d68, QA-2026-09-30-01 Download B, description B, DRAFT, price 12.50 ONE_TIME/EUR, no files.
+
+- Consultation: 3ebc8873-83aa-430b-8fe2-dad685c0a8d3, QA-2026-09-30-01 Consultation, PUBLISHED, 15 EUR, PHONE, 30min, before-buffer5, max3, synthetic confirmation. No booking/calendar event created.
+
+- Membership: 45fb192b-0393-4609-9c9f-736425adc550, QA-2026-09-30-01 Membership, DRAFT, RECURRING/YEAR, 9.99 EUR.
+- Native Post: 4b03703a-73ea-4734-a866-d4a882dc3128, QA Post B, body B, changed DRAFT to PUBLISHED as authoring metadata only.
+
+- Missing-owner Admin create attempt: rejected; no Course named QA-2026-09-30-01 Missing owner exists in DB. Restricted logs show the attempted synthetic creation, followed by the observed Access Denied outcome.
+- Invalid verification: synthetic token only; backend400, false frontend success. No account changed.
+- Negative login: random unused .invalid address and synthetic input;404, no cookies. No new account created.
+
+Retain the four products and native Post for continued execution/retests. Consultation remains Published. Fixture deletion has not been performed.
