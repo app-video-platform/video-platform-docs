@@ -85,6 +85,91 @@ Deployment-specific hostnames, ports, SSH material, database credentials, and
 provider secrets belong in repository secrets, Dokku configuration, or other
 managed environment configuration—not in source or documentation.
 
+## Read-only test diagnostics
+
+These steps are for a development or staging database with disposable test
+data. Run Dokku commands on the Droplet, not on the local machine. Check that
+application logs redact passwords, tokens, and sensitive request bodies before
+granting log access.
+
+1. Create a separate non-root Unix observer with an SSH key. Keep it out of the
+   `sudo`, `dokku`, and `docker` groups. Add only its public key to the server;
+   keep the private key outside the repository. Give the observer one fixed
+   log wrapper at `/usr/local/sbin/read-app-logs`, owned by root with mode
+   `755`. Replace `APP_NAME` with the Dokku app name:
+
+   ```sh
+   #!/bin/sh
+   exec /usr/bin/dokku logs APP_NAME --num 200
+   ```
+
+   Allow only that wrapper without arguments in a root-owned
+   `/etc/sudoers.d/observer-logs` file with mode `440`:
+
+   ```text
+   observer ALL=(root) NOPASSWD: /usr/local/sbin/read-app-logs ""
+   ```
+
+   Validate it with `visudo -cf /etc/sudoers.d/observer-logs` and test the
+   command as the observer. Do not grant unrestricted Dokku or Docker access.
+
+2. Create a separate PostgreSQL login for inspection. As a database
+   administrator, grant it `CONNECT` on the test database, `USAGE` on the
+   relevant schema, and `SELECT` on existing tables. Do not grant table writes,
+   schema creation, or administration privileges. Set a short
+   `statement_timeout` to limit expensive queries. For example, replace the
+   database and role names before running these statements in psql:
+
+   ```sql
+   CREATE ROLE test_reader LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION;
+   GRANT CONNECT ON DATABASE test_database TO test_reader;
+   GRANT USAGE ON SCHEMA public TO test_reader;
+   GRANT SELECT ON ALL TABLES IN SCHEMA public TO test_reader;
+   ALTER ROLE test_reader SET default_transaction_read_only = on;
+   ALTER ROLE test_reader SET statement_timeout = '10s';
+   ```
+
+   Set the password using psql's interactive `\password test_reader` command
+   on its own line, rather than putting a password in SQL or shell history.
+   After a Liquibase migration adds tables, grant `SELECT` on the new tables
+   or configure default privileges for the role that creates them.
+
+3. Keep the Dokku PostgreSQL service linked to the app internally. Verify that
+   no external database client depends on the current host mapping, then bind
+   any host port needed for diagnostics to `127.0.0.1`. Block inbound
+   PostgreSQL ports in the Droplet firewall. The host listener should show
+   `127.0.0.1:5432`, with no `0.0.0.0:5432` or `[::]:5432` listener:
+
+   ```bash
+   dokku postgres:links SERVICE_NAME
+   dokku postgres:unexpose SERVICE_NAME
+   dokku postgres:expose SERVICE_NAME 127.0.0.1:5432
+   ss -lnt | grep ':5432'
+   ```
+
+4. From the local machine, open an SSH tunnel through the observer account.
+   Replace the placeholders:
+
+   ```bash
+   ssh -i ~/.ssh/<observer-key> -N \
+     -L 127.0.0.1:15432:127.0.0.1:5432 <observer-user>@<droplet-host>
+   ```
+
+   Keep the tunnel open during testing. PostgreSQL clients can then connect to
+   `127.0.0.1:15432` with the diagnostic role. For unattended local queries,
+   store its password in `~/.pgpass` with mode `600`. Never commit the populated
+   file:
+
+   ```text
+   127.0.0.1:15432:<database>:<reader-user>:<password>
+   ```
+
+   Verify that `psql -w` reports the diagnostic role and that the restricted
+   log command works without a root login. Load a passphrase-protected SSH key
+   into the local SSH agent before unattended runs. When access is no longer
+   needed, remove the observer's SSH key and sudoers entry and revoke the
+   PostgreSQL login.
+
 ## Change checklist
 
 For backend behavior changes:

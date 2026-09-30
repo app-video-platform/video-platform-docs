@@ -1,0 +1,92 @@
+{
+  "observed_at": "2026-09-30T11:25:50.296718+00:00",
+  "authentication": "Guest without cookies",
+  "requests": [
+    {
+      "path": "/testEndpoint",
+      "status": "200",
+      "sanitized_shape": {
+        "diagnostic_text": "Still now working mate."
+      }
+    },
+    {
+      "path": "/api/products/get-all-products-min",
+      "status": "200",
+      "sanitized_shape": {
+        "kind": "list",
+        "keys": [],
+        "items": 52
+      }
+    },
+    {
+      "path": "/api/products/search?term=QA-2026-09-30-01",
+      "status": "200",
+      "sanitized_shape": {
+        "kind": "dict",
+        "keys": [
+          "content",
+          "empty",
+          "first",
+          "last",
+          "number",
+          "numberOfElements",
+          "pageable",
+          "size",
+          "sort",
+          "totalElements",
+          "totalPages"
+        ],
+        "items": null
+      }
+    },
+    {
+      "path": "/api/products/3ebc8873-83aa-430b-8fe2-dad685c0a8d3",
+      "status": "200",
+      "sanitized_shape": {
+        "kind": "dict",
+        "keys": [
+          "billingInterval",
+          "createdAt",
+          "currency",
+          "description",
+          "details",
+          "id",
+          "name",
+          "price",
+          "pricingModel",
+          "status",
+          "type",
+          "updatedAt",
+          "userId"
+        ],
+        "items": null
+      }
+    },
+    {
+      "path": "/api/storefronts/a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "status": "200",
+      "sanitized_shape": {
+        "kind": "dict",
+        "keys": [
+          "creator",
+          "featuredProductId",
+          "id",
+          "products",
+          "theme"
+        ],
+        "items": null
+      }
+    },
+    {
+      "path": "/api/calendars/providers",
+      "status": "200",
+      "sanitized_shape": {
+        "kind": "dict",
+        "keys": [
+          "providers"
+        ],
+        "items": null
+      }
+    }
+  ]
+}

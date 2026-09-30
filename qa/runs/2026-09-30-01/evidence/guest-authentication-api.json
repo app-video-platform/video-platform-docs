@@ -1,0 +1,77 @@
+{
+  "observed_at": "2026-09-30T10:41:16.810871+00:00",
+  "requests": [
+    {
+      "path": "/api/user/userInfo",
+      "auth": "no-cookie",
+      "status": "401",
+      "response": {
+        "body_kind": "text",
+        "length": 0
+      }
+    },
+    {
+      "path": "/api/entitlements/me",
+      "auth": "no-cookie",
+      "status": "401",
+      "response": {
+        "body_kind": "text",
+        "length": 0
+      }
+    },
+    {
+      "path": "/api/admin/users",
+      "auth": "no-cookie",
+      "status": "401",
+      "response": {
+        "body_kind": "text",
+        "length": 0
+      }
+    },
+    {
+      "path": "/",
+      "auth": "no-cookie",
+      "status": "401",
+      "response": {
+        "body_kind": "text",
+        "length": 0
+      }
+    },
+    {
+      "path": "/api/user/userInfo",
+      "auth": "malformed-cookie",
+      "status": "401",
+      "response": {
+        "body_kind": "text",
+        "length": 0
+      }
+    },
+    {
+      "path": "/api/entitlements/me",
+      "auth": "malformed-cookie",
+      "status": "401",
+      "response": {
+        "body_kind": "text",
+        "length": 0
+      }
+    },
+    {
+      "path": "/api/admin/users",
+      "auth": "malformed-cookie",
+      "status": "401",
+      "response": {
+        "body_kind": "text",
+        "length": 0
+      }
+    },
+    {
+      "path": "/",
+      "auth": "malformed-cookie",
+      "status": "401",
+      "response": {
+        "body_kind": "text",
+        "length": 0
+      }
+    }
+  ]
+}

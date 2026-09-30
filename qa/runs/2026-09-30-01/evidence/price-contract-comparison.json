@@ -1,0 +1,8 @@
+{
+  "observed_at": "2026-09-30T11:31:18.351433+00:00",
+  "fixture_id": "3ebc8873-83aa-430b-8fe2-dad685c0a8d3",
+  "canonical_price": "15",
+  "canonical_price_json_type": "str",
+  "summary_price": 15,
+  "summary_price_json_type": "int"
+}

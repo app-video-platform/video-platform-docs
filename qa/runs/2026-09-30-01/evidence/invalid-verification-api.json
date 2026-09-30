@@ -1,0 +1,6 @@
+{
+  "observed_at": "2026-09-30T11:15:00.483148+00:00",
+  "request": "GET /api/auth/verify with unique synthetic invalid token",
+  "http_status": "400",
+  "body": "{\"message\":\"Invalid token!\",\"status\":400}"
+}
