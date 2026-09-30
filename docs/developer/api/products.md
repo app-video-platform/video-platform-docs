@@ -21,7 +21,7 @@ Product services are split across:
 
 | Function | Method and URL | Notes |
 |---|---|---|
-| `createProductAPI` | `POST api/products` | Creates Course, Download, Consultation, or Membership drafts. |
+| `createProductAPI` | `POST api/products` | Creates Course, Download, Consultation, or Membership Products; the frontend starts with Draft. |
 | `updateProductDetailsAPI` | `PATCH api/products/:id` | Updates shared product details. |
 | `deleteProductAPI` | `DELETE api/products/:productId` | Deletes by product ID. |
 | `getAllProductsByUserIdAPI` | `GET api/products?userId=` | Creator/admin product retrieval by user. |
@@ -30,6 +30,13 @@ Product services are split across:
 | `getAllProductsMinimalAPI` | `GET api/products/get-all-products-min` | Product summaries for discovery. |
 | `getAllProductsMinimalByUserAPI` | `GET api/products/get-all-products-min?userId=` | Product summaries for a user. |
 | `fetchProducts` | `GET /api/products/search?term=&page=&size=&sort=` | Search results and autocomplete. |
+| `addImageToProductAPI` | `POST api/products/image?productId=` | Replaces the persisted thumbnail through a raw upload. |
+| `removeImageFromProductAPI` | `DELETE api/products/image?productId=` | Removes the thumbnail. |
+| `addProductGalleryImageAPI` | `POST api/products/:id/media/gallery` | Uploads one gallery image. |
+| `removeProductGalleryImageAPI` | `DELETE api/products/:id/media/gallery/:imageId` | Removes one gallery image. |
+| `reorderProductGalleryImagesAPI` | `PUT api/products/:id/media/gallery/order` | Sends the complete duplicate-free gallery ID order. |
+| `addProductPromoVideoAPI` | `POST api/products/:id/media/promo-video` | Replaces the promo video. |
+| `removeProductPromoVideoAPI` | `DELETE api/products/:id/media/promo-video` | Removes the promo video. |
 
 Creator Product Overview uses `getProductByIdAPI` through the existing single-Product read path. It does not have a dedicated Product Overview backend endpoint.
 
@@ -71,7 +78,10 @@ Product Landing Page config services live under `src/core/api/services/product-l
 
 The current config model contains `marketingDescription`, `heroLayout`, `visibleSections`, and `sectionOrder`. If `visibleSections` is absent, the frontend uses the default section set; if it is an explicit empty array, the empty selection is preserved. Product Landing Page config must not duplicate canonical Product fields, Creator profile fields, Storefront theme, checkout/access state, SEO, slugs, or custom-domain data.
 
-The public Product route still composes available Product, config, theme, and Creator/profile inputs. A dedicated production public Product read model is still needed for public-safe Product presentation and server-enforced visibility.
+The public Product route composes the protected Product read, persisted
+landing-page configuration, and public Storefront theme/profile data. A
+dedicated combined public Product read model is still unavailable; the
+individual public Product and landing-page reads enforce Published visibility.
 
 ## Sections and lessons
 
@@ -102,6 +112,11 @@ Current backend Product types are `COURSE`, `DOWNLOAD`, `CONSULTATION`, and
 `MEMBERSHIP`.
 
 Current product statuses represented in frontend types are `DRAFT`, `PUBLISHED`, and `HIDDEN`.
+
+Product responses include `imageUrl`, ordered `galleryImages`, and nullable
+`promoVideo`. Consultation details include persisted seven-day
+`weeklyAvailability` with ordered `windows`. Backend publication validation is
+authoritative and returns HTTP 422 issue maps when readiness blockers remain.
 
 Membership uses the shared Product create/update shape for core Product fields and Product-owned recurring-pricing metadata. The Product contract carries `price`, `pricingModel`, `billingInterval`, and `currency`; the backend persists those fields and defaults Membership to recurring EUR monthly pricing.
 

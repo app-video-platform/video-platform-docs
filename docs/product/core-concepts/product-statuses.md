@@ -30,7 +30,7 @@ Creators can:
 
 - Create draft products through the product builder.
 - See status where product summaries expose it.
-- Publish supported non-Membership Products from Product Workspace when readiness validation passes.
+- Publish Course, Download, and Consultation products after resolving their readiness blockers.
 
 ## How it works
 
@@ -39,6 +39,12 @@ Product statuses appear in Creator and Admin product management areas, where use
 For supported non-Membership Products, Product Workspace provides a Publish action. Publish works with the current save state, uses frontend readiness checks for immediate guidance, and then updates the existing Product with `status: PUBLISHED`.
 
 Backend readiness validation is authoritative. The backend can reject publication with HTTP `422` field-path/message errors, and the frontend surfaces those errors in the Readiness area. Frontend readiness guidance does not guarantee that publication will succeed.
+
+Course publication requires a name, valid free-or-paid price, a section, and a
+lesson. Download publication requires a name, valid price, and confirmed file.
+Consultation publication requires a name, positive price and duration, meeting
+method, any required custom location, and valid weekly availability. A
+thumbnail and connected calendar are recommendations, not blockers.
 
 Membership Products are the exception: Membership readiness can be evaluated, but Product-level Membership publishing remains unavailable in the current frontend.
 

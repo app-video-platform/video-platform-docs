@@ -31,16 +31,16 @@ Users can:
 
 Explore loads product summaries and presents them as product cards. Search suggestions appear after enough text is entered in the search field. Submitting a search opens a results page with paginated results.
 
-Product cards can include customer actions such as saving to wishlist or adding to cart, but those actions do not complete a purchase.
+Product cards can include customer actions such as saving to wishlist or adding to cart. Checkout and access are handled from the cart or Product Landing Page rather than by the discovery card itself.
 
 Public Storefront pages present a creator profile and that creator's published products. Storefront product cards link to Product Landing Pages.
 
 ## Current limitations
 
 - Product images in discovery areas are currently placeholders.
-- Storefront pages do not replace checkout, payment, or post-purchase access flows.
+- Storefront pages lead to Product Landing Pages; they do not process checkout directly.
 - Wishlist and cart actions are saved in the browser and do not represent checkout, payment, or product ownership.
-- Search and discovery should not be treated as proof that customer entitlements are implemented.
+- Search and cart placement do not grant access. Free enrollment or a successful paid event creates the entitlement.
 
 ## Related pages
 

@@ -47,12 +47,13 @@ The current service layer lives under `src/core/api/` in `video-platform-ui`.
 The frontend currently calls APIs for authentication, profile loading, Product
 creation and editing, Product search, Course sections, lesson shells, Download
 file upload, calendar connection initiation, Admin user/Product/audit
-management, and Creator data surfaces. Some service wrappers target contracts or
-routes that are not implemented by the current production backend.
+management, Creator reporting, Storefront, Product Landing Page presentation,
+Commerce checkout, and entitlement surfaces.
 
 Creator Product Overview reuses the existing Product detail retrieval path. It does not add a dedicated Product Overview service, endpoint, Redux slice, or backend contract.
 
-Several Creator data surfaces now have frontend-defined contracts, services, thunks, and Redux slices backed by production endpoints.
+Creator data surfaces use frontend-defined contracts, services, thunks, and
+Redux slices backed by current backend endpoints.
 
 Current server-backed Creator and presentation contracts include:
 
@@ -67,11 +68,20 @@ Current server-backed Creator and presentation contracts include:
 
 Ownership boundaries matter for these frontend contracts. The current backend
 Product contract is authoritative for Product identity, type, name,
-description, status, Product presentation media, price amount, and supported type-specific content.
-The backend now implements the frontend's Product pricing model, billing
-interval, currency extension, Membership authoring contracts, Product Landing
-Page configuration, Storefront contracts, and the current Creator reporting
-contracts listed above.
+description, status, Product Media, price amount, and supported type-specific content.
+The backend implements the frontend's Product pricing model, billing interval,
+currency extension, Membership authoring, Product Landing Page configuration,
+Storefront, Creator reporting, and Dashboard contracts. A combined public
+Product read model and real payment provider remain unavailable. The current
+deployed checkout may use backend fake auto-success; frontend UI should label
+that flow clearly as test payment/no charge.
+
+The Commerce item typing is currently looser and differently named than the
+backend DTO. Frontend `productTitle`/`amountMinor` correspond to backend
+`productName` and `unitAmountMinor`/`lineTotalMinor`; the backend also returns
+`itemId` and `quantity`. Current Cart completion uses Order status and total, so
+the flow works, but these interfaces and fixtures should be aligned before new
+item-level UI depends on them.
 
 For supported non-Membership Products, Product publication uses Product update with `status: PUBLISHED`. Backend readiness validation can return structured `422` field errors that the Product Workspace Readiness UI displays. Membership publishing remains unavailable.
 

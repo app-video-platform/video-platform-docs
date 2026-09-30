@@ -29,6 +29,7 @@ Creators can:
 - Set a maximum number of sessions per day.
 - Write a confirmation message.
 - Choose a cancellation policy.
+- Configure enabled weekdays and one or more ordered time windows for each day.
 - Use shared product settings such as basics, pricing, and media.
 
 Supported meeting methods are:
@@ -67,9 +68,9 @@ The cancellation policy lets creators choose from the available policy options.
 
 ### Weekly availability
 
-Weekly availability is persisted with the Product's consultation details. Each day can be enabled or disabled, and enabled days can contain one or more time ranges.
+Weekly availability is persisted with the Product's consultation details. The builder shows all seven weekdays, including disabled days. Each day can be enabled or disabled, and enabled days can contain one or more ordered time ranges.
 
-The builder validates enabled days locally: at least one range is required, start and end times are required, start must be before end, and overlapping ranges are shown as errors.
+The builder validates enabled days locally: at least one range is required, start and end times are required, start must be before end, and overlapping ranges on the same day are shown as errors.
 
 ### Calendar display
 

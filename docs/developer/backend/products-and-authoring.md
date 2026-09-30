@@ -13,11 +13,12 @@ The backend currently persists four Product types:
 |---|---|
 | `COURSE` | Ordered sections containing lessons |
 | `DOWNLOAD` | Ordered sections containing files |
-| `CONSULTATION` | Consultation configuration fields |
+| `CONSULTATION` | Consultation configuration plus normalized weekly availability |
 | `MEMBERSHIP` | Recurring-price authoring, native content metadata, included Products, and feed ordering |
 
 Supported statuses are `DRAFT`, `PUBLISHED`, and `HIDDEN`. Membership Products
-are intentionally limited to `DRAFT` and `HIDDEN`; publishing returns HTTP 409.
+are intentionally limited to `DRAFT` and `HIDDEN`; publication readiness
+returns HTTP 422 with a structured issue map.
 
 ## Shared Product fields
 
@@ -68,6 +69,40 @@ Membership defaults to `RECURRING`, `MONTH`, and `EUR`; its Draft price may be
 zero for the frontend's two-step creation flow. Other Product types default to
 `ONE_TIME`, no billing interval, and `EUR`.
 
+## Publication validation
+
+`ProductPublicationValidator` runs for create, PUT, and PATCH whenever the
+resulting status is `PUBLISHED`, including edits to an already-published
+Product. It returns HTTP 422 with field-keyed readiness issues.
+
+- Every type requires a nonblank name.
+- Course requires a free or positive one-time price, a section, and a lesson.
+- Download requires a free or positive one-time price and a confirmed file.
+- Consultation requires positive price and duration, a meeting method, a
+  custom location for `OTHER`, and valid persisted weekly availability.
+- Membership publication is rejected.
+
+Thumbnail and connected-calendar state are warnings only. Draft and Hidden
+updates keep their existing incomplete-authoring behavior.
+
+## Consultation availability
+
+Consultation `details.weeklyAvailability` uses all seven weekday values and
+ordered `windows` containing `startTime` and `endTime`. Missing days are
+returned as disabled. On update, omitting the field preserves existing data;
+an explicit empty array clears it. Drafts may contain incomplete ranges, while
+publication requires an enabled, non-overlapping range with start before end.
+
+## Product marketing media
+
+Product Media is independent metadata keyed by Product UUID. Owner/Admin raw
+uploads are proxied through the backend to DigitalOcean Spaces. Product
+responses include `imageUrl`, ordered `galleryImages`, and `promoVideo`.
+Thumbnail and promo replacement, gallery reorder/removal, and Product deletion
+remove active metadata and attempt storage cleanup. Accepted image types are
+JPEG, PNG, WebP, and GIF up to 10 MB; promo video accepts MP4 and WebM up to
+100 MB; a gallery holds at most 20 images. All limits are configurable.
+
 ## Deletion
 
 Product deletion:
@@ -75,8 +110,9 @@ Product deletion:
 1. Resolves the concrete Product and checks authorization.
 2. Deletes entitlement records for the Product.
 3. Removes references from Membership feeds when deleting an included Course or Download.
-4. Dispatches deletion through the type handler.
-5. Records an Admin audit event when the current actor is an Admin.
+4. Removes Product Media metadata and attempts Spaces object cleanup.
+5. Dispatches deletion through the type handler.
+6. Records an Admin audit event when the current actor is an Admin.
 
 Concrete Product child records use cascade/orphan behavior and database foreign
 keys where configured. Deletion changes require both JPA and migration review.

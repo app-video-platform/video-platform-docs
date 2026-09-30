@@ -34,7 +34,7 @@ It includes numbered SQL files from
 
 | Table | Purpose | Important relationships/constraints |
 |---|---|---|
-| `users` | Account identity, profile, verification state, auth provider, onboarding | UUID primary key; unique email |
+| `users` | Account identity, profile, verification state, auth provider, onboarding, optional public email | UUID primary key; unique login email |
 | `roles` | `ADMIN`, `CREATOR`, and `USER` role records | Unique role name |
 | `user_roles` | User-to-role assignment | Foreign keys to users/roles; unique `user_id` enforces one role |
 | `verification_tokens` | Email-verification token lifecycle | Unique token; belongs to a user |
@@ -52,6 +52,7 @@ enforces one role per user.
 | `download_products` | Shared Product fields for Download Products | Belongs to owner User; owner deletion cascades |
 | `consultation_products` | Shared Product fields plus consultation configuration | Belongs to owner User; several setup fields are nullable for drafts |
 | `membership_products` | Shared Product fields plus Membership ordering mode | Belongs to owner User; recurring EUR pricing; Draft/Hidden only |
+| `product_media` | Product thumbnail, gallery, and promo-video metadata | Product UUID without a cross-table FK; owner/Product-scoped object key; unique kind/position slot |
 
 There is no `products` table. JPA `TABLE_PER_CLASS` inheritance means each
 concrete Product table stores the shared columns.
@@ -59,6 +60,11 @@ concrete Product table stores the shared columns.
 All concrete Product tables store `pricing_model`, `billing_interval`, and
 `currency`. Existing Products were backfilled to `ONE_TIME`, no interval, and
 `EUR`; Membership uses `RECURRING` with `MONTH` or `YEAR`.
+
+`product_media.product_id` cannot reference one shared Product table because
+none exists. Services validate the Product and remove metadata on Product
+deletion. The existing Product `image` column remains synchronized with the
+active thumbnail for summary compatibility.
 
 ### Membership authoring
 
@@ -98,10 +104,12 @@ Storage objects live in DigitalOcean Spaces. These tables store metadata and
 object paths; permanent delivery URLs should not be treated as public Product
 fields.
 
-### Consultation calendars
+### Consultation availability and calendars
 
 | Table | Purpose | Important relationships/constraints |
 |---|---|---|
+| `consultation_availability_days` | Enabled state for a persisted Consultation weekday | Belongs to Consultation; unique Product/weekday; cascades on Product deletion |
+| `consultation_availability_windows` | Ordered start/end ranges for one weekday | Belongs to availability day; cascades with it |
 | `consultation_connected_calendars` | Encrypted provider tokens and expiry for a Creator connection | Belongs to a User; cascades on user deletion |
 
 The table stores encrypted OAuth and refresh token material. Do not expose it in
@@ -130,6 +138,20 @@ deletion therefore explicitly removes entitlement records in the service.
 Commerce Order items reference Product UUIDs without a database foreign key
 because Products use table-per-class storage. Active purchase entitlements and
 unexpired pending Orders therefore block Product deletion in the service.
+
+### Public presentation
+
+| Table | Purpose | Important relationships/constraints |
+|---|---|---|
+| `storefront_configs` | One Creator Storefront theme and featured Product | Unique Creator; cascades on Creator deletion |
+| `storefront_product_order` | Creator-defined Product ordering | Unique Product and position per Storefront |
+| `product_landing_page_configs` | Product-specific marketing description and hero layout | Unique Product UUID |
+| `product_landing_visible_sections` | Ordered visible landing-page sections | Unique section per configuration |
+| `product_landing_section_order` | Complete landing-page section order | Unique section and position per configuration |
+
+Product references in these tables cannot target one shared Product table because
+Products use table-per-class storage. Services validate existence and ownership,
+and Product deletion removes landing-page, featured-Product, and ordering references.
 
 ### Legacy table
 

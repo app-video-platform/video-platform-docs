@@ -38,7 +38,7 @@ The email field is used as the login hint for the calendar provider. After the u
 
 - The frontend starts the connection flow but does not show a complete connected-calendar management screen afterward.
 - Users cannot currently disconnect calendars, inspect connected calendars, or manage calendar sync settings from this page.
-- Calendar Connections should not be read as complete Consultation scheduling. Consultation booking, availability, rescheduling, cancellation, and customer session management are not finished workflows.
+- Calendar Connections should not be read as complete Consultation scheduling. Creator weekly availability is persisted separately, but customer slot selection, booking, rescheduling, cancellation, and session management are not finished workflows.
 - If provider discovery fails, the provider selector may not show options.
 
 ## Related pages

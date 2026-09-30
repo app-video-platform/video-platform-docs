@@ -36,11 +36,10 @@ The Admin then chooses a product type and enters the initial product title. Once
 
 - Admin-created products inherit the current product-builder limitations.
 - The backend accepts Admin-created Products only when the selected owner exists and has exactly the Creator role.
-- Course lesson-video/customer learning, Membership runtime, and complete customer purchase/access behavior remain limited.
 - Product media supports thumbnail, gallery, and promo video, but does not cover Course lesson video or Membership native Video/Resource binary delivery.
 - Supported non-Membership Products can be published through Product Workspace readiness and backend validation; Membership publishing remains unavailable.
-- Membership authoring is persisted, but native binary media, publishing,
-  subscriptions, checkout, entitlements, and member access are unavailable.
+- Course/customer content consumption still has incomplete areas.
+- Membership authoring is persisted, but native binary media, publishing, subscriptions, checkout, entitlements, and member access are unavailable.
 - The Admin creation flow requires selecting a Creator owner before starting.
 
 ## Related pages

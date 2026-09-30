@@ -18,11 +18,10 @@ The shared frontend creation flow presents four product types:
 - Consultation
 - Membership
 
-Course, Download, and Consultation are supported by the production backend.
-Membership authoring is also persisted for the current builder scope, including
-Product-owned recurring pricing, native content metadata, included Products,
-and feed configuration. Membership publishing, checkout, subscriptions,
-entitlements, and member access are still unavailable.
+All four Product types have backend authoring persistence. Membership supports
+recurring pricing, native content metadata, included Products, and feed
+ordering, but not publishing, subscriptions, checkout, entitlements, or member
+access.
 
 ## Who can use this
 
@@ -111,7 +110,7 @@ When local checks pass, publishing updates the existing Product with `status: PU
 
 Frontend readiness does not guarantee successful publication. Backend readiness remains the final validation step, including when a published Product is edited into an invalid state.
 
-Membership readiness can be evaluated, but Membership Product publishing remains disabled. Unpublish is not part of the current Product lifecycle.
+Course products need content, Download products need a confirmed file, and Consultation products need complete paid-session details and at least one valid weekly availability window. Membership readiness can be evaluated, but Membership Product publishing remains disabled. Unpublish is not part of the current Product lifecycle.
 
 ### Overview vs Workspace
 
@@ -122,11 +121,13 @@ Product identity links generally open Product Overview. Explicit edit/build acti
 ## Current limitations
 
 - Product media covers thumbnail, gallery, and promo video only. It does not make Course lesson-video storage or Membership native Video/Resource binary delivery complete.
-- Publish is available for supported non-Membership Products through Product update and backend readiness validation. Membership publishing remains unavailable.
-- Product type-specific areas do not all have the same maturity. Course lesson media/customer learning has important limitations, Download file upload and Consultation setup fields are more complete, and Membership authoring persists content metadata, included Products, feed order, and recurring pricing but not binary media or publishing.
+- Course, Download, and Consultation products can be published after their readiness blockers are resolved. Membership products remain Draft or Hidden.
+- Product type-specific areas do not all have the same maturity. Course lesson delivery still has important limitations, while Download file upload and Consultation configuration are persisted. Membership authoring persists content metadata, included Products, feed order, and recurring pricing but not binary member content or publishing.
 - Product Overview is read-only and does not provide product analytics, orders, customers, access management, publish/unpublish controls, inline landing-page editing, or SEO controls.
 - Product Landing Page Builder does not edit canonical Product fields, Creator profile fields, Storefront theme, checkout, access, subscriptions, waitlists, SEO, custom domains, or arbitrary page-builder blocks.
-- Product Landing Page configuration is persisted for the current presentation settings, but a dedicated public Product read model is still not part of the current implementation.
+- Product Landing Page configuration is backend-persisted for the current
+  presentation settings, but a dedicated combined public Product read model is
+  still unavailable.
 
 ## Related pages
 

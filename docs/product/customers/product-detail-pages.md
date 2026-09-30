@@ -22,10 +22,14 @@ Draft and Hidden products are not rendered as normal public Product Landing Page
 Customers and visitors can:
 
 - Review the product name, type, description, image, and price.
-- View Product gallery images and a Product-level promo video when ready media is available.
+- View the Product image gallery and a ready promotional video when the creator has added them.
 - See recurring Membership pricing when it is configured.
 - Review type-specific public summaries when the product has supporting data.
-- Use current route-level actions where supported, including free enrollment, paid cart actions, existing-access states, owner edit behavior, or Membership checkout-unavailable behavior.
+- Enroll in a published free Product after signing in.
+- Check existing Product access and open protected content when access is active.
+- Start one-time checkout for eligible paid Products when commerce is configured.
+- Complete one-time test checkout for eligible paid Products when automatic fake payment is enabled.
+- See an honest unavailable state when commerce or Membership checkout is unavailable.
 
 ## How it works
 
@@ -46,11 +50,14 @@ Creators configure product-specific public presentation from the Product Landing
 
 ## Current limitations
 
-- Customer-facing purchase/access paths exist for free enrollment and eligible paid Cart checkout, but no production payment provider or real charging is configured.
+- The deployed test checkout does not charge a card. With the fake provider
+  enabled, eligible paid Products complete immediately, grant real Product
+  access, and appear in the Library. This is functional testing, not real
+  payment processing.
 - Membership subscription checkout and waitlists are not implemented.
 - Ratings, reviews, customer counts, subscriber/member counts, landing-page analytics, SEO controls, slugs, custom domains, slideshows, presentations, and arbitrary page-builder blocks are not part of the current Product Landing Page.
 - Product-specific theme overrides are not supported; Product Landing Pages inherit the Creator Storefront theme or use the default Storefront theme.
-- Public Product Landing Pages currently use transitional frontend data composition. Direct Product reads apply backend visibility/content protection, but a dedicated public Product read model is still not part of the current implementation.
+- Product Landing Page presentation configuration is backend-persisted. The page still composes Product and Creator/Storefront data through separate reads rather than a dedicated combined public Product read model.
 
 ## Related pages
 

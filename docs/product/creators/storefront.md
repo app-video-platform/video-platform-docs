@@ -15,7 +15,10 @@ Customers and visitors use the public Storefront page at `/app/store/:creatorId`
 
 ## Who can use this
 
-The Storefront Builder is available from the Creator navigation. It is a protected Creator-only route and uses the active Creator profile, creator-owned products, and Creator Storefront configuration.
+The Storefront Builder is available from the Creator navigation. It is a
+protected Creator-only route and uses the active Creator profile, creator-owned
+Products, and Creator Storefront configuration. Its backend endpoints reject
+Administrator and End User accounts.
 
 The public Storefront page can be opened by visitors and signed-in users.
 
@@ -48,7 +51,7 @@ The Storefront Builder supports inline editing for these public-facing profile f
 - Website.
 - Public email.
 
-Public email is a profile field, not the account login email. If a creator has not set a public email, no email address is shown on the public Storefront. Editing the public email does not change the login email.
+Public email is a profile field, not the account login email. The public Storefront API never exposes the login email. If the creator has not set a public email, no email is returned publicly. Editing the public email does not change the login email.
 
 The same public-email concept is also surfaced in Settings. Storefront Builder edits save the public email through the profile/user data path, while Storefront configuration remains responsible for Storefront-specific presentation settings.
 
@@ -105,7 +108,11 @@ The public Storefront adapts its hero, featured product, contact section, and pr
 
 ## Current limitations
 
-- Storefront public read-model and Creator Storefront configuration endpoints are server-backed for the current presentation, theme, featured Product selection, and Product ordering behavior.
+- Storefront public read-model and Creator Storefront configuration endpoints
+  are server-backed for the current presentation, theme, featured Product
+  selection, and Product ordering behavior. Unsaved Builder changes remain
+  local until **Save changes** is selected.
+- Deterministic local HTTP mocks may provide Storefront data for development and inspection when mock mode is enabled. Mock data should not be treated as production-backed Storefront data.
 - The Builder does not provide arbitrary page-building, drag-and-drop sections, custom content blocks, custom CSS, spacing controls, custom domains, SEO configuration, password protection, or Storefront analytics.
 - Profile image inline editing is not part of the current Builder.
 - Product identity, status, price, media, and publishing remain part of Product management. The Storefront does not add, edit, publish, delete, or bulk-update products.

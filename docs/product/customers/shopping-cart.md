@@ -9,7 +9,7 @@ sidebar_position: 5
 
 The shopping cart lets customers collect products before checkout.
 
-The current cart experience supports adding products from discovery pages, viewing cart contents, removing items, moving items to the wishlist, seeing a displayed total, enrolling in carts that contain only free Products, and starting paid Commerce checkout for eligible paid carts.
+The current cart supports adding Products, viewing and removing items, moving items to the wishlist, displaying totals, enrolling in free Products, and starting backend checkout for eligible one-time paid Products.
 
 ## Who can use this
 
@@ -28,8 +28,8 @@ Customers can:
 - See a displayed total for cart items.
 - Move cart items to the wishlist.
 - Remove cart items where removal is working correctly.
-- Enroll in all-free carts.
-- Start checkout for eligible paid non-Membership carts.
+- Enroll in a cart containing only free Products.
+- Complete test checkout for eligible paid Course, Download, or Consultation Products.
 
 ## How it works
 
@@ -45,11 +45,13 @@ When paid checkout starts, the frontend creates a Commerce checkout session. If 
 
 The cart page explicitly tells customers: "Test payment — No real charge will be made during checkout."
 
+Checkout prices and eligibility are recalculated by the backend. In the current deployed test environment, the fake provider can record a successful payment event immediately, grant access, clear the Cart, and open the Library. No card details are collected and no charge is made.
+
 ## Current limitations
 
 - A cart containing only free Products can add them to the signed-in user's
   entitlement Library.
-- Paid checkout is connected for eligible paid non-Membership carts, but it uses the current test/fake payment path. No production payment provider or real charging is configured.
+- Paid checkout is connected for eligible paid non-Membership carts, but it uses the current test/fake payment path. No production payment provider or real charging is configured. Provider redirection remains supported when a configured gateway returns a checkout URL.
 - Cart items are saved in the browser and are not synchronized to a backend account.
 - Products in the cart are not reserved or granted as owned content until free enrollment or a paid Order succeeds.
 - Product images and ratings shown in cart areas include placeholder content.
