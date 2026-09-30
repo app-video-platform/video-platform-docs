@@ -1,0 +1,17 @@
+{
+  "observed_at": "2026-09-30T13:31:07.719817+00:00",
+  "ssh_exit": 0,
+  "lines_available": 200,
+  "matching_diagnostic_lines": 8,
+  "categories": {
+    "Customer": 0,
+    "customers": 0,
+    "AccessDeniedException": 0,
+    "ERROR": 5,
+    "Exception": 3
+  },
+  "frontend_and_api_http": "Connection reset by peer; HTTP000",
+  "db_read": "Successful own-profile SELECT during preceding check",
+  "screenshot": "evidence/frontend-connection-reset.jpg",
+  "last_api_gate": "curl35; no batch variations executed"
+}

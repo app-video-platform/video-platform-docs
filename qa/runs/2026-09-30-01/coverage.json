@@ -871,8 +871,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-004 \u2014 Settings profile local save\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. Existing persisted profile and publicEmail.\n- **Steps:** Open /app/settings Profile; change text/social/public contact fields; Save; reload.\n- **Expected results:** Current save shows a Product-created toast without profile mutation; local edits do not persist. publicEmail is not hydrated with other defaults; no login-email fallback should be inferred.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "PROF-005",
@@ -881,8 +882,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-005 \u2014 Settings profile validation\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. Profile tab; bio/tagline/website boundary fixtures.\n- **Steps:** Submit invalid bio/tagline lengths and malformed website; correct each field.\n- **Expected results:** Local validation displays errors; valid submission remains local-only. Disabled login email cannot be edited here.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "PROF-006",
@@ -4340,8 +4342,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CUSTOM-004 \u2014 Customer list empty and recovery\n\n- **Feature area:** Creator Customers and customer detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic buyers and entitlement holders. No relationships, unmatched search/filter, delayed/error response variants.\n- **Steps:** Open Customers; clear search/filter; restore service/reload.\n- **Expected results:** Distinct empty/no-match/loading/unavailable states; no fabricated customer rows.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "CUSTOM-005",
