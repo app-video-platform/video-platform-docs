@@ -26,6 +26,7 @@ Major server-backed areas include:
 - Course Quiz definitions, validation, scoring, and attempt persistence in the backend.
 - Download section file upload.
 - Consultation setup fields.
+- Product media upload/persistence for thumbnail, gallery, and promo video through Product media APIs.
 - Product exploration and search.
 - Admin user, product, and audit listings.
 - Calendar provider discovery and connection initiation.
@@ -46,8 +47,8 @@ Major browser-saved areas include:
 Major backend capabilities not yet exposed as complete frontend workflows
 include:
 
-- Loading the signed-in user's active entitlement library.
-- Authorized customer Download delivery.
+- Complete Library access to owned Course, Download, and Consultation content after entitlement listing.
+- Authorized customer Download delivery beyond the current Product-page delivery path.
 - Connected-calendar listing and disconnection.
 - End-to-end customer Quiz play and submission.
 
@@ -61,17 +62,13 @@ Major frontend-only session state areas include:
 
 Major placeholder or incomplete areas include:
 
-- Production payment-provider integration and purchase-history UI beyond the
-  current Cart/Order-status path.
+- Production payment-provider integration and purchase-history UI beyond the current Cart/Order status path.
 - Customer mutations, editable notes/tags, waitlists, and Membership relationship data.
-- Creator-side refund/retry/subscription mutations, reporting exports, taxes,
-  and payouts.
+- Creator-side safe financial mutation contracts for refund issuing, payment retries, subscription changes, reporting exports, taxes, and payouts.
 - Membership and traffic/conversion analytics.
-- Arbitrary Storefront page building, custom domains, SEO settings, password protection, and Storefront analytics.
+- Storefront arbitrary page-building, custom domains, SEO settings, password protection, and Storefront analytics.
 - A dedicated combined public Product read model, waitlists, SEO, slugs, custom domains, landing-page analytics, Product-specific theme overrides, and arbitrary page-builder blocks.
-- Membership binary asset upload/delivery, Product publishing, subscriptions,
-  entitlement logic, member access, and buyer-facing Membership flows.
-- Customer Library tabs backed by the entitlement API.
+- Membership binary asset upload/delivery, Membership Product publishing, subscriptions, entitlement logic, member access, and buyer-facing Membership flows.
 - Email campaigns.
 - Messages.
 - Live-session booking and scheduling.

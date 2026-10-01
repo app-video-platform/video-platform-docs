@@ -34,18 +34,19 @@ Creators can:
 
 ## How it works
 
-Product statuses appear most clearly in the Admin Products area, where Admins can filter product lists by status.
+Product statuses appear in Creator and Admin product management areas, where users can filter product lists by status.
 
-The Product Workspace provides a readiness view and Publish action. The backend
-also validates every create, full update, or partial update whose resulting
-status is Published. Readiness failures keep the Product unchanged and identify
-the fields that need attention.
+For supported non-Membership Products, Product Workspace provides a Publish action. Publish works with the current save state, uses frontend readiness checks for immediate guidance, and then updates the existing Product with `status: PUBLISHED`.
+
+Backend readiness validation is authoritative. The backend can reject publication with HTTP `422` field-path/message errors, and the frontend surfaces those errors in the Readiness area. Frontend readiness guidance does not guarantee that publication will succeed.
 
 Course publication requires a name, valid free-or-paid price, a section, and a
 lesson. Download publication requires a name, valid price, and confirmed file.
 Consultation publication requires a name, positive price and duration, meeting
 method, any required custom location, and valid weekly availability. A
 thumbnail and connected calendar are recommendations, not blockers.
+
+Membership Products are the exception: Membership readiness can be evaluated, but Product-level Membership publishing remains unavailable in the current frontend.
 
 For direct full-Product backend reads, callers without owner, Administrator, or
 active-entitlement access can read only Published Products. Protected Course
@@ -54,8 +55,8 @@ endpoints do not apply the same status filtering yet.
 
 ## Current limitations
 
-- Membership products cannot be Published yet.
-- The current Creator workflow focuses on publishing; Product Overview does not provide a complete unpublish/archive lifecycle.
+- Unpublish is not implemented in the current frontend.
+- Membership Product publishing is not implemented in the current frontend.
 - Public catalogue visibility is not consistently enforced across every backend summary/search route.
 
 ## Related pages

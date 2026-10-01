@@ -57,8 +57,10 @@ End Users can:
 - Browse available products.
 - Search products.
 - View public Product Landing Pages.
+- Enroll in free Products where supported.
 - Add products to a wishlist.
 - Add products to a shopping cart.
+- Check out eligible paid non-Membership carts through the current test Commerce flow.
 - Move products between wishlist and cart.
 - Enroll in eligible free Products and initiate checkout for eligible paid
   Products after signing in.
@@ -82,13 +84,11 @@ Some product discovery pages are public. Management pages require sign-in and th
 
 ## Current limitations
 
-- Customer-facing free enrollment, access checks, and paid Cart checkout
-  initiation are integrated, but production payment completion is unavailable
-  without a configured provider.
+- Customer-facing purchase/access paths exist for free enrollment and eligible paid Cart checkout, but no production payment provider or real charging is configured.
 - The shopping cart and wishlist are stored in the browser, not in a user account.
-- The user library exists, but most library tabs do not yet show purchased content.
+- The user library loads active entitlement-backed Products, but complete Course playback, Download delivery actions, and Consultation booking/session workflows are not all finished end to end.
 - Creator Product Overview pages are read-only and do not include product-specific analytics, orders, customer counts, inline landing-page editing, SEO controls, or publishing management.
-- Product Landing Page Builder persists a narrow presentation configuration. It does not provide subscriptions, waitlists, SEO controls, custom domains, arbitrary page-builder blocks, Product-specific theme overrides, or a combined public Product read model.
+- Product Landing Page Builder persists a narrow presentation configuration. It does not provide subscriptions, waitlists, SEO controls, custom domains, arbitrary page-builder blocks, Product-specific theme overrides, checkout configuration, fulfillment, entitlements, or a combined public Product read model.
 - Storefront theme, featured Product selection, ordering, public profile email, and the public Storefront read model are backend-supported.
 - Course lessons can be created, but some lesson content editors are not fully persisted.
 - Membership authoring persists native content metadata, included Courses/Downloads, ordering, and recurring pricing. Binary media, subscriptions, checkout, publishing, entitlements, and member access are not implemented.

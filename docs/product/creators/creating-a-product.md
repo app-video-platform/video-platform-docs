@@ -59,13 +59,30 @@ After the draft exists, the Product Workspace shows shared areas for product set
 
 - **Basics**: edit title, product type display, and description.
 - **Pricing**: choose free or paid one-time pricing for most products. Membership products use a Membership-specific recurring pricing control for amount, EUR currency, and monthly or yearly billing interval.
-- **Media**: upload a thumbnail, an ordered image gallery, and an optional promotional video.
+- **Media**: manage Product-owned presentation media: thumbnail, gallery images, and a Product-level promo video.
+- **Readiness**: review frontend guidance and backend readiness feedback before publishing supported Product types.
 
-Course and Download products also show **Sections**.
+Course products show **Curriculum** for sections and lessons.
 
-Consultation products show **Consultation Details** instead of Sections.
+Download products show **Files** for file groups and uploaded deliverables.
 
-Membership products show **Membership Content** instead of Sections. Membership Content can contain native Posts, Videos, and Resources, plus referenced existing Course and Download products.
+Consultation products show **Availability** for session configuration and weekly availability.
+
+Membership products show **Content** for native Posts, Videos, and Resources, plus referenced existing Course and Download products.
+
+### Product media
+
+Product media is presentation media used across Product cards, Storefront, Product Overview, and Product Landing Pages. It is separate from Course lesson videos, Download deliverable files, and Membership native Video/Resource binary content.
+
+The current Product media area supports:
+
+- Thumbnail image upload/removal.
+- Product gallery image upload, removal, and ordering.
+- Product promo video upload/removal.
+
+Image uploads support JPEG, PNG, WebP, and GIF files up to 10 MB per image. Promo video uploads support MP4 and WebM files up to 100 MB. A gallery can contain up to 20 images total.
+
+The frontend uses Product media upload APIs that send the selected raw file to the backend. Backend storage persistence is handled behind those APIs; Product media is not implemented as a direct browser-to-Spaces upload flow.
 
 ### Configure the product type
 
@@ -79,16 +96,21 @@ After the shared setup, continue with the page for the selected product type:
 
 ### Save behavior
 
-The builder autosaves shared product details after changes. Sections and lessons also save through their own editing behavior after they exist.
+The builder autosaves shared product details after changes. Sections, lessons,
+Download files, Membership content, and Product media save through their own
+operation-specific flows after the Product exists.
 
 Creators may see loading or saving behavior while changes are being processed.
 
-The **Publish** action checks the current Product for blockers. The backend
-repeats these checks before accepting Published status, so stale or bypassed
-frontend state cannot publish an incomplete Product. Course products need
-content, Download products need a confirmed file, and Consultation products
-need complete paid-session details and at least one valid weekly availability
-window. Membership publishing remains unavailable.
+### Readiness and publishing
+
+For supported non-Membership Products, **Publish** first works with the current Product Workspace save state, then uses frontend readiness checks for immediate guidance. If known blockers remain, the workspace opens Readiness instead of publishing.
+
+When local checks pass, publishing updates the existing Product with `status: PUBLISHED`. Backend readiness validation is authoritative and can reject the update with field-specific errors. Those backend errors are surfaced in the Readiness experience so the creator can correct the Product and retry.
+
+Frontend readiness does not guarantee successful publication. Backend readiness remains the final validation step, including when a published Product is edited into an invalid state.
+
+Course products need content, Download products need a confirmed file, and Consultation products need complete paid-session details and at least one valid weekly availability window. Membership readiness can be evaluated, but Membership Product publishing remains disabled. Unpublish is not part of the current Product lifecycle.
 
 ### Overview vs Workspace
 
@@ -98,7 +120,7 @@ Product identity links generally open Product Overview. Explicit edit/build acti
 
 ## Current limitations
 
-- Product media is persisted and publicly delivered through the Product CDN. Images support JPEG, PNG, WebP, and GIF up to 10 MB; promo videos support MP4 and WebM up to 100 MB; galleries support up to 20 images.
+- Product media covers thumbnail, gallery, and promo video only. It does not make Course lesson-video storage or Membership native Video/Resource binary delivery complete.
 - Course, Download, and Consultation products can be published after their readiness blockers are resolved. Membership products remain Draft or Hidden.
 - Product type-specific areas do not all have the same maturity. Course lesson delivery still has important limitations, while Download file upload and Consultation configuration are persisted. Membership authoring persists content metadata, included Products, feed order, and recurring pricing but not binary member content or publishing.
 - Product Overview is read-only and does not provide product analytics, orders, customers, access management, publish/unpublish controls, inline landing-page editing, or SEO controls.

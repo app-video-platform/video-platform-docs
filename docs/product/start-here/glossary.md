@@ -35,15 +35,13 @@ panels. Membership subscription analytics remains unavailable.
 
 A browser-stored list of products an End User has added while shopping.
 
-The cart contents are browser-saved. Free-only carts use backend enrollment and
-eligible paid carts can create backend checkout sessions, but production payment
-completion is unavailable without a configured provider.
+The current cart is browser-saved and supports free enrollment plus paid Commerce checkout for eligible non-Membership carts. Current checkout is test/fake-payment oriented and does not represent production real charging.
 
 ### Consultation product
 
 A product type for selling a one-to-one session or service.
 
-Creators can configure details such as meeting duration, meeting method, buffers, daily session limits, confirmation message, and cancellation policy. Customer booking is not implemented yet.
+Creators can configure details such as meeting duration, meeting method, weekly availability, buffers, daily session limits, confirmation message, and cancellation policy. Customer booking is not implemented yet.
 
 ### Course product
 
@@ -79,7 +77,7 @@ End Users can browse products, use the wishlist, use the cart, and open the libr
 
 The signed-in customer area for owned or saved products.
 
-The current library has tabs for all products, courses, downloads, consultations, and wishlist. The wishlist tab has behavior; purchased-product tabs are not yet populated.
+The current library has tabs for all products, courses, downloads, consultations, and wishlist. Product entitlement tabs load active backend entitlements, while complete type-specific delivery and booking experiences are still limited.
 
 ### Membership product
 
@@ -102,7 +100,7 @@ The currently supported product types are:
 
 A public page for viewing an individual product.
 
-The current Product Landing Page renders published Products with real Product information, persisted presentation settings, inherited Storefront/default theme, free enrollment/access checks, and eligible one-time checkout initiation.
+The current Product Landing Page renders published Products with real Product information, Product presentation media where available, type-specific summaries, inherited Storefront/default theme, and route-level purchase/access actions where supported.
 
 ### Product Landing Page Builder
 

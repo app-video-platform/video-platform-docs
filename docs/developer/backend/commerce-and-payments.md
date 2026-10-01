@@ -27,6 +27,11 @@ through the fake provider without charging a card.
 buyer. It requires an `Idempotency-Key` header and a body containing Product
 IDs.
 
+The current frontend stores a generated checkout idempotency key in browser
+session storage for the sorted Product-ID cart signature. Retrying an unchanged
+cart within the current TTL reuses the key; changing the cart creates a new
+checkout identity.
+
 The backend accepts at most 20 unique Products. Every Product must be:
 
 - published
@@ -111,7 +116,7 @@ Never enable the fake simulation endpoint in a deployed production profile.
 - One Creator per checkout.
 - EUR only.
 - Full Order refunds only; partial refunds are unsupported.
-- Customer-facing paid checkout completes in fake mode, but no card is charged and no real payment provider is configured.
+- Paid customer checkout uses the current Cart integration and can complete in fake mode, but no card is charged and no real payment provider is configured.
 - No Membership subscriptions or renewals.
 - No taxes, coupons, payouts, disputes, invoices, or payment retries.
 - No reporting exports, editable Customer notes/tags, waitlists, or Membership

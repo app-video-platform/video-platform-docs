@@ -22,7 +22,7 @@ The reporting API accepts Creator accounts only. Administrators and End Users re
 Creators can currently:
 
 - Select Last 7 days, Last 30 days, or Last 90 days.
-- View summary metrics for Revenue, Orders, and Customers.
+- View summary metrics such as Revenue, Orders, Customers, and Active memberships when returned by the aggregate.
 - See trend and comparison information against the previous matching period.
 - Switch the main Performance visualization between Revenue and Orders.
 - Review Product performance by revenue, orders, and revenue share.
@@ -41,7 +41,7 @@ Performance can be viewed as:
 
 Product performance ranks Products using immutable Order-item amounts and shows Product type, retained revenue, distinct Order count, and revenue share. Customer growth focuses on the first paid/refunded purchase or access grant for each customer. Payment health summarizes full-refund rate and failed-payment movement using aggregate trends, not individual sales events.
 
-Seven-day and 30-day periods use daily buckets. The 90-day period uses 13 grouped buckets. Membership summary data is intentionally empty and no Active memberships metric is returned because Membership commerce does not exist yet.
+Seven-day and 30-day periods use daily buckets. The 90-day period uses 13 grouped buckets. Membership summary and movement are shown when the aggregate includes Membership data; otherwise the Membership chart shows its empty-state presentation.
 
 If analytics data is unavailable, the page shows an unavailable state explaining that analytics trends need revenue, order, customer, membership, and payment analytics APIs. Individual chart sections also have empty-state presentation when a chart or ranking has no data.
 
@@ -50,7 +50,7 @@ On smaller screens, the Analytics layout collapses from multi-column grids into 
 ## Current limitations
 
 - The aggregate Analytics endpoint is server-backed from Commerce Orders, immutable Order items, and entitlements.
-- Membership summary and trend data remain empty until Membership commerce exists.
+- Membership summary and trend data depend on the aggregate response; Membership commerce actions are still unavailable.
 - Preset period selection is limited to Last 7 days, Last 30 days, and Last 90 days. It is not a custom date-range system.
 - The current UI does not provide traffic analytics, conversion funnels, attribution/source analytics, payouts, tax analytics, disputes, cohorts, course/content engagement analytics, exports, report building, custom dashboards, or custom dashboard configuration.
 

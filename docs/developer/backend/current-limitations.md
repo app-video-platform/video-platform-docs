@@ -52,9 +52,11 @@ These capabilities exist in the backend but are not complete end-to-end product
 flows in the current frontend:
 
 - Product-type customer delivery after Library entitlement listing
-- authorized customer Download delivery
+- authorized customer Download delivery beyond the current Product-page delivery path
 - full connected-calendar listing and disconnection
 - persisted Quiz play/submission integration across the customer learning UI
+- complete production-provider paid checkout
+- full paid purchase-history UI beyond the current Cart/Order status path
 
 Document them as backend capabilities in Developer Documentation, but keep the
 corresponding Product Documentation limitations until the UI exposes and tests
@@ -74,7 +76,7 @@ cleanup and clearer test-payment messaging rather than a missing backend route.
 - partial refunds and payment retries
 - taxes, coupons, disputes, invoices, or marketplace payouts
 - subscriptions and renewals
-- Membership/waitlist Customer relationships and Membership analytics
+- Membership/waitlist Customer relationships
 - editable Customer notes/tags and reporting exports
 - buyer-facing Membership access
 - Membership Product publishing and one-time checkout

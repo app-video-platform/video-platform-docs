@@ -23,6 +23,7 @@ Creators can:
 - Set meeting duration.
 - Select a meeting method.
 - Enter a custom location when the meeting method is Other.
+- Configure weekly availability with enabled days and time ranges.
 - Set buffer time before each meeting.
 - Set buffer time after each meeting.
 - Set a maximum number of sessions per day.
@@ -48,12 +49,12 @@ Consultation products use the shared builder areas:
 
 - Basics
 - Pricing
-- Consultation Details
+- Availability
 - Media
 
 ### Configure consultation details
 
-The Consultation Details area controls how the creator wants the session to be offered.
+The Availability area controls how the creator wants the session to be offered.
 
 Creators can choose a duration between 20 and 120 minutes in 5-minute increments.
 
@@ -65,16 +66,25 @@ The confirmation message is the message shown or sent after booking in the inten
 
 The cancellation policy lets creators choose from the available policy options.
 
-Weekly availability is saved with the Consultation. The builder always shows
-all seven weekdays, including disabled days. A draft can be incomplete, but
-publishing requires at least one enabled window with a start time before its
-end time and no overlapping windows on the same day.
+### Weekly availability
+
+Weekly availability is persisted with the Product's consultation details. The builder shows all seven weekdays, including disabled days. Each day can be enabled or disabled, and enabled days can contain one or more ordered time ranges.
+
+The builder validates enabled days locally: at least one range is required, start and end times are required, start must be before end, and overlapping ranges on the same day are shown as errors.
+
+### Calendar display
+
+The builder can show connected calendar information when it is present on the Product's consultation details and links creators to Settings for account-level calendar management. This is not a Product-level calendar selection contract.
+
+### Readiness
+
+Consultation readiness checks the session duration, meeting method, custom location when the method is Other, and valid weekly availability. A missing connected calendar is a warning, not a publication blocker.
 
 ## Current limitations
 
 - Creators can configure consultation product details, but customers cannot complete a full booking flow in the current frontend.
-- Weekly creator availability is persisted, but customer time-slot selection, rescheduling, cancellation by customers, and session management are not complete.
-- Connected calendars can be initiated from settings, but neither connected calendars nor persisted weekly availability provide a finished booking experience yet.
+- Calendar OAuth/provider completion, slot computation, time-slot selection, meeting-room creation, rescheduling, cancellation execution, and session management are not complete.
+- Persisted weekly availability is configuration only; it is not a finished customer booking system.
 - The confirmation message can be configured, but the full customer notification flow should not be documented as available yet.
 
 ## Related pages

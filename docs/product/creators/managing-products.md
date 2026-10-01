@@ -92,11 +92,25 @@ Landing-page configuration is persisted. If a saved configuration omits `visible
 
 Product Preview uses the owner's Creator Storefront configuration for creator-owner previews. Administrator previews use the Product owner's public Storefront theme and fall back to the default Storefront theme when public theme data is unavailable.
 
+## Product Workspace, media, and readiness
+
+Use **Edit product** to open the focused Product Workspace. The current workspace areas are:
+
+- **Basics** for Product identity and description.
+- **Pricing** for free/one-time pricing or Membership recurring pricing.
+- A Product-type-specific area: Curriculum, Files, Availability, or Content.
+- **Media** for Product-owned thumbnail, gallery, and promo video.
+- **Readiness** for known publish blockers, warnings, and backend readiness feedback.
+
+Product media is generic Product presentation media. Images support JPEG, PNG, WebP, and GIF up to 10 MB each. Promo videos support MP4 and WebM up to 100 MB. Galleries can contain up to 20 images and support ordering/removal. Product media is separate from Course lesson videos, Download deliverables, and Membership Video/Resource binary content.
+
+For supported non-Membership Products, Publish uses the Product Workspace readiness flow and then updates the Product with `status: PUBLISHED`. Backend readiness validation is authoritative and can return field-specific errors that appear in the Readiness area. Membership readiness can be shown, but Membership Product publishing remains unavailable. Unpublish is not implemented.
+
 ## Current limitations
 
 - Search, filtering, and sorting are applied to the products already loaded in the product list.
-- Product thumbnails, ordered galleries, and promo videos are persisted and returned with Product data. Some compact list surfaces use only the thumbnail.
-- Course, Download, and Consultation products can be published from Product Workspace after readiness validation. Membership publishing remains unavailable.
+- Product thumbnails, ordered galleries, and promo videos are persisted and returned with Product data. Some compact list surfaces use only the thumbnail. Product media does not cover Course lesson-video delivery or Membership native Video/Resource binary delivery.
+- Course, Download, and Consultation products can be published from Product Workspace after readiness validation. Membership publishing and Unpublish remain unavailable.
 - Product Overview does not provide product-specific revenue analytics, order history, customer counts, subscriber or member counts, conversion data, charts, ratings, reviews, Storefront visibility controls, access management, duplicate/archive actions, publish/unpublish controls, inline landing-page editing, or SEO controls.
 - Product Landing Page Builder does not provide arbitrary page-builder blocks, slideshows, presentations, custom domains, slugs, SEO controls, Product-specific theme overrides, checkout settings, waitlists, subscriptions, or entitlement/access management. Gallery and promo-video content are Product-owned and managed in Product Workspace.
 - Landing-page configuration is backend-persisted, while a dedicated combined

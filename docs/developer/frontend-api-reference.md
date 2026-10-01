@@ -63,6 +63,8 @@ Current server-backed Creator and presentation contracts include:
 - Creator Dashboard aggregate summary.
 - Product Landing Page config reads and Creator config updates.
 - Public Storefront read model and Creator Storefront configuration/update, including theme, featured Product selection, and Product ordering.
+- Product media upload/remove/reorder operations for thumbnail, gallery images, and Product promo video.
+- Commerce checkout session creation and buyer Order-status reads for the current Cart checkout flow.
 
 Ownership boundaries matter for these frontend contracts. The current backend
 Product contract is authoritative for Product identity, type, name,
@@ -80,6 +82,8 @@ backend DTO. Frontend `productTitle`/`amountMinor` correspond to backend
 `itemId` and `quantity`. Current Cart completion uses Order status and total, so
 the flow works, but these interfaces and fixtures should be aligned before new
 item-level UI depends on them.
+
+For supported non-Membership Products, Product publication uses Product update with `status: PUBLISHED`. Backend readiness validation can return structured `422` field errors that the Product Workspace Readiness UI displays. Membership publishing remains unavailable.
 
 Membership service comments that still say `BACKEND CONTRACT NOT YET
 IMPLEMENTED` are stale. The runtime routes are implemented, but binary media,

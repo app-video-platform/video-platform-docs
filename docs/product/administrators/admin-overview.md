@@ -45,7 +45,7 @@ Admin product management uses the same product builder used by Creators. The Adm
 
 - Admins can change a user's role, but the UI does not expose custom permissions or bulk user actions.
 - Admin product editing inherits the same product-builder limitations documented for Creators.
-- The Admin area does not provide a complete publishing, checkout, payment, or entitlement workflow.
+- Admin product editing uses the same Product Workspace capability and limitations as Creator product editing. The Admin area does not provide separate checkout, production payment, refund, or entitlement-management workflows.
 
 ## Related pages
 

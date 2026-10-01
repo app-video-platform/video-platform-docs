@@ -9,7 +9,7 @@ sidebar_position: 3
 
 Product Landing Pages are public pages for viewing an individual product.
 
-The current page uses real product information where it is available, including product name, type, description, price, product image, and type-specific summaries. It is different from the Creator Product Overview and Product Workspace.
+The current page uses real product information where it is available, including product name, type, description, price, Product media, and type-specific summaries. It is different from the Creator Product Overview and Product Workspace.
 
 ## Who can use this
 
@@ -37,6 +37,8 @@ Published products render through the public Product Landing Page. The page inhe
 
 Product-specific landing-page configuration is server-backed for the current marketing copy, hero layout, supported section visibility, and supported section order behavior.
 
+If the saved configuration omits `visibleSections`, the frontend applies the default optional section set. If `visibleSections` is explicitly saved as an empty array, the Product Landing Page intentionally shows no optional sections.
+
 The page can show type-specific summaries:
 
 - **Course**: module/section count, lesson count, curriculum outline, lesson titles, and lesson types.
@@ -44,7 +46,7 @@ The page can show type-specific summaries:
 - **Consultation**: public-relevant configured details such as duration, meeting method, buffers, daily availability, booking messages, policies, and connected calendar availability when present.
 - **Membership**: conservative product information and recurring pricing. It does not show subscriber counts, active members, revenue, entitlement state, or Membership feed details.
 
-Creators configure product-specific public presentation from the Product Landing Page Builder. Product-owned fields such as name, description, price, product status, thumbnail, and product contents are edited from Product Workspace instead.
+Creators configure product-specific public presentation from the Product Landing Page Builder. Product-owned fields such as name, description, price, product status, thumbnail, gallery, promo video, and product contents are edited from Product Workspace instead.
 
 ## Current limitations
 

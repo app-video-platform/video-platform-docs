@@ -57,7 +57,6 @@ Creators can:
 - Edit course, download, and consultation product details.
 - Manage the Creator Storefront.
 - Access Customers.
-- Access creator marketing screens.
 - Access sales, analytics, and settings screens.
 - Complete onboarding screens.
 
@@ -95,7 +94,6 @@ Access is based on the user's active role.
 | Library | No | Yes | No | Yes |
 | Creator product management | No | No | Yes | Yes |
 | Creator Storefront Builder | No | No | Yes | No |
-| Creator marketing | No | No | Yes | Yes |
 | Customers page | No | No | Yes | No |
 | Sales page | No | No | Yes | No |
 | Analytics page | No | No | Yes | No |
@@ -104,7 +102,8 @@ Access is based on the user's active role.
 ## Current limitations
 
 - The cart route is protected even though product browsing is public.
-- Public Product Landing Pages support signed-in free enrollment, access checks, and eligible one-time checkout initiation. Production payment completion is unavailable without a real provider.
+- Public Product Landing Pages can offer free enrollment, paid cart actions, existing-access states, owner edit actions, or Membership-unavailable states depending on the Product and signed-in user.
+- Cart checkout supports eligible paid non-Membership Products through the current Commerce flow, but no production payment provider or real charging is configured.
 - Some navigation items point to areas that are not fully implemented, such as messages.
 - Password reset screens are visible, but the full reset workflow is not currently connected end to end.
 
