@@ -1,0 +1,46 @@
+[
+  {
+    "path": "/app/my-page-preview",
+    "url": "https://app.serious-debauchery.click/app/storefront",
+    "signInVisible": false
+  },
+  {
+    "path": "/app/help",
+    "url": "https://app.serious-debauchery.click/app",
+    "signInVisible": false
+  },
+  {
+    "path": "/app/dashboard",
+    "url": "https://app.serious-debauchery.click/auth/login",
+    "signInVisible": false
+  },
+  {
+    "path": "/app/unknown",
+    "url": "https://app.serious-debauchery.click/auth/login",
+    "signInVisible": false
+  },
+  {
+    "path": "/app/my-page-preview",
+    "attempt": 2,
+    "url": "https://app.serious-debauchery.click/auth/login",
+    "signInButtonVisible": true
+  },
+  {
+    "path": "/app/help",
+    "attempt": 2,
+    "url": "https://app.serious-debauchery.click/auth/login",
+    "signInButtonVisible": true
+  },
+  {
+    "path": "/app/dashboard",
+    "attempt": 2,
+    "url": "https://app.serious-debauchery.click/auth/login",
+    "signInButtonVisible": true
+  },
+  {
+    "path": "/app/unknown",
+    "attempt": 2,
+    "url": "https://app.serious-debauchery.click/auth/login",
+    "signInButtonVisible": true
+  }
+]

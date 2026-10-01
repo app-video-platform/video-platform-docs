@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/unknown",
+    "url": "https://app.serious-debauchery.click/unknown",
+    "bodyText": "",
+    "has404": false
+  },
+  {
+    "path": "/terms",
+    "url": "https://app.serious-debauchery.click/terms",
+    "bodyText": "",
+    "has404": false
+  },
+  {
+    "path": "/privacy",
+    "url": "https://app.serious-debauchery.click/privacy",
+    "bodyText": "",
+    "has404": false
+  },
+  {
+    "path": "/cookies",
+    "url": "https://app.serious-debauchery.click/cookies",
+    "bodyText": "",
+    "has404": false
+  },
+  {
+    "path": "/resend-verification",
+    "url": "https://app.serious-debauchery.click/resend-verification",
+    "bodyText": "",
+    "has404": false
+  },
+  {
+    "path": "/auth/unknown",
+    "url": "https://app.serious-debauchery.click/auth/unknown",
+    "bodyText": "",
+    "has404": false
+  }
+]

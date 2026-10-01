@@ -1,0 +1,4 @@
+{
+  "direct": "- region \"Notifications alt+T\"\n- heading \"Check your email\" [level=2]\n- paragraph: We’ve sent a verification email to your address. Please follow the link in the email to verify your account.",
+  "reloaded": "- region \"Notifications alt+T\"\n- heading \"Check your email\" [level=2]\n- paragraph: We’ve sent a verification email to your address. Please follow the link in the email to verify your account."
+}

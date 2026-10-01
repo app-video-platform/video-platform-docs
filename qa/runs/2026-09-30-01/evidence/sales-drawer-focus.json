@@ -1,0 +1,17 @@
+{
+  "initial": {
+    "focus": "Close drawer",
+    "overflow": "hidden"
+  },
+  "last": {
+    "name": "Sort orders",
+    "tag": "SELECT"
+  },
+  "first": "Close drawer",
+  "filteredSnapshot": "- region \"Notifications alt+T\"\n- button \"Open navigation\":\n- generic: Galactica\n- button \"T\":\n  - generic: Tamas Tyukodi\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 0\n      - generic: — No change\n    - article:\n      - generic: Orders\n      - strong: \"0\"\n      - generic: — No change\n    - article:\n      - generic: Refunds\n      - strong: EUR 0\n      - generic: — No change\n    - article:\n      - generic: Failed payments\n      - strong: \"0\"\n      - generic: — No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - button \"Filters (2)\":\n      - generic: Filters (2)\n  - generic: 0 orders\n  - button \"Clear filters\":\n    - generic: Clear filters\n  - heading \"No orders match these filters.\" [level=2]\n  - button \"Clear filters\":\n    - generic: Clear filters\n- button \"Close drawer\"\n- dialog \"Filters\":\n  - banner:\n    - heading \"Filters\" [level=2]\n    - button \"Close drawer\" [active]:\n  - combobox \"Select sales date range\":\n    - option \"Today\"\n    - option \"Last 7 days\"\n    - option \"Last 30 days\" [selected]\n    - option \"Last 90 days\"\n  - combobox \"Filter orders by status\":\n    - option \"All statuses\"\n    - option \"Paid\" [selected]\n    - option \"Failed\"\n    - option \"Refunded\"\n    - option \"Pending\"\n  - combobox \"Filter orders by product\":\n    - option \"All products\"\n    - option \"Astazi\"\n    - option \"Call2?\"\n    - option \"Call?\"\n    - option \"course try\"\n    - option \"Coursee\"\n    - option \"Descarca!\"\n    - option \"Downloaaad\"\n    - option \"Download trying\"\n    - option \"How to cook\"\n    - option \"QA-2026-09-30-01 Consultation\"\n    - option \"QA-2026-09-30-01 Course\" [selected]\n    - option \"QA-2026-09-30-01 Download B\"\n    - option \"QA-2026-09-30-01 Membership\"\n  - combobox \"Sort orders\":\n    - option \"Newest first\"\n    - option \"Oldest first\"\n    - 'option \"Amount: high to low\" [selected]'\n    - 'option \"Amount: low to high\"'",
+  "afterEscape": {
+    "dialogs": 0,
+    "focus": "Filters (2)",
+    "overflow": ""
+  }
+}

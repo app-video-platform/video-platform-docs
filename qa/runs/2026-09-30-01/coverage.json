@@ -6,8 +6,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-001 \u2014 Public application routes\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Published fixtures for each product type and a Creator storefront.\n- **Steps:** Direct-load and reload /app/explore, /app/explore/search?term=sample, /app/product/{id}, /app/product/{id}/{type}, /app/store/{creatorId} as each role.\n- **Expected results:** Routes are not role-guarded; public data and actions follow the feature-specific cases below, without granting protected content.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "NAV-002",
@@ -118,8 +119,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-008 \u2014 Authentication loading and null state\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Fresh startup with slow profile response; separately logout leaves null authentication.\n- **Steps:** Direct-load protected routes while profile request is pending, then let it fail; repeat immediately after local logout.\n- **Expected results:** Loading spinner is defined; expected result needs investigation for null and nonloading authentication because ProtectedRoute renders children whereas false redirects.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "NAV-009",
@@ -138,8 +140,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-010 \u2014 Legacy and unknown application URLs\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Each signed-in role; Guest separately.\n- **Steps:** Open /app/my-page-preview, /app/help, /app/dashboard and /app/unknown.\n- **Expected results:** Legacy preview redirects to Storefront and its role gate; other unmatched app paths redirect through the protected /app fallback, not to a new Help or dashboard capability.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 8
   },
   {
     "id": "NAV-011",
@@ -148,8 +151,17 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-011 \u2014 Unknown marketing and auth routes\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Guest.\n- **Steps:** Open /unknown, /terms, /privacy, /cookies, /resend-verification and /auth/unknown.\n- **Expected results:** expected result needs investigation: the catch-all MarketingRouter can consume unmatched paths without a nested fallback; do not assume the outer 404 page appears.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 6,
+    "expanded_variation_ids": [
+      "guest-unknown",
+      "guest-terms",
+      "guest-privacy",
+      "guest-cookies",
+      "guest-resend-verification",
+      "guest-auth-unknown"
+    ]
   },
   {
     "id": "NAV-012",
@@ -158,8 +170,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-012 \u2014 Development routes\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Development and production frontend builds.\n- **Steps:** Open /dev-dashboard and /__routes-dev; follow Normal Dashboard and landing links.\n- **Expected results:** /dev-dashboard is unguarded in both builds; Normal Dashboard targets /app/dashboard then app fallback. /__routes-dev exists only in development; production follows unmatched-route behavior.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 8
   },
   {
     "id": "NAV-013",
@@ -168,8 +181,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-013 \u2014 Management and focused shells\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Creator/Admin on supported routes.\n- **Steps:** Navigate Products list \u2192 Overview \u2192 Workspace \u2192 private Preview \u2192 landing builder; compare sidebar and marketplace navbar.\n- **Expected results:** Management routes use creator shell, workspace create/edit use focused shell; expected result needs investigation for private Preview because AppLayout does not include its route in creator-shell matching.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "NAV-014",
@@ -220,8 +234,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-001 \u2014 Marketing route /\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Fresh page; desktop and narrow viewport.\n- **Steps:** Direct-load /; inspect page navigation and visible links; reload and use Back.\n- **Expected results:** The mapped marketing page renders with shared navigation/footer. Promotional content is not proof of corresponding backend functionality; actions must use the destination cases in this catalog.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "MKT-002",
@@ -230,8 +245,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-002 \u2014 Marketing route /about\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Fresh page; desktop and narrow viewport.\n- **Steps:** Direct-load /about; inspect page navigation and visible links; reload and use Back.\n- **Expected results:** The mapped marketing page renders with shared navigation/footer. Promotional content is not proof of corresponding backend functionality; actions must use the destination cases in this catalog.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "MKT-003",
@@ -240,8 +256,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-003 \u2014 Marketing route /pricing\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Fresh page; desktop and narrow viewport.\n- **Steps:** Direct-load /pricing; inspect page navigation and visible links; reload and use Back.\n- **Expected results:** The mapped marketing page renders with shared navigation/footer. Promotional content is not proof of corresponding backend functionality; actions must use the destination cases in this catalog.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "MKT-004",
@@ -250,8 +267,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-004 \u2014 Marketing route /contact\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Fresh page; desktop and narrow viewport.\n- **Steps:** Direct-load /contact; inspect page navigation and visible links; reload and use Back.\n- **Expected results:** The mapped marketing page renders with shared navigation/footer. Promotional content is not proof of corresponding backend functionality; actions must use the destination cases in this catalog.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "MKT-005",
@@ -260,8 +278,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-005 \u2014 Marketing route /getting-started\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Fresh page; desktop and narrow viewport.\n- **Steps:** Direct-load /getting-started; inspect page navigation and visible links; reload and use Back.\n- **Expected results:** The mapped marketing page renders with shared navigation/footer. Promotional content is not proof of corresponding backend functionality; actions must use the destination cases in this catalog.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "MKT-006",
@@ -270,8 +289,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-006 \u2014 Marketing route /features\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Fresh page; desktop and narrow viewport.\n- **Steps:** Direct-load /features; inspect page navigation and visible links; reload and use Back.\n- **Expected results:** The mapped marketing page renders with shared navigation/footer. Promotional content is not proof of corresponding backend functionality; actions must use the destination cases in this catalog.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "MKT-007",
@@ -280,8 +300,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-007 \u2014 Marketing route /help\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Fresh page; desktop and narrow viewport.\n- **Steps:** Direct-load /help; inspect page navigation and visible links; reload and use Back.\n- **Expected results:** The mapped marketing page renders with shared navigation/footer. Promotional content is not proof of corresponding backend functionality; actions must use the destination cases in this catalog.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "MKT-008",
@@ -290,8 +311,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-008 \u2014 Marketing route /demo\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Fresh page; desktop and narrow viewport.\n- **Steps:** Direct-load /demo; inspect page navigation and visible links; reload and use Back.\n- **Expected results:** The mapped marketing page renders with shared navigation/footer. Promotional content is not proof of corresponding backend functionality; actions must use the destination cases in this catalog.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "MKT-009",
@@ -300,8 +322,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-009 \u2014 Contact submission remains local\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Synthetic first/last name, email, topic and message; no personal data.\n- **Steps:** Open /contact; submit empty required fields, then complete them and submit.\n- **Expected results:** Native required constraints apply; valid submission prevents default and does not send a message or create a support record.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "MKT-010",
@@ -320,8 +343,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-011 \u2014 Pricing and demo interaction\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Static pricing/demo pages.\n- **Steps:** Use pricing carousel controls and keyboard; on /demo select each step and return to the first.\n- **Expected results:** Presentation selection changes locally; no subscription, payment or Product is created.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "MKT-012",
@@ -330,8 +354,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-012 \u2014 Footer unavailable destinations\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Marketing footer visible.\n- **Steps:** Follow terms/privacy/cookies and social placeholder links; follow Help, Contact and Contact FAQ anchors.\n- **Expected results:** Existing marketing links route normally; legal destinations are absent and social placeholders do not establish external social profiles. Unknown-route result follows NAV-011.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 10
   },
   {
     "id": "MKT-013",
@@ -340,8 +365,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-013 \u2014 Marketing primary navigation and home CTAs\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Guest, then authenticated User/Creator/Admin.\n- **Steps:** Use Home/About/Pricing/Getting Started/Contact navigation; click Sign In/Register as Guest; use Go to Dashboard when signed in; click home hero/footer CTAs.\n- **Expected results:** Guest actions reach /auth/login or /auth/signup; signed-in Dashboard reaches role home; home pricing CTAs reach /pricing and main app CTA follows /app authentication gate.\n- **Required environment / external service:** Frontend build; backend for authentication transition only.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 16
   },
   {
     "id": "MKT-014",
@@ -350,8 +376,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-014 \u2014 Help search and articles unavailable\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Guest on /help.\n- **Steps:** Type in help search; activate category/article text; use Contact Support.\n- **Expected results:** Search is a fixed empty input without search handler and categories/articles are static, not knowledge-base navigation. Contact Support reaches /contact; no support ticket is sent.\n- **Required environment / external service:** Frontend build; backend for authentication transition only.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "MKT-015",
@@ -360,8 +387,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-015 \u2014 FAQ expansion\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. /help and /contact with FAQ panels.\n- **Steps:** Activate each FAQ with pointer and keyboard; expand/collapse and revisit page.\n- **Expected results:** Implemented expansion panels reveal/hide static content; accessibility of header activation needs investigation from shared panel semantics; FAQ claims do not enable absent commerce/Membership features.\n- **Required environment / external service:** Frontend build; backend for authentication transition only.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 6
   },
   {
     "id": "MKT-016",
@@ -370,8 +398,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-016 \u2014 Pricing carousel wrap and selected plan\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. /pricing default selection.\n- **Steps:** Activate each plan selector; previous from first and next from last; repeat ArrowLeft/Right if supported; refresh.\n- **Expected results:** Selected plan wraps using modular index, displayed details follow animation; refresh resets selection. Purchasing a platform plan remains unavailable.\n- **Required environment / external service:** Frontend build; backend for authentication transition only.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 8
   },
   {
     "id": "MKT-017",
@@ -476,8 +505,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### AUTH-009 \u2014 Email sent screen\n\n- **Feature area:** Registration, sign-in and account recovery. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest with isolated synthetic account fixtures. Guest; no registration prerequisite for direct route.\n- **Steps:** Open /auth/email-sent and reload.\n- **Expected results:** Static confirmation guidance renders; visiting the screen alone neither sends email nor enables an account.\n- **Required environment / external service:** Frontend and backend; synthetic credentials supplied privately by fixtures; SendGrid test mailbox for email flows.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 1
   },
   {
     "id": "AUTH-010",
@@ -537,8 +567,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### AUTH-015 \u2014 Forgot password email step\n\n- **Feature area:** Registration, sign-in and account recovery. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest with isolated synthetic account fixtures. Guest on /auth/forgot-password.\n- **Steps:** Submit malformed/empty email; then valid synthetic email; activate Back to Sign In.\n- **Expected results:** Invalid input is blocked; valid input advances locally without sending recovery mail. Back to Sign In has no handler.\n- **Required environment / external service:** Frontend and backend; synthetic credentials supplied privately by fixtures; SendGrid test mailbox for email flows.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "AUTH-016",
@@ -577,8 +608,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### AUTH-019 \u2014 Google invalid identity rejection\n\n- **Feature area:** Registration, sign-in and account recovery. **Test level:** deployed-service integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest with isolated synthetic account fixtures. Invalid/expired/wrong-audience/unverified ID token fixtures.\n- **Steps:** POST /api/auth/googleSignIn for each token class.\n- **Expected results:** Invalid identity is rejected with 401.\n- **Required environment / external service:** Isolated Google identity integration environment; no real user tokens.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "AUTH-020",
@@ -671,8 +703,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### AUTH-028 \u2014 Recovery resend and incomplete code\n\n- **Feature area:** Registration, sign-in and account recovery. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest in local recovery wizard. Recovery email step completed using synthetic email; code blank orpartial.\n- **Steps:** Click Send it again; click Continue without completing fourdigits; finish local password step and reload login.\n- **Expected results:** Resend only logs locally, no mail request; Continue moves to step3 without OTP verification; no backend credential change is established.\n- **Required environment / external service:** Frontend only; no recovery mail/password API exists.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "SEC-001",
@@ -683,7 +716,7 @@
     "instructions": "### SEC-001 \u2014 Protected endpoint authentication\n\n- **Feature area:** Session, API security and feature flags. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 authentication or data boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and authenticated role fixtures. No JWT cookie; valid test entity IDs. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /api/user/userInfo, /api/entitlements/me, /api/commerce/orders/{id}, /api/admin/users and /; repeat with expired/malformed JWT cookies.\n- **Expected results:** No private data is returned; valid cookies are required. Exact filter-originated error body/status needs investigation where exceptions occur before controller advice.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 8
+    "recorded_variations": 12
   },
   {
     "id": "SEC-002",
@@ -751,8 +784,9 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### SEC-007 \u2014 Refresh missing or expired token\n\n- **Feature area:** Session, API security and feature flags. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 authentication or data boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and authenticated role fixtures. No refresh cookie, expired and unknown refresh fixtures. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST /api/auth/refresh once per fixture.\n- **Expected results:** 401 authentication failure; no usable new session.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "SEC-008",
@@ -821,8 +855,9 @@
     "level": "deployed-service integration",
     "priority": "P0",
     "instructions": "### SEC-014 \u2014 CORS origin and preflight matrix\n\n- **Feature area:** Session, API security and feature flags. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 authentication or data boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and authenticated role fixtures. Approved origin, unapproved synthetic origin and local-development origin.\n- **Steps:** Send credentialed preflight and actual GET/POST/PUT/PATCH/DELETE requests from each origin.\n- **Expected results:** Configured allowlist supports credentials and listed methods; unlisted origins cannot read credentialed responses. expected result needs investigation for local UI defaults because no localhost origin is listed.\n- **Required environment / external service:** Configured HTTPS deployment and origin-isolated test harness.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 21
   },
   {
     "id": "SEC-015",
@@ -884,7 +919,7 @@
     "instructions": "### PROF-005 \u2014 Settings profile validation\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. Profile tab; bio/tagline/website boundary fixtures.\n- **Steps:** Submit invalid bio/tagline lengths and malformed website; correct each field.\n- **Expected results:** Local validation displays errors; valid submission remains local-only. Disabled login email cannot be edited here.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 3
+    "recorded_variations": 4
   },
   {
     "id": "PROF-006",
@@ -893,8 +928,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-006 \u2014 Avatar controls\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. Profile tab.\n- **Steps:** Use Change/Remove profile image controls.\n- **Expected results:** No avatar persistence operation is wired; no uploaded profile image should be claimed.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "PROF-007",
@@ -903,8 +939,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-007 \u2014 Account settings unavailable actions\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. Account tab with synthetic matching/new credential inputs.\n- **Steps:** Exercise password minimum/mismatch validation, timezone/currency changes, Save, Cancel and Delete Account.\n- **Expected results:** Controls are local/inert; no password, timezone, currency or account deletion API is called; deletion copy does not establish a 30-day server process.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "PROF-008",
@@ -913,8 +950,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-008 \u2014 Payment settings local data\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. Payment tab.\n- **Steps:** Edit business/VAT fields and click Connect; reload.\n- **Expected results:** No payment-account connection or persisted business settings are supported.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "PROF-009",
@@ -923,8 +961,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-009 \u2014 Placeholder settings tabs\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. Subscriptions, Privacy and Notifications tabs.\n- **Steps:** Open each, enter short/long placeholder input variants, navigate away and reload.\n- **Expected results:** Placeholder validation/local state only; no subscription management, privacy change or notification-preference persistence.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 9
   },
   {
     "id": "PROF-010",
@@ -1013,8 +1052,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-018 \u2014 Social platform editor interaction\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Signed-in User/Creator/Admin. Onboarding Additional or Settings Profile; existing synthetic social link.\n- **Steps:** Select platform circle; edit URL and confirm by button/Enter; reopen same platform; click outside; clear value and confirm.\n- **Expected results:** Local platform entry updates without duplicate platform entry; closing input alone does not prove persisted profile update. Onboarding can PUT links; Settings remains local-only; blank removal behavior needs investigation if retained blank URL reaches DTO validation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 6
   },
   {
     "id": "PROF-019",
@@ -1033,8 +1073,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-001 \u2014 Explore catalog and local actions\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Published fixtures of COURSE, DOWNLOAD and CONSULTATION; mixed owners and prices.\n- **Steps:** Open /app/explore; inspect title/type/date/price; View Product; return and add to cart twice; toggle wishlist twice.\n- **Expected results:** Summary cards render; View Product resolves ID route, duplicate cart addition disables, wishlist toggles locally. Placeholder images are not proof of stored media rendering.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "DISC-002",
@@ -1107,8 +1148,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-008 \u2014 Autocomplete failure and dismissal\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Visible suggestions; reject next query; press Escape and click outside.\n- **Steps:** Inspect dropdown and submit search after recovery.\n- **Expected results:** expected result needs investigation for dismissal/error feedback: component has no Escape handler or explicit query error UI; absence of suggestions must not imply no server matches.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "DISC-009",
@@ -1119,7 +1161,7 @@
     "instructions": "### DISC-009 \u2014 Search matching and pagination\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. More than20 products; title and Creator first/last name matches including mixed case.\n- **Steps:** Open /app/explore/search?term={term}; use Next/Prev and reload page2.\n- **Expected results:** Search matches name or Creator name case-insensitively, default newest first; page size20 and URL page state persist; boundaries disable navigation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 3
   },
   {
     "id": "DISC-010",
@@ -1139,8 +1181,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-011 \u2014 Search URL state conflicts\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Page2 of a large result; new term with only one page; malformed/negative page query.\n- **Steps:** Change term through navbar, browser Back/Forward and direct page query.\n- **Expected results:** expected result needs investigation: page state initializes from URL but does not reset on term changes or synchronize later history changes; first-page label uses a truthy number check.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 5
   },
   {
     "id": "DISC-012",
@@ -1170,8 +1213,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-014 \u2014 Public Product loading and stale IDs\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Two different products; delayed second response.\n- **Steps:** Open first then navigate to second and reload; fail second fetch.\n- **Expected results:** Old Product is cleared/ID-checked; loading or unavailable state must not expose previous Product as the new one.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "DISC-015",
@@ -1201,8 +1245,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-017 \u2014 Guest free enrollment call to action\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Free published Course/Download/Consultation.\n- **Steps:** Click free-access primary action.\n- **Expected results:** Navigate to login; no entitlement is granted anonymously.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "DISC-018",
@@ -1243,8 +1288,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-021 \u2014 Product lesson rendering conflict\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Entitled Course with HTML fixture and article saved through current Tiptap editor.\n- **Steps:** Open Product lesson content for both; include inert unsafe-markup fixture.\n- **Expected results:** HTML is sanitized before rendering; expected result needs investigation for editor JSON stored as a string and rendered as HTML. Do not assume rich-text round-trip works.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "DISC-022",
@@ -1253,8 +1299,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-022 \u2014 Absent course progress and learner quiz UI\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Entitled Course with VIDEO/ARTICLE/QUIZ lessons.\n- **Steps:** Read content, reload and revisit Library; inspect QUIZ lesson.\n- **Expected results:** No implemented learner quiz submission/player route, completion tracking, resume progress or certificate workflow is exposed; backend quiz APIs are covered separately.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "DISC-023",
@@ -1326,8 +1373,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-005 \u2014 Secondary list actions\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Draft, Hidden and Published products.\n- **Steps:** Open row action menu where present; follow Preview.\n- **Expected results:** Published products may expose public Preview; no fake Delete/Duplicate/Archive/Publish/Unpublish list action is supplied for unsupported actions.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "PROD-006",
@@ -1336,8 +1384,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-006 \u2014 Overview per type\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Owned Course/Download/Consultation/Membership fixtures with content and media.\n- **Steps:** Open /app/products/{id}; inspect summaries; use Edit Product, landing-page builder, preview and Back.\n- **Expected results:** Overview is read-only; section/lesson/file counts and Consultation fields derive from Product; navigation uses respective management routes.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 9
   },
   {
     "id": "PROD-007",
@@ -1358,7 +1407,7 @@
     "instructions": "### PROD-008 \u2014 Create initial drafts\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. One synthetic name for each of COURSE/DOWNLOAD/CONSULTATION/MEMBERSHIP.\n- **Steps:** Open /app/products/create; choose type/name; submit once; reload resulting edit route.\n- **Expected results:** Server assigns ID/owner and DRAFT; browser replaces create route with /app/products/edit/{id}, Basics active. Course starts with server Draft section; Download does not imply a file upload.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 2
+    "recorded_variations": 4
   },
   {
     "id": "PROD-009",
@@ -1378,8 +1427,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-010 \u2014 Create whitespace and server errors\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Whitespace-only name; network failure and server rejection variants.\n- **Steps:** Submit create; restore backend and retry with real name.\n- **Expected results:** expected result needs investigation for whitespace-only draft because UI checks truthiness and Course/Download/Consultation draft permits incomplete name while Membership converter rejects blank names; server failures should retain editable form and avoid claiming successful creation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "PROD-011",
@@ -1486,7 +1536,7 @@
     "instructions": "### PROD-020 \u2014 Readiness navigation and warning separation\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Course/Download/Consultation with multiple blocking fields; no thumbnail or calendar.\n- **Steps:** Open Readiness; use each issue link; correct blockers; inspect warnings.\n- **Expected results:** Blocking issues link to relevant editor; image/calendar warnings do not alone block publication; server may reject additional constraints.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 4
   },
   {
     "id": "PROD-021",
@@ -1495,8 +1545,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-021 \u2014 Publish ready Course\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Course with trimmed name, nonnegative price, section and at least one lesson.\n- **Steps:** Click Publish; await shared save/validation; reload and open public route.\n- **Expected results:** Server accepts PUBLISHED; public metadata becomes visible and protected content stays access-controlled.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "PROD-022",
@@ -1908,8 +1959,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONTENT-001 \u2014 Section creation and explicit save\n\n- **Feature area:** Course and Download sections and lessons. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner; repeat authorized API mutations as Admin. Course and Download draft; existing sections.\n- **Steps:** Add section with trimmed title and description; save; reload workspace.\n- **Expected results:** POST /api/products/{p}/sections assigns ID and position; section persists and Product updated timestamp changes.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 5
   },
   {
     "id": "CONTENT-002",
@@ -1918,8 +1970,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONTENT-002 \u2014 Section create validation\n\n- **Feature area:** Course and Download sections and lessons. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner; repeat authorized API mutations as Admin. Whitespace/empty title and valid title variants.\n- **Steps:** Attempt UI creation; bypass using POST nested sections with blank title.\n- **Expected results:** UI trimmed validation and API @NotBlank reject blank create; valid section succeeds.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "CONTENT-003",
@@ -1928,8 +1981,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONTENT-003 \u2014 Section edit persistence\n\n- **Feature area:** Course and Download sections and lessons. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner; repeat authorized API mutations as Admin. Existing Course/Download section.\n- **Steps:** Change title/description; wait at least2seconds; reload; PATCH only description separately.\n- **Expected results:** Changed fields persist; omitted fields remain. Explicit empty PATCH title has no DTO NotBlank rule, so expected result needs investigation versus create validation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "CONTENT-004",
@@ -1938,8 +1992,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONTENT-004 \u2014 Section ordering\n\n- **Feature area:** Course and Download sections and lessons. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner; repeat authorized API mutations as Admin. Three sections with distinct content.\n- **Steps:** Move sections using editor controls; wait for all PATCHes; reload.\n- **Expected results:** Position-based order persists when all child updates succeed; no content is moved to another Product.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "CONTENT-005",
@@ -1968,8 +2023,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONTENT-007 \u2014 Lesson creation types\n\n- **Feature area:** Course and Download sections and lessons. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner; repeat authorized API mutations as Admin. Course section; VIDEO, ARTICLE and QUIZ fixtures.\n- **Steps:** Add one lesson of each type with title; save and reload.\n- **Expected results:** Nested POST persists title/type/description/position; VIDEO keeps videoUrl, ARTICLE keeps content, QUIZ clears both. Quiz definition is separate from lesson creation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "CONTENT-008",
@@ -1988,8 +2044,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONTENT-009 \u2014 Lesson rename, description and ordering\n\n- **Feature area:** Course and Download sections and lessons. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner; repeat authorized API mutations as Admin. Three Course lessons.\n- **Steps:** Edit title/description, reorder, wait for autosave, reload.\n- **Expected results:** Latest saved fields/positions rehydrate and updated timestamps advance; other section content remains.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "CONTENT-010",
@@ -2018,8 +2075,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONTENT-012 \u2014 Article editor round-trip\n\n- **Feature area:** Course and Download sections and lessons. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner; repeat authorized API mutations as Admin. ARTICLE lesson; formatted text, list and link fixture.\n- **Steps:** Edit body, wait autosave, reopen editor, then read public Product with entitlement.\n- **Expected results:** Editor serializes Tiptap JSON; expected result needs investigation for reopened data and public HTML renderer compatibility; no unverified formatting success assertion.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "CONTENT-013",
@@ -2028,8 +2086,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONTENT-013 \u2014 Video lesson selection boundary\n\n- **Feature area:** Course and Download sections and lessons. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner; repeat authorized API mutations as Admin. VIDEO lesson and small synthetic video file.\n- **Steps:** Select file, wait autosave, reload and attempt viewing through entitled Product.\n- **Expected results:** Current selection stores pending-video-asset:// metadata, not a completed binary upload. expected result needs investigation for playback; no delivered video claim.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "CONTENT-014",
@@ -2278,8 +2337,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### QUIZ-016 \u2014 Browser quiz wizard does not use author endpoint\n\n- **Feature area:** Quiz authoring and API-only learner evaluation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin for authoring; entitled User for play/submit; valid CSRF on writes. Creator editing QUIZ lesson.\n- **Steps:** Add/reorder/remove questions and answers, select correct answers, alter automatic/manual points and passing threshold; wait lesson autosave and reload.\n- **Expected results:** expected result needs investigation: quiz wizard sends quiz inside lesson POST/PATCH, but lesson DTO/service omit quiz while dedicated /api/lessons/{id}/quiz exists; totalPoints control also differs from totalScore model. Browser persistence is partial.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 5
   },
   {
     "id": "QUIZ-017",
@@ -2298,8 +2358,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### FILE-001 \u2014 Canonical upload lifecycle\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Small synthetic file with distinctive filename and bytes.\n- **Steps:** Select file in Download section; obtain GET /api/products/{p}/sections/{s}/files/presigned-url?filename={name}; PUT bytes to returned presignedUrl; POST confirm-upload; reload workspace.\n- **Expected results:** File appears only after lifecycle completes;201 confirmation returns persisted metadata; Product read suppresses permanent file URL. Actual byte delivery is separate entitlement flow.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "FILE-002",
@@ -2659,8 +2720,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### CAL-001 \u2014 Provider discovery\n\n- **Feature area:** Calendar provider integration. **Test level:** deployed-service integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator or Admin; provider test identity. Guest and signed-in role variants.\n- **Steps:** GET /api/calendars/providers; open Settings Calendar.\n- **Expected results:** GOOGLE, MICROSOFT and ICLOUD are listed; provider discovery is public and does not prove each connection adapter is complete.\n- **Required environment / external service:** HTTPS frontend/backend, provider test OAuth app, configured state-signing/encryption and redirect URIs; no real calendar data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "CAL-002",
@@ -2689,8 +2751,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### CAL-004 \u2014 Connect selection and popup failure\n\n- **Feature area:** Calendar provider integration. **Test level:** deployed-service integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator or Admin; provider test identity. No provider selected, then valid selection with popup blocked.\n- **Steps:** Click Connect for each; restore popup permission and retry.\n- **Expected results:** Selection validation blocks empty request; valid request attempts new window. Popup/error recovery needs investigation if no visible completion is wired.\n- **Required environment / external service:** HTTPS frontend/backend, provider test OAuth app, configured state-signing/encryption and redirect URIs; no real calendar data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "CAL-005",
@@ -2729,8 +2792,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### CAL-008 \u2014 ICloud unavailable\n\n- **Feature area:** Calendar provider integration. **Test level:** deployed-service integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator or Admin; provider test identity. ICLOUD selected.\n- **Steps:** POST connect; inspect response; attempt callback with synthetic fixture.\n- **Expected results:** Authorization URL is null and callback unsupported; no completed iCloud connection or calendar sync should be claimed.\n- **Required environment / external service:** HTTPS frontend/backend, provider test OAuth app, configured state-signing/encryption and redirect URIs; no real calendar data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "CAL-009",
@@ -3042,8 +3106,9 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### ACCESS-004 \u2014 Content read without access\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. Published Course with private article/video and Download with stored file; Guest and nonentitled authenticated account. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET canonical Product, legacy typed Product and full owner list.\n- **Expected results:** Public metadata/outlines remain, Course content/video are null and permanent Download URLs suppressed; no active entitlement is inferred from free price alone.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "ACCESS-005",
@@ -3052,8 +3117,9 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### ACCESS-005 \u2014 Content read with active access\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. ACTIVE entitlement; Course/Download in Published, Hidden and Draft variants. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET Product under entitled account; repeat as owner and Admin.\n- **Expected results:** Protected Course content is retained for entitlement/owner/Admin; Download URLs remain suppressed even for owner. Browser public route still rejects nonpublished statuses.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "ACCESS-006",
@@ -3695,7 +3761,7 @@
     "instructions": "### STORE-001 \u2014 Public storefront visibility and identity\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Creator with Published, Draft and Hidden Products; explicit publicEmail separate from login email.\n- **Steps:** Open /app/store/{creatorId}; GET /api/storefronts/{creatorId}.\n- **Expected results:** Only Published Products exposed; public profile includes explicit publicEmail and never falls back to login email; image may be null. Public read requires Creator role to still exist.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 2
+    "recorded_variations": 3
   },
   {
     "id": "STORE-002",
@@ -3724,8 +3790,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-004 \u2014 Public empty and missing storefront\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Creator with no Published Products; unknown ID and USER/ADMIN account IDs.\n- **Steps:** Open each /app/store/{id}.\n- **Expected results:** Existing Creator empty catalogue differs from unavailable/notfound; unknown or non-Creator account returns404 API.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "STORE-005",
@@ -3734,8 +3801,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-005 \u2014 Public loading and failure recovery\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Delayed/failed storefront GET; two Creator IDs.\n- **Steps:** Navigate between stores; fail second request; restore and reload.\n- **Expected results:** Loading/unavailable states replace failed data; expected result needs investigation for any stale prior-store content. Reload fetches requested Creator.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "STORE-006",
@@ -3744,8 +3812,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-006 \u2014 Default builder config\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Creator with no saved storefront row.\n- **Steps:** GET /api/creator/storefront; open /app/storefront.\n- **Expected results:** Default DARK/#ffbd41/MODERN with null config ID, no forced save merely for read; preview shows only published catalogue.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "STORE-007",
@@ -3754,8 +3823,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-007 \u2014 Theme preview versus save\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Existing storefront; LIGHT/DARK, MODERN/CLASSIC/FRIENDLY and valid color fixtures.\n- **Steps:** Change controls; inspect preview; reload before Save; repeat and Save then reload public page.\n- **Expected results:** Unsaved theme remains local; explicit Save persists configuration; public page reflects saved theme only.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "STORE-008",
@@ -3814,8 +3884,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-013 \u2014 Copy and open public link\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Creator with valid storefront; clipboard allowed/denied variants.\n- **Steps:** Click Copy link; paste into isolated text target; click Open storefront.\n- **Expected results:** Link is origin plus /app/store/{id}; copy success feedback resets after delay; denied clipboard returns idle without false copied state; Open uses separate window.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "STORE-014",
@@ -3864,8 +3935,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-018 \u2014 Public storefront anchors and Product opening\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest for presentation; Creator owner for public profile setup. Published featured Product and catalogue; optional public contacts.\n- **Steps:** Use brand/Products/Contact anchors, featured Product and catalogue actions.\n- **Expected results:** Anchors target catalogue/contact sections; Product actions navigate /app/product/{id}; no cart/purchase mutation merely from browsing storefront.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 5
   },
   {
     "id": "STORE-019",
@@ -3874,8 +3946,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-019 \u2014 Public profile links and optional contact\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest for presentation; Creator owner for public profile setup. Explicit publicEmail; website with scheme, schemeless website and synthetic social URL variants.\n- **Steps:** Open Storefront and click website/social/mail links in isolated browser; repeat without publicEmail.\n- **Expected results:** Public email uses mailto only explicit publicEmail; external links open new target with noreferrer. expected result needs investigation for unsafe/schemeless URL handling because profile DTO lacks scheme validation and links use raw values.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "STORE-020",
@@ -3884,8 +3957,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-020 \u2014 No selected featured Product fallback\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest for presentation; Creator owner for public profile setup. Storefront API featuredProductId null or invalid, with twoPublished Products.\n- **Steps:** Load public Storefront and builder preview; inspect featured display.\n- **Expected results:** API returns null for unavailable selection, but frontend view model chooses first public Product as fallback; no hidden Product should be promoted. This differs from interpreting null as no featured area.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "STORE-021",
@@ -3904,8 +3978,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-001 \u2014 Landing defaults without row\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Product with no landing config.\n- **Steps:** Open /app/products/{p}/landing-page; GET /api/creator/products/{p}/landing-page.\n- **Expected results:** Default marketing description empty, hero MEDIA_RIGHT, CONTENTS/CREATOR visible and order ABOUT/CONTENTS/CREATOR; no need to publish/save Product to read manager defaults.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "LAND-002",
@@ -3914,8 +3989,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-002 \u2014 Landing local preview, save and reload\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Saved config and editable Product.\n- **Steps:** Change marketing description, hero side, visibility and section order; inspect preview; Save; reload public page for Published Product.\n- **Expected results:** Changes affect local preview then persisted config; Product name/price/details/Creator profile remain read-only in builder and status unchanged.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "LAND-003",
@@ -3924,8 +4000,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-003 \u2014 Landing reset and unsaved navigation\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Unsaved config modifications.\n- **Steps:** Reset then navigate away/reload; repeat unsaved changes without Save.\n- **Expected results:** Reset restores last saved config; reload uses server config, not presumed autosaved local customization.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "LAND-004",
@@ -3934,8 +4011,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-004 \u2014 Landing description validation\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Descriptions1200/1201 characters; complete valid layout lists.\n- **Steps:** Enter boundary in UI; PATCH oversize through API.\n- **Expected results:** UI max1200; API400 for oversize; previous saved description remains.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "LAND-005",
@@ -3954,8 +4032,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### LAND-006 \u2014 Landing lifecycle public read\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Published, Draft and Hidden Products; owner/Admin sessions and Guest. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /api/products/{p}/landing-page for each; GET manager path as owner.\n- **Expected results:** Public config only Published; nonpublished404 even owner; authorized manager path reads Draft/Hidden config.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "LAND-007",
@@ -3994,8 +4073,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-010 \u2014 Private preview per lifecycle\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Owner Creator with Draft/Hidden/Published Product.\n- **Steps:** Open /app/products/{p}/preview; inspect status strip, content and Back to workspace; reload.\n- **Expected results:** Manager Product/config read renders saved state across statuses; Back navigates editor; preview is not an actual checkout/enrollment operation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 11
   },
   {
     "id": "LAND-011",
@@ -4004,8 +4084,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-011 \u2014 Private preview unauthorized and missing\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Nonowner Creator, User, Guest; unknown Product ID.\n- **Steps:** Open private preview route for each; as nonowner target Published Product.\n- **Expected results:** Route role gate plus manager-config ownership prevents unauthorized private preview; public Product availability does not grant manager config.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "LAND-012",
@@ -4014,8 +4095,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-012 \u2014 Preview Creator profile fallback\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Owner Creator; Admin viewing another Creator; failed public storefront lookup.\n- **Steps:** Open private preview under each condition.\n- **Expected results:** Owner uses own profile/config, Admin uses public storefront fallback; profile/config load failure yields unavailable/fallback as coded, not invented private profile details.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "LAND-013",
@@ -4024,8 +4106,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-013 \u2014 Preview content actions unavailable\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Preview of Course/Download/Consultation/Membership.\n- **Steps:** Attempt primary purchase/access/file actions in preview.\n- **Expected results:** Preview presentation must not create enrollment/order or deliver Membership assets; interactive runtime belongs to public/product/API cases.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "ADMIN-001",
@@ -4272,8 +4355,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### SALES-009 \u2014 Order detail missing and stale\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. Unknown/foreign order ID; rapid drawer selection switch; detail request failure.\n- **Steps:** Open ?order={id} and switch to another; inspect drawer.\n- **Expected results:** No foreign/stale order details; exact empty/error feedback needs investigation where currentOrder is absent without distinct detail-error rendering.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "SALES-010",
@@ -4332,8 +4416,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CUSTOM-003 \u2014 Unavailable relationship filters\n\n- **Feature area:** Creator Customers and customer detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic buyers and entitlement holders. Real server data without membership runtime.\n- **Steps:** Select active-member,past-due,waitlist or membership active,past_due,cancelled.\n- **Expected results:** Recognized unsupported categories yield empty results; mock relationship labels do not establish real subscriptions/waitlists. buyer and none retain supported relationships.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 7
   },
   {
     "id": "CUSTOM-004",
@@ -4344,7 +4429,7 @@
     "instructions": "### CUSTOM-004 \u2014 Customer list empty and recovery\n\n- **Feature area:** Creator Customers and customer detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic buyers and entitlement holders. No relationships, unmatched search/filter, delayed/error response variants.\n- **Steps:** Open Customers; clear search/filter; restore service/reload.\n- **Expected results:** Distinct empty/no-match/loading/unavailable states; no fabricated customer rows.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 7
   },
   {
     "id": "CUSTOM-005",
@@ -4403,8 +4488,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CUSTOM-010 \u2014 Customer detail loading and ID change\n\n- **Feature area:** Creator Customers and customer detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic buyers and entitlement holders. Delayed next-customer response; unknown ID and request failure.\n- **Steps:** Navigate rapidly between customers; reload target.\n- **Expected results:** expected result needs investigation for stale detail because component renders stored customer until loading/error gates clear; no prior customer should be presumed requested target.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "CUSTOM-011",
@@ -4454,8 +4540,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-003 \u2014 Analytics totals and deltas\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Retained paid, refunds, failed payments and new/existing customers in current/previous window.\n- **Steps:** Read overview response and cards.\n- **Expected results:** Revenue/orders use current retained paid; customer total is lifetime relationships while growth/delta uses period additions; zero previous denominator handled without NaN/infinity.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "ANALYTICS-004",
@@ -4474,8 +4561,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-005 \u2014 Payment health\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Paid+refunded denominator fixture, failed events and no orders variant.\n- **Steps:** Inspect payment health cards/response.\n- **Expected results:** Refund rate refunded / (paid + refunded) \u00d7 100 with safezero; failedcount uses supported events; no payment provider operational telemetry inferred.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "ANALYTICS-006",
@@ -4495,8 +4583,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-007 \u2014 Analytics loading, empty and failure\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Delayed initial response, zero-history response and failed response variants.\n- **Steps:** Open Analytics, change period and restore service/reload.\n- **Expected results:** Loading/empty/unavailable presentation distinct; valid zero history renders honest zeros; failed response does not become mock data.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "ANALYTICS-008",
@@ -4588,8 +4677,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### LOCAL-002 \u2014 Notification empty and unread behavior\n\n- **Feature area:** Local notifications, fixture displays and absent client capabilities. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 honest state presentation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated Creator; synthetic Product actions. Fresh session, then one notification.\n- **Steps:** Open bell when empty; reopen after successful Product mutation; inspect unread dot and attempt available actions.\n- **Expected results:** Empty copy and unread indicator render; reducer capabilities alone do not expose mark-read/remove UI; no server read-state persistence is implied.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "LOCAL-003",
@@ -4658,8 +4748,9 @@
     "level": "deployed-service integration",
     "priority": "P2",
     "instructions": "### LOCAL-009 \u2014 Generic uploader and remote import boundary\n\n- **Feature area:** Local notifications, fixture displays and absent client capabilities. **Test level:** deployed-service integration. **Implementation state:** partial. **Priority:** P2 \u2014 honest state presentation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated Creator; synthetic Product actions. Course lesson or Download editor that exposes Uppy import options; synthetic remote file.\n- **Steps:** Open each available GoogleDrive/Dropbox/OneDrive/URL/Unsplash importer; select file; inspect subsequent Product-specific lifecycle; do not infer /upload support.\n- **Expected results:** Companion import availability depends on external provider setup. expected result needs investigation: generic UPLOAD mode registers /upload with no matching backend controller while UI hides upload button; Product-specific file selection must be reconciled with its actual upload path.\n- **Required environment / external service:** Isolated frontend, configured Uppy Companion/provider test accounts and disposable synthetic files.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "UX-001",
@@ -4668,8 +4759,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-001 \u2014 Desktop sidebar composition\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Creator on management page; viewports just below/above1024 and1280.\n- **Steps:** Toggle Collapse/Expand; navigate between management, storefront and landing builder; reload.\n- **Expected results:** Sidebar follows layout context and requested builder collapse; account footer adapts. expected result needs investigation for persistence beyond implemented in-memory context, not assumed local-storage preference.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 6
   },
   {
     "id": "UX-002",
@@ -4678,8 +4770,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-002 \u2014 Collapsed navigation accessible names\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Collapsed Creator sidebar.\n- **Steps:** Tab through icon-only links and inspect accessible names/current-page state.\n- **Expected results:** expected result needs investigation: labels are conditionally removed and NavLink lacks explicit aria-label; visual icons alone do not establish named navigation.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 1
   },
   {
     "id": "UX-003",
@@ -4688,8 +4781,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-003 \u2014 Mobile management navigation\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Creator/Admin at375px/480px/768px widths; long username.\n- **Steps:** Open mobile navigation, select destination and reopen; rotate to desktop width.\n- **Expected results:** Navigation remains reachable and selected route closes overlay where onNavigate wired; layout shifts to topbar/drawer instead of narrow desktop sidebar. Overflow/focus behavior requires browser assessment.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "UX-004",
@@ -4698,8 +4792,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-004 \u2014 Shared Drawer focus lifecycle\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Sales filters/order drawer, storefront customization or landing controls.\n- **Steps:** Open with keyboard; cycle Tab/ShiftTab; press Escape; reopen and close by overlay/close button.\n- **Expected results:** Dialog has aria-modal/title; focus initially enters, traps at boundaries and returns to trigger; body scrolling locked until close.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "UX-005",
@@ -4718,8 +4813,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-006 \u2014 Dropdown keyboard dismissal\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Account/Product overflow/cart/wishlist dropdowns.\n- **Steps:** Activate trigger with Enter/Space, tab actions, press Escape; reopen and click outside.\n- **Expected results:** Dropdown opens/closes and advertised aria-expanded changes; Escape/outside click dismiss. Arrow-key menu navigation/focus restoration beyond coded behavior needs investigation.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "UX-007",
@@ -4728,8 +4824,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-007 \u2014 Shared tab semantics\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Settings/Product tabs; Customer detail tabs separately.\n- **Steps:** Activate each by keyboard; inspect tablist/tab/tabpanel relationships; try Left/Right/Home/End.\n- **Expected results:** Click/Enter activation and selected state present; expected result needs investigation for complete roving focus/arrow support and shared-tab aria-controls/label linkage absent in implementation.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 9
   },
   {
     "id": "UX-008",
@@ -4738,8 +4835,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-008 \u2014 Search accessible interactions\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Navbar autocomplete with matching suggestions.\n- **Steps:** Focus search, type twocharacters, ArrowUp/Down/Enter; inspect listbox/options and focus location; press Escape.\n- **Expected results:** Suggestion keyboard selection works as coded; expected result needs investigation for combobox-expanded/active-descendant semantics and Escape dismissal.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "UX-009",
@@ -4748,8 +4846,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-009 \u2014 Products management responsive rows\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Long title, all statuses and price formats;375/768/1024/1440px.\n- **Steps:** Open Products, filter, open row menu and navigate Overview at each width.\n- **Expected results:** Desktop table-like rows become mobile cards; Product/status/price/date/actions remain usable; full date available via time/title where implemented; no horizontal clipping should be assumed without browser check.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "UX-010",
@@ -4758,8 +4857,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-010 \u2014 Customers responsive list/detail\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Long synthetic name/email, multi-item purchases and access.\n- **Steps:** Open list/detail tabs at375/768/1440px and200%zoom.\n- **Expected results:** Mobile cards preserve identity/status/products/spend/activity; detail tabs/content remain navigable. Overflow and reading order require investigation where CSS alone cannot establish accessibility.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "UX-011",
@@ -4768,8 +4868,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-011 \u2014 Sales responsive ledger and filters\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Multi-item orders and active secondary filters.\n- **Steps:** Resize desktop to mobile; open filters Drawer, change status/Product, close and open order detail.\n- **Expected results:** Ledger becomes transaction cards; filters and activecount remain available; order actions remain keyboard reachable; no filter data loss merely from resize.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "UX-012",
@@ -4778,8 +4879,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-012 \u2014 Analytics and Dashboard responsive charts\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Dense90day series, long Product names and empty states.\n- **Steps:** Compare375/768/1440px and200%zoom; toggle metric; inspect chart text alternatives.\n- **Expected results:** Grids collapse/reflow; expected result needs investigation for chart nonvisual equivalents, contrast and data readability because visual SVG alone does not prove accessible values.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 6
   },
   {
     "id": "UX-013",
@@ -4788,8 +4890,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-013 \u2014 Storefront and landing responsive builders\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Long public biography/marketing text and gallery.\n- **Steps:** At widths around640(Storefront) and768(landing), open customization controls, edit, save and preview.\n- **Expected results:** Controls move to Drawer at coded breakpoints; public preview remains single-column usable; Save/Reset reachable without overlap.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "UX-014",
@@ -4808,8 +4911,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-015 \u2014 Public/auth/marketing reflow\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Each marketing/auth route, Explore/search, public Product/storefront, Cart/Library.\n- **Steps:** Use320/375/768/1440px widths and200%zoom; complete route's supported primary action.\n- **Expected results:** expected result needs investigation for clipping, readable text and action reachability on every family; responsive styles define layouts but no executed conformance is claimed.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 27
   },
   {
     "id": "UX-016",
@@ -4818,8 +4922,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-016 \u2014 Form names, errors and focus\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Signup/login/onboarding/Settings/Product/native Membership/Contact forms.\n- **Steps:** Navigate only by keyboard; submit invalid data; inspect label association/error descriptions and announced status; correct inputs.\n- **Expected results:** expected result needs investigation for unlabeled/custom controls and broken aria-describedby references; existing visible validation must remain operable without pointer.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "UX-017",
@@ -4828,8 +4933,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-017 \u2014 Status announcement and noncolor indicators\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Load/error/save/status fixtures across Products, reports, Library and checkout.\n- **Steps:** Trigger loading, error, success and disabled action; inspect accessibility tree and reduced-motion preference.\n- **Expected results:** States with role=alert/status or aria-live announce as coded; statuses also have text. Contrast/reduced-motion/announcement gaps need investigation, not an assumed accessibility pass.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "UX-018",
@@ -4838,8 +4944,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-018 \u2014 Media and icon alternatives\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Public hero/gallery, Product cards, account and management icons.\n- **Steps:** Inspect alt text, named buttons and video controls; use keyboard at200%zoom.\n- **Expected results:** Named Product images/actions retain alternatives; expected result needs investigation for meaningful promo captions/transcripts, focus visibility and icon-only names not explicitly implemented.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "ENV-001",
@@ -4868,8 +4975,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### ENV-003 \u2014 Swagger default unavailable\n\n- **Feature area:** Deployed dependencies, configuration and persistence boundaries. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 deployment-dependent availability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Synthetic authorized role fixtures; infrastructure harness only where explicitly stated. Backend without docs profile.\n- **Steps:** GET /v3/api-docs and /swagger-ui with Guest and app session.\n- **Expected results:** OpenAPI/UI disabled by default; no API documentation exposure inferred from endpoint annotation presence. Exact security/unmapped response depends on filter chain.\n- **Required environment / external service:** Already-provisioned isolated deployment matching repository configuration; no deployment-specific addresses or secrets in case data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "ENV-004",
@@ -4958,9 +5066,14 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### ENV-012 \u2014 Utility API response and authentication\n\n- **Feature area:** Deployed dependencies, configuration and persistence boundaries. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and authenticated fixture as specified. Guest then valid authenticated session. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /testEndpoint (including unused auth client helper); GET / under both sessions.\n- **Expected results:** Public diagnostic returns fixed text, authenticated root returns greeting, guest root denied by catch-all security. Neither endpoint establishes external dependency health.\n- **Required environment / external service:** Test frontend/backend with synthetic session; no additional external service.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 3,
+    "expanded_variation_ids": [
+      "guest-public-diagnostic",
+      "guest-root-denial",
+      "creator-authenticated-root"
+    ]
   },
   {
     "id": "ENV-013",

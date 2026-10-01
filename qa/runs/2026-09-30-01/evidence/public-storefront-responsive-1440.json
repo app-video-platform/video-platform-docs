@@ -1,0 +1,42 @@
+{
+  "headings": [
+    "Tamas Tyukodi null",
+    "QA-2026-09-30-01 Consultation",
+    "Connect with the creator",
+    "Browse current offers"
+  ],
+  "links": [
+    {
+      "left": 154,
+      "name": "TTTamas Tyukodi null",
+      "right": 351.765625
+    },
+    {
+      "left": 1141.984375,
+      "name": "Products",
+      "right": 1209
+    },
+    {
+      "left": 1227,
+      "name": "Contact",
+      "right": 1286
+    },
+    {
+      "left": 154,
+      "name": "Browse products",
+      "right": 324.421875
+    },
+    {
+      "left": 608,
+      "name": "View product",
+      "right": 749.390625
+    },
+    {
+      "left": 286.234375,
+      "name": "View product",
+      "right": 410.5
+    }
+  ],
+  "scrollWidth": 1440,
+  "width": 1440
+}

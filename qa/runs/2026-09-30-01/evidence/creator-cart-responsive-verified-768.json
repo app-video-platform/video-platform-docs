@@ -1,0 +1,32 @@
+{
+  "main": "Shopping CartYou don't have any products in your shopping cartYou might also like",
+  "navbar": [
+    {
+      "left": 92,
+      "name": "Product search",
+      "right": 542
+    },
+    {
+      "left": 92,
+      "name": "Submit search",
+      "right": 156
+    },
+    {
+      "left": 512,
+      "name": "Explore",
+      "right": 569.15625
+    },
+    {
+      "left": 569.15625,
+      "name": "",
+      "right": 590.09375
+    },
+    {
+      "left": 610.09375,
+      "name": "T",
+      "right": 746
+    }
+  ],
+  "scrollWidth": 768,
+  "width": 768
+}

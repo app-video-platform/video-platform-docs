@@ -1,0 +1,95 @@
+{
+  "controls": [
+    {
+      "left": 304,
+      "name": "Product Overview",
+      "right": 495.015625
+    },
+    {
+      "left": 946.046875,
+      "name": "Edit product details",
+      "right": 1148.765625
+    },
+    {
+      "left": 1156.765625,
+      "name": "Reset",
+      "right": 1261.59375
+    },
+    {
+      "left": 1269.59375,
+      "name": "Save",
+      "right": 1368
+    },
+    {
+      "left": 0,
+      "name": "Customize",
+      "right": 0
+    },
+    {
+      "left": 304,
+      "name": "textarea",
+      "right": 616
+    },
+    {
+      "left": 304,
+      "name": "Media right",
+      "right": 456
+    },
+    {
+      "left": 464,
+      "name": "Media left",
+      "right": 616
+    },
+    {
+      "left": 312,
+      "name": "checkbox",
+      "right": 328
+    },
+    {
+      "left": 524,
+      "name": "Move About up",
+      "right": 564
+    },
+    {
+      "left": 568,
+      "name": "Move About down",
+      "right": 608
+    },
+    {
+      "left": 312,
+      "name": "checkbox",
+      "right": 328
+    },
+    {
+      "left": 524,
+      "name": "Move What's included up",
+      "right": 564
+    },
+    {
+      "left": 568,
+      "name": "Move What's included down",
+      "right": 608
+    },
+    {
+      "left": 312,
+      "name": "checkbox",
+      "right": 328
+    },
+    {
+      "left": 524,
+      "name": "Move Creator up",
+      "right": 564
+    },
+    {
+      "left": 568,
+      "name": "Move Creator down",
+      "right": 608
+    }
+  ],
+  "preview": {
+    "left": 640,
+    "right": 1392
+  },
+  "scrollWidth": 1440,
+  "width": 1440
+}

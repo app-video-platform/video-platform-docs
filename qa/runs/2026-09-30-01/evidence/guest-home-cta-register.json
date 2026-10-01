@@ -1,0 +1,5 @@
+{
+  "checked_at": "2026-10-01T07:50:40.744Z",
+  "url": "https://app.serious-debauchery.click/auth/signup",
+  "snapshot": "- region \"Notifications alt+T\"\n- heading \"Sign Up\" [level=1]\n- generic: First Name\n- textbox \"First Name\"\n- generic: Last Name\n- textbox \"Last Name\"\n- generic: Email\n- textbox \"Email\"\n- generic: Password\n- textbox \"Password\"\n- button:\n- generic: Confirm Password\n- textbox \"Confirm Password\"\n- button:\n- button \"Sign Up\":\n  - generic: Sign Up"
+}

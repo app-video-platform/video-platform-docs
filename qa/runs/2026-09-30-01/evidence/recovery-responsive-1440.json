@@ -1,0 +1,36 @@
+{
+  "controls": [
+    {
+      "left": 500,
+      "name": "password",
+      "right": 940
+    },
+    {
+      "left": 896,
+      "name": "button",
+      "right": 926
+    },
+    {
+      "left": 500,
+      "name": "password",
+      "right": 940
+    },
+    {
+      "left": 896,
+      "name": "button",
+      "right": 926
+    },
+    {
+      "left": 500,
+      "name": "button",
+      "right": 656.703125
+    },
+    {
+      "left": 651.828125,
+      "name": "button",
+      "right": 788.15625
+    }
+  ],
+  "scrollWidth": 1440,
+  "width": 1440
+}

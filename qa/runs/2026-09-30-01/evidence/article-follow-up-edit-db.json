@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-01T08:13:56.104429+00:00",
+  "query_purpose": "Confirm follow-up edit effect on disposable Article body",
+  "exit_code": 0,
+  "lesson": {
+    "id": "f0a89669-5d92-4c5a-8875-316c3e77dd41",
+    "title": "QA Article A",
+    "description": "QA Article description A",
+    "type": "ARTICLE",
+    "content": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Start writing your lesson\u2026 QA appended text B\"}]}]}",
+    "updated_at": "2026-10-01T08:13:34.43928"
+  }
+}

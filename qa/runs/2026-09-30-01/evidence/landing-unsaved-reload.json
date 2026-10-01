@@ -1,0 +1,18 @@
+{
+  "checks": [
+    false,
+    true,
+    true
+  ],
+  "descriptionLength": 0,
+  "hero": [
+    {
+      "class": "vp-btn vp-btn__primary vp-btn__square vp-btn__size-md",
+      "text": "Media right"
+    },
+    {
+      "class": "vp-btn vp-btn__secondary vp-btn__square vp-btn__size-md",
+      "text": "Media left"
+    }
+  ]
+}

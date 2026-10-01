@@ -21,3 +21,21 @@
 - Negative login: random unused .invalid address and synthetic input;404, no cookies. No new account created.
 
 Retain the four products and native Post for continued execution/retests. Consultation remains Published. Fixture deletion has not been performed.
+
+## Curriculum execution fixture — 2026-10-01
+
+- Product ID: `cb045295-cf70-445c-99a7-46fc0618e58e`
+- Owner: OWNER-A, CREATOR.
+- Name: QA-2026-09-30-01 Curriculum. Type: COURSE. Created through normal Product UI; initially Draft.
+- Purpose: exercise nested authoring while the creation session remains mounted; saved editor reopen is obstructed by BUG-001.
+- No file uploads, purchases or credentials involved. Retain for retesting; update section/lesson/status state at checkpoint.
+
+Current curriculum fixture state: **PUBLISHED**, observed after Publish request. Three sections (Draft, QA Section B, QA Section A Updated); Section A holds Article, Quiz and Video metadata in positions1/2/3. Article synthetic bold body restored after BUG-018; video has no asset and quiz has no persisted definition. No uploads or orders. Publication preceded an automatic review rejection of further publication workflow; owner informed and retention approval requested. No Unpublish action is available.
+
+## File-delivery execution fixture — 2026-10-01
+
+- Product: `91f68d91-137b-4008-88ed-3e6695db74ba`, QA-2026-09-30-01 File Delivery, DRAFT Download, Free default. Created through normal Product UI.
+- File group: QA Files A, synthetic description, currently0files.
+- Purpose: prepare canonical upload case in mounted creation session because BUG-001 prevents saved editor reopening.
+- Local fixture prepared at `/private/tmp/vp-qa-fixtures/QA-2026-09-30-01-download.txt`,201bytes, SHA256 `04c83a8f6432814a5baa1edacbb0ce7eda5cfed866a3687e8222a595b9a60b6c`. No file selected or uploaded. Upload approval pending.
+- Retain working tab769287816 without reload or navigation for the upload test. No publication requested.

@@ -1,0 +1,46 @@
+{
+  "controls": [
+    {
+      "left": 50,
+      "name": "text",
+      "right": 750
+    },
+    {
+      "left": 50,
+      "name": "text",
+      "right": 750
+    },
+    {
+      "left": 50,
+      "name": "email",
+      "right": 750
+    },
+    {
+      "left": 50,
+      "name": "password",
+      "right": 750
+    },
+    {
+      "left": 706,
+      "name": "button",
+      "right": 736
+    },
+    {
+      "left": 50,
+      "name": "password",
+      "right": 750
+    },
+    {
+      "left": 706,
+      "name": "button",
+      "right": 736
+    },
+    {
+      "left": 325,
+      "name": "submit",
+      "right": 475
+    }
+  ],
+  "scrollWidth": 800,
+  "width": 320
+}

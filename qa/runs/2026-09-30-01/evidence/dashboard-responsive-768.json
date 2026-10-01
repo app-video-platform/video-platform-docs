@@ -1,0 +1,82 @@
+{
+  "actions": [
+    {
+      "left": 16,
+      "name": "View Revenue details",
+      "right": 376
+    },
+    {
+      "left": 392,
+      "name": "View Sales details",
+      "right": 752
+    },
+    {
+      "left": 16,
+      "name": "View Customers details",
+      "right": 376
+    },
+    {
+      "left": 33,
+      "name": "Open Product updated: QA-2026-09-30-01 Membership",
+      "right": 735
+    },
+    {
+      "left": 33,
+      "name": "Open Product updated: QA-2026-09-30-01 Consultation",
+      "right": 735
+    },
+    {
+      "left": 33,
+      "name": "Open Product updated: QA-2026-09-30-01 Download B",
+      "right": 735
+    },
+    {
+      "left": 33,
+      "name": "Open Product updated: QA-2026-09-30-01 Course",
+      "right": 735
+    },
+    {
+      "left": 33,
+      "name": "Open Product updated: Coursee",
+      "right": 735
+    },
+    {
+      "left": 33,
+      "name": "Open Product updated: Astazi",
+      "right": 735
+    },
+    {
+      "left": 33,
+      "name": "Open Product updated: How to cook",
+      "right": 735
+    },
+    {
+      "left": 33,
+      "name": "Open Product updated: Call?",
+      "right": 735
+    },
+    {
+      "left": 33,
+      "name": "Open Product updated: Downloaaad",
+      "right": 735
+    },
+    {
+      "left": 33,
+      "name": "Open Product updated: course try",
+      "right": 735
+    },
+    {
+      "left": 560.2421875,
+      "name": "Review Products",
+      "right": 710
+    },
+    {
+      "left": 595.3671875,
+      "name": "Add images",
+      "right": 710
+    }
+  ],
+  "scrollWidth": 768,
+  "snapshot": "DashboardGood afternoon, Tamas Tyukodi.RevenueEUR 0— No changeSales0— No changeCustomers0— +0 this periodActive membershipsMembershipsUnavailableMore business data is needed.Recent activityProduct updated5 hours agoQA-2026-09-30-01 MembershipProduct updated5 hours agoQA-2026-09-30-01 ConsultationProduct updated5 hours agoQA-2026-09-30-01 Download BProduct updated5 hours agoQA-2026-09-30-01 CourseProduct updatedJun 4, 2026CourseeProduct updatedJun 4, 2026AstaziProduct updatedMar 17, 2026How to cookProduct updatedMar 7, 2026Call?Product updatedFeb 7, 2026DownloaaadProduct updatedFeb 7, 2026course tryTop productsRevenueProduct performance is unavailable until revenue data exists.Needs attentionLow priorityDraft Products12 Products are still in draftReview ProductsMedium priorityPublished Products missing an image1 published Product needs an imageAdd images",
+  "width": 768
+}

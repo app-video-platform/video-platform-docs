@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-01T08:06:04.750580+00:00",
+  "product_id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+  "query_purpose": "Verify persisted synthetic Course sections only",
+  "exit_code": 0,
+  "sections": [
+    {
+      "id": "20e94542-047b-4cc8-bc9d-adc197e683c2",
+      "title": "Draft",
+      "description": "",
+      "position": 1,
+      "created_at": "2026-10-01T08:02:29.558735",
+      "updated_at": "2026-10-01T08:02:29.558754"
+    },
+    {
+      "id": "d87b3e72-d4f9-4f4f-ad4a-6ca6554423cc",
+      "title": "QA Section A",
+      "description": "QA section A description",
+      "position": 2,
+      "created_at": "2026-10-01T08:04:41.536419",
+      "updated_at": "2026-10-01T08:04:41.536442"
+    },
+    {
+      "id": "7cc505f1-127b-420a-9783-e103af710401",
+      "title": "QA Section B",
+      "description": "QA section B description",
+      "position": 3,
+      "created_at": "2026-10-01T08:05:16.937486",
+      "updated_at": "2026-10-01T08:05:16.937509"
+    }
+  ]
+}

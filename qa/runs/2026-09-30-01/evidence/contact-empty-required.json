@@ -1,0 +1,56 @@
+[
+  {
+    "focused": true,
+    "missing": true,
+    "name": "firstName",
+    "required": true,
+    "type": "text",
+    "valid": false,
+    "value": ""
+  },
+  {
+    "focused": false,
+    "missing": true,
+    "name": "lastName",
+    "required": true,
+    "type": "text",
+    "valid": false,
+    "value": ""
+  },
+  {
+    "focused": false,
+    "missing": true,
+    "name": "email",
+    "required": true,
+    "type": "email",
+    "valid": false,
+    "value": ""
+  },
+  {
+    "focused": false,
+    "missing": true,
+    "name": "topic",
+    "required": true,
+    "type": "text",
+    "valid": false,
+    "value": ""
+  },
+  {
+    "focused": false,
+    "missing": true,
+    "name": "message",
+    "required": true,
+    "type": "textarea",
+    "valid": false,
+    "value": ""
+  },
+  {
+    "focused": false,
+    "missing": false,
+    "name": "agree",
+    "required": false,
+    "type": "checkbox",
+    "valid": true,
+    "value": "on"
+  }
+]

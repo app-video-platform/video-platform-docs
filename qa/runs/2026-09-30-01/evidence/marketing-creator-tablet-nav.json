@@ -1,0 +1,34 @@
+{
+  "links": [
+    {
+      "right": 179.78125,
+      "text": "Home"
+    },
+    {
+      "right": 255.703125,
+      "text": "About"
+    },
+    {
+      "right": 337.2265625,
+      "text": "Pricing"
+    },
+    {
+      "right": 422.9921875,
+      "text": "Getting Started"
+    },
+    {
+      "right": 511.703125,
+      "text": "Contact Us"
+    },
+    {
+      "right": 596.453125,
+      "text": "Go to Dashboard"
+    },
+    {
+      "right": 748,
+      "text": "Tamas Tyukodi"
+    }
+  ],
+  "scrollWidth": 768,
+  "width": 768
+}

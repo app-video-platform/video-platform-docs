@@ -1,0 +1,95 @@
+{
+  "controls": [
+    {
+      "left": 40,
+      "name": "Product Overview",
+      "right": 728
+    },
+    {
+      "left": 40,
+      "name": "Edit product details",
+      "right": 242.71875
+    },
+    {
+      "left": 250.71875,
+      "name": "Reset",
+      "right": 355.546875
+    },
+    {
+      "left": 363.546875,
+      "name": "Save",
+      "right": 461.953125
+    },
+    {
+      "left": 469.953125,
+      "name": "Customize",
+      "right": 608.90625
+    },
+    {
+      "left": 0,
+      "name": "textarea",
+      "right": 0
+    },
+    {
+      "left": 0,
+      "name": "Media right",
+      "right": 0
+    },
+    {
+      "left": 0,
+      "name": "Media left",
+      "right": 0
+    },
+    {
+      "left": 0,
+      "name": "checkbox",
+      "right": 0
+    },
+    {
+      "left": 0,
+      "name": "Move About up",
+      "right": 0
+    },
+    {
+      "left": 0,
+      "name": "Move About down",
+      "right": 0
+    },
+    {
+      "left": 0,
+      "name": "checkbox",
+      "right": 0
+    },
+    {
+      "left": 0,
+      "name": "Move What's included up",
+      "right": 0
+    },
+    {
+      "left": 0,
+      "name": "Move What's included down",
+      "right": 0
+    },
+    {
+      "left": 0,
+      "name": "checkbox",
+      "right": 0
+    },
+    {
+      "left": 0,
+      "name": "Move Creator up",
+      "right": 0
+    },
+    {
+      "left": 0,
+      "name": "Move Creator down",
+      "right": 0
+    }
+  ],
+  "preview": {
+    "left": 16,
+    "right": 752
+  },
+  "scrollWidth": 768,
+  "width": 768
+}

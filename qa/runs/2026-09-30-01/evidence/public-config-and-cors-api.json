@@ -1,0 +1,172 @@
+{
+  "requests": [
+    {
+      "observed_at": "2026-09-30T14:56:05.680802+00:00",
+      "case_id": "LAND-006",
+      "variation_id": "guest-draft-course-public-config",
+      "path": "/api/products/ddd5bb80-183e-48d5-84cd-8819ca082a58/landing-page",
+      "request": {
+        "method": "GET",
+        "role": "Guest",
+        "fixture_id": "ddd5bb80-183e-48d5-84cd-8819ca082a58"
+      },
+      "response": {
+        "status": 404,
+        "body_length": 57,
+        "body_kind": "json",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T14:56:05.940069+00:00",
+      "case_id": "LAND-006",
+      "variation_id": "guest-draft-download-public-config",
+      "path": "/api/products/a7991427-a5f7-4e48-a241-0e1a82b52d68/landing-page",
+      "request": {
+        "method": "GET",
+        "role": "Guest",
+        "fixture_id": "a7991427-a5f7-4e48-a241-0e1a82b52d68"
+      },
+      "response": {
+        "status": 404,
+        "body_length": 57,
+        "body_kind": "json",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T14:56:06.213811+00:00",
+      "case_id": "LAND-006",
+      "variation_id": "guest-draft-membership-public-config",
+      "path": "/api/products/45fb192b-0393-4609-9c9f-736425adc550/landing-page",
+      "request": {
+        "method": "GET",
+        "role": "Guest",
+        "fixture_id": "45fb192b-0393-4609-9c9f-736425adc550"
+      },
+      "response": {
+        "status": 404,
+        "body_length": 57,
+        "body_kind": "json",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T14:56:06.482347+00:00",
+      "case_id": "LAND-006",
+      "variation_id": "guest-published-consultation-public-config",
+      "path": "/api/products/3ebc8873-83aa-430b-8fe2-dad685c0a8d3/landing-page",
+      "request": {
+        "method": "GET",
+        "role": "Guest",
+        "fixture_id": "3ebc8873-83aa-430b-8fe2-dad685c0a8d3"
+      },
+      "response": {
+        "status": 200,
+        "body_length": 219,
+        "body_kind": "json",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T14:56:06.718273+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "actual-public-get-approved",
+      "path": "/testEndpoint",
+      "request": {
+        "method": "GET",
+        "origin": "https://app.serious-debauchery.click"
+      },
+      "response": {
+        "status": 200,
+        "body_length": 23,
+        "body_kind": "text",
+        "allow_origin": [
+          "https://app.serious-debauchery.click"
+        ],
+        "allow_credentials": [
+          "true"
+        ],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T14:56:06.960736+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "actual-public-get-unapproved",
+      "path": "/testEndpoint",
+      "request": {
+        "method": "GET",
+        "origin": "https://qa-origin.example.invalid"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T14:56:07.209022+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "actual-public-get-local",
+      "path": "/testEndpoint",
+      "request": {
+        "method": "GET",
+        "origin": "http://localhost:5173"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T14:56:07.455033+00:00",
+      "case_id": "ENV-003",
+      "variation_id": "guest-default-swagger-interface",
+      "path": "/swagger-ui/index.html",
+      "request": {
+        "method": "GET",
+        "role": "Guest"
+      },
+      "response": {
+        "status": 401,
+        "body_length": 0,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "charts": [
+    {
+      "left": 41,
+      "name": "Orders performance chart",
+      "right": 727
+    },
+    {
+      "left": 41,
+      "name": "Customer growth chart",
+      "right": 727
+    },
+    {
+      "left": 41,
+      "name": "Mini trend chart for refunds and failed payments",
+      "right": 727
+    }
+  ],
+  "controls": [
+    {
+      "left": 16,
+      "name": "Select analytics date range",
+      "right": 752
+    },
+    {
+      "left": 41,
+      "name": "Revenue",
+      "right": 123.109375
+    },
+    {
+      "left": 131.109375,
+      "name": "Orders",
+      "right": 201.6328125
+    }
+  ],
+  "scrollWidth": 768,
+  "text": "AnalyticsUnderstand how your business is performing over time.Select...Last 7 daysLast 30 daysLast 90 daysRevenueEUR 0— No changeOrders0— No changeCustomers0— No changePerformanceOrders over the last 90 days.RevenueOrdersWeek 1Week 3Week 5Week 7Week 9Week 11Week 1301234Orders held steady 0.0% compared with the previous 90 days.Product performanceRevenue, orders, and share by product.No product performance data yetProduct rankings will appear once revenue and order data exists.Customer growth0 total customers · +0 this periodWeek 1Week 3Week 5Week 7Week 9Week 11Week 1301234You gained 0 new customers in the last 90 days.MembershipsNew and cancelled memberships over the selected period.No membership data yetMembership analytics can be omitted when no membership products exist.Payment healthRefund and failed-payment trends.Refund rate0.0%— No changeFailed payments0— No changePayment health is based on aggregate refund and failed-payment movement, not individual sales events.",
+  "width": 768
+}

@@ -1,0 +1,6 @@
+{
+  "checked_at": "2026-10-01T08:02:29.407Z",
+  "url": "https://app.serious-debauchery.click/app/products/create",
+  "snapshot": "- region \"Notifications alt+T\"\n- banner:\n  - button \"Products\":\n    - generic: Products\n  - generic: 🎓\n  - text: Course\n  - heading \"Create product\" [level=1]\n- main:\n  - heading \"Select product type\" [level=2]\n  - paragraph: Choose what you’re creating. You can adjust details later.\n  - radiogroup \"Product type\":\n    - radio \"🎓 Course Multi-lesson video or text course\" [checked]:\n      - generic: 🎓\n      - generic: Course\n      - generic: Multi-lesson video or text course\n    - radio \"⬇️ Download Files, templates, digital assets\":\n      - generic: ⬇️\n      - generic: Download\n      - generic: Files, templates, digital assets\n    - radio \"🎧 Consultation 1:1 sessions, coaching, calls\":\n      - generic: 🎧\n      - generic: Consultation\n      - generic: 1:1 sessions, coaching, calls\n    - radio \"👥 Membership Community access, member updates, and ongoing value\":\n      - generic: 👥\n      - generic: Membership\n      - generic: Community access, member updates, and ongoing value\n  - heading \"Give it a title\" [level=3]\n  - textbox \"Product title\" [active]\n  - button \"Continue to Product workspace\":\n- generic: \"0\"",
+  "continueDisabled": false
+}

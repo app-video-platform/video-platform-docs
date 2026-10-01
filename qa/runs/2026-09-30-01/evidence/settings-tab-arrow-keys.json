@@ -1,0 +1,30 @@
+[
+  {
+    "key": "ArrowRight",
+    "focused": "Profile",
+    "selected": [
+      "Profile"
+    ]
+  },
+  {
+    "key": "ArrowLeft",
+    "focused": "Profile",
+    "selected": [
+      "Profile"
+    ]
+  },
+  {
+    "key": "Home",
+    "focused": "Profile",
+    "selected": [
+      "Profile"
+    ]
+  },
+  {
+    "key": "End",
+    "focused": "Profile",
+    "selected": [
+      "Profile"
+    ]
+  }
+]

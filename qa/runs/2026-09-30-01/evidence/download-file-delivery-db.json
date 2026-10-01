@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-01T08:49:36.017137+00:00",
+  "purpose": "Verify only new synthetic Draft Download and empty file group",
+  "exit_code": 0,
+  "product": {
+    "id": "91f68d91-137b-4008-88ed-3e6695db74ba",
+    "name": "QA-2026-09-30-01 File Delivery",
+    "status": "DRAFT",
+    "price": 0.0,
+    "currency": "EUR"
+  },
+  "sections": [
+    {
+      "id": "816d520c-68a6-4da1-a8ae-681a73b4ec76",
+      "title": "QA Files A",
+      "description": "Synthetic files for controlled upload tests.",
+      "position": 1,
+      "file_count": 0
+    }
+  ]
+}

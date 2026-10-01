@@ -1,0 +1,9 @@
+{
+  "logs": [
+    {
+      "level": "info",
+      "message": "SENDING CALL TO BE WITH EMAIL <synthetic-email>"
+    }
+  ],
+  "snapshot": "- region \"Notifications alt+T\"\n- heading \"Enter code\" [level=1]\n- paragraph:\n  - text: We sent a code to\n  - strong: qa-recovery@example.invalid\n- textbox \"Please enter OTP character 1\"\n- textbox \"Please enter OTP character 2\"\n- textbox \"Please enter OTP character 3\"\n- textbox \"Please enter OTP character 4\"\n- button \"Continue\":\n  - generic: Continue\n- paragraph:\n  - text: Did not receive an email?\n  - button \"Send it again!\" [active]:\n    - generic: Send it again!\n- button \"Back to Sign In\":\n  - generic: Back to Sign In"
+}

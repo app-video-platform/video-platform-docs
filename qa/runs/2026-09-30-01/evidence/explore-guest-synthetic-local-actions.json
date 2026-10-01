@@ -1,0 +1,26 @@
+{
+  "wishlistAdded": 1,
+  "wishlistRemoved": 1,
+  "alreadyDisabled": true,
+  "card": {
+    "buttons": [
+      {
+        "disabled": false,
+        "name": "Add to wishlist"
+      },
+      {
+        "disabled": false,
+        "name": "Tamas Tyukodi, Professional at Shooting Glances"
+      },
+      {
+        "disabled": false,
+        "name": "View Product"
+      },
+      {
+        "disabled": true,
+        "name": "Already in cart"
+      }
+    ],
+    "text": "30 September 2026QA-2026-09-30-01 Consultationconsultation€15Tamas Tyukodi, Professional at Shooting GlancesView ProductAlready in cart"
+  }
+}

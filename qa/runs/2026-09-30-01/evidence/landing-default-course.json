@@ -1,0 +1,30 @@
+{
+  "description": "",
+  "heroButtons": [
+    {
+      "class": "vp-btn vp-btn__primary vp-btn__square vp-btn__size-md",
+      "pressed": null,
+      "text": "Media right"
+    },
+    {
+      "class": "vp-btn vp-btn__secondary vp-btn__square vp-btn__size-md",
+      "pressed": null,
+      "text": "Media left"
+    }
+  ],
+  "sections": [
+    {
+      "checked": false,
+      "label": null
+    },
+    {
+      "checked": true,
+      "label": null
+    },
+    {
+      "checked": true,
+      "label": null
+    }
+  ],
+  "textareaMaxLength": 1200
+}

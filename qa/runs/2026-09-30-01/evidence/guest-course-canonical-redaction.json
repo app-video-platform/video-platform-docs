@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-10-01T08:31:44.334880+00:00",
+  "url": "https://serious-debauchery.click/api/products/cb045295-cf70-445c-99a7-46fc0618e58e",
+  "method": "GET",
+  "role": "Guest",
+  "http_status": "200",
+  "exit_code": 0,
+  "fixture_id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+  "root_fields": [
+    "billingInterval",
+    "createdAt",
+    "currency",
+    "description",
+    "details",
+    "id",
+    "name",
+    "price",
+    "pricingModel",
+    "status",
+    "type",
+    "updatedAt",
+    "userId"
+  ],
+  "synthetic_article_body_exposed": false,
+  "lessons": [
+    {
+      "id": "f0a89669-5d92-4c5a-8875-316c3e77dd41",
+      "title": "QA Article A",
+      "type": "ARTICLE",
+      "content": null,
+      "videoUrl": null
+    },
+    {
+      "id": "37dbef65-eb38-48ce-b4f9-2a7b913c8bca",
+      "title": "QA Quiz A",
+      "type": "QUIZ",
+      "content": null,
+      "videoUrl": null
+    },
+    {
+      "id": "1b5909b2-9b8d-4a82-ae5b-c7d70ac3a182",
+      "title": "QA Video A Updated",
+      "type": "VIDEO",
+      "content": null,
+      "videoUrl": null
+    }
+  ],
+  "status": "PUBLISHED"
+}

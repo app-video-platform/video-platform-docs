@@ -1,0 +1,42 @@
+{
+  "controls": [
+    {
+      "left": 50,
+      "name": "",
+      "right": 750,
+      "tag": "INPUT"
+    },
+    {
+      "left": 50,
+      "name": "",
+      "right": 750,
+      "tag": "INPUT"
+    },
+    {
+      "left": 706,
+      "name": "",
+      "right": 736,
+      "tag": "BUTTON"
+    },
+    {
+      "left": 50,
+      "name": "Sign in",
+      "right": 130.21875,
+      "tag": "BUTTON"
+    },
+    {
+      "left": 40,
+      "name": "",
+      "right": 283,
+      "tag": "IFRAME"
+    },
+    {
+      "left": 315.1875,
+      "name": "I forgot my password",
+      "right": 484.796875,
+      "tag": "BUTTON"
+    }
+  ],
+  "scrollWidth": 800,
+  "width": 320
+}

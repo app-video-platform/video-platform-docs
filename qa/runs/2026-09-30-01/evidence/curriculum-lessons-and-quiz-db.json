@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-10-01T08:22:05.131825+00:00",
+  "query_purpose": "Confirm restored Article, lesson ordering/rename, and quiz-definition existence for synthetic fixtures",
+  "exit_code": 0,
+  "quiz_definitions": 0,
+  "lessons": [
+    {
+      "id": "f0a89669-5d92-4c5a-8875-316c3e77dd41",
+      "title": "QA Article A",
+      "description": "QA Article description A",
+      "type": "ARTICLE",
+      "position": 1,
+      "content": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"marks\":[{\"type\":\"bold\"}],\"text\":\"QA article body A\"}]}]}",
+      "updated_at": "2026-10-01T08:15:16.236455"
+    },
+    {
+      "id": "37dbef65-eb38-48ce-b4f9-2a7b913c8bca",
+      "title": "QA Quiz A",
+      "description": "",
+      "type": "QUIZ",
+      "position": 2,
+      "content": null,
+      "updated_at": "2026-10-01T08:15:16.893068"
+    },
+    {
+      "id": "1b5909b2-9b8d-4a82-ae5b-c7d70ac3a182",
+      "title": "QA Video A Updated",
+      "description": "QA Video updated description",
+      "type": "VIDEO",
+      "position": 3,
+      "content": null,
+      "updated_at": "2026-10-01T08:16:02.511696"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "checked_at": "2026-10-01T08:32:34.373Z",
+  "url": "https://app.serious-debauchery.click/auth/login",
+  "snapshot": "- region \"Notifications alt+T\"\n- generic: Email\n- textbox \"Email\"\n- generic: Password\n- textbox \"Password\"\n- button:\n- button \"Sign in\":\n  - generic: Sign in\n- iframe [id=\"gsi_540741_476641\"]:\n  - button \"Iniciar sesión con Google. Se abre en una pestaña nueva.\":\n    - generic: Iniciar sesión con Google\n- button \"I forgot my password\""
+}

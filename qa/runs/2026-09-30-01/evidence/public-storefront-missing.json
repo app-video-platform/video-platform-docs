@@ -1,0 +1,4 @@
+{
+  "url": "https://app.serious-debauchery.click/app/store/00000000-0000-4000-8000-000000000099",
+  "snapshot": "- region \"Notifications alt+T\"\n- alert:\n  - heading \"Storefront unavailable\" [level=1]\n  - paragraph: Storefront not found"
+}

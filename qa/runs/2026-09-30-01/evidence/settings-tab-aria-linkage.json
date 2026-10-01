@@ -1,0 +1,60 @@
+{
+  "panels": [
+    {
+      "id": "",
+      "labelledby": null
+    }
+  ],
+  "tablists": 1,
+  "tabs": [
+    {
+      "controls": null,
+      "id": "",
+      "name": "Profile",
+      "selected": "true",
+      "tabIndex": 0
+    },
+    {
+      "controls": null,
+      "id": "",
+      "name": "Account",
+      "selected": "false",
+      "tabIndex": 0
+    },
+    {
+      "controls": null,
+      "id": "",
+      "name": "Subscriptions",
+      "selected": "false",
+      "tabIndex": 0
+    },
+    {
+      "controls": null,
+      "id": "",
+      "name": "Payment Methods",
+      "selected": "false",
+      "tabIndex": 0
+    },
+    {
+      "controls": null,
+      "id": "",
+      "name": "Calendar",
+      "selected": "false",
+      "tabIndex": 0
+    },
+    {
+      "controls": null,
+      "id": "",
+      "name": "Privacy",
+      "selected": "false",
+      "tabIndex": 0
+    },
+    {
+      "controls": null,
+      "id": "",
+      "name": "Notifications",
+      "selected": "false",
+      "tabIndex": 0
+    }
+  ]
+}

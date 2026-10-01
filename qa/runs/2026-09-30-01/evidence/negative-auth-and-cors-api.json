@@ -1,0 +1,572 @@
+{
+  "requests": [
+    {
+      "observed_at": "2026-09-30T13:45:50.573929+00:00",
+      "case_id": "SEC-007",
+      "variation_id": "guest-missing-refresh",
+      "path": "/api/auth/refresh",
+      "request": {
+        "method": "POST",
+        "cookie_name": null,
+        "token_class": "missing"
+      },
+      "response": {
+        "status": 401,
+        "body_length": 21,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Missing refresh token"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:50.828676+00:00",
+      "case_id": "SEC-007",
+      "variation_id": "guest-unknown-refresh",
+      "path": "/api/auth/refresh",
+      "request": {
+        "method": "POST",
+        "cookie_name": "REFRESH_TOKEN",
+        "token_class": "unknown"
+      },
+      "response": {
+        "status": 401,
+        "body_length": 48,
+        "body_kind": "json",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:51.080252+00:00",
+      "case_id": "AUTH-019",
+      "variation_id": "guest-malformed-id-token",
+      "path": "/api/auth/googleSignIn",
+      "request": {
+        "method": "POST",
+        "payload": "synthetic malformed idToken"
+      },
+      "response": {
+        "status": 401,
+        "body_length": 44,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:51.329675+00:00",
+      "case_id": "SEC-001",
+      "variation_id": "explicit-jwt-token-malformed-api-user-userInfo",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "GET",
+        "cookie_name": "JWT_TOKEN",
+        "token_class": "synthetic malformed"
+      },
+      "response": {
+        "status": 401,
+        "body_length": 0,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [
+          "JWT_TOKEN"
+        ],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:51.575116+00:00",
+      "case_id": "SEC-001",
+      "variation_id": "explicit-jwt-token-malformed-api-entitlements-me",
+      "path": "/api/entitlements/me",
+      "request": {
+        "method": "GET",
+        "cookie_name": "JWT_TOKEN",
+        "token_class": "synthetic malformed"
+      },
+      "response": {
+        "status": 401,
+        "body_length": 0,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [
+          "JWT_TOKEN"
+        ],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:51.821813+00:00",
+      "case_id": "SEC-001",
+      "variation_id": "explicit-jwt-token-malformed-api-admin-users",
+      "path": "/api/admin/users",
+      "request": {
+        "method": "GET",
+        "cookie_name": "JWT_TOKEN",
+        "token_class": "synthetic malformed"
+      },
+      "response": {
+        "status": 401,
+        "body_length": 0,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [
+          "JWT_TOKEN"
+        ],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:52.075541+00:00",
+      "case_id": "SEC-001",
+      "variation_id": "explicit-jwt-token-malformed-",
+      "path": "/",
+      "request": {
+        "method": "GET",
+        "cookie_name": "JWT_TOKEN",
+        "token_class": "synthetic malformed"
+      },
+      "response": {
+        "status": 401,
+        "body_length": 0,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [
+          "JWT_TOKEN"
+        ],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:52.324074+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-approved-get",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://app.serious-debauchery.click",
+        "requested_method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "body_length": 0,
+        "body_kind": "text",
+        "allow_origin": [
+          "https://app.serious-debauchery.click"
+        ],
+        "allow_credentials": [
+          "true"
+        ],
+        "allow_methods": [
+          "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+        ],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:52.572383+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-approved-post",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://app.serious-debauchery.click",
+        "requested_method": "POST"
+      },
+      "response": {
+        "status": 200,
+        "body_length": 0,
+        "body_kind": "text",
+        "allow_origin": [
+          "https://app.serious-debauchery.click"
+        ],
+        "allow_credentials": [
+          "true"
+        ],
+        "allow_methods": [
+          "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+        ],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:52.818683+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-approved-put",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://app.serious-debauchery.click",
+        "requested_method": "PUT"
+      },
+      "response": {
+        "status": 200,
+        "body_length": 0,
+        "body_kind": "text",
+        "allow_origin": [
+          "https://app.serious-debauchery.click"
+        ],
+        "allow_credentials": [
+          "true"
+        ],
+        "allow_methods": [
+          "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+        ],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:53.065659+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-approved-patch",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://app.serious-debauchery.click",
+        "requested_method": "PATCH"
+      },
+      "response": {
+        "status": 200,
+        "body_length": 0,
+        "body_kind": "text",
+        "allow_origin": [
+          "https://app.serious-debauchery.click"
+        ],
+        "allow_credentials": [
+          "true"
+        ],
+        "allow_methods": [
+          "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+        ],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:53.314197+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-approved-delete",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://app.serious-debauchery.click",
+        "requested_method": "DELETE"
+      },
+      "response": {
+        "status": 200,
+        "body_length": 0,
+        "body_kind": "text",
+        "allow_origin": [
+          "https://app.serious-debauchery.click"
+        ],
+        "allow_credentials": [
+          "true"
+        ],
+        "allow_methods": [
+          "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+        ],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:53.553543+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-approved-options",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://app.serious-debauchery.click",
+        "requested_method": "OPTIONS"
+      },
+      "response": {
+        "status": 200,
+        "body_length": 0,
+        "body_kind": "text",
+        "allow_origin": [
+          "https://app.serious-debauchery.click"
+        ],
+        "allow_credentials": [
+          "true"
+        ],
+        "allow_methods": [
+          "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+        ],
+        "set_cookie_names": [],
+        "message": null
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:53.799150+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-unapproved-get",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://qa-origin.example.invalid",
+        "requested_method": "GET"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:54.046564+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-unapproved-post",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://qa-origin.example.invalid",
+        "requested_method": "POST"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:54.295228+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-unapproved-put",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://qa-origin.example.invalid",
+        "requested_method": "PUT"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:54.544458+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-unapproved-patch",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://qa-origin.example.invalid",
+        "requested_method": "PATCH"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:54.791937+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-unapproved-delete",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://qa-origin.example.invalid",
+        "requested_method": "DELETE"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:55.045429+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-unapproved-options",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "https://qa-origin.example.invalid",
+        "requested_method": "OPTIONS"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:55.286187+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-local-get",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "http://localhost:5173",
+        "requested_method": "GET"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:55.526993+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-local-post",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "http://localhost:5173",
+        "requested_method": "POST"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:55.774335+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-local-put",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "http://localhost:5173",
+        "requested_method": "PUT"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:56.022060+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-local-patch",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "http://localhost:5173",
+        "requested_method": "PATCH"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:56.266785+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-local-delete",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "http://localhost:5173",
+        "requested_method": "DELETE"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    },
+    {
+      "observed_at": "2026-09-30T13:45:56.514452+00:00",
+      "case_id": "SEC-014",
+      "variation_id": "preflight-local-options",
+      "path": "/api/user/userInfo",
+      "request": {
+        "method": "OPTIONS",
+        "origin": "http://localhost:5173",
+        "requested_method": "OPTIONS"
+      },
+      "response": {
+        "status": 403,
+        "body_length": 20,
+        "body_kind": "text",
+        "allow_origin": [],
+        "allow_credentials": [],
+        "allow_methods": [],
+        "set_cookie_names": [],
+        "message": "Invalid CORS request"
+      }
+    }
+  ]
+}
