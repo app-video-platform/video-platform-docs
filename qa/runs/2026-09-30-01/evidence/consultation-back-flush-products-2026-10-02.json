@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-10-02T08:05:37.883Z",
+  "url": "https://app.serious-debauchery.click/app/products",
+  "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for Tamas Tyukodi\":\n      - generic: Tamas Tyukodi\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Products\" [level=1]\n  - paragraph: Create and manage everything you sell.\n  - button \"+ Add product\":\n    - generic: + Add product\n  - region \"Product controls\":\n    - textbox \"Search products\":\n      - /placeholder: Search products...\n    - combobox \"Filter by product type\":\n      - option \"All types\" [selected]\n      - option \"Course\"\n      - option \"Download\"\n      - option \"Consultation\"\n      - option \"Membership\"\n    - combobox \"Filter by product status\":\n      - option \"All statuses\" [selected]\n      - option \"Published\"\n      - option \"Draft\"\n    - combobox \"Sort products\":\n      - option \"Recently updated\" [selected]\n      - option \"Newest\"\n      - option \"Oldest\"\n      - option \"Name A-Z\"\n      - option \"Name Z-A\"\n  - generic: 17 products",
+  "action_started_at": "2026-10-02T08:05:37.370Z",
+  "action_finished_at": "2026-10-02T08:05:37.829Z",
+  "edited_names": [
+    "QA-2026-09-30-01 Range Validation A",
+    "QA-2026-09-30-01 Range Validation B"
+  ]
+}

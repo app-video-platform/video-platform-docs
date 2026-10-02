@@ -1,0 +1,5 @@
+{
+  "checked_at": "2026-10-01T09:32:17.702Z",
+  "url": "https://app.serious-debauchery.click/app/library/my-wishlist",
+  "snapshot": "- region \"Notifications alt+T\"\n- banner:\n  - navigation:\n    - heading \"Galactica\" [level=2]\n    - textbox \"Product search\":\n      - /placeholder: Search...\n    - button \"Submit search\":\n    - link \"Explore\":\n      - /url: /app/explore\n    - link \"Library\":\n      - /url: /app/library/all-products\n    - button \"Open wishlist\":\n    - paragraph: You don't have anything in your wishlist\n    - button \"Go to wishlist\" [active]:\n      - generic: Go to wishlist\n    - button \"Open shopping cart\":\n    - button:\n    - button \"T\":\n      - generic: Tamas Tyukodi\n- main:\n  - heading \"My Library\" [level=1]\n  - tablist \"Library sections\":\n    - tab \"All products\" [selected]\n    - tab \"Courses\"\n    - tab \"Download Packages\"\n    - tab \"Consultation sessions\"\n    - tab \"Wishlist\"\n  - paragraph: You don't have any products in your wishlist"
+}

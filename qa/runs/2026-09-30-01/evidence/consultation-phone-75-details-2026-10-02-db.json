@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-10-02T07:44:25.017542+00:00",
+  "account_alias": "OWNER-A",
+  "read_only": true,
+  "product": [
+    {
+      "id": "f23aedae-ab06-4808-8623-1c69e799ffa6",
+      "name": "QA-2026-09-30-01 Availability",
+      "description": "Disposable QA Consultation for details and weekly availability checks.",
+      "type": "CONSULTATION",
+      "status": "DRAFT",
+      "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "price": 0,
+      "duration_minutes": 75,
+      "meeting_method": "PHONE",
+      "custom_location": "Disposable QA location instructions; no real meeting.",
+      "buffer_before_minutes": 5,
+      "buffer_after_minutes": 10,
+      "max_sessions_per_day": 3,
+      "confirmation_message": "Disposable QA confirmation. No external event or email should be created.",
+      "cancellation_policy": "full_24h",
+      "updated_at": "2026-10-02T07:44:00.523779"
+    }
+  ],
+  "availability_tables": [],
+  "calendar_count": [
+    {
+      "connected_calendars": 3
+    }
+  ]
+}

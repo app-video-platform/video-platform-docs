@@ -80,7 +80,7 @@
     "instructions": "### NAV-005 \u2014 Admin route authorization\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Signed-in Admin; a Creator-owned product.\n- **Steps:** Open /app/admin and users/products/products/create/audit; open Products routes, Settings, Cart and all Library children; then Customers/detail, Sales, Analytics and Storefront.\n- **Expected results:** Admin/Product/Library routes render; Creator-only reporting, customer and storefront routes deny. Product ownership exceptions are covered separately.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 13
+    "recorded_variations": 15
   },
   {
     "id": "NAV-006",
@@ -91,7 +91,7 @@
     "instructions": "### NAV-006 \u2014 Role-specific home\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. One signed-in account per role.\n- **Steps:** Open and reload /app.\n- **Expected results:** User receives Galactica home, Creator dashboard, Admin administration home; navigation corresponds to active role.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 3
+    "recorded_variations": 4
   },
   {
     "id": "NAV-007",
@@ -130,8 +130,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-009 \u2014 Onboarding direct routing\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Authenticated account with onboardingCompleted false.\n- **Steps:** Direct-load /onboarding, refresh, then use sign-in redirection.\n- **Expected results:** expected result needs investigation: top-level /onboarding mounts AppRouter while its internal route structure must match an absolute onboarding path; successful routing must be established without assuming a completed onboarding flag.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "NAV-010",
@@ -140,9 +141,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-010 \u2014 Legacy and unknown application URLs\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Each signed-in role; Guest separately.\n- **Steps:** Open /app/my-page-preview, /app/help, /app/dashboard and /app/unknown.\n- **Expected results:** Legacy preview redirects to Storefront and its role gate; other unmatched app paths redirect through the protected /app fallback, not to a new Help or dashboard capability.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 16
   },
   {
     "id": "NAV-011",
@@ -205,7 +206,7 @@
     "instructions": "### NAV-015 \u2014 Marketplace navigation from deep routes\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. User at /app/product/{id} and search results.\n- **Steps:** Activate Explore, Library, Cart, Wishlist and account Settings; repeat from a Library child.\n- **Expected results:** expected result needs investigation for the relative Library target from deep routes; intended destination is /app/library/all-products, but TopNavbar supplies a relative path.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 6
   },
   {
     "id": "NAV-016",
@@ -214,8 +215,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-016 \u2014 Account dropdown and role choices\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Signed-in sessions for each single role.\n- **Steps:** Open account menu; inspect role choices and active role; select another role; navigate a newly allowed route.\n- **Expected results:** Role switches call the backend and update local user without automatic navigation; visibility alone does not mean the dev endpoint is enabled. Disabled-flag rejection is covered under security.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 5
   },
   {
     "id": "NAV-017",
@@ -224,8 +226,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### NAV-017 \u2014 User home placeholder learning content\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 honest navigation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User. User with and without actual Course entitlements.\n- **Steps:** Open /app; compare Continue your courses and recommendation sections; inspect Creator invitation text; follow documentation link only in approved test environment.\n- **Expected results:** Sections are static/empty, no personalized recommendations/progress or Creator-application submission is implemented; external documentation link is navigation only.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "MKT-001",
@@ -537,8 +540,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### AUTH-012 \u2014 Sign-in server rejection\n\n- **Feature area:** Registration, sign-in and account recovery. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest with isolated synthetic account fixtures. Wrong credential, nonexistent email, disabled/unverified account, and unavailable backend variants.\n- **Steps:** Submit valid-shaped login form for each fixture.\n- **Expected results:** Backend denies invalid authentication. expected result needs investigation for visible error/retry feedback because page lacks catch-based rejection rendering; no authenticated profile should be established.\n- **Required environment / external service:** Frontend and backend; synthetic credentials supplied privately by fixtures; SendGrid test mailbox for email flows.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "AUTH-013",
@@ -1117,7 +1121,7 @@
     "instructions": "### DISC-005 \u2014 Summary visibility conflict\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. DRAFT/HIDDEN/PUBLISHED products with distinctive synthetic titles.\n- **Steps:** As Guest, GET /api/products?ownerId={owner}, /api/products/get-all-products-min with/without userId; search those titles; open returned product cards.\n- **Expected results:** expected result needs investigation: summary/search queries omit lifecycle filtering, while full Product reads and public UI restrict availability. Never infer hidden content access from a visible summary.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 4
   },
   {
     "id": "DISC-006",
@@ -1451,7 +1455,7 @@
     "instructions": "### PROD-012 \u2014 Workspace type-specific tabs\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Draft of each supported type.\n- **Steps:** Open each workspace; inspect Basics/Pricing/Media/Readiness and Curriculum, Files, Availability or Content as appropriate.\n- **Expected results:** Only relevant type content editor is shown; type is not changed by merely switching route segment or tabs.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 2
   },
   {
     "id": "PROD-013",
@@ -1481,8 +1485,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-015 \u2014 Back flush and leave confirmation\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Unsaved draft edit; variants successful and failed PATCH.\n- **Steps:** Immediately click Back; on failure choose Stay, then repeat choosing Leave.\n- **Expected results:** Back flushes pending save before navigation; failure offers leave confirmation. Stay retains edit; Leave may discard pending data explicitly.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "PROD-016",
@@ -1514,7 +1519,7 @@
     "instructions": "### PROD-018 \u2014 Consultation pricing restrictions\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Consultation draft.\n- **Steps:** Open Pricing; enter blank, zero, negative and positive amounts; inspect readiness and publish attempt.\n- **Expected results:** UI only offers one-time; publication requires positive price rather than free Consultation. Draft persistence alone is not readiness.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 6
   },
   {
     "id": "PROD-019",
@@ -1607,8 +1612,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-027 \u2014 Membership publish unavailable\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Complete Membership draft or Hidden Membership.\n- **Steps:** Inspect Publish; bypass UI with POST/PUT/PATCH status PUBLISHED.\n- **Expected results:** UI disables publication; current validator rejects with422. Do not use older context claiming only409 as expected status.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "PROD-028",
@@ -1750,7 +1756,8 @@
     "priority": "P1",
     "instructions": "### PAPI-008 \u2014 Legacy full Product PUT\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 persisted Product contract. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; authenticated cookie and matching CSRF for every mutation. Owned Course and Download with existing sections. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PUT /api/products with matching id/type and changed shared fields; for Download send complete retained sections list; GET.\n- **Expected results:** 202 update; Course converter updates shared fields, Download full details can replace retained section set. Omitted Download sections preserve existing set; explicit empty list removes it.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Not run",
-    "variations_expanded": false
+    "variations_expanded": false,
+    "recorded_variations": 0
   },
   {
     "id": "PAPI-009",
@@ -1759,8 +1766,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PAPI-009 \u2014 Typed legacy read\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 persisted Product contract. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; authenticated cookie and matching CSRF for every mutation. Published Product and correct/wrong type discriminators. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /api/products/getProduct?productId={id}&type={type}; compare canonical GET /api/products/{id}.\n- **Expected results:** Correct type returns access-filtered response; wrong type is rejected/missing under handler resolution, not a different Product. Exact invalid-type error follows exception mapping.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 8
   },
   {
     "id": "PAPI-010",
@@ -1769,8 +1777,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PAPI-010 \u2014 Full owner list filtering\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 persisted Product contract. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; authenticated cookie and matching CSRF for every mutation. Owner with Draft/Hidden/Published Products; Guest and entitled User sessions. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /api/products?userId={ownerId} under each session, then as owner/Admin.\n- **Expected results:** Full-list service filters inaccessible Products; owner/Admin can read own/managed content. Summary ownerId API has different visibility and is investigated under discovery.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "PAPI-011",
@@ -1779,8 +1788,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PAPI-011 \u2014 Invalid Product discriminator and IDs\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 persisted Product contract. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; authenticated cookie and matching CSRF for every mutation. Malformed UUID, nonexistent UUID, absent/unsupported type on create/full PUT. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Call corresponding Product endpoints with each fixture.\n- **Expected results:** Invalid DTO/ID/type rejected without mutation; nonexistent Product yields resource-not-found. Exact parsing errors use generic400 rather than assumed404.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "PAPI-012",
@@ -1949,8 +1959,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PAPI-028 \u2014 Conflicting owner query mappings\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest for public reads; repeat owner/Admin where relevant. Existing Creator ID with products.\n- **Steps:** GET /api/products?userId={id}&ownerId={id}; then GET /api/products without either parameter.\n- **Expected results:** expected result needs investigation: separate same-path controller mappings require userId or ownerId; combined/missing parameters must not be guessed as canonical list behavior or unrestricted all-products access.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "CONTENT-001",
@@ -2639,8 +2650,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONS-001 \u2014 Details round-trip\n\n- **Feature area:** Consultation details and weekly availability. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Consultation draft. Duration30/45/50/60/75/90/120; ZOOM/GOOGLE_MEET/PHONE/OTHER fixtures; valid weekly window.\n- **Steps:** Set duration, method, location where needed, buffers, daily limit, confirmation message and policy; wait save; reload.\n- **Expected results:** Supported metadata persists in Consultation details; meeting method does not create an external room/event.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 10
   },
   {
     "id": "CONS-002",
@@ -2649,8 +2661,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONS-002 \u2014 Weekly availability editing\n\n- **Feature area:** Consultation details and weekly availability. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Consultation draft. Draft with seven days.\n- **Steps:** Enable day; add two nonoverlapping ranges; edit times; remove range; disable another day; save/reload.\n- **Expected results:** Weekly day/window metadata persists; disabled day is not offered as enabled availability; no appointment inventory is generated.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 5
   },
   {
     "id": "CONS-003",
@@ -2659,8 +2672,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONS-003 \u2014 Weekly range validation\n\n- **Feature area:** Consultation details and weekly availability. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Consultation draft. Enabled day with empty start/end, reverse/equal times and overlapping ranges; adjacent ranges variant.\n- **Steps:** Edit each invalid variant then adjacent valid ranges; inspect inline readiness and PATCH response.\n- **Expected results:** Missing/reversed/overlap rejected by corresponding validation; touching endpoints are nonoverlapping. No automatic overnight interpretation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 6
   },
   {
     "id": "CONS-004",
@@ -2671,7 +2685,7 @@
     "instructions": "### CONS-004 \u2014 Availability defaults conflict\n\n- **Feature area:** Consultation details and weekly availability. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Consultation draft. New Consultation with absent details; existing backend normalized days disabled.\n- **Steps:** Open Availability, reload without edits, compare returned details and displayed defaults.\n- **Expected results:** expected result needs investigation: frontend default weekdays9\u201317 differ from backend normalized disabled days, and frontend fills enabled empty windows.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 2
   },
   {
     "id": "CONS-005",
@@ -2843,8 +2857,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-001 \u2014 Load authoring aggregate\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Membership without native content; later populated fixture.\n- **Steps:** Open Content tab; GET /api/products/{p}/membership; reload.\n- **Expected results:** Aggregate/config/feed load with honest empty state, then server-backed metadata; no member-facing access is implied.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "MEM-002",
@@ -2855,7 +2870,7 @@
     "instructions": "### MEM-002 \u2014 Create and edit Post\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Synthetic title/body and optional description.\n- **Steps:** Add Post; save; edit title/body; save and reload.\n- **Expected results:** POST/PATCH /membership/content persists native Post with stable ID and status; nonblank title/body required.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 3
   },
   {
     "id": "MEM-003",
@@ -2886,7 +2901,7 @@
     "instructions": "### MEM-005 \u2014 Native editor validation\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Blank title/body, missing asset, zero/oversize file and unsupported browser type variants.\n- **Steps:** Attempt Post/Video/Resource save with each invalid field; correct and retry.\n- **Expected results:** Client blocks required data/selection restrictions; server also enforces metadata constraints. Correcting editor data enables metadata save only.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 5
   },
   {
     "id": "MEM-006",
@@ -2955,8 +2970,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-012 \u2014 Included Product picker\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Own Course/Download across all lifecycle states; Consultation/Membership and alreadyincluded entries.\n- **Steps:** Open picker, search mixed-case title, select multiple, cancel; reopen and confirm.\n- **Expected results:** Eligible Course/Download entries only; selected set persists only on confirm; no eligible/no search matches are distinct. Alreadyincluded/unsupported entries excluded.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "MEM-013",
@@ -2965,8 +2981,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-013 \u2014 Included Product persistence and removal\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Two owned Course/Download Products; one Draft/Hidden.\n- **Steps:** Confirm inclusion, reload; remove inclusion and reload underlying Product.\n- **Expected results:** Association persists; Draft/Hidden may be included as authoring metadata. Removing association does not delete source Product or grant learner entitlement.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "MEM-014",
@@ -2985,8 +3002,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-015 \u2014 Manual feed ordering\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Mixed included/native feed; MANUAL mode.\n- **Steps:** Reorder all entries, save; reload; add new native entry.\n- **Expected results:** Server derives one-based positions from array; new native entry prepends; supplied arbitrary positions/timestamps are not authoritative.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "MEM-016",
@@ -2995,8 +3013,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-016 \u2014 Newest-first feed mode\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Entries created at distinct times.\n- **Steps:** PATCH /membership orderingMode NEWEST_FIRST; reload; switch MANUAL and save order.\n- **Expected results:** Newest-first sorts server addedAt descending; mode transitions normalize order and existing entry addedAt survives feed updates.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3
   },
   {
     "id": "MEM-017",
@@ -3015,8 +3034,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### MEM-018 \u2014 Membership permissions\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** API integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Guest, User with legacy entitlement and nonowner Creator. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET/PATCH /membership; POST/PATCH/DELETE content; PUT feed with each session.\n- **Expected results:** Method security plus ownership rejects all unauthorized authoring, including URL-public GET prefix; Admin authoring remains allowed.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "MEM-019",
@@ -3035,8 +3055,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-020 \u2014 Selection-only upload surface\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Video/Resource editor open.\n- **Steps:** Inspect Uppy file picker and attempt remote provider import/byte upload.\n- **Expected results:** Membership disables importers and uses select-only metadata capture; no successful binary delivery or external drive import is claimed.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "MEM-021",
@@ -3045,8 +3066,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-021 \u2014 Unavailable Membership runtime\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Complete authored feed and recurring price.\n- **Steps:** Inspect readiness, public preview and cart; attempt publishing/checkout via supported APIs.\n- **Expected results:** Publishing unavailable, checkout rejects recurring/Membership; no recurring billing, subscription renewal/cancel, member management, included-product access propagation or live membership entitlements is established.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "MEM-022",
@@ -3149,8 +3171,9 @@
     "level": "browser E2E",
     "priority": "P0",
     "instructions": "### ACCESS-008 \u2014 Library root route\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. Signed-in User/Admin.\n- **Steps:** Direct-load /app/library with no child; then use tabs.\n- **Expected results:** Library shell has no index child route; expected result needs investigation for desired default contents rather than assuming All Products auto-renders.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 4
   },
   {
     "id": "ACCESS-009",
@@ -3161,7 +3184,7 @@
     "instructions": "### ACCESS-009 \u2014 Library empty, loading and recovery\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. No entitlements; delayed response; failed response separately.\n- **Steps:** Open each Library content tab; restore backend and reload.\n- **Expected results:** Distinct loading, empty and alert states; reload refetches rather than fabricating content.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 4
+    "recorded_variations": 9
   },
   {
     "id": "ACCESS-010",
@@ -4034,7 +4057,7 @@
     "instructions": "### LAND-006 \u2014 Landing lifecycle public read\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Published, Draft and Hidden Products; owner/Admin sessions and Guest. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /api/products/{p}/landing-page for each; GET manager path as owner.\n- **Expected results:** Public config only Published; nonpublished404 even owner; authorized manager path reads Draft/Hidden config.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 4
+    "recorded_variations": 5
   },
   {
     "id": "LAND-007",
@@ -4053,8 +4076,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-008 \u2014 Admin builder storefront conflict\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Admin editing another Creator Product.\n- **Steps:** Open landing builder and compare private Product preview route.\n- **Expected results:** expected result needs investigation: builder unconditionally requests Creator-only storefront config (403 for Admin), while private preview has an Admin/public-storefront fallback; backend landing authorization alone does not prove browser builder usability.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "LAND-009",
@@ -4075,7 +4099,7 @@
     "instructions": "### LAND-010 \u2014 Private preview per lifecycle\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Owner Creator with Draft/Hidden/Published Product.\n- **Steps:** Open /app/products/{p}/preview; inspect status strip, content and Back to workspace; reload.\n- **Expected results:** Manager Product/config read renders saved state across statuses; Back navigates editor; preview is not an actual checkout/enrollment operation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 11
+    "recorded_variations": 12
   },
   {
     "id": "LAND-011",
@@ -4117,9 +4141,9 @@
     "level": "browser E2E",
     "priority": "P0",
     "instructions": "### ADMIN-001 \u2014 Admin navigation home\n\n- **Feature area:** Administration, roles and audit. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P0 \u2014 platform administration boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Admin with isolated synthetic accounts and Products. Signed-in Admin.\n- **Steps:** Open /app and /app/admin; follow Users, Products and Audit tiles.\n- **Expected results:** Both admin entry points lead to supported management destinations; no Creator report privileges inferred.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 5
   },
   {
     "id": "ADMIN-002",
@@ -4130,7 +4154,7 @@
     "instructions": "### ADMIN-002 \u2014 User search, role filter and paging\n\n- **Feature area:** Administration, roles and audit. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P0 \u2014 platform administration boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Admin with isolated synthetic accounts and Products. More than20 synthetic accounts across roles; mixed-case name/email matches.\n- **Steps:** Open /app/admin/users; search and filter role; use next/previous; clear search; GET /api/admin/users with same parameters.\n- **Expected results:** Case-insensitive contains search on first/last/email and role filter; pagination resets on refinements and boundary buttons disable.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 8
   },
   {
     "id": "ADMIN-003",
@@ -4181,7 +4205,7 @@
     "instructions": "### ADMIN-007 \u2014 Admin Product filters and paging\n\n- **Feature area:** Administration, roles and audit. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P0 \u2014 platform administration boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Admin with isolated synthetic accounts and Products. Products owned by multiple Creators; each type/status; >20 records.\n- **Steps:** Open /app/admin/products; search name/description/owner name, owner ID, type/status; paginate and clear.\n- **Expected results:** Combined filters map to /api/admin/products; only matching summaries shown; raw invalid owner ID error does not silently target another owner.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 2
+    "recorded_variations": 17
   },
   {
     "id": "ADMIN-008",
@@ -4192,7 +4216,7 @@
     "instructions": "### ADMIN-008 \u2014 Admin create owner selector\n\n- **Feature area:** Administration, roles and audit. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P0 \u2014 platform administration boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Admin with isolated synthetic accounts and Products. Several Creator accounts; User/Admin accounts also present.\n- **Steps:** Select owner and create via /app/admin/products/create?ownerId={id}; omit owner or tamper query separately.\n- **Expected results:** Valid owner flows into common workspace; required Creator assignment enforced server-side. Owner selector loads only page0,size100; larger-list and lookup-failure behavior has a separate ADMIN case.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 2
+    "recorded_variations": 3
   },
   {
     "id": "ADMIN-009",
@@ -4203,7 +4227,7 @@
     "instructions": "### ADMIN-009 \u2014 Admin Product View/Edit\n\n- **Feature area:** Administration, roles and audit. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P0 \u2014 platform administration boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Admin with isolated synthetic accounts and Products. Published and Draft products.\n- **Steps:** Use View/public and Edit/workspace actions.\n- **Expected results:** Published public view works; Draft public view unavailable despite Admin entitlement bypass; workspace permits authorized management.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 2
+    "recorded_variations": 5
   },
   {
     "id": "ADMIN-010",
@@ -4235,7 +4259,7 @@
     "instructions": "### ADMIN-012 \u2014 Admin loading, empty and error states\n\n- **Feature area:** Administration, roles and audit. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P0 \u2014 platform administration boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Admin with isolated synthetic accounts and Products. Delay/fail users/products/audit independently; no-result filters.\n- **Steps:** Open each page; restore service and adjust filter/reload.\n- **Expected results:** Loading, no records and error states remain distinct; failed mutation does not appear successful merely from selection.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 5
   },
   {
     "id": "ADMIN-013",
@@ -4254,8 +4278,9 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### ADMIN-014 \u2014 Admin audit absence for ordinary Creator edit\n\n- **Feature area:** Administration, roles and audit. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 platform administration boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Admin with isolated synthetic accounts and Products. Creator edits own Product; Admin edits same Product later. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET audit as Admin before/after each action, filtering target ID.\n- **Expected results:** Admin mutations audited; ordinary Creator mutation is not assumed to create admin audit entry.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "ADMIN-015",
@@ -4386,8 +4411,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### SALES-012 \u2014 Sales role denial\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. Guest, User and Admin.\n- **Steps:** GET /api/creator/sales/summary, /api/creator/orders and /api/creator/orders/{id}; open browser Sales.\n- **Expected results:** Creator-only API/browser denied to all three; Admin role is not implicit reporting superuser.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "CUSTOM-001",

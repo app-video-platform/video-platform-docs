@@ -1,0 +1,53 @@
+{
+  "observed_at": "2026-10-01T09:39:55.347191+00:00",
+  "account_alias": "OWNER-A",
+  "read_only": true,
+  "product": [
+    {
+      "id": "1bef43ff-f9dd-495e-9ab4-c1ce3d6d04d0",
+      "name": "QA-2026-09-30-01 Membership Feed",
+      "status": "DRAFT",
+      "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "price": 0.0,
+      "pricing_model": "RECURRING",
+      "billing_interval": "MONTH",
+      "ordering_mode": "NEWEST_FIRST"
+    }
+  ],
+  "feed": [
+    {
+      "id": "eb89522a-c278-4014-819d-e1616e7511df",
+      "kind": "PRODUCT",
+      "content_id": null,
+      "included_product_id": "ddd5bb80-183e-48d5-84cd-8819ca082a58",
+      "position": null,
+      "added_at": "2026-10-01T09:39:32.540189+00:00"
+    },
+    {
+      "id": "517d7cf6-51bc-48fd-869d-a8f9f7bc6fe9",
+      "kind": "PRODUCT",
+      "content_id": null,
+      "included_product_id": "a7991427-a5f7-4e48-a241-0e1a82b52d68",
+      "position": null,
+      "added_at": "2026-10-01T09:39:32.542478+00:00"
+    }
+  ],
+  "content": [],
+  "included_fixtures": [
+    {
+      "id": "ddd5bb80-183e-48d5-84cd-8819ca082a58",
+      "name": "QA-2026-09-30-01 Course",
+      "status": "DRAFT"
+    },
+    {
+      "id": "a7991427-a5f7-4e48-a241-0e1a82b52d68",
+      "name": "QA-2026-09-30-01 Download B",
+      "status": "DRAFT"
+    }
+  ],
+  "actor_entitlement_count": [
+    {
+      "active_grants": 0
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "observed_at": "2026-10-02T08:27:49.780Z",
+  "url": "https://app.serious-debauchery.click/auth/login",
+  "snapshot": "- region \"Notifications alt+T\"\n- generic: Email\n- textbox \"Email\"\n- generic: Password\n- textbox \"Password\"\n- button:\n- button \"Sign in\":\n  - generic: Sign in\n- button \"Accedi con Google. Si apre in una nuova scheda\":\n  - generic: Accedi con Google\n- iframe\n- button \"I forgot my password\""
+}

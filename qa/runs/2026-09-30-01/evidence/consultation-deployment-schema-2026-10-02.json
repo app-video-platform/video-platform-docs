@@ -1,0 +1,20 @@
+{
+  "observed_at": "2026-10-02T07:44:26.767411+00:00",
+  "read_only": true,
+  "database": "development",
+  "expected_tables": [
+    "consultation_availability_days",
+    "consultation_availability_windows"
+  ],
+  "observed_matching_tables": [],
+  "migration_filename_filter": "%39-%",
+  "matching_migration_rows": 0,
+  "consultation_table_has_weekly_json_column": false,
+  "local_source_references": [
+    "../video-platform/src/main/java/com/myproject/video/video_platform/entity/products/consultation/ConsultationAvailabilityDay.java",
+    "../video-platform/src/main/java/com/myproject/video/video_platform/entity/products/consultation/ConsultationAvailabilityWindow.java",
+    "../video-platform/src/main/resources/db/changelog/scripts/39-create-consultation-availability.sql"
+  ],
+  "deployed_revision": "unknown",
+  "diagnostic_inference": "Weekly persistence support in the local checkout is absent from this deployed database schema; exact deployed backend behavior requires response verification."
+}

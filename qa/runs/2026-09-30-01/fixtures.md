@@ -38,4 +38,31 @@ Current curriculum fixture state: **PUBLISHED**, observed after Publish request.
 - File group: QA Files A, synthetic description, currently0files.
 - Purpose: prepare canonical upload case in mounted creation session because BUG-001 prevents saved editor reopening.
 - Local fixture prepared at `/private/tmp/vp-qa-fixtures/QA-2026-09-30-01-download.txt`,201bytes, SHA256 `04c83a8f6432814a5baa1edacbb0ce7eda5cfed866a3687e8222a595b9a60b6c`. No file selected or uploaded. Upload approval pending.
-- Retain working tab769287816 without reload or navigation for the upload test. No publication requested.
+- The working creation tab769287816 was lost before the2 October login handoff. Do not assume it can be reopened; BUG-001 blocks saved editing. No publication requested.
+
+## Membership feed execution fixture — created 1 October 2026
+
+- Product: `1bef43ff-f9dd-495e-9ab4-c1ce3d6d04d0`, QA-2026-09-30-01 Membership Feed. OWNER-A, DRAFT, EUR7.50, RECURRING/MONTH, NEWEST_FIRST.
+- Native Draft Posts: `2b4c3ace-c734-4a6f-b5ae-6e85781fcd09` (QA Feed Post A Updated, updated synthetic body) and `510fa63a-2f3d-4d28-afca-927857010692` (QA Feed Post B).
+- Included Products: synthetic Draft Course `ddd5bb80-183e-48d5-84cd-8819ca082a58`, Draft Download `a7991427-a5f7-4e48-a241-0e1a82b52d68`, and already Published curriculum Course `cb045295-cf70-445c-99a7-46fc0618e58e`. Inclusion did not change their lifecycle or grant learner access.
+- Manual ordering, new Post insertion, mode transitions and stable feed timestamps were verified in the database. The Course removal confirmation was cancelled; all three associations remain.
+- No Video/Resource was saved, no file selected/uploaded, and no Membership publication or subscription was requested.
+- On 2 October, old authoring tabs were no longer available. Saved state remains intact, but this Membership editor also reopens blank with BUG-001. Do not assume a working creation workspace can be recovered by reopening its URL.
+
+## Browser/session reconciliation — 2 October 2026
+
+The previous Storefront, curriculum, Download and Membership creation tabs are no longer available. The unsaved Storefront preview is lost; its public configuration was not saved. The saved fixtures are retained for diagnosis and retesting. The owner restored the original Creator login in Chrome tab769287843. Long-lived database tunnel sessions70227/12257 timed out; subsequent read-only checks use short-lived localhost-only tunnels that close after each check. Restricted logs remain available. The previous Guest browser tab is also unavailable; recheck its local Cart/Wishlist state before relying on earlier observations.
+
+## Consultation continuation fixtures — 2 October 2026
+
+All three are synthetic, OWNER-A, CONSULTATION, ONE_TIME/EUR and DRAFT. No publication, booking, purchase or calendar provider operation occurred. Extra creation sessions were needed because saved editor reopening is obstructed by BUG-001.
+
+- `f23aedae-ab06-4808-8623-1c69e799ffa6`, QA-2026-09-30-01 Availability: price0, duration75, PHONE, synthetic location instructions retained from Other, buffers5/10, daily limit3, synthetic confirmation, full_24h policy. Local weekday/range edits have no corresponding deployed weekly persistence (BUG-023). Browser Back from private preview crashes the editor.
+- `e81643a6-ed56-4b2d-bec1-a52c5870f4a1`, QA-2026-09-30-01 Range Validation B: saved price18 after entering17.50 (BUG-024), duration30, ZOOM, buffers0/0, daily limit1. Description, message and policy are empty. All local invalid-range trials were restored to a valid Monday09–12 range; schedule persistence remains absent. Immediate Back successfully flushed the latest B title. Its initial working session is closed.
+- `deba7b76-1d20-423a-9f69-98cea00ef8bb`, QA-2026-09-30-01 Decimal Pricing: form currently17.50, database18 (BUG-024); duration0, no method/location/message/policy, buffers0/0 and stored daily limit0. Separate17.25→17 and0.49→0 trials are documented. Retain Chrome769287857 on Pricing for continuation; no Preview, navigation or reload if preserving this working creation session.
+
+Ten synthetic Products and three native Posts are now retained. The earlier two Published Products remain Published; the pending retention question is unchanged. No fixture deletion occurred.
+
+## Latest Admin continuation — 2 October 2026
+
+OWNER-A is restored to CREATOR, verified by browser and [read-only DB](evidence/admin-checks-creator-restored-db.json). No new synthetic fixtures or Admin Product mutation. Decimal Pricing remains Draft/price18 with unchanged update timestamp and zero target audit rows; its former working creation tab is now blank and was closed. Main Chrome769287843 retains Creator Dashboard. Temporary Admin/Guest tabs closed. Existing other-Creator Course inspected read-only for BUG-025; no original Product or landing config changed.

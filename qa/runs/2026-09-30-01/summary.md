@@ -2,9 +2,17 @@
 
 Run in progress. [Progress](progress.md) and [session notes](session-notes.md) contain the current checkpoint. [JSONL results](results.jsonl) are authoritative; [CSV results](results.csv) can be opened in Excel.
 
-## Checkpoint at 586 variations
+## Checkpoint — 2 October 2026
 
-{'Pass': 487, 'Fail': 72, 'Needs clarification': 25, 'Blocked': 2}. Counts are individual variations across 173 catalog IDs, not completed cases. Catalog coverage: {'Partially assessed': 163, 'Pass': 8, 'Not run': 320, 'Needs clarification': 1, 'Fail': 1}.
+736 assessed variations: 610 Pass, 79 Fail, 39 Needs clarification and 8 Blocked. The append-only ledger contains 778 historical attempt rows. Three latest Not run entries correct mistaken case associations and are excluded from assessment counts.
+
+The 493 original cases comprise 295 not started, 184 partially assessed and 14 fully assessed (11 Pass, 1 Fail, 2 Needs clarification). **479 original cases still require execution or additional checks.** An assessed variation is not a completed catalog case; blocked entries were not executed.
+
+Latest continuation assessed Admin home/navigation, user name/email/role filters, Product filters and all three pagination pages, invalid owner errors, legacy fallbacks and Library root recovery. NAV-010, NAV-016, ADMIN-001 and ACCESS-008 now have their specified browser variations assessed; unresolved Library root contents remain Needs clarification. Guest Sales browser/API denials passed. No authenticated API result is inferred from a browser route gate.
+
+New finding: BUG-025, Admin landing builder omits another Creator's profile while private preview displays it. BUG-001 also obstructs Admin saved editing. The formerly working Decimal Pricing creation tab is now blank after interruption; the planned Admin audit mutation was not attempted. Database confirms its Draft price18 and zero target audit rows remain, and OWNER-A is restored to CREATOR.
+
+Prior findings remain: deployed Consultation weekly availability support is absent (BUG-023), and its integer price column loses cents (BUG-024):17.25→17,17.50→18 and0.49→0. Range validation, local removal and successful immediate Back flush portions have evidence. Guest full-list filtering and Membership authoring denial passed. Fabricated nonexistent-account sign-in gave no visible rejection feedback; no HTTP status was inferred from browser logs.
 
 ## Confirmed defects
 
@@ -32,6 +40,9 @@ Run in progress. [Progress](progress.md) and [session notes](session-notes.md) c
 | [BUG-020](issues/BUG-020.md) | Low | Quiz fields reuse IDs; second question Points label focuses first question. |
 | [BUG-021](issues/BUG-021.md) | Medium | Course reader displays saved Article JSON instead of formatted content. |
 | [BUG-022](issues/BUG-022.md) | Low | Public authenticated notification button has no accessible name. |
+| [BUG-023](issues/BUG-023.md) | Medium | Weekly availability appears saved, but deployed Consultation schema/API lack its persistence. |
+| [BUG-024](issues/BUG-024.md) | High | Consultation prices lose cents in the deployed integer price column. |
+| [BUG-025](issues/BUG-025.md) | Medium | Admin landing builder omits another Creator's profile shown by private preview. |
 
 Repairing BUG-001 would unblock many saved authoring journeys. No implementation fixes are part of this execution pass.
 
@@ -52,12 +63,17 @@ Evidence covers Guest and role route guards, initial creation of four Product ty
 - Verified fake payment-provider configuration and controlled commerce history.
 - Controlled failure/configuration fixtures, test mail and credential handoff, upload fixtures, and calendar-provider test setup where required.
 - A deployed repair of saved authoring for cases obstructed by BUG-001.
+- Alignment of deployed Consultation weekly availability and price persistence before retesting BUG-023/024.
 
 Unexecuted cases stay Not run until their actual variation or blocker is assessed. Prerequisites do not justify bulk Pass or Blocked classifications.
 
 ## Retained state and limits
 
-OWNER-A is restored to CREATOR. Its Cart and Wishlist are empty. Six synthetic Products and one native Post remain for retesting; Consultation and the curriculum Course are Published. Guest has one synthetic Consultation in its separate local Cart. Original Products were not edited. No purchases, uploads, account creation, credential changes, or calendar writes occurred.
+OWNER-A is restored to CREATOR after the owner performed the temporary Admin switch. Restoration is verified in the browser and read-only database. Ten synthetic Products and three native Posts remain for retesting. Only the earlier Consultation and curriculum Course are Published. Original Products were inspected read-only and were not edited. No Admin Product mutation, purchase, upload, account creation, credential change or calendar write occurred in this continuation.
+
+All old authoring sessions and the unsaved Storefront theme preview are gone. The Decimal Pricing workspace became blank after interruption and was closed; its database price remains18 and status Draft. Main Chrome769287843 retains the signed-in Creator Dashboard for continuation. Temporary Admin and Guest tabs are closed. The old Guest local Cart state remains unverified. Owner collections were previously empty and were not rechecked in this Admin continuation.
+
+Restricted logs returned200lines (6 ERROR lines in the latest bounded sample) without retaining raw logs. Frontend connections, tunnel attempts and automatic approval review intermittently timed out, then recovered. Short-lived localhost-only tunnels verified final role/fixture state and closed after each check. The reader remains read-only with a10s statement timeout. The existing observer key and reader account remain the access mechanism.
 
 Restricted logs and read-only DB were verified. Local repository revisions do not prove deployed revisions, which remain unknown. Most ledger timestamps record entry time rather than action start; see [run metadata](run.md).
 
@@ -65,7 +81,9 @@ Historical interruption: frontend and API HTTPS connections reset during Profile
 
 Validation: documentation typecheck passed. Default npm build initially rejected Node18; the same Docusaurus build passed using the installed bundled Node24 runtime. Existing stale browser-data and update-check warnings remain; no dependencies or system permissions were changed. Ledger/CSV row counts match and all recorded evidence paths exist.
 
-Connectivity recovered after the recorded interruption. Browser and terminal API checks now work; testing continues. The previous connection-reset note describes a historical interruption.
+## Historical continuation notes through 1 October
+
+The notes below describe earlier checkpoints and browser state, superseded by the current retained-state section above. Connectivity recovered after the recorded interruption. Browser and anonymous terminal API checks worked; protected direct API navigation remains blocked by the browser, without bypass or credential extraction.
 
 Latest independent checks: all four owner private Product previews and reloads, missing-preview recovery, Course landing local controls/reset/reload, native description limit, public Storefront anchors and link copy, Guest and Creator legacy-route gates. Six undefined public/auth routes render blank; their intended fallback is unresolved. Native Profile input corrected the earlier automation-only Bio maximum observation; Bio clamps at250, while short Bio and invalid Tagline/Website validation still fail.
 

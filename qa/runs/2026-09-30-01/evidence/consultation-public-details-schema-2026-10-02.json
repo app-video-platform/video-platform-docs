@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-10-02T07:46:11.916963+00:00",
+  "role": "Guest",
+  "request_method": "GET",
+  "request_path": "/api/products/3ebc8873-83aa-430b-8fe2-dad685c0a8d3",
+  "status": 200,
+  "synthetic_fixture": "3ebc8873-83aa-430b-8fe2-dad685c0a8d3",
+  "details_keys": [
+    "bufferAfterMinutes",
+    "bufferBeforeMinutes",
+    "cancellationPolicy",
+    "confirmationMessage",
+    "connectedCalendars",
+    "customLocation",
+    "durationMinutes",
+    "maxSessionsPerDay",
+    "meetingMethod"
+  ],
+  "weekly_availability_key_present": false,
+  "weekly_availability_day_count": 0,
+  "raw_response_saved": false
+}

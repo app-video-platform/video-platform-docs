@@ -1,0 +1,5 @@
+{
+  "observed_at": "2026-10-02T07:04:30.524Z",
+  "url": "https://app.serious-debauchery.click/app/products/1bef43ff-f9dd-495e-9ab4-c1ce3d6d04d0/preview",
+  "snapshot": "- region \"Notifications alt+T\"\n- banner:\n  - navigation:\n    - heading \"Galactica\" [level=2]\n    - textbox \"Product search\":\n      - /placeholder: Search...\n    - button \"Submit search\":\n    - link \"Explore\":\n      - /url: /app/explore\n    - button \"Log In\":\n      - generic: Log In\n    - button \"Register\":\n      - generic: Register\n- main"
+}

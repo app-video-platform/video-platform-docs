@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-10-01T09:35:36.884768+00:00",
+  "role": "Guest",
+  "request_method": "GET",
+  "request_path": "/api/products/getProduct?productId=cb045295-cf70-445c-99a7-46fc0618e58e",
+  "status": 400,
+  "response_shape": "dict",
+  "raw_response_saved": false,
+  "response_keys": [
+    "message",
+    "status"
+  ],
+  "error_category": {
+    "missing_parameter": true,
+    "ambiguous_handler": false,
+    "not_found": false,
+    "invalid_uuid": false,
+    "invalid_type": true
+  },
+  "body_status": 400
+}

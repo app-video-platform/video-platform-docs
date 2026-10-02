@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-02T07:22:01.524Z",
+  "url": "https://app.serious-debauchery.click/app/products/edit/1bef43ff-f9dd-495e-9ab4-c1ce3d6d04d0",
+  "errors": [
+    {
+      "timestamp": "2026-10-02T07:18:48.907Z",
+      "message": "Error: Minified React error #300; visit https://reactjs.org/docs/error-decoder.html?invariant=300 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    },
+    {
+      "timestamp": "2026-10-02T07:18:48.907Z",
+      "message": "Error: Minified React error #300; visit https://reactjs.org/docs/error-decoder.html?invariant=300 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    }
+  ],
+  "tool_transport_errors_excluded": true
+}

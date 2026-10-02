@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-02T07:32:46.330308+00:00",
+  "role": "Guest",
+  "request_method": "GET",
+  "request_path": "/api/products/a7991427-a5f7-4e48-a241-0e1a82b52d68",
+  "status": 403,
+  "response_shape": "dict",
+  "raw_response_saved": false,
+  "response_keys": [
+    "message",
+    "status"
+  ],
+  "error_category": {
+    "not_found": false,
+    "unauthenticated": false,
+    "access_denied": true
+  }
+}

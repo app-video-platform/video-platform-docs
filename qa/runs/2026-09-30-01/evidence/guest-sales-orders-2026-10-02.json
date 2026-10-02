@@ -1,0 +1,10 @@
+{
+  "observed_at": "2026-10-02T13:02:39.038298+00:00",
+  "role": "GUEST",
+  "method": "GET",
+  "path": "/api/creator/orders",
+  "authentication_sent": false,
+  "http_status": 401,
+  "response_keys": null,
+  "body_retained": false
+}
