@@ -1,0 +1,3385 @@
+[
+  {
+    "key": "development-guest-dev-dashboard",
+    "captured_at": "2026-10-02T17:20:06.804Z",
+    "fixture": "Isolated route fixture; build: development; identity: GUEST; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Developer Dashboard",
+      "Galactica Landing Page",
+      "About Page",
+      "Pricing Page",
+      "Contact Page",
+      "Sign Up Page",
+      "Sign In Page",
+      "Forgot Password Page",
+      "Email Verification Page",
+      "Email Sent Confirmation Page",
+      "Not Found Page",
+      "Unauthorized Page",
+      "Onboarding Page",
+      "Galactica App Home",
+      "Visitor pages (visible for ALL users)",
+      "Explore",
+      "Search Results",
+      "Product Details Page",
+      "Storefront",
+      "Creator pages (visible only for users with role CREATOR)",
+      "Products",
+      "Create Product",
+      "Edit Product",
+      "Instructor Storefront Preview",
+      "Sales Page",
+      "Marketing Page",
+      "Normal User pages (visible only for users with role User)",
+      "Normal User Home/Dashboard Page",
+      "All logged pages (visible only for logged in users with any role)",
+      "Settings",
+      "Register (registerUser)",
+      "Sign In (signInUser)",
+      "Verify Email (verifyEmailApi)",
+      "Refresh token",
+      "Sign Out (logoutAPI)",
+      "Sign In With Google (googleAPI)",
+      "Forgot Password (forgotPasswordAPI)",
+      "Get User Profile (getUserProfileAPI)",
+      "Create Product (createProductAPI)",
+      "Update Product Details (updateProductDetailsAPI)",
+      "Delete Product (deleteProductAPI)",
+      "Create Section (createSectionAPI)",
+      "Update Section Details (updateSectionDetailsAPI)",
+      "Delete Section (deleteSectionAPI)",
+      "Create Lesson (createLessonAPI)",
+      "Update Lesson Details (updateLessonDetailsAPI)",
+      "Delete Lesson (deleteLessonAPI)",
+      "Get All User's Products (getAllProductsByUserIdAPI)",
+      "Retrieve a specific product (getProductByProductIdAPI)",
+      "Add card image for product (addImageToProductAPI)",
+      "Get Presigned URL (getPresignedUrlAPI)",
+      "Upload To Presigned URL (uploadToPresignedUrl)",
+      "Confirm File Is Uploaded (confirmFileUploadAPI)",
+      "",
+      "So, avem niste architecture Proposal",
+      "Frontend Architecture Comparison: Split-Subdomain vs Single-Domain Models",
+      "\ud83d\udcd8 Model 1: Split-Subdomain Architecture (\"Subdomain Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Monorepo Folder Structure:",
+      "\ud83d\udcd7 Model 2: Single-Domain with URL Prefix Architecture (\"Path-Based Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Folder Structure (Single App):",
+      "\ud83c\udfc1 Recommendation",
+      "Subdomain Model - React UI Component Architecture",
+      "\ud83c\udf10 Public Site (Static Pages)",
+      "\ud83d\udd10 Authentication & Onboarding",
+      "\ud83e\udded Layout Components",
+      "\ud83c\udfe0 Dashboard (Creator)",
+      "\ud83d\udecd Products",
+      "\ud83d\udcc5 Consultations",
+      "\ud83d\udcb3 Checkout & Orders",
+      "\ud83c\udf93 Course Viewer",
+      "\ud83d\uded2 Storefront",
+      "\ud83d\udcc8 Analytics",
+      "\ud83d\udce3 Marketing & Engagement",
+      "\ud83d\udcac Communication",
+      "\u2699\ufe0f Settings",
+      "\ud83d\udd27 Admin (Optional)",
+      "\ud83e\uddf1 Utility Components"
+    ],
+    "links": [
+      {
+        "href": "/app/dashboard",
+        "text": "Normal Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "Landing page"
+      },
+      {
+        "href": "/",
+        "text": "Galactica"
+      },
+      {
+        "href": "https://app.serious-debauchery.click",
+        "text": "app.serious-debauchery.click"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/auth/signup",
+        "text": "Sign Up"
+      },
+      {
+        "href": "/auth/login",
+        "text": "Sign In"
+      },
+      {
+        "href": "/auth/forgot-password",
+        "text": "Forgot Password"
+      },
+      {
+        "href": "/auth/verify-email",
+        "text": "Email Verification"
+      },
+      {
+        "href": "/auth/email-sent",
+        "text": "Email Sent Confirmation"
+      },
+      {
+        "href": "/not-found",
+        "text": "Not Found"
+      },
+      {
+        "href": "/unauthorized",
+        "text": "Unauthorized"
+      },
+      {
+        "href": "/onboarding",
+        "text": "Onboarding"
+      },
+      {
+        "href": "/app",
+        "text": "App Home"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/explore",
+        "text": "Explore"
+      },
+      {
+        "href": "/app/explore/search",
+        "text": "Search"
+      },
+      {
+        "href": "/app/product/mockId/mockType",
+        "text": "Product Details"
+      },
+      {
+        "href": "/app/store/mockUserId",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/products/create",
+        "text": "Create Product"
+      },
+      {
+        "href": "/app/products/edit/COURSE/course-id",
+        "text": "Edit Product"
+      },
+      {
+        "href": "/app/storefront",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/dashboard/sales",
+        "text": "Sales"
+      },
+      {
+        "href": "/app/dashboard/marketing",
+        "text": "Marketing"
+      },
+      {
+        "href": "/app",
+        "text": "Home/Dashboard"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      }
+    ],
+    "mainText": "Developer Dashboard\nIntro\u25b8\n\nWelcome to the developer dashboard. Here you can manage your development tasks and monitor progress.\n\nSo, m\u0103 g\u00e2ndeam s\u0103 fac pagina asta ca s\u0103 avem un track la chestiile implementate pe aici, poate \u0219i cum func\u021bioneaz\u0103, poate \u0219i ce ar mai trebui f\u0103cut la ele. A\u0219a, chestii random.\n\n\u00cen principiu, aici ar trebui s\u0103 fie un fel de dashboard pentru dezvoltatori, unde s\u0103 putem vedea ce am implementat, ce mai trebuie f\u0103cut \u0219i poate \u0219i cum func\u021bioneaz\u0103 fiecare feature.\n\nHoly fuck, dude, paragraful de sus o fost generat \u00een perfect\u0103 rom\u00e2n\u0103 de VS Code Copilot AI (chiar dac\u0103 doar a rescris paragraful meu \ud83d\ude02). Noice.\n\n\u0218i da, \u00een caz c\u0103 te \u00eentrebai, m-am chinuit o\u021b\u00e2r\u0103 s\u0103 scriu asta cu diacritice.\n\nRoutes\u25b8\n\nHere we got some info about the routes created for the app, split into several categories.\n\nStatic Pages\u25b8\nGalactica Landing Page\nGalactica\nthe first thing users see when navigating to galactica.com\ndepending on the route we take, the URL will probably be galactica.com\ncurrently: app.serious-debauchery.click\nAbout Page\nAbout\nClassic about page\nPricing Page\nPricing\nClassic pricing page\nContact Page\nContact\nClassic contact page\nUser Authentication\u25b8\nSign Up Page\n\nSign Up\n\n-",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"post\",\n    \"url\": \"api/auth/refresh\",\n    \"role\": \"GUEST\",\n    \"status\": 503\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/dev-dashboard?qaRole=GUEST"
+  },
+  {
+    "key": "development-guest-normal-dashboard",
+    "captured_at": "2026-10-02T17:20:07.003Z",
+    "fixture": "Isolated route fixture; build: development; identity: GUEST; shared-client requests denied except synthetic profile",
+    "headings": [],
+    "links": [],
+    "mainText": null,
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"post\",\n    \"url\": \"api/auth/refresh\",\n    \"role\": \"GUEST\",\n    \"status\": 503\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/auth/login"
+  },
+  {
+    "key": "development-guest-landing",
+    "captured_at": "2026-10-02T17:20:20.544Z",
+    "fixture": "Isolated route fixture; build: development; identity: GUEST; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert",
+      "Built for Serious Creators",
+      "From Idea to Income",
+      "",
+      "",
+      "",
+      "Build the Right Product for Your Universe",
+      "",
+      "",
+      "",
+      "Build your Universe. Keep your Control",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "PRODUCT",
+      "COMPANY",
+      "SUPPORT",
+      "LEGAL"
+    ],
+    "links": [
+      {
+        "href": "/",
+        "text": "Home"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact Us"
+      },
+      {
+        "href": "/",
+        "text": "COSMICAPP"
+      },
+      {
+        "href": "/features",
+        "text": "Features"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/demo",
+        "text": "Demo"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/help",
+        "text": "Help Center"
+      },
+      {
+        "href": "/contact#faq",
+        "text": "FAQ"
+      },
+      {
+        "href": "/terms",
+        "text": "Terms"
+      },
+      {
+        "href": "/privacy",
+        "text": "Privacy"
+      },
+      {
+        "href": "/cookies",
+        "text": "Cookies"
+      },
+      {
+        "href": "/",
+        "text": "F"
+      },
+      {
+        "href": "/",
+        "text": "X"
+      },
+      {
+        "href": "/",
+        "text": "IN"
+      },
+      {
+        "href": "/",
+        "text": "IG"
+      }
+    ],
+    "mainText": "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor faucibus interdum. Quisque at efficitur tellus. Nulla sed tortor dolor.\n\nLaunch Your Universe\nSee how it works\nBuilt for Serious Creators\n\nYour business deserves a platform that feels powerful and focused\n\nFrom Idea to Income\nBuild the Right Product for Your Universe\n\nCourse, memberships, and consultations - all under one roof.\n\nBuild your Universe. Keep your Control",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"post\",\n    \"url\": \"api/auth/refresh\",\n    \"role\": \"GUEST\",\n    \"status\": 503\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/"
+  },
+  {
+    "key": "development-guest-routes-tool",
+    "captured_at": "2026-10-02T17:20:21.505Z",
+    "fixture": "Isolated route fixture; build: development; identity: GUEST; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Route JSON",
+      "Markdown table",
+      "Mermaid diagram",
+      "Permissions matrix"
+    ],
+    "links": [],
+    "mainText": null,
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"post\",\n    \"url\": \"api/auth/refresh\",\n    \"role\": \"GUEST\",\n    \"status\": 503\n  }\n]",
+    "textareas": [
+      {
+        "length": 1840,
+        "readOnly": true
+      },
+      {
+        "length": 1490,
+        "readOnly": true
+      },
+      {
+        "length": 1357,
+        "readOnly": true
+      }
+    ],
+    "url": "http://127.0.0.1:4317/__routes-dev?qaRole=GUEST"
+  },
+  {
+    "key": "development-user-dev-dashboard",
+    "captured_at": "2026-10-02T17:20:35.844Z",
+    "fixture": "Isolated route fixture; build: development; identity: USER; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Developer Dashboard",
+      "Galactica Landing Page",
+      "About Page",
+      "Pricing Page",
+      "Contact Page",
+      "Sign Up Page",
+      "Sign In Page",
+      "Forgot Password Page",
+      "Email Verification Page",
+      "Email Sent Confirmation Page",
+      "Not Found Page",
+      "Unauthorized Page",
+      "Onboarding Page",
+      "Galactica App Home",
+      "Visitor pages (visible for ALL users)",
+      "Explore",
+      "Search Results",
+      "Product Details Page",
+      "Storefront",
+      "Creator pages (visible only for users with role CREATOR)",
+      "Products",
+      "Create Product",
+      "Edit Product",
+      "Instructor Storefront Preview",
+      "Sales Page",
+      "Marketing Page",
+      "Normal User pages (visible only for users with role User)",
+      "Normal User Home/Dashboard Page",
+      "All logged pages (visible only for logged in users with any role)",
+      "Settings",
+      "Register (registerUser)",
+      "Sign In (signInUser)",
+      "Verify Email (verifyEmailApi)",
+      "Refresh token",
+      "Sign Out (logoutAPI)",
+      "Sign In With Google (googleAPI)",
+      "Forgot Password (forgotPasswordAPI)",
+      "Get User Profile (getUserProfileAPI)",
+      "Create Product (createProductAPI)",
+      "Update Product Details (updateProductDetailsAPI)",
+      "Delete Product (deleteProductAPI)",
+      "Create Section (createSectionAPI)",
+      "Update Section Details (updateSectionDetailsAPI)",
+      "Delete Section (deleteSectionAPI)",
+      "Create Lesson (createLessonAPI)",
+      "Update Lesson Details (updateLessonDetailsAPI)",
+      "Delete Lesson (deleteLessonAPI)",
+      "Get All User's Products (getAllProductsByUserIdAPI)",
+      "Retrieve a specific product (getProductByProductIdAPI)",
+      "Add card image for product (addImageToProductAPI)",
+      "Get Presigned URL (getPresignedUrlAPI)",
+      "Upload To Presigned URL (uploadToPresignedUrl)",
+      "Confirm File Is Uploaded (confirmFileUploadAPI)",
+      "",
+      "So, avem niste architecture Proposal",
+      "Frontend Architecture Comparison: Split-Subdomain vs Single-Domain Models",
+      "\ud83d\udcd8 Model 1: Split-Subdomain Architecture (\"Subdomain Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Monorepo Folder Structure:",
+      "\ud83d\udcd7 Model 2: Single-Domain with URL Prefix Architecture (\"Path-Based Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Folder Structure (Single App):",
+      "\ud83c\udfc1 Recommendation",
+      "Subdomain Model - React UI Component Architecture",
+      "\ud83c\udf10 Public Site (Static Pages)",
+      "\ud83d\udd10 Authentication & Onboarding",
+      "\ud83e\udded Layout Components",
+      "\ud83c\udfe0 Dashboard (Creator)",
+      "\ud83d\udecd Products",
+      "\ud83d\udcc5 Consultations",
+      "\ud83d\udcb3 Checkout & Orders",
+      "\ud83c\udf93 Course Viewer",
+      "\ud83d\uded2 Storefront",
+      "\ud83d\udcc8 Analytics",
+      "\ud83d\udce3 Marketing & Engagement",
+      "\ud83d\udcac Communication",
+      "\u2699\ufe0f Settings",
+      "\ud83d\udd27 Admin (Optional)",
+      "\ud83e\uddf1 Utility Components"
+    ],
+    "links": [
+      {
+        "href": "/app/dashboard",
+        "text": "Normal Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "Landing page"
+      },
+      {
+        "href": "/",
+        "text": "Galactica"
+      },
+      {
+        "href": "https://app.serious-debauchery.click",
+        "text": "app.serious-debauchery.click"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/auth/signup",
+        "text": "Sign Up"
+      },
+      {
+        "href": "/auth/login",
+        "text": "Sign In"
+      },
+      {
+        "href": "/auth/forgot-password",
+        "text": "Forgot Password"
+      },
+      {
+        "href": "/auth/verify-email",
+        "text": "Email Verification"
+      },
+      {
+        "href": "/auth/email-sent",
+        "text": "Email Sent Confirmation"
+      },
+      {
+        "href": "/not-found",
+        "text": "Not Found"
+      },
+      {
+        "href": "/unauthorized",
+        "text": "Unauthorized"
+      },
+      {
+        "href": "/onboarding",
+        "text": "Onboarding"
+      },
+      {
+        "href": "/app",
+        "text": "App Home"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/explore",
+        "text": "Explore"
+      },
+      {
+        "href": "/app/explore/search",
+        "text": "Search"
+      },
+      {
+        "href": "/app/product/mockId/mockType",
+        "text": "Product Details"
+      },
+      {
+        "href": "/app/store/mockUserId",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/products/create",
+        "text": "Create Product"
+      },
+      {
+        "href": "/app/products/edit/COURSE/course-id",
+        "text": "Edit Product"
+      },
+      {
+        "href": "/app/storefront",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/dashboard/sales",
+        "text": "Sales"
+      },
+      {
+        "href": "/app/dashboard/marketing",
+        "text": "Marketing"
+      },
+      {
+        "href": "/app",
+        "text": "Home/Dashboard"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      }
+    ],
+    "mainText": "Developer Dashboard\nIntro\u25b8\n\nWelcome to the developer dashboard. Here you can manage your development tasks and monitor progress.\n\nSo, m\u0103 g\u00e2ndeam s\u0103 fac pagina asta ca s\u0103 avem un track la chestiile implementate pe aici, poate \u0219i cum func\u021bioneaz\u0103, poate \u0219i ce ar mai trebui f\u0103cut la ele. A\u0219a, chestii random.\n\n\u00cen principiu, aici ar trebui s\u0103 fie un fel de dashboard pentru dezvoltatori, unde s\u0103 putem vedea ce am implementat, ce mai trebuie f\u0103cut \u0219i poate \u0219i cum func\u021bioneaz\u0103 fiecare feature.\n\nHoly fuck, dude, paragraful de sus o fost generat \u00een perfect\u0103 rom\u00e2n\u0103 de VS Code Copilot AI (chiar dac\u0103 doar a rescris paragraful meu \ud83d\ude02). Noice.\n\n\u0218i da, \u00een caz c\u0103 te \u00eentrebai, m-am chinuit o\u021b\u00e2r\u0103 s\u0103 scriu asta cu diacritice.\n\nRoutes\u25b8\n\nHere we got some info about the routes created for the app, split into several categories.\n\nStatic Pages\u25b8\nGalactica Landing Page\nGalactica\nthe first thing users see when navigating to galactica.com\ndepending on the route we take, the URL will probably be galactica.com\ncurrently: app.serious-debauchery.click\nAbout Page\nAbout\nClassic about page\nPricing Page\nPricing\nClassic pricing page\nContact Page\nContact\nClassic contact page\nUser Authentication\u25b8\nSign Up Page\n\nSign Up\n\n-",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/dev-dashboard?qaRole=USER"
+  },
+  {
+    "key": "development-user-normal-dashboard",
+    "captured_at": "2026-10-02T17:20:36.019Z",
+    "fixture": "Isolated route fixture; build: development; identity: USER; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Galactica",
+      "Welcome back, dude!",
+      "Continue your courses",
+      "What to learn next",
+      "New courses you might like",
+      "How about joining our content creator team?"
+    ],
+    "links": [
+      {
+        "href": "/app/explore",
+        "text": "Explore"
+      },
+      {
+        "href": "/app/library/all-products",
+        "text": "Library"
+      },
+      {
+        "href": "https://luxury-klepon-a62307.netlify.app/",
+        "text": "Docusaurus"
+      }
+    ],
+    "mainText": "Welcome back, dude!\n\nNEW CHANGES\n\nAvem Docusaurus (User dropdown -> Docusaurus)\nAvem quiz builder\nAvem cart page cu cart items badge icon si local storage persistance (ca nu ai vrut cu backend persistance)\nAvem wishlist functionality cu local storage persistance (ca nu ai vrut cu backend persistance)\nAvem improved library page (cu taburi diferite pentru all prods, course, downloads, cosnultations, wishlist)\nContinue your courses\nWhat to learn next\nNew courses you might like\nHow about joining our content creator team?\nButton",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/app"
+  },
+  {
+    "key": "development-user-landing",
+    "captured_at": "2026-10-02T17:20:47.010Z",
+    "fixture": "Isolated route fixture; build: development; identity: USER; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert",
+      "Built for Serious Creators",
+      "From Idea to Income",
+      "",
+      "",
+      "",
+      "Build the Right Product for Your Universe",
+      "",
+      "",
+      "",
+      "Build your Universe. Keep your Control",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "PRODUCT",
+      "COMPANY",
+      "SUPPORT",
+      "LEGAL"
+    ],
+    "links": [
+      {
+        "href": "/",
+        "text": "Home"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact Us"
+      },
+      {
+        "href": "/app",
+        "text": "Go to Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "COSMICAPP"
+      },
+      {
+        "href": "/features",
+        "text": "Features"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/demo",
+        "text": "Demo"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/help",
+        "text": "Help Center"
+      },
+      {
+        "href": "/contact#faq",
+        "text": "FAQ"
+      },
+      {
+        "href": "/terms",
+        "text": "Terms"
+      },
+      {
+        "href": "/privacy",
+        "text": "Privacy"
+      },
+      {
+        "href": "/cookies",
+        "text": "Cookies"
+      },
+      {
+        "href": "/",
+        "text": "F"
+      },
+      {
+        "href": "/",
+        "text": "X"
+      },
+      {
+        "href": "/",
+        "text": "IN"
+      },
+      {
+        "href": "/",
+        "text": "IG"
+      }
+    ],
+    "mainText": "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor faucibus interdum. Quisque at efficitur tellus. Nulla sed tortor dolor.\n\nLaunch Your Universe\nSee how it works\nBuilt for Serious Creators\n\nYour business deserves a platform that feels powerful and focused\n\nFrom Idea to Income\nBuild the Right Product for Your Universe\n\nCourse, memberships, and consultations - all under one roof.\n\nBuild your Universe. Keep your Control",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/"
+  },
+  {
+    "key": "development-user-routes-tool",
+    "captured_at": "2026-10-02T17:20:47.648Z",
+    "fixture": "Isolated route fixture; build: development; identity: USER; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Route JSON",
+      "Markdown table",
+      "Mermaid diagram",
+      "Permissions matrix"
+    ],
+    "links": [],
+    "mainText": null,
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  }\n]",
+    "textareas": [
+      {
+        "length": 1840,
+        "readOnly": true
+      },
+      {
+        "length": 1490,
+        "readOnly": true
+      },
+      {
+        "length": 1357,
+        "readOnly": true
+      }
+    ],
+    "url": "http://127.0.0.1:4317/__routes-dev?qaRole=USER"
+  },
+  {
+    "key": "development-creator-dev-dashboard",
+    "captured_at": "2026-10-02T17:20:48.714Z",
+    "fixture": "Isolated route fixture; build: development; identity: CREATOR; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Developer Dashboard",
+      "Galactica Landing Page",
+      "About Page",
+      "Pricing Page",
+      "Contact Page",
+      "Sign Up Page",
+      "Sign In Page",
+      "Forgot Password Page",
+      "Email Verification Page",
+      "Email Sent Confirmation Page",
+      "Not Found Page",
+      "Unauthorized Page",
+      "Onboarding Page",
+      "Galactica App Home",
+      "Visitor pages (visible for ALL users)",
+      "Explore",
+      "Search Results",
+      "Product Details Page",
+      "Storefront",
+      "Creator pages (visible only for users with role CREATOR)",
+      "Products",
+      "Create Product",
+      "Edit Product",
+      "Instructor Storefront Preview",
+      "Sales Page",
+      "Marketing Page",
+      "Normal User pages (visible only for users with role User)",
+      "Normal User Home/Dashboard Page",
+      "All logged pages (visible only for logged in users with any role)",
+      "Settings",
+      "Register (registerUser)",
+      "Sign In (signInUser)",
+      "Verify Email (verifyEmailApi)",
+      "Refresh token",
+      "Sign Out (logoutAPI)",
+      "Sign In With Google (googleAPI)",
+      "Forgot Password (forgotPasswordAPI)",
+      "Get User Profile (getUserProfileAPI)",
+      "Create Product (createProductAPI)",
+      "Update Product Details (updateProductDetailsAPI)",
+      "Delete Product (deleteProductAPI)",
+      "Create Section (createSectionAPI)",
+      "Update Section Details (updateSectionDetailsAPI)",
+      "Delete Section (deleteSectionAPI)",
+      "Create Lesson (createLessonAPI)",
+      "Update Lesson Details (updateLessonDetailsAPI)",
+      "Delete Lesson (deleteLessonAPI)",
+      "Get All User's Products (getAllProductsByUserIdAPI)",
+      "Retrieve a specific product (getProductByProductIdAPI)",
+      "Add card image for product (addImageToProductAPI)",
+      "Get Presigned URL (getPresignedUrlAPI)",
+      "Upload To Presigned URL (uploadToPresignedUrl)",
+      "Confirm File Is Uploaded (confirmFileUploadAPI)",
+      "",
+      "So, avem niste architecture Proposal",
+      "Frontend Architecture Comparison: Split-Subdomain vs Single-Domain Models",
+      "\ud83d\udcd8 Model 1: Split-Subdomain Architecture (\"Subdomain Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Monorepo Folder Structure:",
+      "\ud83d\udcd7 Model 2: Single-Domain with URL Prefix Architecture (\"Path-Based Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Folder Structure (Single App):",
+      "\ud83c\udfc1 Recommendation",
+      "Subdomain Model - React UI Component Architecture",
+      "\ud83c\udf10 Public Site (Static Pages)",
+      "\ud83d\udd10 Authentication & Onboarding",
+      "\ud83e\udded Layout Components",
+      "\ud83c\udfe0 Dashboard (Creator)",
+      "\ud83d\udecd Products",
+      "\ud83d\udcc5 Consultations",
+      "\ud83d\udcb3 Checkout & Orders",
+      "\ud83c\udf93 Course Viewer",
+      "\ud83d\uded2 Storefront",
+      "\ud83d\udcc8 Analytics",
+      "\ud83d\udce3 Marketing & Engagement",
+      "\ud83d\udcac Communication",
+      "\u2699\ufe0f Settings",
+      "\ud83d\udd27 Admin (Optional)",
+      "\ud83e\uddf1 Utility Components"
+    ],
+    "links": [
+      {
+        "href": "/app/dashboard",
+        "text": "Normal Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "Landing page"
+      },
+      {
+        "href": "/",
+        "text": "Galactica"
+      },
+      {
+        "href": "https://app.serious-debauchery.click",
+        "text": "app.serious-debauchery.click"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/auth/signup",
+        "text": "Sign Up"
+      },
+      {
+        "href": "/auth/login",
+        "text": "Sign In"
+      },
+      {
+        "href": "/auth/forgot-password",
+        "text": "Forgot Password"
+      },
+      {
+        "href": "/auth/verify-email",
+        "text": "Email Verification"
+      },
+      {
+        "href": "/auth/email-sent",
+        "text": "Email Sent Confirmation"
+      },
+      {
+        "href": "/not-found",
+        "text": "Not Found"
+      },
+      {
+        "href": "/unauthorized",
+        "text": "Unauthorized"
+      },
+      {
+        "href": "/onboarding",
+        "text": "Onboarding"
+      },
+      {
+        "href": "/app",
+        "text": "App Home"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/explore",
+        "text": "Explore"
+      },
+      {
+        "href": "/app/explore/search",
+        "text": "Search"
+      },
+      {
+        "href": "/app/product/mockId/mockType",
+        "text": "Product Details"
+      },
+      {
+        "href": "/app/store/mockUserId",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/products/create",
+        "text": "Create Product"
+      },
+      {
+        "href": "/app/products/edit/COURSE/course-id",
+        "text": "Edit Product"
+      },
+      {
+        "href": "/app/storefront",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/dashboard/sales",
+        "text": "Sales"
+      },
+      {
+        "href": "/app/dashboard/marketing",
+        "text": "Marketing"
+      },
+      {
+        "href": "/app",
+        "text": "Home/Dashboard"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      }
+    ],
+    "mainText": "Developer Dashboard\nIntro\u25b8\n\nWelcome to the developer dashboard. Here you can manage your development tasks and monitor progress.\n\nSo, m\u0103 g\u00e2ndeam s\u0103 fac pagina asta ca s\u0103 avem un track la chestiile implementate pe aici, poate \u0219i cum func\u021bioneaz\u0103, poate \u0219i ce ar mai trebui f\u0103cut la ele. A\u0219a, chestii random.\n\n\u00cen principiu, aici ar trebui s\u0103 fie un fel de dashboard pentru dezvoltatori, unde s\u0103 putem vedea ce am implementat, ce mai trebuie f\u0103cut \u0219i poate \u0219i cum func\u021bioneaz\u0103 fiecare feature.\n\nHoly fuck, dude, paragraful de sus o fost generat \u00een perfect\u0103 rom\u00e2n\u0103 de VS Code Copilot AI (chiar dac\u0103 doar a rescris paragraful meu \ud83d\ude02). Noice.\n\n\u0218i da, \u00een caz c\u0103 te \u00eentrebai, m-am chinuit o\u021b\u00e2r\u0103 s\u0103 scriu asta cu diacritice.\n\nRoutes\u25b8\n\nHere we got some info about the routes created for the app, split into several categories.\n\nStatic Pages\u25b8\nGalactica Landing Page\nGalactica\nthe first thing users see when navigating to galactica.com\ndepending on the route we take, the URL will probably be galactica.com\ncurrently: app.serious-debauchery.click\nAbout Page\nAbout\nClassic about page\nPricing Page\nPricing\nClassic pricing page\nContact Page\nContact\nClassic contact page\nUser Authentication\u25b8\nSign Up Page\n\nSign Up\n\n-",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/dev-dashboard?qaRole=CREATOR"
+  },
+  {
+    "key": "development-creator-normal-dashboard",
+    "captured_at": "2026-10-02T17:20:49.120Z",
+    "fixture": "Isolated route fixture; build: development; identity: CREATOR; shared-client requests denied except synthetic profile",
+    "headings": [
+      "GALACTICA",
+      "Dashboard",
+      "Recent activity",
+      "Top products",
+      "Needs attention"
+    ],
+    "links": [
+      {
+        "href": "/app",
+        "text": "Dashboard"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/customers",
+        "text": "Customers"
+      },
+      {
+        "href": "/app/sales",
+        "text": "Sales"
+      },
+      {
+        "href": "/app/analytics",
+        "text": "Analytics"
+      },
+      {
+        "href": "/app/storefront",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      }
+    ],
+    "mainText": "Dashboard\n\nGood evening, Boundary.\n\nREVENUE\nUnavailable\nMore business data is needed.\nSALES\nUnavailable\nMore business data is needed.\nCUSTOMERS\nUnavailable\nMore business data is needed.\nACTIVE MEMBERSHIPS\nUnavailable\nMore business data is needed.\nRecent activity\n\nActivity will appear here once business events are available.\n\nTop products\nREVENUE\n\nProduct performance is unavailable until revenue data exists.\n\nNeeds attention\n\nNo deterministic attention states are available yet.",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/creator/dashboard/summary\",\n    \"role\": \"CREATOR\",\n    \"status\": 503\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/creator/dashboard/summary\",\n    \"role\": \"CREATOR\",\n    \"status\": 503\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/app"
+  },
+  {
+    "key": "development-creator-landing",
+    "captured_at": "2026-10-02T17:21:05.146Z",
+    "fixture": "Isolated route fixture; build: development; identity: CREATOR; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert",
+      "Built for Serious Creators",
+      "From Idea to Income",
+      "",
+      "",
+      "",
+      "Build the Right Product for Your Universe",
+      "",
+      "",
+      "",
+      "Build your Universe. Keep your Control",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "PRODUCT",
+      "COMPANY",
+      "SUPPORT",
+      "LEGAL"
+    ],
+    "links": [
+      {
+        "href": "/",
+        "text": "Home"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact Us"
+      },
+      {
+        "href": "/app",
+        "text": "Go to Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "COSMICAPP"
+      },
+      {
+        "href": "/features",
+        "text": "Features"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/demo",
+        "text": "Demo"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/help",
+        "text": "Help Center"
+      },
+      {
+        "href": "/contact#faq",
+        "text": "FAQ"
+      },
+      {
+        "href": "/terms",
+        "text": "Terms"
+      },
+      {
+        "href": "/privacy",
+        "text": "Privacy"
+      },
+      {
+        "href": "/cookies",
+        "text": "Cookies"
+      },
+      {
+        "href": "/",
+        "text": "F"
+      },
+      {
+        "href": "/",
+        "text": "X"
+      },
+      {
+        "href": "/",
+        "text": "IN"
+      },
+      {
+        "href": "/",
+        "text": "IG"
+      }
+    ],
+    "mainText": "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor faucibus interdum. Quisque at efficitur tellus. Nulla sed tortor dolor.\n\nLaunch Your Universe\nSee how it works\nBuilt for Serious Creators\n\nYour business deserves a platform that feels powerful and focused\n\nFrom Idea to Income\nBuild the Right Product for Your Universe\n\nCourse, memberships, and consultations - all under one roof.\n\nBuild your Universe. Keep your Control",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/creator/dashboard/summary\",\n    \"role\": \"CREATOR\",\n    \"status\": 503\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/creator/dashboard/summary\",\n    \"role\": \"CREATOR\",\n    \"status\": 503\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/"
+  },
+  {
+    "key": "development-creator-routes-tool",
+    "captured_at": "2026-10-02T17:21:05.898Z",
+    "fixture": "Isolated route fixture; build: development; identity: CREATOR; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Route JSON",
+      "Markdown table",
+      "Mermaid diagram",
+      "Permissions matrix"
+    ],
+    "links": [],
+    "mainText": null,
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  }\n]",
+    "textareas": [
+      {
+        "length": 1840,
+        "readOnly": true
+      },
+      {
+        "length": 1490,
+        "readOnly": true
+      },
+      {
+        "length": 1357,
+        "readOnly": true
+      }
+    ],
+    "url": "http://127.0.0.1:4317/__routes-dev?qaRole=CREATOR"
+  },
+  {
+    "key": "development-admin-dev-dashboard",
+    "captured_at": "2026-10-02T17:21:06.897Z",
+    "fixture": "Isolated route fixture; build: development; identity: ADMIN; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Developer Dashboard",
+      "Galactica Landing Page",
+      "About Page",
+      "Pricing Page",
+      "Contact Page",
+      "Sign Up Page",
+      "Sign In Page",
+      "Forgot Password Page",
+      "Email Verification Page",
+      "Email Sent Confirmation Page",
+      "Not Found Page",
+      "Unauthorized Page",
+      "Onboarding Page",
+      "Galactica App Home",
+      "Visitor pages (visible for ALL users)",
+      "Explore",
+      "Search Results",
+      "Product Details Page",
+      "Storefront",
+      "Creator pages (visible only for users with role CREATOR)",
+      "Products",
+      "Create Product",
+      "Edit Product",
+      "Instructor Storefront Preview",
+      "Sales Page",
+      "Marketing Page",
+      "Normal User pages (visible only for users with role User)",
+      "Normal User Home/Dashboard Page",
+      "All logged pages (visible only for logged in users with any role)",
+      "Settings",
+      "Register (registerUser)",
+      "Sign In (signInUser)",
+      "Verify Email (verifyEmailApi)",
+      "Refresh token",
+      "Sign Out (logoutAPI)",
+      "Sign In With Google (googleAPI)",
+      "Forgot Password (forgotPasswordAPI)",
+      "Get User Profile (getUserProfileAPI)",
+      "Create Product (createProductAPI)",
+      "Update Product Details (updateProductDetailsAPI)",
+      "Delete Product (deleteProductAPI)",
+      "Create Section (createSectionAPI)",
+      "Update Section Details (updateSectionDetailsAPI)",
+      "Delete Section (deleteSectionAPI)",
+      "Create Lesson (createLessonAPI)",
+      "Update Lesson Details (updateLessonDetailsAPI)",
+      "Delete Lesson (deleteLessonAPI)",
+      "Get All User's Products (getAllProductsByUserIdAPI)",
+      "Retrieve a specific product (getProductByProductIdAPI)",
+      "Add card image for product (addImageToProductAPI)",
+      "Get Presigned URL (getPresignedUrlAPI)",
+      "Upload To Presigned URL (uploadToPresignedUrl)",
+      "Confirm File Is Uploaded (confirmFileUploadAPI)",
+      "",
+      "So, avem niste architecture Proposal",
+      "Frontend Architecture Comparison: Split-Subdomain vs Single-Domain Models",
+      "\ud83d\udcd8 Model 1: Split-Subdomain Architecture (\"Subdomain Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Monorepo Folder Structure:",
+      "\ud83d\udcd7 Model 2: Single-Domain with URL Prefix Architecture (\"Path-Based Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Folder Structure (Single App):",
+      "\ud83c\udfc1 Recommendation",
+      "Subdomain Model - React UI Component Architecture",
+      "\ud83c\udf10 Public Site (Static Pages)",
+      "\ud83d\udd10 Authentication & Onboarding",
+      "\ud83e\udded Layout Components",
+      "\ud83c\udfe0 Dashboard (Creator)",
+      "\ud83d\udecd Products",
+      "\ud83d\udcc5 Consultations",
+      "\ud83d\udcb3 Checkout & Orders",
+      "\ud83c\udf93 Course Viewer",
+      "\ud83d\uded2 Storefront",
+      "\ud83d\udcc8 Analytics",
+      "\ud83d\udce3 Marketing & Engagement",
+      "\ud83d\udcac Communication",
+      "\u2699\ufe0f Settings",
+      "\ud83d\udd27 Admin (Optional)",
+      "\ud83e\uddf1 Utility Components"
+    ],
+    "links": [
+      {
+        "href": "/app/dashboard",
+        "text": "Normal Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "Landing page"
+      },
+      {
+        "href": "/",
+        "text": "Galactica"
+      },
+      {
+        "href": "https://app.serious-debauchery.click",
+        "text": "app.serious-debauchery.click"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/auth/signup",
+        "text": "Sign Up"
+      },
+      {
+        "href": "/auth/login",
+        "text": "Sign In"
+      },
+      {
+        "href": "/auth/forgot-password",
+        "text": "Forgot Password"
+      },
+      {
+        "href": "/auth/verify-email",
+        "text": "Email Verification"
+      },
+      {
+        "href": "/auth/email-sent",
+        "text": "Email Sent Confirmation"
+      },
+      {
+        "href": "/not-found",
+        "text": "Not Found"
+      },
+      {
+        "href": "/unauthorized",
+        "text": "Unauthorized"
+      },
+      {
+        "href": "/onboarding",
+        "text": "Onboarding"
+      },
+      {
+        "href": "/app",
+        "text": "App Home"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/explore",
+        "text": "Explore"
+      },
+      {
+        "href": "/app/explore/search",
+        "text": "Search"
+      },
+      {
+        "href": "/app/product/mockId/mockType",
+        "text": "Product Details"
+      },
+      {
+        "href": "/app/store/mockUserId",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/products/create",
+        "text": "Create Product"
+      },
+      {
+        "href": "/app/products/edit/COURSE/course-id",
+        "text": "Edit Product"
+      },
+      {
+        "href": "/app/storefront",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/dashboard/sales",
+        "text": "Sales"
+      },
+      {
+        "href": "/app/dashboard/marketing",
+        "text": "Marketing"
+      },
+      {
+        "href": "/app",
+        "text": "Home/Dashboard"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      }
+    ],
+    "mainText": "Developer Dashboard\nIntro\u25b8\n\nWelcome to the developer dashboard. Here you can manage your development tasks and monitor progress.\n\nSo, m\u0103 g\u00e2ndeam s\u0103 fac pagina asta ca s\u0103 avem un track la chestiile implementate pe aici, poate \u0219i cum func\u021bioneaz\u0103, poate \u0219i ce ar mai trebui f\u0103cut la ele. A\u0219a, chestii random.\n\n\u00cen principiu, aici ar trebui s\u0103 fie un fel de dashboard pentru dezvoltatori, unde s\u0103 putem vedea ce am implementat, ce mai trebuie f\u0103cut \u0219i poate \u0219i cum func\u021bioneaz\u0103 fiecare feature.\n\nHoly fuck, dude, paragraful de sus o fost generat \u00een perfect\u0103 rom\u00e2n\u0103 de VS Code Copilot AI (chiar dac\u0103 doar a rescris paragraful meu \ud83d\ude02). Noice.\n\n\u0218i da, \u00een caz c\u0103 te \u00eentrebai, m-am chinuit o\u021b\u00e2r\u0103 s\u0103 scriu asta cu diacritice.\n\nRoutes\u25b8\n\nHere we got some info about the routes created for the app, split into several categories.\n\nStatic Pages\u25b8\nGalactica Landing Page\nGalactica\nthe first thing users see when navigating to galactica.com\ndepending on the route we take, the URL will probably be galactica.com\ncurrently: app.serious-debauchery.click\nAbout Page\nAbout\nClassic about page\nPricing Page\nPricing\nClassic pricing page\nContact Page\nContact\nClassic contact page\nUser Authentication\u25b8\nSign Up Page\n\nSign Up\n\n-",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/dev-dashboard?qaRole=ADMIN"
+  },
+  {
+    "key": "development-admin-normal-dashboard",
+    "captured_at": "2026-10-02T17:21:07.058Z",
+    "fixture": "Isolated route fixture; build: development; identity: ADMIN; shared-client requests denied except synthetic profile",
+    "headings": [
+      "GALACTICA",
+      "Admin"
+    ],
+    "links": [
+      {
+        "href": "/app",
+        "text": "Dashboard"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/admin",
+        "text": "Admin"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      },
+      {
+        "href": "/app/admin/users",
+        "text": "Users\nSearch users and change their single platform role."
+      },
+      {
+        "href": "/app/admin/products",
+        "text": "Products\nView, edit, delete, and create products for creators."
+      },
+      {
+        "href": "/app/admin/audit",
+        "text": "Audit\nReview admin role and product management actions."
+      }
+    ],
+    "mainText": "Admin\n\nManage platform users, products, and admin audit history.\n\nUsers\nSearch users and change their single platform role.\nProducts\nView, edit, delete, and create products for creators.\nAudit\nReview admin role and product management actions.",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/app"
+  },
+  {
+    "key": "development-admin-landing",
+    "captured_at": "2026-10-02T17:21:15.427Z",
+    "fixture": "Isolated route fixture; build: development; identity: ADMIN; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert",
+      "Built for Serious Creators",
+      "From Idea to Income",
+      "",
+      "",
+      "",
+      "Build the Right Product for Your Universe",
+      "",
+      "",
+      "",
+      "Build your Universe. Keep your Control",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "PRODUCT",
+      "COMPANY",
+      "SUPPORT",
+      "LEGAL"
+    ],
+    "links": [
+      {
+        "href": "/",
+        "text": "Home"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact Us"
+      },
+      {
+        "href": "/app",
+        "text": "Go to Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "COSMICAPP"
+      },
+      {
+        "href": "/features",
+        "text": "Features"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/demo",
+        "text": "Demo"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/help",
+        "text": "Help Center"
+      },
+      {
+        "href": "/contact#faq",
+        "text": "FAQ"
+      },
+      {
+        "href": "/terms",
+        "text": "Terms"
+      },
+      {
+        "href": "/privacy",
+        "text": "Privacy"
+      },
+      {
+        "href": "/cookies",
+        "text": "Cookies"
+      },
+      {
+        "href": "/",
+        "text": "F"
+      },
+      {
+        "href": "/",
+        "text": "X"
+      },
+      {
+        "href": "/",
+        "text": "IN"
+      },
+      {
+        "href": "/",
+        "text": "IG"
+      }
+    ],
+    "mainText": "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor faucibus interdum. Quisque at efficitur tellus. Nulla sed tortor dolor.\n\nLaunch Your Universe\nSee how it works\nBuilt for Serious Creators\n\nYour business deserves a platform that feels powerful and focused\n\nFrom Idea to Income\nBuild the Right Product for Your Universe\n\nCourse, memberships, and consultations - all under one roof.\n\nBuild your Universe. Keep your Control",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/"
+  },
+  {
+    "key": "development-admin-routes-tool",
+    "captured_at": "2026-10-02T17:21:16.070Z",
+    "fixture": "Isolated route fixture; build: development; identity: ADMIN; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Route JSON",
+      "Markdown table",
+      "Mermaid diagram",
+      "Permissions matrix"
+    ],
+    "links": [],
+    "mainText": null,
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  }\n]",
+    "textareas": [
+      {
+        "length": 1840,
+        "readOnly": true
+      },
+      {
+        "length": 1490,
+        "readOnly": true
+      },
+      {
+        "length": 1357,
+        "readOnly": true
+      }
+    ],
+    "url": "http://127.0.0.1:4317/__routes-dev?qaRole=ADMIN"
+  },
+  {
+    "key": "production-admin-routes-tool",
+    "captured_at": "2026-10-02T17:21:54.559Z",
+    "fixture": "Isolated route fixture; build: production; identity: ADMIN; shared-client requests denied except synthetic profile",
+    "headings": [],
+    "links": [],
+    "mainText": null,
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/__routes-dev?qaRole=ADMIN"
+  },
+  {
+    "key": "production-admin-routes-tool-overlay-dismissed",
+    "captured_at": "2026-10-02T17:22:08.412Z",
+    "fixture": "Isolated route fixture; build: production; identity: ADMIN; shared-client requests denied except synthetic profile",
+    "headings": [],
+    "links": [],
+    "mainText": null,
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/__routes-dev?qaRole=ADMIN"
+  },
+  {
+    "key": "production-admin-dev-dashboard",
+    "captured_at": "2026-10-02T17:22:09.006Z",
+    "fixture": "Isolated route fixture; build: production; identity: ADMIN; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Developer Dashboard",
+      "Galactica Landing Page",
+      "About Page",
+      "Pricing Page",
+      "Contact Page",
+      "Sign Up Page",
+      "Sign In Page",
+      "Forgot Password Page",
+      "Email Verification Page",
+      "Email Sent Confirmation Page",
+      "Not Found Page",
+      "Unauthorized Page",
+      "Onboarding Page",
+      "Galactica App Home",
+      "Visitor pages (visible for ALL users)",
+      "Explore",
+      "Search Results",
+      "Product Details Page",
+      "Storefront",
+      "Creator pages (visible only for users with role CREATOR)",
+      "Products",
+      "Create Product",
+      "Edit Product",
+      "Instructor Storefront Preview",
+      "Sales Page",
+      "Marketing Page",
+      "Normal User pages (visible only for users with role User)",
+      "Normal User Home/Dashboard Page",
+      "All logged pages (visible only for logged in users with any role)",
+      "Settings",
+      "Register (registerUser)",
+      "Sign In (signInUser)",
+      "Verify Email (verifyEmailApi)",
+      "Refresh token",
+      "Sign Out (logoutAPI)",
+      "Sign In With Google (googleAPI)",
+      "Forgot Password (forgotPasswordAPI)",
+      "Get User Profile (getUserProfileAPI)",
+      "Create Product (createProductAPI)",
+      "Update Product Details (updateProductDetailsAPI)",
+      "Delete Product (deleteProductAPI)",
+      "Create Section (createSectionAPI)",
+      "Update Section Details (updateSectionDetailsAPI)",
+      "Delete Section (deleteSectionAPI)",
+      "Create Lesson (createLessonAPI)",
+      "Update Lesson Details (updateLessonDetailsAPI)",
+      "Delete Lesson (deleteLessonAPI)",
+      "Get All User's Products (getAllProductsByUserIdAPI)",
+      "Retrieve a specific product (getProductByProductIdAPI)",
+      "Add card image for product (addImageToProductAPI)",
+      "Get Presigned URL (getPresignedUrlAPI)",
+      "Upload To Presigned URL (uploadToPresignedUrl)",
+      "Confirm File Is Uploaded (confirmFileUploadAPI)",
+      "",
+      "So, avem niste architecture Proposal",
+      "Frontend Architecture Comparison: Split-Subdomain vs Single-Domain Models",
+      "\ud83d\udcd8 Model 1: Split-Subdomain Architecture (\"Subdomain Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Monorepo Folder Structure:",
+      "\ud83d\udcd7 Model 2: Single-Domain with URL Prefix Architecture (\"Path-Based Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Folder Structure (Single App):",
+      "\ud83c\udfc1 Recommendation",
+      "Subdomain Model - React UI Component Architecture",
+      "\ud83c\udf10 Public Site (Static Pages)",
+      "\ud83d\udd10 Authentication & Onboarding",
+      "\ud83e\udded Layout Components",
+      "\ud83c\udfe0 Dashboard (Creator)",
+      "\ud83d\udecd Products",
+      "\ud83d\udcc5 Consultations",
+      "\ud83d\udcb3 Checkout & Orders",
+      "\ud83c\udf93 Course Viewer",
+      "\ud83d\uded2 Storefront",
+      "\ud83d\udcc8 Analytics",
+      "\ud83d\udce3 Marketing & Engagement",
+      "\ud83d\udcac Communication",
+      "\u2699\ufe0f Settings",
+      "\ud83d\udd27 Admin (Optional)",
+      "\ud83e\uddf1 Utility Components"
+    ],
+    "links": [
+      {
+        "href": "/app/dashboard",
+        "text": "Normal Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "Landing page"
+      },
+      {
+        "href": "/",
+        "text": "Galactica"
+      },
+      {
+        "href": "https://app.serious-debauchery.click",
+        "text": "app.serious-debauchery.click"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/auth/signup",
+        "text": "Sign Up"
+      },
+      {
+        "href": "/auth/login",
+        "text": "Sign In"
+      },
+      {
+        "href": "/auth/forgot-password",
+        "text": "Forgot Password"
+      },
+      {
+        "href": "/auth/verify-email",
+        "text": "Email Verification"
+      },
+      {
+        "href": "/auth/email-sent",
+        "text": "Email Sent Confirmation"
+      },
+      {
+        "href": "/not-found",
+        "text": "Not Found"
+      },
+      {
+        "href": "/unauthorized",
+        "text": "Unauthorized"
+      },
+      {
+        "href": "/onboarding",
+        "text": "Onboarding"
+      },
+      {
+        "href": "/app",
+        "text": "App Home"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/explore",
+        "text": "Explore"
+      },
+      {
+        "href": "/app/explore/search",
+        "text": "Search"
+      },
+      {
+        "href": "/app/product/mockId/mockType",
+        "text": "Product Details"
+      },
+      {
+        "href": "/app/store/mockUserId",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/products/create",
+        "text": "Create Product"
+      },
+      {
+        "href": "/app/products/edit/COURSE/course-id",
+        "text": "Edit Product"
+      },
+      {
+        "href": "/app/storefront",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/dashboard/sales",
+        "text": "Sales"
+      },
+      {
+        "href": "/app/dashboard/marketing",
+        "text": "Marketing"
+      },
+      {
+        "href": "/app",
+        "text": "Home/Dashboard"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      }
+    ],
+    "mainText": "Developer Dashboard\nIntro\u25b8\n\nWelcome to the developer dashboard. Here you can manage your development tasks and monitor progress.\n\nSo, m\u0103 g\u00e2ndeam s\u0103 fac pagina asta ca s\u0103 avem un track la chestiile implementate pe aici, poate \u0219i cum func\u021bioneaz\u0103, poate \u0219i ce ar mai trebui f\u0103cut la ele. A\u0219a, chestii random.\n\n\u00cen principiu, aici ar trebui s\u0103 fie un fel de dashboard pentru dezvoltatori, unde s\u0103 putem vedea ce am implementat, ce mai trebuie f\u0103cut \u0219i poate \u0219i cum func\u021bioneaz\u0103 fiecare feature.\n\nHoly fuck, dude, paragraful de sus o fost generat \u00een perfect\u0103 rom\u00e2n\u0103 de VS Code Copilot AI (chiar dac\u0103 doar a rescris paragraful meu \ud83d\ude02). Noice.\n\n\u0218i da, \u00een caz c\u0103 te \u00eentrebai, m-am chinuit o\u021b\u00e2r\u0103 s\u0103 scriu asta cu diacritice.\n\nRoutes\u25b8\n\nHere we got some info about the routes created for the app, split into several categories.\n\nStatic Pages\u25b8\nGalactica Landing Page\nGalactica\nthe first thing users see when navigating to galactica.com\ndepending on the route we take, the URL will probably be galactica.com\ncurrently: app.serious-debauchery.click\nAbout Page\nAbout\nClassic about page\nPricing Page\nPricing\nClassic pricing page\nContact Page\nContact\nClassic contact page\nUser Authentication\u25b8\nSign Up Page\n\nSign Up\n\n-",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/dev-dashboard?qaRole=ADMIN"
+  },
+  {
+    "key": "production-admin-normal-dashboard",
+    "captured_at": "2026-10-02T17:22:09.359Z",
+    "fixture": "Isolated route fixture; build: production; identity: ADMIN; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Developer Dashboard",
+      "Galactica Landing Page",
+      "About Page",
+      "Pricing Page",
+      "Contact Page",
+      "Sign Up Page",
+      "Sign In Page",
+      "Forgot Password Page",
+      "Email Verification Page",
+      "Email Sent Confirmation Page",
+      "Not Found Page",
+      "Unauthorized Page",
+      "Onboarding Page",
+      "Galactica App Home",
+      "Visitor pages (visible for ALL users)",
+      "Explore",
+      "Search Results",
+      "Product Details Page",
+      "Storefront",
+      "Creator pages (visible only for users with role CREATOR)",
+      "Products",
+      "Create Product",
+      "Edit Product",
+      "Instructor Storefront Preview",
+      "Sales Page",
+      "Marketing Page",
+      "Normal User pages (visible only for users with role User)",
+      "Normal User Home/Dashboard Page",
+      "All logged pages (visible only for logged in users with any role)",
+      "Settings",
+      "Register (registerUser)",
+      "Sign In (signInUser)",
+      "Verify Email (verifyEmailApi)",
+      "Refresh token",
+      "Sign Out (logoutAPI)",
+      "Sign In With Google (googleAPI)",
+      "Forgot Password (forgotPasswordAPI)",
+      "Get User Profile (getUserProfileAPI)",
+      "Create Product (createProductAPI)",
+      "Update Product Details (updateProductDetailsAPI)",
+      "Delete Product (deleteProductAPI)",
+      "Create Section (createSectionAPI)",
+      "Update Section Details (updateSectionDetailsAPI)",
+      "Delete Section (deleteSectionAPI)",
+      "Create Lesson (createLessonAPI)",
+      "Update Lesson Details (updateLessonDetailsAPI)",
+      "Delete Lesson (deleteLessonAPI)",
+      "Get All User's Products (getAllProductsByUserIdAPI)",
+      "Retrieve a specific product (getProductByProductIdAPI)",
+      "Add card image for product (addImageToProductAPI)",
+      "Get Presigned URL (getPresignedUrlAPI)",
+      "Upload To Presigned URL (uploadToPresignedUrl)",
+      "Confirm File Is Uploaded (confirmFileUploadAPI)",
+      "",
+      "So, avem niste architecture Proposal",
+      "Frontend Architecture Comparison: Split-Subdomain vs Single-Domain Models",
+      "\ud83d\udcd8 Model 1: Split-Subdomain Architecture (\"Subdomain Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Monorepo Folder Structure:",
+      "\ud83d\udcd7 Model 2: Single-Domain with URL Prefix Architecture (\"Path-Based Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Folder Structure (Single App):",
+      "\ud83c\udfc1 Recommendation",
+      "Subdomain Model - React UI Component Architecture",
+      "\ud83c\udf10 Public Site (Static Pages)",
+      "\ud83d\udd10 Authentication & Onboarding",
+      "\ud83e\udded Layout Components",
+      "\ud83c\udfe0 Dashboard (Creator)",
+      "\ud83d\udecd Products",
+      "\ud83d\udcc5 Consultations",
+      "\ud83d\udcb3 Checkout & Orders",
+      "\ud83c\udf93 Course Viewer",
+      "\ud83d\uded2 Storefront",
+      "\ud83d\udcc8 Analytics",
+      "\ud83d\udce3 Marketing & Engagement",
+      "\ud83d\udcac Communication",
+      "\u2699\ufe0f Settings",
+      "\ud83d\udd27 Admin (Optional)",
+      "\ud83e\uddf1 Utility Components"
+    ],
+    "links": [
+      {
+        "href": "/app/dashboard",
+        "text": "Normal Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "Landing page"
+      },
+      {
+        "href": "/",
+        "text": "Galactica"
+      },
+      {
+        "href": "https://app.serious-debauchery.click",
+        "text": "app.serious-debauchery.click"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/auth/signup",
+        "text": "Sign Up"
+      },
+      {
+        "href": "/auth/login",
+        "text": "Sign In"
+      },
+      {
+        "href": "/auth/forgot-password",
+        "text": "Forgot Password"
+      },
+      {
+        "href": "/auth/verify-email",
+        "text": "Email Verification"
+      },
+      {
+        "href": "/auth/email-sent",
+        "text": "Email Sent Confirmation"
+      },
+      {
+        "href": "/not-found",
+        "text": "Not Found"
+      },
+      {
+        "href": "/unauthorized",
+        "text": "Unauthorized"
+      },
+      {
+        "href": "/onboarding",
+        "text": "Onboarding"
+      },
+      {
+        "href": "/app",
+        "text": "App Home"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/explore",
+        "text": "Explore"
+      },
+      {
+        "href": "/app/explore/search",
+        "text": "Search"
+      },
+      {
+        "href": "/app/product/mockId/mockType",
+        "text": "Product Details"
+      },
+      {
+        "href": "/app/store/mockUserId",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/products/create",
+        "text": "Create Product"
+      },
+      {
+        "href": "/app/products/edit/COURSE/course-id",
+        "text": "Edit Product"
+      },
+      {
+        "href": "/app/storefront",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/dashboard/sales",
+        "text": "Sales"
+      },
+      {
+        "href": "/app/dashboard/marketing",
+        "text": "Marketing"
+      },
+      {
+        "href": "/app",
+        "text": "Home/Dashboard"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      }
+    ],
+    "mainText": "Developer Dashboard\nIntro\u25b8\n\nWelcome to the developer dashboard. Here you can manage your development tasks and monitor progress.\n\nSo, m\u0103 g\u00e2ndeam s\u0103 fac pagina asta ca s\u0103 avem un track la chestiile implementate pe aici, poate \u0219i cum func\u021bioneaz\u0103, poate \u0219i ce ar mai trebui f\u0103cut la ele. A\u0219a, chestii random.\n\n\u00cen principiu, aici ar trebui s\u0103 fie un fel de dashboard pentru dezvoltatori, unde s\u0103 putem vedea ce am implementat, ce mai trebuie f\u0103cut \u0219i poate \u0219i cum func\u021bioneaz\u0103 fiecare feature.\n\nHoly fuck, dude, paragraful de sus o fost generat \u00een perfect\u0103 rom\u00e2n\u0103 de VS Code Copilot AI (chiar dac\u0103 doar a rescris paragraful meu \ud83d\ude02). Noice.\n\n\u0218i da, \u00een caz c\u0103 te \u00eentrebai, m-am chinuit o\u021b\u00e2r\u0103 s\u0103 scriu asta cu diacritice.\n\nRoutes\u25b8\n\nHere we got some info about the routes created for the app, split into several categories.\n\nStatic Pages\u25b8\nGalactica Landing Page\nGalactica\nthe first thing users see when navigating to galactica.com\ndepending on the route we take, the URL will probably be galactica.com\ncurrently: app.serious-debauchery.click\nAbout Page\nAbout\nClassic about page\nPricing Page\nPricing\nClassic pricing page\nContact Page\nContact\nClassic contact page\nUser Authentication\u25b8\nSign Up Page\n\nSign Up\n\n-",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/dev-dashboard?qaRole=ADMIN"
+  },
+  {
+    "key": "production-admin-normal-dashboard-after-overlay",
+    "captured_at": "2026-10-02T17:22:35.572Z",
+    "fixture": "Isolated route fixture; build: production; identity: ADMIN; shared-client requests denied except synthetic profile",
+    "headings": [
+      "GALACTICA",
+      "Admin"
+    ],
+    "links": [
+      {
+        "href": "/app",
+        "text": "Dashboard"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/admin",
+        "text": "Admin"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      },
+      {
+        "href": "/app/admin/users",
+        "text": "Users\nSearch users and change their single platform role."
+      },
+      {
+        "href": "/app/admin/products",
+        "text": "Products\nView, edit, delete, and create products for creators."
+      },
+      {
+        "href": "/app/admin/audit",
+        "text": "Audit\nReview admin role and product management actions."
+      }
+    ],
+    "mainText": "Admin\n\nManage platform users, products, and admin audit history.\n\nUsers\nSearch users and change their single platform role.\nProducts\nView, edit, delete, and create products for creators.\nAudit\nReview admin role and product management actions.",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/app"
+  },
+  {
+    "key": "production-admin-landing",
+    "captured_at": "2026-10-02T17:22:36.129Z",
+    "fixture": "Isolated route fixture; build: production; identity: ADMIN; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert",
+      "Built for Serious Creators",
+      "From Idea to Income",
+      "",
+      "",
+      "",
+      "Build the Right Product for Your Universe",
+      "",
+      "",
+      "",
+      "Build your Universe. Keep your Control",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "PRODUCT",
+      "COMPANY",
+      "SUPPORT",
+      "LEGAL"
+    ],
+    "links": [
+      {
+        "href": "/",
+        "text": "Home"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact Us"
+      },
+      {
+        "href": "/app",
+        "text": "Go to Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "COSMICAPP"
+      },
+      {
+        "href": "/features",
+        "text": "Features"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/demo",
+        "text": "Demo"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/help",
+        "text": "Help Center"
+      },
+      {
+        "href": "/contact#faq",
+        "text": "FAQ"
+      },
+      {
+        "href": "/terms",
+        "text": "Terms"
+      },
+      {
+        "href": "/privacy",
+        "text": "Privacy"
+      },
+      {
+        "href": "/cookies",
+        "text": "Cookies"
+      },
+      {
+        "href": "/",
+        "text": "F"
+      },
+      {
+        "href": "/",
+        "text": "X"
+      },
+      {
+        "href": "/",
+        "text": "IN"
+      },
+      {
+        "href": "/",
+        "text": "IG"
+      }
+    ],
+    "mainText": "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor faucibus interdum. Quisque at efficitur tellus. Nulla sed tortor dolor.\n\nLaunch Your Universe\nSee how it works\nBuilt for Serious Creators\n\nYour business deserves a platform that feels powerful and focused\n\nFrom Idea to Income\nBuild the Right Product for Your Universe\n\nCourse, memberships, and consultations - all under one roof.\n\nBuild your Universe. Keep your Control",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"ADMIN\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/"
+  },
+  {
+    "key": "production-creator-dev-dashboard",
+    "captured_at": "2026-10-02T17:22:54.194Z",
+    "fixture": "Isolated route fixture; build: production; identity: CREATOR; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Developer Dashboard",
+      "Galactica Landing Page",
+      "About Page",
+      "Pricing Page",
+      "Contact Page",
+      "Sign Up Page",
+      "Sign In Page",
+      "Forgot Password Page",
+      "Email Verification Page",
+      "Email Sent Confirmation Page",
+      "Not Found Page",
+      "Unauthorized Page",
+      "Onboarding Page",
+      "Galactica App Home",
+      "Visitor pages (visible for ALL users)",
+      "Explore",
+      "Search Results",
+      "Product Details Page",
+      "Storefront",
+      "Creator pages (visible only for users with role CREATOR)",
+      "Products",
+      "Create Product",
+      "Edit Product",
+      "Instructor Storefront Preview",
+      "Sales Page",
+      "Marketing Page",
+      "Normal User pages (visible only for users with role User)",
+      "Normal User Home/Dashboard Page",
+      "All logged pages (visible only for logged in users with any role)",
+      "Settings",
+      "Register (registerUser)",
+      "Sign In (signInUser)",
+      "Verify Email (verifyEmailApi)",
+      "Refresh token",
+      "Sign Out (logoutAPI)",
+      "Sign In With Google (googleAPI)",
+      "Forgot Password (forgotPasswordAPI)",
+      "Get User Profile (getUserProfileAPI)",
+      "Create Product (createProductAPI)",
+      "Update Product Details (updateProductDetailsAPI)",
+      "Delete Product (deleteProductAPI)",
+      "Create Section (createSectionAPI)",
+      "Update Section Details (updateSectionDetailsAPI)",
+      "Delete Section (deleteSectionAPI)",
+      "Create Lesson (createLessonAPI)",
+      "Update Lesson Details (updateLessonDetailsAPI)",
+      "Delete Lesson (deleteLessonAPI)",
+      "Get All User's Products (getAllProductsByUserIdAPI)",
+      "Retrieve a specific product (getProductByProductIdAPI)",
+      "Add card image for product (addImageToProductAPI)",
+      "Get Presigned URL (getPresignedUrlAPI)",
+      "Upload To Presigned URL (uploadToPresignedUrl)",
+      "Confirm File Is Uploaded (confirmFileUploadAPI)",
+      "",
+      "So, avem niste architecture Proposal",
+      "Frontend Architecture Comparison: Split-Subdomain vs Single-Domain Models",
+      "\ud83d\udcd8 Model 1: Split-Subdomain Architecture (\"Subdomain Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Monorepo Folder Structure:",
+      "\ud83d\udcd7 Model 2: Single-Domain with URL Prefix Architecture (\"Path-Based Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Folder Structure (Single App):",
+      "\ud83c\udfc1 Recommendation",
+      "Subdomain Model - React UI Component Architecture",
+      "\ud83c\udf10 Public Site (Static Pages)",
+      "\ud83d\udd10 Authentication & Onboarding",
+      "\ud83e\udded Layout Components",
+      "\ud83c\udfe0 Dashboard (Creator)",
+      "\ud83d\udecd Products",
+      "\ud83d\udcc5 Consultations",
+      "\ud83d\udcb3 Checkout & Orders",
+      "\ud83c\udf93 Course Viewer",
+      "\ud83d\uded2 Storefront",
+      "\ud83d\udcc8 Analytics",
+      "\ud83d\udce3 Marketing & Engagement",
+      "\ud83d\udcac Communication",
+      "\u2699\ufe0f Settings",
+      "\ud83d\udd27 Admin (Optional)",
+      "\ud83e\uddf1 Utility Components"
+    ],
+    "links": [
+      {
+        "href": "/app/dashboard",
+        "text": "Normal Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "Landing page"
+      },
+      {
+        "href": "/",
+        "text": "Galactica"
+      },
+      {
+        "href": "https://app.serious-debauchery.click",
+        "text": "app.serious-debauchery.click"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/auth/signup",
+        "text": "Sign Up"
+      },
+      {
+        "href": "/auth/login",
+        "text": "Sign In"
+      },
+      {
+        "href": "/auth/forgot-password",
+        "text": "Forgot Password"
+      },
+      {
+        "href": "/auth/verify-email",
+        "text": "Email Verification"
+      },
+      {
+        "href": "/auth/email-sent",
+        "text": "Email Sent Confirmation"
+      },
+      {
+        "href": "/not-found",
+        "text": "Not Found"
+      },
+      {
+        "href": "/unauthorized",
+        "text": "Unauthorized"
+      },
+      {
+        "href": "/onboarding",
+        "text": "Onboarding"
+      },
+      {
+        "href": "/app",
+        "text": "App Home"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/explore",
+        "text": "Explore"
+      },
+      {
+        "href": "/app/explore/search",
+        "text": "Search"
+      },
+      {
+        "href": "/app/product/mockId/mockType",
+        "text": "Product Details"
+      },
+      {
+        "href": "/app/store/mockUserId",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/products/create",
+        "text": "Create Product"
+      },
+      {
+        "href": "/app/products/edit/COURSE/course-id",
+        "text": "Edit Product"
+      },
+      {
+        "href": "/app/storefront",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/dashboard/sales",
+        "text": "Sales"
+      },
+      {
+        "href": "/app/dashboard/marketing",
+        "text": "Marketing"
+      },
+      {
+        "href": "/app",
+        "text": "Home/Dashboard"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      }
+    ],
+    "mainText": "Developer Dashboard\nIntro\u25b8\n\nWelcome to the developer dashboard. Here you can manage your development tasks and monitor progress.\n\nSo, m\u0103 g\u00e2ndeam s\u0103 fac pagina asta ca s\u0103 avem un track la chestiile implementate pe aici, poate \u0219i cum func\u021bioneaz\u0103, poate \u0219i ce ar mai trebui f\u0103cut la ele. A\u0219a, chestii random.\n\n\u00cen principiu, aici ar trebui s\u0103 fie un fel de dashboard pentru dezvoltatori, unde s\u0103 putem vedea ce am implementat, ce mai trebuie f\u0103cut \u0219i poate \u0219i cum func\u021bioneaz\u0103 fiecare feature.\n\nHoly fuck, dude, paragraful de sus o fost generat \u00een perfect\u0103 rom\u00e2n\u0103 de VS Code Copilot AI (chiar dac\u0103 doar a rescris paragraful meu \ud83d\ude02). Noice.\n\n\u0218i da, \u00een caz c\u0103 te \u00eentrebai, m-am chinuit o\u021b\u00e2r\u0103 s\u0103 scriu asta cu diacritice.\n\nRoutes\u25b8\n\nHere we got some info about the routes created for the app, split into several categories.\n\nStatic Pages\u25b8\nGalactica Landing Page\nGalactica\nthe first thing users see when navigating to galactica.com\ndepending on the route we take, the URL will probably be galactica.com\ncurrently: app.serious-debauchery.click\nAbout Page\nAbout\nClassic about page\nPricing Page\nPricing\nClassic pricing page\nContact Page\nContact\nClassic contact page\nUser Authentication\u25b8\nSign Up Page\n\nSign Up\n\n-",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/dev-dashboard?qaRole=CREATOR"
+  },
+  {
+    "key": "production-creator-normal-dashboard",
+    "captured_at": "2026-10-02T17:22:54.481Z",
+    "fixture": "Isolated route fixture; build: production; identity: CREATOR; shared-client requests denied except synthetic profile",
+    "headings": [
+      "GALACTICA",
+      "Dashboard",
+      "Recent activity",
+      "Top products",
+      "Needs attention"
+    ],
+    "links": [
+      {
+        "href": "/app",
+        "text": "Dashboard"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/customers",
+        "text": "Customers"
+      },
+      {
+        "href": "/app/sales",
+        "text": "Sales"
+      },
+      {
+        "href": "/app/analytics",
+        "text": "Analytics"
+      },
+      {
+        "href": "/app/storefront",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      }
+    ],
+    "mainText": "Dashboard\n\nGood evening, Boundary.\n\nREVENUE\nUnavailable\nMore business data is needed.\nSALES\nUnavailable\nMore business data is needed.\nCUSTOMERS\nUnavailable\nMore business data is needed.\nACTIVE MEMBERSHIPS\nUnavailable\nMore business data is needed.\nRecent activity\n\nActivity will appear here once business events are available.\n\nTop products\nREVENUE\n\nProduct performance is unavailable until revenue data exists.\n\nNeeds attention\n\nNo deterministic attention states are available yet.",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/creator/dashboard/summary\",\n    \"role\": \"CREATOR\",\n    \"status\": 503\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/app"
+  },
+  {
+    "key": "production-creator-landing",
+    "captured_at": "2026-10-02T17:22:54.918Z",
+    "fixture": "Isolated route fixture; build: production; identity: CREATOR; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert",
+      "Built for Serious Creators",
+      "From Idea to Income",
+      "",
+      "",
+      "",
+      "Build the Right Product for Your Universe",
+      "",
+      "",
+      "",
+      "Build your Universe. Keep your Control",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "PRODUCT",
+      "COMPANY",
+      "SUPPORT",
+      "LEGAL"
+    ],
+    "links": [
+      {
+        "href": "/",
+        "text": "Home"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact Us"
+      },
+      {
+        "href": "/app",
+        "text": "Go to Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "COSMICAPP"
+      },
+      {
+        "href": "/features",
+        "text": "Features"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/demo",
+        "text": "Demo"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/help",
+        "text": "Help Center"
+      },
+      {
+        "href": "/contact#faq",
+        "text": "FAQ"
+      },
+      {
+        "href": "/terms",
+        "text": "Terms"
+      },
+      {
+        "href": "/privacy",
+        "text": "Privacy"
+      },
+      {
+        "href": "/cookies",
+        "text": "Cookies"
+      },
+      {
+        "href": "/",
+        "text": "F"
+      },
+      {
+        "href": "/",
+        "text": "X"
+      },
+      {
+        "href": "/",
+        "text": "IN"
+      },
+      {
+        "href": "/",
+        "text": "IG"
+      }
+    ],
+    "mainText": "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor faucibus interdum. Quisque at efficitur tellus. Nulla sed tortor dolor.\n\nLaunch Your Universe\nSee how it works\nBuilt for Serious Creators\n\nYour business deserves a platform that feels powerful and focused\n\nFrom Idea to Income\nBuild the Right Product for Your Universe\n\nCourse, memberships, and consultations - all under one roof.\n\nBuild your Universe. Keep your Control",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/creator/dashboard/summary\",\n    \"role\": \"CREATOR\",\n    \"status\": 503\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/"
+  },
+  {
+    "key": "production-creator-routes-tool",
+    "captured_at": "2026-10-02T17:22:55.639Z",
+    "fixture": "Isolated route fixture; build: production; identity: CREATOR; shared-client requests denied except synthetic profile",
+    "headings": [],
+    "links": [],
+    "mainText": null,
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"CREATOR\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/__routes-dev?qaRole=CREATOR"
+  },
+  {
+    "key": "production-user-dev-dashboard",
+    "captured_at": "2026-10-02T17:23:09.289Z",
+    "fixture": "Isolated route fixture; build: production; identity: USER; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Developer Dashboard",
+      "Galactica Landing Page",
+      "About Page",
+      "Pricing Page",
+      "Contact Page",
+      "Sign Up Page",
+      "Sign In Page",
+      "Forgot Password Page",
+      "Email Verification Page",
+      "Email Sent Confirmation Page",
+      "Not Found Page",
+      "Unauthorized Page",
+      "Onboarding Page",
+      "Galactica App Home",
+      "Visitor pages (visible for ALL users)",
+      "Explore",
+      "Search Results",
+      "Product Details Page",
+      "Storefront",
+      "Creator pages (visible only for users with role CREATOR)",
+      "Products",
+      "Create Product",
+      "Edit Product",
+      "Instructor Storefront Preview",
+      "Sales Page",
+      "Marketing Page",
+      "Normal User pages (visible only for users with role User)",
+      "Normal User Home/Dashboard Page",
+      "All logged pages (visible only for logged in users with any role)",
+      "Settings",
+      "Register (registerUser)",
+      "Sign In (signInUser)",
+      "Verify Email (verifyEmailApi)",
+      "Refresh token",
+      "Sign Out (logoutAPI)",
+      "Sign In With Google (googleAPI)",
+      "Forgot Password (forgotPasswordAPI)",
+      "Get User Profile (getUserProfileAPI)",
+      "Create Product (createProductAPI)",
+      "Update Product Details (updateProductDetailsAPI)",
+      "Delete Product (deleteProductAPI)",
+      "Create Section (createSectionAPI)",
+      "Update Section Details (updateSectionDetailsAPI)",
+      "Delete Section (deleteSectionAPI)",
+      "Create Lesson (createLessonAPI)",
+      "Update Lesson Details (updateLessonDetailsAPI)",
+      "Delete Lesson (deleteLessonAPI)",
+      "Get All User's Products (getAllProductsByUserIdAPI)",
+      "Retrieve a specific product (getProductByProductIdAPI)",
+      "Add card image for product (addImageToProductAPI)",
+      "Get Presigned URL (getPresignedUrlAPI)",
+      "Upload To Presigned URL (uploadToPresignedUrl)",
+      "Confirm File Is Uploaded (confirmFileUploadAPI)",
+      "",
+      "So, avem niste architecture Proposal",
+      "Frontend Architecture Comparison: Split-Subdomain vs Single-Domain Models",
+      "\ud83d\udcd8 Model 1: Split-Subdomain Architecture (\"Subdomain Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Monorepo Folder Structure:",
+      "\ud83d\udcd7 Model 2: Single-Domain with URL Prefix Architecture (\"Path-Based Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Folder Structure (Single App):",
+      "\ud83c\udfc1 Recommendation",
+      "Subdomain Model - React UI Component Architecture",
+      "\ud83c\udf10 Public Site (Static Pages)",
+      "\ud83d\udd10 Authentication & Onboarding",
+      "\ud83e\udded Layout Components",
+      "\ud83c\udfe0 Dashboard (Creator)",
+      "\ud83d\udecd Products",
+      "\ud83d\udcc5 Consultations",
+      "\ud83d\udcb3 Checkout & Orders",
+      "\ud83c\udf93 Course Viewer",
+      "\ud83d\uded2 Storefront",
+      "\ud83d\udcc8 Analytics",
+      "\ud83d\udce3 Marketing & Engagement",
+      "\ud83d\udcac Communication",
+      "\u2699\ufe0f Settings",
+      "\ud83d\udd27 Admin (Optional)",
+      "\ud83e\uddf1 Utility Components"
+    ],
+    "links": [
+      {
+        "href": "/app/dashboard",
+        "text": "Normal Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "Landing page"
+      },
+      {
+        "href": "/",
+        "text": "Galactica"
+      },
+      {
+        "href": "https://app.serious-debauchery.click",
+        "text": "app.serious-debauchery.click"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/auth/signup",
+        "text": "Sign Up"
+      },
+      {
+        "href": "/auth/login",
+        "text": "Sign In"
+      },
+      {
+        "href": "/auth/forgot-password",
+        "text": "Forgot Password"
+      },
+      {
+        "href": "/auth/verify-email",
+        "text": "Email Verification"
+      },
+      {
+        "href": "/auth/email-sent",
+        "text": "Email Sent Confirmation"
+      },
+      {
+        "href": "/not-found",
+        "text": "Not Found"
+      },
+      {
+        "href": "/unauthorized",
+        "text": "Unauthorized"
+      },
+      {
+        "href": "/onboarding",
+        "text": "Onboarding"
+      },
+      {
+        "href": "/app",
+        "text": "App Home"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/explore",
+        "text": "Explore"
+      },
+      {
+        "href": "/app/explore/search",
+        "text": "Search"
+      },
+      {
+        "href": "/app/product/mockId/mockType",
+        "text": "Product Details"
+      },
+      {
+        "href": "/app/store/mockUserId",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/products/create",
+        "text": "Create Product"
+      },
+      {
+        "href": "/app/products/edit/COURSE/course-id",
+        "text": "Edit Product"
+      },
+      {
+        "href": "/app/storefront",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/dashboard/sales",
+        "text": "Sales"
+      },
+      {
+        "href": "/app/dashboard/marketing",
+        "text": "Marketing"
+      },
+      {
+        "href": "/app",
+        "text": "Home/Dashboard"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      }
+    ],
+    "mainText": "Developer Dashboard\nIntro\u25b8\n\nWelcome to the developer dashboard. Here you can manage your development tasks and monitor progress.\n\nSo, m\u0103 g\u00e2ndeam s\u0103 fac pagina asta ca s\u0103 avem un track la chestiile implementate pe aici, poate \u0219i cum func\u021bioneaz\u0103, poate \u0219i ce ar mai trebui f\u0103cut la ele. A\u0219a, chestii random.\n\n\u00cen principiu, aici ar trebui s\u0103 fie un fel de dashboard pentru dezvoltatori, unde s\u0103 putem vedea ce am implementat, ce mai trebuie f\u0103cut \u0219i poate \u0219i cum func\u021bioneaz\u0103 fiecare feature.\n\nHoly fuck, dude, paragraful de sus o fost generat \u00een perfect\u0103 rom\u00e2n\u0103 de VS Code Copilot AI (chiar dac\u0103 doar a rescris paragraful meu \ud83d\ude02). Noice.\n\n\u0218i da, \u00een caz c\u0103 te \u00eentrebai, m-am chinuit o\u021b\u00e2r\u0103 s\u0103 scriu asta cu diacritice.\n\nRoutes\u25b8\n\nHere we got some info about the routes created for the app, split into several categories.\n\nStatic Pages\u25b8\nGalactica Landing Page\nGalactica\nthe first thing users see when navigating to galactica.com\ndepending on the route we take, the URL will probably be galactica.com\ncurrently: app.serious-debauchery.click\nAbout Page\nAbout\nClassic about page\nPricing Page\nPricing\nClassic pricing page\nContact Page\nContact\nClassic contact page\nUser Authentication\u25b8\nSign Up Page\n\nSign Up\n\n-",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/dev-dashboard?qaRole=USER"
+  },
+  {
+    "key": "production-user-normal-dashboard",
+    "captured_at": "2026-10-02T17:23:09.394Z",
+    "fixture": "Isolated route fixture; build: production; identity: USER; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Galactica",
+      "Welcome back, dude!",
+      "Continue your courses",
+      "What to learn next",
+      "New courses you might like",
+      "How about joining our content creator team?"
+    ],
+    "links": [
+      {
+        "href": "/app/explore",
+        "text": "Explore"
+      },
+      {
+        "href": "/app/library/all-products",
+        "text": "Library"
+      },
+      {
+        "href": "https://luxury-klepon-a62307.netlify.app/",
+        "text": "Docusaurus"
+      }
+    ],
+    "mainText": "Welcome back, dude!\n\nNEW CHANGES\n\nAvem Docusaurus (User dropdown -> Docusaurus)\nAvem quiz builder\nAvem cart page cu cart items badge icon si local storage persistance (ca nu ai vrut cu backend persistance)\nAvem wishlist functionality cu local storage persistance (ca nu ai vrut cu backend persistance)\nAvem improved library page (cu taburi diferite pentru all prods, course, downloads, cosnultations, wishlist)\nContinue your courses\nWhat to learn next\nNew courses you might like\nHow about joining our content creator team?\nButton",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/app"
+  },
+  {
+    "key": "production-user-landing",
+    "captured_at": "2026-10-02T17:23:09.877Z",
+    "fixture": "Isolated route fixture; build: production; identity: USER; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert",
+      "Built for Serious Creators",
+      "From Idea to Income",
+      "",
+      "",
+      "",
+      "Build the Right Product for Your Universe",
+      "",
+      "",
+      "",
+      "Build your Universe. Keep your Control",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "PRODUCT",
+      "COMPANY",
+      "SUPPORT",
+      "LEGAL"
+    ],
+    "links": [
+      {
+        "href": "/",
+        "text": "Home"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact Us"
+      },
+      {
+        "href": "/app",
+        "text": "Go to Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "COSMICAPP"
+      },
+      {
+        "href": "/features",
+        "text": "Features"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/demo",
+        "text": "Demo"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/help",
+        "text": "Help Center"
+      },
+      {
+        "href": "/contact#faq",
+        "text": "FAQ"
+      },
+      {
+        "href": "/terms",
+        "text": "Terms"
+      },
+      {
+        "href": "/privacy",
+        "text": "Privacy"
+      },
+      {
+        "href": "/cookies",
+        "text": "Cookies"
+      },
+      {
+        "href": "/",
+        "text": "F"
+      },
+      {
+        "href": "/",
+        "text": "X"
+      },
+      {
+        "href": "/",
+        "text": "IN"
+      },
+      {
+        "href": "/",
+        "text": "IG"
+      }
+    ],
+    "mainText": "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor faucibus interdum. Quisque at efficitur tellus. Nulla sed tortor dolor.\n\nLaunch Your Universe\nSee how it works\nBuilt for Serious Creators\n\nYour business deserves a platform that feels powerful and focused\n\nFrom Idea to Income\nBuild the Right Product for Your Universe\n\nCourse, memberships, and consultations - all under one roof.\n\nBuild your Universe. Keep your Control",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/"
+  },
+  {
+    "key": "production-user-routes-tool",
+    "captured_at": "2026-10-02T17:23:10.525Z",
+    "fixture": "Isolated route fixture; build: production; identity: USER; shared-client requests denied except synthetic profile",
+    "headings": [],
+    "links": [],
+    "mainText": null,
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"USER\",\n    \"status\": 200\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/__routes-dev?qaRole=USER"
+  },
+  {
+    "key": "production-guest-dev-dashboard",
+    "captured_at": "2026-10-02T17:23:22.570Z",
+    "fixture": "Isolated route fixture; build: production; identity: GUEST; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Developer Dashboard",
+      "Galactica Landing Page",
+      "About Page",
+      "Pricing Page",
+      "Contact Page",
+      "Sign Up Page",
+      "Sign In Page",
+      "Forgot Password Page",
+      "Email Verification Page",
+      "Email Sent Confirmation Page",
+      "Not Found Page",
+      "Unauthorized Page",
+      "Onboarding Page",
+      "Galactica App Home",
+      "Visitor pages (visible for ALL users)",
+      "Explore",
+      "Search Results",
+      "Product Details Page",
+      "Storefront",
+      "Creator pages (visible only for users with role CREATOR)",
+      "Products",
+      "Create Product",
+      "Edit Product",
+      "Instructor Storefront Preview",
+      "Sales Page",
+      "Marketing Page",
+      "Normal User pages (visible only for users with role User)",
+      "Normal User Home/Dashboard Page",
+      "All logged pages (visible only for logged in users with any role)",
+      "Settings",
+      "Register (registerUser)",
+      "Sign In (signInUser)",
+      "Verify Email (verifyEmailApi)",
+      "Refresh token",
+      "Sign Out (logoutAPI)",
+      "Sign In With Google (googleAPI)",
+      "Forgot Password (forgotPasswordAPI)",
+      "Get User Profile (getUserProfileAPI)",
+      "Create Product (createProductAPI)",
+      "Update Product Details (updateProductDetailsAPI)",
+      "Delete Product (deleteProductAPI)",
+      "Create Section (createSectionAPI)",
+      "Update Section Details (updateSectionDetailsAPI)",
+      "Delete Section (deleteSectionAPI)",
+      "Create Lesson (createLessonAPI)",
+      "Update Lesson Details (updateLessonDetailsAPI)",
+      "Delete Lesson (deleteLessonAPI)",
+      "Get All User's Products (getAllProductsByUserIdAPI)",
+      "Retrieve a specific product (getProductByProductIdAPI)",
+      "Add card image for product (addImageToProductAPI)",
+      "Get Presigned URL (getPresignedUrlAPI)",
+      "Upload To Presigned URL (uploadToPresignedUrl)",
+      "Confirm File Is Uploaded (confirmFileUploadAPI)",
+      "",
+      "So, avem niste architecture Proposal",
+      "Frontend Architecture Comparison: Split-Subdomain vs Single-Domain Models",
+      "\ud83d\udcd8 Model 1: Split-Subdomain Architecture (\"Subdomain Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Monorepo Folder Structure:",
+      "\ud83d\udcd7 Model 2: Single-Domain with URL Prefix Architecture (\"Path-Based Model\")",
+      "\ud83c\udf0d Domain Structure:",
+      "\u2705 Pros:",
+      "\u274c Cons:",
+      "\ud83e\uddf1 Minimal Folder Structure (Single App):",
+      "\ud83c\udfc1 Recommendation",
+      "Subdomain Model - React UI Component Architecture",
+      "\ud83c\udf10 Public Site (Static Pages)",
+      "\ud83d\udd10 Authentication & Onboarding",
+      "\ud83e\udded Layout Components",
+      "\ud83c\udfe0 Dashboard (Creator)",
+      "\ud83d\udecd Products",
+      "\ud83d\udcc5 Consultations",
+      "\ud83d\udcb3 Checkout & Orders",
+      "\ud83c\udf93 Course Viewer",
+      "\ud83d\uded2 Storefront",
+      "\ud83d\udcc8 Analytics",
+      "\ud83d\udce3 Marketing & Engagement",
+      "\ud83d\udcac Communication",
+      "\u2699\ufe0f Settings",
+      "\ud83d\udd27 Admin (Optional)",
+      "\ud83e\uddf1 Utility Components"
+    ],
+    "links": [
+      {
+        "href": "/app/dashboard",
+        "text": "Normal Dashboard"
+      },
+      {
+        "href": "/",
+        "text": "Landing page"
+      },
+      {
+        "href": "/",
+        "text": "Galactica"
+      },
+      {
+        "href": "https://app.serious-debauchery.click",
+        "text": "app.serious-debauchery.click"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/auth/signup",
+        "text": "Sign Up"
+      },
+      {
+        "href": "/auth/login",
+        "text": "Sign In"
+      },
+      {
+        "href": "/auth/forgot-password",
+        "text": "Forgot Password"
+      },
+      {
+        "href": "/auth/verify-email",
+        "text": "Email Verification"
+      },
+      {
+        "href": "/auth/email-sent",
+        "text": "Email Sent Confirmation"
+      },
+      {
+        "href": "/not-found",
+        "text": "Not Found"
+      },
+      {
+        "href": "/unauthorized",
+        "text": "Unauthorized"
+      },
+      {
+        "href": "/onboarding",
+        "text": "Onboarding"
+      },
+      {
+        "href": "/app",
+        "text": "App Home"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/explore",
+        "text": "Explore"
+      },
+      {
+        "href": "/app/explore/search",
+        "text": "Search"
+      },
+      {
+        "href": "/app/product/mockId/mockType",
+        "text": "Product Details"
+      },
+      {
+        "href": "/app/store/mockUserId",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/products",
+        "text": "Products"
+      },
+      {
+        "href": "/app/products/create",
+        "text": "Create Product"
+      },
+      {
+        "href": "/app/products/edit/COURSE/course-id",
+        "text": "Edit Product"
+      },
+      {
+        "href": "/app/storefront",
+        "text": "Storefront"
+      },
+      {
+        "href": "/app/dashboard/sales",
+        "text": "Sales"
+      },
+      {
+        "href": "/app/dashboard/marketing",
+        "text": "Marketing"
+      },
+      {
+        "href": "/app",
+        "text": "Home/Dashboard"
+      },
+      {
+        "href": "https://app.serious-debauchery.click/app",
+        "text": "app.serious-debauchery.click/app"
+      },
+      {
+        "href": "/app/settings",
+        "text": "Settings"
+      }
+    ],
+    "mainText": "Developer Dashboard\nIntro\u25b8\n\nWelcome to the developer dashboard. Here you can manage your development tasks and monitor progress.\n\nSo, m\u0103 g\u00e2ndeam s\u0103 fac pagina asta ca s\u0103 avem un track la chestiile implementate pe aici, poate \u0219i cum func\u021bioneaz\u0103, poate \u0219i ce ar mai trebui f\u0103cut la ele. A\u0219a, chestii random.\n\n\u00cen principiu, aici ar trebui s\u0103 fie un fel de dashboard pentru dezvoltatori, unde s\u0103 putem vedea ce am implementat, ce mai trebuie f\u0103cut \u0219i poate \u0219i cum func\u021bioneaz\u0103 fiecare feature.\n\nHoly fuck, dude, paragraful de sus o fost generat \u00een perfect\u0103 rom\u00e2n\u0103 de VS Code Copilot AI (chiar dac\u0103 doar a rescris paragraful meu \ud83d\ude02). Noice.\n\n\u0218i da, \u00een caz c\u0103 te \u00eentrebai, m-am chinuit o\u021b\u00e2r\u0103 s\u0103 scriu asta cu diacritice.\n\nRoutes\u25b8\n\nHere we got some info about the routes created for the app, split into several categories.\n\nStatic Pages\u25b8\nGalactica Landing Page\nGalactica\nthe first thing users see when navigating to galactica.com\ndepending on the route we take, the URL will probably be galactica.com\ncurrently: app.serious-debauchery.click\nAbout Page\nAbout\nClassic about page\nPricing Page\nPricing\nClassic pricing page\nContact Page\nContact\nClassic contact page\nUser Authentication\u25b8\nSign Up Page\n\nSign Up\n\n-",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"post\",\n    \"url\": \"api/auth/refresh\",\n    \"role\": \"GUEST\",\n    \"status\": 503\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/dev-dashboard?qaRole=GUEST"
+  },
+  {
+    "key": "production-guest-normal-dashboard",
+    "captured_at": "2026-10-02T17:23:22.685Z",
+    "fixture": "Isolated route fixture; build: production; identity: GUEST; shared-client requests denied except synthetic profile",
+    "headings": [],
+    "links": [],
+    "mainText": null,
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"post\",\n    \"url\": \"api/auth/refresh\",\n    \"role\": \"GUEST\",\n    \"status\": 503\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/auth/login"
+  },
+  {
+    "key": "production-guest-landing",
+    "captured_at": "2026-10-02T17:23:23.149Z",
+    "fixture": "Isolated route fixture; build: production; identity: GUEST; shared-client requests denied except synthetic profile",
+    "headings": [
+      "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert",
+      "Built for Serious Creators",
+      "From Idea to Income",
+      "",
+      "",
+      "",
+      "Build the Right Product for Your Universe",
+      "",
+      "",
+      "",
+      "Build your Universe. Keep your Control",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "PRODUCT",
+      "COMPANY",
+      "SUPPORT",
+      "LEGAL"
+    ],
+    "links": [
+      {
+        "href": "/",
+        "text": "Home"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact Us"
+      },
+      {
+        "href": "/",
+        "text": "COSMICAPP"
+      },
+      {
+        "href": "/features",
+        "text": "Features"
+      },
+      {
+        "href": "/getting-started",
+        "text": "Getting Started"
+      },
+      {
+        "href": "/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "/demo",
+        "text": "Demo"
+      },
+      {
+        "href": "/about",
+        "text": "About"
+      },
+      {
+        "href": "/contact",
+        "text": "Contact"
+      },
+      {
+        "href": "/help",
+        "text": "Help Center"
+      },
+      {
+        "href": "/contact#faq",
+        "text": "FAQ"
+      },
+      {
+        "href": "/terms",
+        "text": "Terms"
+      },
+      {
+        "href": "/privacy",
+        "text": "Privacy"
+      },
+      {
+        "href": "/cookies",
+        "text": "Cookies"
+      },
+      {
+        "href": "/",
+        "text": "F"
+      },
+      {
+        "href": "/",
+        "text": "X"
+      },
+      {
+        "href": "/",
+        "text": "IN"
+      },
+      {
+        "href": "/",
+        "text": "IG"
+      }
+    ],
+    "mainText": "Create Courses That\nInspire\nScale\nTransform\nLead\nConvert\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor faucibus interdum. Quisque at efficitur tellus. Nulla sed tortor dolor.\n\nLaunch Your Universe\nSee how it works\nBuilt for Serious Creators\n\nYour business deserves a platform that feels powerful and focused\n\nFrom Idea to Income\nBuild the Right Product for Your Universe\n\nCourse, memberships, and consultations - all under one roof.\n\nBuild your Universe. Keep your Control",
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"post\",\n    \"url\": \"api/auth/refresh\",\n    \"role\": \"GUEST\",\n    \"status\": 503\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/"
+  },
+  {
+    "key": "production-guest-routes-tool",
+    "captured_at": "2026-10-02T17:23:23.767Z",
+    "fixture": "Isolated route fixture; build: production; identity: GUEST; shared-client requests denied except synthetic profile",
+    "headings": [],
+    "links": [],
+    "mainText": null,
+    "requests": "[\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"get\",\n    \"url\": \"api/user/userInfo\",\n    \"role\": \"GUEST\",\n    \"status\": 401\n  },\n  {\n    \"transport\": \"axios-guard\",\n    \"method\": \"post\",\n    \"url\": \"api/auth/refresh\",\n    \"role\": \"GUEST\",\n    \"status\": 503\n  }\n]",
+    "textareas": [],
+    "url": "http://127.0.0.1:4317/__routes-dev?qaRole=GUEST"
+  },
+  {
+    "key": "harness-reproduction-metadata",
+    "captured_at": "2026-10-02T17:25:00.864980+00:00",
+    "sources": {
+      "vpqa-routes-entry.js": {
+        "content": "const root='/Users/tamastyukodi/Development/video-platform-ui';\nconst axiosModule=require('/Users/tamastyukodi/Development/video-platform-ui/node_modules/axios');\nconst axios=axiosModule.default;\nconst identity=new URLSearchParams(window.location.search).get('qaRole') || 'CREATOR';\nconst events=[];\nlet capturedAdapter;\nconst guard=async config=>{\n events.push({transport:'axios-guard',method:config.method,url:config.url,role:identity,status:config.url==='api/user/userInfo'?(identity==='GUEST'?401:200):503});\n renderEvents();\n if(config.url==='api/user/userInfo' && identity!=='GUEST')return {status:200,statusText:'OK',data:{id:'qa-boundary-identity',firstName:'Boundary',lastName:'Fixture',email:'boundary@example.test',roles:[identity],onboardingCompleted:true},headers:{},config};\n const status=config.url==='api/user/userInfo' && identity==='GUEST'?401:503;\n throw new axiosModule.AxiosError('Blocked by isolated QA transport','QA_NETWORK_DENIED',config,null,{status,statusText:'QA captured',data:{message:'No real network allowed'},headers:{},config});\n};\naxios.defaults.adapter=guard;\nwindow.fetch=async(url,options)=>{events.push({transport:'fetch-guard',method:options?.method||'GET',url:String(url),role:identity});renderEvents();throw new Error('QA_NETWORK_DENIED: storage PUT captured locally');};\nfunction renderEvents(){const out=document.getElementById('qa-boundary-events');if(out)out.textContent=JSON.stringify(events,null,2);}\nconst panel=document.createElement('section');panel.setAttribute('aria-label','Isolated route fixture');panel.style.cssText='padding:8px;background:white;color:black;font:14px sans-serif';\npanel.textContent=`Isolated route fixture; build: ${process.env.NODE_ENV}; identity: ${identity}; shared-client requests denied except synthetic profile`;\nconst output=document.createElement('pre');output.id='qa-boundary-events';output.setAttribute('aria-label','Captured local requests');panel.appendChild(output);document.body.prepend(panel);\nimport('/Users/tamastyukodi/Development/video-platform-ui/src/index.tsx');\n",
+        "sha256": "70c449f7136744d5d8a83863f13817f21ff069cb62c5ff90c1d7bf61e8eb0d64"
+      },
+      "vpqa-routes-webpack.cjs": {
+        "content": "const root='/Users/tamastyukodi/Development/video-platform-ui';\nconst config=require(root+'/webpack.config.js');\nconfig.context=root;\nconfig.entry='/private/tmp/vpqa-routes-entry.js';\nconfig.output={...config.output,path:'/private/tmp/vpqa-fixture-dist'};\nconfig.devServer={...config.devServer,host:'127.0.0.1',port:4317,open:false};\nconfig.resolve={...config.resolve,modules:[root+'/node_modules','node_modules']};\nmodule.exports=config;\n",
+        "sha256": "824f59b46929f573293ef61c54312898f847eca3b2d43e15b62d3a07b0fbcb7f"
+      }
+    },
+    "frontend_revision": "12765d4568796f8472124383a221b74d82850c5b",
+    "builds": [
+      "webpack --mode development",
+      "webpack --mode production"
+    ],
+    "environment": {
+      "REACT_APP_USE_MOCKS": "false",
+      "REACT_APP_BASE_PATH": "http://127.0.0.1:9/",
+      "REACT_APP_GOOGLE_CLIENT_ID": "qa-local-not-for-oauth"
+    },
+    "scope": "Real application routes and role-home behavior with synthetic profile. No backend, OAuth, real role elevation or deployed production-mode assertion. Shared HTTP adapter denies every non-profile request; fetch is denied.",
+    "unscored_observations": [
+      "production-admin-normal-dashboard: build-warning overlay obstructed first click. Subsequent overlay dismissal and same semantic action reached /app; use production-admin-normal-dashboard-after-overlay."
+    ],
+    "compile": "Development succeeded; production succeeded with asset-size warning. Warning overlay dismissed through visible controls on each full navigation.",
+    "cleanup": "Local tab closed. All owned servers exited 0; lsof confirms no listener on 4317."
+  }
+]

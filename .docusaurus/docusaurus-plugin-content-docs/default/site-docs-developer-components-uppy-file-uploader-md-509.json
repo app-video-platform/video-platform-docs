@@ -1,7 +1,7 @@
 {
   "id": "developer/components/uppy-file-uploader",
-  "title": "GalUppyFileUploader",
-  "description": "GalUppyFileUploader (quick notes)",
+  "title": "UppyFileUploader",
+  "description": "UppyFileUploader (quick notes)",
   "source": "@site/docs/developer/components/uppy-file-uploader.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/uppy-file-uploader",
@@ -12,11 +12,11 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalUppyFileUploader"
+    "title": "UppyFileUploader"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalTabs",
+    "title": "Tabs",
     "permalink": "/docs/developer/components/tabs"
   },
   "next": {

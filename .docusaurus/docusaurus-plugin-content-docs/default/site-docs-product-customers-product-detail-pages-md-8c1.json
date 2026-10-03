@@ -1,6 +1,6 @@
 {
   "id": "product/customers/product-detail-pages",
-  "title": "Product Detail Pages",
+  "title": "Product Landing Pages",
   "description": "Overview",
   "source": "@site/docs/product/customers/product-detail-pages.md",
   "sourceDirName": "product/customers",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 3,
   "frontMatter": {
-    "title": "Product Detail Pages",
+    "title": "Product Landing Pages",
     "sidebar_position": 3
   },
   "sidebar": "tutorialSidebar",

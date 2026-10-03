@@ -1,7 +1,7 @@
 {
   "id": "developer/components/form-input",
-  "title": "GalFormInput",
-  "description": "GalFormInput (quick notes)",
+  "title": "Input",
+  "description": "Input (quick notes)",
   "source": "@site/docs/developer/components/form-input.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/form-input",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalFormInput"
+    "title": "Input"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalFooter",
+    "title": "Footer",
     "permalink": "/docs/developer/components/footer"
   },
   "next": {
-    "title": "GalGoogleSignInButton",
+    "title": "GoogleSignInButton",
     "permalink": "/docs/developer/components/google-sign-in-button"
   }
 }

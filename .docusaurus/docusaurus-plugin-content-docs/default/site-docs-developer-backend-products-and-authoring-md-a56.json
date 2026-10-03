@@ -1,0 +1,28 @@
+{
+  "id": "developer/backend/products-and-authoring",
+  "title": "Products and Authoring",
+  "description": "Supported Product model",
+  "source": "@site/docs/developer/backend/products-and-authoring.md",
+  "sourceDirName": "developer/backend",
+  "slug": "/developer/backend/products-and-authoring",
+  "permalink": "/docs/developer/backend/products-and-authoring",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/backend/products-and-authoring.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "Products and Authoring",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Authentication and Security",
+    "permalink": "/docs/developer/backend/authentication-and-security"
+  },
+  "next": {
+    "title": "Entitlements and Content Access",
+    "permalink": "/docs/developer/backend/entitlements-and-content-access"
+  }
+}

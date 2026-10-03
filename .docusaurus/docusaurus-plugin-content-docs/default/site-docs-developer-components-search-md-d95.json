@@ -1,7 +1,7 @@
 {
   "id": "developer/components/search",
-  "title": "GalSearch",
-  "description": "GalSearch (quick notes)",
+  "title": "Search",
+  "description": "Search (quick notes)",
   "source": "@site/docs/developer/components/search.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/search",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalSearch"
+    "title": "Search"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalRTEMenuBar",
+    "title": "RTEMenuBar",
     "permalink": "/docs/developer/components/rte-menu-bar"
   },
   "next": {
-    "title": "GalSelect",
+    "title": "Select",
     "permalink": "/docs/developer/components/select"
   }
 }

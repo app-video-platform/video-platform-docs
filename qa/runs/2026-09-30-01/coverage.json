@@ -69,7 +69,7 @@
     "instructions": "### NAV-004 \u2014 Creator route authorization\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Signed-in Creator with owned products.\n- **Steps:** Open all Products routes, Customers/detail, Sales, Analytics, Storefront, Settings and Cart; then /app/library and each library child and /app/admin children.\n- **Expected results:** Creator management routes render; Library and Admin routes redirect to /unauthorized, even though entitlement APIs accept Creator sessions.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 2
+    "recorded_variations": 11
   },
   {
     "id": "NAV-005",
@@ -89,9 +89,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-006 \u2014 Role-specific home\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. One signed-in account per role.\n- **Steps:** Open and reload /app.\n- **Expected results:** User receives Galactica home, Creator dashboard, Admin administration home; navigation corresponds to active role.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 4
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 6
   },
   {
     "id": "NAV-007",
@@ -171,9 +171,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-012 \u2014 Development routes\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Development and production frontend builds.\n- **Steps:** Open /dev-dashboard and /__routes-dev; follow Normal Dashboard and landing links.\n- **Expected results:** /dev-dashboard is unguarded in both builds; Normal Dashboard targets /app/dashboard then app fallback. /__routes-dev exists only in development; production follows unmatched-route behavior.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 16
   },
   {
     "id": "NAV-013",
@@ -193,9 +193,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-014 \u2014 Creator navigation and disabled Help\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Creator on /app.\n- **Steps:** Use Dashboard, Products, Customers, Sales, Analytics, Storefront and Settings; try disabled Help and browser Back.\n- **Expected results:** Links reach their routes; Help remains disabled; no Marketing, Reviews or Messages management destination is exposed.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 6
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 7
   },
   {
     "id": "NAV-015",
@@ -348,7 +348,7 @@
     "instructions": "### MKT-011 \u2014 Pricing and demo interaction\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Static pricing/demo pages.\n- **Steps:** Use pricing carousel controls and keyboard; on /demo select each step and return to the first.\n- **Expected results:** Presentation selection changes locally; no subscription, payment or Product is created.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 3
   },
   {
     "id": "MKT-012",
@@ -392,7 +392,7 @@
     "instructions": "### MKT-015 \u2014 FAQ expansion\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. /help and /contact with FAQ panels.\n- **Steps:** Activate each FAQ with pointer and keyboard; expand/collapse and revisit page.\n- **Expected results:** Implemented expansion panels reveal/hide static content; accessibility of header activation needs investigation from shared panel semantics; FAQ claims do not enable absent commerce/Membership features.\n- **Required environment / external service:** Frontend build; backend for authentication transition only.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 6
+    "recorded_variations": 12
   },
   {
     "id": "MKT-016",
@@ -403,7 +403,7 @@
     "instructions": "### MKT-016 \u2014 Pricing carousel wrap and selected plan\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. /pricing default selection.\n- **Steps:** Activate each plan selector; previous from first and next from last; repeat ArrowLeft/Right if supported; refresh.\n- **Expected results:** Selected plan wraps using modular index, displayed details follow animation; refresh resets selection. Purchasing a platform plan remains unavailable.\n- **Required environment / external service:** Frontend build; backend for authentication transition only.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 8
+    "recorded_variations": 10
   },
   {
     "id": "MKT-017",
@@ -799,8 +799,9 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### SEC-008 \u2014 Concurrent refresh queue\n\n- **Feature area:** Session, API security and feature flags. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 authentication or data boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and authenticated role fixtures. Browser access expired; valid refresh cookie; several simultaneous private reads. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Allow concurrent 401 responses to invoke interceptor refresh; inspect completion of all original requests.\n- **Expected results:** expected result needs investigation: backend returns text while interceptor expects data.token and queued completion requires a truthy token; requests must not be presumed to recover.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "SEC-009",
@@ -809,8 +810,9 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### SEC-009 \u2014 Refresh terminal failure\n\n- **Feature area:** Session, API security and feature flags. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 authentication or data boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and authenticated role fixtures. Invalid refresh cookie with multiple failed requests. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Trigger protected reads; let refresh fail; try a fresh login.\n- **Expected results:** Interceptor must stop retrying a request after its retry marker; exact queue cleanup and visible reauthentication need investigation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "SEC-010",
@@ -870,8 +872,9 @@
     "level": "browser E2E",
     "priority": "P0",
     "instructions": "### SEC-015 \u2014 Mock flag does not establish complete mocked app\n\n- **Feature area:** Session, API security and feature flags. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P0 \u2014 authentication or data boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and authenticated role fixtures. Frontend builds with REACT_APP_USE_MOCKS false and true; isolated network denied by harness.\n- **Steps:** Load a reporting/Product client flow under each build; inspect which adapter resolves requests; exercise mock upload prefix only under true.\n- **Expected results:** expected result needs investigation: http-client conditionally requires _mocks and catches load failure, while current checkout has no matching module; test-fixture files alone do not prove runtime interception. Mock upload shortcut only applies to configured mock URLs.\n- **Required environment / external service:** Isolated frontend builds with explicit mock flag; requests captured by harness, never assumed to be offline.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 10
   },
   {
     "id": "PROF-001",
@@ -3098,8 +3101,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### ACCESS-001 \u2014 Free enrollment API matrix\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. Published COURSE/DOWNLOAD with price null or zero; legacy preseeded free CONSULTATION; no existing entitlement; valid session/CSRF. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST /api/entitlements/products/{p}/enroll; GET /api/entitlements/me and /api/entitlements/products/{p}/access.\n- **Expected results:** ACTIVE FREE_ENROLLMENT record belongs to current caller; access true and library entry persists; supported endpoint accepts User/Creator/Admin even if Creator lacks Library route.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "ACCESS-002",
@@ -3118,8 +3123,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### ACCESS-003 \u2014 Enrollment price and lifecycle rejection\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. Paid, Draft, Hidden and nonexistent Product fixtures. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST enrollment for each using valid auth/CSRF.\n- **Expected results:** Paid requires payment rather than free grant; nonpublished/missing rejected; no new ACTIVE entitlement.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "ACCESS-004",
@@ -3150,8 +3157,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### ACCESS-006 \u2014 Access boolean endpoint\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. Product owner, Admin, ACTIVE holder, REVOKED holder and unrelated account. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /api/entitlements/products/{p}/access under each fixture.\n- **Expected results:** Owner/Admin/ACTIVE true; revoked/unrelated false; Guest cannot use authenticated access endpoint.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "ACCESS-007",
@@ -3418,8 +3427,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-017 \u2014 Cart and wishlist count menus\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User with browser-local collection fixtures. Empty,1,99,100 items; signed-in User; Creator/Admin navbar variants.\n- **Steps:** Open cart/wishlist menus; inspect badge; navigate Go to checkout/Go to wishlist.\n- **Expected results:** Zero badge omitted and >99 shows99+; collection list matches local store; Creator/Admin navbar intentionally hides these shortcuts though Cart route exists.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 9
   },
   {
     "id": "CART-018",
@@ -3532,8 +3542,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-002 \u2014 Paid session creation\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Commerce enabled/provider fake/auto-success false;1 and20 unique published positive-price Course/Download/Consultation from one Creator. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST checkout-sessions with productIds and fresh Idempotency-Key; GET /api/commerce/orders/{orderId}.\n- **Expected results:** PENDING order and attempt persisted, authoritative EUR totals/items and expiry returned; no entitlement before PAID; fake gateway has no external checkout URL.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-003",
@@ -3542,8 +3554,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-003 \u2014 Checkout DTO rejection\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Empty/null productIds,21 IDs,null ID,malformed UUID. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST checkout-sessions with valid key for each invalid body.\n- **Expected results:** 400 request validation/parsing errors; no valid order created.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-004",
@@ -3552,8 +3566,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-004 \u2014 Idempotency header boundaries\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Missing/blank key; lengths128 and129; whitespace around valid key. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST valid checkout body with each header.\n- **Expected results:** Missing/blank/over128 rejected400; accepted key is trimmed and buyer-scoped.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-005",
@@ -3562,8 +3578,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-005 \u2014 Idempotency stable replay\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Existing order; same buyer and key; reorder identical IDs; subsequently change Product price/title/status. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Repeat checkout with same ID set/key.\n- **Expected results:** Existing order returned without repricing or revalidating Products; no duplicate order/items; financial snapshots remain unchanged.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-006",
@@ -3572,8 +3590,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-006 \u2014 Idempotency conflicting payload\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Existing key used with Product A. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Reuse key with B or A+B; repeat same key under another buyer with valid Products.\n- **Expected results:** Same-buyer changed fingerprint409; another buyer has independent key scope.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-007",
@@ -3582,8 +3602,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-007 \u2014 Concurrent identical checkout\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Buyer/key/ID set identical; eligible Products. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Issue simultaneous POSTs with same key; GET returned order identities.\n- **Expected results:** Buyer lock/idempotency yields one logical order and no duplicate paid grants; all successful responses refer to same snapshot.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-008",
@@ -3592,8 +3614,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-008 \u2014 Checkout duplicate and missing products\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Duplicate ID list or unknown Product ID. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST each with a fresh key.\n- **Expected results:** 422 semantic rejection and no partial order.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-009",
@@ -3602,8 +3626,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-009 \u2014 Checkout free and unpublished products\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Free/null-price, Draft and Hidden variants. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST with each in otherwise valid cart.\n- **Expected results:** 422 rejection; free uses enrollment and nonpublished cannot start paid checkout.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-010",
@@ -3612,8 +3638,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-010 \u2014 Checkout Membership and recurring rejection\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Membership or non-Membership fixture with recurring pricing metadata. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST checkout.\n- **Expected results:** 422 unsupported purchase; no subscription or one-time bypass for recurring Product.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-011",
@@ -3622,8 +3650,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-011 \u2014 Checkout self-purchase\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Buyer is Product Creator; Admin owner fixture separately. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST owned Product ID.\n- **Expected results:** 422 self-purchase rejection; role alone does not override purchase eligibility.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-012",
@@ -3632,8 +3662,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-012 \u2014 Checkout multiple Creators\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Two published paid Products owned by different Creators. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST both IDs.\n- **Expected results:** 422 rejection; no split order/partial checkout created.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-013",
@@ -3662,8 +3694,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### PAY-015 \u2014 Order read authorization\n\n- **Feature area:** One-time orders and payment-state integration. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 financial or entitlement integrity. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated synthetic buyer; Creator owner different from buyer; CSRF on every POST. Buyer, Admin, unrelated User and selling Creator; known order. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /api/commerce/orders/{id} under each; request unknown ID separately.\n- **Expected results:** Buyer/Admin can read; seller uses Creator reporting rather than general buyer endpoint; unrelated sessions denied; missing order404.\n- **Required environment / external service:** Isolated backend with persistent test data; explicit commerce/fake configuration per case; no real charges.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "expansion_notes": "Complete isolated API role/input matrix recorded in backend-core-api-batch-2026-10-02.json. H2/MockMvc scope; deployed PostgreSQL/provider/browser assertions are separate.",
+    "recorded_variations": 1
   },
   {
     "id": "PAY-016",
@@ -4299,8 +4333,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### SALES-001 \u2014 Sales summary period matrix\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. Orders across today/7d/30d/90d, retainedPAID, REFUNDED and FAILED timestamps.\n- **Steps:** Open /app/sales; select each period; GET /api/creator/sales/summary?period={period}.\n- **Expected results:** Retained paid revenue/count based on paidAt, refunds on refundedAt, failures on failedAt; UTC calendar window and equal previous period determine comparison, not local browser midnight.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "SALES-002",
@@ -4309,8 +4344,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### SALES-002 \u2014 Order ledger filters and paging\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. More than6 own orders; product and buyer/order-ID search matches.\n- **Steps:** Search; choose all/paid/failed/refunded/pending status, Product, each period and sort; page forward/back.\n- **Expected results:** UI sends pageSize6; filters reset page0; API filters ledger by createdAt; summary depends only on period, not ledger search/status/Product.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "SALES-003",
@@ -4370,8 +4406,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### SALES-008 \u2014 Sales unavailable and recovery\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. Delay first load; summary failure and ledger failure separately.\n- **Steps:** Open Sales; restore service and change period/filter or reload.\n- **Expected results:** Loading and unavailable state appear; current copy about APIs being unconnected is not proof backend is absent; recovered requests populate actual data.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "SALES-009",
@@ -4432,8 +4469,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CUSTOM-002 \u2014 Customer list search and refinement\n\n- **Feature area:** Creator Customers and customer detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic buyers and entitlement holders. More thanone page customers; names/emails and Product associations.\n- **Steps:** Search mixed-case name/email; select relationship/Product/membership; choose activity/spend/name sorts; paginate then change filter.\n- **Expected results:** Server-backed results/counts; refinements reset page0; supported sorting includes activitydesc,spenddesc/asc,nameasc/desc.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "CUSTOM-003",
@@ -4455,7 +4493,7 @@
     "instructions": "### CUSTOM-004 \u2014 Customer list empty and recovery\n\n- **Feature area:** Creator Customers and customer detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic buyers and entitlement holders. No relationships, unmatched search/filter, delayed/error response variants.\n- **Steps:** Open Customers; clear search/filter; restore service/reload.\n- **Expected results:** Distinct empty/no-match/loading/unavailable states; no fabricated customer rows.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 7
+    "recorded_variations": 8
   },
   {
     "id": "CUSTOM-005",
@@ -4611,7 +4649,7 @@
     "instructions": "### ANALYTICS-007 \u2014 Analytics loading, empty and failure\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Delayed initial response, zero-history response and failed response variants.\n- **Steps:** Open Analytics, change period and restore service/reload.\n- **Expected results:** Loading/empty/unavailable presentation distinct; valid zero history renders honest zeros; failed response does not become mock data.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 3
+    "recorded_variations": 4
   },
   {
     "id": "ANALYTICS-008",
@@ -4663,8 +4701,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-012 \u2014 Dashboard loading/unavailable/empty\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Delay/fail summary then return empty real report.\n- **Steps:** Open /app; restore/reload.\n- **Expected results:** Metric loading states first, unavailable dashes on failure and empty activity/product copy; no invented business figures.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "ANALYTICS-013",
@@ -4724,8 +4763,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### LOCAL-004 \u2014 Dashboard deterministic fixture presentation\n\n- **Feature area:** Local notifications, fixture displays and absent client capabilities. **Test level:** browser E2E. **Implementation state:** mock-only. **Priority:** P2 \u2014 honest state presentation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated Creator; synthetic Product actions. Isolated browser harness explicitly installs the existing fixture adapter; no runtime _mocks module assumed.\n- **Steps:** Open /app with fixture adapter; exercise displayed member/subscription/history fields; remove adapter and return to server-backed fixture.\n- **Expected results:** Fixture-only membership/retry/provider/CRM metrics may render from deterministic data; they must disappear or become unavailable when unsupported server fields are absent. Fixture values do not create persistent business records.\n- **Required environment / external service:** Frontend browser harness with explicitly installed axios fixture adapter; no external service or production data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 2
   },
   {
     "id": "LOCAL-005",
@@ -4734,8 +4774,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### LOCAL-005 \u2014 Customers deterministic fixture presentation\n\n- **Feature area:** Local notifications, fixture displays and absent client capabilities. **Test level:** browser E2E. **Implementation state:** mock-only. **Priority:** P2 \u2014 honest state presentation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated Creator; synthetic Product actions. Isolated browser harness explicitly installs the existing fixture adapter; no runtime _mocks module assumed.\n- **Steps:** Open /app/customers with fixture adapter; exercise displayed member/subscription/history fields; remove adapter and return to server-backed fixture.\n- **Expected results:** Fixture-only membership/retry/provider/CRM metrics may render from deterministic data; they must disappear or become unavailable when unsupported server fields are absent. Fixture values do not create persistent business records.\n- **Required environment / external service:** Frontend browser harness with explicitly installed axios fixture adapter; no external service or production data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 3
   },
   {
     "id": "LOCAL-006",
@@ -4744,8 +4785,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### LOCAL-006 \u2014 Sales deterministic fixture presentation\n\n- **Feature area:** Local notifications, fixture displays and absent client capabilities. **Test level:** browser E2E. **Implementation state:** mock-only. **Priority:** P2 \u2014 honest state presentation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated Creator; synthetic Product actions. Isolated browser harness explicitly installs the existing fixture adapter; no runtime _mocks module assumed.\n- **Steps:** Open /app/sales with fixture adapter; exercise displayed member/subscription/history fields; remove adapter and return to server-backed fixture.\n- **Expected results:** Fixture-only membership/retry/provider/CRM metrics may render from deterministic data; they must disappear or become unavailable when unsupported server fields are absent. Fixture values do not create persistent business records.\n- **Required environment / external service:** Frontend browser harness with explicitly installed axios fixture adapter; no external service or production data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 7
   },
   {
     "id": "LOCAL-007",
@@ -4754,8 +4796,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### LOCAL-007 \u2014 Analytics deterministic fixture presentation\n\n- **Feature area:** Local notifications, fixture displays and absent client capabilities. **Test level:** browser E2E. **Implementation state:** mock-only. **Priority:** P2 \u2014 honest state presentation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated Creator; synthetic Product actions. Isolated browser harness explicitly installs the existing fixture adapter; no runtime _mocks module assumed.\n- **Steps:** Open /app/analytics with fixture adapter; exercise displayed member/subscription/history fields; remove adapter and return to server-backed fixture.\n- **Expected results:** Fixture-only membership/retry/provider/CRM metrics may render from deterministic data; they must disappear or become unavailable when unsupported server fields are absent. Fixture values do not create persistent business records.\n- **Required environment / external service:** Frontend browser harness with explicitly installed axios fixture adapter; no external service or production data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 3
   },
   {
     "id": "LOCAL-008",
@@ -4841,7 +4884,7 @@
     "instructions": "### UX-006 \u2014 Dropdown keyboard dismissal\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Account/Product overflow/cart/wishlist dropdowns.\n- **Steps:** Activate trigger with Enter/Space, tab actions, press Escape; reopen and click outside.\n- **Expected results:** Dropdown opens/closes and advertised aria-expanded changes; Escape/outside click dismiss. Arrow-key menu navigation/focus restoration beyond coded behavior needs investigation.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 4
+    "recorded_variations": 6
   },
   {
     "id": "UX-007",
@@ -4885,7 +4928,7 @@
     "instructions": "### UX-010 \u2014 Customers responsive list/detail\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Long synthetic name/email, multi-item purchases and access.\n- **Steps:** Open list/detail tabs at375/768/1440px and200%zoom.\n- **Expected results:** Mobile cards preserve identity/status/products/spend/activity; detail tabs/content remain navigable. Overflow and reading order require investigation where CSS alone cannot establish accessibility.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 7
   },
   {
     "id": "UX-011",
@@ -4896,7 +4939,7 @@
     "instructions": "### UX-011 \u2014 Sales responsive ledger and filters\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Multi-item orders and active secondary filters.\n- **Steps:** Resize desktop to mobile; open filters Drawer, change status/Product, close and open order detail.\n- **Expected results:** Ledger becomes transaction cards; filters and activecount remain available; order actions remain keyboard reachable; no filter data loss merely from resize.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 2
   },
   {
     "id": "UX-012",
@@ -4907,7 +4950,7 @@
     "instructions": "### UX-012 \u2014 Analytics and Dashboard responsive charts\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Dense90day series, long Product names and empty states.\n- **Steps:** Compare375/768/1440px and200%zoom; toggle metric; inspect chart text alternatives.\n- **Expected results:** Grids collapse/reflow; expected result needs investigation for chart nonvisual equivalents, contrast and data readability because visual SVG alone does not prove accessible values.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 6
+    "recorded_variations": 10
   },
   {
     "id": "UX-013",
@@ -4927,8 +4970,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-014 \u2014 Workspace responsive authoring\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Course,Download,Consultation,Membership drafts.\n- **Steps:** At375/768/1440px switch tabs, add nested content, edit price/readiness, open uploader and leave.\n- **Expected results:** Focused editor/navigation adapts without hiding required controls; keyboard path can reach active editor and save status. Drag-only alternatives need investigation where ordering lacks buttons.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "UX-015",
@@ -4981,8 +5025,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### ENV-001 \u2014 Deep-link hosting and base path\n\n- **Feature area:** Deployed dependencies, configuration and persistence boundaries. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 deployment-dependent availability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Synthetic authorized role fixtures; infrastructure harness only where explicitly stated. Deployed static frontend/backend and configured REACT_APP_BASE_PATH.\n- **Steps:** Direct-load and reload /app/products/edit/{id}, /app/product/{id}, /app/store/{id}, /auth/verify-email?token={fixture}, /onboarding.\n- **Expected results:** Hosting fallback serves SPA while preserving route/query; API base path resolves requests to backend rather than frontend index HTML. Legacy host redirects preserve path; deployed connection details remain external to catalog.\n- **Required environment / external service:** Already-provisioned isolated deployment matching repository configuration; no deployment-specific addresses or secrets in case data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 7
   },
   {
     "id": "ENV-002",
@@ -4991,8 +5036,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### ENV-002 \u2014 Documentation proxy path boundary\n\n- **Feature area:** Deployed dependencies, configuration and persistence boundaries. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 deployment-dependent availability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Synthetic authorized role fixtures; infrastructure harness only where explicitly stated. Frontend hosting with checked-in redirect rules.\n- **Steps:** Open /docs/{syntheticPath} in isolated deployment.\n- **Expected results:** expected result needs investigation: catch-all SPA rule precedes docs proxy and proxy target is placeholder; do not assume deployed documentation navigation works from app link.\n- **Required environment / external service:** Already-provisioned isolated deployment matching repository configuration; no deployment-specific addresses or secrets in case data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "ENV-003",
@@ -5108,8 +5154,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### ENV-013 \u2014 Shared query serialization\n\n- **Feature area:** Deployed dependencies, configuration and persistence boundaries. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and authenticated fixture as specified. Creator reporting/Admin screens with search containing spaces,&,+ and Unicode; optional filters all/empty. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Set filters through UI; inspect resulting URL and API response; clear refinements.\n- **Expected results:** URLSearchParams encodes literal search; undefined/null/empty/all omitted by shared helper and server defaults restored; zero page remains0. No frontend all sentinel is interpreted as actual Product ID.\n- **Required environment / external service:** Test frontend/backend with synthetic session; no additional external service.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "JOURNEY-001",

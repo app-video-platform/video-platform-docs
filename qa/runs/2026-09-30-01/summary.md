@@ -4,11 +4,47 @@ Run in progress. [Progress](progress.md) and [session notes](session-notes.md) c
 
 ## Checkpoint — 2 October 2026
 
-736 assessed variations: 610 Pass, 79 Fail, 39 Needs clarification and 8 Blocked. The append-only ledger contains 778 historical attempt rows. Three latest Not run entries correct mistaken case associations and are excluded from assessment counts.
+852 assessed variations: 718 Pass, 84 Fail, 41 Needs clarification and 9 Blocked. The ledger contains 894 historical attempts; three latest Not run corrections are excluded from assessments.
 
-The 493 original cases comprise 295 not started, 184 partially assessed and 14 fully assessed (11 Pass, 1 Fail, 2 Needs clarification). **479 original cases still require execution or additional checks.** An assessed variation is not a completed catalog case; blocked entries were not executed.
+The 493 original cases comprise 263 not started, 191 partial and 39 fully assessed (35 Pass, 2 Fail, 2 Needs clarification). **454 original cases still need execution or further checks.** A recorded variation is not a completed original case; blocked entries were not executed.
 
-Latest continuation assessed Admin home/navigation, user name/email/role filters, Product filters and all three pagination pages, invalid owner errors, legacy fallbacks and Library root recovery. NAV-010, NAV-016, ADMIN-001 and ACCESS-008 now have their specified browser variations assessed; unresolved Library root contents remain Needs clarification. Guest Sales browser/API denials passed. No authenticated API result is inferred from a browser route gate.
+Latest continuation completes15 API catalog cases with15 passing aggregate matrices: PAY-002/003/004/005/006/007/008/009/010/011/012/015 and ACCESS-001/003/006. All explicit case role/input/assertion variations are covered in the catalog-authorized isolated backend environment. Separate browser/cloud cases remain incomplete. One feature batch contains exact temporary harness sources/hashes, individual observations, provenance and scoped assertions.
+
+The harness runs real Spring Boot controllers/services/repositories and the security filters with synthetic JWT/CSRF cookies; no real session values are extracted. Java17 and the repository test profile use H2/Hibernate create-drop with Liquibase off, commerce enabled/fake/automatic success false. Per-test SDK/mail/Google mocks verify no operations. This proves local API behavior; it does not establish deployed PostgreSQL races/schema constraints, cloud financial configuration, real provider/Spaces/mail or browser journeys.
+
+Coverage includes exact1/20-item Course/Download/Consultation pending totals/items, DTO/key boundaries, unchanged replay snapshots after supported title/price/Hidden PATCHes, buyer key isolation, two threaded identical retries, rollback on semantic rejection, owner/Admin self-purchase rejection, buyer/Admin/seller/unrelated/Guest order reads,18 null/zero enrollment combinations across three roles/types,12 role/price/lifecycle rejections and the six access-boolean states. An item completion audit added exact IDs/names/types/unique item IDs/line totals and subtotal checks to PAY-002 before scoring it.
+
+Existing14 backend integration tests passed as setup/supporting evidence. Initial extended run passed13 matrices; two harness errors (nonexistent entitlement wire status and detached lazy item access) were corrected and only those two rerun. Both passed. They are not app defects. No new issue this batch. All processes ended0 and disposable H2 data was cleaned; no backend/frontend implementation or deployment changed.
+
+A normal browser GET to the documented API URL was blocked by the client, then a page-read approval check timed out. No authenticated API response/status was obtained or inferred. The temporary tab was closed without reading its contents. Original Creator Dashboard remains unchanged. Pending real Admin elevation/local-storage browser guidance is unchanged. These API harness tests are independent of the unexecuted storage browser action.
+
+Previous continuation adds13 assessments:10 Pass,2 Fail and1 Needs clarification. Real deployed Creator/User Demo sequences and reset, Pricing selector/wrap/arrow/reload matrix, Help and Contact FAQ controls are recorded in one marketing batch. Medium BUG-028: Contact purchase-history FAQ is marked expanded but has zero-height answer on initial entry; closing/reopening reveals it. Two visits per role confirm it. Prior activation passes stay valid. An exploratory duplicate-ID measurement and incorrect uppercase heading locator are explicitly excluded from product-defect conclusions.
+
+ENV-013 also adds two local serialization portions:11 assertions on the actual helper and four reporting client functions, using a network-free request recorder. Literal symbols/Unicode/page0 and cleared-filter omission pass. Real UI/Admin/session/server-default checks remain; parent stays partial.
+
+ENV-002 adds a scoped anonymous HTTP docs-path observation: /docs/qa-current-state-probe serves the main SPA shell, not established documentation proxy content. Intended behavior and an isolated deployment matching source redirect configuration need clarification. This does not establish that the separate Docusaurus account-menu link is broken.
+
+OWNER-A returned to Creator Dashboard with browser/read-only DB verification. No Product, cart/wishlist, purchase, agreement, support, provider or credential change. No Admin elevation. Its remaining role checks await action-time confirmation. Local storage harness compiled, but automatic browser approval review disconnected before opening it; no storage test ran or was scored. The owned4319 server exited0 and no listener remains. Storage retry awaits user guidance; do not bypass the review failure.
+
+Previous continuation adds 18 assessments: 16 Pass and 2 Fail. CART-017 is fully assessed with a failure for menu readability. Isolated browser-local collections cover 0/1/99/100 items, exact lists/prices, badge omission/99/99+, both menu destinations, and Creator/Admin shortcut suppression. Real deployed User checks cover empty menus and both destinations. Enter/Space/Tab/Escape/outside dismissal add two UX-006 portions; broader focus/arrow and dropdown families remain partial. Long-menu pointer automation missed offscreen buttons; successful keyboard navigation is established, with no extra navigation defect inferred.
+
+New Medium defect BUG-027: deployed Cart/Wishlist empty text is almost white on white panels; local populated names/prices have the same problem. Deployed rendering and computed colors are retained in one feature batch and one defect screenshot. Both destination buttons work. The original account was briefly switched to User, verified through read-only DB, then restored only Creator and verified on /app Dashboard. No real collection item changed, checkout/payment attempted, or Admin elevation performed.
+
+ENV-001 is fully assessed for its HTTP hosting/base-path boundary. Five catalog deep links serve the SPA shell on initial and repeated no-cache GETs, preserving path/query. Legacy hosting redirects to the current origin preserving path/query. The current public bundle confirms the expected API base; the backend returns the Published fixture as JSON and anonymous userInfo as 401, without serving frontend HTML. These service-level results do not imply successful editor rendering, verification, onboarding or protected-data access.
+
+Preceding continuation added 19 assessments, completed NAV-012 and confirmed BUG-026 locally. All development/production route/link variations used explicit local identity fixtures; nine deployed Library/Admin child denials passed. The real refresh client loses queued waiters after successful text refresh; token-bearing success and rejection controls isolate the local cause. SEC-008/009 stay partial for deployed cookies/session rotation/re-login. The cause of the earlier deployed initial-shell delay remains unestablished.
+
+Local tabs and owned servers are closed; no listeners remain on 4317/4318. Evidence uses feature batches with reproduction sources/hashes. No implementation fixes, deployment, provider operation, upload, content edit or new real fixture. Full testing remains incomplete.
+
+Previous continuation added 13 passing checks and completed SEC-015, NAV-014 and NAV-006: mock flag boundaries, deployed Creator navigation, and User reload/Creator restoration with DB verification. Its details remain in session notes and evidence.
+
+Preceding batch added 29 assessments: 28 Pass and 1 Needs clarification. LOCAL-004/005/006/007 are fully assessed for their narrow fixture-display scope. An isolated local source build explicitly installs the existing adapters and synthetic Creator identity; every unmatched shared-client request stays local with501. Customer profile tabs, multi-item/renewal/refund/failed/pending orders, populated periods and verified375/768/1440px layouts were inspected. After harness shutdown, the original deployed account still shows zero sales/customers and absent/unavailable membership values. This comparison uses two builds/origins; deployed revision is unknown. It does not establish persisted commerce, real provider state, accounting or supported server Membership history.
+
+Five additional local response-handling checks cover delayed503 and reload recovery for Dashboard, Analytics, Customers and separate Sales summary/ledger failures. Loading/unavailable/recovery states render without automatic fixture fallback; server-backed cases remain partial. No real service was interrupted. One chart nonvisual/keyboard investigation remains Needs clarification: named charts and aggregate text exist, but automated key attempts did not establish reliable series navigation or screen-reader access. No new defect was confirmed. Actual200%zoom remains untested. Routine evidence uses one local batch JSON, including reproducible harness sources, hashes, observations and cleanup. No repository implementation changes, deployment or real data mutation.
+
+Previous batch added8 passing empty reporting controls/layout checks and an authoring blocker linked to BUG-001.29 prior routine Admin snapshots remain consolidated in one document with original payloads/hashes; outcomes and timestamps were preserved.
+
+Prior continuation assessed Admin home/navigation, user name/email/role filters, Product filters and all three pagination pages, invalid owner errors, legacy fallbacks and Library root recovery. NAV-010, NAV-016, ADMIN-001 and ACCESS-008 now have their specified browser variations assessed; unresolved Library root contents remain Needs clarification. Guest Sales browser/API denials passed. No authenticated API result is inferred from a browser route gate.
 
 New finding: BUG-025, Admin landing builder omits another Creator's profile while private preview displays it. BUG-001 also obstructs Admin saved editing. The formerly working Decimal Pricing creation tab is now blank after interruption; the planned Admin audit mutation was not attempted. Database confirms its Draft price18 and zero target audit rows remain, and OWNER-A is restored to CREATOR.
 
@@ -43,12 +79,15 @@ Prior findings remain: deployed Consultation weekly availability support is abse
 | [BUG-023](issues/BUG-023.md) | Medium | Weekly availability appears saved, but deployed Consultation schema/API lack its persistence. |
 | [BUG-024](issues/BUG-024.md) | High | Consultation prices lose cents in the deployed integer price column. |
 | [BUG-025](issues/BUG-025.md) | Medium | Admin landing builder omits another Creator's profile shown by private preview. |
+| [BUG-026](issues/BUG-026.md) | High | Local refresh client discards concurrent waiters after successful text response; deployed reproduction pending. |
+| [BUG-027](issues/BUG-027.md) | Medium | Cart/Wishlist menu text is almost white on white panels; empty menus confirmed deployed. |
+| [BUG-028](issues/BUG-028.md) | Medium | Contact default-expanded FAQ answer stays hidden until closed/reopened. |
 
 Repairing BUG-001 would unblock many saved authoring journeys. No implementation fixes are part of this execution pass.
 
 ## Verified portions
 
-Evidence covers Guest and role route guards, initial creation of four Product types, selected autosave and publishing assertions, product refinements, Guest public discovery, owner Wishlist and Cart behavior, empty reporting surfaces, read-only Admin checks, and selected anonymous API authentication boundaries. Successful purchases, entitlement creation, uploaded content delivery, and cross-owner isolation are not established by these results.
+Evidence covers Guest and role route guards, initial creation of four Product types, selected autosave and publishing assertions, product refinements, Guest public discovery, owner Wishlist and Cart behavior, empty reporting surfaces, read-only Admin checks, and selected anonymous API authentication boundaries. Successful purchases, entitlement creation, uploaded content delivery, and cross-owner isolation are not established by these results. Local populated fixture observations exercise presentation only.
 
 ## Unresolved expectations
 
@@ -75,11 +114,11 @@ All old authoring sessions and the unsaved Storefront theme preview are gone. Th
 
 Restricted logs returned200lines (6 ERROR lines in the latest bounded sample) without retaining raw logs. Frontend connections, tunnel attempts and automatic approval review intermittently timed out, then recovered. Short-lived localhost-only tunnels verified final role/fixture state and closed after each check. The reader remains read-only with a10s statement timeout. The existing observer key and reader account remain the access mechanism.
 
-Restricted logs and read-only DB were verified. Local repository revisions do not prove deployed revisions, which remain unknown. Most ledger timestamps record entry time rather than action start; see [run metadata](run.md).
+Restricted logs and read-only DB were reverified during the latest User/Creator home cycle; queries were limited to OWNER-A role and reader restrictions. The earlier local fixture batch made no deployed persistence assertions. Local repository revisions do not prove deployed revisions, which remain unknown. Most ledger timestamps record entry time rather than action start; see [run metadata](run.md).
 
 Historical interruption: frontend and API HTTPS connections reset during Profile reload, then recovered. Restricted SSH and DB remained available. See [connectivity evidence](evidence/connectivity-blocker.json). No deployed revision changes have been confirmed.
 
-Validation: documentation typecheck passed. Default npm build initially rejected Node18; the same Docusaurus build passed using the installed bundled Node24 runtime. Existing stale browser-data and update-check warnings remain; no dependencies or system permissions were changed. Ledger/CSV row counts match and all recorded evidence paths exist.
+Validation: all 829 CSV/JSONL rows, evidence references, embedded source hashes, 493 catalog IDs and coverage counts passed. Historical outcomes were preserved; diff whitespace check passed. Documentation typecheck and production build passed in this continuation using the bundled Node24 runtime. Existing stale browser-data and update-check warnings remain; no dependencies or system permissions changed.
 
 ## Historical continuation notes through 1 October
 

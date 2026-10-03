@@ -1,0 +1,1248 @@
+[
+  {
+    "key": "false-CREATOR-Run reporting client",
+    "observed_at": "2026-10-02T15:42:01.769Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=CREATOR",
+    "result": {
+      "probe": "Run reporting client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      }
+    ],
+    "mock_flag": "false"
+  },
+  {
+    "key": "false-CREATOR-Run Product client",
+    "observed_at": "2026-10-02T15:42:02.093Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=CREATOR",
+    "result": {
+      "probe": "Run Product client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "CREATOR",
+        "status": 503
+      }
+    ],
+    "mock_flag": "false"
+  },
+  {
+    "key": "false-CREATOR-Try matching mock prefix",
+    "observed_at": "2026-10-02T15:42:02.407Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=CREATOR",
+    "result": {
+      "probe": "Try matching mock prefix",
+      "outcome": "rejected",
+      "http_status": null,
+      "message": "QA_NETWORK_DENIED: storage PUT captured locally"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "fetch-guard",
+        "method": "PUT",
+        "url": "mock-upload://download-section/qa-boundary",
+        "role": "CREATOR"
+      }
+    ],
+    "mock_flag": "false"
+  },
+  {
+    "key": "false-CREATOR-Try different mock prefix",
+    "observed_at": "2026-10-02T15:42:02.755Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=CREATOR",
+    "result": {
+      "probe": "Try different mock prefix",
+      "outcome": "rejected",
+      "http_status": null,
+      "message": "QA_NETWORK_DENIED: storage PUT captured locally"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "fetch-guard",
+        "method": "PUT",
+        "url": "mock-upload://download-section/qa-boundary",
+        "role": "CREATOR"
+      },
+      {
+        "transport": "fetch-guard",
+        "method": "PUT",
+        "url": "mock-upload://other-target/qa-boundary",
+        "role": "CREATOR"
+      }
+    ],
+    "mock_flag": "false"
+  },
+  {
+    "key": "false-CREATOR-Try ordinary storage URL",
+    "observed_at": "2026-10-02T15:42:03.453Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=CREATOR",
+    "result": {
+      "probe": "Try ordinary storage URL",
+      "outcome": "rejected",
+      "http_status": null,
+      "message": "QA_NETWORK_DENIED: storage PUT captured locally"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "fetch-guard",
+        "method": "PUT",
+        "url": "mock-upload://download-section/qa-boundary",
+        "role": "CREATOR"
+      },
+      {
+        "transport": "fetch-guard",
+        "method": "PUT",
+        "url": "mock-upload://other-target/qa-boundary",
+        "role": "CREATOR"
+      },
+      {
+        "transport": "fetch-guard",
+        "method": "PUT",
+        "url": "http://127.0.0.1:9/qa-storage",
+        "role": "CREATOR"
+      }
+    ],
+    "mock_flag": "false"
+  },
+  {
+    "key": "false-USER-Run reporting client",
+    "mock_flag": "false",
+    "observed_at": "2026-10-02T15:42:50.314Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=USER",
+    "result": {
+      "probe": "Run reporting client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "USER",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "USER",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "USER",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "false-USER-Run Product client",
+    "mock_flag": "false",
+    "observed_at": "2026-10-02T15:42:50.660Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=USER",
+    "result": {
+      "probe": "Run Product client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "USER",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "USER",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "USER",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "USER",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "false-ADMIN-Run reporting client",
+    "mock_flag": "false",
+    "observed_at": "2026-10-02T15:42:51.831Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=ADMIN",
+    "result": {
+      "probe": "Run reporting client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "ADMIN",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "ADMIN",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "ADMIN",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "false-ADMIN-Run Product client",
+    "mock_flag": "false",
+    "observed_at": "2026-10-02T15:42:52.158Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=ADMIN",
+    "result": {
+      "probe": "Run Product client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "ADMIN",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "ADMIN",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "ADMIN",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "ADMIN",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "false-GUEST-Run reporting client",
+    "mock_flag": "false",
+    "observed_at": "2026-10-02T15:42:53.079Z",
+    "url": "http://127.0.0.1:4317/auth/login",
+    "result": {
+      "probe": "Run reporting client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "GUEST",
+        "status": 401
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "GUEST",
+        "status": 401
+      },
+      {
+        "transport": "axios-guard",
+        "method": "post",
+        "url": "api/auth/refresh",
+        "role": "GUEST",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "GUEST",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "false-GUEST-Run Product client",
+    "mock_flag": "false",
+    "observed_at": "2026-10-02T15:42:53.439Z",
+    "url": "http://127.0.0.1:4317/auth/login",
+    "result": {
+      "probe": "Run Product client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "GUEST",
+        "status": 401
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "GUEST",
+        "status": 401
+      },
+      {
+        "transport": "axios-guard",
+        "method": "post",
+        "url": "api/auth/refresh",
+        "role": "GUEST",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "GUEST",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "GUEST",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "false-runtime-console",
+    "mock_flag": "false",
+    "observed_at": "2026-10-02T15:43:19.407Z",
+    "entries": []
+  },
+  {
+    "key": "true-CREATOR-Run reporting client",
+    "mock_flag": "true",
+    "role_fixture": "CREATOR",
+    "modeText": "Mock flag: true; identity fixture: CREATOR; runtime adapter is network guard: true",
+    "observed_at": "2026-10-02T15:45:12.491Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=CREATOR",
+    "result": {
+      "probe": "Run reporting client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "true-CREATOR-Run Product client",
+    "mock_flag": "true",
+    "role_fixture": "CREATOR",
+    "modeText": "Mock flag: true; identity fixture: CREATOR; runtime adapter is network guard: true",
+    "observed_at": "2026-10-02T15:45:12.844Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=CREATOR",
+    "result": {
+      "probe": "Run Product client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "CREATOR",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "true-CREATOR-Try matching mock prefix",
+    "mock_flag": "true",
+    "role_fixture": "CREATOR",
+    "modeText": "Mock flag: true; identity fixture: CREATOR; runtime adapter is network guard: true",
+    "observed_at": "2026-10-02T15:45:13.187Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=CREATOR",
+    "result": {
+      "probe": "Try matching mock prefix",
+      "outcome": "resolved",
+      "status": 200,
+      "ok": true
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "CREATOR",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "true-CREATOR-Try different mock prefix",
+    "mock_flag": "true",
+    "role_fixture": "CREATOR",
+    "modeText": "Mock flag: true; identity fixture: CREATOR; runtime adapter is network guard: true",
+    "observed_at": "2026-10-02T15:45:13.526Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=CREATOR",
+    "result": {
+      "probe": "Try different mock prefix",
+      "outcome": "rejected",
+      "http_status": null,
+      "message": "QA_NETWORK_DENIED: storage PUT captured locally"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "fetch-guard",
+        "method": "PUT",
+        "url": "mock-upload://other-target/qa-boundary",
+        "role": "CREATOR"
+      }
+    ]
+  },
+  {
+    "key": "true-CREATOR-Try ordinary storage URL",
+    "mock_flag": "true",
+    "role_fixture": "CREATOR",
+    "modeText": "Mock flag: true; identity fixture: CREATOR; runtime adapter is network guard: true",
+    "observed_at": "2026-10-02T15:45:13.882Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=CREATOR",
+    "result": {
+      "probe": "Try ordinary storage URL",
+      "outcome": "rejected",
+      "http_status": null,
+      "message": "QA_NETWORK_DENIED: storage PUT captured locally"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "CREATOR",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "CREATOR",
+        "status": 503
+      },
+      {
+        "transport": "fetch-guard",
+        "method": "PUT",
+        "url": "mock-upload://other-target/qa-boundary",
+        "role": "CREATOR"
+      },
+      {
+        "transport": "fetch-guard",
+        "method": "PUT",
+        "url": "http://127.0.0.1:9/qa-storage",
+        "role": "CREATOR"
+      }
+    ]
+  },
+  {
+    "key": "true-CREATOR-runtime-console",
+    "mock_flag": "true",
+    "observed_at": "2026-10-02T15:45:13.904Z",
+    "entries": [
+      {
+        "level": "warn",
+        "message": "[Mocks] could not load ./_mocks (file not found)",
+        "timestamp": "2026-10-02T15:44:40.325Z",
+        "url": "webpack://video-platform-ui/./src/core/api/http-client.ts?"
+      }
+    ]
+  },
+  {
+    "key": "true-USER-Run reporting client",
+    "mock_flag": "true",
+    "role_fixture": "USER",
+    "modeText": "Mock flag: true; identity fixture: USER; runtime adapter is network guard: true",
+    "observed_at": "2026-10-02T15:45:45.789Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=USER",
+    "result": {
+      "probe": "Run reporting client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "USER",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "USER",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "USER",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "true-USER-Run Product client",
+    "mock_flag": "true",
+    "role_fixture": "USER",
+    "modeText": "Mock flag: true; identity fixture: USER; runtime adapter is network guard: true",
+    "observed_at": "2026-10-02T15:45:46.127Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=USER",
+    "result": {
+      "probe": "Run Product client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "USER",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "USER",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "USER",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "USER",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "true-USER-runtime-console",
+    "mock_flag": "true",
+    "role_fixture": "USER",
+    "observed_at": "2026-10-02T15:45:46.151Z",
+    "entries": [
+      {
+        "level": "warn",
+        "message": "[Mocks] could not load ./_mocks (file not found)",
+        "timestamp": "2026-10-02T15:44:40.325Z",
+        "url": "webpack://video-platform-ui/./src/core/api/http-client.ts?"
+      },
+      {
+        "level": "warn",
+        "message": "[Mocks] could not load ./_mocks (file not found)",
+        "timestamp": "2026-10-02T15:45:43.518Z",
+        "url": "webpack://video-platform-ui/./src/core/api/http-client.ts?"
+      }
+    ]
+  },
+  {
+    "key": "true-ADMIN-Run reporting client",
+    "mock_flag": "true",
+    "role_fixture": "ADMIN",
+    "modeText": "Mock flag: true; identity fixture: ADMIN; runtime adapter is network guard: true",
+    "observed_at": "2026-10-02T15:45:48.015Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=ADMIN",
+    "result": {
+      "probe": "Run reporting client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "ADMIN",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "ADMIN",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "ADMIN",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "true-ADMIN-Run Product client",
+    "mock_flag": "true",
+    "role_fixture": "ADMIN",
+    "modeText": "Mock flag: true; identity fixture: ADMIN; runtime adapter is network guard: true",
+    "observed_at": "2026-10-02T15:45:48.340Z",
+    "url": "http://127.0.0.1:4317/app?qaRole=ADMIN",
+    "result": {
+      "probe": "Run Product client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "ADMIN",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "ADMIN",
+        "status": 200
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "ADMIN",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "ADMIN",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "true-ADMIN-runtime-console",
+    "mock_flag": "true",
+    "role_fixture": "ADMIN",
+    "observed_at": "2026-10-02T15:45:48.362Z",
+    "entries": [
+      {
+        "level": "warn",
+        "message": "[Mocks] could not load ./_mocks (file not found)",
+        "timestamp": "2026-10-02T15:44:40.325Z",
+        "url": "webpack://video-platform-ui/./src/core/api/http-client.ts?"
+      },
+      {
+        "level": "warn",
+        "message": "[Mocks] could not load ./_mocks (file not found)",
+        "timestamp": "2026-10-02T15:45:43.518Z",
+        "url": "webpack://video-platform-ui/./src/core/api/http-client.ts?"
+      },
+      {
+        "level": "warn",
+        "message": "[Mocks] could not load ./_mocks (file not found)",
+        "timestamp": "2026-10-02T15:45:46.211Z",
+        "url": "webpack://video-platform-ui/./src/core/api/http-client.ts?"
+      }
+    ]
+  },
+  {
+    "key": "true-GUEST-Run reporting client",
+    "mock_flag": "true",
+    "role_fixture": "GUEST",
+    "modeText": "Mock flag: true; identity fixture: GUEST; runtime adapter is network guard: true",
+    "observed_at": "2026-10-02T15:45:49.816Z",
+    "url": "http://127.0.0.1:4317/auth/login",
+    "result": {
+      "probe": "Run reporting client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "GUEST",
+        "status": 401
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "GUEST",
+        "status": 401
+      },
+      {
+        "transport": "axios-guard",
+        "method": "post",
+        "url": "api/auth/refresh",
+        "role": "GUEST",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "GUEST",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "true-GUEST-Run Product client",
+    "mock_flag": "true",
+    "role_fixture": "GUEST",
+    "modeText": "Mock flag: true; identity fixture: GUEST; runtime adapter is network guard: true",
+    "observed_at": "2026-10-02T15:45:50.156Z",
+    "url": "http://127.0.0.1:4317/auth/login",
+    "result": {
+      "probe": "Run Product client",
+      "outcome": "rejected",
+      "http_status": 503,
+      "message": "Blocked by isolated QA transport"
+    },
+    "requests": [
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "GUEST",
+        "status": 401
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/user/userInfo",
+        "role": "GUEST",
+        "status": 401
+      },
+      {
+        "transport": "axios-guard",
+        "method": "post",
+        "url": "api/auth/refresh",
+        "role": "GUEST",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/creator/dashboard/summary",
+        "role": "GUEST",
+        "status": 503
+      },
+      {
+        "transport": "axios-guard",
+        "method": "get",
+        "url": "api/products/qa-boundary-product",
+        "role": "GUEST",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "key": "true-GUEST-runtime-console",
+    "mock_flag": "true",
+    "role_fixture": "GUEST",
+    "observed_at": "2026-10-02T15:45:50.183Z",
+    "entries": [
+      {
+        "level": "warn",
+        "message": "[Mocks] could not load ./_mocks (file not found)",
+        "timestamp": "2026-10-02T15:44:40.325Z",
+        "url": "webpack://video-platform-ui/./src/core/api/http-client.ts?"
+      },
+      {
+        "level": "warn",
+        "message": "[Mocks] could not load ./_mocks (file not found)",
+        "timestamp": "2026-10-02T15:45:43.518Z",
+        "url": "webpack://video-platform-ui/./src/core/api/http-client.ts?"
+      },
+      {
+        "level": "warn",
+        "message": "[Mocks] could not load ./_mocks (file not found)",
+        "timestamp": "2026-10-02T15:45:46.211Z",
+        "url": "webpack://video-platform-ui/./src/core/api/http-client.ts?"
+      },
+      {
+        "level": "warn",
+        "message": "[Mocks] could not load ./_mocks (file not found)",
+        "timestamp": "2026-10-02T15:45:48.420Z",
+        "url": "webpack://video-platform-ui/./src/core/api/http-client.ts?"
+      }
+    ]
+  },
+  {
+    "key": "mock-boundary-reproduction-and-cleanup",
+    "frontend_revision": "12765d4568796f8472124383a221b74d82850c5b",
+    "flags_tested": [
+      "false",
+      "true"
+    ],
+    "identity_fixtures": [
+      "GUEST",
+      "USER",
+      "CREATOR",
+      "ADMIN"
+    ],
+    "files": [
+      {
+        "name": "vpqa-boundary-entry.js",
+        "sha256": "3169f168dd4e3bba68ca7dd2eff0c03b2f056c679257244ba3c962443dfe050a",
+        "source": "const root='/Users/tamastyukodi/Development/video-platform-ui';\nconst axiosModule=require('/Users/tamastyukodi/Development/video-platform-ui/node_modules/axios');\nconst axios=axiosModule.default;\nconst identity=new URLSearchParams(window.location.search).get('qaRole') || 'CREATOR';\nconst events=[];\nlet capturedAdapter;\nconst guard=async config=>{\n events.push({transport:'axios-guard',method:config.method,url:config.url,role:identity,status:config.url==='api/user/userInfo'?(identity==='GUEST'?401:200):503});\n renderEvents();\n if(config.url==='api/user/userInfo' && identity!=='GUEST')return {status:200,statusText:'OK',data:{id:'qa-boundary-identity',firstName:'Boundary',lastName:'Fixture',email:'boundary@example.test',roles:[identity],onboardingCompleted:true},headers:{},config};\n const status=config.url==='api/user/userInfo' && identity==='GUEST'?401:503;\n throw new axiosModule.AxiosError('Blocked by isolated QA transport','QA_NETWORK_DENIED',config,null,{status,statusText:'QA captured',data:{message:'No real network allowed'},headers:{},config});\n};\naxios.defaults.adapter=guard;\nwindow.fetch=async(url,options)=>{events.push({transport:'fetch-guard',method:options?.method||'GET',url:String(url),role:identity});renderEvents();throw new Error('QA_NETWORK_DENIED: storage PUT captured locally');};\nfunction renderEvents(){const out=document.getElementById('qa-boundary-events');if(out)out.textContent=JSON.stringify(events,null,2);}\nconst http=require('/Users/tamastyukodi/Development/video-platform-ui/src/core/api/http-client.ts').default;\ncapturedAdapter=http.defaults.adapter===guard;\nconst dashboard=require('/Users/tamastyukodi/Development/video-platform-ui/src/core/api/services/dashboard/dashboard-api.ts');\nconst products=require('/Users/tamastyukodi/Development/video-platform-ui/src/core/api/services/products/product-crud-api.ts');\nconst uploads=require('/Users/tamastyukodi/Development/video-platform-ui/src/core/api/services/uploads/upload-lifecycle.ts');\nconst panel=document.createElement('section');panel.setAttribute('aria-label','Isolated mock boundary probes');panel.style.cssText='padding:16px;background:white;color:black;position:relative;z-index:100;font:16px sans-serif';\nconst title=document.createElement('h1');title.textContent='Isolated mock boundary probes';panel.appendChild(title);\nconst mode=document.createElement('p');mode.textContent=`Mock flag: ${process.env.REACT_APP_USE_MOCKS}; identity fixture: ${identity}; runtime adapter is network guard: ${capturedAdapter}`;panel.appendChild(mode);\nconst output=document.createElement('pre');output.id='qa-boundary-result';output.setAttribute('role','status');output.textContent='No probe run';\nfunction addButton(label,action){const button=document.createElement('button');button.textContent=label;button.style.cssText='margin:4px;padding:8px';button.onclick=async()=>{button.disabled=true;try{const result=await action();output.textContent=JSON.stringify({probe:label,outcome:'resolved',...result},null,2);}catch(error){output.textContent=JSON.stringify({probe:label,outcome:'rejected',http_status:error.response?.status||null,message:error.message},null,2);}finally{button.disabled=false;renderEvents();}};panel.appendChild(button);}\naddButton('Run reporting client',async()=>({data:await dashboard.getCreatorDashboardSummaryAPI()}));\naddButton('Run Product client',async()=>({data:await products.getProductByIdAPI('qa-boundary-product')}));\nconst file=new File(['Synthetic in-memory boundary test'],'qa-boundary.txt',{type:'text/plain'});\naddButton('Try matching mock prefix',async()=>{const response=await uploads.uploadToStorageTarget({uploadUrl:'mock-upload://download-section/qa-boundary',file,mockProtocolPrefix:'mock-upload://download-section/'});return {status:response.status,ok:response.ok};});\naddButton('Try different mock prefix',async()=>{const response=await uploads.uploadToStorageTarget({uploadUrl:'mock-upload://other-target/qa-boundary',file,mockProtocolPrefix:'mock-upload://download-section/'});return {status:response.status,ok:response.ok};});\naddButton('Try ordinary storage URL',async()=>{const response=await uploads.uploadToStorageTarget({uploadUrl:'http://127.0.0.1:9/qa-storage',file,mockProtocolPrefix:'mock-upload://download-section/'});return {status:response.status,ok:response.ok};});\npanel.appendChild(output);const eventOutput=document.createElement('pre');eventOutput.id='qa-boundary-events';eventOutput.setAttribute('aria-label','Captured local requests');panel.appendChild(eventOutput);document.body.prepend(panel);renderEvents();\nconsole.info('[QA boundary]',process.env.REACT_APP_USE_MOCKS,identity,'runtime adapter is guard',capturedAdapter);\nimport('/Users/tamastyukodi/Development/video-platform-ui/src/index.tsx');\n"
+      },
+      {
+        "name": "vpqa-boundary-webpack.cjs",
+        "sha256": "c00dbb0f2044ac3bcf73247d67affe7e0611d639a63f35654e87604b99028b62",
+        "source": "const root='/Users/tamastyukodi/Development/video-platform-ui';\nconst config=require(root+'/webpack.config.js');\nconfig.context=root;\nconfig.entry='/private/tmp/vpqa-boundary-entry.js';\nconfig.output={...config.output,path:'/private/tmp/vpqa-fixture-dist'};\nconfig.devServer={...config.devServer,host:'127.0.0.1',port:4317,open:false};\nconfig.resolve={...config.resolve,modules:[root+'/node_modules','node_modules']};\nmodule.exports=config;\n"
+      }
+    ],
+    "environment": {
+      "REACT_APP_BASE_PATH": "http://127.0.0.1:9/",
+      "REACT_APP_GOOGLE_CLIENT_ID": "qa-local-not-for-oauth"
+    },
+    "launch": "REACT_APP_USE_MOCKS=<false or true> REACT_APP_BASE_PATH=http://127.0.0.1:9/ REACT_APP_GOOGLE_CLIENT_ID=qa-local-not-for-oauth /Users/tamastyukodi/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node node_modules/webpack-cli/bin/cli.js serve --config /private/tmp/vpqa-boundary-webpack.cjs --mode development",
+    "cwd": "/Users/tamastyukodi/Development/video-platform-ui",
+    "compile": "false succeeded; true compiled with expected missing ./_mocks warning. Development warning overlay dismissed; not a browser security interstitial.",
+    "guard": "Before real http-client loads, axios default adapter is a local deny guard; only fake identity profile returns200. Runtime adapter identity is displayed in DOM. Direct fetch is replaced by a deny/capture guard. Capture lists contain methods/URLs/roles/statuses only, no secrets/body bytes. API/storage requests cannot reach real services.",
+    "scope": "Browser integration uses real reporting/Product clients and upload helper through temporary probe buttons alongside app. Synthetic identity fixtures do not establish deployed authentication or authorization. No persistent upload/storage behavior inferred.",
+    "cleanup": "Temporary browser tab closed. Both localhost servers31176/49095 stopped with exit0. Main deployed Creator tab retained. No repository implementation files or real data/roles/credentials modified.",
+    "observation_caveats": "First true probe click was obstructed by webpack missing-module warning overlay; unscored. After viewing/dismissing warning, actual probe results recorded. Guest redirects removeqaRole fromURL; observation keys correctly use retained fixture role rather than redirected URL."
+  }
+]

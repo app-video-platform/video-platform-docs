@@ -1,0 +1,28 @@
+{
+  "id": "developer/backend/commerce-and-payments",
+  "title": "Commerce and Payments",
+  "description": "Current backend capability",
+  "source": "@site/docs/developer/backend/commerce-and-payments.md",
+  "sourceDirName": "developer/backend",
+  "slug": "/developer/backend/commerce-and-payments",
+  "permalink": "/docs/developer/backend/commerce-and-payments",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/backend/commerce-and-payments.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Commerce and Payments",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Entitlements and Content Access",
+    "permalink": "/docs/developer/backend/entitlements-and-content-access"
+  },
+  "next": {
+    "title": "Persistence and Data Model",
+    "permalink": "/docs/developer/backend/persistence-and-data-model"
+  }
+}

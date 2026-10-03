@@ -1,7 +1,7 @@
 {
   "id": "developer/components/checkbox-input",
-  "title": "GalCheckboxInput",
-  "description": "GalCheckboxInput (quick notes)",
+  "title": "CheckboxInput",
+  "description": "CheckboxInput (quick notes)",
   "source": "@site/docs/developer/components/checkbox-input.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/checkbox-input",
@@ -12,7 +12,7 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalCheckboxInput"
+    "title": "CheckboxInput"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
@@ -20,7 +20,7 @@
     "permalink": "/docs/developer/components/chart"
   },
   "next": {
-    "title": "GalContactForm",
+    "title": "ContactForm",
     "permalink": "/docs/developer/components/contact-form"
   }
 }

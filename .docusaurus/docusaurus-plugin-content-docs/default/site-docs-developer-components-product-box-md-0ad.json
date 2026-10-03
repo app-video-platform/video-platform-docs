@@ -1,7 +1,7 @@
 {
   "id": "developer/components/product-box",
-  "title": "GalProductCard",
-  "description": "GalProductCard (quick notes)",
+  "title": "ProductBox",
+  "description": "ProductBox (quick notes)",
   "source": "@site/docs/developer/components/product-box.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/product-box",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalProductCard"
+    "title": "ProductBox"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalPriceSelector",
+    "title": "PriceSelector",
     "permalink": "/docs/developer/components/price-selector"
   },
   "next": {
-    "title": "GalRichTextEditor",
+    "title": "RichTextEditor",
     "permalink": "/docs/developer/components/rich-text-editor"
   }
 }

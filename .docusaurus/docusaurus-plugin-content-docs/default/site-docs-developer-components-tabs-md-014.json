@@ -1,7 +1,7 @@
 {
   "id": "developer/components/tabs",
-  "title": "GalTabs",
-  "description": "GalTabs (quick notes)",
+  "title": "Tabs",
+  "description": "Tabs (quick notes)",
   "source": "@site/docs/developer/components/tabs.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/tabs",
@@ -12,7 +12,7 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalTabs"
+    "title": "Tabs"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
@@ -20,7 +20,7 @@
     "permalink": "/docs/developer/components/status-badge"
   },
   "next": {
-    "title": "GalUppyFileUploader",
+    "title": "UppyFileUploader",
     "permalink": "/docs/developer/components/uppy-file-uploader"
   }
 }

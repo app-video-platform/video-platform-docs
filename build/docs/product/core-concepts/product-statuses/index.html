@@ -5,8 +5,8 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Product Statuses | Video Platform App</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://luxury-klepon-a62307.netlify.app/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://luxury-klepon-a62307.netlify.app/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://luxury-klepon-a62307.netlify.app/docs/product/core-concepts/product-statuses"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Product Statuses | Video Platform App"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luxury-klepon-a62307.netlify.app/docs/product/core-concepts/product-statuses"><link data-rh="true" rel="alternate" href="https://luxury-klepon-a62307.netlify.app/docs/product/core-concepts/product-statuses" hreflang="en"><link data-rh="true" rel="alternate" href="https://luxury-klepon-a62307.netlify.app/docs/product/core-concepts/product-statuses" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Product Statuses","item":"https://luxury-klepon-a62307.netlify.app/docs/product/core-concepts/product-statuses"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Video Platform App RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Video Platform App Atom Feed"><link rel="stylesheet" href="/assets/css/styles.353a480a.css">
-<script src="/assets/js/runtime~main.d9e12d92.js" defer="defer"></script>
-<script src="/assets/js/main.2f987694.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c44f3a22.js" defer="defer"></script>
+<script src="/assets/js/main.32deed4e.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -33,15 +33,27 @@
 <ul>
 <li class="">Create draft products through the product builder.</li>
 <li class="">See status where product summaries expose it.</li>
+<li class="">Publish Course, Download, and Consultation products after resolving their readiness blockers.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-it-works">How it works<a href="#how-it-works" class="hash-link" aria-label="Direct link to How it works" title="Direct link to How it works" translate="no">​</a></h2>
-<p>Product statuses appear most clearly in the Admin Products area, where Admins can filter product lists by status.</p>
-<p>The product builder currently creates and edits products, but the frontend does not present a complete publish workflow with clear status transition controls.</p>
+<p>Product statuses appear in Creator and Admin product management areas, where users can filter product lists by status.</p>
+<p>For supported non-Membership Products, Product Workspace provides a Publish action. Publish works with the current save state, uses frontend readiness checks for immediate guidance, and then updates the existing Product with <code>status: PUBLISHED</code>.</p>
+<p>Backend readiness validation is authoritative. The backend can reject publication with HTTP <code>422</code> field-path/message errors, and the frontend surfaces those errors in the Readiness area. Frontend readiness guidance does not guarantee that publication will succeed.</p>
+<p>Course publication requires a name, valid free-or-paid price, a section, and a
+lesson. Download publication requires a name, valid price, and confirmed file.
+Consultation publication requires a name, positive price and duration, meeting
+method, any required custom location, and valid weekly availability. A
+thumbnail and connected calendar are recommendations, not blockers.</p>
+<p>Membership Products are the exception: Membership readiness can be evaluated, but Product-level Membership publishing remains unavailable in the current frontend.</p>
+<p>For direct full-Product backend reads, callers without owner, Administrator, or
+active-entitlement access can read only Published Products. Protected Course
+content and Download URLs are removed. Some Product summary and search
+endpoints do not apply the same status filtering yet.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="current-limitations">Current limitations<a href="#current-limitations" class="hash-link" aria-label="Direct link to Current limitations" title="Direct link to Current limitations" translate="no">​</a></h2>
 <ul>
-<li class="">Do not treat Draft, Published, and Hidden as a complete creator publishing lifecycle.</li>
-<li class="">The frontend does not currently provide a finished publish/unpublish workflow for Creators.</li>
-<li class="">Customer-facing discovery can show products returned by the backend, but the frontend alone does not confirm the full rules for when each status appears to customers.</li>
+<li class="">Unpublish is not implemented in the current frontend.</li>
+<li class="">Membership Product publishing is not implemented in the current frontend.</li>
+<li class="">Public catalogue visibility is not consistently enforced across every backend summary/search route.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-pages">Related pages<a href="#related-pages" class="hash-link" aria-label="Direct link to Related pages" title="Direct link to Related pages" translate="no">​</a></h2>
 <ul>

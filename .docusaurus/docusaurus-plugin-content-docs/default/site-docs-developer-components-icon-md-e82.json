@@ -1,7 +1,7 @@
 {
   "id": "developer/components/icon",
-  "title": "GalIcon",
-  "description": "GalIcon (quick notes)",
+  "title": "Icon",
+  "description": "Icon (quick notes)",
   "source": "@site/docs/developer/components/icon.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/icon",
@@ -12,11 +12,11 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalIcon"
+    "title": "Icon"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalGoogleSignInButton",
+    "title": "GoogleSignInButton",
     "permalink": "/docs/developer/components/google-sign-in-button"
   },
   "next": {

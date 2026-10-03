@@ -1,0 +1,28 @@
+{
+  "id": "product/creators/storefront",
+  "title": "Storefront",
+  "description": "Overview",
+  "source": "@site/docs/product/creators/storefront.md",
+  "sourceDirName": "product/creators",
+  "slug": "/product/creators/storefront",
+  "permalink": "/docs/product/creators/storefront",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/product/creators/storefront.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Storefront",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Membership Products",
+    "permalink": "/docs/product/creators/membership-products"
+  },
+  "next": {
+    "title": "Customers",
+    "permalink": "/docs/product/creators/customers"
+  }
+}

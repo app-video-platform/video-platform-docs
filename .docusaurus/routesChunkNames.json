@@ -206,17 +206,17 @@
     },
     "content": "393be207"
   },
-  "/docs-6ee": {
+  "/docs-67d": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/docs-12e": {
+  "/docs-bb3": {
     "__comp": "a7bd4aaa",
     "__props": "0058b4c6"
   },
-  "/docs-d56": {
+  "/docs-f6a": {
     "__comp": "a94703ab"
   },
   "/docs/developer/api/-4b8": {
@@ -263,6 +263,54 @@
     "__comp": "17896441",
     "content": "10e95e8c"
   },
+  "/docs/developer/backend/-e6e": {
+    "__comp": "17896441",
+    "content": "a1fce3c8"
+  },
+  "/docs/developer/backend/administration-and-audit-fa9": {
+    "__comp": "17896441",
+    "content": "044eb94c"
+  },
+  "/docs/developer/backend/api-and-swagger-caa": {
+    "__comp": "17896441",
+    "content": "e022991f"
+  },
+  "/docs/developer/backend/architecture-a11": {
+    "__comp": "17896441",
+    "content": "d9d97051"
+  },
+  "/docs/developer/backend/authentication-and-security-6dd": {
+    "__comp": "17896441",
+    "content": "bc2431e2"
+  },
+  "/docs/developer/backend/commerce-and-payments-6cf": {
+    "__comp": "17896441",
+    "content": "78412be2"
+  },
+  "/docs/developer/backend/current-limitations-948": {
+    "__comp": "17896441",
+    "content": "a8a67410"
+  },
+  "/docs/developer/backend/entitlements-and-content-access-e63": {
+    "__comp": "17896441",
+    "content": "59686890"
+  },
+  "/docs/developer/backend/integrations-and-files-488": {
+    "__comp": "17896441",
+    "content": "6d308df5"
+  },
+  "/docs/developer/backend/persistence-and-data-model-2fb": {
+    "__comp": "17896441",
+    "content": "d01650d7"
+  },
+  "/docs/developer/backend/products-and-authoring-e89": {
+    "__comp": "17896441",
+    "content": "a5674c76"
+  },
+  "/docs/developer/backend/testing-and-deployment-ecd": {
+    "__comp": "17896441",
+    "content": "054987c9"
+  },
   "/docs/developer/components/-f2d": {
     "__comp": "17896441",
     "content": "18829d7f"
@@ -302,10 +350,6 @@
   "/docs/developer/components/dropdown-3a0": {
     "__comp": "17896441",
     "content": "f2b87e80"
-  },
-  "/docs/developer/components/expansion-group-927": {
-    "__comp": "17896441",
-    "content": "8f726318"
   },
   "/docs/developer/components/expansion-panel-974": {
     "__comp": "17896441",
@@ -502,6 +546,10 @@
   "/docs/product/creators/sales-b83": {
     "__comp": "17896441",
     "content": "0779560c"
+  },
+  "/docs/product/creators/storefront-527": {
+    "__comp": "17896441",
+    "content": "db2e6cd8"
   },
   "/docs/product/customers/customer-account-settings-a09": {
     "__comp": "17896441",

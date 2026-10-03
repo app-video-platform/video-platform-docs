@@ -1,7 +1,7 @@
 {
   "id": "developer/components/otp-input",
-  "title": "GalOTPInput",
-  "description": "GalOTPInput (quick notes)",
+  "title": "OTPInput",
+  "description": "OTPInput (quick notes)",
   "source": "@site/docs/developer/components/otp-input.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/otp-input",
@@ -12,7 +12,7 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalOTPInput"
+    "title": "OTPInput"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
@@ -20,7 +20,7 @@
     "permalink": "/docs/developer/components/location-search"
   },
   "next": {
-    "title": "GalPasswordsContainer",
+    "title": "PasswordsContainer",
     "permalink": "/docs/developer/components/passwords-container"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "developer/components/button",
-  "title": "GalButton",
-  "description": "GalButton (quick notes)",
+  "title": "Button",
+  "description": "Button (quick notes)",
   "source": "@site/docs/developer/components/button.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/button",
@@ -12,11 +12,11 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalButton"
+    "title": "Button"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalBreadcrumbs",
+    "title": "Breadcrumbs",
     "permalink": "/docs/developer/components/breadcrumbs"
   },
   "next": {

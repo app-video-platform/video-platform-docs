@@ -1,5 +1,0 @@
-{
-  "observed_at": "2026-10-02T08:52:29.634Z",
-  "url": "https://app.serious-debauchery.click/app/library/my-courses",
-  "snapshot": "- region \"Notifications alt+T\"\n- banner:\n  - navigation:\n    - textbox \"Product search\":\n      - /placeholder: Search...\n    - button \"Submit search\":\n    - link \"Explore\":\n      - /url: /app/explore\n    - button:\n    - button \"T\":\n      - generic: Tamas Tyukodi\n- main:\n  - heading \"My Library\" [level=1]\n  - tablist \"Library sections\":\n    - tab \"All products\" [selected]\n    - tab \"Courses\" [active]\n    - tab \"Download Packages\"\n    - tab \"Consultation sessions\"\n    - tab \"Wishlist\"\n  - paragraph: You do not have any products in this section yet."
-}

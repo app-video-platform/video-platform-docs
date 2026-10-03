@@ -66,6 +66,66 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "developer/backend/administration-and-audit",
+              "path": "/docs/developer/backend/administration-and-audit",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/backend/api-and-swagger",
+              "path": "/docs/developer/backend/api-and-swagger",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/backend/architecture",
+              "path": "/docs/developer/backend/architecture",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/backend/authentication-and-security",
+              "path": "/docs/developer/backend/authentication-and-security",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/backend/commerce-and-payments",
+              "path": "/docs/developer/backend/commerce-and-payments",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/backend/current-limitations",
+              "path": "/docs/developer/backend/current-limitations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/backend/entitlements-and-content-access",
+              "path": "/docs/developer/backend/entitlements-and-content-access",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/backend/index",
+              "path": "/docs/developer/backend/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/backend/integrations-and-files",
+              "path": "/docs/developer/backend/integrations-and-files",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/backend/persistence-and-data-model",
+              "path": "/docs/developer/backend/persistence-and-data-model",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/backend/products-and-authoring",
+              "path": "/docs/developer/backend/products-and-authoring",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "developer/backend/testing-and-deployment",
+              "path": "/docs/developer/backend/testing-and-deployment",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "developer/components/box-selector",
               "path": "/docs/developer/components/box-selector",
               "sidebar": "tutorialSidebar"
@@ -108,11 +168,6 @@
             {
               "id": "developer/components/dropdown",
               "path": "/docs/developer/components/dropdown",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "developer/components/expansion-group",
-              "path": "/docs/developer/components/expansion-group",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -363,6 +418,11 @@
             {
               "id": "product/creators/sales",
               "path": "/docs/product/creators/sales",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product/creators/storefront",
+              "path": "/docs/product/creators/storefront",
               "sidebar": "tutorialSidebar"
             },
             {

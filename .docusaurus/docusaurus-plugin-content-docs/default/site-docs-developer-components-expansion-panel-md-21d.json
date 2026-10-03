@@ -1,7 +1,7 @@
 {
   "id": "developer/components/expansion-panel",
-  "title": "GalExpansionPanel",
-  "description": "GalExpansionPanel",
+  "title": "LegacyExpansionPanel",
+  "description": "LegacyExpansionPanel",
   "source": "@site/docs/developer/components/expansion-panel.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/expansion-panel",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalExpansionPanel"
+    "title": "LegacyExpansionPanel"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalExpansionGroup",
-    "permalink": "/docs/developer/components/expansion-group"
+    "title": "Dropdown",
+    "permalink": "/docs/developer/components/dropdown"
   },
   "next": {
-    "title": "GalFooter",
+    "title": "Footer",
     "permalink": "/docs/developer/components/footer"
   }
 }

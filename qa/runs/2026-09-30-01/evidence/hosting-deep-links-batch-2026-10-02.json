@@ -1,0 +1,246 @@
+[
+  {
+    "key": "hosting-owned-editor",
+    "captured_at": "2026-10-02T18:09:24.010966+00:00",
+    "scope": "HTTP hosting direct GET and repeated no-cache GET only; no JavaScript execution, cookie/session or rendered page success assertion.",
+    "load": {
+      "requested_url": "https://app.serious-debauchery.click/app/products/edit/cb045295-cf70-445c-99a7-46fc0618e58e",
+      "final_url": "https://app.serious-debauchery.click/app/products/edit/cb045295-cf70-445c-99a7-46fc0618e58e",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "spa_root_present": true,
+      "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+      "script_assets": [
+        "https://accounts.google.com/gsi/client",
+        "/bundle.js"
+      ],
+      "reload_request": false,
+      "json_response": false
+    },
+    "reload": {
+      "requested_url": "https://app.serious-debauchery.click/app/products/edit/cb045295-cf70-445c-99a7-46fc0618e58e",
+      "final_url": "https://app.serious-debauchery.click/app/products/edit/cb045295-cf70-445c-99a7-46fc0618e58e",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "spa_root_present": true,
+      "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+      "script_assets": [
+        "https://accounts.google.com/gsi/client",
+        "/bundle.js"
+      ],
+      "reload_request": true,
+      "json_response": false
+    }
+  },
+  {
+    "key": "hosting-published-product",
+    "captured_at": "2026-10-02T18:09:24.011439+00:00",
+    "scope": "HTTP hosting direct GET and repeated no-cache GET only; no JavaScript execution, cookie/session or rendered page success assertion.",
+    "load": {
+      "requested_url": "https://app.serious-debauchery.click/app/product/cb045295-cf70-445c-99a7-46fc0618e58e",
+      "final_url": "https://app.serious-debauchery.click/app/product/cb045295-cf70-445c-99a7-46fc0618e58e",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "spa_root_present": true,
+      "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+      "script_assets": [
+        "https://accounts.google.com/gsi/client",
+        "/bundle.js"
+      ],
+      "reload_request": false,
+      "json_response": false
+    },
+    "reload": {
+      "requested_url": "https://app.serious-debauchery.click/app/product/cb045295-cf70-445c-99a7-46fc0618e58e",
+      "final_url": "https://app.serious-debauchery.click/app/product/cb045295-cf70-445c-99a7-46fc0618e58e",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "spa_root_present": true,
+      "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+      "script_assets": [
+        "https://accounts.google.com/gsi/client",
+        "/bundle.js"
+      ],
+      "reload_request": true,
+      "json_response": false
+    }
+  },
+  {
+    "key": "hosting-public-storefront",
+    "captured_at": "2026-10-02T18:09:24.011548+00:00",
+    "scope": "HTTP hosting direct GET and repeated no-cache GET only; no JavaScript execution, cookie/session or rendered page success assertion.",
+    "load": {
+      "requested_url": "https://app.serious-debauchery.click/app/store/a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "final_url": "https://app.serious-debauchery.click/app/store/a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "spa_root_present": true,
+      "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+      "script_assets": [
+        "https://accounts.google.com/gsi/client",
+        "/bundle.js"
+      ],
+      "reload_request": false,
+      "json_response": false
+    },
+    "reload": {
+      "requested_url": "https://app.serious-debauchery.click/app/store/a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "final_url": "https://app.serious-debauchery.click/app/store/a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "spa_root_present": true,
+      "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+      "script_assets": [
+        "https://accounts.google.com/gsi/client",
+        "/bundle.js"
+      ],
+      "reload_request": true,
+      "json_response": false
+    }
+  },
+  {
+    "key": "hosting-verification-query",
+    "captured_at": "2026-10-02T18:09:24.011625+00:00",
+    "scope": "HTTP hosting direct GET and repeated no-cache GET only; no JavaScript execution, cookie/session or rendered page success assertion.",
+    "load": {
+      "requested_url": "https://app.serious-debauchery.click/auth/verify-email?token=qa-deep-link-invalid-2026-10-02",
+      "final_url": "https://app.serious-debauchery.click/auth/verify-email?token=qa-deep-link-invalid-2026-10-02",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "spa_root_present": true,
+      "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+      "script_assets": [
+        "https://accounts.google.com/gsi/client",
+        "/bundle.js"
+      ],
+      "reload_request": false,
+      "json_response": false
+    },
+    "reload": {
+      "requested_url": "https://app.serious-debauchery.click/auth/verify-email?token=qa-deep-link-invalid-2026-10-02",
+      "final_url": "https://app.serious-debauchery.click/auth/verify-email?token=qa-deep-link-invalid-2026-10-02",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "spa_root_present": true,
+      "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+      "script_assets": [
+        "https://accounts.google.com/gsi/client",
+        "/bundle.js"
+      ],
+      "reload_request": true,
+      "json_response": false
+    }
+  },
+  {
+    "key": "hosting-onboarding",
+    "captured_at": "2026-10-02T18:09:24.011694+00:00",
+    "scope": "HTTP hosting direct GET and repeated no-cache GET only; no JavaScript execution, cookie/session or rendered page success assertion.",
+    "load": {
+      "requested_url": "https://app.serious-debauchery.click/onboarding",
+      "final_url": "https://app.serious-debauchery.click/onboarding",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "spa_root_present": true,
+      "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+      "script_assets": [
+        "https://accounts.google.com/gsi/client",
+        "/bundle.js"
+      ],
+      "reload_request": false,
+      "json_response": false
+    },
+    "reload": {
+      "requested_url": "https://app.serious-debauchery.click/onboarding",
+      "final_url": "https://app.serious-debauchery.click/onboarding",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "spa_root_present": true,
+      "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+      "script_assets": [
+        "https://accounts.google.com/gsi/client",
+        "/bundle.js"
+      ],
+      "reload_request": true,
+      "json_response": false
+    }
+  },
+  {
+    "key": "legacy-host-path-query",
+    "captured_at": "2026-10-02T18:09:25.193906+00:00",
+    "scope": "Checked-in legacy redirect host probe; deployment config/version unknown.",
+    "response": {
+      "requested_url": "https://serious-debauchery.netlify.app/app/product/cb045295-cf70-445c-99a7-46fc0618e58e?qaProbe=path-query",
+      "final_url": "https://app.serious-debauchery.click/app/product/cb045295-cf70-445c-99a7-46fc0618e58e?qaProbe=path-query",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "spa_root_present": true,
+      "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+      "script_assets": [
+        "https://accounts.google.com/gsi/client",
+        "/bundle.js"
+      ],
+      "reload_request": false,
+      "json_response": false
+    }
+  },
+  {
+    "key": "configured-api-origin-response",
+    "captured_at": "2026-10-02T18:09:25.912487+00:00",
+    "scope": "Anonymous read-only requests to the previously verified configured API origin; no browser credentials.",
+    "published_product": {
+      "requested_url": "https://serious-debauchery.click/api/products/cb045295-cf70-445c-99a7-46fc0618e58e",
+      "final_url": "https://serious-debauchery.click/api/products/cb045295-cf70-445c-99a7-46fc0618e58e",
+      "status": 200,
+      "content_type": "application/json",
+      "spa_root_present": false,
+      "body_sha256": "6e19f7e501bc9e581f6270729b2d1481f38678c6ef1de7c76797cb03a04e1650",
+      "script_assets": [],
+      "reload_request": false,
+      "json_response": true,
+      "expected_product_id_present": true
+    },
+    "anonymous_user_profile": {
+      "requested_url": "https://serious-debauchery.click/api/user/userInfo",
+      "final_url": "https://serious-debauchery.click/api/user/userInfo",
+      "status": 401,
+      "content_type": "",
+      "spa_root_present": false,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "script_assets": [],
+      "reload_request": false,
+      "json_response": false
+    }
+  },
+  {
+    "key": "current-frontend-api-base-configuration",
+    "captured_at": "2026-10-02T18:11:13.278757+00:00",
+    "asset_url": "https://app.serious-debauchery.click/bundle.js",
+    "status": 200,
+    "byte_count": 2931367,
+    "sha256": "96bb55a18168ec9223a108c88f7446575eaa2756f7dd56f57ba816980751017a",
+    "configured_expected_api_origin_in_baseURL": true,
+    "scope": "Public deployed frontend JavaScript asset read only; retains only known API-origin match and hash, no full asset, credential or client-ID values."
+  },
+  {
+    "key": "http-harness-source",
+    "scope": "Read-only urllib hosting probes. Full body text never retained; only hashes/format signals. No browser session, render, protected Product data or real verification-token assertions.",
+    "source": "import json,re,urllib.request,urllib.error,hashlib,datetime,concurrent.futures\nfrom pathlib import Path\nroot=Path('/Users/tamastyukodi/Development/video-platform-UI-docs/qa/runs/2026-09-30-01')\napp='https://app.serious-debauchery.click';api='https://serious-debauchery.click';pid='cb045295-cf70-445c-99a7-46fc0618e58e';owner='a1ebdc7a-d497-4334-9fed-309aec071b25'\npaths=[('owned-editor',f'/app/products/edit/{pid}'),('published-product',f'/app/product/{pid}'),('public-storefront',f'/app/store/{owner}'),('verification-query','/auth/verify-email?token=qa-deep-link-invalid-2026-10-02'),('onboarding','/onboarding')]\ndef fetch(url,reload=False):\n headers={'User-Agent':'Application-QA-read-only'}\n if reload:headers['Cache-Control']='no-cache'\n try:\n  with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=15) as r:status=r.status;final=r.url;ctype=r.headers.get('Content-Type','');body=r.read(2000000)\n except urllib.error.HTTPError as e:status=e.code;final=e.url;ctype=e.headers.get('Content-Type','');body=e.read(2000000)\n except Exception as e:return {'requested_url':url,'network_error_type':type(e).__name__}\n text=body.decode('utf-8','replace')\n result={'requested_url':url,'final_url':final,'status':status,'content_type':ctype,'spa_root_present':bool(re.search(r'id=[\\\"\\x27]root[\\\"\\x27]',text)),'body_sha256':hashlib.sha256(body).hexdigest(),'script_assets':re.findall(r'<script[^>]+src=[\\\"\\x27]([^\\\"\\x27]+)',text),'reload_request':reload}\n try:\n  data=json.loads(text);result['json_response']=True;result['expected_product_id_present']=isinstance(data,dict) and data.get('id')==pid\n except (ValueError,TypeError):result['json_response']=False\n return result\ndef check(item):\n key,path=item;url=app+path\n return {'key':'hosting-'+key,'captured_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'HTTP hosting direct GET and repeated no-cache GET only; no JavaScript execution, cookie/session or rendered page success assertion.','load':fetch(url),'reload':fetch(url,True)}\nwith concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:b=list(pool.map(check,paths))\nb.append({'key':'legacy-host-path-query','captured_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Checked-in legacy redirect host probe; deployment config/version unknown.','response':fetch('https://serious-debauchery.netlify.app/app/product/'+pid+'?qaProbe=path-query')})\nb.append({'key':'configured-api-origin-response','captured_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Anonymous read-only requests to the previously verified configured API origin; no browser credentials.','published_product':fetch(api+'/api/products/'+pid),'anonymous_user_profile':fetch(api+'/api/user/userInfo')})\n(root/'evidence/hosting-deep-links-batch-2026-10-02.json').write_text(json.dumps(b,indent=2)+'\\n')\nfor x in b:\n if 'load' in x:print(x['key'],x['load'].get('status'),x['reload'].get('status'),x['load'].get('spa_root_present'),x['load'].get('final_url'))\n elif 'response' in x:print(x['key'],json.dumps(x['response']))\n else:print(x['key'],x['published_product'].get('status'),x['published_product'].get('json_response'),x['anonymous_user_profile'].get('status'),x['anonymous_user_profile'].get('json_response'))\n",
+    "sha256": "f0cd441293f274d109e81fe8eb1231ecb79b65490900578eeb89104303cc48c0"
+  },
+  {
+    "key": "docs-proxy-synthetic-path",
+    "captured_at": "2026-10-02T19:16:48.148392+00:00",
+    "requested_url": "https://app.serious-debauchery.click/docs/qa-current-state-probe",
+    "final_url": "https://app.serious-debauchery.click/docs/qa-current-state-probe",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "spa_root_present": true,
+    "body_sha256": "0d6a2cc5023b1ea0897e93d91b146abfb261d35e0e94e022508853e55f274cbd",
+    "same_shell_as_previous_app_probe": true,
+    "script_assets": [
+      "https://accounts.google.com/gsi/client",
+      "/bundle.js"
+    ],
+    "scope": "Anonymous static GET to the catalog synthetic docs path; no JavaScript execution, alternate Docs-site provisioning or deployment config mutation. Intended proxy behavior remains for clarification."
+  }
+]

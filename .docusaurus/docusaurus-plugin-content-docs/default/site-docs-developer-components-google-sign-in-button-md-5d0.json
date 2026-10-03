@@ -1,7 +1,7 @@
 {
   "id": "developer/components/google-sign-in-button",
-  "title": "GalGoogleSignInButton",
-  "description": "GalGoogleSignInButton (quick notes)",
+  "title": "GoogleSignInButton",
+  "description": "GoogleSignInButton (quick notes)",
   "source": "@site/docs/developer/components/google-sign-in-button.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/google-sign-in-button",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalGoogleSignInButton"
+    "title": "GoogleSignInButton"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalFormInput",
+    "title": "Input",
     "permalink": "/docs/developer/components/form-input"
   },
   "next": {
-    "title": "GalIcon",
+    "title": "Icon",
     "permalink": "/docs/developer/components/icon"
   }
 }

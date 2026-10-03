@@ -1,7 +1,7 @@
 {
   "id": "developer/components/box-selector",
-  "title": "GalBoxSelector",
-  "description": "GalBoxSelector (quick notes)",
+  "title": "BoxSelector",
+  "description": "BoxSelector (quick notes)",
   "source": "@site/docs/developer/components/box-selector.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/box-selector",
@@ -12,7 +12,7 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalBoxSelector"
+    "title": "BoxSelector"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
@@ -20,7 +20,7 @@
     "permalink": "/docs/developer/api/calendar"
   },
   "next": {
-    "title": "GalBreadcrumbs",
+    "title": "Breadcrumbs",
     "permalink": "/docs/developer/components/breadcrumbs"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "developer/developer-overview",
   "title": "Developer Overview",
-  "description": "Developer Documentation explains how the Video Platform frontend is structured and maintained.",
+  "description": "Developer Documentation explains how the Video Platform frontend and backend",
   "source": "@site/docs/developer/developer-overview.md",
   "sourceDirName": "developer",
   "slug": "/developer/developer-overview",

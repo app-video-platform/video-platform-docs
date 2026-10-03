@@ -5,8 +5,8 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Creating Products for Creators | Video Platform App</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://luxury-klepon-a62307.netlify.app/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://luxury-klepon-a62307.netlify.app/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://luxury-klepon-a62307.netlify.app/docs/product/administrators/creating-products-for-creators"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Creating Products for Creators | Video Platform App"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luxury-klepon-a62307.netlify.app/docs/product/administrators/creating-products-for-creators"><link data-rh="true" rel="alternate" href="https://luxury-klepon-a62307.netlify.app/docs/product/administrators/creating-products-for-creators" hreflang="en"><link data-rh="true" rel="alternate" href="https://luxury-klepon-a62307.netlify.app/docs/product/administrators/creating-products-for-creators" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Creating Products for Creators","item":"https://luxury-klepon-a62307.netlify.app/docs/product/administrators/creating-products-for-creators"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Video Platform App RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Video Platform App Atom Feed"><link rel="stylesheet" href="/assets/css/styles.353a480a.css">
-<script src="/assets/js/runtime~main.d9e12d92.js" defer="defer"></script>
-<script src="/assets/js/main.2f987694.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c44f3a22.js" defer="defer"></script>
+<script src="/assets/js/main.32deed4e.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -25,7 +25,7 @@
 <li class="">Select a Creator owner from the creator owner list.</li>
 <li class="">Start product creation for that Creator.</li>
 <li class="">Choose a product type.</li>
-<li class="">Create Course, Download, Consultation, or Membership products.</li>
+<li class="">Create backend-persisted Course, Download, Consultation, or Membership products.</li>
 <li class="">Continue into the shared product builder.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-it-works">How it works<a href="#how-it-works" class="hash-link" aria-label="Direct link to How it works" title="Direct link to How it works" translate="no">​</a></h2>
@@ -34,7 +34,11 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="current-limitations">Current limitations<a href="#current-limitations" class="hash-link" aria-label="Direct link to Current limitations" title="Direct link to Current limitations" translate="no">​</a></h2>
 <ul>
 <li class="">Admin-created products inherit the current product-builder limitations.</li>
-<li class="">Course lesson content, product media persistence, publishing, Membership-specific persistence, and customer purchase/access behavior are not complete.</li>
+<li class="">The backend accepts Admin-created Products only when the selected owner exists and has exactly the Creator role.</li>
+<li class="">Product media supports thumbnail, gallery, and promo video, but does not cover Course lesson video or Membership native Video/Resource binary delivery.</li>
+<li class="">Supported non-Membership Products can be published through Product Workspace readiness and backend validation; Membership publishing remains unavailable.</li>
+<li class="">Course/customer content consumption still has incomplete areas.</li>
+<li class="">Membership authoring is persisted, but native binary media, publishing, subscriptions, checkout, entitlements, and member access are unavailable.</li>
 <li class="">The Admin creation flow requires selecting a Creator owner before starting.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-pages">Related pages<a href="#related-pages" class="hash-link" aria-label="Direct link to Related pages" title="Direct link to Related pages" translate="no">​</a></h2>

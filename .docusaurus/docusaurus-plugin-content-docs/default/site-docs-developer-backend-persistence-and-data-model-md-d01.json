@@ -1,0 +1,28 @@
+{
+  "id": "developer/backend/persistence-and-data-model",
+  "title": "Persistence and Data Model",
+  "description": "Schema ownership",
+  "source": "@site/docs/developer/backend/persistence-and-data-model.md",
+  "sourceDirName": "developer/backend",
+  "slug": "/developer/backend/persistence-and-data-model",
+  "permalink": "/docs/developer/backend/persistence-and-data-model",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/backend/persistence-and-data-model.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Persistence and Data Model",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Commerce and Payments",
+    "permalink": "/docs/developer/backend/commerce-and-payments"
+  },
+  "next": {
+    "title": "Integrations and Files",
+    "permalink": "/docs/developer/backend/integrations-and-files"
+  }
+}

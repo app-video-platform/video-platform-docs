@@ -1,7 +1,7 @@
 {
   "id": "developer/components/breadcrumbs",
-  "title": "GalBreadcrumbs",
-  "description": "GalBreadcrumbs (quick notes)",
+  "title": "Breadcrumbs",
+  "description": "Breadcrumbs (quick notes)",
   "source": "@site/docs/developer/components/breadcrumbs.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/breadcrumbs",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalBreadcrumbs"
+    "title": "Breadcrumbs"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalBoxSelector",
+    "title": "BoxSelector",
     "permalink": "/docs/developer/components/box-selector"
   },
   "next": {
-    "title": "GalButton",
+    "title": "Button",
     "permalink": "/docs/developer/components/button"
   }
 }

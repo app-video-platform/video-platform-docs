@@ -1,0 +1,24 @@
+{
+  "id": "developer/backend/current-limitations",
+  "title": "Current Backend Coverage",
+  "description": "Implemented and persisted",
+  "source": "@site/docs/developer/backend/current-limitations.md",
+  "sourceDirName": "developer/backend",
+  "slug": "/developer/backend/current-limitations",
+  "permalink": "/docs/developer/backend/current-limitations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/backend/current-limitations.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {
+    "title": "Current Backend Coverage",
+    "sidebar_position": 11
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Testing and Deployment",
+    "permalink": "/docs/developer/backend/testing-and-deployment"
+  }
+}

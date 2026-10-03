@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-developer/backend/products-and-authoring" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Products and Authoring | Video Platform App</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://luxury-klepon-a62307.netlify.app/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://luxury-klepon-a62307.netlify.app/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://luxury-klepon-a62307.netlify.app/docs/developer/backend/products-and-authoring"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Products and Authoring | Video Platform App"><meta data-rh="true" name="description" content="Supported Product model"><meta data-rh="true" property="og:description" content="Supported Product model"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luxury-klepon-a62307.netlify.app/docs/developer/backend/products-and-authoring"><link data-rh="true" rel="alternate" href="https://luxury-klepon-a62307.netlify.app/docs/developer/backend/products-and-authoring" hreflang="en"><link data-rh="true" rel="alternate" href="https://luxury-klepon-a62307.netlify.app/docs/developer/backend/products-and-authoring" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products and Authoring","item":"https://luxury-klepon-a62307.netlify.app/docs/developer/backend/products-and-authoring"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Video Platform App RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Video Platform App Atom Feed"><link rel="stylesheet" href="/assets/css/styles.353a480a.css">
+<script src="/assets/js/runtime~main.c44f3a22.js" defer="defer"></script>
+<script src="/assets/js/main.32deed4e.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Video Platform App</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/product/start-here/product-overview">Docs</a><a href="https://app.serious-debauchery.click/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">App (dev)<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://serious-debauchery.click/swagger-ui" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">API (Swagger)<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/app-video-platform/video-platform-ui" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/product/start-here/product-overview"><span title="Product Documentation" class="categoryLinkLabel_W154">Product Documentation</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/developer/developer-overview"><span title="Developer Documentation" class="categoryLinkLabel_W154">Developer Documentation</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/developer-overview"><span title="Developer Overview" class="linkLabel_WmDU">Developer Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/local-setup"><span title="Local Setup" class="linkLabel_WmDU">Local Setup</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/developer/routing-and-access-reference"><span title="Frontend" class="categoryLinkLabel_W154">Frontend</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/developer/backend/"><span title="Backend" class="categoryLinkLabel_W154">Backend</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/backend/"><span title="Backend Overview" class="linkLabel_WmDU">Backend Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/backend/architecture"><span title="Architecture" class="linkLabel_WmDU">Architecture</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/backend/api-and-swagger"><span title="API and Swagger" class="linkLabel_WmDU">API and Swagger</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/backend/authentication-and-security"><span title="Authentication and Security" class="linkLabel_WmDU">Authentication and Security</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/developer/backend/products-and-authoring"><span title="Products and Authoring" class="linkLabel_WmDU">Products and Authoring</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/backend/entitlements-and-content-access"><span title="Entitlements and Content Access" class="linkLabel_WmDU">Entitlements and Content Access</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/backend/commerce-and-payments"><span title="Commerce and Payments" class="linkLabel_WmDU">Commerce and Payments</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/backend/persistence-and-data-model"><span title="Persistence and Data Model" class="linkLabel_WmDU">Persistence and Data Model</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/backend/integrations-and-files"><span title="Integrations and Files" class="linkLabel_WmDU">Integrations and Files</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/backend/administration-and-audit"><span title="Administration and Audit" class="linkLabel_WmDU">Administration and Audit</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/backend/testing-and-deployment"><span title="Testing and Deployment" class="linkLabel_WmDU">Testing and Deployment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/developer/backend/current-limitations"><span title="Current Backend Coverage" class="linkLabel_WmDU">Current Backend Coverage</span></a></li></ul></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Developer Documentation</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Backend</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Products and Authoring</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Products and Authoring</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="supported-product-model">Supported Product model<a href="#supported-product-model" class="hash-link" aria-label="Direct link to Supported Product model" title="Direct link to Supported Product model" translate="no">​</a></h2>
+<p>The backend currently persists four Product types:</p>
+<table><thead><tr><th>Type</th><th>Type-specific model</th></tr></thead><tbody><tr><td><code>COURSE</code></td><td>Ordered sections containing lessons</td></tr><tr><td><code>DOWNLOAD</code></td><td>Ordered sections containing files</td></tr><tr><td><code>CONSULTATION</code></td><td>Consultation configuration plus normalized weekly availability</td></tr><tr><td><code>MEMBERSHIP</code></td><td>Recurring-price authoring, native content metadata, included Products, and feed ordering</td></tr></tbody></table>
+<p>Supported statuses are <code>DRAFT</code>, <code>PUBLISHED</code>, and <code>HIDDEN</code>. Membership Products
+are intentionally limited to <code>DRAFT</code> and <code>HIDDEN</code>; publication readiness
+returns HTTP 422 with a structured issue map.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="shared-product-fields">Shared Product fields<a href="#shared-product-fields" class="hash-link" aria-label="Direct link to Shared Product fields" title="Direct link to Shared Product fields" translate="no">​</a></h2>
+<p>Concrete Product entities share these concepts:</p>
+<ul>
+<li class="">UUID</li>
+<li class="">name and description</li>
+<li class="">image reference</li>
+<li class="">type and status</li>
+<li class="">owning User</li>
+<li class="">price</li>
+<li class="">pricing model, optional billing interval, and currency</li>
+<li class="">customer count</li>
+<li class="">created and updated timestamps</li>
+</ul>
+<p>Because the entity uses <code>TABLE_PER_CLASS</code>, these fields are stored in each
+concrete Product table rather than a shared Product table.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="creation-rules">Creation rules<a href="#creation-rules" class="hash-link" aria-label="Direct link to Creation rules" title="Direct link to Creation rules" translate="no">​</a></h2>
+<p>Product creation requires <code>CREATOR</code> or <code>ADMIN</code>.</p>
+<ul>
+<li class="">A Creator is always assigned as the owner of their own new Product. A
+caller-supplied foreign <code>userId</code> is not trusted.</li>
+<li class="">An Admin must provide an owner.</li>
+<li class="">The Admin-selected owner must exist and have exactly the <code>CREATOR</code> role.</li>
+<li class="">The Product type must have a registered <code>ProductTypeHandler</code>.</li>
+</ul>
+<p>The frontend uses a two-step draft flow, but the backend contract itself is a
+typed Product creation operation. End-to-end behavior must be verified against
+both repositories.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="updates">Updates<a href="#updates" class="hash-link" aria-label="Direct link to Updates" title="Direct link to Updates" translate="no">​</a></h2>
+<p>Creators can mutate only Products they own. Admins can mutate Products across
+owners.</p>
+<p>Generic PATCH maps the existing Product and partial JSON into the concrete DTO.
+For Course and Download Products, generic PATCH intentionally excludes nested
+details. Sections, lessons, and files have separate APIs and transaction
+boundaries.</p>
+<p>Both a typed <code>PUT /api/products</code> and canonical
+<code>PATCH /api/products/{productId}</code> currently exist. Prefer the canonical ID path
+for new partial-update integrations while preserving existing consumers.</p>
+<p>Membership defaults to <code>RECURRING</code>, <code>MONTH</code>, and <code>EUR</code>; its Draft price may be
+zero for the frontend&#x27;s two-step creation flow. Other Product types default to
+<code>ONE_TIME</code>, no billing interval, and <code>EUR</code>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="publication-validation">Publication validation<a href="#publication-validation" class="hash-link" aria-label="Direct link to Publication validation" title="Direct link to Publication validation" translate="no">​</a></h2>
+<p><code>ProductPublicationValidator</code> runs for create, PUT, and PATCH whenever the
+resulting status is <code>PUBLISHED</code>, including edits to an already-published
+Product. It returns HTTP 422 with field-keyed readiness issues.</p>
+<ul>
+<li class="">Every type requires a nonblank name.</li>
+<li class="">Course requires a free or positive one-time price, a section, and a lesson.</li>
+<li class="">Download requires a free or positive one-time price and a confirmed file.</li>
+<li class="">Consultation requires positive price and duration, a meeting method, a
+custom location for <code>OTHER</code>, and valid persisted weekly availability.</li>
+<li class="">Membership publication is rejected.</li>
+</ul>
+<p>Thumbnail and connected-calendar state are warnings only. Draft and Hidden
+updates keep their existing incomplete-authoring behavior.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="consultation-availability">Consultation availability<a href="#consultation-availability" class="hash-link" aria-label="Direct link to Consultation availability" title="Direct link to Consultation availability" translate="no">​</a></h2>
+<p>Consultation <code>details.weeklyAvailability</code> uses all seven weekday values and
+ordered <code>windows</code> containing <code>startTime</code> and <code>endTime</code>. Missing days are
+returned as disabled. On update, omitting the field preserves existing data;
+an explicit empty array clears it. Drafts may contain incomplete ranges, while
+publication requires an enabled, non-overlapping range with start before end.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="product-marketing-media">Product marketing media<a href="#product-marketing-media" class="hash-link" aria-label="Direct link to Product marketing media" title="Direct link to Product marketing media" translate="no">​</a></h2>
+<p>Product Media is independent metadata keyed by Product UUID. Owner/Admin raw
+uploads are proxied through the backend to DigitalOcean Spaces. Product
+responses include <code>imageUrl</code>, ordered <code>galleryImages</code>, and <code>promoVideo</code>.
+Thumbnail and promo replacement, gallery reorder/removal, and Product deletion
+remove active metadata and attempt storage cleanup. Accepted image types are
+JPEG, PNG, WebP, and GIF up to 10 MB; promo video accepts MP4 and WebM up to
+100 MB; a gallery holds at most 20 images. All limits are configurable.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="deletion">Deletion<a href="#deletion" class="hash-link" aria-label="Direct link to Deletion" title="Direct link to Deletion" translate="no">​</a></h2>
+<p>Product deletion:</p>
+<ol>
+<li class="">Resolves the concrete Product and checks authorization.</li>
+<li class="">Deletes entitlement records for the Product.</li>
+<li class="">Removes references from Membership feeds when deleting an included Course or Download.</li>
+<li class="">Removes Product Media metadata and attempts Spaces object cleanup.</li>
+<li class="">Dispatches deletion through the type handler.</li>
+<li class="">Records an Admin audit event when the current actor is an Admin.</li>
+</ol>
+<p>Concrete Product child records use cascade/orphan behavior and database foreign
+keys where configured. Deletion changes require both JPA and migration review.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sections">Sections<a href="#sections" class="hash-link" aria-label="Direct link to Sections" title="Direct link to Sections" translate="no">​</a></h2>
+<p>Canonical section routes work for Course and Download Products.</p>
+<ul>
+<li class="">A section belongs to exactly one concrete Product.</li>
+<li class="">Sections have title, description, position, and timestamps where supported.</li>
+<li class="">Course sections and Download sections use separate entity/table types.</li>
+<li class="">Services reject section operations for unsupported Product types.</li>
+<li class="">Updating or deleting a section verifies that it belongs to the Product path.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lessons">Lessons<a href="#lessons" class="hash-link" aria-label="Direct link to Lessons" title="Direct link to Lessons" translate="no">​</a></h2>
+<p>Lessons are supported only for Course Products.</p>
+<ul>
+<li class="">A lesson belongs to one Course section.</li>
+<li class="">Supported lesson types are <code>VIDEO</code>, <code>ARTICLE</code>, and <code>QUIZ</code>.</li>
+<li class="">Lessons have title, optional description, type-specific content fields,
+position, and timestamps.</li>
+<li class="">Section/Product ownership and parent-child relationships are checked before
+mutation.</li>
+</ul>
+<p>Video and article fields exist in persistence, but the current frontend does
+not yet provide a complete reliable media/article delivery workflow.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quizzes">Quizzes<a href="#quizzes" class="hash-link" aria-label="Direct link to Quizzes" title="Direct link to Quizzes" translate="no">​</a></h2>
+<p>A Quiz belongs one-to-one with a Course lesson. Authoring validates that the
+lesson is a Quiz lesson and that the actor owns the parent Product or is an
+Admin.</p>
+<p>Supported question types:</p>
+<ul>
+<li class=""><code>multiple_choice_single</code></li>
+<li class=""><code>multiple_choice_multi</code></li>
+<li class=""><code>true_false</code></li>
+</ul>
+<p>Important validation rules include:</p>
+<ul>
+<li class="">at least one question</li>
+<li class="">positive question points</li>
+<li class="">passing score between 0 and 100 when present</li>
+<li class="">option and correct-answer rules appropriate to the question type</li>
+<li class="">exactly two True/False options with one correct answer</li>
+<li class="">submitted question and option IDs must belong to the Quiz being answered</li>
+<li class="">duplicate answers for one question are rejected</li>
+</ul>
+<p>Scoring awards all points for an exactly correct answer and no points for a
+partially correct answer. Multiple-select answers must equal the complete set of
+correct options. If no passing score is configured, an attempt is considered
+passed.</p>
+<p>Every submission persists an attempt with points, percentage, pass result, and
+normalized answers.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="membership-authoring">Membership authoring<a href="#membership-authoring" class="hash-link" aria-label="Direct link to Membership authoring" title="Direct link to Membership authoring" translate="no">​</a></h2>
+<p>Membership aggregate routes are rooted at
+<code>/api/products/{productId}/membership</code>. Every operation requires Creator/Admin
+authentication plus owner-or-Admin access, including GET operations.</p>
+<p>The aggregate contains configuration, native content, feed entries, and an
+updated timestamp. Configuration currently owns only <code>orderingMode</code>.</p>
+<ul>
+<li class="">Native types are <code>POST</code>, <code>VIDEO</code>, and <code>RESOURCE</code>.</li>
+<li class="">Native statuses are <code>DRAFT</code>, <code>PUBLISHED</code>, and <code>HIDDEN</code>.</li>
+<li class="">Content type is immutable after creation.</li>
+<li class="">Video/Resource payloads persist server-generated <code>fileId</code> plus filename, MIME
+type, and size. Client URLs are ignored and no binary upload occurs.</li>
+<li class="">Content creation and its feed entry are one transaction; deletion removes both.</li>
+<li class="">Included Products must be unique same-owner Course or Download Products.</li>
+<li class="">Manual ordering stores normalized one-based positions. Newest-first ignores
+client order and uses server-owned <code>addedAt</code> values.</li>
+</ul>
+<p>This is Creator authoring persistence only. Membership Product publishing,
+checkout, subscriptions, entitlements, buyer feeds, and media delivery remain
+unimplemented.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="search-and-discovery">Search and discovery<a href="#search-and-discovery" class="hash-link" aria-label="Direct link to Search and discovery" title="Direct link to Search and discovery" translate="no">​</a></h2>
+<p>Product search uses Spring Data pagination and PostgreSQL trigram indexes for
+Course and Download names. User-scoped and global search routes exist.</p>
+<p>Search/summary routes currently do not all apply a consistent <code>PUBLISHED</code>
+filter. Before using them for a public catalogue, define and test server-side
+visibility semantics across all concrete Product tables, including
+Consultations.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="legacy-routes">Legacy routes<a href="#legacy-routes" class="hash-link" aria-label="Direct link to Legacy routes" title="Direct link to Legacy routes" translate="no">​</a></h2>
+<p>Legacy typed Product reads/deletes, Course section/lesson routes, and generic
+file routes coexist with the canonical nested API. Do not remove them without
+checking frontend usage and providing a migration path.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-pages">Related pages<a href="#related-pages" class="hash-link" aria-label="Direct link to Related pages" title="Direct link to Related pages" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/docs/developer/backend/api-and-swagger">API and Swagger</a></li>
+<li class=""><a class="" href="/docs/developer/backend/persistence-and-data-model">Persistence and Data Model</a></li>
+<li class=""><a class="" href="/docs/developer/backend/entitlements-and-content-access">Entitlements and Content Access</a></li>
+<li class=""><a class="" href="/docs/developer/api/products">Frontend Products API</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/backend/products-and-authoring.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/developer/backend/authentication-and-security"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Authentication and Security</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/developer/backend/entitlements-and-content-access"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Entitlements and Content Access</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#supported-product-model" class="table-of-contents__link toc-highlight">Supported Product model</a></li><li><a href="#shared-product-fields" class="table-of-contents__link toc-highlight">Shared Product fields</a></li><li><a href="#creation-rules" class="table-of-contents__link toc-highlight">Creation rules</a></li><li><a href="#updates" class="table-of-contents__link toc-highlight">Updates</a></li><li><a href="#publication-validation" class="table-of-contents__link toc-highlight">Publication validation</a></li><li><a href="#consultation-availability" class="table-of-contents__link toc-highlight">Consultation availability</a></li><li><a href="#product-marketing-media" class="table-of-contents__link toc-highlight">Product marketing media</a></li><li><a href="#deletion" class="table-of-contents__link toc-highlight">Deletion</a></li><li><a href="#sections" class="table-of-contents__link toc-highlight">Sections</a></li><li><a href="#lessons" class="table-of-contents__link toc-highlight">Lessons</a></li><li><a href="#quizzes" class="table-of-contents__link toc-highlight">Quizzes</a></li><li><a href="#membership-authoring" class="table-of-contents__link toc-highlight">Membership authoring</a></li><li><a href="#search-and-discovery" class="table-of-contents__link toc-highlight">Search and discovery</a></li><li><a href="#legacy-routes" class="table-of-contents__link toc-highlight">Legacy routes</a></li><li><a href="#related-pages" class="table-of-contents__link toc-highlight">Related pages</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Video Platform Docs, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

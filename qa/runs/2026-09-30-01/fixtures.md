@@ -66,3 +66,37 @@ Ten synthetic Products and three native Posts are now retained. The earlier two 
 ## Latest Admin continuation — 2 October 2026
 
 OWNER-A is restored to CREATOR, verified by browser and [read-only DB](evidence/admin-checks-creator-restored-db.json). No new synthetic fixtures or Admin Product mutation. Decimal Pricing remains Draft/price18 with unchanged update timestamp and zero target audit rows; its former working creation tab is now blank and was closed. Main Chrome769287843 retains Creator Dashboard. Temporary Admin/Guest tabs closed. Existing other-Creator Course inspected read-only for BUG-025; no original Product or landing config changed.
+
+## Isolated local reporting fixtures — 2 October 2026
+
+Synthetic browser identity qa-local-creator (qa@example.test) and existing frontend Customer/Order/Analytics/Dashboard fixture IDs are local only. They are not deployed records or real customer identities. No credentials, provider operations, persisted purchases or access grants. Details and reproduction sources are embedded in evidence/local-reporting-fixture-batch-2026-10-02.json.
+
+Temporary localhost tabs closed, both servers stopped, no listener remains on 4317, viewport reset. OWNER-A remains signed in as CREATOR on the deployed Dashboard. No real fixture state changed. Existing ten synthetic Products/three native Posts and pending cleanup/approval state remain unchanged; no database recheck is implied.
+
+## Latest mock boundary and role-home cycle — 2 October 2026
+
+qa-boundary-identity and qa-boundary-product are isolated local probe identifiers. In-memory qa-boundary.txt never left the fetch guard; simulated200 is not a stored file. False/true local servers stopped and temporary tab closed.
+
+OWNER-A temporarily changed CREATOR→USER→CREATOR using existing authorized developer controls. Reloaded homes and narrow read-only DB verify both roles; final role is only CREATOR. No Admin elevation, new identity, Product/Profile/Storefront change or actual upload. Chrome 769287843 retains Creator Dashboard with menu closed and sidebar expanded; viewport normal. Short-lived DB tunnels closed. Role state/proof is grouped in evidence/role-home-cycle-batch-2026-10-02.json.
+
+## Latest refresh and route fixtures — 2 October 2026
+
+Refresh reads/token values and qa-boundary-identity role profiles are isolated synthetic transport fixtures; no real cookies, stored identities or records. Development/production route harness denies non-profile HTTP and all fetch traffic. All local tabs/servers closed; no listener on 4317. Exact sources/hashes embedded in their batch JSON files.
+
+OWNER-A remains only CREATOR per current read-only DB check. Real Library/Admin child denials do not mutate roles/data. Existing 10 synthetic Products/3 Posts unchanged; no cleanup request completed or new fixture created. Original Chrome tab 769287843 is verified on /app with the Dashboard heading and CREATOR account control; handoff mark renewed.
+
+## Latest collection-menu fixture and role cycle — 2 October 2026
+
+qa-menu-001…100 are isolated local collection items priced 10 EUR and never created on the server. Both local stores are reseeded on each full load at 0/1/99/100 counts; no reload-persistence claim. Local origin 127.0.0.1:4318 is distinct from the deployed app. Shared non-profile Axios/fetch calls are denied. Exact temporary sources/config/hashes are embedded in the feature evidence.
+
+OWNER-A actual browser collections are empty in the temporary User session. No item added, removed, transferred or checked out. CREATOR→USER→CREATOR is verified in DB; only CREATOR restored. Main Chrome 769287843 is on /app with Dashboard/CREATOR visible, menu closed and handoff renewed. Temporary local tab/server closed; no listener on 4318. Existing real test fixtures unchanged.
+
+Read-only hosting probes reuse Published curriculum Product cb045295-cf70-445c-99a7-46fc0618e58e and OWNER-A Storefront; the verification query contains a synthetic invalid marker used only in static GETs. No real verification token or protected credentials used.
+
+## Marketing continuation — 2 October 2026
+
+OWNER-A temporarily User for static marketing controls, then restored Creator, verified through browser/read-only DB. No persistent content, collection, order, support, agreement or provider change. Original Dashboard retained; pending Admin elevation confirmation has not been acted on. Isolated4319 storage harness was never opened after automatic approval review disconnected; server stopped. No local storage test fixture is active.
+
+## Isolated backend API fixtures — 2 October 2026
+
+Temporary Java17/JUnit/MockMvc context uses real backend filters/services with synthetic User/Creator/Admin JWTs and matching CSRF. Disposable H2 data (PostgreSQL mode; Hibernate create-drop; Liquibase off) includes distinct buyers/owners, Course/Download/Consultation/legacy Membership, pending fake orders, active/revoked grants and readiness Article metadata. SDK/mail/Google mocks are verified unused. These records never reach the droplet. Per-test cleanup and terminal JVM shutdown completed; no fixture remains available by ID for later deployed testing. Recreate through embedded harness source. Original OWNER-A stays Creator with its previous real fixtures unchanged.
