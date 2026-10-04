@@ -1,0 +1,252 @@
+[
+  {
+    "key": "creator-customer-readonly",
+    "observed_at": "2026-10-03T10:32:59.928469+00:00",
+    "account_alias": "OWNER-A",
+    "scope": "Read-only synthetic Course and own grants/role",
+    "reader": [
+      {
+        "current_user": "vp_test_reader",
+        "read_only": "on",
+        "statement_timeout": "10s"
+      }
+    ],
+    "roles": [
+      {
+        "role_name": "CREATOR"
+      }
+    ],
+    "product": [
+      {
+        "id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+        "name": "QA-2026-09-30-01 Curriculum",
+        "type": "COURSE",
+        "status": "PUBLISHED",
+        "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+        "price": 0
+      }
+    ],
+    "grants": [
+      {
+        "product_id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+        "status": "ACTIVE",
+        "source": "FREE_ENROLLMENT",
+        "created_at": "2026-10-03T10:22:50.948104+00:00",
+        "revoked_at": null
+      }
+    ],
+    "buyer_order_count": [
+      {
+        "orders": 0
+      }
+    ],
+    "identity_shape": [
+      {
+        "first_name_sql_null": false,
+        "last_name_sql_null": true,
+        "last_name_literal_null": null,
+        "first_name_literal_null": false
+      }
+    ]
+  },
+  {
+    "key": "customer-browser-detail",
+    "observed_at": "2026-10-03T10:36:49.701Z",
+    "scope": "Real deployed Creator browser; own free-enrollment relationship only",
+    "summary": {
+      "relationship": "Buyer",
+      "customerSince": "Oct 3, 2026",
+      "spent": "EUR0",
+      "orders": 0,
+      "activeAccess": 1,
+      "membership": "None",
+      "identityDefect": "Displayed name appends literal null; sidebar omits it; detail reload reproduces."
+    },
+    "tabs": {
+      "Overview": "No tags; one Access granted activity for QA Curriculum, Oct3; contact values not retained.",
+      "Purchases": "No purchase history is available for this customer.",
+      "Access": "QA Curriculum / Course / Active / Free enrollment / Granted Oct3 / No end date",
+      "Notes": "Internal notes are not connected to a production persistence API yet."
+    },
+    "navigation": "Overview→Purchases→Access→Notes→Overview→reload; correct selected tabs and panels; reload returns Overview with same summary.",
+    "readOnlyBoundary": "No grant/revoke/email/edit-customer/notes-input/tag-input action in any inspected tab.",
+    "limits": "No paid/refunded/failed orders, manual or revoked grants, multiple customers or >20 events. These matrices remain unexecuted.",
+    "screenshot": "evidence/customer-null-name-2026-10-03.jpg"
+  },
+  {
+    "key": "populated-unavailable-filter-matrix",
+    "observed_at": "2026-10-03T10:36:49.703Z",
+    "observations": [
+      {
+        "filter": "relationship",
+        "selection": "Active member",
+        "baselineBuyerCount1": true,
+        "selected": true,
+        "zeroCount": true,
+        "noCustomerLink": true,
+        "emptyCopy": true
+      },
+      {
+        "filter": "relationship",
+        "selection": "Past due",
+        "baselineBuyerCount1": true,
+        "selected": true,
+        "zeroCount": true,
+        "noCustomerLink": true,
+        "emptyCopy": true
+      },
+      {
+        "filter": "relationship",
+        "selection": "Waitlist",
+        "baselineBuyerCount1": true,
+        "selected": true,
+        "zeroCount": true,
+        "noCustomerLink": true,
+        "emptyCopy": true
+      },
+      {
+        "filter": "membership",
+        "selection": "Active",
+        "baselineNoMembershipCount1": true,
+        "selected": true,
+        "zeroCount": true,
+        "noCustomerLink": true,
+        "emptyCopy": true
+      },
+      {
+        "filter": "membership",
+        "selection": "Past due",
+        "baselineNoMembershipCount1": true,
+        "selected": true,
+        "zeroCount": true,
+        "noCustomerLink": true,
+        "emptyCopy": true
+      },
+      {
+        "filter": "membership",
+        "selection": "Cancelled",
+        "baselineNoMembershipCount1": true,
+        "selected": true,
+        "zeroCount": true,
+        "noCustomerLink": true,
+        "emptyCopy": true
+      }
+    ],
+    "reset": "Clear filters restores one Buyer and All statuses / All products / All membership.",
+    "audit": "Every unavailable selection tested from populated supported baseline to avoid stale equal-zero inference; six passing cells plus Buyer and No membership controls."
+  },
+  {
+    "key": "customer-search-product-refinements",
+    "observed_at": "2026-10-03T10:36:49.703Z",
+    "observations": [
+      {
+        "key": "unmatched-name",
+        "customers": 0,
+        "emptyCopy": "No customers match \"QA-no-such-customer-2026-10-03\".",
+        "fields": "All statuses / All products / All membership"
+      },
+      {
+        "key": "mixed-case-name",
+        "customers1": true,
+        "matchingOwnCustomerLink": true
+      },
+      {
+        "key": "unassociated-synthetic-download-with-name-search",
+        "customers0": true,
+        "selected": true,
+        "actualEmptyCopy": "No customers match \"tAmAs\".",
+        "note": "Search copy takes precedence over filter copy; corrected harness expectation, not a product defect."
+      },
+      {
+        "key": "associated-free-course",
+        "customers1": true,
+        "selected": true
+      }
+    ],
+    "reset": "Search cleared; Product reset to All products; one Buyer restored.",
+    "limits": "One Customer only; email search, result ordering and pagination/reset from page>0 not established."
+  },
+  {
+    "key": "current-source-scope",
+    "sources": [
+      {
+        "repository": "video-platform",
+        "path": "src/main/java/com/myproject/video/video_platform/service/creator/CreatorReportingSupport.java",
+        "sha256": "9281eb6e7691eb347bc283a337ce0003af1b04b8eb0d5c50b5d19cca904af196"
+      },
+      {
+        "repository": "video-platform",
+        "path": "src/main/java/com/myproject/video/video_platform/service/creator/CreatorCustomersService.java",
+        "sha256": "1b75de27670135f3e3b341a8e93d3e301ed682dca6fd3cfae18e5969dc3b5f4c"
+      },
+      {
+        "repository": "video-platform",
+        "path": "src/main/java/com/myproject/video/video_platform/entity/entitlement/ProductEntitlement.java",
+        "sha256": "25a57aa16e66393a49fcd9e99918ede0c5b261e7d4ba009b78f1794cc24b3876"
+      },
+      {
+        "repository": "video-platform-ui",
+        "path": "src/domains/app/pages/creator-specific/customers/customer-detail.component.tsx",
+        "sha256": "82302e13148e6fb9188034e2d4c1753af50ab71f42e8f1e1defec10620406857"
+      },
+      {
+        "repository": "video-platform-ui",
+        "path": "src/domains/app/pages/creator-specific/customers/creator-customers.utils.ts",
+        "sha256": "48c5a79a1a724dd6474a0a1b434846de7e66c5fedd5882b7d25cc73a0a2e9874"
+      }
+    ],
+    "local_name_helper": "CreatorReportingSupport.name(User) returns (user.getFirstName() + \" \" + user.getLastName()).trim(); a null lastName becomes the literal null. Customer list/detail call this helper; frontend preserves nonblank customer.name. This supports the current-source explanation; deployed backend revision is unknown.",
+    "source_mapping": "FREE_ENROLLMENT maps to free, displayed Free enrollment. ACTIVE maps to active. Customer since takes earliest qualifying paid/order or entitlement-created date. Notes/tags are returned empty.",
+    "backend_revision": "1b860413436d5f850af0ecc228c5b613ebae4836",
+    "frontend_revision": "12765d4568796f8472124383a221b74d82850c5b",
+    "db_source": "import subprocess,json,datetime,sys,os\nfrom pathlib import Path\nstage=sys.argv[1]\nowner='a1ebdc7a-d497-4334-9fed-309aec071b25'\npid='cb045295-cf70-445c-99a7-46fc0618e58e'\nqueries={\n'reader':\"SELECT current_user,current_setting('default_transaction_read_only') AS read_only,current_setting('statement_timeout') AS statement_timeout\",\n'roles':f\"SELECT r.role_name FROM user_roles ur JOIN roles r ON r.role_id=ur.role_id WHERE ur.user_id='{owner}'\",\n'product':f\"SELECT id,name,type,status,user_id,price FROM course_products WHERE id='{pid}'\",\n'grants':f\"SELECT product_id,status,source,created_at,revoked_at FROM product_entitlements WHERE user_id='{owner}' AND product_id='{pid}'\",\n'buyer_order_count':f\"SELECT count(*) AS orders FROM commerce_orders WHERE buyer_user_id='{owner}'\",\n'identity_shape':f\"SELECT first_name IS NULL AS first_name_sql_null,last_name IS NULL AS last_name_sql_null,lower(trim(last_name))='null' AS last_name_literal_null,lower(trim(first_name))='null' AS first_name_literal_null FROM users WHERE user_id='{owner}'\"\n}\na={'key':stage,'observed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'account_alias':'OWNER-A','scope':'Read-only synthetic Course and own grants/role'}\nfor key,q in queries.items():\n r=subprocess.run(['psql','-w','-h','127.0.0.1','-p','15432','-U','vp_test_reader','-d','video_platform_db','-At','-c',\"SELECT coalesce(json_agg(q),'[]'::json) FROM (\"+q+') q;'],capture_output=True,text=True,timeout=15,env={**os.environ,'PGCONNECT_TIMEOUT':'8'})\n if r.returncode:raise SystemExit('Read-only query failed: '+key)\n a[key]=json.loads(r.stdout)\nassert a['reader'][0]['read_only']=='on'\np=Path('/Users/tamastyukodi/Development/video-platform-UI-docs/qa/runs/2026-09-30-01/evidence/browser-customer-relationship-batch-2026-10-03.json')\nx=json.loads(p.read_text()) if p.exists() else []\nassert stage not in {v['key'] for v in x}\nx.append(a);p.write_text(json.dumps(x,indent=2)+'\\n')\nprint(json.dumps(a))\n",
+    "db_source_sha256": "85dc4c92cf9241cc086b152edefc83c491b67c4e56fb34ba380f131cb633dd82",
+    "no_source_changes": true
+  },
+  {
+    "key": "free-enrollment-reporting-comparison",
+    "observed_at": "2026-10-03T10:39:53.970Z",
+    "scope": "Deployed Creator browser read-only reporting after retained free grant; Last30days where available.",
+    "views": {
+      "Customers": "One Buyer, one Course, EUR0 spend; detail0 orders/1 active access.",
+      "Analytics": "Last30days: RevenueEUR0, Orders0, Customers1, Customer growth total1/new1; no Product performance; refund rate0.0%, failed payments0.",
+      "Sales": "Last30days: RevenueEUR0, Orders0, RefundsEUR0, Failed payments0; 0 orders, No sales yet.",
+      "Dashboard": "RevenueEUR0, Sales0, Customers1; membership unavailable."
+    },
+    "limits": "Only free-enrollment portion. No paid/failed/refund operations, multi-item order, fixed Clock or cross-view UTC-window response assertion. Parent ANALYTICS-014 remains partial."
+  },
+  {
+    "key": "cleanup-and-resume",
+    "observed_at": "2026-10-03T10:39:53.970Z",
+    "state": "Creator unchanged; filters/search cleared; /app Dashboard; account menu closed. Existing synthetic ACTIVE free grant retained, zero buyer orders. No Product/profile/grant mutation this continuation.",
+    "diagnostics": "Restricted read-only SQL; owned tunnel terminated. No server error requiring a correlated log excerpt.",
+    "next": "Remaining browser financial/access matrices need distinct qualified buyer and paid/refunded/manual/revoked test data; controlled failures and multiple-customer pagination remain. Pending Admin/local-storage guidance unchanged."
+  },
+  {
+    "key": "email-search-normalization-continuation",
+    "observed_at": "2026-10-03T16:02:39.316Z",
+    "scope": "Actual deployed browser, OWNER-A Creator, one existing free-only customer. Each positive query follows an unmatched-email zero-result control; no multiple-customer/pagination claim. Existing contact value omitted.",
+    "checks": [
+      {
+        "cell": "unmatched-email-control",
+        "customer_links": 0,
+        "empty_copy_visible": true
+      },
+      {
+        "cell": "mixed-case-existing-email",
+        "customer_links": 1,
+        "clear_visible": true
+      },
+      {
+        "cell": "existing-email-surrounding-whitespace",
+        "customer_links": 1
+      },
+      {
+        "cell": "clear-search-restores-default",
+        "search_empty": false,
+        "customer_links": 1,
+        "clear_visible": false
+      }
+    ]
+  }
+]

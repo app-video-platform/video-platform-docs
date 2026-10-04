@@ -100,3 +100,79 @@ OWNER-A temporarily User for static marketing controls, then restored Creator, v
 ## Isolated backend API fixtures — 2 October 2026
 
 Temporary Java17/JUnit/MockMvc context uses real backend filters/services with synthetic User/Creator/Admin JWTs and matching CSRF. Disposable H2 data (PostgreSQL mode; Hibernate create-drop; Liquibase off) includes distinct buyers/owners, Course/Download/Consultation/legacy Membership, pending fake orders, active/revoked grants and readiness Article metadata. SDK/mail/Google mocks are verified unused. These records never reach the droplet. Per-test cleanup and terminal JVM shutdown completed; no fixture remains available by ID for later deployed testing. Recreate through embedded harness source. Original OWNER-A stays Creator with its previous real fixtures unchanged.
+
+## Payment-state local fixtures — 3 October 2026
+
+Disposable local H2 fixtures include multi-item pending/paid/failed/refunded/expired Orders, exact purchase-item references, unrelated free/Admin/purchase grants, all three synthetic roles, concurrent existing enrollment relationships and profile/flag configuration cells. No record is created on the droplet. PAY-014 temporarily widens only the H2 Course price column to seed unsupported legacy precision, restores it in finally, then cleans fixtures. PAY-022/026 use one reviewed ephemeral loopback-only real server; listener54167 is absent after terminal exit0. All contexts/JVMs and fixture cleanup completed; recreate with embedded source rather than expecting IDs to persist.
+
+OWNER-A and previous real synthetic Products/Posts remain unchanged; browser untouched this continuation. No new live read-only DB/log query or role verification implied. Original last verified role/home remains Creator Dashboard. The independent local backend runtime approval does not grant permission for pending Admin elevation or the unexecuted storage-browser action. Evidence is consolidated in backend-payment-state-batch-2026-10-03.json.
+
+## Content, session and profile fixtures — 3 October 2026
+
+All User/Creator/Admin JWTs, CSRF pairs, refresh rows, profiles, social links, Course bodies/videos, Download metadata and active/revoked entitlements are disposable local fixtures. Actual HTTP uses an ephemeral 127.0.0.1 server; listener54330 is absent after shutdown. Per-test rows and JVMs are cleaned. Role replacement and sole-Admin demotion apply only locally; no real role changes. Profile fixture columns match read-only-confirmed deployed widths, without modifying the droplet. That metadata query read no account rows and its owned SSH tunnel closed. Recreate fixtures from the embedded batch sources, not the transient UUIDs.
+
+## Product API fixtures — 3 October 2026
+
+Disposable Course/Download/Consultation/Membership Products, separate Creator owners, audit records, nested sections/Article/video markers and Download file metadata cover ownership and mutation tests. Nonblank Download paths are synthetic readiness metadata; no file was uploaded or signed/delivered, and external SDK mocks were unused. Consultation schedules cover Draft/Hidden, missing settings, disabled Monday and overlapping Monday windows; rejected corrections roll back, while two-save control corrections occur only locally. No real schedule changed.
+
+Fake purchase/live pending/expired pending orders are local only. Purchase entitlements come from simulated payment completion; no provider is contacted. Expired-checkout deletion retains order snapshots. Per-test audit/Product/commerce/nested-data cleanup and all four JVM shutdowns completed. There is no new backend server/listener. Reproduction sources and sanitized outcomes are in backend-product-ownership-publication-batch-2026-10-03.json.
+
+OWNER-A and existing ten real synthetic Products/three Posts are unchanged by these two continuations. Browser was not queried; no fresh browser/account-role verification is implied. Last verified real state remains Creator Dashboard. Pending real Admin elevation/local-storage guidance and prior fixture cleanup/retention questions remain unchanged.
+
+## Quiz and nested API fixtures — 3 October 2026
+
+Disposable Quiz definitions/options/attempts, Course/Download sections and all lesson types cover authoring, learner and legacy matrices. Synthetic Guest/User/Creator/Admin cookies and entitlements belong only to the local H2 tests. Cleanup removes attempts before parent Products and Users. No listener, upload, provider or live database write. Reproduction sources, final assertions and cleanup outcomes are retained in backend-quiz-nested-authoring-batch-2026-10-03.json. Real browser fixtures are tracked separately below when their state changes.
+
+## Deployed free Course grant — 3 October 2026
+
+OWNER-A has one retained ACTIVE free enrollment for Published Curriculum cb045295-cf70-445c-99a7-46fc0618e58e, created through the User browser cart. Reader confirms no matching grant before, one after, zero buyer orders throughout. Product remains unchanged. Cart clears; Library card persists after reload. Creator restored and verified. This creates a real Customer relationship (Dashboard Customers1); previous empty-history assumptions no longer apply to Customers. Revenue/Sales remain0. No entitlement cleanup/deletion. Use this fixture for further read-only Library/Customers/reporting assertions. It is an owner enrollment and cannot prove non-owner access gating.
+
+## Customer read-only fixture verification — 3 October 2026
+
+Existing OWNER-A grant for QA Curriculum remains ACTIVE/FREE_ENROLLMENT, created2026-10-03T10:22:50.948104Z, not revoked. No new fixture/mutation this continuation. Creator role and zero buyer orders verified. Customers and reporting derive the sole free relationship: customer count1, orders/revenue0. Surname SQLNULL confirmed as field-shape boolean only for BUG-003; no profile field changed or account contact value retained in the feature JSON. Main browser returns to Creator Dashboard; search/filter controls cleared. Financial/manual/revoked/multi-customer variants remain unavailable.
+
+## Persistent reporting seed prepared — 3 October 2026
+
+The user explicitly authorizes retaining synthetic data in the development cloud database. The prepared seed is `../../../../video-platform/tools/qa/seed-reporting-development.sql` (sibling backend repository). It has **not been run on the droplet**. Existing observer SSH and `vp_test_reader` remain read-only; insertion needs the existing database owner on the droplet.
+
+The batch creates 25 disabled fictional User accounts, 30 Course and 2 Download Products owned by OWNER-A, all Hidden, 29 synthetic FAKE-provider Orders, 31 immutable item snapshots, 29 attempts, 28 event markers and 77 entitlements. Main buyer: `bbc9d999-927d-3212-5dc6-5db9d442297e`. Namespace: `vpqa:2026-10-03:reporting-v1:`; display prefix: `QA 2026-10-03`; emails use reserved `example.invalid`. No synthetic account can log in, no Admin is created, and no existing record or role is updated. Downloads have no storage files; they are historical reporting fixtures.
+
+Initial retained paid revenue for this batch is EUR316.25 across 25 paid Orders; one main multi-item paid Order is EUR16.25, one refund EUR12.50, one failed EUR11.50, one pending EUR5.99 and one expired EUR2.99. Main buyer has two completed/refunded Orders, EUR16.25 retained spend, 29 access records (26 Active, 3 Revoked), and more than 20 activity events. Pending expires 20 minutes after initial insertion and may be changed by the normal expiry scanner; rerunning does not reset it. Other history spans 1–116 days. The preexisting free-only OWNER-A relationship remains separate.
+
+One transaction; collision rollback; deterministic IDs; an intact existing batch is skipped rather than reset. Disposable PostgreSQL15 validation reproduces deployed PostgreSQL17 columns/constraints plus the known role/purchase indexes, verifies row counts, item totals, idempotent rerun, collision rollback, original owner/role preservation and no reset after pending expiry. This is preparation evidence, not browser/catalog execution or proof of payment processing. Schema and validation are consolidated in `evidence/cloud-reporting-fixture-preparation-2026-10-03.json`. No Docusaurus product behavior changes.
+
+## Cloud reporting fixtures installed — 3 October 2026
+
+User executed the revised paste-safe seed at the existing root/database-owner console. The transaction returned DO/DO/COMMIT. Read-only cloud observation at16:09UTC confirms25 fixture Users,30 Courses,2 Downloads,29 Orders and77 entitlements; all synthetic accounts disabled and all32 Products Hidden. No permission change to observer/reader. Seed anchor16:07UTC; pending Order `3f3f90a3-17de-a894-55b3-110daba7dc1f` expires16:27UTC (18:27Madrid) and may transition normally. Do not reset it by rerunning the seed. Main buyer detail and Sales drawers are now verified through the deployed browser.
+
+Counts/IDs/timestamps and exact synthetic main-buyer grant/purchase rows are consolidated in `evidence/browser-populated-reporting-batch-2026-10-03.json`. The real list contains26 relationships including the preexisting OWNER-A free-only relationship. Current Creator list page size is6, not20; five pages verified. Fixtures are retained for future visualization and tests as explicitly requested.
+
+## Reporting continuation checkpoint — 3 October 2026
+
+1010 assessed variations (867 Pass, 88 Fail, 46 Needs clarification, 9 Blocked); 1057 historical attempts. Originals: 169 not started / 195 partial / 129 fully assessed (116 Pass, 6 Fail, 7 Needs clarification); 364 still need execution/additional checks.
+
+Synthetic batch unchanged and retained. No write access, role change, original-record update, financial/provider/Spaces action or new evidence file. Browser defaults restored; Creator Dashboard retained. Customer JSON now inspected; Analytics/Sales direct response opening still blocked by browser client. Exact pending expiry16:27UTC: fresh reads omit overduePENDING while underlying record remainsPENDING. See session-notes.md for remaining tests and human-opened response request.
+
+## Isolated reporting API checkpoint — 3 October 2026
+
+1040 assessed variations (897Pass,88Fail,46Needs clarification,9Blocked);1087 historical attempts.493originals=163not started/195partial/135fully assessed (122Pass,6Fail,7Needs clarification);358 still need execution/additional checks.
+
+8/8 MockMvc/JPA methods pass with disposableH2/fixedClock; 30 new passingAPI variations. All local fixture tables empty afterwards; SDK/mail unused andJVMended. No clouddata/access/role or livebrowser change. Existing reportingJSON extended, no new evidence file. See session-notes.md.
+
+## Exact reporting checkpoint — 3 October 2026
+
+1065 assessed variations (922 Pass, 88 Fail, 46 Needs clarification, 9 Blocked);1112 historical attempts.493 originals:163 not started,195 partial,135 fully assessed.358 originals still need checks.
+
+Seven local read-model methods pass; local fixtures cleaned and SDK/mail unused. Authorized Creator→User→Creator completed; Creator Dashboard retained. Cloud fixtures unchanged. Human-opened JSON response request remains pending. No new repository evidence file. See session-notes.md.
+
+## Storefront and landing checkpoint — 3 October 2026
+
+1130 assessed variations (987 Pass, 88 Fail, 46 Needs clarification, 9 Blocked); 1177 historical attempts. Of 493 originals: 156 not started, 195 partial, 142 fully assessed. 351 originals still need checks.
+
+Local contract methods 6/6 pass; all disposable tables cleaned, external SDK/mail unused. Real browser theme Save/Reset/reload/public checks passed. Retained new Storefront config 3e47bc68-14b7-4075-b0e7-d2678be490d8 restores DARK/#ffbd41/MODERN with null feature and empty custom order. All 51 Product owners/statuses/update timestamps unchanged; no profile or role change. See session notes and existing feature evidence batches.
+
+## Landing browser checkpoint — 3 October 2026
+
+1140 assessed variations (995 Pass, 90 Fail, 46 Needs clarification, 9 Blocked); 1187 historical attempts. Of 493 originals: 156 not started, 193 partial, 144 fully assessed. 349 originals still need checks.
+
+Four actual owner landing editors: defaults and native1200 limit pass; drafts Reset/reload discarded, zero saved landing rows. No Product/profile/landing mutation; all 51 Product metadata unchanged. Existing BUG-002 reconfirmed on positive-priced Download and Membership. Creator Dashboard restored and navigation expanded. See session notes/existing evidence.

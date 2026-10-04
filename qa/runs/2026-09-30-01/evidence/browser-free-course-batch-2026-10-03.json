@@ -1,0 +1,354 @@
+[
+  {
+    "key": "before-free-cart",
+    "observed_at": "2026-10-03T10:21:48.199136+00:00",
+    "account_alias": "OWNER-A",
+    "scope": "Read-only synthetic Course and own grants/role",
+    "reader": [
+      {
+        "current_user": "vp_test_reader",
+        "read_only": "on",
+        "statement_timeout": "10s"
+      }
+    ],
+    "roles": [
+      {
+        "role_name": "USER"
+      }
+    ],
+    "product": [
+      {
+        "id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+        "name": "QA-2026-09-30-01 Curriculum",
+        "type": "COURSE",
+        "status": "PUBLISHED",
+        "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+        "price": 0.0
+      }
+    ],
+    "grants": [],
+    "order_schema": [
+      {
+        "column_name": "id"
+      },
+      {
+        "column_name": "buyer_user_id"
+      },
+      {
+        "column_name": "creator_user_id"
+      },
+      {
+        "column_name": "status"
+      },
+      {
+        "column_name": "currency"
+      },
+      {
+        "column_name": "subtotal_minor"
+      },
+      {
+        "column_name": "total_minor"
+      },
+      {
+        "column_name": "idempotency_key"
+      },
+      {
+        "column_name": "checkout_fingerprint"
+      },
+      {
+        "column_name": "expires_at"
+      },
+      {
+        "column_name": "paid_at"
+      },
+      {
+        "column_name": "failed_at"
+      },
+      {
+        "column_name": "refunded_at"
+      },
+      {
+        "column_name": "created_at"
+      },
+      {
+        "column_name": "updated_at"
+      }
+    ]
+  },
+  {
+    "key": "before-free-checkout",
+    "observed_at": "2026-10-03T10:22:37.183261+00:00",
+    "account_alias": "OWNER-A",
+    "scope": "Read-only synthetic Course and own grants/role",
+    "reader": [
+      {
+        "current_user": "vp_test_reader",
+        "read_only": "on",
+        "statement_timeout": "10s"
+      }
+    ],
+    "roles": [
+      {
+        "role_name": "USER"
+      }
+    ],
+    "product": [
+      {
+        "id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+        "name": "QA-2026-09-30-01 Curriculum",
+        "type": "COURSE",
+        "status": "PUBLISHED",
+        "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+        "price": 0.0
+      }
+    ],
+    "grants": [],
+    "buyer_order_count": [
+      {
+        "orders": 0
+      }
+    ],
+    "order_schema": [
+      {
+        "column_name": "id"
+      },
+      {
+        "column_name": "buyer_user_id"
+      },
+      {
+        "column_name": "creator_user_id"
+      },
+      {
+        "column_name": "status"
+      },
+      {
+        "column_name": "currency"
+      },
+      {
+        "column_name": "subtotal_minor"
+      },
+      {
+        "column_name": "total_minor"
+      },
+      {
+        "column_name": "idempotency_key"
+      },
+      {
+        "column_name": "checkout_fingerprint"
+      },
+      {
+        "column_name": "expires_at"
+      },
+      {
+        "column_name": "paid_at"
+      },
+      {
+        "column_name": "failed_at"
+      },
+      {
+        "column_name": "refunded_at"
+      },
+      {
+        "column_name": "created_at"
+      },
+      {
+        "column_name": "updated_at"
+      }
+    ]
+  },
+  {
+    "key": "after-free-checkout",
+    "observed_at": "2026-10-03T10:23:54.205613+00:00",
+    "account_alias": "OWNER-A",
+    "scope": "Read-only synthetic Course and own grants/role",
+    "reader": [
+      {
+        "current_user": "vp_test_reader",
+        "read_only": "on",
+        "statement_timeout": "10s"
+      }
+    ],
+    "roles": [
+      {
+        "role_name": "USER"
+      }
+    ],
+    "product": [
+      {
+        "id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+        "name": "QA-2026-09-30-01 Curriculum",
+        "type": "COURSE",
+        "status": "PUBLISHED",
+        "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+        "price": 0.0
+      }
+    ],
+    "grants": [
+      {
+        "product_id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+        "status": "ACTIVE"
+      }
+    ],
+    "buyer_order_count": [
+      {
+        "orders": 0
+      }
+    ],
+    "order_schema": [
+      {
+        "column_name": "id"
+      },
+      {
+        "column_name": "buyer_user_id"
+      },
+      {
+        "column_name": "creator_user_id"
+      },
+      {
+        "column_name": "status"
+      },
+      {
+        "column_name": "currency"
+      },
+      {
+        "column_name": "subtotal_minor"
+      },
+      {
+        "column_name": "total_minor"
+      },
+      {
+        "column_name": "idempotency_key"
+      },
+      {
+        "column_name": "checkout_fingerprint"
+      },
+      {
+        "column_name": "expires_at"
+      },
+      {
+        "column_name": "paid_at"
+      },
+      {
+        "column_name": "failed_at"
+      },
+      {
+        "column_name": "refunded_at"
+      },
+      {
+        "column_name": "created_at"
+      },
+      {
+        "column_name": "updated_at"
+      }
+    ]
+  },
+  {
+    "key": "creator-restored",
+    "observed_at": "2026-10-03T10:24:49.196500+00:00",
+    "account_alias": "OWNER-A",
+    "scope": "Read-only synthetic Course and own grants/role",
+    "reader": [
+      {
+        "current_user": "vp_test_reader",
+        "read_only": "on",
+        "statement_timeout": "10s"
+      }
+    ],
+    "roles": [
+      {
+        "role_name": "CREATOR"
+      }
+    ],
+    "product": [
+      {
+        "id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+        "name": "QA-2026-09-30-01 Curriculum",
+        "type": "COURSE",
+        "status": "PUBLISHED",
+        "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+        "price": 0.0
+      }
+    ],
+    "grants": [
+      {
+        "product_id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+        "status": "ACTIVE"
+      }
+    ],
+    "buyer_order_count": [
+      {
+        "orders": 0
+      }
+    ],
+    "order_schema": [
+      {
+        "column_name": "id"
+      },
+      {
+        "column_name": "buyer_user_id"
+      },
+      {
+        "column_name": "creator_user_id"
+      },
+      {
+        "column_name": "status"
+      },
+      {
+        "column_name": "currency"
+      },
+      {
+        "column_name": "subtotal_minor"
+      },
+      {
+        "column_name": "total_minor"
+      },
+      {
+        "column_name": "idempotency_key"
+      },
+      {
+        "column_name": "checkout_fingerprint"
+      },
+      {
+        "column_name": "expires_at"
+      },
+      {
+        "column_name": "paid_at"
+      },
+      {
+        "column_name": "failed_at"
+      },
+      {
+        "column_name": "refunded_at"
+      },
+      {
+        "column_name": "created_at"
+      },
+      {
+        "column_name": "updated_at"
+      }
+    ]
+  },
+  {
+    "key": "browser-observations",
+    "observed_at": "2026-10-03T10:26:13.815151+00:00",
+    "browser": "Chrome existing signed-in tab769287843",
+    "deployed_versions": "unknown",
+    "steps": [
+      "Creator Products shows Curriculum Published Free. Authorized switch to User; User home verified.",
+      "Explore View Product opens Curriculum COURSE URL. Edit product and all Course content visible before enrollment because caller is owner; not a non-owner entitlement transition.",
+      "Explore Add to cart changes to Already in cart, badge1. Cart menu Go to checkout opens /app/cart. Only Curriculum present, EUR0, Total free.",
+      "Proceed to checkout shows disabled Processing..., then navigates to /app/library/all-products. Badge removed, exactly the Curriculum card shown.",
+      "Page reload shows loading then same Curriculum card. Open leads to /app/product/cb045295-cf70-445c-99a7-46fc0618e58e and Course content.",
+      "Switch to Creator, open /app, initial transient guest shell settles to Creator Dashboard. Role CREATOR and Customers1, Revenue0, Sales0 visible."
+    ],
+    "limitations": [
+      "Single free published owned Course only; multiple-item and other-role variations remain.",
+      "Non-owner DISC-018 transition not run: separate buyer needed. Owner bypass already exposes content without grant.",
+      "Existing Article raw JSON display observed again; no retest outcome or additional defect inferred.",
+      "One Playwright Explore click left focus in search; native AX navigation succeeded. No navigation defect inferred from this automation mismatch."
+    ],
+    "retained_state": "One ACTIVE free enrollment for OWNER-A synthetic Curriculum; no monetary order. Product remains Published unchanged. Creator restored. No grant deletion.",
+    "screenshot": "evidence/browser-free-course-library-2026-10-03.jpg",
+    "diagnostics": "Read-only SQL before/after and role restoration; no correlated server failure requiring raw logs."
+  }
+]
