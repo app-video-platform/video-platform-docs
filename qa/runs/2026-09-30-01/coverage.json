@@ -336,8 +336,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-010 \u2014 Contact agreement checkbox\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Otherwise complete contact form.\n- **Steps:** Toggle agreement on/off, then submit each state.\n- **Expected results:** expected result needs investigation: generic change handling reads value rather than checked; do not infer consent enforcement or delivery.\n- **Required environment / external service:** Frontend build; backend only for subsequent authentication or app navigation.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 8
   },
   {
     "id": "MKT-011",
@@ -592,8 +593,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### AUTH-017 \u2014 Unused recovery API boundary\n\n- **Feature area:** Registration, sign-in and account recovery. **Test level:** API integration. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest with isolated synthetic account fixtures. Authenticated API fixture and valid CSRF. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST /api/auth/forgot with synthetic email, matching the unused auth client function.\n- **Expected results:** No backend recovery controller exists; no reset mail or password mutation is supported. expected result needs investigation for exact unmapped-route status.\n- **Required environment / external service:** Frontend and backend; synthetic credentials supplied privately by fixtures; SendGrid test mailbox for email flows.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 8
   },
   {
     "id": "AUTH-018",
@@ -1231,8 +1233,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### DISC-012 \u2014 Owner search API\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** API integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Two Creators with identical product titles. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /api/products/search/{userId}/products?term={title}&page=0&size=20; vary userId and sort.\n- **Expected results:** Results scoped to requested owner and Product name; author-name matches belong only to global search. Lifecycle-summary conflict still applies.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 37
   },
   {
     "id": "DISC-013",
@@ -1274,8 +1277,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-016 \u2014 Public metadata fallback\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Published Product with missing image, creator profile/config read unavailable.\n- **Steps:** Open Product and inspect hero, pricing and creator area.\n- **Expected results:** Public-safe fallback presentation is used; missing media/profile/config is not replaced with fabricated commercial data.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 5
   },
   {
     "id": "DISC-017",
@@ -1617,8 +1621,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PROD-024 \u2014 Publish Course rejection\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Otherwisevalid Course with blank name. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PATCH /api/products/{id} with status PUBLISHED, including bypass of browser validation.\n- **Expected results:** 422 name error and no published transition; correcting name permits retry. Section/lesson/price rejection has separate PAPI cases.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 16
   },
   {
     "id": "PROD-025",
@@ -1627,8 +1632,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PROD-025 \u2014 Publish Download rejection\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. No files or metadata whose storage path is blank. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PATCH status PUBLISHED; compare browser readiness for file with only filename/ID.\n- **Expected results:** Server rejects missing deliverable path with422; expected result needs investigation where UI marks metadata-only file ready.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 16
   },
   {
     "id": "PROD-026",
@@ -1637,8 +1643,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PROD-026 \u2014 Publish Consultation rejection\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Malformed weekly availability time strings on otherwise valid Consultation. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PATCH details containing malformed time strings and status PUBLISHED; correct times and retry.\n- **Expected results:** Malformed time normalization rejects before publication with400; no published transition. Validly parsed but unready price/duration/method/location/window cases are separate PAPI cases.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 24
   },
   {
     "id": "PROD-027",
@@ -1668,8 +1675,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PROD-029 \u2014 Hidden lifecycle API\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Ready Product in each type; owner/Admin. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PATCH status HIDDEN; GET as owner and guest; restore supported Product to PUBLISHED.\n- **Expected results:** Hidden metadata remains manageable; guest full read denied, storefront excludes it; entitled API access can remain. Membership cannot restore to PUBLISHED.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 8
   },
   {
     "id": "PROD-030",
@@ -1780,8 +1788,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PAPI-006 \u2014 Admin cross-owner mutation\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 persisted Product contract. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; authenticated cookie and matching CSRF for every mutation. Admin; Creator A Product. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PATCH name/description; GET as owner; use authoring endpoints on same Product.\n- **Expected results:** Admin mutation is allowed without changing owner; persisted fields visible to owner and audit reflects Admin action.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 4
   },
   {
     "id": "PAPI-007",
@@ -1814,9 +1823,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PAPI-009 \u2014 Typed legacy read\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 persisted Product contract. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; authenticated cookie and matching CSRF for every mutation. Published Product and correct/wrong type discriminators. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /api/products/getProduct?productId={id}&type={type}; compare canonical GET /api/products/{id}.\n- **Expected results:** Correct type returns access-filtered response; wrong type is rejected/missing under handler resolution, not a different Product. Exact invalid-type error follows exception mapping.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 32
   },
   {
     "id": "PAPI-010",
@@ -1825,9 +1834,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PAPI-010 \u2014 Full owner list filtering\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 persisted Product contract. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; authenticated cookie and matching CSRF for every mutation. Owner with Draft/Hidden/Published Products; Guest and entitled User sessions. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /api/products?userId={ownerId} under each session, then as owner/Admin.\n- **Expected results:** Full-list service filters inaccessible Products; owner/Admin can read own/managed content. Summary ownerId API has different visibility and is investigated under discovery.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 14
   },
   {
     "id": "PAPI-011",
@@ -1836,9 +1845,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PAPI-011 \u2014 Invalid Product discriminator and IDs\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 persisted Product contract. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; authenticated cookie and matching CSRF for every mutation. Malformed UUID, nonexistent UUID, absent/unsupported type on create/full PUT. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Call corresponding Product endpoints with each fixture.\n- **Expected results:** Invalid DTO/ID/type rejected without mutation; nonexistent Product yields resource-not-found. Exact parsing errors use generic400 rather than assumed404.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 62
   },
   {
     "id": "PAPI-012",
@@ -1871,8 +1880,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PAPI-014 \u2014 Deletion without purchases\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 persisted Product contract. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; authenticated cookie and matching CSRF for every mutation. Owned draft/hidden Product with sections, entitlements, landing config and Membership/storefront references; no active purchase or pending checkout. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** DELETE /api/products/{id}; then GET Product, Library, membership feed and public storefront.\n- **Expected results:** 204 removal; entitlement/presentation/reference cleanup occurs; missing Product reads fail; included underlying Products are not deleted merely by reference cleanup.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 16
   },
   {
     "id": "PAPI-015",
@@ -1881,8 +1891,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PAPI-015 \u2014 Legacy deletion\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 persisted Product contract. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; authenticated cookie and matching CSRF for every mutation. Disposable owned Product. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** DELETE /api/products?userId={caller}&productType={type}&id={id}; GET deleted Product.\n- **Expected results:** 202 response text, with same authorization and cleanup rules as canonical deletion.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 17
   },
   {
     "id": "PAPI-016",
@@ -2035,9 +2046,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PAPI-028 \u2014 Conflicting owner query mappings\n\n- **Feature area:** Product API contracts, ownership and deletion. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest for public reads; repeat owner/Admin where relevant. Existing Creator ID with products.\n- **Steps:** GET /api/products?userId={id}&ownerId={id}; then GET /api/products without either parameter.\n- **Expected results:** expected result needs investigation: separate same-path controller mappings require userId or ownerId; combined/missing parameters must not be guessed as canonical list behavior or unrestricted all-products access.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 5
   },
   {
     "id": "CONTENT-001",
@@ -2528,8 +2539,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### FILE-004 \u2014 Upload path ownership\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Creator B targeting A section; own Product with foreign section ID.\n- **Steps:** Request presign and confirm using wrong owner/parent combinations.\n- **Expected results:** Role/owner/relationship validation rejects; no authorized upload URL or foreign-section metadata creation.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "FILE-005",
@@ -2538,8 +2550,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### FILE-005 \u2014 Upload unsupported Product type\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Course/Consultation/Membership product IDs.\n- **Steps:** Call canonical file presign/confirm paths with those types.\n- **Expected results:** Only Download section files are supported; unsupported type rejected rather than implicit lesson/media upload.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "FILE-006",
@@ -2548,8 +2561,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### FILE-006 \u2014 File confirmation integrity uncertainty\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Owned section; key for missing object, mismatched file URL, foreign-looking key, invalid size/MIME metadata in isolated fixture.\n- **Steps:** POST confirm-upload without prior byte upload; GET Product; attempt authorized delivery only in isolated bucket.\n- **Expected results:** expected result needs investigation: service accepts metadata without checking object existence/key scope/content integrity; successful confirmation must not be described as verified upload.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "FILE-007",
@@ -2558,8 +2572,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### FILE-007 \u2014 Path section overrides body\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Two owned Download sections; confirmation body names other section.\n- **Steps:** POST /api/products/{p}/sections/{s1}/files/confirm-upload with sectionId=s2; GET both sections via Product.\n- **Expected results:** Canonical path section is authoritative; metadata belongs to s1 after ownership validation.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "FILE-008",
@@ -2568,8 +2583,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### FILE-008 \u2014 Legacy upload helpers\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Owned Download section; parameterize folderType as DOWNLOAD_SECTION_FILES, COURSE_SECTION_FILES and CONSULTATION_FILES, with a distinct synthetic filename for each.\n- **Steps:** GET /api/files/presigned-url?sectionId={s}&folderType={type}&filename={name}; PUT bytes; POST /api/files/confirm-upload with complete metadata; GET Product.\n- **Expected results:** Legacy helpers require Creator/Admin ownership of the Download section and issue a five-minute PUT URL. Each folderType selects its configured storage prefix; it does not change the authorized Product type. Confirmation persists Download metadata visible on the subsequent Product read.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "FILE-009",
@@ -2578,8 +2594,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### FILE-009 \u2014 Legacy helper invalid folder and IDs\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Unsupported folderType, missing section, malformed UUID and nonowner session.\n- **Steps:** Request legacy presign/confirm for each variant.\n- **Expected results:** Reject invalid/unauthorized use without creating foreign metadata; exact unsupported-folder contract follows FilesService.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "FILE-010",
@@ -2588,8 +2605,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### FILE-010 \u2014 File delete confirmation\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Two persisted files in section.\n- **Steps:** Cancel remove, then confirm; reload; repeat API DELETE /api/products/{p}/sections/{s}/files/{fileId}.\n- **Expected results:** Confirmed deletion returns204 and removes metadata; another file remains. Object-store deletion is not implemented by this metadata removal.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "FILE-011",
@@ -2598,8 +2616,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### FILE-011 \u2014 File delete association checks\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Other section/Product file ID and unknown file UUID.\n- **Steps:** DELETE canonical file path with each mismatched ID.\n- **Expected results:** 404 relationship/missing-resource rejection; unrelated file stays accessible to its owner.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "FILE-012",
@@ -2822,8 +2841,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### CONS-005 \u2014 Partial details and clear semantics\n\n- **Feature area:** Consultation details and weekly availability. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Consultation draft. Existing detail fields and weekly availability. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PATCH shared title without details; PATCH selected detail fields; clear nullable fields where accepted.\n- **Expected results:** Omitted detail fields remain; explicit supported updates persist. Unknown/missing day or duplicate day normalization rejects invalid structures without partially replacing availability.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 12
   },
   {
     "id": "CONS-006",
@@ -2842,8 +2862,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### CONS-007 \u2014 Connected calendars are derived\n\n- **Feature area:** Consultation details and weekly availability. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Consultation draft. Creator with connected calendar and another without one. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Submit forged connectedCalendars inside Product details; reload.\n- **Expected results:** Calendar list comes from owner connection records, not caller-supplied Product calendar metadata.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 4
   },
   {
     "id": "CONS-008",
@@ -3038,8 +3059,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### MEM-006 \u2014 Metadata API boundaries\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** API integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Title255/256, filename255/256, MIME150/151, size1/500MiB/500MiB+1 and fractional size. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST /api/products/{p}/membership/content once per boundary with valid remaining fields.\n- **Expected results:** Required trimmed fields and integral size1..500MiB enforced; invalid metadata rejected without feed addition.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 12
   },
   {
     "id": "MEM-007",
@@ -3048,8 +3070,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-007 \u2014 Video MIME client/server difference\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Non-video MIME in otherwise valid VIDEO metadata request.\n- **Steps:** POST native VIDEO through API, then load browser editor.\n- **Expected results:** expected result needs investigation: browser requires video/*, but backend metadata validation does not enforce video-specific MIME.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "MEM-008",
@@ -3058,8 +3081,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### MEM-008 \u2014 Native status and field patches\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** API integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. DRAFT and PUBLISHED native content inside DRAFT Membership. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PATCH native status/title/description/body; use null description; reload.\n- **Expected results:** Native status is authoring metadata independent of unavailable Membership publishing; null description clears; supplied empty Post body rejects.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 12
   },
   {
     "id": "MEM-009",
@@ -3068,8 +3092,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### MEM-009 \u2014 Immutable native type and asset identity\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** API integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Existing Post/Video/Resource; altered type and forged fileId fixtures. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PATCH type to another kind; replace complete asset metadata; repeat unchanged metadata/fileId.\n- **Expected results:** Type change rejects409; server controls fileId, retains matching existing identity only when permitted and allocates new identity for changed asset metadata.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 12
   },
   {
     "id": "MEM-010",
@@ -3078,8 +3103,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### MEM-010 \u2014 Partial asset patch rejection\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** API integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Existing Video/Resource. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PATCH only filename or only size without full required asset metadata.\n- **Expected results:** Partial invalid asset rejected; existing metadata remains.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 8
   },
   {
     "id": "MEM-011",
@@ -3120,8 +3146,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### MEM-014 \u2014 Feed exact-set and ownership validation\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** API integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Native content plus included Products. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PUT /api/products/{p}/membership/feed omitting native content, duplicating entry, referencing foreign Product, or including unsupported type.\n- **Expected results:** 409 rejection; feed requires each native content exactlyonce and same-owner Course/Download associations only.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 4
   },
   {
     "id": "MEM-015",
@@ -3152,8 +3179,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### MEM-017 \u2014 Feed/API wrong Product and content ID\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** API integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Course ID or another Membership content ID. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET/PATCH aggregate, POST content, PATCH/DELETE foreign content, PUT feed using mismatched IDs.\n- **Expected results:** Unsupported Product/parent mismatch rejected; no foreign native content is changed.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 4
   },
   {
     "id": "MEM-018",
@@ -3162,9 +3190,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### MEM-018 \u2014 Membership permissions\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** API integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Guest, User with legacy entitlement and nonowner Creator. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET/PATCH /membership; POST/PATCH/DELETE content; PUT feed with each session.\n- **Expected results:** Method security plus ownership rejects all unauthorized authoring, including URL-public GET prefix; Admin authoring remains allowed.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 12
   },
   {
     "id": "MEM-019",
@@ -3205,8 +3233,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### MEM-022 \u2014 Membership base-field validation\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** API integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; DRAFT Membership. Name blank/256 characters; price negative/nonnumeric/more than2decimals; currency nonEUR,pricingModel ONE_TIME,invalid interval/status. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** POST/PATCH Product once per malformed basefield; read saved Product.\n- **Expected results:** Membership converter rejects these values rather than permissive Course fallback; name trims and max255, price nonnegative at most2decimals, RECURRING/EUR and MONTH/YEAR enforced.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 2
   },
   {
     "id": "MEM-023",
@@ -3364,8 +3393,9 @@
     "level": "deployed-service integration",
     "priority": "P0",
     "instructions": "### ACCESS-013 \u2014 Download authorized URL contract\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. ACTIVE holder, owner and Admin variants; stored synthetic file.\n- **Steps:** GET entitlement download endpoint; inspect expiry metadata without retaining URL; use URL in isolated browser.\n- **Expected results:** Short-lived URL valid for tenminutes; access path increments download count; service does not return permanent public link.\n- **Required environment / external service:** Test frontend/backend and isolated DigitalOcean Spaces bucket; signed URLs retained only privately by harness.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "ACCESS-014",
@@ -3988,8 +4018,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-002 \u2014 Public storefront ordering\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Saved Product order includes published and nonpublished IDs; additional newly published Products.\n- **Steps:** Load storefront and inspect catalogue order.\n- **Expected results:** Configured eligible IDs first, remaining published Products newest-created with ID tie-break; hidden/draft omitted without exposing their content.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1
   },
   {
     "id": "STORE-003",
@@ -4052,8 +4083,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-008 \u2014 Product ordering and feature selection\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Several own Products across lifecycle states.\n- **Steps:** Reorder products; choose published featured Product; Save; reload public storefront.\n- **Expected results:** Order/config persists; feature must be owned and Published; authoring controls do not imply all listed statuses are public.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 6
   },
   {
     "id": "STORE-009",
@@ -4073,8 +4105,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-010 \u2014 Save failure and dirty state\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Unsaved config; fail PATCH.\n- **Steps:** Save, inspect failure, restore backend and retry; reload.\n- **Expected results:** Failure does not claim persistent update; draft remains reviewable, successful retry establishes server config.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2
   },
   {
     "id": "STORE-011",
@@ -4083,8 +4116,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-011 \u2014 Inline profile field save\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Creator with synthetic display name, tagline, bio, website and publicEmail.\n- **Steps:** Edit each inline field and Save; reload GET profile and public storefront; reset theme independently.\n- **Expected results:** Profile field save invokes profile API immediately and is independent of storefront config Save/Reset; display name splits first token/rest; no avatar upload here.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4
   },
   {
     "id": "STORE-012",
@@ -4093,8 +4127,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-012 \u2014 Inline profile validation\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Blank display name, malformed/oversize publicEmail and oversize text fixtures.\n- **Steps:** Save each invalid field; cancel editor and reload.\n- **Expected results:** Profile API constraints reject invalid data; original server value remains; no login email published as fallback.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 8
   },
   {
     "id": "STORE-013",
@@ -4191,8 +4226,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-021 \u2014 Landing hidden empty sections\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest for presentation; Creator owner for public profile setup. Config includes ABOUT but marketing text whitespace; CREATOR visible without Creator model; CONTENTS visible.\n- **Steps:** Open public Product/private preview with each controlled response.\n- **Expected results:** ABOUT omitted when trimmed description empty; CREATOR omitted without profile; visibility configuration alone does not force empty content panels.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 8
   },
   {
     "id": "LAND-001",
@@ -4212,9 +4248,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-002 \u2014 Landing local preview, save and reload\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Saved config and editable Product.\n- **Steps:** Change marketing description, hero side, visibility and section order; inspect preview; Save; reload public page for Published Product.\n- **Expected results:** Changes affect local preview then persisted config; Product name/price/details/Creator profile remain read-only in builder and status unchanged.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 3
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 18
   },
   {
     "id": "LAND-003",
@@ -4223,9 +4259,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-003 \u2014 Landing reset and unsaved navigation\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Unsaved config modifications.\n- **Steps:** Reset then navigate away/reload; repeat unsaved changes without Save.\n- **Expected results:** Reset restores last saved config; reload uses server config, not presumed autosaved local customization.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 10
   },
   {
     "id": "LAND-004",
@@ -4289,8 +4325,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-009 \u2014 Landing loading/error recovery\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Delay/reject Product or landing config load/save independently.\n- **Steps:** Open builder; change config if available; Save failure then retry/reload.\n- **Expected results:** Product loading/unavailable and config error states are distinguished; no saved-success claim on rejected PATCH.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 6
   },
   {
     "id": "LAND-010",
@@ -4395,8 +4432,9 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### ADMIN-006 \u2014 Role invalid target and payload\n\n- **Feature area:** Administration, roles and audit. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 platform administration boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Admin with isolated synthetic accounts and Products. Unknown/malformed target ID, null/unknown role. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PATCH role endpoint with each variant.\n- **Expected results:** Validation/resource errors; no other account role altered.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 10
   },
   {
     "id": "ADMIN-007",
@@ -4470,8 +4508,9 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### ADMIN-013 \u2014 Administration role gate API\n\n- **Feature area:** Administration, roles and audit. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 platform administration boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Admin with isolated synthetic accounts and Products. Guest, User and Creator. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET /api/admin/users, /products, /audit; PATCH user role with valid payload/CSRF where authenticated.\n- **Expected results:** Only Admin allowed; no private account list/audit returned to other roles.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 16
   },
   {
     "id": "ADMIN-014",
@@ -4480,9 +4519,9 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### ADMIN-014 \u2014 Admin audit absence for ordinary Creator edit\n\n- **Feature area:** Administration, roles and audit. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 platform administration boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Admin with isolated synthetic accounts and Products. Creator edits own Product; Admin edits same Product later. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET audit as Admin before/after each action, filtering target ID.\n- **Expected results:** Admin mutations audited; ordinary Creator mutation is not assumed to create admin audit entry.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 5
   },
   {
     "id": "ADMIN-015",
@@ -4994,8 +5033,9 @@
     "level": "API integration",
     "priority": "P2",
     "instructions": "### LOCAL-008 \u2014 Reviews client without backend routes\n\n- **Feature area:** Local notifications, fixture displays and absent client capabilities. **Test level:** API integration. **Implementation state:** deliberately unavailable. **Priority:** P2 \u2014 honest state presentation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated Creator; synthetic Product actions. Authenticated fixture with valid CSRF; arbitrary synthetic Product/review IDs. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Attempt POST /api/products/{p}/review, PATCH /api/review/{r}, DELETE /api/reviews/{r}, GET /api/creators/reviews, PUT /api/review/{r}/visibility and POST/PUT/DELETE /api/review/{r}/reply using client DTO shapes.\n- **Expected results:** These client functions have no matching backend controllers or reachable review management screen. No review/reply/visibility persistence should be claimed; exact unmapped-method response needs investigation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 24
   },
   {
     "id": "LOCAL-009",

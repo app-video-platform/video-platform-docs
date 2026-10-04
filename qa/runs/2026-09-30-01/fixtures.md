@@ -176,3 +176,9 @@ Local contract methods 6/6 pass; all disposable tables cleaned, external SDK/mai
 1140 assessed variations (995 Pass, 90 Fail, 46 Needs clarification, 9 Blocked); 1187 historical attempts. Of 493 originals: 156 not started, 193 partial, 144 fully assessed. 349 originals still need checks.
 
 Four actual owner landing editors: defaults and native1200 limit pass; drafts Reset/reload discarded, zero saved landing rows. No Product/profile/landing mutation; all 51 Product metadata unchanged. Existing BUG-002 reconfirmed on positive-priced Download and Membership. Creator Dashboard restored and navigation expanded. See session notes/existing evidence.
+
+## Saved-order checkpoint — 4 October 2026
+
+1178 assessed variations (1023 Pass, 100 Fail, 46 Needs clarification, 9 Blocked); 1225 historical attempts. Of493 originals: 152 not started, 194 partial, 147 fully assessed. 346 originals still need checks.
+
+BUG-031: existing Storefront/landing permutations collide with unique constraints. Six new landing configs retained with empty marketing/MEDIA_RIGHT/Contents+Creator visible; five default orders, Hidden reporting Course retains Creator-first order. Storefront retains DARK/#ffbd41/MODERN, explicit Curriculum feature and51-ID custom order; public original visible presentation preserved. Product metadata/profile fingerprint unchanged; Creator Dashboard verified. See session notes and feature batches.

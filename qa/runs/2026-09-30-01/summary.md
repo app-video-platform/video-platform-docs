@@ -2,6 +2,62 @@
 
 Run in progress. [Progress](progress.md) and [session notes](session-notes.md) contain the current checkpoint. [JSONL results](results.jsonl) are authoritative; [CSV results](results.csv) can be opened in Excel.
 
+## Read contracts and controlled browser checkpoint — 4 October 2026
+
+1604 assessed variations (1417 Pass, 123 Fail, 56 Needs clarification, 8 Blocked); 1652 historical attempts. Of 493 originals: 116 not started, 202 partial, 175 fully assessed; 318 still need checks.
+
+This continuation adds 126 attempts and 125 distinct variations. Seven originals become fully assessed: PAPI-009/010/011, ADMIN-014 and STORE-021 Pass; PAPI-028 Needs clarification; MKT-010 Fail. Five local API methods pass with 394 HTTP observations. Typed/canonical parity, owner-list access filtering, invalid mutations and Creator-versus-Admin audit behavior are verified. The old blocked ADMIN-014 deployed attempt remains historical; a new attempt independently executes the original API requirement with disposable fixtures, without claiming browser recovery.
+
+Twenty controlled browser landing cells use the actual current router/components. Empty About/Creator sections and positive controls cover four Product types on public pages and private previews. Optional profile/config failure presentation is checked for four synthetic roles; DISC-016 remains partial for broader deployed checks. A separate deployed Creator Course read/reload verifies its missing-image placeholder. No real account, role or Product is changed.
+
+New [BUG-034](issues/BUG-034.md) records the contact agreement tick remaining visible after the native checkbox is unchecked, plus keyboard skipping of the hidden control. Four role fixtures reproduce it; thirty observations cover valid form inputs and unchecked/checked submissions. The current local handler generates no contact request; intended future consent enforcement remains unspecified. This is a local frontend reproduction, not a deployed or consent-persistence claim. Thirty-four confirmed issues. Existing evidence batches extended; one new issue file and one temporary local screenshot, no new repository evidence file or application fix.
+
+## Publication, hidden lifecycle and unavailable API checkpoint — 4 October 2026
+
+1479 assessed variations (1302 Pass, 119 Fail, 49 Needs clarification, 9 Blocked); 1526 historical attempts. Of 493 originals: 119 not started, 206 partial, 168 fully assessed; 325 still need checks.
+
+Ninety-six new assessments: 88 Pass and eight Fail. AUTH-017, LOCAL-008, PROD-024 and PROD-029 are fully assessed as Pass; PROD-026 is fully assessed as Fail for existing [BUG-030](issues/BUG-030.md). PROD-025 advances through missing-file/path rejection and positive controls, but remains partial for actual browser readiness comparison. Six unique local methods produce 759 authoritative HTTP observations; five methods pass and the valid Consultation retry assertion fails. Sixteen counted fixture tables are empty after both invocations. The initial review metadata SQL and assumed Membership rejection status were harness corrections, superseded by passing focused runs; they are not application issues. Existing evidence extended; 33 confirmed issues remain. No application fix, deployed mutation or new evidence file.
+
+The newly referenced customer JSON tab is absent from the connected Chrome inventory; one exact URL navigation renders Chrome `ERR_BLOCKED_BY_CLIENT`. Earlier CUSTOM-009 wire evidence remains valid and is not counted again. No new database or server-log verification is claimed.
+
+## Admin, owner search and Consultation API checkpoint — 4 October 2026
+
+1383 assessed variations (1214 Pass, 111 Fail, 49 Needs clarification, 9 Blocked); 1430 historical attempts. Of 493 originals: 125 not started, 205 partial, 163 fully assessed; 330 still need checks.
+
+Five original API cases now fully assessed: ADMIN-006/013 and CONS-005/007 Pass; DISC-012 Fail for existing [BUG-013](issues/BUG-013.md). Seventy-nine assessments include owner/role/sort matrices, invalid Admin payload isolation and Consultation partial/clear/calendar derivation. Six unique methods produce 295 authoritative HTTP observations; owner-search pagination deliberately remains a failing assertion. All sixteen fixture tables are empty after the accepted runs. Existing evidence extended; no new issue, application fix, real account/role change or cloud/browser operation. Thirty-three confirmed issues remain.
+
+## Inline Storefront profile checkpoint — 4 October 2026
+
+1304 assessed variations (1144 Pass, 103 Fail, 48 Needs clarification, 9 Blocked); 1351 historical attempts. Of 493 originals: 130 not started, 205 partial, 158 fully assessed; 335 still need checks.
+
+Twelve browser assessments add six Cancel checks, title rejection/save/reload, Creator/Guest public presentation and original-title restoration. STORE-011/012 remain partial. New [BUG-033](issues/BUG-033.md) records the old failure alert remaining after a successful retry; 33 confirmed issues. Original title restored and verified on all three views. No implementation fix. The latest referenced customer JSON tab was absent from Chrome inventory; its earlier verified response was not counted again. A later reload became blank, then the Creator Dashboard recovered. Both read-only database rechecks timed out; no fresh database/log verification is claimed.
+
+## Membership API checkpoint — 4 October 2026
+
+1292 assessed variations (1133 Pass, 102 Fail, 48 Needs clarification, 9 Blocked); 1339 historical attempts.493 originals: 132 not started, 203 partial, 158 fully assessed; 335 still need checks.
+
+65 assessments:64 Pass/1 Needs clarification;8API originals complete. Metadata/feed/identity/permissions/basefields validated; browser/provider Membership cases remain.32 issues unchanged. No app or cloud change.
+
+## Admin mutation and deletion checkpoint — 4 October 2026
+
+1227 assessed variations (1069 Pass, 102 Fail, 47 Needs clarification, 9 Blocked); 1274 historical attempts.493 originals: 140 not started, 203 partial, 150 fully assessed; 343 still need checks.
+
+37 new passing checks complete3 original API cases: PAPI-006/014/015. Final4/4 methods,414 HTTP observations with migration collection uniqueness.32 issues unchanged; no application or cloud change. Full catalog remains incomplete.
+
+## File-contract checkpoint — 4 October 2026
+
+1190 assessed variations (1032 Pass, 102 Fail, 47 Needs clarification, 9 Blocked); 1237 historical attempts.493 originals: 143 not started, 203 partial, 147 fully assessed; 346 still need checks.
+
+12 new aggregate checks,9 Pass/2 Fail/1 Needs clarification. New BUG-032 identifies foreign storage-key acceptance and signing delegation in isolated backend;32 confirmed issues. Nine original deployed-service cases now partial, with real provider/browser steps outstanding. No application fix or cloud change.
+
+## Saved-order checkpoint — 4 October 2026
+
+1178 assessed variations (1023 Pass, 100 Fail, 46 Needs clarification, 9 Blocked); 1225 historical attempts. Of493 originals: 152 not started, 194 partial, 147 fully assessed. 346 originals still need checks.
+
+38 checks recorded; new BUG-031 confirms saved Storefront/landing reorder failures. Completes two originals as Fail and one as Pass. Successful Save/Reset/navigation and Guest public persistence recorded separately.31 confirmed issues; no application fix. Retained test settings documented; Product metadata/profile unchanged.
+
+### Previous landing checkpoint
+
 ## Landing browser checkpoint — 3 October 2026
 
 1140 assessed variations (995 Pass, 90 Fail, 46 Needs clarification, 9 Blocked); 1187 historical attempts. Of 493 originals: 156 not started, 193 partial, 144 fully assessed. 349 originals still need checks.
