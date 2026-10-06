@@ -903,8 +903,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-001 \u2014 Onboarding field steps\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. New profile with incomplete onboarding.\n- **Steps:** Use Welcome \u2192 Basic \u2192 About \u2192 Additional \u2192 summary; enter title, bio, tagline, website and synthetic location/social data; advance and reload profile.\n- **Expected results:** Profile updates are sent after initial step; valid saved fields should reload. Requests are not awaited before advancing, so save-failure feedback and partially completed progress need investigation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 10
   },
   {
     "id": "PROF-002",
@@ -913,8 +914,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-002 \u2014 Onboarding input boundaries\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. Title 1/2/50/51, bio 29/30/250/251, tagline 9/10/120/121 characters and invalid/valid website variants.\n- **Steps:** Enter each boundary in its step; blur and click Next.\n- **Expected results:** Declared client validation applies to populated fields; empty optional fields may advance. Title blur trims whitespace; backend profile constraints differ from UI maxima.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 69
   },
   {
     "id": "PROF-003",
@@ -923,8 +925,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-003 \u2014 Onboarding completion and skip\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. onboardingCompleted false; some saved profile fields.\n- **Steps:** Use Skip or final Continue, then logout and sign in again.\n- **Expected results:** Navigation goes /app; expected result needs investigation for completed onboarding because no writable completion flag is saved and sign-in can route back to onboarding.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 9
   },
   {
     "id": "PROF-004",
@@ -5099,8 +5102,9 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-005 \u2014 Drawer empty/stacked edge cases\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Drawer with no focusable content and available nested/second drawer scenario.\n- **Steps:** Open drawer, press Tab and Escape; close nested state before parent where reachable.\n- **Expected results:** Panel fallback prevents focus escape when no controls. expected result needs investigation for duplicate drawer-title IDs, focus restoration and body-scroll restoration when two instances overlap.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 6
   },
   {
     "id": "UX-006",
@@ -5221,7 +5225,7 @@
     "instructions": "### UX-016 \u2014 Form names, errors and focus\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Signup/login/onboarding/Settings/Product/native Membership/Contact forms.\n- **Steps:** Navigate only by keyboard; submit invalid data; inspect label association/error descriptions and announced status; correct inputs.\n- **Expected results:** expected result needs investigation for unlabeled/custom controls and broken aria-describedby references; existing visible validation must remain operable without pointer.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 2
+    "recorded_variations": 6
   },
   {
     "id": "UX-017",
