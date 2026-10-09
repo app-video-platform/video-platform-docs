@@ -2,5 +2,75 @@
   "checked_at": "2026-10-01T07:50:11.087096+00:00",
   "exit_code": 0,
   "log_lines": 200,
-  "raw_logs_saved": false
+  "raw_logs_saved": false,
+  "access_recheck_2026_10_08": {
+    "restricted_logs": {
+      "checked_at": "2026-10-08T07:43:01.136092+00:00",
+      "exit_code": 255,
+      "log_lines": 0,
+      "error_lines": 0,
+      "warn_lines": 0,
+      "raw_logs_saved": false,
+      "failure_kind": "authentication_or_command"
+    },
+    "read_only_database": {
+      "checked_at": "2026-10-08T07:43:23.945725+00:00",
+      "exit_code": 2,
+      "failure_kind": "listener_unavailable"
+    },
+    "ssh_agent_loaded_keys": 0,
+    "private_key_read": false,
+    "raw_logs_saved": false,
+    "browser": "Private foreground read rejected by automatic approval review; dedicated Chrome connection unavailable. User request pending."
+  },
+  "resumed_iab_2026_10_08": {
+    "checked_at": "2026-10-08T13:47:26.865488+00:00",
+    "browser": "Signed-in IAB usable; Chrome extension disconnected",
+    "restricted_logs": {
+      "checked_at": "2026-10-08T13:42:33.077304+00:00",
+      "exit_code": 0,
+      "log_lines": 200,
+      "raw_logs_saved": false
+    },
+    "database": {
+      "read_only": "on",
+      "role": "CREATOR",
+      "own_order_count": 0,
+      "course_section_count": 3,
+      "checked_at": "2026-10-08T13:42:30.716270+00:00"
+    },
+    "tunnel": "Loopback15432 replacement with20second keepalives; temporary15433closed",
+    "raw_logs_saved": false,
+    "credentials_read_or_retained": false
+  },
+  "resumed_iab_2026_10_09": {
+    "checked_at": "2026-10-09T07:57:42.153216+00:00",
+    "database": {
+      "read_only": "on",
+      "role": "CREATOR",
+      "own_entitlements": [
+        {
+          "product_id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+          "status": "ACTIVE",
+          "source": "FREE_ENROLLMENT"
+        }
+      ],
+      "published_consultation": {
+        "id": "3ebc8873-83aa-430b-8fe2-dad685c0a8d3",
+        "name": "QA-2026-09-30-01 Consultation",
+        "status": "PUBLISHED",
+        "price": 15,
+        "duration_minutes": 30,
+        "meeting_method": "PHONE"
+      }
+    },
+    "restricted_logs": {
+      "checked_at": "2026-10-09T07:50:32.677257+00:00",
+      "exit": 0,
+      "returned_lines": 200,
+      "raw_logs_retained": false
+    },
+    "tunnel": "Loopback15432 handle87598/keepalive20seconds retained",
+    "credentials_retained": false
+  }
 }

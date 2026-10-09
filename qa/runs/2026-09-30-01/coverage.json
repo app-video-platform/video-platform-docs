@@ -413,8 +413,10 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### MKT-017 \u2014 Marketing animation and pointer-focus parity\n\n- **Feature area:** Marketing and local presentation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 discovery and usability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and signed-in roles. Home feature/product/trust sections; reduced-motion browser preference.\n- **Steps:** Scroll into each section, hover cards, focus keyboard-operable feature cards, resize and revisit.\n- **Expected results:** Presentation highlights/scroll animations are local. expected result needs investigation for reduced-motion and hover-only cards without focus equivalents; no product mutation occurs.\n- **Required environment / external service:** Frontend build; backend for authentication transition only.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 9,
+    "assessment_scope": "Actual deployed Guest normal-motion pointer/keyboard/mobile-revisit assertions; BUG-046/047. Reduced-motion blocked and signed-in role assertions outstanding. Decorative noninteractive emphasis parity needs clarification."
   },
   {
     "id": "AUTH-001",
@@ -464,8 +466,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### AUTH-005 \u2014 Registration CSRF conflict\n\n- **Feature area:** Registration, sign-in and account recovery. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest with isolated synthetic account fixtures. Fresh guest browser without XSRF cookie; otherwise valid form.\n- **Steps:** Submit signup and inspect the planned request/response contract.\n- **Expected results:** expected result needs investigation: register is URL-public but custom CSRF excludes other auth mutations, not register; client register credentials/exclusion handling differs. Do not assume a fresh guest can register.\n- **Required environment / external service:** Frontend and backend; synthetic credentials supplied privately by fixtures; SendGrid test mailbox for email flows.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1,
+    "assessment_scope": "Current client and actual backend HTTP proof only; catalog normal browser form/reload/onboarding/Storefront requirements remain."
   },
   {
     "id": "AUTH-006",
@@ -781,8 +785,10 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### SEC-005 \u2014 Frontend mutation header interoperability\n\n- **Feature area:** Session, API security and feature flags. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 authentication or data boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and authenticated role fixtures. Signed-in browser; canonical and leading-slash client URLs. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Trigger profile, Product, enrollment and checkout mutations; inspect header attachment; induce CSRF rejection and retry with valid cookies.\n- **Expected results:** expected result needs investigation for exclusion matching because interceptors match slash-prefixed strings while clients mix URL forms. Correctly attached token must permit supported mutations.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 42,
+    "assessment_scope": "Complete explicit API client/header contract: four principals/canonical+slash/four mutations/CSRF rejection-retry/registration exclusion conflict. Current real backend/local database; deployed cookie/CORS issuance not asserted."
   },
   {
     "id": "SEC-006",
@@ -1107,8 +1113,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-019 \u2014 Profile client reload and forced CSRF header\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Signed-in User/Creator/Admin. Authenticated session with stored title; readable XSRF cookie.\n- **Steps:** Reload app; inspect GET /api/user/userInfo sent by user client; save profile through onboarding/Storefront and reread.\n- **Expected results:** GET uses credentials and X-CSRF-Force client handling; saves use same current-profile endpoint. Successful user profile read does not make Settings save server-backed.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3,
+    "assessment_scope": "Current client and actual backend HTTP proof only; catalog normal browser form/reload/onboarding/Storefront requirements remain."
   },
   {
     "id": "DISC-001",
@@ -1128,8 +1136,24 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-002 \u2014 Explore loading and failure\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Delayed catalog response and transport failure variants.\n- **Steps:** Open Explore under delay; reject request; restore service and reload.\n- **Expected results:** Loading products then failure copy is displayed; reload requests catalog again without fabricated products.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 12,
+    "expanded_variation_ids": [
+      "local-response-guest-delayed",
+      "local-response-guest-failed",
+      "local-response-guest-reload-recovered",
+      "local-response-user-delayed",
+      "local-response-user-failed",
+      "local-response-user-reload-recovered",
+      "local-response-creator-delayed",
+      "local-response-creator-failed",
+      "local-response-creator-reload-recovered",
+      "local-response-admin-delayed",
+      "local-response-admin-failed",
+      "local-response-admin-reload-recovered"
+    ],
+    "assessment_scope": "Explicit frontend response contract executed in actual browser with controlled synthetic API responses; not deployed persistent backend/authentication or injected cloud failure proof."
   },
   {
     "id": "DISC-003",
@@ -1138,8 +1162,16 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-003 \u2014 Explore empty catalog\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. GET minimal products returns [].\n- **Steps:** Open Explore.\n- **Expected results:** Intro remains with no product cards; no fabricated catalog items.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 4,
+    "expanded_variation_ids": [
+      "local-response-guest-empty",
+      "local-response-user-empty",
+      "local-response-creator-empty",
+      "local-response-admin-empty"
+    ],
+    "assessment_scope": "Explicit frontend response contract executed in actual browser with controlled synthetic API responses; not deployed persistent backend/authentication or injected cloud failure proof."
   },
   {
     "id": "DISC-004",
@@ -1302,8 +1334,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-018 \u2014 Authenticated free enrollment journey\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Signed-in User without entitlement; published free Product.\n- **Steps:** Click free enrollment; await response; open content, reload, then open Library.\n- **Expected results:** ACTIVE entitlement is created, access is refetched and content becomes available; Library reflects server grant.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3,
+    "assessment_scope": "Real full-App local non-owner User grants for three types; Course Article/reload/Library verified. Other roles, stored delivery and deployed parity outstanding."
   },
   {
     "id": "DISC-019",
@@ -1356,8 +1390,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-023 \u2014 Consultation purchase does not book a time\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Entitled Consultation with weekly availability.\n- **Steps:** Open Product and Library, inspect possible next actions.\n- **Expected results:** No slot booking, rescheduling, cancellation or generated meeting workflow exists; metadata/access does not establish a scheduled appointment.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1,
+    "assessment_scope": "Entitled local non-owner User with persisted weekly Consultation availability: Product/Library no booking controls. Other roles/deployed fixture outstanding."
   },
   {
     "id": "DISC-024",
@@ -1366,8 +1402,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-024 \u2014 Membership public action conflict\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Isolated legacy PUBLISHED Membership fixture with zero price, and positive-price fixture.\n- **Steps:** Open public Product and inspect action; attempt free branch only in test harness.\n- **Expected results:** expected result needs investigation: free check precedes Membership unavailable branch, and backend enrollment has no explicit Membership exclusion. Normal publishing remains unavailable.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1,
+    "assessment_scope": "Current migrated PostgreSQL blocks legacy Published Membership fixture. Browser branches unexecuted; no constraint disabled."
   },
   {
     "id": "PROD-001",
@@ -1409,8 +1447,15 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-004 \u2014 Management loading, error and retry\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Delay then reject summary request.\n- **Steps:** Open Products; restore backend; click Retry.\n- **Expected results:** Loading then alert state; Retry reloads own summaries.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 3,
+    "expanded_variation_ids": [
+      "local-response-creator-products-delayed",
+      "local-response-creator-products-failed",
+      "local-response-creator-products-retry-recovered"
+    ],
+    "assessment_scope": "Explicit frontend response contract executed in actual browser with controlled synthetic API responses; not deployed persistent backend/authentication or injected cloud failure proof."
   },
   {
     "id": "PROD-005",
@@ -1441,8 +1486,21 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-007 \u2014 Overview empty, stale and retry\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Empty Product; rapid ID change; rejected request.\n- **Steps:** Open Overview, navigate to another ID, reject load; click Retry after service recovery.\n- **Expected results:** Empty outline has explicit copy; previous ID data is cleared; loading/error/retry are distinct.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 9,
+    "expanded_variation_ids": [
+      "local-response-creator-overview-course-empty",
+      "local-response-creator-overview-download-delayed-no-stale-course",
+      "local-response-creator-overview-download-failed",
+      "local-response-creator-overview-download-retry-recovered",
+      "local-response-creator-race-reload-recovered",
+      "local-response-creator-race-ordered-download-b-resolved-last",
+      "local-response-creator-race-course-a-resolved-late",
+      "local-response-creator-race-single-course-a-resolved-late",
+      "local-response-creator-race-ordered-old-response-while-current-pending"
+    ],
+    "assessment_scope": "Explicit frontend response contract executed in actual browser with controlled synthetic API responses; not deployed persistent backend/authentication or injected cloud failure proof."
   },
   {
     "id": "PROD-008",
@@ -1711,8 +1769,20 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-032 \u2014 Mock-only recurring inspection label\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner; positive-priced Products. Membership summary missing recurring metadata; two builds with REACT_APP_USE_MOCKS true/false.\n- **Steps:** Open Products list under both with same controlled summary.\n- **Expected results:** Inspection flag can label Membership recurring in mock mode; production requires real recurring metadata. Flag affects display separately from missing runtime mock adapter.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 8,
+    "expanded_variation_ids": [
+      "local-build-pair-legacy-membership",
+      "local-build-pair-monthly-membership",
+      "local-build-pair-yearly-membership",
+      "local-build-pair-missing-interval-membership",
+      "local-build-pair-one-time-membership",
+      "local-build-pair-course-control",
+      "local-build-pair-download-control",
+      "local-build-pair-consultation-control"
+    ],
+    "assessment_scope": "Explicit two-build controlled-summary display case complete locally: legacy Membership fallback only in mock mode; actual monthly/yearly metadata in both; missing interval, one-time Membership and other type controls. Missing runtime adapter independently observed. No deployed authentication, persistence or commerce claim."
   },
   {
     "id": "PROD-033",
@@ -2650,8 +2720,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-002 \u2014 Thumbnail deletion\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Product with thumbnail.\n- **Steps:** Remove image; reload; DELETE /api/products/image?productId={p} directly for API variant.\n- **Expected results:** Thumbnail metadata is removed and fallback presentation returns; other gallery/promo data remains.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 8,
+    "assessment_scope": "Owner/Admin \u00d7 four types API validation/recovery/removal on real migrated local PostgreSQL; required deployed storage/browser assertions remain."
   },
   {
     "id": "MEDIA-003",
@@ -2660,8 +2732,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-003 \u2014 Media request Content-Type reconciliation\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Valid image/video File object.\n- **Steps:** Trigger browser thumbnail/gallery/promo upload; compare transmitted Content-Type/body with raw-stream controller contract.\n- **Expected results:** expected result needs investigation: client inherits application/json default while submitting File; do not assume server MIME validation receives actual media MIME.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 9,
+    "assessment_scope": "Current controlled media browser observations plus actual local backend evidence; deployed/Spaces/browser matrix and persistence assertions remain. See media batch scopes and BUG-042/043."
   },
   {
     "id": "MEDIA-004",
@@ -2680,8 +2754,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-005 \u2014 Gallery capacity\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. 20 saved gallery images.\n- **Steps:** Attempt21st upload; removeone then upload again.\n- **Expected results:** Maximum 20 enforced;21st rejected without adding metadata; freed slot permits valid upload.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 10,
+    "assessment_scope": "Current controlled media browser observations plus actual local backend evidence; deployed/Spaces/browser matrix and persistence assertions remain. See media batch scopes and BUG-042/043."
   },
   {
     "id": "MEDIA-006",
@@ -2690,8 +2766,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-006 \u2014 Gallery reorder validation\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Three saved images; duplicate, missing and foreign image IDs.\n- **Steps:** PUT /api/products/{p}/media/gallery/order with each invalid set.\n- **Expected results:** Invalid permutation rejected; existing ordering remains unchanged.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 32,
+    "assessment_scope": "Local API/database assertions recorded; required deployed storage/browser proof remains."
   },
   {
     "id": "MEDIA-007",
@@ -2700,8 +2778,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-007 \u2014 Gallery deletion\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Gallery with multiple images.\n- **Steps:** DELETE /api/products/{p}/media/gallery/{imageId}; reload; try foreign/missing image ID.\n- **Expected results:** Target removal persists and remaining positions normalize; foreign/missing association rejects.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 17,
+    "assessment_scope": "Current controlled media browser observations plus actual local backend evidence; deployed/Spaces/browser matrix and persistence assertions remain. See media batch scopes and BUG-042/043."
   },
   {
     "id": "MEDIA-008",
@@ -2710,8 +2790,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-008 \u2014 Promo video lifecycle\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. MP4 and WebM fixtures; existing promo variant.\n- **Steps:** POST /api/products/{p}/media/promo-video; replace, reload and play; DELETE same path.\n- **Expected results:** Single promo metadata persists with READY state; replacement/removal updates Product; no transcoding/progress pipeline is implied.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 8,
+    "assessment_scope": "Owner/Admin \u00d7 four types API validation/recovery/removal on real migrated local PostgreSQL; required deployed storage/browser assertions remain."
   },
   {
     "id": "MEDIA-009",
@@ -2720,8 +2802,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-009 \u2014 Image validation boundary\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. JPEG/PNG/WebP/GIF files >0 up to10MiB; zero,10MiB+1 and unsupported MIME variants.\n- **Steps:** Select via UI and bypass with POST image/gallery raw bytes.\n- **Expected results:** Allowed files satisfy size/MIME rules; invalid cases reject and previous media remains. Client extension is not proof of actual bytes being safe.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 16,
+    "assessment_scope": "Owner/Admin \u00d7 four types API validation/recovery/removal on real migrated local PostgreSQL; required deployed storage/browser assertions remain."
   },
   {
     "id": "MEDIA-010",
@@ -2730,8 +2814,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-010 \u2014 Promo validation boundary\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. MP4/WebM >0 up to100MiB; zero,100MiB+1 and unsupported MIME.\n- **Steps:** Select via UI and POST raw promo request for each.\n- **Expected results:** Invalid size/MIME rejected; no successful promo metadata for rejected upload.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 8,
+    "assessment_scope": "Owner/Admin \u00d7 four types API validation/recovery/removal on real migrated local PostgreSQL; required deployed storage/browser assertions remain."
   },
   {
     "id": "MEDIA-011",
@@ -2740,8 +2826,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-011 \u2014 Media ownership matrix\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Nonowner Creator, User, Guest and Admin.\n- **Steps:** Call thumbnail POST/DELETE, gallery POST/DELETE/order PUT and promo POST/DELETE with valid fixture requests.\n- **Expected results:** Guest/User/nonowner denied; Admin permitted across owners. No foreign media metadata mutation.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 140,
+    "assessment_scope": "Ownership and capacity proved with migrated local PostgreSQL and mock storage; deployed browser/Spaces requirements remain."
   },
   {
     "id": "MEDIA-012",
@@ -2750,8 +2838,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-012 \u2014 Media storage failure recovery\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Fail storage PUT and cleanup DELETE independently.\n- **Steps:** Upload replacement under each failure; reload Product; retry valid upload.\n- **Expected results:** PUT failure must not claim successful upload; old-object cleanup failure is best-effort and can leave stored objects while metadata changes succeed.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 24,
+    "assessment_scope": "Owner/Admin \u00d7 four types API validation/recovery/removal on real migrated local PostgreSQL; required deployed storage/browser assertions remain."
   },
   {
     "id": "MEDIA-013",
@@ -2760,8 +2850,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-013 \u2014 Product deletion cleanup ordering\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Creator B attempts deleting A Product with media, using isolated disposable storage.\n- **Steps:** DELETE /api/products/{p} as nonowner; inspect response and media fetchability through allowed public URLs.\n- **Expected results:** expected result needs investigation: ProductService invokes media cleanup before handler authorization; DB rollback does not prove external object restoration.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 12,
+    "assessment_scope": "Local API/database assertions recorded; required deployed storage/browser proof remains."
   },
   {
     "id": "MEDIA-014",
@@ -2770,8 +2862,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-014 \u2014 Gallery position swap under database uniqueness\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; isolated migrated PostgreSQL and disposable media. Two or more persisted gallery images with positions0,1,2.\n- **Steps:** PUT /api/products/{p}/media/gallery/order with firsttwoIDs swapped; GET Product after response; repeat deleting middle image.\n- **Expected results:** expected result needs investigation: service assigns final positions and saveAll while migration enforces immediate unique(product_id,kind,gallery_position); successful ordering cannot be presumed from in-memory response construction.\n- **Required environment / external service:** Test deployment with PostgreSQL, isolated Spaces and explicit media-size/gallery-limit overrides.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 32,
+    "assessment_scope": "Local API/database assertions recorded; required deployed storage/browser proof remains."
   },
   {
     "id": "MEDIA-015",
@@ -2790,8 +2884,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-016 \u2014 Zero-byte media selection\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; isolated migrated PostgreSQL and disposable media. Zero-byte image or MP4 carrying allowed MIME; existing valid media.\n- **Steps:** Select file in browser, then submit raw upload if client allows; reload.\n- **Expected results:** Frontend checks MIME/max only, while server rejects size<=0. expected result needs investigation for visible server error handling and retained previous media; do not claim local zero-size rejection.\n- **Required environment / external service:** Test deployment with PostgreSQL, isolated Spaces and explicit media-size/gallery-limit overrides.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3,
+    "assessment_scope": "Current controlled media browser observations plus actual local backend evidence; deployed/Spaces/browser matrix and persistence assertions remain. See media batch scopes and BUG-042/043."
   },
   {
     "id": "CONS-001",
@@ -3273,7 +3369,7 @@
     "coverage": "Pass",
     "variations_expanded": true,
     "expansion_notes": "Complete explicit catalog isolated API matrix in backend-payment-state-batch-2026-10-03.json; H2/MockMvc scope. Cloud/browser assertions remain separate.",
-    "recorded_variations": 1
+    "recorded_variations": 2
   },
   {
     "id": "ACCESS-003",
@@ -3306,9 +3402,9 @@
     "level": "API integration",
     "priority": "P0",
     "instructions": "### ACCESS-005 \u2014 Content read with active access\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. ACTIVE entitlement; Course/Download in Published, Hidden and Draft variants. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** GET Product under entitled account; repeat as owner and Admin.\n- **Expected results:** Protected Course content is retained for entitlement/owner/Admin; Download URLs remain suppressed even for owner. Browser public route still rejects nonpublished statuses.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 7
   },
   {
     "id": "ACCESS-006",
@@ -3331,7 +3427,7 @@
     "instructions": "### ACCESS-007 \u2014 Library type filters and persistence\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. ACTIVE Course/Download/Consultation plus REVOKED entries.\n- **Steps:** Open /app/library/all-products; switch my-courses, my-download-packages, my-consultation; reload each.\n- **Expected results:** GET /api/entitlements/me with type filters returns only caller ACTIVE grants; appropriate subset/cards remain after reload; revoked excluded.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 4
+    "recorded_variations": 8
   },
   {
     "id": "ACCESS-008",
@@ -3362,8 +3458,10 @@
     "level": "browser E2E",
     "priority": "P0",
     "instructions": "### ACCESS-010 \u2014 Hidden Product Library navigation conflict\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. ACTIVE entitlement to now-HIDDEN Product.\n- **Steps:** Open Library and click Open.\n- **Expected results:** expected result needs investigation: API library retains ACTIVE entry, but target public Product page refuses non-PUBLISHED state despite backend content access.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1,
+    "assessment_scope": "Deployed prerequisite assessed; entitled Hidden fixture missing, target journey unexecuted."
   },
   {
     "id": "ACCESS-011",
@@ -3429,7 +3527,7 @@
     "instructions": "### CART-001 \u2014 Cart add, remove and totals\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Three Products: free and two paid amounts; local cart initially empty.\n- **Steps:** Add from Explore/Product; attempt duplicate; remove first, middle and last items in separate fixtures.\n- **Expected results:** IDs deduplicate; removal including index0 succeeds; totals use numeric price values/free0; empty state appears after last removal.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 5
+    "recorded_variations": 7
   },
   {
     "id": "CART-002",
@@ -3440,7 +3538,7 @@
     "instructions": "### CART-002 \u2014 Cart persistence and account boundary\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Local cart with selected items; two synthetic accounts on same browser.\n- **Steps:** Reload, logout and sign in as other account; inspect cart.\n- **Expected results:** cart:v1 persists in browser storage rather than per-account server basket; items can remain across account changes and must be revalidated for buyer at checkout.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 3
+    "recorded_variations": 5
   },
   {
     "id": "CART-003",
@@ -3471,8 +3569,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-005 \u2014 Storage malformed or denied\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Malformed JSON in cart/wishlist storage; storage reads/writes denied by browser separately.\n- **Steps:** Reload collections; add/remove items.\n- **Expected results:** Parse/access exceptions are caught where implemented; expected result needs investigation for valid JSON with wrong shape because no schema validation protects reducers.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 16,
+    "assessment_scope": "Actual browser malformed JSON cart/wishlist across User/Creator/Admin/Guest recovered; valid wrong-shaped JSON across roles fails BUG-050. Actual browser storage read/write denial remains untested; case incomplete."
   },
   {
     "id": "CART-006",
@@ -3483,7 +3583,8 @@
     "instructions": "### CART-006 \u2014 Free cart enrollment success\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. All-free published Products; signed-in User.\n- **Steps:** Checkout cart; wait all enrollments; reload Library.\n- **Expected results:** All enrollments complete, cart clears and Library navigation occurs; no monetary order is created.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 5,
+    "assessment_scope": " Actual local Course Creator/Admin cart roles added: persisted enrollments and fake purchases verified. Creator success destination fails BUG-049; Admin Library reload succeeds. Other required variations remain open."
   },
   {
     "id": "CART-007",
@@ -3492,8 +3593,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-007 \u2014 Free cart partial failure\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Two free Products; one enroll succeeds and one is rejected.\n- **Steps:** Checkout; inspect cart and Library; correct rejected Product and retry.\n- **Expected results:** Successful grant remains server-side; cart is retained until all enrollments succeed; repeat successful enrollment is idempotent.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 7,
+    "assessment_scope": "Full actual local User two-Course partial failure, repeat failure/idempotency, restoration/retry, cart clearing/Library reload/no monetary order. Other role/product variants outstanding. Actual local Course Creator/Admin cart roles added: persisted enrollments and fake purchases verified. Creator success destination fails BUG-049; Admin Library reload succeeds. Other required variations remain open."
   },
   {
     "id": "CART-008",
@@ -3513,8 +3616,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-009 \u2014 Paid cart browser validation\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. More than20 unique otherwise eligible paid Products from one Creator.\n- **Steps:** Attempt paid checkout with21 items, remove one and retry with20.\n- **Expected results:** 21 items produce checkout limit message with no request;20 eligible items may reach backend validation. Other materially different validation outcomes have separate CART cases.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2,
+    "assessment_scope": "Actual current full frontend through normal Explore/cartUI with controlled503 HTTP fixture. Local browser assertionsonly; deployedpersistentbackend/rolejourneys and case-specificremainingvariations stillrequired."
   },
   {
     "id": "CART-010",
@@ -3523,8 +3628,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-010 \u2014 Paid checkout unavailable\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Otherwise valid paid cart; commerce disabled.\n- **Steps:** Click checkout and allow503 response.\n- **Expected results:** Payments-not-configured message; cart remains, no fake success or entitlement.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1,
+    "assessment_scope": "Actual current full frontend through normal Explore/cartUI with controlled503 HTTP fixture. Local browser assertionsonly; deployedpersistentbackend/rolejourneys and case-specificremainingvariations stillrequired."
   },
   {
     "id": "CART-011",
@@ -3533,8 +3640,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-011 \u2014 Paid pending result\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Commerce fake provider enabled, auto-success false.\n- **Steps:** Checkout valid cart; let client GET returned order.\n- **Expected results:** PENDING information shown, cart retained; no automatic paid entitlement or assumed background polling.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1,
+    "assessment_scope": "Normal current full-app browser controls with synthetic profile/products and controlled loopback checkout/order responses. Local frontend response assertions only; required deployed durable backend, role and server idempotency/access semantics remain outstanding."
   },
   {
     "id": "CART-012",
@@ -3543,8 +3652,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-012 \u2014 Paid successful result\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Fake provider auto-success true in isolated test configuration.\n- **Steps:** Checkout valid cart; wait PAID response and open Library.\n- **Expected results:** Only PAID clears cart and navigates Library; all purchased Products have server entitlements. Test-payment copy is not evidence of real provider support.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 4,
+    "assessment_scope": "Real local full-App User single Course FAKE PAID order/grant/cart clear/Library reload. Other types/roles/deployed variants outstanding. Actual local Course Creator/Admin cart roles added: persisted enrollments and fake purchases verified. Creator success destination fails BUG-049; Admin Library reload succeeds. Other required variations remain open."
   },
   {
     "id": "CART-013",
@@ -3553,8 +3664,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-013 \u2014 Failed, expired and refunded results\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Separate terminal order fixtures associated with same cart idempotency key.\n- **Steps:** Retry checkout and inspect order result for FAILED, EXPIRED or REFUNDED.\n- **Expected results:** Error state shown and cart retained; no new successful grant merely from obtaining session response.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3,
+    "assessment_scope": "Normal current full-app browser controls with synthetic profile/products and controlled loopback checkout/order responses. Local frontend response assertions only; required deployed durable backend, role and server idempotency/access semantics remain outstanding."
   },
   {
     "id": "CART-014",
@@ -3563,8 +3676,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-014 \u2014 Checkout URL handoff and missing session identity\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Controlled response with checkoutUrl; separately response missing orderId and URL.\n- **Steps:** Start paid checkout in isolated harness.\n- **Expected results:** URL causes location assignment; no local paid result inferred before return. Missing identity does not clear cart or create access; real-provider return route is not implemented.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2,
+    "assessment_scope": "Normal current full-app browser controls with synthetic profile/products and controlled loopback checkout/order responses. Local frontend response assertions only; required deployed durable backend, role and server idempotency/access semantics remain outstanding."
   },
   {
     "id": "CART-015",
@@ -3573,8 +3688,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-015 \u2014 Browser idempotency reuse\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Same cart IDs reordered; session storage key within30minutes.\n- **Steps:** Start checkout, retry after reload/reorder; then change items or advance pastTTL.\n- **Expected results:** Same sorted set reuses key withinTTL; changed set/expired stored key gets new UUID. No cross-account key scope assumed on client; backend scopes buyer.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 2,
+    "assessment_scope": "Actual current full frontend through normal Explore/cartUI with controlled503 HTTP fixture. Local browser assertionsonly; deployedpersistentbackend/rolejourneys and case-specificremainingvariations stillrequired."
   },
   {
     "id": "CART-016",
@@ -3583,8 +3700,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-016 \u2014 Checkout error recovery\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. 400,409,422,503 and network failure variants.\n- **Steps:** Click checkout, allow rejection, correct data/dependency and retry.\n- **Expected results:** Distinct mapped messages, pending state clears and cart stays available; retry must respect existing idempotency/terminal order behavior.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 5,
+    "assessment_scope": "Normal current full-app browser controls with synthetic profile/products and controlled loopback checkout/order responses. Local frontend response assertions only; required deployed durable backend, role and server idempotency/access semantics remain outstanding."
   },
   {
     "id": "CART-017",
@@ -3637,8 +3756,13 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-021 \u2014 Paid cart missing identity rejection\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User with browser-local collection fixtures. Positive-price entry with no Product ID.\n- **Steps:** Click checkout.\n- **Expected results:** Cannot-be-checked-out message; no request constructed from missing ID.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1,
+    "expanded_variation_ids": [
+      "local-user-missing-product-id-no-request"
+    ],
+    "assessment_scope": "All stated current frontend guard/delegation outcomes exercised using normal controls and isolated summary fixtures. The catalog also requires frontend/backend with persistent test data; actual backend environment, authenticated identity and deployment parity are not established by the controlled HTTP service. Remaining deployed verification must not be inferred."
   },
   {
     "id": "CART-022",
@@ -3647,8 +3771,21 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-022 \u2014 Paid cart duplicate identity rejection\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User with browser-local collection fixtures. Controlled local cart contains duplicate Product IDs.\n- **Steps:** Click checkout.\n- **Expected results:** Duplicate Products message; no paid request.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 1,
+    "assessment_scope": "Complete explicit User browser-local duplicate Product ID guard with persistent actual backend environment. Normal checkout/reload retry show expected message and zero paid requests; normal removal/reload cleanup verified.",
+    "completion_audit": {
+      "catalog_case": "CART-022",
+      "required_scope": "User with controlled browser-local duplicate Product IDs; click checkout; duplicate-products message and no paid request. Frontend/backend with persistent test data.",
+      "evidence": [
+        "Controlled visible first-party test setup initializes two identical paid Product IDs in actual browser localStorage. Unchanged app normal Cart displays both and EUR19.50.",
+        "Normal checkout shows exact duplicate-products feedback. Reload and retry reproduce same guard.",
+        "Actual backend HTTP log contains zero checkout or enrollment request throughout storage batch; local backend live and final database unchanged at11 grants/four orders.",
+        "Normal Remove deletes one duplicate and updates totalEUR9.75; second Remove and reload leave empty cart."
+      ],
+      "result": "Complete exact named User browser duplicate guard. Other roles or deployment parity are not required by this catalog wording and are not claimed."
+    }
   },
   {
     "id": "CART-023",
@@ -3657,8 +3794,13 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-023 \u2014 Paid cart different Creators rejection\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User with browser-local collection fixtures. Paid items with complete distinct createdById values.\n- **Steps:** Click checkout.\n- **Expected results:** Different Creators message; no split purchase.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 1,
+    "expanded_variation_ids": [
+      "local-user-different-creators-no-checkout-request"
+    ],
+    "assessment_scope": "All stated current frontend guard/delegation outcomes exercised using normal controls and isolated summary fixtures. The catalog also requires frontend/backend with persistent test data; actual backend environment, authenticated identity and deployment parity are not established by the controlled HTTP service. Remaining deployed verification must not be inferred."
   },
   {
     "id": "CART-024",
@@ -3669,7 +3811,8 @@
     "instructions": "### CART-024 \u2014 Paid cart self-purchase rejection\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User with browser-local collection fixtures. Paid item createdById equals buyer ID.\n- **Steps:** Click checkout.\n- **Expected results:** Cannot-buy-own-product message; no request.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 3,
+    "assessment_scope": "Deployed User own Consultation and Course visible rejection/retention verified. Current Course checked8October through actual app UI. Network absence/order/entitlement readback not independently captured; remains partial."
   },
   {
     "id": "CART-025",
@@ -3678,8 +3821,15 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-025 \u2014 Paid cart nonpublished rejection\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User with browser-local collection fixtures. Paid item with status DRAFT or HIDDEN.\n- **Steps:** Click checkout.\n- **Expected results:** Only-published message; no request. Missing status relies on backend validation instead.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 3,
+    "expanded_variation_ids": [
+      "local-user-draft-paid-cart-no-request",
+      "local-user-hidden-paid-cart-no-request",
+      "local-user-missing-status-delegates-checkout"
+    ],
+    "assessment_scope": "All stated current frontend guard/delegation outcomes exercised using normal controls and isolated summary fixtures. The catalog also requires frontend/backend with persistent test data; actual backend environment, authenticated identity and deployment parity are not established by the controlled HTTP service. Remaining deployed verification must not be inferred."
   },
   {
     "id": "CART-026",
@@ -3688,8 +3838,23 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-026 \u2014 Stale cart after price or lifecycle update\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User with browser-local collection fixtures. Product saved in local cart; Creator changes price or hides/deletes Product.\n- **Steps:** Reload cart then checkout with fresh key.\n- **Expected results:** Local snapshot may remain stale; backend current data controls amount/eligibility. A misleading local free classification can lead enrollment to402 rather than granting access.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 7,
+    "assessment_scope": "Complete explicit User stale-cart contract: free/paid price changes, hidden/deleted Product, fresh-summary recovery; actual full frontend/backend/persistent PostgreSQL. Seven browser variations. Deployed parity not asserted.",
+    "completion_audit": {
+      "catalog_case": "CART-026",
+      "required_scope": "USER, Product saved in browser cart; owner changes price or hides/deletes it; reload and checkout with fresh key. Test frontend/backend with persistent test data, no specified external service.",
+      "evidence": [
+        "Normal Explore Add to cart, real page reload and checkout controls used.",
+        "Seven Course fixtures created with Article lessons and Published by actual supported backend APIs; later owner changes also actual PATCH/DELETE.",
+        "Free-to-paid cache mismatch: actual enrollment402/no grant, retained cart.",
+        "Paid price change: cached EUR12.50 versus actual PAID order EUR19.75 and PURCHASE grant.",
+        "Hidden, deleted and paid-to-free Products: actual checkout422/no new order/grant, retained carts.",
+        "Fresh-summary re-add recovers free and paid branches, verified by normal Library reload and five grants/two distinct-key paid orders."
+      ],
+      "result": "All explicitly named User price/lifecycle variants assessed. Full local environment satisfies this case prerequisite. Deployed parity and other case role/type requirements are separate and remain unclaimed."
+    }
   },
   {
     "id": "PAY-001",
@@ -4776,7 +4941,7 @@
     "instructions": "### CUSTOM-010 \u2014 Customer detail loading and ID change\n\n- **Feature area:** Creator Customers and customer detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic buyers and entitlement holders. Delayed next-customer response; unknown ID and request failure.\n- **Steps:** Navigate rapidly between customers; reload target.\n- **Expected results:** expected result needs investigation for stale detail because component renders stored customer until loading/error gates clear; no prior customer should be presumed requested target.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 3
   },
   {
     "id": "CUSTOM-011",
@@ -4961,8 +5126,10 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### LOCAL-001 \u2014 Product notifications lifecycle\n\n- **Feature area:** Local notifications, fixture displays and absent client capabilities. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 honest state presentation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated Creator; synthetic Product actions. Fresh Redux notification list.\n- **Steps:** Create Product, update shared fields, add image, create/update section and lesson; open bell after each successful action; reload.\n- **Expected results:** Fulfilled Product listeners append unread success notifications; reload clears session-only list; no notification backend persistence or delivery subscription.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 8,
+    "assessment_scope": "Actual current store/listeners/thunks/dropdown with controlled real browserXHR. Complete current menu contract/failed-action notification contract for LOCAL-002/003; LOCAL-001 normal backend/storage/authoring journey remains. See BUG-045 and existing BUG-027 extension."
   },
   {
     "id": "LOCAL-002",
@@ -4971,9 +5138,10 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### LOCAL-002 \u2014 Notification empty and unread behavior\n\n- **Feature area:** Local notifications, fixture displays and absent client capabilities. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 honest state presentation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated Creator; synthetic Product actions. Fresh session, then one notification.\n- **Steps:** Open bell when empty; reopen after successful Product mutation; inspect unread dot and attempt available actions.\n- **Expected results:** Empty copy and unread indicator render; reducer capabilities alone do not expose mark-read/remove UI; no server read-state persistence is implied.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 5,
+    "assessment_scope": "Actual current store/listeners/thunks/dropdown with controlled real browserXHR. Complete current menu contract/failed-action notification contract for LOCAL-002/003; LOCAL-001 normal backend/storage/authoring journey remains. See BUG-045 and existing BUG-027 extension."
   },
   {
     "id": "LOCAL-003",
@@ -4982,8 +5150,10 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### LOCAL-003 \u2014 Failed Product mutation notification\n\n- **Feature area:** Local notifications, fixture displays and absent client capabilities. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 honest state presentation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated Creator; synthetic Product actions. Reject Product/section/lesson mutation.\n- **Steps:** Attempt save then open bell.\n- **Expected results:** No new fulfilled-action success notification for failed request; existing success notifications are not evidence latest change saved.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 13,
+    "assessment_scope": "Actual current store/listeners/thunks/dropdown with controlled real browserXHR. Complete current menu contract/failed-action notification contract for LOCAL-002/003; LOCAL-001 normal backend/storage/authoring journey remains. See BUG-045 and existing BUG-027 extension."
   },
   {
     "id": "LOCAL-004",
@@ -5214,7 +5384,7 @@
     "instructions": "### UX-015 \u2014 Public/auth/marketing reflow\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Each marketing/auth route, Explore/search, public Product/storefront, Cart/Library.\n- **Steps:** Use320/375/768/1440px widths and200%zoom; complete route's supported primary action.\n- **Expected results:** expected result needs investigation for clipping, readable text and action reachability on every family; responsive styles define layouts but no executed conformance is claimed.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 27
+    "recorded_variations": 29
   },
   {
     "id": "UX-016",
@@ -5319,8 +5489,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### ENV-007 \u2014 Persisted authoring after new browser session\n\n- **Feature area:** Deployed dependencies, configuration and persistence boundaries. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 deployment-dependent availability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Synthetic authorized role fixtures; infrastructure harness only where explicitly stated. Saved profile, four Product types, nested content, config/media and granted Library fixture.\n- **Steps:** End browser session; sign in from clean browser; GET relevant supported resources and revisit screens.\n- **Expected results:** Server-backed records survive client-memory reset; local cart/wishlist/notifications do not become cross-device server records.\n- **Required environment / external service:** Already-provisioned isolated deployment matching repository configuration; no deployment-specific addresses or secrets in case data.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "recorded_variations": 5,
+    "assessment_scope": "Actual deployed saved four-type summaries after new authenticated IAB session and read-only DB comparison. Existing IAB profile retains browser-local collections; clean-profile/cross-device reset, all nested content/media/config and granted Library variations remain outstanding. Existing pricing/editor defects persist."
   },
   {
     "id": "ENV-008",
@@ -5359,8 +5531,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### ENV-011 \u2014 Relational cascades and historical order retention\n\n- **Feature area:** Deployed dependencies, configuration and persistence boundaries. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 deployment-dependent availability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Synthetic authorized role fixtures; infrastructure harness only where explicitly stated. Disposable fixtures with quiz attempts, sections, Download metadata, native Membership content and refunded historical order; no active purchase/delete guard. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** Delete content through supported owner endpoints; GET parent Product/feed/quiz and historical order/report APIs afterward.\n- **Expected results:** Nested children/references disappear according to cascade mappings; historical immutable order items remain available where Product deletion is permitted. No direct DB query is required for observable expectations.\n- **Required environment / external service:** Backend with migrated PostgreSQL test schema and disposable synthetic fixtures.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 20
   },
   {
     "id": "ENV-012",

@@ -1,6 +1,199 @@
 # Execution summary
 
+## Persisted collection shape and duplicate IDs — 9 October 2026
+
+Seventeen collection-storage browser assessments: nine Pass/eight Fail. CART-022 exact User duplicate-ID guard fully assessed: message/no request, repeat after reload and normal removal. CART-005 now partial: malformed JSON recovers in all four roles; valid wrong-shaped cart/wishlist data causes unhandled errors (new BUG-050). Actual browser storage read/write denial remains open. Original493:67 not started/239partial/187full;306 incomplete.50 issues; existing evidence file extended.
+
+**2,248 assessed variations / 2,296 historical attempts**:1,992 Pass,184 Fail,61 Needs clarification,11 Blocked. Backend HTTP saw no commerce/enrollment request;11 grants/four orders unchanged. No cloud change.
+
+Loopback frontend7767/port4329 retained (previous54153 confirmed exit0); actual backend42456/port52014 and private PostgreSQL51980 unchanged. Local User cart and wishlist restored empty with visible fixture controls; final empty normal Cart verified. Real cloud account untouched; tabs1/3 retained.
+
+## Creator/Admin cart journeys — 9 October 2026
+
+Eight additional role/cart browser assessments: five Pass and three Fail. New BUG-049: Creator free/paid checkout and corrected partial-enrollment retry persist access and clear cart, then navigate to unauthorized Library. Synthetic Admin free/paid checkout and partial recovery reach Library and survive reload. Cases remain partial. 493 originals: 69 not started, 238 partial, 186 fully assessed; 307 incomplete. 49 issues; existing evidence file extended.
+
+**2,231 assessed variations / 2,279 historical attempts**: 1,983 Pass, 176 Fail, 61 Needs clarification, 11 Blocked. Actual local DB final: 11 ACTIVE grants, four PAID fake orders; User5/Creator3/Admin3 grants. No cloud changes or real charges.
+
+Actual loopback fixture retained: frontend54153/port4329 (previous27209 confirmed exit0 after session refresh), backend42456/port52014, PostgreSQL51980. Real cloud account remains untouched. Private synthetic session file stays mode600. Local Creator cart empty; cloud tab1 and local tab3 retained for continuation.
+
+## Actual backend partial failure and stale carts — 9 October 2026
+
+Eleven new browser assessments pass. CART-026 is fully assessed against its explicit User price/hide/delete contract using actual local frontend/backend/PostgreSQL; seven variations include fresh-summary recovery. CART-007 is now partial; failure preserves one grant and the cart, restored retry adds the second grant without duplicates. First-time free-cart enrollment also passes. Original 493: 69 not started, 238 partial, 186 fully assessed; 307 incomplete. No new issue or evidence file.
+
+**2,223 assessed variations / 2,271 historical attempts**: 1,978 Pass, 173 Fail, 61 Needs clarification, 11 Blocked. Actual local fake orders use server-current amounts; stale client amounts remain visible until refreshing the cart item. No real payment or cloud change.
+
+Local fixture remains live for continuation: frontend handle27209/port4329, backend handle42456/port52014, private PostgreSQL port51980. Both terminal handles re-polled live; database readback succeeded. Real signed-in Creator tab1/cart and observer tunnel87598 preserved. Synthetic local session file remains private until final fixture cleanup.
+
+## Actual backend enrollment and fake payment — 9 October 2026
+
+Thirteen assessments: 11 Pass / 1 Fail / 1 Blocked. Actual local full App/backend/PostgreSQL prove non-owner free grants, typed Library reloads, FAKE PAID order/purchase grant/cart clear and duplicate-free retries. BUG-005 persists; Published Membership prerequisite prevented by schema. Original 493: 71 not started, 237 partial and 185 fully assessed; 308 incomplete. No new issue or evidence file.
+
+**2,212 assessed variations / 2,260 historical attempts**: 1,967 Pass, 173 Fail, 61 Needs clarification, 11 Blocked. All new journeys retain local scope; synthetic session setup does not prove deployed login/cookies/providers/storage. Temporary fixture cleaned; cloud Creator session/cart preserved. Optional JVM shutdown recorder exited 1; successful independent live SQL supplies persisted-state proof.
+
+## Cart identity and lifecycle validation — 8 October 2026
+
+Seven local full-app browser assessments: **6 Pass, 1 Fail**. Distinct Creator IDs, Draft/Hidden status and missing Product ID correctly block checkout without a request. Missing status delegates one normal request to the controlled backend. CART-021, CART-023 and CART-025 remain partial: their frontend guards were exercised, while their required real backend environment and deployment parity were not established.
+
+New **BUG-048**: a missing-ID entry is accepted into the cart but cannot be removed or moved to Wishlist; it survives reload and blocks checkout. Normal duplicate prevention works, while CART-022's deliberately duplicated-ID checkout guard still requires a fixture.
+
+Current totals: **2,199 assessed variations**, 2,247 historical attempts (1,956 Pass, 172 Fail, 61 Needs clarification, 10 Blocked). Of the original 493 cases: 75 not started, 233 partial, 185 fully assessed; **308 incomplete**. There are 48 issues. Existing evidence batch extended; the only new repository file is BUG-048. Temporary fixture storage, cart, browser tab and server cleaned up. Deployed Creator session and original cart preserved.
+
+## Signed-in deployed continuation — 8 October 2026
+
+The built-in browser is signed in and testing resumed through normal app controls. Eight new assessments: **6 Pass, 2 Fail**. Same-account role/cart persistence and Creator self-purchase rejection pass. Saved Course, Download and Consultation summaries match read-only cloud records. Existing Membership pricing and blank saved-editor defects persist (BUG-002 and BUG-001); no new issue or evidence file.
+
+**2,192 assessed variations**, 2,240 historical attempts: 1,950 Pass, 171 Fail, 61 Needs clarification, 10 Blocked. Of the original 493 cases: 78 not started, 230 partial, 185 fully assessed; **308 incomplete**. ENV-007 is partially assessed, because the existing browser profile retains local collection state and clean-profile/cross-device and remaining nested/media/config/library checks are unproved.
+
+Account restored to CREATOR/Dashboard; original synthetic Consultation cart preserved. Restricted logs and replacement read-only database tunnel on port 15432 work. Chrome remains disconnected; the earlier Chrome local Course cart is uninspected.
+
+## Checkout response and recovery checkpoint — 8 October 2026
+
+Eleven additional local browser assertions pass. The current full frontend shows the distinct 400/409/422/503/network error messages, retains the cart, restores the checkout button and retries to the controlled PENDING result. A held response shows disabled Processing. FAILED, EXPIRED and REFUNDED response fixtures retain the cart. Missing session identity also retains the cart; a synthetic loopback checkout URL navigates correctly and browser Back restores the cart.
+
+CART-011, CART-013, CART-014 and CART-016 remain partial. These results do not establish deployed provider configuration, durable orders, backend idempotency or server entitlements. No PAID/Library access check was executed.
+
+Current coverage: **2,184 assessed variations** (1,944 Pass, 169 Fail, 61 Needs clarification, 10 Blocked), with 2,232 historical attempts. Of 493 original cases, 79 are not started, 229 are partial and 185 are fully assessed. **308 original cases remain incomplete; 47 issues are documented.** No new issue or evidence file. The local cart was emptied and verified after reload, and the temporary browser and server are closed. Signed-in Chrome and cloud diagnostic prerequisites remain pending.
+
+## Cart boundary and deployed navigation checkpoint — 8 October 2026
+
+Seven new assessments: **6 Pass, 1 Fail**. Five local browser checks pass using the full current frontend and a controlled HTTP service:
+
+- Checkout rejects 21 items without a request; 20 items reach the service.
+- A 503 response retains the cart and restores the checkout button.
+- Reload and reordering the same items preserve the retry key.
+- Changing the item set creates a new retry key.
+
+CART-009, CART-010 and CART-015 remain partial. Their deployed backend checks and remaining role, expiry and account variations are outstanding. No payment provider or cloud mutation was involved.
+
+Actual deployed Guest testing confirms that search overlaps the Explore link at 1280px and 1440px. Pointer clicks focus search; keyboard Enter navigates correctly. The existing [BUG-012](issues/BUG-012.md) report now includes this evidence.
+
+Current coverage: **2,173 assessed variations** (1,933 Pass, 169 Fail, 61 Needs clarification, 10 Blocked), with 2,221 historical attempts. Of the 493 original cases, 83 are not started, 225 are partial and 185 are fully assessed. **308 original cases remain incomplete; 47 issues are documented.**
+
+The local cart was emptied and verified after reload. Both temporary tabs and the server are closed, and the viewport is reset. The signed-in Chrome connection and cloud diagnostic prerequisites remain pending.
+
+## Two-build pricing display checkpoint — 8 October 2026
+
+PROD-032 completed with eight passing paired browser comparisons using identical controlled summaries and actual current frontend builds. Legacy Membership fallback appears only with the mock flag. Valid monthly/yearly metadata works in both; missing interval, explicit one-time Membership and three other Product types behave as specified. Mock build independently shows the missing-adapter warning; rendering continues after dismissing the development overlay. This is the catalog's local display contract, not deployed authentication/persistence or Membership commerce.
+
+Current coverage:2166 assessed variations (1927Pass/168Fail/61Needs clarification/10Blocked),2214historical attempts;493 originals:86not started/222partial/185fully assessed,308remain.47issues. Existing evidence batch extended; no new issue or evidence file. Both temporary browser tabs and servers closed. Signed-in Chrome and cloud diagnostics prerequisites remain pending.
+
+## Deployed Guest homepage animation and keyboard checkpoint — 8 October 2026
+
+Nine additional assessments:5Pass/2Fail/1Needs clarification/1Blocked. Actual deployed public browser, independent Guest session; no controlled local responses. MKT-017 advances to partial. Current2158 assessed variations (1919Pass/168Fail/61Needs clarification/10Blocked),2206historical attempts;493 originals:87not started/222partial/184fully assessed,309remain.47issues.
+
+[BUG-046](issues/BUG-046.md): initial Tab progression skips animated homepage controls and jumps from the hero to the footer. Later reveal and backward recovery work. [BUG-047](issues/BUG-047.md): animation inlineopacity1 overrides sibling dimming CSS. Revealed feature keyboard selection, mobile focus and default-size revisit pass. Signed-in roles/reduced-motion remain outstanding; decorative presentation parity needs clarification.
+
+Chrome app cleanup remains pending: review rejected reading unrelated private foreground content and extension unavailable. SSH log access fails authentication with no loaded agent keys; database tunnel has no listener. Reconnection/key-loading/tunnel requests pending. Guest tabs closed and viewport reset; only two new issue files, existing evidence extended. No app fix, successful cloud DB/log query, provider action, commit or deployment.
+
+## Deployed browser continuation — 8 October 2026
+
+Returned to the actual signed-in Chrome app tab after the user clarified browser coverage. One additional Course self-purchase variation passes: a synthetic12.25 Course added through Explore is rejected with “You cannot buy your own product”; cart item/total retained. This is deployed UI evidence, with no direct API/local fixture response. Network/order/entitlement readback remains outstanding, so CART-024 stays partial. Setup navigation and already-known collection behavior are not counted again.
+
+2149 assessed variations (1914Pass/166Fail/60Needs clarification/9Blocked),2197 historical attempts;493 originals unchanged:88not started/221partial/184fully assessed,309remain.45issues unchanged.
+
+Browser user activity interrupted the subsequent reload and task-tab cleanup attempt. Last confirmed state is USER with one synthetic Course in cart; clearing it and restoring CREATOR/Dashboard are pending. Existing evidence batch extended; no new repository evidence file, app fix or cloud DB/log query.
+
 Run in progress. [Progress](progress.md) and [session notes](session-notes.md) contain the current checkpoint. [JSONL results](results.jsonl) are authoritative; [CSV results](results.csv) can be opened in Excel.
+
+## Notification rejection, recovery and presentation checkpoint — 8 October 2026
+
+2148 distinct assessed variations (1913Pass,166Fail,60Needs clarification,9Blocked);2196 historical attempts. Of493 originals:88not started,221partial,184fully assessed;309remain. Forty-five issue reports exist.
+
+Twenty-five additional assessments add23Pass/2Fail. LOCAL-003 completes its frontend failed-mutation notification contract asPass; LOCAL-002 completes its menu/read-state contract asFail. LOCAL-001 advances but remains partial for its normal authoring/backend/media journey.
+
+Current store/thunks/services/listeners/dropdown run in a real browser with controlled loopback503/200/201 responses. Seven failed Product/image/section/lesson requests leave the list empty. Seven successful requests append exact corresponding unread messages. Three later failures preserve all prior seven entries; three retries append one each. Reload clears the ten-entry session list. These results do not establish actual upload, backend persistence or delivery.
+
+[BUG-045](issues/BUG-045.md): unread entries render no state marker. A fixture-only reducer diagnostic creates a marker only after marking an entry read, but it has zero height and transparent background. The normal menu has no mark-read/remove controls.
+
+[BUG-027](issues/BUG-027.md) now includes the actual notification dropdown: titles/messages areRGB248,249,250 on whiteRGB255,255,255, reproducing the previously recorded Cart/Wishlist contrast problem. Existing unnamed-trigger BUG-022 is not duplicated.
+
+Twenty actual XHR observations and24 browser snapshots are retained in the existing browser evidence batch. Only BUG-045 is a new file. Temporary tab/server closed; no backend/database server started, cloud/account/provider action, app fix, commit or deployment.
+
+## Frontend/backend CSRF interoperability checkpoint — 8 October 2026
+
+2123 distinct assessed variations (1890 Pass,164 Fail,60 Needs clarification,9 Blocked);2171 historical attempts. Of493 originals:90 not started,221 partial,182 fully assessed;311remain. Forty-four issue reports exist.
+
+Forty-six new assessments add44Pass/2Fail. SEC-005 completes as Fail: actual frontend clients and real backend HTTP/security/database verify four principals, canonical/leading-slash URLs, profile/Product/enrollment/checkout, missing-CSRF rejection and restored retry. Supported operations succeed; User Product creation and Admin self-target creation are legitimate denials. Corrected Admin creation for a Creator succeeds. Six current profile reads carry credentials and the force-CSRF header and return exact persisted titles.
+
+[BUG-044](issues/BUG-044.md): registration's current cross-origin client omits cookies while supplying a CSRF header. A canonical credentials-enabled control reaches field validation; a slash-prefixed control skips the required header and is rejected. Invalid payloads prevent account creation. AUTH-005 and PROF-019 remain partial for their full normal browser flows.
+
+There are97 actual HTTP observations including35 successful preflights. The temporary backend permits only the fixture's loopback frontend origin; synthetic session/cookie setup does not establish deployed CORS, login or Secure/SameSite parity. PostgreSQL readback confirms4 seeded users,6 Courses,3 entitlements and6 FAKE/PENDING orders with zeroPAID. No payment URL is followed and storage/email mocks receive zero calls.
+
+The initial seed used a nonexistent common Product table; the temporary fixture was corrected to the real Course table and restarted with a fresh cleaned database before any browser test. Only the two unsupported Admin target requests were corrected later. No application failure is inferred from fixture setup. Synthetic cookies cleared, tab/proxy/backend closed and both initial/final PostgreSQL clusters stopped with36 domain tables empty/40 migrations retained. Existing evidence files extended; only BUG-044 is new. No app fix or real/cloud identity, role, Product, provider, commit or deployment change.
+
+## Media ownership, capacity and browser request checkpoint — 8 October 2026
+
+2077 distinct assessed variations (1846 Pass, 162 Fail, 60 Needs clarification, 9 Blocked); 2125 historical attempts. Of493 originals:93 not started,219 partial,181 fully assessed;312 still need checks. Forty-three issue reports exist.
+
+This continuation saves148 passing API/database assessments and15 additional browser/transport checks (11Pass/4Fail). Five principals × four Product types × seven media endpoints verify owner/Admin access, nonowner Creator/User403 and Guest401, unchanged denied metadata and zero denied storage calls. Eight gallery capacity flows accept20, reject21 without mutation, free a slot and append a new image. These use real migrated PostgreSQL/security/transactions with mock storage, not deployed object transport.
+
+[BUG-042](issues/BUG-042.md): real Uppy selections through current frontend services transmit valid PNG/MP4 bytes as `application/json`. Three focused actual backend requests confirm400 MIME rejection before storage. Explicit media MIME controls succeed in the local browser fixture.
+
+[BUG-043](issues/BUG-043.md): after successful gallery upload and removal, selecting the same file is silently filtered out. The gallery stays empty with no POST; a fresh component accepts the identical file. The diagnostic MIME control bypasses BUG-042 only in the temporary fixture; no application fix is made.
+
+Zero-byte PNG/MP4 selections reach the server and display an inline400 while retaining saved media. They are not locally size-rejected. Controlled responses and prior actual backend validation evidence are distinguished; deployed reload/Spaces proof remains outstanding. MEDIA-003/005/011/016 advance but remain partial. No original is newly completed in this batch.
+
+Existing evidence batches are extended; only two new issue files are added. Temporary browser tab and webpack server are closed. Both new PostgreSQL clusters are stopped with36 domain tables empty and40 migration records retained; both JVMs exit0. No cloud resource, live account, provider, application source, commit or deployment is changed. The signed-in Chrome tab was successfully observed as Creator/Dashboard on7 October; the extension connection remained absent.
+
+## Media validation and storage recovery checkpoint — 7 October 2026
+
+1914 assessed variations (1687 Pass, 158 Fail, 60 Needs clarification, 9 Blocked); 1962 historical attempts. Of 493 originals: 97 not started, 215 partial, 181 fully assessed; 312 remain. Forty-one issue reports remain.
+
+Sixty-four additional passing groups cover owner/Admin × four Product types: image MIME/size validation for thumbnail and gallery, promo MIME/size validation, storage PUT failure/retry, best-effort cleanup DELETE failures, thumbnail removal and promo removal. Exact10MiB/100MiB boundaries succeed; zero, one byte over, unsupported and missing MIME reject without changing prior metadata or invoking upload. These are actual API/security/transaction/database checks with mock storage, not deployed file selection, CDN delivery or playback.
+
+Fifteen initial groups exhausted the temporary768MiB runner heap. Disabling its request printing and repeating only affected groups with fresh fixtures and the same heap yielded allPass; forty-nine prior passing groups are retained. Initial diagnostics and both fixture sources remain in the existing evidence file. There are1112 recorded request observations overall,904 within the final passing groups. Runner resource errors are not new application failures or duplicate assessed variations.
+
+MEDIA-002/008/009/010/012 advance to partial. No original is newly marked complete because deployed browser/storage requirements remain. Both JVMs exited0; all36 fixture tables are empty,40 migrations retained and private PostgreSQL stopped. No application fix, cloud mutation, new browser/account action or new issue file.
+
+## PostgreSQL media ordering and authorization checkpoint — 7 October 2026
+
+1850 assessed variations (1623 Pass, 158 Fail, 60 Needs clarification, 9 Blocked); 1898 historical attempts. Of 493 originals: 102 not started, 210 partial, 181 fully assessed; 312 remain. Forty-one issue reports exist.
+
+This batch adds92 executed API/database assessments:72Pass and20Fail, with300 actual request observations. One additional Hidden-Library prerequisite is Blocked and was not executed. Four media originals advance but remain partial because their deployed browser/Spaces requirements are not covered by mock storage.
+
+[BUG-040](issues/BUG-040.md): complete two/three-image gallery swaps return400 under the immediate PostgreSQL position uniqueness constraint. Sixteen role/type swaps fail; unchanged-order, invalid-permutation, middle-deletion normalization and missing/foreign association controls pass.
+
+[BUG-041](issues/BUG-041.md): a distinct nonowner Creator's Product DELETE returns403 and rolls back database metadata, but has already invoked storage deletion for the owner's gallery keys. Four type variants fail. Eight owner/Admin controls succeed. Storage is mocked: no actual cloud object was deleted, and no real storage consequence is claimed.
+
+The User Library check found no Hidden entitled fixture for the current account, so ACCESS-010 remains unexecuted for its target journey. No enrollment or Product lifecycle changes occurred. The account is restored to Creator at Dashboard. Both local API JVMs exited0; all36 fixture tables are empty and the isolated PostgreSQL cluster is stopped. Existing evidence files are extended, with two new necessary bug reports. No application fix, deployment or new cloud DB/log query.
+
+## Catalog response and customer navigation checkpoint — 7 October 2026
+
+1757 assessed variations (1551 Pass, 138 Fail, 60 Needs clarification, 8 Blocked); 1805 historical attempts. Of 493 originals: 107 not started, 205 partial, 181 fully assessed; 312 remain.
+
+Thirty additional variations include 27 Pass and three Fail. DISC-002/003 and PROD-004 complete their explicit controlled frontend response contracts as Pass. PROD-007 completes as Fail: late successful responses for the previous Product replace the current Overview, causing a false Product not found state. [BUG-039](issues/BUG-039.md) records a reproduction with exactly one request per Product and the separate premature loading-clear symptom. Thirty-nine issue reports now exist.
+
+Actual local browser checks cover Explore empty/delayed/failed/reloaded responses across four synthetic roles; Creator management loading/error/Retry; empty Course and Download outlines; ID changes; reversed and ordered request completion; and recovery. These use actual router/providers/store/components with controlled Axios responses. Their completion scope does not establish deployed authentication, persistent backend fixtures or injected cloud transport failures.
+
+Chrome's extension connection is still unavailable, but native controls successfully selected the existing signed-in Creator tab. Two additional deployed customer checks pass: Main Buyer to Customer01 through the list, then target reload. CUSTOM-010 remains partial for deliberately delayed/concurrent requests and failure recovery. The real tab is restored to Dashboard. No application fix, role change, cloud mutation, provider operation or new DB/log query. The existing evidence file is extended; only the new bug report creates a repository file.
+
+## Migrated PostgreSQL cascades checkpoint — 7 October 2026
+
+1727 assessed variations (1524 Pass, 135 Fail, 60 Needs clarification, 8 Blocked); 1775 historical attempts. Of 493 originals: 111 not started, 205 partial, 177 fully assessed; 316 remain.
+
+Twenty passing owner/Admin scenarios complete ENV-011 on a separate local PostgreSQL15.19 database with all forty Liquibase migrations and Hibernate schema generation disabled. Supported API deletions remove Course quizzes/attempts/lessons/sections, Download metadata/groups, native Membership metadata/feed and included-Product references. After a local fake full refund, permitted Course deletion preserves the buyer's immutable Order items and Creator order/report ledger. These are API integration results; no cloud or complete browser journey is claimed.
+
+All 244 HTTP observations have expected statuses; 190 belong to the final passing scenarios. Six initial Course assertions overlooked the automatically created Draft section and were corrected and repeated with fresh fixtures. Their original observations are retained as harness diagnostics, not application failures or duplicate assessed variations. External storage/email mocks had zero interactions. All36 fixture tables were emptied, both JVMs exited0, and the isolated database was stopped. Thirty-eight issue reports remain.
+
+Browser work is paused because the active Chrome page changed to unrelated private work content. Automatic approval review rejected further browser inventory inspection; a request to select the existing Video Platform tab is pending. No unrelated page was manipulated.
+
+## Nonpublished public access checkpoint — 7 October 2026
+
+1707 assessed variations (1504 Pass, 135 Fail, 60 Needs clarification, 8 Blocked); 1755 historical attempts. Of 493 originals: 112 not started, 205 partial, 176 fully assessed; 317 remain.
+
+Five actual browser checks complete ACCESS-005 as Pass. Four existing synthetic Course/Download records are confirmed as Draft/Hidden in their owner management pages; all four public Product URLs show the exact nonpublic availability message. The Published curriculum Course renders normally as a positive control. These complete the missing browser assertions alongside the earlier successful 24 Product/access API pairs across three states and four access principals. The API and deployed browser fixtures are independent; this is not a new purchase, file-delivery or complete learner journey.
+
+Chrome's dedicated browser connection was unavailable after reconnection, but native accessibility and keyboard controls reached the signed-in Creator session. Eleven masked page observations are appended to the existing browser evidence. The original tab is back at Dashboard. No Product/status, entitlement, role, profile, account, payment or provider change; no new database/log query or app fix. Thirty-eight issue reports remain.
+
+## Onboarding and drawer checkpoint — observed 4 October, finalized 7 October 2026
+
+1702 assessed variations (1499 Pass, 135 Fail, 60 Needs clarification, 8 Blocked); 1750 historical attempts. Of 493 originals: 112 not started, 206 partial and 175 fully assessed; 318 remain.
+
+The interrupted batch retained 98 new assessments: 82 Pass, twelve Fail and four Needs clarification. It includes 69 onboarding input trials across three synthetic roles, successful-response and rejected-save controls, Skip/Continue navigation, accessible field/error inspection and 23 drawer states. These are additional checks on unfinished originals; no original is newly marked complete.
+
+New issues: [BUG-035](issues/BUG-035.md), normal onboarding URL renders role home; [BUG-036](issues/BUG-036.md), onboarding labels/errors lack programmatic associations; [BUG-037](issues/BUG-037.md), rejected saves still advance the wizard; [BUG-038](issues/BUG-038.md), overlapping shared drawers collide in names and break Escape cleanup. Thirty-eight issue reports now exist. The onboarding route symptom was also observed through a read-only deployed navigation/reload. Other new failures use actual components with isolated synthetic responses; a deployed overlapping-drawer flow was not reproduced.
+
+PROF-001/002/003, UX-005 and UX-016 remain partial. A diagnostic component route cannot establish normal-route persistence, logout/login or cloud role behavior. Existing browser evidence was extended; four necessary issue reports complete its previously saved ledger references. No application fix, account/role change, provider operation or new test execution is claimed by this documentation recovery.
 
 ## Read contracts and controlled browser checkpoint — 4 October 2026
 
