@@ -1,5 +1,291 @@
 # Execution summary
 
+## Course and Download section creation and validation —16October2026
+
+Eighteenadditionalchecks (16Pass/2Fail) complete CONTENT-001/002. NormalCreatorsectioncreation/validationandAdminAPIcontrolsworkforCourse/Download;requiredsavededitorreloadstillfailsBUG001. Freshworkingformsretained;nonewissue/sourcechange. 493 originals: 35 not started / 192 partial / 266 fully assessed (206 Pass / 45 Fail / 15 Needs clarification); 227 incomplete. 2860 historical / 2786 latest checks: {'Pass': 2460, 'Fail': 234, 'Needs clarification': 76, 'Blocked': 16}.
+
+Noexistingcontentdeletedoruploaded. RetainCreatorAnewCoursefa95b2adwith3sections(defaultDraft+A+B)andDownloada16d5258with2filegroups(A+B),bothDraft. AdminvalidationsectionsaddedonlytoseparateAdmincreatedProducts260820e0/216c041d,preservingprimaryCreatorUIstate.20Users/6Courses/2Downloads/1existingfakeorder/3grants. CreatorlocalhostandAdmin127.0.0.1sessionsindependentlyverifiedwithnormalpages. Workingtabs2/4/5/6retained;readbacktab7closed. LocalAdminactorretainedforongoingauthoring;originalUSERcheckpointed. Allrequestfault/gatecontrolsdisabled;nocloud/sourcechange.
+
+## Admin Creator owner selection and query validation —16October2026
+
+NineadditionalPasscheckscompleteADMIN-008:twoCreatoroptions/twovalidownerDraftworkspacesandfiveinvalidownerqueriesverifiedwithactualPOSTstatusesandDBownership/no-rejected-recordproof. FreshCourse/Downloadworkspacesretainedforremainingauthoring;localAdminactorkepttemporarily. 493 originals: 35 not started / 194 partial / 264 fully assessed (205 Pass / 44 Fail / 15 Needs clarification); 229 incomplete. 2842 historical / 2768 latest checks: {'Pass': 2444, 'Fail': 232, 'Needs clarification': 76, 'Blocked': 16}.
+
+TwoDrafttestProductsretainedforauthoring: Course260820e0 ownedCreatorB inworkingtab2;Download216c041d ownedCreatorA inworkingtab4. Do not reload/navigate these freshworkspaces because saved-editorreopenBUG001willloseworkingUI. Syntheticactorb001fccdretainedtemporarilyasADMINforongoingauthorizedAdminauthoring;originalUSERrolecheckpointedandrestorehelperavailable. OtherUser/Creatorrolesunchanged.20Users/5Courses/1Download/1existingfakeorder/3grants. No cloud/provider/payment/sourcechange.
+
+## Admin Product View/Edit scope audit —16October2026
+
+Scope audit closes ADMIN-009 as fully assessed Fail using its five retained actual browser results and inspected standalone DOM evidence: PublishedView works,DraftView denies,SavedEdit failsBUG001. No new executions or result rows were added. 493 originals: 35 not started / 195 partial / 263 fully assessed (204 Pass / 44 Fail / 15 Needs clarification); 230 incomplete. 2833 historical / 2759 latest checks: {'Pass': 2435, 'Fail': 232, 'Needs clarification': 76, 'Blocked': 16}.
+
+Read-onlyscopeauditofexistingledgerandstandalonebrowserDOMevidence. No browser/data/sourcechangeandnonewtestattempt. Originalhistoricalcleanupstatesretained.
+
+## Populated account-switch Library and reporting isolation —16October2026
+
+Twelve additional assessments (8Pass/4Fail) complete JOURNEY-006. NormalCreatoraccountswitchshowsA-cachedreportingunderBwhileloading (newBUG058);actualBbackendscopesandUserLibrary/accessisolationpass. Cart/wishlistcleared;20Users/4Courses/1order/3explicitfreegrantsretained;allgatesdisabled. 493 originals: 35 not started / 196 partial / 262 fully assessed (204 Pass / 43 Fail / 15 Needs clarification); 231 incomplete. 2833 historical / 2759 latest checks: {'Pass': 2435, 'Fail': 232, 'Needs clarification': 76, 'Blocked': 16}.
+
+NormalCartRemoveandExplorewishlistuncheckrestoreemptybrowsercollections. UserBnormalLibraryleftopenwithonlyBeta. Allrequestgatesdisabled. Retain20syntheticUsers/4Courses/1existingfakeorder/3freeenrollmentgrants;newUserBUSER/newCreatorBCREATORandoriginalArolesunchanged. ThreeexplicitlyPublishedSQLProductfixturesretainedlocally;oldcheckoutCourseHidden. Cloudaccount/datauntouched;noapplicationfix. Frontend3423stopped/replaced5531;backend97165/PG54180unchanged.
+
+## Existing access and refresh after all role changes —16October2026
+
+Seven additional assessments (6Pass/1Needs clarification) complete ADMIN-005. All6rolechangesdeleteactualrefreshrows;oldrefresh401,freshrolepermissionscorrect. UnexpiredoldJWTretainsoldauthorities,includingdemotedAdminAPIaccess;intendedimmediate-revocationpolicyrequiresclarification. Originalsyntheticroles/datarestored;nonewissue/sourcechange. 493 originals: 36 not started / 196 partial / 261 fully assessed (204 Pass / 42 Fail / 15 Needs clarification); 232 incomplete. 2821 historical / 2747 latest checks: {'Pass': 2427, 'Fail': 228, 'Needs clarification': 76, 'Blocked': 16}.
+
+All6transitionscompleted;retainedtargetCreatorandtemporaryactororiginalUSERrestoredthroughactualsupportedAPIs. Onlysame-valueHIDDENProductPATCHusedaswritecontrol;Productidentity/owner/status/price/descriptionandcommercecountsunchanged. Tokensonlyinprocessmemory;repositorycontainsrole/iat/expmetadataandbooleans,norawcredentials/cookies/refreshvalues. No clouddata/provideractionorapplicationchange.
+
+## Normal sign-in after Creator role changes —16October2026
+
+Seven additional checks (6Pass/1Fail) close JOURNEY-005 normal-login gap; fully assessed Fail retains existing saved-editorBUG001. ADMIN-005 gains limited post-update refresh-row evidence and remains partial. Roles restored; ownership and commerce state unchanged; no newissue. 493 originals: 36 not started / 197 partial / 260 fully assessed (204 Pass / 42 Fail / 14 Needs clarification); 233 incomplete. 2814 historical / 2740 latest checks: {'Pass': 2421, 'Fail': 228, 'Needs clarification': 75, 'Blocked': 16}.
+
+Target restoredCREATOR and normal credentialbrowser remains on sameHiddenCourseOverview; emptyCart and one fakeorder/zeroentitlements retained. Temporary syntheticAdmin restored to originalUSER throughsupporteddevroleAPI; distinct baselinebuyerUSER untouched.18Users/1Course/1order/zeroentitlementsverified. Cloud account/data untouched; read-only observer restored earlier. No newissue/sourcechange.
+
+## Committed checkout response loss and normal same-key retry —16October2026
+
+Five additional Pass attempts complete JOURNEY-007: actual committed checkout response lost, normal same-key retry returns identical order, API/SQL prove one order/item/attempt and zero grants. Cart cleared, Product hidden; cloud read-only database and restricted logs restored. No new issue. 493 originals: 37 not started / 197 partial / 259 fully assessed (204 Pass / 41 Fail / 14 Needs clarification); 234 incomplete. 2807 historical / 2733 latest checks: {'Pass': 2415, 'Fail': 227, 'Needs clarification': 75, 'Blocked': 16}.
+
+Normal buyer Remove cleared Cart. Owner actual PATCH200 retained the Course HIDDEN at1EUR; one fake order/item/attempt and zero entitlements remain. Synthetic owner retainedCREATOR for future fixtures (originalUSER); buyer remainsUSER. One-shot response loss is disabled. Earlier lost-cluster Product/Storefront values were not restored; historical limitation retained. Cloud read-only tunnel51540 and fixed log reader restored; no cloud data mutation.
+
+## Normal role homes and disabled role buttons —15October2026
+
+10additionalPasscheckscompleteSEC010andSEC011. NormalenabledrolecycleissuescookiesandcoldloadsUser/Creator/Adminhomes;all6visibleother-rolechoices403withflagdisabledandpreserverole/reload. SeparateAPI403/DBsingleUSERrestorationverified. Disabledvariantstopped;noapplication/cloudchange. 493 originals: 37 not started / 198 partial / 258 fully assessed (203 Pass / 41 Fail / 14 Needs clarification); 235 incomplete. 2802 historical / 2729 latest checks: {'Pass': 2410, 'Fail': 227, 'Needs clarification': 75, 'Blocked': 17}.
+
+Onlyexistingcomplete syntheticUSER changedviaactualnormalaccountdropdownUSER->CREATOR->ADMIN->USER. FinalcoldreloadnormalUserhome/roleUSER,all3authcookiesreissuedonsuccess; eachdisabledclick403/noSetCookie. SeparateAPI403/profileUSERandSQL18Users/0Products/Orders/Entitlements/threeoriginalfixturesoneUSERroleeach verified. Disabled-rolebackend54344/exec66307terminatedexit130. Allrouting/short-token/invalid-refresh/delaycontrolsdisabled; mainfrontend89019/backend69233/PG54180retained. No appsource,provider,payment,cloudaccountorcredentialchange. Existingevidencebatchextended;nonewissuefile.
+
+## Actual expired-cookie concurrent refresh and terminal recovery —15October2026
+
+23additionalchecks:20Pass/3Fail. SEC008fullyFail:actualexpiredUSER/CREATOR/ADMINcookies,realrefresh200textandrotationstillleave2of3waiterspendingBUG026;newnormalreadshealthy. SEC009fullyPass:invalidrefresh401rejectsall,repeatedqueueclears,normalguard/signinrecover,andpersistent401retrymarkerboundsone-refresh/one-replay. RolesrestoredUSER,shortserverstopped,fixturecontrolsdisabled. 493 originals: 37 not started / 200 partial / 256 fully assessed (201 Pass / 41 Fail / 14 Needs clarification); 237 incomplete. 2792 historical / 2719 latest checks: {'Pass': 2400, 'Fail': 227, 'Needs clarification': 75, 'Blocked': 17}.
+
+Three existing verified syntheticidentities temporarilyUSER/CREATOR/ADMIN; all restored tooriginalUSERroles throughsupportedAPI.18Users/0Products/Orders/Entitlements verified. Short-tokenbackend54343/exec88060terminatedexit130. Sessioncontrolsshort_loginfalse/invalid_refreshfalse/refreshdelay0;registrationprerequisitefalse/delay0;faults[]. Mainbackend69233/54339andfrontend22179/4329/PG54180retained. BaselineUsernormalSigninrestored/app; cloudtabunchanged. No validpassword/JWT/cookie/headerbodyvaluescopiedintoQAevidence. No actualprovider/payment/cloudaction/applicationfix. DiagnosticentryandfixturecodeoutsideGitretainedforresume.
+
+## Missing-token verification message readability —15October2026
+
+Twoadditionalchecks:1Pass/1Fail. Missing-tokenlogicandno-requestgatepass, butactualstatusnearlyinvisibleonwhitecard(newBUG057). AUTH007overallPasssupersededbyFail;previoussemanticPassretained. Originalcompletedcountunchanged;57issuesnowrecorded. 493 originals: 37 not started / 202 partial / 254 fully assessed (200 Pass / 40 Fail / 14 Needs clarification); 239 incomplete. 2769 historical / 2696 latest checks: {'Pass': 2380, 'Fail': 224, 'Needs clarification': 75, 'Blocked': 17}.
+
+NormalbaselineUserLogoutcompleted. Localtab2nowGuestat/auth/verify-emailwithouttoken; no verificationcalloraccountmutation. Existing18syntheticUsers/0Products/Orders/Entitlements retained; earlierenabledverificationUser remainsenabledandexpiredfixtureoriginalexpiryrestored. NoCSS/sourcechange. NewissueBUG057,existingJSONevidenceextended. Temporarydocs/defaultserversalreadyterminated;mainfrontend33881/backend69233/PG54180remain.
+
+## Docs-profile access and default feature configuration —15October2026
+
+21 additionalPasschecksfullyassessENV004andENV009inactualisolatedloopbackbackendvariants. DocsrequiresBasic,appJWTonlydenied,65paths/111schemasverified. Defaultcommerce/provider/fake/docsdisabled,devroleenabled;actualcheckout503,docs400missingresource,rolecyclerestoredUSER. Bothtemporaryvariantsstoppedverified;noapplication/cloudchange. 493 originals: 37 not started / 202 partial / 254 fully assessed (201 Pass / 39 Fail / 14 Needs clarification); 239 incomplete. 2767 historical / 2694 latest checks: {'Pass': 2379, 'Fail': 223, 'Needs clarification': 75, 'Blocked': 17}.
+
+Temporary actual loopback docs-profile54341/exec61867 and default-configuration54342/exec15323 terminated with verified exit130 after all checks. Main isolated app/backend/PostgreSQL retained on4329/54339/54180, frontend33881/backend69233. SyntheticbaselineUser restored toUSER through supportedroleendpoint;18Users/0Products/0Orders/0Entitlements confirmed. Actual login/rolecookieissuance creates localtestrefreshsessions; no browser-cookie/deployment/CORS parity claimed. Basiccredential and privateJWT/cookievaluesnotwrittenintoevidence. No cloud/provider/payment call or application fix. Syntheticverification-enabledUser retained separately from earlierpacket.
+
+## Actual expired, valid and replayed verification links —15October2026
+
+11 additional attempts:7Pass/3Fail/1Blocked. AUTH008 fullyFail: actualexpired401/invalid400 preserveidentitybutGuestUI falselysaysEmailverifiedBUG007. AUTH006partial: actualvalid200enables/consumes,normalLogin200,replay400alsoshowsfalsesuccess; realmailboxoriginmissing. Existingissue/evidenceextended; noapplicationfix. 493 originals: 39 not started / 202 partial / 252 fully assessed (199 Pass / 39 Fail / 14 Needs clarification); 241 incomplete. 2746 historical / 2673 latest checks: {'Pass': 2358, 'Fail': 223, 'Needs clarification': 75, 'Blocked': 17}.
+
+Retained18 isolated syntheticUsers; one normal signup User enabled by actual verification endpoint, consumed token absent, onboardingfalse/USER role unchanged. Expired fixture staysdisabled; its original expiry restored exactly. No password change, external email/provider/payment/cloud mutation. Baselinecomplete syntheticUSER restored normally on/app. Restarted stopped local backend69233/frontend33881 against existingPG54180; actual18-userstate retained. Faults[] and registration prerequisitefalse/delay0 remain restored. Rawverificationtoken values private0600outsideGit; sanitized URLs/AX only in evidence.
+
+## Registration boundaries, pending submission and restored observer —14October2026
+
+48 additional attempts:44Pass/1Fail/2Needs clarification/1Blocked. AUTH002 fullyPass; AUTH003/004 fullyNeeds clarification; AUTH005 fullyFail BUG044. Required/clientemail/matchingcontrols blockwithzeroRegisterPOST. Complete14API+14browsername/passwordboundariesverifiedwithlabelledmatchingCSRFprerequisite. Whitespace400/duplicate401, pendingdoublePOST200+400 createsexactoneuser/token. NormalfreshGuestsignup401retained; matchingCSRFcontrol200/email-sent. AUTH001partial: disabledUSERcreatedandunverifiedlogin401,realSendGridmailboundaryunexecuted. Of493originals:40notstarted/202partial/251fullyassessed(199Pass/38Fail/14Needs clarification);242incomplete.2735historical/2663latestchecks:2351Pass/221Fail/75Needs clarification/16Blocked.56issuesunchanged,existingevidenceextended. Cloudreader/logsrestoredafterhumanssh-add.
+
+Actual local app/backend/migrated PostgreSQL.14 new disabled USER accounts retained:6 API boundary,6 browser boundary,one normal signup andone double-submit; each exactlyone verification token, onboardingfalse. All18 localUsers synthetic;0orders/entitlements. No real registration/email/provider/payment action. Matching CSRF prerequisite and1200ms latency limited to isolated proxy POST/register; both restored disabled/0, faults[]. Backend filtering/DTO/application source unchanged. Existing complete synthetic USER restored on/app. Cloud observer reconnected afterhuman ssh-add: tunnel4534,reader read-onlyon/10s,fixedlogsreaderexit0/200lines savedprivately. CloudCreatorOverview unchanged; approvedGamma deletionnotperformed.
+
+## Actual local recovery and unchanged credentials —14October2026
+
+Fourteen additional Pass attempts complete AUTH-015, AUTH-016 and AUTH-028 against their explicit unavailable-feature expectations. Empty/malformed email blocked; valid email advances locally; Back inert; resend logs only. Blank/one-digit/arbitrary-four-digit codes advance without verification. Matching dummy completions only navigate to login, no mail/OTP/password API call. Dummy candidate actual login401; original password actual login200/profile200. Password recovery remains unavailable. Of493 originals:43 not started/203 partial/247 fully assessed (198Pass/37Fail/12Needs clarification);246 incomplete.2687 historical/2616 latest checks:2308Pass/220Fail/73Needs clarification/15Blocked.56 issues unchanged; existing evidence batch extended.
+
+No password or OTP API exists in the inspected recovery components. Matching dummy values were entered only in the confirmed navigation-only local component; no authentication credential was changed. No recovery request, external mail delivery, provider action or cloud mutation. Four isolated synthetic Users retained, zero orders/entitlements. Original synthetic password still authenticates; dummy candidate rejected. Local User signed in on /app; cloud Creator Overview unchanged. Faults [] remain restored. Cloud SSH retry still Permission denied (publickey); human key unlock pending. Approved synthetic Gamma deletion remains unexecuted.
+
+## Login validation, server rejection and first-click movement —14October2026
+
+Fourteennewattempts:10Pass/2Fail/2Needsclarification. AUTH011fullyassessedFail andAUTH012fullyassessedNeedsclarification. AUTH010earlierfullyPasssupersededbyFail: normalfirstpointerclickfromfocusedpasswordmovesSignIn120pxanddoesnotsubmit(newBUG056), secondclickrecoversactualLogin200/profile200. Clientrequired/emailvalidationcontrols passwithzeroLoginPOST; actualwrong401/nonexistent404/disabled401andcontrolled503 denyprotectedaccess. Missingapplicationservererrorfeedback remainsacceptanceclarification.493originals:44notstarted/205partial/244fullyassessed(195Pass/37Fail/12Needsclarification);249incomplete.2673historical/2608latestchecks:2300Pass/220Fail/73Needsclarification/15Blocked.56issues; existingevidenceextended.
+
+Four localsyntheticUsers retained, disabledfixture remainsdisabled withzerorefreshtokens,0orders/entitlements. No credentialupdate,verificationemaildelivery/provider/paymentaction. NormalcompleteUSER signedin on/app, cloudCreatorOverview unchanged. Faults[] restored. Localfrontend82715/4329, backend49680/54339, PostgreSQL54180 in durabletaskstorage. Dev-onlyoverlaydisabledforappfeedbacktests; actualuncaughtrejection logged, not fixed. Sources unchanged. Cloudobserverkey stillneeds loading; approvedGamma deletion stillunexecuted/BUG001blocked. One newissueBUG056; existingevidencebatch extended.
+
+## Normal password sign-in after isolated runtime rebuild —14October2026
+
+Two additionalPasscheckscompleteAUTH010: actualnormalpasswordsign-in forverifiedUSERonboardingtrue/false chooses/app or/onboarding; bothreloadsignedin. ExactLogin successful! responsetextmismatchresolvedbycurrent-sourcepageprofilefetch. FreshdurableisolatedPG/backend/frontendrestored; externalemail/Spaces/Googleboundariesmocked, no deploymentparityclaim. No newissue/evidencefile.493originals:44notstarted/207partial/242fullyassessed(196Pass/35Fail/11Needsclarification);251incomplete.2659historical/2597latestchecks:2292Pass/218Fail/72Needsclarification/15Blocked.
+
+Fresh independent durablePostgreSQLvpqa_20261014/loopback54180, actualbackendhandle49680/54339, actualfrontendhandle57475/4329. Actual40Liquibasestepsapplied. SpacesS3Service/EmailService/GoogleTokenVerifier mocked; freshlocalonlysecrets inprivate0600properties. Three enabledsyntheticUSERs retained: oneunusedinitialcompletefixture lostplaintextbeforeproxyfix, pluscomplete/incompletev2fixtureswithprivatecredentials. NoProducts/orders/entitlements createdinnewcluster. Localtab2 remains authenticatedincompleteUSER/onboarding; cloudtab1 remainshumanCreatorProductOverview. CloudreadonlytunnelstillneedsexistingSSHidentity reloadedbyhuman; approvedsyntheticGamma deletionnotexecuted, savededitorBUG001preventsUIrecovery. No applicationsourcechanged.
+
+## Membership validation, selection surface and deletion Cancel —14October2026
+
+Sevennewattempts:6Pass/1Blocked, includingtworepeatedsurfacechecks. MEM020fullyassessedPassforabsentremoteimport/byte-uploadsurface. MEM005extendsVideo/Resourcewhitespacetitle andVideoTXT rejection;zero/oversize/unsupportedResourcebrowserselectionsremainunexecuted. MEM011nowpartial: Cancelin3nativePostfixturepasses; specificallyapprovedGammaConfirmremainspendingbecauseworkingtablostandreopeninghitsBUG001. No newissue/evidencefile.493originals:45notstarted/207partial/241fullyassessed(195Pass/35Fail/11Needsclarification);252incomplete.2657historical/2595latestchecks:2290Pass/218Fail/72Needsclarification/15Blocked.
+
+Last verified native state: three syntheticPosts plus one includedHiddenDownload in privateDraft544b3fe9-dbad-459d-97bc-a422a0283106. Cancel was verified. Humanapproved deletion of onlyQA Post gamma deletion confirmation; Confirm was notclicked beforebrowser connection reset. Freshsavededitor recovery is blankBUG-001, so approved deletion remainspending andmustnotbe reportedcomplete. No DELETE request sent bythisagent. CurrentDBtunnelconnectionrefused; safeexistingSSHidentityreconnect failsPermissiondeniedpublickey; humanaskedto loadexistingkeywithssh-add. No currentDBreadbackclaim. Before reset29orders/78entitlements unchanged. Temporaryvpqa files/toolbindings vanished; recoveredevidence usesvisibletooltranscripts honestly. FreshsignedCreatorProductOverview works. No binary/provider/payment actions. Zero/oversize/resourceunsupportedbrowserfiles were prepared only andneverselected; thosechecks remainunexecuted.
+
+## Deployed Membership Post, association and feed checks —14October2026
+
+Ten additional attempts:5Pass/5Fail. Five Membership originals (MEM001/002/013/015/016) fully assessedFail: normal Post editing, hidden associations/source preservation and ordering persist, but explicitly required saved workspace loads/reloads fail existingBUG-001. Four priorBlocked reload variations now actualFail reattempts. No new issue/evidence file. Of493 originals:46notstarted/207partial/240fully assessed (194Pass/35Fail/11Needs clarification);253incomplete.2650historical/2590latest checks:2286Pass/218Fail/72Needs clarification/14Blocked.
+
+Private Draft Membership544b3fe9-dbad-459d-97bc-a422a0283106 retained with two synthetic Posts and one Hidden Download association, finalMANUAL order Download/edited Published nativePost/Draft nativePost. The parentMembership remainsDRAFT; no publication, binary upload, checkout or provider action. Hidden Course association removed reversibly; sourceCourse remainsHIDDEN with25existing entitlements. Global29orders/78entitlements unchanged. Original working browser workspace retained in tab1; independent saved editor loads/reloads fail blank with existingBUG-001. No successful workspace-reload claim. Temporary source/reload tabs closed.
+
+## Deployed metadata regression and interrupted response-loss journey —14October2026
+
+Eight new historical attempts:3Pass/4Fail/1Blocked. Two earlier blocked selection variations now have Fail reattempts. MEM-003/004 fully assessed Fail: deployed selections/saves and reloads attempted, confirmed shared uploader regression BUG-055; zero metadata persisted. J007 partial: actual Product/Storefront committed-response-loss retries pass, actual fake order persistence verified, same-key checkout retry interrupted. Of493 originals,46notstarted/212partial/235fully assessed;258incomplete.55issues; existing evidence extended.
+
+Deployed Draft Membership b4b69b77-a143-486b-aca0-9c3a053fd440 retained; zero content/feed rows. Three totalMemberships,29orders/78entitlements. Original two Membership IDs remain. No publication, binary upload/delivery, financial/provider/mail/calendar action. Human account remains Creator and signed in on Product Overview. Read-only observer tunnel54584/15432 restored; database vp_test_reader/read-onlyon/10stimeout verified, fixed log wrapper200lines succeeds. Raw logs private0600 outside repository, no payload embedded.
+
+Runtime stopped by14October; old local data directory lacks PG_VERSION/postgresql.conf, no intact cluster/backup found. No reseed or unsafe recovery. Historical snapshots show129Users/44Products/105grants/43orders/35audits, one newPending fakeorder dd65de4d. Shared name/Storefront Light persisted and were not restored before interruption. These are last observed counts, not current live-state claims. Expired synthetic sessions not reused. No deployed mutation in this local journey.
+
+## Deployed logout and local transport/refresh reuse —13October2026
+
+Five additional checks:3Pass/2Needsclarification. AUTH-013 fully assessed Pass using actual deployed Logout, fresh browser profile/Settings guards and unauthenticated profile401. AUTH-014 fully assessed Needsclarification: exact local TCPfailure clears client identity until reload; actual successful server Logout expires cookies but retained JWT/refresh still authenticate. Refresh rotation/replay protection passes. Of493 originals,47notstarted/213partial/233fully assessed;260incomplete.54issues unchanged; existing evidence extended.
+
+Human deployed OWNER-A Creator session logged out normally; /app fresh reload and /app/settings navigate to auth/login. Existing Google button clicked once for same authorized account, but no tool-accessible popup/callback; human sign-in request pending. Deployed no profile/role/Product mutation; logout clears browser cookies. Independent local transport failure used synthetic USER; afterward original CreatorB cookie restored through fixture setup and scratch tabs6/7closed, working Membershiptab4/AdminCoursetab3preserved. Independent frontend verifiedlive91909/80232 then deliberately stopped (exit0/listenerabsent) and relaunched63621/4331 for scoped TCP disconnect. Original59945/4329, backend88404/61339, PG51980 unchanged. Controls restored{}. Local129Users/101Creators/44Products/105grants/42orders/35audits unchanged. One synthetic refresh row generated by actual AuthService and rotated to a new row; private values0600, never recorded in repository. No external storage/mail/payment/calendar action.
+
+## Membership Post/feed retry and file-picker blockers —13October2026
+
+Six additional checks:4Pass/2Blocked. Membership Post and feed failures retain previous data and normal retries persist exactly once/order. MEM-003/004 filechooser selection remains blocked with unproven cause; no metadata/binary completion claimed. MEM-019 remains partial for load/deletion/browserreload. Of493 originals,49notstarted/213partial/231fully assessed;262 incomplete.54issues unchanged; existing evidence extended.
+
+One CreatorB Draft Membership efc109c1-e344-40b9-8931-89f6fa8e0d0b and one Draft Post0ab3b139-68d9-4fc5-82d6-266d55a4ffb7 retained, Manual feed order. No Video/Resource content created. Total129Users/101Creators/44Products/105grants/42orders/35audits. Controlled faults restored{}; no real provider/mail/storage/payment action or cloud write. Independent80232/localhost4331 and original59945/1274329, backend88404/61339 and PG51980 retained. Working independent Membership Content tab4 and original Admin Course Basics tab3 preserved; cloudtab1 untouched. Cancelled disposable deletion remains retained; do not retry.
+
+## Creator autosave and pending Preview —13October2026
+
+Five additional checks:3Pass/1Fail/1Blocked. PROD-014 fully assessed Fail: visible autosave error, unchanged DB on rejection and actual successful recovery pass; required reload reproduces BUG-001. PROD-016 partial: immediate Preview reads previous saved title, but Back crashes before wait/second Preview. Of493 originals,52notstarted/210partial/231fully assessed;262 incomplete.54issues unchanged; existing evidence extended.
+
+Two synthetic CreatorB Draft Courses retained: autosave f9e16304-cccc-4fe5-b474-dcf4a6c23149 and preview dc982933-56b2-4492-abe1-3e432c3ac57c. Total129Users/101Creators/43Products/105grants/42orders/35audits. Controlled PATCH fault restored{}. No cloud mutation, real payment, provider, storage or mail action. Cancelled disposable deletion retained; do not retry. Original working Admin workspace tab3 preserved. Independent frontend restarted deliberately as80232/4331 after verifying old PID85804 live, terminating it and confirming listener absent; original59945/4329 and backend88404/61339 unchanged. Narrow temporary proxy maps only its own localhost4331 Origin to the already allowed127.0.0.1:4329 Origin; authentication/CSRF/business logic unchanged. These UX tests make no deployed CORS/security parity claim.
+
+## Creator selector boundary and explicit owner —13October2026
+
+Five additional checks pass; ADMIN-015 is fully assessed Pass. Actual101-Creator population, exact100-option boundary, unavailable outside selection, failed lookup/recovery and normal explicit-owner Draft creation verified. Of493 originals,54 not started/209partial/230fully assessed;263 incomplete.54issues unchanged; existing evidence extended.
+
+99 disabled synthetic Creator fixtures remain with no issued sessions or usable login credentials. Total129Users/101Creators/41Products/105grants/42orders/35audits. One normal UI Draft Course9146ac85 belongs to the omitted original CreatorA; one creation and one automatic save audit. Original users/roles/products/grants/orders untouched. Creator lookup fault restored to actual. Cancelled deletion target remains Draft with zero deletion audit; do not retry without new authorization. Runtime frontend59945/4329, independent73362/4331, backend88404/61339, PostgreSQL51980 retained. Fresh working Admin Course workspace tab3 preserved; do not reload it unnecessarily.
+
+## Admin Product search race extension —13October2026
+
+One additional Fail confirms the same stale-response BUG-054 on Admin Products. ADMIN-007 changes from fully assessed Pass to fully assessed Fail; no completion count is added. Of493 originals,229 are fully assessed and264 remain incomplete.54 issues unchanged.
+
+## Recovered Admin paging and response states —13 October2026
+
+10 additional attempts:6Pass/1Fail/3Needs clarification. Five new distinct variations; earlier Audit paging Blocked attempt is now Pass. ADMIN-011 fully assessed Fail with BUG-054 reproduced and normal Next/Previous/actor/type controls complete. ADMIN-012 fully assessed Needs clarification: all3 controlled loading/error/recovery sequences and rejected role selection pass; desired empty-table feedback remains open. Of493 originals,55 not started/209partial/229full;264 incomplete.54issues unchanged; existing evidence extended.
+
+All controlled Admin faults restored to actual responses. One intercepted role PATCH returned503 without calling the backend; original role remains USER. Database roles, all40 Products,105 grants,42 orders and33 audit events unchanged. Independent frontend36633/82596 was deliberately stopped after process/port verification; restarted as handle73362 on4331 with temporary delay/error controls. Original59945/4329, backend88404/61339, PostgreSQL51980 and cloud account untouched. Local Admin Audit tab remains available; synthetic sessions refreshed with unchanged identities/roles/lifetime.
+
+## Consultation availability and numeric boundaries —12 October 2026
+
+15 additional assessments: 6 Pass, 2 Fail, 6 Needs clarification and 1 Blocked. CONS-006 is fully assessed Fail: both actual publication requests preserve an enabled empty day, then Creator/Admin saved workspaces reproduce BUG-001. CONS-008 is partial: numeric edge metadata persists, overflow400 preserves state, normal values/public display restored; two browser timezones and authoring remain unexecuted. Of493 originals,55 not started/211 partial/227 fully assessed;266 incomplete. Existing54 issues and evidence file retained.
+
+Two new Published local metadata-only Consultations remain for retesting, with Monday09:00–10:00 and enabled empty Tuesday. Numeric values restored to buffers10/10 and capacity3. Totals:30Users/40Products/105grants/42orders. Existing role, grant, order, Consultation and day/window records unchanged. No booking, meeting creation, provider or cloud mutation. Existing native deletion and Audit fixtures untouched. Local frontend59945/4329, independent36633/4331, backend88404/61339, PostgreSQL51980 and observer9919 retained.
+
+## Actual query serialization and Admin Audit —12 October 2026
+
+12 additional assessments: 10 Pass, 1 Fail and 1 Blocked. ENV-013 is fully assessed Pass after normal reporting/Admin filter input and 19 actual API responses. ADMIN-011 remains partial: 21 actual Product audit events and five existing role-change events support API paging, actor/equality filters and normal UI filtering; browser Next/Previous is unverified. New BUG-054: an older Audit response replaces a newer create-only result. Of 493 originals, 57 are not started, 210 are partial and 226 are fully assessed; 267 remain incomplete. There are 54 issues; the existing evidence file was extended.
+
+Disposable local Draft Course 94a6525a-1ab7-45a7-b416-146526f8a2c8 created/renamed19times/deleted through actual Admin API, leaving21 actual audit events. Original30 Users/38 Products/105 grants/42 orders and original roles/products/grants/orders unchanged. Native deletion fixture8ae1f15b remains unaffected. Frontends59945/4329 and36633/4331, backend88404/61339, PostgreSQL51980 and existing observer9919 retained. Cloud data/account untouched. Localtab4 nowAdmin Audit with five prior actual role events; no provider or financial action.
+
+## Creator routes and entitled User home —12 October 2026
+
+10 additional assessments:8 Pass and2 Fail. NAV-004 is fully assessed Fail after all25 Creator route visits; both saved editors reproduce BUG-001, management renders and all Library/Admin routes deny. NAV-017 is fully assessed Pass: actual27-grant User home/reload remains static/empty compared with prior zero-grant control; observed documentation destination resolves. Of493 originals,57 not started,211 partial,225 fully assessed;268 incomplete.53 issues unchanged; existing evidence file extended.
+
+Read/navigation batch only. Local database unchanged:30 Users,38 Products,105 entitlements,42 orders; original roles and grants/orders unchanged. Independent frontend36633/4331 on localhost retained alongside original59945/4329 on127.0.0.1, actual backend88404/61339 and PostgreSQL51980. Separate host cookies preserve original Admin deletion context. Real cloud account/data untouched. Documentation tab closed. Native deletion remains unverified by browser; readback confirms disposable still exists and no deletion audit.
+
+## Customer inclusion, Admin routes and observer recovery —12 October 2026
+
+17 additional assessments: 14 Pass, 2 Fail and 1 Blocked. CUSTOM-001 is fully assessed Pass for all eight customer relationship fixtures; NAV-005 is fully assessed Fail because both saved Admin edit routes reproduce BUG-001. ADMIN-010 remains partial: human Cancel is verified, but disposable Confirm and guarded rejection are pending; no DELETE was sent at readback. Of 493 originals, 57 are not started, 213 are partial and 223 are fully assessed; 270 remain incomplete. The 53 existing issues remain; existing evidence extended. Read-only deployed database and restricted log access restored.
+
+Six historical reporting order/item pairs and five entitlements remain on eight existing disabled synthetic Users. No payment/refund/enrollment operation or provider call is claimed. Totals: 30 Users, 38 Products, 105 entitlements and 42 orders. The disposable deletion Course remains; no DELETE request or new delete audit was made. Original Product/role records and protected purchase Course are unchanged. Local frontend59945/4329, backend88404/61339 and PostgreSQL51980 retained. Existing read-only observer tunnel9919 restored; deployed data untouched.
+
+## Admin pagination, guards and private previews —12 October 2026
+
+40 additional assessments: 36 Pass and 4 Fail. Seven original cases are fully assessed: SALES-012, ADMIN-004, LAND-011, LAND-013, ADMIN-002 and ADMIN-007 pass; LAND-008 fails with existing BUG-025 reproduced across all four types. Of 493 originals, 58 are not started, 214 are partial and 221 are fully assessed; 272 remain incomplete. The 53 existing issues remain. The existing evidence file was extended.
+
+Two new Published synthetic Consultations and 24 disabled synthetic User accounts retained in the isolated PostgreSQL fixture. Original 35 Products, six existing roles, 100 entitlements and 36 orders are unchanged. Temporary Download publication and Membership hiding are restored to Draft. Sole Admin remains; no role-change audit was added. Frontend 59945/4329, backend 88404/61339 and PostgreSQL 51980 retained. Real account and cloud data untouched.
+
+## Ownership substitution and error handling —12 October 2026
+
+18 additional assessments: 15 Pass, 2 Fail and 1 Blocked. STORE-014 is fully assessed Pass after its normal browser role matrix. JOURNEY-008 has72 actual API assertions grouped by domain, selected browser security controls and a saved-editor blocker; full browser journey stays partial. CAL-010 has partial local API evidence only. New BUG-052 records unhandled landing Save rejection; BUG-053 records misleading customer404 copy. Of493 originals,59 are not started,220 are partial and214 fully assessed;279 remain incomplete.53 issues; existing evidence file extended.
+
+Three new Draft Products (two Memberships, one Download), two native Posts, one file metadata row, one disabled reporting buyer, one synthetic historical PAID order/item/FAKE attempt/purchase grant and one inert calendar-shaped row retained. Totals100 grants/36 orders. No real payment, object upload/delivery or provider OAuth claimed. Denied matrix and forbidden browser Save changed no original records. Permitted Admin no-op mutations update timestamps/audit only; caller test accent restored. Actual frontend59945/4329, backend88404/61339 and private PostgreSQL51980 retained; cloud untouched.
+
+## Role replacement and Creator journey —12 October 2026
+
+17 additional assessments: 16 Pass and 1 Fail. ADMIN-003 is fully assessed Pass: normal Creator/Admin/User replacements persist one role and exact audit, with two Admins before demotion and an actual pending disabled target control. JOURNEY-005 is partial: fresh actual-issuer sessions verify User/Creator navigation, route gates, profile/storefront and ownership preservation; required normal credential re-login remains unexecuted. Restored saved editing reproduces BUG-001. Original role restored; five owned Products, 99 grants and 35 orders unchanged. Of 493 originals, 61 are not started, 219 are partial and 213 are fully assessed; 280 remain incomplete. The 51 existing issues remain; existing evidence file extended.
+
+Synthetic target restored to its original single CREATOR role; original Admin remains ADMIN. All five owned Products,99 grants and35 orders unchanged. Five actual role-change audit records retained. Actual backend88404/61339 and PostgreSQL51980 remain; frontend59945/4329 replaced stopped65237 after confirmed exit0/port absence. Private sessions refreshed by actual issuer with same identities and normal lifetime; no cloud account/data changed.
+
+## Paid hiding and nonpublic guards —12 October 2026
+
+15 additional assessments: 14 Pass and 1 Needs clarification. JOURNEY-003 is fully assessed with a clarification: hiding removes a purchased Course from public discovery but preserves the paid grant and protected API body; Library Open still leads to Product unavailable. DISC-015 is fully assessed Pass: Draft and Hidden public guards deny all four roles before and after reload; owner/Admin private preview remains available. Both fixtures and original configuration settings are restored; 99 grants and 35 orders remain unchanged. Of 493 originals, 63 are not started, 218 are partial and 212 are fully assessed; 281 remain incomplete. The 51 existing issues remain; the existing evidence file was extended.
+
+Both synthetic Courses restored to Published with original content and marketing fields. Paid Course owner feature/order/theme values restored; its newly created config identity remains. All99 grants,35 orders and immutable target purchase items unchanged. Local frontend65237/4329, backend88404/61339 and PostgreSQL51980 retained. Real account/cloud data untouched.
+
+## Article reader and editor —12 October 2026
+
+14 additional assessments: 9 Pass, 4 Fail and 1 Blocked. DISC-021 is fully assessed with a Fail result. HTML formatting and the listed inert sanitizer controls pass across User, Creator and Admin before and after reload; Guest bodies remain redacted. The existing editor JSON conflict persists, including for Admin. CONTENT-012 remains partial: normal bold/list autosave and Admin mutation pass; reopening reproduces BUG-018 and entitled reading reproduces BUG-021. Link authoring is blocked by the unsupported browser prompt. Of 493 originals, 64 are not started, 219 are partial and 210 are fully assessed; 283 remain incomplete. The 51 existing issues remain; the existing evidence batch was extended.
+
+Actual local frontend session 65237/port 4329, backend session 88404/port 61339 and private PostgreSQL port 51980 retained. Existing Course now has its original JSON Article plus two HTML probe Articles. A separate normally authored Published round-trip Course and one additional FREE_ENROLLMENT grant remain. Totals:99 grants and35 unchanged orders. No real account or cloud data changed. Link prompt remains unavailable in the built-in browser.
+
+## Free Course journey and Guest Storefront —12 October 2026
+
+16 additional assessed variations: 14 Pass and 2 Fail. JOURNEY-001 is fully assessed with a Fail result: normal Creator publication and public configuration, Guest discovery, separate User free enrollment and Library reload, and Creator customer inspection were executed. The entitled Article reader reproduces BUG-021. STORE-018 is fully assessed Pass: all Guest anchors and both Product actions work without changing the cart or orders. DISC-021 remains partial pending the HTML and sanitizer checks. Of 493 original cases, 64 are not started, 220 are partial and 209 are fully assessed; 284 remain incomplete. The 51 existing issues remain; the existing evidence file was extended.
+
+Actual local frontend (session 65237, port 4329), backend (session 88404, port 61339) and isolated PostgreSQL (port 51980) retained. Existing data preserved; the new Published free Course and one FREE_ENROLLMENT grant remain. Totals: 98 grants and 35 orders. The interrupted October 10 Course remains Draft. Local Cart is empty. The real signed-in Creator Dashboard was verified on October 12; cloud data was untouched, and the observer logs/tunnel were not revalidated.
+
+## Published content consistency —10 October 2026
+
+Seven Published revalidation assessments:four Pass/two Fail/one Blocked. Actual Course/Download final content DELETE204 leaves publicly visible Published Product withzero required content; ordinary shared PATCH422 exposes the inconsistency (new BUG-051). Restoration succeeds. Normal saved browser editor remains blocked by BUG-001, so PROD-028 stays partial.97grants/35orders unchanged; zero targetentitlements. Original493:65 not started/221 partial/207 fully assessed;286 incomplete.51 issues; existing evidence batch extended.
+
+Actual frontend41349/4329, backend87058/58398 and private PostgreSQL51980 retained. Fresh CREATOR Course/Download Published withone restored Article/filemetadata; zero targetgrants.97grants/35orders unchanged. Original27OwnerCourses retained; cloud account untouched.
+
+## Actual storefront featured fallback —10 October 2026
+
+Twelve actual storefront browser/API assessments pass. STORE-003 fully assessed: normal Creator builder saved a featured Course; all four public roles show Published selection, then actual Hidden/deleted null-ID fallback and surviving catalogue after reload. One fresh disposable Course deleted, fallback Course retained, original storefront feature/order/theme values restored.97grants/35orders unchanged. Original493:66 not started/220 partial/207 fully assessed;286 incomplete.50 issues unchanged; existing evidence batch extended.
+
+Actual backend87058/58398, frontend41349/4329 and private PostgreSQL51980 retained. Synthetic CREATOR now owns one new Published free fallbackCourse; featured disposable Course deleted. Original feature/order/theme values restored with newly created config row retained.97grants/35orders unchanged; normal collections empty; cloud account untouched.
+
+## Normal collection role journeys —10 October 2026
+
+Twelve additional normal collection assessments:10 Pass/2 Needs clarification. Actual normal cart0/9.75/19.75 addition/deduplication and first/middle/last removal from separate3-item fixtures pass all roles/Guesthandoff. CART-001 fully assessed Fail retains existing supplemental BUG-048. Wishlisttoggle/removal andmove absent/present pass supportedLibraryroles; CreatorLibrarydenial recorded explicitly, CART003/004 remainpartial pendingrole-step expectation. Original493:67notstarted/220partial/206full;287incomplete.50issues unchanged; existingbatch extended.
+
+Frontend41349/4329, backend87058/58398 and migrated privatePG51980 retained. Local LIMIT_USER actualUSER normal Cart/Wishlist empty after normalcleanup/reload; Cloud account untouched.97grants/35orders/27Courses unchanged.
+
+## Guest enrollment and collection metadata —10 October 2026
+
+Six additional browser assessments: five Pass / one Fail. Guest free partial enrollment, repeat/restoration and all-free success complete CART-006/007 scope; both fully assessed Fail due to existing Creator Library BUG-049. Actual Course Wishlist dropdown failure confirms BUG-006 and completes CART-018 Fail. Actual Product name change/reload/fresh-summary placeholder comparison completes CART-019 Pass. Original493:67 not started/221 partial/205 fully assessed;288 incomplete.50 issues unchanged; existing batch extended.
+
+Actual local backend87058/58398 and frontend41349/4329 remain live; PostgreSQL51980 retained. Free B Published and A originalname restored; LIMIT_USER normal Cart/Wishlist empty. Final97grants/35orders/27Courses, cloud account unchanged. Temporary fixtures private; no app code change.
+
+## Actual checkout error recovery —10 October 2026
+
+Twenty checkout error/recovery browser journeys pass; CART-016 fully assessed. Actual400/409/422 data correction, actual503 disable/re-enable and induced TCP disconnect all preserve Cart/reset feedback and retry normally. Four role/Guest follow-ups per variant. Actual503 retries reuse existing Pending orders;95 grants/27Courses unchanged,35orders total. Original493:67notstarted/225partial/201fully assessed;292 incomplete.50issues unchanged; existing evidence file extended.
+
+Frontend41349/4329 and actual enabled fake-Pending backend87058/58398 retained with private PostgreSQL51980. Previous frontend10665 confirmed exit0; disabled backend58207 listener absent and graceful shutdown verified. Local LIMIT_USER has retained Course01/EUR1 Cart; cloud account unchanged. Private session stays mode600.
+
+## Controlled checkout session responses —10 October 2026
+
+Eight controlled checkout browser assessments pass. CART-014 fully assessed: first-party URL handoff and missing session identity across roles/Guest collection preserve Cart and create no access. No actual payment/backend checkout response claim. Underlying persistent database unchanged; actual proxy restored. Original493:67 not started,226 partial,200 fully assessed;293 incomplete.50 issues unchanged; existing evidence file extended.
+
+Frontend69180/4329 replaces stopped96883 (exit0). Actual backend7051/57150 and private PostgreSQL51980 unchanged. Actual checkout proxy mode restored. Local LIMIT_USER Cart retains Course01/EUR1, Wishlist empty; real cloud account untouched.
+
+## Actual terminal checkout outcomes —10 October 2026
+
+Fifteen terminal checkout browser assessments pass. CART-013 fully assessed for actual FAILED/EXPIRED/REFUNDED states across roles and Guest collection handoff. Four fake purchases grant access, full fake refunds revoke the same grants, browser retries preserve revocation. CART-012 now fully assessed Fail due to existing Creator Library destination BUG-049; only-PAID gate audit complete. Original493:67 not started,227 partial,199 fully assessed;294 incomplete.50 issues unchanged; existing evidence file extended.
+
+Frontend96883/4329 replaces38850 (confirmed exit0); actual backend7051/57150 and private PostgreSQL51980 remain. Local LIMIT_USER actualUSER Cart retains Course01/EUR1 and refunded order key. Cloud tab1 untouched. Final20 orders and95 grants retained; four new grants are REVOKED.
+
+## Actual PENDING browser checkout —10 October 2026
+
+Five actual pending browser assessments pass. CART-011 is fully assessed: eight actual session/order response pairs stay PENDING, four buyer orders are reused after reload, Cart remains and no purchase grants appear. Guest collection handoff also verified. Final91 grants/12 orders (eight PAID, four PENDING). Original493:67 not started,229 partial,197 fully assessed;296 incomplete.50 issues unchanged.
+
+Actual pending backend7051 on57150; frontend38850 on4329; private PostgreSQL51980. Disabled backend51036/frontend76202 stopped exit0; disabled shutdown has zero storage/email calls. Current LIMIT_USER actualUSER Cart contains Course01/EUR1 and its pending checkout. Four pending orders retained for terminal-outcome tests. Cloud account untouched.
+
+## Actual commerce-disabled checkout —10 October 2026
+
+Five additional browser assessments pass. CART-010 is fully assessed with actual commerce disabled: four checkout503 responses, expected feedback and Cart reload persistence; Guest collection handoff also verified. PostgreSQL remains unchanged at91 grants/eight orders. Of493 original cases,67 not started,230 partial,196 fully assessed;297 incomplete.50 issues unchanged; existing evidence file extended.
+
+Actual disabled backend51036 on57010; frontend76202 on4329; private PostgreSQL51980. Previous auto-success backend88888 and frontend86273 confirmed stopped with exit0. Synthetic subjects refreshed by actual provider; cloud account untouched. Course01 retained in disposable LIMIT_USER Cart for the next pending check.
+
+## Actual browser idempotency — 10 October 2026
+
+Seventeen new idempotency browser assessments pass. CART015 fullyassessed: same20 IDs/reload/reorderreturnactualexistingbuyerorders; changedIDs andcontrolled31minstoredage producenewUUIDs. GuestsyntheticUserhandoffverified. ActualDB unchanged91grants/eightorders/27Courses. Original493:67notstarted/231partial/195full;298incomplete.50issuesunchanged, existingevidenceextended.
+
+Frontend86273/4329 and backend88888/56220 retained with privatePG51980. CurrentLIMIT_USER actualUSER has empty Cart/Wishlist,91grants/eightorders unchanged. Existingkeyprivatefilemode600 retained onlyfor fixture; no rawkey/token copied to repository.
+
+## Actual21/20 checkout limit and bulk grants — 10 October 2026
+
+Twelve assessments:11 Pass/one Fail. CART009 fully assessed across21/20 actual Published Course threshold, roles and Guest fresh-User handoff. Four actual20-item fake orders and80 purchase grants persist; User/Admin Library reload passes, Creator BUG049 repeats. One shared browser key is scoped to four buyers by actual backend. Original493:67notstarted/232partial/194full;299 incomplete.50issues unchanged; existing evidence file extended.
+
+**2,271 assessed variations /2,319 historical attempts**:2,014 Pass,185 Fail,61 Needs clarification,11 Blocked. No real charges/cloud changes.
+
+Frontend27955/port4329 retained (60111/19296 stopped and confirmed exit0); actual backend88888/port56220 and private PostgreSQL51980 unchanged. Twentyone new Published disposable Courses and one fresh USER retained. Four new fake orders/eighty grants; final91 grants/eight orders. Current local LIMIT_USER is actual roleUSER with20 Library Courses and cleared cart. Tabs1/2 retained, cloud account untouched.
+
+## Exact cart guards with persistent backend — 10 October 2026
+
+Eleven new browser assessments pass; six original cases completed (CART008/020/021/023/024/025). Controlled local cart guards verified with actual persistent backend environment; missing cached status delegates to actual Hidden checkout422. Guest mixed cart login boundary and synthetic User follow-up verified. Original493:67 not started/233partial/193fully assessed;300 incomplete. No new issue/evidence file;50 issues remain.
+
+**2,259 assessed variations / 2,307 historical attempts**:2,003 Pass,184 Fail,61 Needs clarification,11 Blocked. Only one checkout request, correctly422 for actual Hidden Product;11 grants/four orders unchanged.
+
+Resumed isolated data without reseeding: frontend60111/port4329, backend88888/port56220, PostgreSQL51980. Original terminal handles7767/42456 missing and ports4329/52014 not listening before restart; PG still live and unchanged. Local User cart/wishlist empty. Real signed-in Creator tab1 and temporary local tab2 retained. Private session file remains mode600.
+
 ## Persisted collection shape and duplicate IDs — 9 October 2026
 
 Seventeen collection-storage browser assessments: nine Pass/eight Fail. CART-022 exact User duplicate-ID guard fully assessed: message/no request, repeat after reload and normal removal. CART-005 now partial: malformed JSON recovers in all four roles; valid wrong-shaped cart/wishlist data causes unhandled errors (new BUG-050). Actual browser storage read/write denial remains open. Original493:67 not started/239partial/187full;306 incomplete.50 issues; existing evidence file extended.
