@@ -182,3 +182,101 @@ Four actual owner landing editors: defaults and native1200 limit pass; drafts Re
 1178 assessed variations (1023 Pass, 100 Fail, 46 Needs clarification, 9 Blocked); 1225 historical attempts. Of493 originals: 152 not started, 194 partial, 147 fully assessed. 346 originals still need checks.
 
 BUG-031: existing Storefront/landing permutations collide with unique constraints. Six new landing configs retained with empty marketing/MEDIA_RIGHT/Contents+Creator visible; five default orders, Hidden reporting Course retains Creator-first order. Storefront retains DARK/#ffbd41/MODERN, explicit Curriculum feature and51-ID custom order; public original visible presentation preserved. Product metadata/profile fingerprint unchanged; Creator Dashboard verified. See session notes and feature batches.
+
+## Enabled synthetic non-owner accounts — 20 October 2026
+
+Explicitly approved development fixtures, created transactionally without changing existing accounts. Normal login and authenticated profile verified through deployed HTTPS.
+
+| Fixture | User UUID | Retained state |
+| --- | --- | --- |
+| Synthetic User | `969ee716-687b-4fd4-b23e-ba57969a9a66` | Enabled LOCAL USER; onboarding complete; no grants or owned Products |
+| Synthetic Creator | `bdd18a60-df1b-45c6-819c-911ff72700e5` | Enabled LOCAL CREATOR; onboarding complete; one ACTIVE FREE_ENROLLMENT for synthetic Download `884cd530-a2ed-4c4d-9e23-ce7e8788e0a2`; no owned Products yet |
+
+Login credentials and session cookies are private local runtime files outside Git. Do not copy them into this repository. Creation bypassed registration and email verification as fixture preparation; it does not prove those journeys. No new Admin account was created. The original human browser session remains signed in.
+
+## Synthetic Creator upload expiry fixture — 20 October 2026
+
+- Owner: `bdd18a60-df1b-45c6-819c-911ff72700e5` (approved synthetic Creator).
+- Download: `ba191f3e-4654-4a97-84eb-a528f263494b`, **DRAFT**, “QA 2026-10-20 Synthetic Creator upload expiry”.
+- First section: `45c7f8e6-dd6e-4d25-8d2a-c16ee0011594`; three confirmed file rows, each64bytes, referencing two actually uploaded harmless text objects. The path/body precedence control deliberately references the first object a second time.
+- Second section: `df0e70cc-d44c-455e-a203-66cb3c0c8345`; empty, retained for association tests.
+- Real five-minute PUT signature expiry and fresh-signature recovery are verified. Signed URLs and object keys are retained privately outside Git.
+- Temporary calendar records used for null-expiry checks were removed; this Creator has zero connected calendars.
+
+## Synthetic calendar lifecycle Consultation — 20 October 2026
+
+- Draft Consultation: `89f19565-c4cd-42ac-9c3d-0861f760685b`, owned by synthetic Creator `bdd18a60-df1b-45c6-819c-911ff72700e5`.
+- Title: “QA 2026-10-20 Synthetic Creator calendar lifecycle”.
+- Temporary Google/Microsoft connection fixtures were removed; both synthetic accounts have zero calendar rows. The original human retains its three existing connections.
+- Consultation retained privately for future reads; no provider credentials, consent, publication or booking created.
+
+## Missing-object recovery fixture — 20 October 2026
+
+- File metadata: `e1834b98-a6c1-41f9-be44-45dc08b37aa2`, named `qa-intentionally-missing-oct20.txt`, in section `df0e70cc-d44c-455e-a203-66cb3c0c8345` of synthetic Creator Draft Download `ba191f3e-4654-4a97-84eb-a528f263494b`.
+- Deliberately no uploaded object. Confirmation and authorized URL issuance succeed, but actual storage GET returns404/NoSuchKey. Intended for later browser delivery-error/recovery coverage.
+- Separate cross-owner alias was removed after the security test. The synthetic Creator’s original test grant is restored; the synthetic User remains unenrolled.
+
+## Populated Library and Hidden-navigation fixtures — 21 October 2026
+
+- New HIDDEN Download `b9a35257-be3d-4ffb-934a-b24a5170b9e6`, “QA 2026-10-20 Hidden library navigation”, and HIDDEN Course `4d8c652f-e65c-4a5e-8f9b-e3291d054db3`, “QA 2026-10-20 Revoked library control”, belong to the synthetic Creator.
+- Original test actor now has4ACTIVE/1REVOKED grants. Synthetic Creator has5ACTIVE/1REVOKED, including its private calendar-lifecycle Consultation as a distinct foreign-caller exclusion control. Synthetic User remains unenrolled.
+- Existing base grants retained; additional grants are labeled ADMIN_GRANT SQL fixtures. No normal grant API, enrollment, payment, Order or publication workflow is implied by preparation.
+- Both original human and synthetic Creator roles restored to CREATOR. Temporary synthetic Admin use and replacement of the shared browser session with synthetic logins are explicitly approved.
+
+## Synthetic account browser and storage updates — 21 October 2026
+
+- Synthetic User `969ee716-687b-4fd4-b23e-ba57969a9a66` now has one ACTIVE `FREE_ENROLLMENT` grant for Download `884cd530-a2ed-4c4d-9e23-ce7e8788e0a2`, created through the deployed browser. Its earlier zero-grant baseline is historical.
+- Synthetic Creator retains private Draft Membership `dd3093f3-1ff3-4692-9106-177faf6af054`, “QA 2026-10-21 Synthetic unsupported upload control”. No Membership content, publication or purchases were added.
+- Draft Download `ba191f3e-4654-4a97-84eb-a528f263494b` now has four file rows in its first section and nine in its second. The latter includes the existing intentionally missing object plus two real Admin expiry-control files and six real legacy-folder control files. The first section gained one own-object path/body precedence alias. Eight harmless objects were uploaded; signatures and keys remain outside Git.
+- All temporary synthetic calendar metadata was removed. Temporary Admin roles were restored to Creator after each matrix.
+- Synthetic Creator title is now `Synthetic QA Creator profile October21`, saved through real onboarding. Its completion flag was temporarily false and is restored to true. BUG-064 prevents the wizard from progressing after a successful save; `/onboarding` also remains affected by BUG-035.
+- Browser session is the synthetic Creator. Browser-local Cart retains the original synthetic Consultation at EUR15 across both synthetic logins; no checkout was submitted.
+
+## Synthetic persistence race controls — 21 October 2026
+
+- Synthetic User now has two ACTIVE free grants: Download `884cd530-a2ed-4c4d-9e23-ce7e8788e0a2` and Course `cb045295-cf70-445c-99a7-46fc0618e58e`. Concurrent first Course enrollment retained one relationship; losing requests returned unique-constraint400 and a sequential retry reused the persisted identity.
+- Synthetic Creator Storefront config `25427846-bd64-4a99-bb6f-4d196eb871ee` retains the default dark theme and an empty product order.
+- Private Draft Membership `dd3093f3-1ff3-4692-9106-177faf6af054` now has landing config `ce3009b4-1b61-4a2a-bd96-bf805fc275c7`, with synthetic marketing description, default layout and section order. No Product publication occurred.
+- The same-identity role/config races retained single logical records. No Admin role was used.
+- Four checkout requests with one synthetic idempotency key returned503 and created no Order. Paid checkout/order-concurrency results remain unexecuted on this deployed configuration.
+
+## Synthetic Creator Sales detail fixture — 21 October 2026
+
+- Retained historical reporting Order `7940314a-c4ca-5fbf-98a6-d678f61dc04e`: synthetic Creator `bdd18a60-df1b-45c6-819c-911ff72700e5`, synthetic buyer `969ee716-687b-4fd4-b23e-ba57969a9a66`, PAID/EUR1500minor.
+- Item `947fd16a-a1ce-5a27-b2d4-eb95b43e820d` references private synthetic Download `ba191f3e-4654-4a97-84eb-a528f263494b`, with immutable synthetic historical title. Its current Draft/free state is not a normal publication or purchase proof.
+- FAKE attempt `b73ccaa5-7993-5581-a628-36a1bf912276` and synthetic PAID event `65a36e4a-2f2c-5b43-b520-ef922b050668` are seeded read-model rows. No provider was called, checkout submitted, entitlement granted or payment collected. The Sales row correctly shows no access granted.
+- Synthetic User still has its two free grants. The disabled-checkout concurrency key still has zero Orders.
+- Temporary long names used for mobile navigation were restored to the original synthetic names. Creator role and default viewport are restored; no Drawer remains open.
+
+## Disabled responsive reporting Customer — 21 October 2026
+
+- Disabled Customer `6147f94d-5cda-58c3-ade2-8660d5df0a5e` has a 152-character synthetic name and 112-character reserved `example.invalid` email. It has no usable password/login; no enabled account was created.
+- Historical reporting Order `608d9d5d-dab9-568c-89e2-3c98ac8e2453` belongs to synthetic Creator `bdd18a60-df1b-45c6-819c-911ff72700e5`, totals EUR2250minor, and contains Course/Download snapshots with long synthetic names. Its two linked ACTIVE/PURCHASE grants target only that Creator's synthetic Products.
+- FAKE payment attempt/event and all purchase/grant rows are seeded read-model fixtures. No checkout, payment provider, email delivery or real purchase workflow ran. Deployed checkout remains separately unavailable.
+- The retained rows support populated Customer list/detail, multi-item Sales, filters and responsive access-display tests.
+
+### Browser-local Wishlist setup — 22 October 2026
+
+The normal synthetic User added the existing “QA-2026-09-30-01 Consultation” to Wishlist through its actual Explore card. Retained Wishlist count 1 and existing Cart count 1 reference the same synthetic Consultation. Populated Wishlist keyboard actions are now available for follow-up tests; neither action was submitted. These collections share this browser’s local persistence across account sign-ins; they are not database-backed fixture or purchase evidence. Earlier empty-Wishlist observations remain historical. Browser later returned to synthetic Creator.
+
+### Disabled empty Storefront Creator — 22 October 2026
+
+Retained synthetic Creator `f339289b-11b9-577d-8adc-76148b439f9e`, displayed as “QA Empty Storefront Disabled Fixture”. Login stays disabled, password is an unusable marker and the reserved example.invalid email is synthetic. It has zero Products; no uploads, Orders or payments were created. Public Storefront GET200 exposes a genuine empty catalogue under the current Creator-role eligibility rule. This fixture supports empty-versus-unavailable presentation for all viewer roles without enabling another login. Observer confirmed disabled/zero Products after the matrix.
+
+### Published layout Downloads and pricing controls — 22 October 2026
+
+Owned by approved synthetic Creator `bdd18a60-df1b-45c6-819c-911ff72700e5`:
+
+- Published free Download Alpha `091b4bcd-8e17-47db-a098-768dcadb4bc0`, section `d71c24f4-b9b8-4728-ba4a-953f92a3f589`, file `9af8bca4-d877-466b-99bd-7a617c584e98`, `qa-layout-alpha-oct22.txt` (87 bytes).
+- Published €4.25 Download Beta `6e814665-35f2-4a56-a4ae-276fc8994627`, section `0f04c961-e9c2-4baf-8160-491e533dd739`, file `cfcda30f-bec8-44ff-8ea4-1b0e10e3e94d`, `qa-layout-beta-oct22.txt` (86 bytes).
+- Draft monthly €9.99 Membership `179d9b9a-41fc-4f7b-ae7a-e4a60001c9af`.
+- Draft annual €120 Membership `ba103ed7-c255-4032-aea6-02257cb81c82`.
+- Hidden free Course `06d9ab66-af70-4048-af95-c2d7d5221201`, no sections/lessons. Initially submitted null price normalized to Free; renamed “QA 2026-10-22 Hidden pricing layout control”.
+
+The two long-title Downloads were created as Drafts, received actual harmless text through presign/PUT/confirm, and were published through normal APIs solely to prepare layout fixtures. No normal browser Publish or successful checkout is implied. Membership publishing remains unavailable. Keep these rows/files for follow-up tests; no storage credentials or signed URLs belong here. The synthetic Creator now has two publicly visible Products, so earlier empty-own-Storefront observations are historical. The dedicated disabled empty Storefront Creator remains the stable zero-Product fixture.
+
+### Third Published layout Download — 22 October 2026
+
+Retained synthetic Gamma `e2d18bd9-f61b-40eb-a6ed-3b962a589a2a`, owned by the approved synthetic Creator, free and Published. Section `b0f9e3c6-0c8e-4b0f-8322-2016f6df6e19`; file `693218a2-abe3-4893-9bad-d709ff82d0be`, `qa-layout-gamma-oct22.txt`, actual harmless87bytes uploaded through normal presign/PUT/confirm. It keeps two eligible Products visible while Alpha is temporarily Hidden in stale-feature tests. Alpha has been restoredPublished. SyntheticCreator now has3publicProducts/11total.
+
+Ordering controls temporarily equated only Alpha/Beta creation timestamps and restored their exact original values. Storefront theme/featured/order fields are restored to their original logical values; configuration update time and Alpha modification time advance normally through these tests. No signed URLs, credentials or real payment evidence are stored here.

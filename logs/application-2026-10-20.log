@@ -1,0 +1,81 @@
+2026-10-20 09:58:50 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-20 09:58:50 [main] INFO  QaIsolatedServer - Starting QaIsolatedServer using Java 17.0.13 with PID 19011 (/Users/tamastyukodi/.codex/visualizations/2026/09/29/01a0ec70-03da-7450-a5ce-4e2d72fb309d/qa-runtime started by tamastyukodi in /Users/tamastyukodi/Development/video-platform-UI-docs)
+2026-10-20 09:58:50 [main] INFO  QaIsolatedServer - The following 1 profile is active: "qa-isolated"
+2026-10-20 09:58:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-20 09:58:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103 ms. Found 26 JPA repository interfaces.
+2026-10-20 09:58:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 54339 (http)
+2026-10-20 09:58:51 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-54339"]
+2026-10-20 09:58:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-20 09:58:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-10-20 09:58:51 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-20 09:58:51 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1346 ms
+2026-10-20 09:58:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-20 09:58:51 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4742466e
+2026-10-20 09:58:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-20 09:58:51 [main] INFO  liquibase.database - Set default schema name to public
+2026-10-20 09:58:52 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-10-20 09:58:52 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2026-10-20 09:58:52 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2026-10-20 09:58:52 [main] INFO  liquibase.util - UPDATE SUMMARY
+2026-10-20 09:58:52 [main] INFO  liquibase.util - Run:                          0
+2026-10-20 09:58:52 [main] INFO  liquibase.util - Previously run:              40
+2026-10-20 09:58:52 [main] INFO  liquibase.util - Filtered out:                 0
+2026-10-20 09:58:52 [main] INFO  liquibase.util - -------------------------------
+2026-10-20 09:58:52 [main] INFO  liquibase.util - Total change sets:           40
+2026-10-20 09:58:52 [main] INFO  liquibase.util - Update summary generated
+2026-10-20 09:58:52 [main] INFO  liquibase.command - Command execution complete
+2026-10-20 09:58:52 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-20 09:58:52 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-10-20 09:58:52 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-20 09:58:52 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-20 09:58:52 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-20 09:58:52 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.19
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-20 09:58:53 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-20 09:58:53 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-20 09:58:53 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-20 09:58:54 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-20 09:58:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-54339"]
+2026-10-20 09:58:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 54339 (http) with context path '/'
+2026-10-20 09:58:55 [main] INFO  QaIsolatedServer - Started QaIsolatedServer in 5.097 seconds (process running for 5.537)
+2026-10-20 10:00:11 [http-nio-127.0.0.1-54339-exec-1] INFO  o.a.tomcat.util.http.parser.Cookie - A cookie header was received [g_state={"i_l":0,"i_ll":1792319092669,"i_b":"hAJpi/N/9csMTDreCRkkv+xWSRJEYMFqb/yLX25qI5s","i_e":{"enable_itp_optimization":24},"i_et":1792319092669};] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2026-10-20 10:00:11 [http-nio-127.0.0.1-54339-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-20 10:00:11 [http-nio-127.0.0.1-54339-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-20 10:00:11 [http-nio-127.0.0.1-54339-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-10-20 10:03:43 [http-nio-127.0.0.1-54339-exec-1] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-20 10:03:43 [http-nio-127.0.0.1-54339-exec-1] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA October20 duplicate submit Course
+2026-10-20 10:03:45 [http-nio-127.0.0.1-54339-exec-3] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: QA October20 duplicate submit Course
+2026-10-20 10:04:08 [http-nio-127.0.0.1-54339-exec-6] INFO  c.m.v.v.c.product.ProductsController - Received create product request: DownloadProductRequestDto(details=null)
+2026-10-20 10:04:08 [http-nio-127.0.0.1-54339-exec-6] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Creating a DownloadProduct: QA October20 initial Download workspace
+2026-10-20 10:04:08 [http-nio-127.0.0.1-54339-exec-6] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Created succesfully a DownloadProduct: QA October20 initial Download workspace
+2026-10-20 10:04:10 [http-nio-127.0.0.1-54339-exec-9] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA October20 initial Download workspace
+2026-10-20 10:04:10 [http-nio-127.0.0.1-54339-exec-9] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: QA October20 initial Download workspace
+2026-10-20 10:04:30 [http-nio-127.0.0.1-54339-exec-1] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-20 10:04:45 [http-nio-127.0.0.1-54339-exec-6] INFO  c.m.v.v.c.product.ProductsController - Received create product request: MembershipProductRequestDto()
+2026-10-20 15:33:12 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46s742ms).
+2026-10-20 17:33:13 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m59s913ms).
+2026-10-20 17:42:25 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m11s693ms).
+2026-10-20 18:31:15 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48m50s717ms).
+2026-10-20 18:32:35 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m19s429ms).
+2026-10-20 18:51:58 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m23s276ms).
+2026-10-20 18:53:42 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s209ms).
+2026-10-20 19:32:23 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m40s427ms).
+2026-10-20 19:34:07 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s232ms).
+2026-10-20 19:50:52 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m45s127ms).
+2026-10-20 20:07:18 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m25s487ms).
+2026-10-20 20:09:02 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s216ms).
+2026-10-20 20:25:47 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m45s137ms).
+2026-10-20 20:33:55 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m8s607ms).
+2026-10-20 21:34:21 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h25s678ms).
+2026-10-20 21:50:23 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m1s378ms).
+2026-10-20 21:52:07 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s218ms).
+2026-10-20 22:35:22 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=43m15s247ms).
+2026-10-20 22:37:06 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s204ms).
+2026-10-20 22:53:50 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m44s286ms).

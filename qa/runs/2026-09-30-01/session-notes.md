@@ -1594,3 +1594,584 @@ The existing cookie adapter produces separate HostOnly sessions for localhost an
 Current local data:20Users/6Courses/2Downloads/one existing fake order/three existing free-enrollment grants. Four additional Draft Products were created normally in this continuation. Two valid Admin API sections were added only to dedicated Admin-created Products; those sections are not reflected in the retained Admin forms’ older local section arrays. Do not use those forms’ cached arrays to assert current API counts. Primary Creator forms have no out-of-band child inserts and are suitable for ordering tests. All delay/fault/response-loss/session overrides remain disabled. Backend97165,frontend5531,PG54180 retained; actual local API/network responses verified throughout.
 
 Next practical work: CONTENT-003 normal title/description autosave and description-only/empty-title canonical PATCH variants; CONTENT-004 section ordering. Course already has three sections; add a third Download group normally before its ordering test. CONTENT-005 and CONTENT-014 need scoped request failures/navigation races afterward. Keep the primary Creator forms open; perform API/Overview/reopen readback in temporary tabs and close them. Retained screenshot `admin-valid-owner-created-workspace.png` inspected. Continue from the ledger; goal remains active.
+
+## Section editing, ordering and partial-save recovery —18October2026
+
+Twentyfouradditionalassessments (11Pass/8Fail/5Needsclarification) completeCONTENT003/004/005. Edit/orderpersistencepasses;blankPATCHtitlesandpartial-saveatomicitydocumented. ReopensfailBUG001;successfulreorderretryretainsstaleerror(newBUG059). Allpositionsrestoredandfaultsdisabled. 493 originals: 34 not started / 190 partial / 269 fully assessed (206 Pass / 48 Fail / 15 Needs clarification); 224 incomplete. 2884 historical / 2810 latest checks: {'Pass': 2471, 'Fail': 242, 'Needs clarification': 81, 'Blocked': 16}.
+
+Allinjectedfaultsdisabled. Fourfixturesrestoredtotheiroriginaluniquepositions1/2/3:Creatorvianormalreverse/retry;AdmintwominimalpositionPATCHes. UpdatedCreatortitles/descriptionsretained.AllchildIDs/content/Productownershipunchanged.20Users/6Courses/2Downloads/1existingfakeorder/3entitlements/2Articlemarkers/2metadata-onlyDownloadfiles;zeroduplicatepositiongroups. PrimaryworkingCreatorformstabs5/6retained;Adminformstabs2/4retainoriginalcachedarraysandrequireseparatenormalAdminsessionrenewalbeforefutureUIwrites. Mainserversrestarted18Octafterconfirmedconnectionrefusal/missinghandles:backend96656/frontend21274;PGactualqueriescontinuedworking. Noclouddata/provider/payment/sourcechange.
+
+CONTENT003/004/005fullyassessedFail;newBUG059staleordererrorafterreal200retry.NormalcurrentCreatorCourseorderDraft,AUpdated,B;DownloadAUpdated,B,C.Primaryforms5/6keepstaleerrorstatebutwork. Canclearbytabunmountwhenstartingnextindependenttest,notbeforebugproofsaved. CourseDefaultDraftcontains1actualAPIArticlemarkerandDownloadGroupC1metadata-onlyfile,whileUIcachedchildarraysremainempty;usecleanCourseSectionA/Bfornormalnewlessontests. NeedrecordedremainingCONTENT007/009/014,etc.Mainbackend96656/frontend21274/PG54180live. AdminactorDBADMINretainedbut127browsercookiesold;renewnormalAdminsessioninauxiliarytabbeforeUIwrites. Goalactive.
+
+## Video, Article and Quiz lesson creation —18October2026
+
+Tenadditionalchecks (9Pass/1Fail) completeCONTENT007. NormalCreatorUIandCreator/AdmincanonicalVIDEO/ARTICLE/QUIZcreationpersistcorrectly,includingtype-specificfieldclearingandseparateQuizdefinitionboundary. RequirededitorreloadfailsBUG001;workingSectionAthree-lessonfixture retained. 493 originals: 34 not started / 189 partial / 270 fully assessed (206 Pass / 49 Fail / 15 Needs clarification); 223 incomplete. 2894 historical / 2820 latest checks: {'Pass': 2480, 'Fail': 243, 'Needs clarification': 81, 'Blocked': 16}.
+
+Retain9newDraftlessonrecords:3normalCreatorUIlessonsinSectionApositions1/2/3;3CreatorcanonicalcontrolsintheDefaultsectionand3AdmincanonicalcontrolsindicatedAdminCourseDefaultsection. BothDefaultsectionshadoneArticlemarker,sonow4lessons;retainedUIcachedDefaultarrayremainsold/emptyandmustnotrepresentAPIdata. CleanSectionAUIhasall3newlessons;SectionBstillclean.20Users/6Courses/2Downloads/11lessons/2metadata-onlyfiles/1existingfakeorder/3grants. NodedicatedQuizdefinitionsfornewlessons. Allfaultsdisabled;nocloud/provider/sourcechange.
+
+CONTENT007fullyFailonlydueexistingreopenBUG001;creationcontractsallpass. PrimaryCreatorCourseSectionA nowhasnormalVideo,Article,Quiz at1/2/3,readyCONTENT009rename/description/reorderandCONTENT014nestedautosaveraces. Useoriginalworkingtab5withoutreload. Defaultsectioncontains4APIlessonsbutUIoldarrayempty;do notuseDefaultnormalAddascleandataset. SectionBclean. Allfaultsdisabled;AdminDBroleADMINretained,browser127sessionstillneedsnormalrenewalbeforeUIwrites. Goalactive.
+
+18 October continuation recovered the interrupted section batch before starting new work. Both previous app handles97165/5531 were missing and actual HTTP connections refused; the database still answered and preserved20Users/6Courses/2Downloads/1order/3grants. Sandboxed pg_ctl reported no running process, but an actual authorized SQL query proved the database was live; it was not restarted. Backend96656 and frontend21274 were then started, actual backend200 and the external-boundary mock readiness marker verified. Backend/frontend heads remain1b860413436d5f850af0ecc228c5b613ebae4836 and12765d4568796f8472124383a221b74d82850c5b; source diffs are empty. All original working forms survived without reload.
+
+Section checks measured on16October and completed18October are now checkpointed. CONTENT-003/004/005 are fully assessed Fail: field edits, omitted-field preservation, successful ordering and child integrity pass; saved workspace reopening fails BUG-001. Empty/whitespace PATCH titles and nontransactional partial position saves are documented as Needs clarification. Actual partial failures produced1/3/3 positions for Creator/Admin and Course/Download. Normal Creator reversal fixed duplicates before the interruption; after a normal same-identity sign-in on18October, retrying the original moves returned eight actual200s and unique1/2/3 order. Both forms retained their old order error, proving new BUG-059. Two minimal authorized Admin PATCHes restored the other fixtures; final SQL showed zero duplicate position groups. All faults remain disabled.
+
+CONTENT-007 is also fully assessed Fail after new normal Creator Video/Article/Quiz creation and six real canonical Creator/Admin content-normalization controls. Nine new lesson records persist with the expected type/title/description/position and branch-specific fields. None has a dedicated Quiz definition. The required saved editor reopen still fails BUG-001. No video file or cloud object was uploaded; canonical video URLs are metadata-only example.invalid fixtures.
+
+Current authoritative totals:493originals,270fully assessed (206Pass/49Fail/15Needs clarification),189partial/34not started,223incomplete. Ledger2894historical rows/2820latest assessed variations. This checkpoint added34assessment rows (20Pass/9Fail/5Needs clarification) across the recovered section batch and lesson creation. Validator passed catalog/coverage/CSV/JSONL consistency, references,326source hashes and255embedded contents;59issues. Whitespace and documentation typecheck/build passed; no application source change, fix, commit or deployment.
+
+Retained local data now20Users/6Courses/2Downloads/11lessons/2metadata-onlyDownload files/1existingfakeorder/3entitlements. Coursefa95b2ad Default section has4API lessons (original Article marker plus3canonical controls), while the retained form’s cached Default lesson array is empty. Its SectionA d9b83d39-362f-4891-98c7-f44481843bdc has exactly three normal UI-created lessons at1/2/3: QA Normal Video lesson October18, QA Normal Article lesson October18, QA Normal Quiz lesson October18. SectionB remains clean. The dedicated Admin Course260820e0 Default section similarly has4API lessons. Do not use cached Default arrays as API counts. DownloadGroupC has one explicit metadata-only file with no stored object; do not use it for actual download/delivery tests.
+
+Browser bindings after restart:creatorCourseTabOct18=tab5 and creatorDownloadTabOct18=tab6, both localhost; Creator credentials renewed normally through auxiliary tab8, then that tab was closed after readback. Creator Course tab5 switched Basics->Curriculum after stale-error evidence was saved, clearing the old component error for the independent lesson-creation test. All four fresh forms remain in place: Admin127tabs2/4, Creatorlocalhosttabs5/6. AdminDB actor remains ADMIN for continuing API controls, but its old127browser cookies require normal sign-in renewal in a separate tab before UI writes. Cloud tabs1/3 retained unchanged. No current cloud DB/log health check was claimed.
+
+Next concrete work:CONTENT-009 normal lesson title/description/order using the three visible SectionA lessons; CONTENT-014 nested autosave tab/navigation/rejection races. CONTENT-012’s remaining normal Link prompt may be revisited with the currently documented dialog API, without treating API fixtures as browser proof. Preserve working forms and use temporary tabs for readback; saved editor reload is still broken. Goal remains active.
+
+## Lesson metadata, ordering and persistence —18October2026
+
+Tenadditionalchecks (9Pass/1Fail) completeCONTENT009:allthreeCreatorlessontitle/descriptioneditsandnormalreorderpersist;Admincanonicalcontrols/timestamps/contentpreservationpass.RequiredsavededitorreloadfailsBUG001;nonewissue. 493 originals: 34 not started / 188 partial / 271 fully assessed (206 Pass / 50 Fail / 15 Needs clarification); 222 incomplete. 2904 historical / 2830 latest checks: {'Pass': 2489, 'Fail': 244, 'Needs clarification': 81, 'Blocked': 16}.
+
+EditednormalVideo/Article/QuizmetadataretainedinCreatorSectionA;currentorderVideo1/Quiz2/Article3.AdmincanonicalcontrolmetadataeditedandorderchangedonlywithinitsDefaultsection,originalArticlemarkerunchanged.Allothersections/bodies/ownerspreserved.20Users/11lessons/1order/3grantsunchanged.Allfaultsdisabled.PrimaryCreatorformretainedandauxiliarytab9availablefornextreadback/racefixture;noapplication/cloudchange.
+
+CONTENT009fullyFailonlyduesavedreloadBUG001. WorkingCreatorCourseSectionA nowQAEditedVideolessonOctober18,QAEditedQuizlessonOctober18,QAEditedArticlelessonOctober18at1/2/3withdistinctdescriptions. ReadyCONTENT014nestedautosaveraces. Bothnormaldrawerclosemetadataeditsdidpersist,soDrawercloseisnotassumedtounmountLessonEditorautosave. Useactualtabnavigation/leaveandtransportfaultvariants. AuxiliarylessonRaceReadbackTabOct18tab9currentlyknownblankreload,availableforfreshdisposableleavefixture. Goalactive.
+
+## Nested autosave navigation, rejection and recovery — 18 October 2026
+
+Twenty additional checks (13 Pass / 7 Fail) complete CONTENT-014. Workspace tab changes and header Back silently lose pending nested edits (new BUG-060). Sidebar navigation, explicit recovery and authorized Admin controls pass; saved editor reopening retains BUG-001. Original fixtures restored, all faults disabled; cloud observer access restored. 493 originals: 33 not started / 188 partial / 272 fully assessed (206 Pass / 51 Fail / 15 Needs clarification); 221 incomplete. 2924 historical / 2850 latest checks: {'Pass': 2502, 'Fail': 251, 'Needs clarification': 81, 'Blocked': 16}.
+
+All faults disabled. Original retained Course section B, Video lesson and Download group B descriptions restored by normal UI and verified via actual API. Two new private Drafts retained: departure Course ff2ac33e-6b11-49f4-9133-f0bcb5e30470 with one Video lesson, and departure Download fb91c72e-d6bf-4ca6-8e87-202520bd80d8 with one empty file group. Admin controls restored their original descriptions. SQL:20 Users/7 Courses/3 Downloads/12 lessons/1 existing fake Order/3 entitlements. Four working authoring forms preserved; auxiliary tab9 blank saved Download editor. No application source change or cloud mutation. Observer tunnel99383 restored and read-only DB plus restricted 200-line log reader verified.
+
+CONTENT-014 complete Fail; BUG-060 added. CONTENT-015 deletion still pending; honor action-time confirmation for irreversible browser deletion. Keep tabs2/4/5/6 fresh forms; Admin browser needs normal credential renewal before UI mutations. Next choose remaining CONTENT cases after inspecting current coverage. Cloud Gamma deletion already specifically authorized but editor remains BUG-001; no deletion attempted. Goal remains active.
+
+## Nested deletion cancellation and Admin cascade controls — 18 October 2026
+
+Six additional Pass checks cover Creator cancellation and authorized Admin nested deletion/cascade controls for CONTENT-006/015. Both cases remain partial while the three specifically named local browser deletions await confirmation. No new issue; original sections and cloud data preserved. 493 originals: 31 not started / 190 partial / 272 fully assessed (206 Pass / 51 Fail / 15 Needs clarification); 221 incomplete. 2930 historical / 2856 latest checks: {'Pass': 2508, 'Fail': 251, 'Needs clarification': 81, 'Blocked': 16}.
+
+No Creator browser deletion submitted. All three synthetic targets remain: lesson85c010dc-8560-42af-a39b-15795df0d9d9; Course sectionbf486031-9435-4f0a-8b63-015db9efb0d7 with two Quiz lessons; Download group43d61f0b-0140-4702-bea6-d45f41523e2c with one SQL metadata-only file58cc3fca-e28a-58f9-bb94-6e456ec42e4b (no stored object). Their current confirmation prompts are open in Creator tabs5/6. Distinct Admin control fixtures were created/deleted in the two disposable departure Drafts; all scoped nested records are absent, previous sections unchanged. Main fixtures now have4 sections each; counts20Users/7Courses/3Downloads/14lessons/3file-metadata rows, one fakeOrder/3entitlements. All faults disabled. Cloud unchanged. Docs typecheck/build and ledger validation passed before this append.
+
+Do not click any of the three final browser Delete buttons until the human responds to the pending confirmation. If approved, use existing working tabs5/6 and scope nested alertdialogs: Course has both section and lesson prompts open. Verify lesson deletion before parent section. Cloud Gamma approval is separate. Continue independent CONTENT-013 video selection or another incomplete case while waiting. Keep authoring tabs2/4/5/6; no reload. Observer99383 live; API controls fresh. Goal active,221 original cases incomplete.
+
+## Approved Creator nested deletions and persistence readback — 18 October 2026
+
+Five additional checks (3 Pass / 2 Fail) complete CONTENT-006/015 after explicit approval. Creator/Admin deletion, nested cascade and sibling preservation pass; saved authoring workspace reopening remains BUG-001. Only the three approved synthetic targets were removed; no cloud mutation or new issue. 493 originals: 31 not started / 188 partial / 274 fully assessed (206 Pass / 53 Fail / 15 Needs clarification); 219 incomplete. 2935 historical / 2861 latest checks: {'Pass': 2511, 'Fail': 253, 'Needs clarification': 81, 'Blocked': 16}.
+
+Only the three explicitly approved local targets were removed: lesson85c010dc-8560-42af-a39b-15795df0d9d9, sectionbf486031-9435-4f0a-8b63-015db9efb0d7 and group43d61f0b-0140-4702-bea6-d45f41523e2c. Their Quiz/question/option and metadata rows are absent; original3sections per main fixture remain identical. No stored object existed for the metadata child. All browser confirmations are closed. Main authoring tabs2/4/5/6 preserved. Independent video test Course31fd8d62-30dd-429c-8941-909f2c007ae9 now exists with one pending-video metadata lesson and was normally Published free; that test is still in progress and is not scored here. Final deletion SQL counts20Users/8Courses/3Downloads/13lessons/2metadata rows/1fakeOrder/3entitlements. No cloud mutation or app source change. All faults disabled.
+
+CONTENT006/015 fully assessed Fail only because saved authoring workspaces still fail BUG001; actual Creator/Admin deletion/cascade behavior passes. No deletion approval pending. Video case CONTENT013 now in progress: tab9 functioning Published free Course31fd8d62, Video lessonf08a7de4-671c-400a-b8fe-53f32260efe0 in sectionc81d8bf1-f013-44c4-9896-fb558615b5f6. Actual API after chooser haspending-video-asset://QA%20synthetic%20video%20October18.mp4, despite reset Uppy/selected label. Filechooser call took633s; do not repeat blindly. Small valid generatedH2641695byte/0.4s file in runtime. Need authorizedAdmin metadata repeat, normal syntheticUser login/free enrollment, publicreader/reload/playbackboundary, savededitorreadback. Auxiliarytab10currentlyblankDownloadeditoravailableforreader/login; preservefreshforms2/4/5/6/9.
+
+## Course video selection and entitled reader boundary — 18 October 2026
+
+Seven additional assessments (4 Pass / 2 Fail / 1 Needs clarification) complete CONTENT-013. Real selection persists pending video metadata; Admin/API access and normal free enrollment/reload pass. Entitled playback remains a pending-asset boundary; selection display extends BUG-055 and saved editor retains BUG-001. No real upload, payment or cloud mutation. 493 originals: 31 not started / 187 partial / 275 fully assessed (206 Pass / 54 Fail / 15 Needs clarification); 218 incomplete. 2942 historical / 2868 latest checks: {'Pass': 2515, 'Fail': 255, 'Needs clarification': 82, 'Blocked': 16}.
+
+New isolated Course31fd8d62-30dd-429c-8941-909f2c007ae9 retained Published/free after normal UI publication. Its Video lessonf08a7de4-671c-400a-b8fe-53f32260efe0 retains the pending marker. Synthetic UserA c419424e-2a47-46ab-bac3-4cd5fce498a8 normally enrolled, one additional FREE_ENROLLMENT grant retained:4total entitlements/1existing fakeOrder. No provider, charge or actual storage upload. Browser127 origin now UserA; Admin tabs2/4 retain forms but must sign in normally as Admin in an auxiliary127 tab before future Admin browser mutations. Creatorlocalhost unchanged; fresh forms5/6/9 preserved. All faults disabled; no cloud mutation/application fix. Related Course display observation appended to BUG-055; issue count remains60.
+
+CONTENT013fullyFail. MainCreatorCourseVideo9draweropen; next CONTENT012 Article link fixture can use normal paste of synthetic HTML into Tiptap to avoid unsupported toolbar prompt, then normal autosave/reopen and actual enrolledUserA reader10reload. Do not invoke DOM state/network writes via browser evaluate. Browser clipboard API supports text/html item and normal keyboard paste; inspectactualformattedDOMbeforeclaiming linkfixture. All approved deletionsdoneandcheckpointed; no furtherapprovalpending. Goalactive218originalcasesincomplete.
+
+## Article formatted link fixture, round-trip and entitled rendering — 18 October 2026
+
+Six additional checks (4 Pass / 2 Fail) complete CONTENT-012. Normal HTML paste supplies the required bold/list/link fixture; actual autosave and Admin repeat preserve it. Reopened editor still shows starter text (BUG-018), and enrolled reader renders literal JSON (BUG-021). No new issue, destructive overwrite or cloud change. 493 originals: 31 not started / 186 partial / 276 fully assessed (206 Pass / 55 Fail / 15 Needs clarification); 217 incomplete. 2948 historical / 2874 latest checks: {'Pass': 2519, 'Fail': 257, 'Needs clarification': 82, 'Blocked': 16}.
+
+New Article876a4cf2-75c2-4955-b288-192249117bf7 retained as second lesson in Published free synthetic Course31fd8d62-30dd-429c-8941-909f2c007ae9. Complete bold/list/link Tiptap JSON remains persisted; stale reopened starter was not edited. Browser clipboard initially empty, restore of empty item-list rejected by tool; explicitly cleared browser clipboard with writeText emptystring. No external link visited. UserA remains normally enrolled,4entitlements/1existingfakeOrder. SQL total14lessons;20Users/8Courses/3Downloads/2metadatafile rows. All approved deletions finished, all faults disabled, main fresh forms5/6/9 and Admin forms2/4 retained. No cloud mutation, charge, upload or application fix. Issue count60 unchanged.
+
+CONTENT012fullyFail; CONTENT006/015/013alsofinishedcurrentturn. No approval pending. 217originalcasesincomplete. CreatorPublishedvideoArticleCourse31fd8d62 functionalform9 readyadditionalQuiz/UItests; enrolledUserAreader10. MainfreshCreatorforms5/6andAdminforms2/4stillretained;127browserhostisUserAsoAdminneednormalauxiliaryAdminloginbeforewrites. No globalblock. Nextinspectremainingcatalogscope ratherthanrepeat completednestedcases. Goalactive.
+
+Final validation18October after the approved deletions, video and linked Article tests: ledger/CSV/coverage/source hashes and whitespace checks pass; npm run typecheck and npm run build exit0. Four additional original cases completed this goal turn;217remain. No deletion confirmation pending. Continue QUIZ-016 from its remaining browser answer/persistence controls, or another incomplete catalog case; preserve current fresh forms.
+
+## Quiz wizard answer controls and dedicated API boundary — 18 October 2026
+
+Nine additional assessments complete QUIZ-016: local answer/scoring controls and separate Creator/Admin/learner API controls are verified; browser definition persistence and absent controls remain capability clarifications. Total points still fails BUG-019; saved workspace reload fails BUG-001. One obsolete tool-block classification is corrected to measured unsupported UI capability. No new issue or cloud mutation. 493 originals: 31 not started / 185 partial / 277 fully assessed (206 Pass / 56 Fail / 15 Needs clarification); 216 incomplete. 2957 historical / 2882 latest checks: {'Pass': 2523, 'Fail': 259, 'Needs clarification': 85, 'Blocked': 15}.
+
+Synthetic Quiz lesson239f0c5d-79a4-4719-974b-dac0726422b6 retained as third lesson in Published free Course31fd8d62. Distinct dedicated API control Quiz1b70dcc5-a26e-4176-8bee-095fc4faa16e retained with2questions,passing60,points30/70 and1successful entitledUserA attempt100/100. Browserlocalwizard state75/50/50 differs; form9retained and drawerclosed. No real learner/grading change, email/provider/upload/payment/cloud mutation. SQL20Users/8Courses/3Downloads/15lessons/2metadatafiles/1existingfakeOrder/4entitlements. All faults disabled; existing freshforms2/4/5/6/9preserved. BUG-019 gains current-source confirmation;60issuesunchanged.
+
+QUIZ016fullyFail;allCONTENTandQUIZoriginalcasesnowfullyassessed. Remaining216originalcases (otherfeatureareas). Keep freshauthoringforms andsyntheticQuizcontrol forfuturefixtures. Auxiliarytab11blankcurrentCourseeditoravailablefornextreadonlynavigation; UserAreader10. Browser127originUserA,Adminforms2/4neednormalauxiliaryAdminloginbeforewrites. Goalactive;noapprovalpending.
+
+## Shared fields preserve populated content/media; Course publication audit — 18 October 2026
+
+Eight additional checks (7 Pass / 1 Fail) complete PROD-013/021. Rapid shared fields preserve populated Course/Download content and temporary media; anonymous Published Course metadata strips protected content. Current recorded normal publication/reader evidence closes the publication scope. Saved editor reopening retains BUG-001. All temporary metadata removed and original visible text restored. 493 originals: 31 not started / 183 partial / 279 fully assessed (206 Pass / 58 Fail / 15 Needs clarification); 214 incomplete. 2965 historical / 2890 latest checks: {'Pass': 2530, 'Fail': 260, 'Needs clarification': 85, 'Blocked': 15}.
+
+Coursefa95b2ad andDownloada16d5258 original visible names and empty descriptions restored by normalUI. Formernull shared descriptions are now emptystrings, with identical visible meaning; byte-identical null restoration is not claimed. All6temporarymedia metadata rows removed by exactIDs, originalnull thumbnail references restored. Nested lessons/files and originalpricing/status/owner unchanged. Metadata markers never represented stored objects or actualuploads. ExistingSyntheticPublishedCourse31fd8d62 remainswith3lessons/dedicatedQuizcontrol/1attempt; UserAgrant retained. SQL20Users/8Courses/3Downloads/15lessons/2metadatafiles/1existingfakeOrder/4entitlements. Allfaultsdisabled, noappsource/cloudchange. Freshforms2/4/5/6/9retained;5/6Basicsactive. Auxiliary11blankDownloadeditoravailablefornextnavigation.
+
+PROD013/021fullyFailbecauseworkspaceBUG001. AllCONTENT/QUIZcasesassessed;214originalcasesremain. Productcase001/002/003/list and008createfourtypes/009duplicatepending/012types/017pricing/015failedflushbranchesstillneedtheirremainingrealUIchecks. MainCourse5andDownload6functionalBasicswithpopulatednestedcontent, no temporarymedia. PublishedvideoArticleQuizCourse9preserved. Keepallfreshauthoringforms; Admin127sessionmustrenewinauxiliarytabbeforeUIwrites. Noapprovalpending;goalactive.
+
+## Four-type Product creation, pending submit and saved routes — 20 October 2026
+
+Twenty-one additional checks (13 Pass / 8 Fail) complete PROD-008/009/011/012. All four normal Draft creations, pending duplicate-submit guards and type-specific tabs pass. Canonical/wrong-type/missing-ID saved editing retains BUG-001; persisted types and records stay correct. Four fresh forms retained; no new issue or cloud mutation. 493 originals: 31 not started / 179 partial / 283 fully assessed (207 Pass / 61 Fail / 15 Needs clarification); 210 incomplete. 2986 historical / 2911 latest checks: {'Pass': 2543, 'Fail': 268, 'Needs clarification': 85, 'Blocked': 15}.
+
+Exactly4new privateDrafts retained:Course750ccd01-4c69-462b-b4af-48d5d126b6d7,Downloadf58a1ef9-c2e9-4eb1-8f43-2dcd63e4f8c5,Consultation9db6e8f0-e26f-4e3c-a010-4aabcd297d17,Membership14cfaac1-7938-4403-ba1f-3579ffd95b32. OwnerCreatorA92262e24unchanged. Freshworkingforms tabs1/2/3/4preserved; Course/Download/ConsultationReadinessactive,MembershipBasicsactive. Auxiliarytab5missingProductblankfornextnavigation. Create latencygateholdfalse,allfaultsdisabled. SQL20Users/9Courses/4Downloads/1Consultation/1Membership/15lessons/2metadatafile rows/1existingfakeOrder/4entitlements. No upload,calendarconnection,charge,email,cloudmutation orappsourcechange. Retained olddata/migrations recovered afterlocalprocesses stopped; browseroldtabs were absent and are not falsely reported preserved.
+
+PROD008/009/011/012fullyassessed;210originalcasesremain. Noapprovalpending. ExistingallCONTENT/QUIZcasesassessed. KeepfreshCreatorforms tabs1Course/2Download/3Consultation/4Membership aftereachturn. APIIDs in fresh-product-ids-oct20.json. Auxiliary5blankmissingProductavailableforreadonlynavigation/reload. Freshformsreadyforpricing017/018/019/readiness020/033andMembershipvalidation. PROD010 whitespace/network/servercreaterecovery stillneedsitsactualvariants; do notclaimitcoveredbyemptynamechecks. PROD015failedBackStay/Leave remains. Backend17704/frontend26930alive;PGexistingloopback54180. Browser127/User/Admin/cloudsessionsnotrevalidatedafterrestart;onlyCreatorlocalhostnormal sign-in20Octverified. Goalactive.
+
+
+## Deployed verification scope — 20 October 2026
+
+The deployed app is the primary execution target. The 283 fully assessed originals below combine deployed, isolated local and controlled checks; **283 does not mean deployed verification is complete**. Local results remain useful diagnostic evidence and do not establish deployed authentication, email, storage, payments or configuration behavior. The 210 incomplete originals are a minimum remaining workload; deployed rechecks of local-only coverage are additional and have not yet been fully enumerated.
+
+Execution order: restore normal deployed browser access; verify the signed-in account; resume incomplete deployed browser journeys with supporting read-only database/log checks; review previously local-only cases for deployed verification. Use local fault simulation only where its scope is explicit. Preserve existing attempts and record deployed rechecks separately.
+
+Current access: both deployed hostnames resolve through a Palo Alto DNS sinkhole in this environment and normal HTTPS resets before an application response. Restricted SSH logs work (200 lines returned). Observer tunnel64610 was restored; database `vp_test_reader` is connected to `video_platform_db`, read-only is on and statement timeout is 10s. No security protections or server configuration were changed. Browser testing is waiting for normal deployed access, not for database access.
+
+Access checkpoint: 2026-10-20T08:18:55.077738+00:00. Ledger validator passed: 2986 historical attempts, 2911 latest assessed variations, 283 fully assessed originals, 210 incomplete, 60 issues. No new test outcomes are claimed by this connectivity check. Previous turn verified the browser connection reset; this turn restored observer access and identified DNS filtering.
+
+Validation after the deployment-scope correction: checkpoint validator, whitespace check, npm run typecheck and npm run build all passed. No new application tests executed; counts remain unchanged. Deployed UI/API access still requires resolution of the observed DNS security filtering.
+
+## Deployed Analytics periods, API and database reconciliation — 20 October 2026
+
+Seven additional deployed browser/API/database checks pass; ANALYTICS-006 is now fully assessed Pass. Period toggles, bucket totals, ranking shares, payment-health figures and zero-period presentation gain deployed evidence; other Analytics cases retain remaining variants. No business data or app configuration changed. 493 originals: 31 not started / 178 partial / 284 fully assessed (208 Pass / 61 Fail / 15 Needs clarification); 209 incomplete. 2993 historical / 2918 latest checks: {'Pass': 2550, 'Fail': 268, 'Needs clarification': 85, 'Blocked': 15}.
+
+Deployed Creator remains signed in; app tab5 restored to thirty-day Revenue Analytics. Read-only API inspection tab8 temporary. No roles, business records, uploads, payments or server settings changed. Local authoring forms retained for reference. Observer tunnel64610 remains available; log reader verified earlier this session.
+
+Deployed browser access recovered via user-opened tab5. Continue incomplete deployed cases using the normal browser, read-only database and restricted logs. Original283 assessed included local; now284 assessed is still mixed scope, not deployed completion. At least209 originals incomplete plus deployed rechecks. Existing Gamma Post deletion approval remains unexecuted; no deletion performed here.
+
+## Deployed Product list refinements and dashboard actions — 20 October 2026
+
+Four additional deployed checks pass. PROD-002 fully assessed Pass after allfive sort choices, combined refinements and unchanged-record verification. Product no-match recovery and three dashboard actions pass; their remaining branches stay partial. 493 originals: 31 not started / 177 partial / 285 fully assessed (209 Pass / 61 Fail / 15 Needs clarification); 208 incomplete. 2997 historical / 2922 latest checks: {'Pass': 2554, 'Fail': 268, 'Needs clarification': 85, 'Blocked': 15}.
+
+All53 owned Product IDs, names, types, states and created/updated timestamps are unchanged in before/after cloud database snapshots. Search empty, type/status All, sort Recently updated restored in deployed tab5. No role changes, uploads, publication or commerce mutations. Existing local reference forms retained.
+
+PROD002 fullyPass. Continue deployed tests;285 originals assessed is mixed execution scope,208originals incomplete plus deployed rechecks. Existing cloud saved editorBUG001 may blockauthoringreopens; use a new syntheticDraft only when needed and preserve it.
+
+## Deployed synthetic thumbnail and gallery upload failures — 20 October 2026
+
+Two additional deployed media checks fail: valid Course thumbnail selection/retry and Gallery upload. Thumbnail remains null; exact server/MIME cause is unconfirmed. Deployed schema has38migrations versus40in local tests. Existing upload issue extended; no implementation or deployment change. 493 originals: 29 not started / 179 partial / 285 fully assessed (209 Pass / 61 Fail / 15 Needs clarification); 208 incomplete. 2999 historical / 2924 latest checks: {'Pass': 2554, 'Fail': 270, 'Needs clarification': 85, 'Blocked': 15}.
+
+Retained one new private deployed Course Draft1379184c-228b-470d-b925-31a75ddc99f9, owned by existing Creator, title QA2026-10-20Deployedstoragevalidation. Actual title retains spaces as shown in evidence. Thumbnail remains null; gallery UI empty. No object URL or successful upload was returned; object existence/absence in Spaces is not established. No publication, payment, role change or server configuration change. Tab5 preserved onMediaError; local reference tabs3/4 remain, tabs1/2/6 absent in current inventory.
+
+Keep cloudDraft1379184c tab5freshMedia; savededitorreloadhasknownBUG001so avoid losingfreshform. MEDIA001/004 nowpartial withactualdeployedfailure;208originalsremainincomplete. Continue independentdeployedcases whilemedia success awaitsdiagnosis;do notsubstitutemockedstoragepasses. Browser currentinventory3Consultationlocal,4Membershiplocal,5cloudCourseMedia.
+
+## Deployed pricing, readiness, Download publication and expiry — 20 October 2026
+
+Eleven additional deployed assessments:9Pass/1Fail/1Blocked. PROD-017 fullyFail on saved-editor reload; FILE-002 and PROD-022 fullyPass. Pricing, readiness, file deduplication and publication verified; signed delivery remains unverified after browser stall/expiry and client-blocked retry. 493 originals: 26 not started / 179 partial / 288 fully assessed (211 Pass / 62 Fail / 15 Needs clarification); 205 incomplete. 3010 historical / 2935 latest checks: {'Pass': 2563, 'Fail': 271, 'Needs clarification': 85, 'Blocked': 16}.
+
+Course1379184c remains privateDRAFT/freeONE_TIMEEUR with one syntheticArticle ae31ca71-66b6-457f-8a47-2b89748c31cd insection98e921a7-8172-4137-8848-671874c2625f. NewDownload884cd530 isPublished/freeONE_TIMEEUR withgroup7a5ce8f8 andtwo82-byte syntheticTXTrecords50edf5eb/2b1a85ee, bothnonblankprivatepaths. OwnerURLlookup increments firstdownload_countto1withoutprovingbyte retrieval. No payment/role/schema/config change. SignedURL/rawstorageXML stayprivateoutsideGit. Tabs5Coursefresh and10Downloadfresh retained;11APIlookupblockedbyclient;localreference3/4retained.
+
+PROD017fullyFail;FILE002andPROD022fullyPass.205originalsincompleteplusdeployedrechecks. Usernowrequests investigate/fix/redeploy backendmigrations; prioritize that dependency. Do notrepeatunboundedbrowserstoragenavigation. Preservefreshcloudforms5/10. No deployed migration attempted.
+
+## Deployment migration investigation —20 October2026
+
+CloudDB and actual deployedJAR master bothstopat38. Currentmain1b86041 includes39/40 andpackage containsboth. FullJava17Maventests135pass/0fail/0error/0skip; packagingpassed. GitHubrun36552784741BuildTestsuccess/DeployfailureatValidate required secrets;ConfigureSSH/Pushskipped. Repo haszeroActionssecrets/vars. ExistinglocalDokkuidentityworks;gitreportddb82faa isancestorofmain. Migrationfailureisnotestablished:oldartifactneverincluded39/40. FullDBexportattemptwasrejectedbyautomaticapprovalreview;useraskedviaasyncforprivatebackupapprovalorproceedwithoutnewexport. Nodeployment/schema/source/credentialchangesyet. Continueafterbackupdecision;existingcloudfreshforms5Course and10PublishedDownloadretained.
+
+Deployment preflight: DokkuGit mainb0cd003/masterddb82faa; testedGitHubmain1b86041. Dry-run push of explicit1b86041to main confirmsnormalfast-forward withoutforce. CloudLiquibaselockfalse; allthree39/40targettablesabsent. No backup/deploy performed pendinghumanchoice afterauto-reviewexportrejection.
+
+Additional redeploy preflight: candidate vsDokku mainb0cd003 changesonlymasterincludes andadds39/40 among migrationfiles; existingSQL1–38, pom/systemproperties/workflow unchanged. Specificnonsecretconfigreads showSPRING_LIQUIBASE_ENABLEDandCHANGE_LOGunset, profiledocs; defaultenablementtrue/currentmasterapplies. Pendingbackupchoiceunchanged;no deployment attempted. Docs typecheck/buildpass.
+
+User explicitly requested directDokku deployment afterbackupquestion. Proceededwithoutnewexport; no rejectedexportretried. Commit1b86041→Dokkumain fast-forwardpush startedhandle87412; rawbuildlogprivate/tmp/vp-dokku-deploy-oct20-private.log. PreflightDB38/lockfalse,trackedworktreeclean. VerifyactualcompletionandDB40beforeclaimingsuccess.
+
+## Deployed owner public routes before backend upgrade — 20 October 2026
+
+Two pre-upgrade deployed owner checks pass: three Product types honor fetched type across canonical/mismatched legacy routes and expose owner Edit/content actions. Other-role and anonymous-protection variations remain partial; no release verification inferred. 493 originals: 26 not started / 179 partial / 288 fully assessed (211 Pass / 62 Fail / 15 Needs clarification); 205 incomplete. 3012 historical / 2937 latest checks: {'Pass': 2565, 'Fail': 271, 'Needs clarification': 85, 'Blocked': 16}.
+
+Read-only public-page inspection only; no enrollment/purchase or Product mutation. Temporarytab12 endsConsultationlegacyroute. ExistingfreshcloudCourse5/Download10 retained. This packet reflects the deployment BEFORE the requested backendupgrade; no newreleaseparityclaim.
+
+Recordedpreviouslyexecutedread-onlymatrixwhileDokkuhandle87412buildsruns. Deploymentverificationispriority; do notclaimreleasecompletefromthesepre-upgraderesults.
+
+## Backend deployment recovered — 20 October 2026
+
+The tested backend commit `1b860413436d5f850af0ecc228c5b613ebae4836` was pushed directly to Dokku main. Remote build and release completed. Cloud Liquibase now records all40 changesets;39 and40 executed successfully, their three tables exist, and the lock is released. Spring Boot started successfully; signed-in Dashboard, Product media reads and seven-day Consultation availability defaults pass smoke checks. All135 backend tests passed before deployment. No new database export was made, as requested. No migration source edit was necessary.
+
+Earlier deployment-gap and upload results remain historical evidence. Recheck affected cases on this upgraded backend; do not assume media uploads or existing application issues are fixed. GitHub automatic deployment remains unconfigured because required repository Actions secrets are absent. Browser inventory after deployment was empty; old fresh forms were not retained. New signed-in tab13 is available on Dashboard.
+
+Successful Gitpushhandle87412 exited0. Newcontainer8465047d407. Read-onlytables39/40SELECTgrantsarealreadycorrect. Currentoriginalcasecountsunchanged:288assessed/205incomplete,mixedscope. Resumeaffectedtestsagainstnewbackend.
+
+## Post-migration Consultation availability save — 20 October 2026
+
+Two post-migration assessments: availability save still fails, now with deployed BUG-030 uniqueness evidence; numeric display defaults need clarification. Earlier missing-schema BUG-023 is resolved by deployment. No migration or application source fix added. 493 originals: 26 not started / 179 partial / 288 fully assessed (211 Pass / 62 Fail / 15 Needs clarification); 205 incomplete. 3014 historical / 2938 latest checks: {'Pass': 2565, 'Fail': 271, 'Needs clarification': 86, 'Blocked': 16}.
+
+Retained one privateConsultationDraft2eae7de3-54ee-4add-bdb2-7339e5375dcd. Database7disabledweekdays/0windows,duration0,capacity0. FailednormalMondayenable rolledback; currentfreshformstillshowscheckedMonday09–17andError, so itslocaldraftdiffersfromserver. No publish, calendar/provider call, booking, rolechange ormanualDBwrite. Tab14retainedforfollow-up; signed-inDashboard13retained. Otheroldtabswereabsentafterdeployment andarenotclaimedpreserved.
+
+All40migrationsappliedandappsmokepass. BUG023deploymentgapresolved;BUG030nowconfirmeddeployedonfirstweekdayedit. ContinueQAorfixonlywithinusersauthorizedscope;do notclearcloudschedulesasaworkaround. CurrentfreshConsult14Error/checkedMondaylocal,actualDBdisabled.205originalsincompleteplusdeployedrechecks.
+
+## Post-migration media failures and verified private file delivery — 20 October 2026
+
+Eight additional assessments:6Pass/2Fail, includingtwo reattempts. Realprivatefilebytesmatchthe82-bytebrowserupload;unsigned/expired403andfresh200recoverypass. Previousowner-retryblockisresolved. Thumbnail/galleryrequestsremain400withall40migrations; no MIMEcausalclaimfromuncapturedheaders. 493 originals: 25 not started / 180 partial / 288 fully assessed (211 Pass / 62 Fail / 15 Needs clarification); 205 incomplete. 3022 historical / 2944 latest checks: {'Pass': 2570, 'Fail': 273, 'Needs clarification': 86, 'Blocked': 15}.
+
+No new Product/file records; existingprivateConsultation2eae7de3 stillDraft/imageNULL/0media. SyntheticDownload884cd530 remainsPublished with two82-byte files. NewauthorizedURLlookup occurred; resultingdownload_countmayincrementindependentlyofbyteusage. SignedURLs/querycredentialsandrawaccesslogsremainprivateoutsideGit. No roles/authaccounts/ACL/config/sourcechanges; no security bypass. Bounded12sHTTPSretrievaluseddefaultTLSverification andonlysyntheticobject.
+
+FreshownerdownloadretryblocksupersededbyactualPass:APIURL200andstorage200/exact82bytes. Unsignedandoldexpiredsigned403. MEDIA001/004still400despitecorrectschema. Awaituserdecisionon2enabledsyntheticUser/Creatorloginfixturesforremainingnonownerjourneys; donotcreateuntilapproved.205originalsremainincomplete.
+
+Fixture-planning metadata only: users/roles schema inspected; no accounts created. Exactcanonicalroles USER(id2), CREATOR(id4); legacyCreator(id3) isnot thetestrole. EnabledsyntheticUser/Creatorlogincreation remains pendinghumanapproval. Currenthumanrolewasnotchanged.
+
+## Deployed calendar discovery, authorization and scheduling boundary — 20 October 2026
+
+Six deployed assessments pass. CAL-001 discovery and CAL-012 deliberate scheduling absence are fully assessed; malformed-state rejection, safe own-list and User authorization receive partial coverage. Existing connections are expired, so no OAuth success is claimed. Creator role restored; no connection data changed. 493 originals: 22 not started / 181 partial / 290 fully assessed (213 Pass / 62 Fail / 15 Needs clarification); 203 incomplete. 3028 historical / 2950 latest checks: {'Pass': 2576, 'Fail': 273, 'Needs clarification': 86, 'Blocked': 15}.
+
+Existing human account switched through Admin/User using the authorized development controls, then restored to Creator; read-only database confirms role. Three pre-existing Google connections retained unchanged. No connect, disconnect, consent, provider call, new login, appointment, event, booking, payment or application source edit. Dashboard13 and ConsultationDraft14 retained; temporary calendar API tab15 can close.
+
+Continue remaining deployed journeys. New enabled synthetic User/Creator login approval is still pending; do not create them. Provider OAuth success and state/exchange fixtures remain separate requirements.203originalsincomplete plus deployed rechecks.
+
+## Deployed Settings local payment and placeholder role matrix — 20 October 2026
+
+Twelve deployed role/tab assessments:3Pass/9Fail. PROF-008 is fully assessed Pass and PROF-009 fully assessed Fail. Allthree roles confirm local-only payment fields and placeholder resets; declared placeholder validation still fails BUG-009. No new issue or persistent settings data. 493 originals: 22 not started / 179 partial / 292 fully assessed (214 Pass / 63 Fail / 15 Needs clarification); 201 incomplete. 3040 historical / 2962 latest checks: {'Pass': 2579, 'Fail': 282, 'Needs clarification': 86, 'Blocked': 15}.
+
+Only synthetic local business/VAT and placeholder text entered. Each field reset after navigation/reload. Existing account temporarily used Admin/User and restored to Creator. No credential entry, account deletion, provider connection, financial action, real preference update or new enabled account. Current Settings tab13 empty Notifications; ConsultationDraft14 retained. Calendar API tab15 temporary.
+
+PROF008 fullyPass, PROF009 fullyFail dueBUG009 after allthree roles and allthree placeholder tabs tested on deployment. Continue remaining originalcases and deployedrechecks. New synthetic enabled logins stillawaitexplicitapproval.
+
+## Validation and browser handoff — 20 October 2026
+
+Calendar and Settings checkpoints add 18 deployed assessments and fully assess four more originals. Ledger validator: 3040 historical attempts, 2962 assessed latest variations, 292 fully assessed originals and 201 incomplete originals. Documentation typecheck, production build and whitespace checks passed. Existing browser evidence batch was extended; no new tracked evidence file or application code was added.
+
+Current signed-in tab13 is the settled Creator Dashboard; tab14 retains the private Consultation Draft with its earlier media/availability errors. Temporary calendar API tab15 was closed. Synthetic Settings values were cleared by reload. Three existing calendar connections remain unchanged. Additional enabled test-account creation is still awaiting the earlier explicit approval; no accounts were created. The remaining work includes deployed rechecks of local results and the 201 incomplete originals.
+
+## Deployed Product list secondary actions across statuses — 20 October 2026
+
+Two deployed read-only checks pass and complete PROD-005. Hidden/Draft rows omit unsupported menus; Published Download exposes only Preview and opens its canonical public page. Existing Course Preview evidence retained; no data changed. 493 originals: 22 not started / 178 partial / 293 fully assessed (215 Pass / 63 Fail / 15 Needs clarification); 200 incomplete. 3042 historical / 2964 latest checks: {'Pass': 2581, 'Fail': 282, 'Needs clarification': 86, 'Blocked': 15}.
+
+Read-only Creator list filters/menu/Preview only. Existing Hidden and Draft fixtures untouched; Published Download preview shows the two synthetic deliverables. Current tab13 is the Published Download page; Consultation Draft14 retained. No Product metadata, role, entitlement or storage data changed.
+
+PROD005 fullyPass: allthree lifecycle row-action states now observed, published Course navigation previously recorded plus current Download Preview.199? Count authoritative:200originalsincomplete plusdeployedrechecks. Continuecurrentdeployedtests;newenabledloginsstillpendingapproval.
+
+## Deployed public Help and Contact signed-in role matrix — 20 October 2026
+
+Six deployed support-flow assessments pass and complete MKT-009/014. Allsigned-in roles repeat native Contact validation/local reset and Help static-item/navigation boundaries, complementing existing Guest evidence. No support delivery, agreement acceptance or persistent user change. 493 originals: 22 not started / 176 partial / 295 fully assessed (217 Pass / 63 Fail / 15 Needs clarification); 198 incomplete. 3048 historical / 2970 latest checks: {'Pass': 2587, 'Fail': 282, 'Needs clarification': 86, 'Blocked': 15}.
+
+Only synthetic public Help/Contact interactions. No agreement accepted, support message delivered, account created or business data changed. All Contact values cleared on reload. Existing account switched Creator/Admin/User then restored to Creator; tab13 retains Published Download, tab14 Consultation Draft. Temporary marketing tab16 can close.
+
+MKT009 and014 fullyPass after complete Guest+Creator/Admin/User scope.198originalsincomplete plusdeployedrechecks. Next gaps include remainingpublicnavigation/history andcoreauthoring. Enabled synthetic testloginsstillawaitapproval.
+
+## Deployed Admin FAQ activation and default hidden answer — 20 October 2026
+
+Three deployed Admin FAQ assessments:2Pass/1Fail. MKT-015 is fully assessed Fail after remaining role activation checks; default Contact answer stays hidden on first entry and revisit, extending BUG-028. Existing account restored to Creator; temporary marketing tab closed. 493 originals: 22 not started / 175 partial / 296 fully assessed (217 Pass / 64 Fail / 15 Needs clarification); 197 incomplete. 3051 historical / 2973 latest checks: {'Pass': 2589, 'Fail': 283, 'Needs clarification': 86, 'Blocked': 15}.
+
+Static FAQ interactions only. No support request, agreement, account or business mutation. Existing account restored to Creator. Temporary marketing tab16 closed. Main tab13 stays on Published Download; private Consultation Draft14 retained.
+
+MKT015 fullyFail: allrole FAQ activation scope assessed; defaultContactanswerBUG028 reproducedAdmin andpriorCreator/User.197originalsincomplete plusdeployedrechecks.
+
+## Public-flow checkpoint validation and handoff — 20 October 2026
+
+Eleven additional deployed assessments (10 Pass / 1 Fail) complete PROD-005, MKT-009, MKT-014 and MKT-015. Current totals: 3051 historical attempts; 2973 assessed latest variations; 296 fully assessed originals (217 Pass / 64 Fail / 15 Needs clarification); 197 incomplete originals plus deployed rechecks of local evidence. Ledger validation, documentation typecheck, production build and whitespace checks pass. Existing evidence batch extended; no new tracked evidence file or application change.
+
+Tab13 is now the settled Creator Dashboard, reloaded after the final role restoration. Tab14 still holds the private Consultation Draft and its earlier failed saves. Temporary marketing tab16 is closed. No support ticket, agreement acceptance, payment/provider connection or new login. No active external job remains. Continue remaining deployed journeys and the outstanding field/role/data variants. New enabled synthetic test-account approval is still pending.
+
+## Deployed Admin pricing and demo presentation matrix — 20 October 2026
+
+Two deployed Admin assessments pass and complete MKT-011/016. Pricing selection/wrap/keyboard/reset and allfour Demo previews/reset verified; no purchase or Product mutation. Creator role restored. 493 originals: 22 not started / 173 partial / 298 fully assessed (219 Pass / 64 Fail / 15 Needs clarification); 195 incomplete. 3053 historical / 2975 latest checks: {'Pass': 2591, 'Fail': 283, 'Needs clarification': 86, 'Blocked': 15}.
+
+Marketing presentation only. No Get Started purchase, subscription, payment, Product or support action. Existing account temporarily Admin then restored to Creator in tab13. Tab17 temporary Demo remains for further navigation tests; Consultation Draft14 retained.
+
+MKT011 and016 fullyPass after missingAdminmatrix.195originalsincomplete plusdeployedrechecks. Continuefooter/mainnavigationrolegaps; no newaccountsapproved.
+
+## Deployed marketing footer and primary navigation role matrix — 20 October 2026
+
+Seven deployed navigation assessments:6Pass/1Fail. MKT-012 is fully assessed Fail after a new missing FAQ-anchor target defect, BUG-061. MKT-013 gains allsigned-in role/header/home CTA coverage but stays partial for the remaining Guest bottom pricing action. No business data changed. 493 originals: 22 not started / 172 partial / 299 fully assessed (219 Pass / 65 Fail / 15 Needs clarification); 194 incomplete. 3060 historical / 2982 latest checks: {'Pass': 2597, 'Fail': 284, 'Needs clarification': 86, 'Blocked': 15}.
+
+Read-only marketingnavigation/Back andlocalpresentation. ExistingaccounttemporarilyAdmin/UserthenrestoredCreator; currenttab13CreatorDashboardandConsultationDraft14retained. Temporarymarketing17andanchor18closed. No contactsubmission, legalacceptance, accountcreation, providerconnection, payment orProductchange.
+
+MKT012 fullyFailnewBUG061; MKT013 allsigned-inroles/CTApathscoveredbutGuestbottomSeepricingstillpending.194originalsincompleteplusdeployedrechecks. ExistingCreatorrestored; no newenabledloginsapproved.
+
+## Deployed avatar control role matrix — 20 October 2026
+
+Three deployed avatar assessments pass and complete PROF-006. Change/Remove controls remain inert under Creator/Admin/User and preserve avatar presentation on reload. No personal image/URL or profile edit retained; existing account restored to Creator. 493 originals: 22 not started / 171 partial / 300 fully assessed (220 Pass / 65 Fail / 15 Needs clarification); 193 incomplete. 3063 historical / 2985 latest checks: {'Pass': 2600, 'Fail': 284, 'Needs clarification': 86, 'Blocked': 15}.
+
+Change/Remove picture controls only, no selected file or Profile Save. Avatar DOM/source fingerprints unchanged through both clicks and reload for each role. Existing account restored to Creator, tab13 returned to settled Dashboard; ConsultationDraft14 retained. No new account, image upload, avatar removal or profile persistence.
+
+PROF006fullyPassforallthreeauthenticatedroles.193originalsincompleteplusdeployedrechecks. CurrentCreatorDashboard13, failedConsultationDraft14 preserved. Additionalenabledtestloginsstillpendingexplicitapproval.
+
+## Marketing/avatar validation and handoff — 20 October 2026
+
+Twelve additional deployed assessments (11 Pass / 1 Fail) complete MKT-011, MKT-016, MKT-012 and PROF-006. MKT-013 remains partial: Guest bottom See pricing activation is still unrecorded. New BUG-061 records a missing Contact FAQ anchor; URL navigation results remain separate from the fragment-target failure. Current totals: 3063 historical attempts; 2985 assessed latest variations; 300 fully assessed originals (220 Pass / 65 Fail / 15 Needs clarification); 193 incomplete originals plus deployed rechecks of local coverage. There are 61 issue files. Ledger validation, documentation typecheck, build and whitespace checks pass.
+
+Read-only database query confirms transaction_read_only=on and existing account role CREATOR after final restoration. Tab13 is the settled Creator Dashboard; tab14 retains the private Consultation Draft and its earlier failed saves. Temporary marketing17 and anchor18 tabs are closed. No profile file selected, upload/deletion performed, support message delivered, agreement accepted, payment/provider connection, new login or application code change. No build job remains. Next work should cover remaining deployed authoring/role/input branches and missing Guest interactions when a separate Guest session can be exercised without losing the available signed-in session. Earlier enabled synthetic-account approval remains pending; no accounts were created.
+
+## Deployed Profile local save, validation and fixture restoration — 20 October 2026
+
+Eight deployed assessments:4Pass/4Fail. PROF-004 is fully assessed Pass for its cataloged local-only behavior; PROF-005 fully assessed Fail on validation. New BUG-062 records styled-disabled inputs in Tab order. Temporary public-email fixture restored exactly; normal Storefront roundtrip gains partial coverage. No credential or implementation change. 493 originals: 22 not started / 169 partial / 302 fully assessed (221 Pass / 66 Fail / 15 Needs clarification); 191 incomplete. 3071 historical / 2993 latest checks: {'Pass': 2604, 'Fail': 288, 'Needs clarification': 86, 'Blocked': 15}.
+
+TemporarysyntheticpublicEmailsetandclearedthroughnormalStorefrontUIonly; read-onlyDBconfirmsNULLandcompleteoriginalpublicprofiledigestrestored. AlllocalProfilefieldsreset. ExistingaccountisCreator; tab13ProfileisfocusedonFacebookprefixforvisualissueproof; ConsultationDraft14retained. No credential/loginemail change, fileupload, accountcreation, Productcreation, supportmessageorappsourceedit. No cloud SQLwriteused.
+
+PROF004fullyPass(currentlocal-onlycontract),PROF005fullyFailBUG008. NewBUG062disablednativefieldsemantics; UX016remainspartial. STORE011publicemailroundtrippassesbutotherscopeoutstanding.191originalsincompleteplusdeployedrechecks. Originalhumanpublicprofilerestoredexactly,Creatorrole. Newenabledloginsstillawaitapproval.
+
+## Profile checkpoint validation and handoff — 20 October 2026
+
+Eight deployed assessments added (4 Pass / 4 Fail). PROF-004 is fully assessed against its known local-only contract; PROF-005 fails on the existing validation defect. UX-016 gains the new BUG-062 native-disabled-input failure and stays partial. STORE-011 gains the normal public-email set/clear roundtrip and stays partial. Totals: 3071 historical attempts; 2993 assessed latest variations; 302 fully assessed originals (221 Pass / 66 Fail / 15 Needs clarification); 191 incomplete originals plus deployed rechecks. There are 62 issue files. Ledger validator, documentation typecheck, build and whitespace checks pass.
+
+Temporary public email was set through Storefront, verified in read-only DB, and cleared through the same UI. Every role local Settings Save left the seeded profile digest unchanged. Final database digest equals the exact original profile and public_email is NULL; role CREATOR. Original login email/credentials were never modified. The native Bio250 limit is confirmed; the251-character fill is a harness artifact and excluded from defect claims. Browser redacts nonempty email/phone inputs, so exact local contact-value comparisons are not asserted.
+
+Current IAB tab13 is Settings Profile, scrolled to the social prefix focus proof; all test text has been cleared and original profile data is intact. Tab14 retains the private Consultation Draft with earlier failed saves. Both tabs marked for continuation. A separate native Chrome private-window attempt returned to the existing Chrome window before any app navigation; no Guest assertion was executed. The Window menu showed no private window, the menu was dismissed, and existing Chrome tabs were left unchanged. Do not repeatedly interrupt that Chrome surface. Continue independent deployed tests in IAB; a stable separate Guest surface and earlier enabled test-account approval remain outstanding. No new enabled accounts or application source edits were made. No validation job remains.
+
+Private runtime helpers: profile-local-form-role-checks-oct20.json and profile-db-checkpoints-oct20.json; original baseline profile-original-public-state-oct20.json. Recorder /private/tmp/record-profile-validation-roles-oct20.py has completed; do not rerun it. Database read helper /private/tmp/read-profile-state-oct20.py selects only temporary public email, role and a public-profile digest. No full account export or secret data is needed.
+
+## Approved synthetic accounts and deployed non-owner access — 20 October
+
+Created and verified the two approved synthetic logins; 14 deployed API/access/storage variations passed. No additional original case was marked complete from these narrower checks; existing isolated/browser scopes remain distinct. 493 originals: 22 not started / 169 partial / 302 fully assessed (221 Pass / 66 Fail / 15 Needs clarification); 191 incomplete. 3085 historical / 3007 latest checks: {'Pass': 2618, 'Fail': 288, 'Needs clarification': 86, 'Blocked': 15}.
+
+Retained the two explicitly approved enabled synthetic logins. Credentials/hashes/cookies/signed URLs stay in private mode0600 local runtime files outside Git. USER has zero grants; CREATOR has one ACTIVE FREE_ENROLLMENT for the synthetic published Download. Original human browser session and role unchanged. Existing file rows remain two, no rejected upload metadata.
+
+Use private runtime synthetic-login-credentials-oct20.private.json for future ordinary sign-in; never print or commit it. Separate API sessions saved privately. Browser-based non-owner/Guest journeys remain to execute; no browser session replaced in this batch.
+
+## Deployed search keyboard, dismissal and empty states — 20 October
+
+Completed DISC-007 across all catalog roles. Added fourteen deployed browser variations; dismissal and invalid-page observations retain clarification/partial scopes rather than inventing an error test. 493 originals: 22 not started / 168 partial / 303 fully assessed (222 Pass / 66 Fail / 15 Needs clarification); 190 incomplete. 3099 historical / 3021 latest checks: {'Pass': 2627, 'Fail': 288, 'Needs clarification': 91, 'Blocked': 15}.
+
+Original human actor restored to CREATOR and observer verified it. No Product/profile/order/entitlement mutation. Synthetic account API fixtures remain unchanged. Temporary search tab closed after checkpoint; original tabs retained. Diagnostic JSON/screenshot private local runtime; only selected observations embedded in existing consolidated evidence.
+
+DISC-007 complete with prior Guest evidence. DISC-006 network threshold/debounce remains partial. DISC-008 query failure/recovery and DISC-010 failure states remain. DISC-009/011 complete role/name/history scopes still require execution. Do not score transient anonymous header as Guest authentication.
+
+## Deployed calendar null-expiry failure and recovery — 20 October
+
+Started CAL-011 with three deployed failures and two controls; confirmed BUG-063 without using provider credentials. Callback coverage remains explicitly incomplete. 493 originals: 21 not started / 169 partial / 303 fully assessed (222 Pass / 66 Fail / 15 Needs clarification); 190 incomplete. 3104 historical / 3026 latest checks: {'Pass': 2629, 'Fail': 291, 'Needs clarification': 91, 'Blocked': 15}.
+
+Three temporary calendar records were deleted by exact IDs and approved synthetic owner; final GET200 with zero connections. Synthetic Creator remains enabled with its original single free Download grant. No real provider consent/token exchange, no human calendar/profile/session changes. Initial expired-session401 stopped before SQL; normal synthetic sign-in renewed the independent API cookie jar.
+
+CAL-011 is partial: deployed list null/non-null/cleanup covered allthree providers, but actual OAuth callback with provider-issued null expiry remains untested. BUG-063 confirmed for persisted nullable state. Do not claim real iCloud connectivity or Google/Microsoft token exchange.
+
+## Owned file guards, cookie attributes and unavailable iCloud — 20 October
+
+Completed the deployed unavailable-iCloud case and twelve API variations. Verified file parent/validation boundaries, normal cookie attributes and separate documentation Basic authentication; no default-disabled Swagger claim. 493 originals: 20 not started / 169 partial / 304 fully assessed (223 Pass / 66 Fail / 15 Needs clarification); 189 incomplete. 3116 historical / 3038 latest checks: {'Pass': 2641, 'Fail': 291, 'Needs clarification': 91, 'Blocked': 15}.
+
+Retained synthetic Creator-owned Draft Download with two sections and path/body association metadata referencing an already uploaded harmless object. No real user metadata changed. ICLOUD init/callback persisted zero connections. Cookie values, signed OAuth state and upload signatures stay private outside Git. A live upload-expiration process is still waiting and will be recorded separately.
+
+CAL-008 fully Pass; unsupported iCloud is the expected boundary, not real connection support. ENV-003 default-without-docs prerequisite is not satisfied in current deployment, so these401 controls are not scored for it. SEC-013 browser restrictions remain. FILE004/007/009 Admin deployed variants remain. Upload-expiry process29381 confirmed live; inspect that handle and synthetic-upload-expiry-oct20.json before any restart.
+
+## Real Spaces upload expiry and fresh retry — 20 October
+
+Completed the actual Creator upload expiry/retry sequence with three passing storage checks. Admin scope remains explicit; no running expiry process is left. 493 originals: 19 not started / 170 partial / 304 fully assessed (223 Pass / 66 Fail / 15 Needs clarification); 189 incomplete. 3119 historical / 3041 latest checks: {'Pass': 2644, 'Fail': 291, 'Needs clarification': 91, 'Blocked': 15}.
+
+Expiry process29381 exited successfully; no waiting task remains. Retained the approved synthetic Creator-owned Draft Download, two sections, three64-byte metadata rows referencing two actual harmless objects. No publication, order or payment. Temporary null-expiry calendars absent. Private signed URLs/object keys remain outside Git; observed security attributes contain no credential values.
+
+FILE-012 Creator/provider path fully measured; catalog Admin role variant remains unexecuted, so original remains partial. Authenticated User fixture still has no grants. Existing human browser tabs13/14 retained, human role CREATOR. Docs typecheck/build, ledger validator and whitespace check passed. Next remaining browser work requires actual Guest and synthetic non-owner sign-in scopes rather than counting API controls as browser journeys.
+
+## Deployed OAuth state rejection matrix — 20 October
+
+Completed all explicit CAL-005 state/code rejection variants; seven passing checks with no connection changes. 493 originals: 19 not started / 169 partial / 305 fully assessed (224 Pass / 66 Fail / 15 Needs clarification); 188 incomplete. 3126 historical / 3048 latest checks: {'Pass': 2651, 'Fail': 291, 'Needs clarification': 91, 'Blocked': 15}.
+
+No connection created. Database confirms original human retains only its three existing records and synthetic Creator has none. Browser role unchanged CREATOR. Signed states, cookie jars and callback URLs private outside Git. Invalid Google code used only for expected rejection; no provider consent, real calendar access or live OAuth success claimed.
+
+CAL-005 fully assessed Pass for all listed state/code variants. Pending separate user question concerns temporary Admin role on synthetic Creator; do not apply it until explicitly approved. Existing human account remains Creator.
+
+## Owned calendar disconnect and Consultation expiry failure — 20 October
+
+Completed CAL-009 and eleven deployed calendar checks. Extended BUG-063 to canonical Consultation reads; remaining Admin ownership and real callback variants stay partial. 493 originals: 19 not started / 168 partial / 306 fully assessed (225 Pass / 66 Fail / 15 Needs clarification); 187 incomplete. 3137 historical / 3059 latest checks: {'Pass': 2661, 'Fail': 292, 'Needs clarification': 91, 'Blocked': 15}.
+
+Both own inert Google/Microsoft rows deleted through normal API204. The remaining foreign synthetic row was removed by exact fixture IDs/owner; owner-SQL cleanup DELETE1 confirms it survived rejected foreign deletion. Observer verifies both synthetic accounts have zero calendar rows; original human still has three. Retained only synthetic Creator-owned Draft Consultation, without connected calendars. No real provider consent, tokens, revocation or original user profile changes.
+
+CAL-009 fully Pass for list/delete/derived Consultation data readback; no Settings disconnect UI exists. CAL-010 partial until Admin foreign-owner denial tested. CAL-011 partial pending actual callback null-expiry outcome. BUG-063 now includes canonical Consultation failure. Pending user approval required before elevating synthetic Creator to Admin.
+
+## Deployed foreign-key file access and missing-object confirmation — 20 October
+
+Confirmed existing high-severity BUG-032 on actual deployed synthetic bytes; five integrity/control variations recorded, with uncertain metadata semantics and unexecuted roles kept explicit. 493 originals: 19 not started / 168 partial / 306 fully assessed (225 Pass / 66 Fail / 15 Needs clarification); 187 incomplete. 3142 historical / 3064 latest checks: {'Pass': 2663, 'Fail': 293, 'Needs clarification': 93, 'Blocked': 15}.
+
+Removed temporary forged alias b4845e40-bf94-4bd5-83d1-399c01292179 via normal DELETE204, observer count0. Restored only synthetic Creator original free test grant ACTIVE with revoked_at null; User remains zero grants. Original synthetic target object and metadata untouched by cross-owner retrieval. Retained one labeled missing-object file metadata row in own private Draft, size64/text/plain/owned prefix; no bytes uploaded for it. Object keys, cookies and signatures private outside Git.
+
+BUG-032 High now has actual deployed byte-access proof with known harmless82-byte synthetic target. FILE-006 remains partial: Admin/deployed legacy variants remain; negative metadata/missing-object expectations stay NC. Missing fixture e1834b98-a6c1-41f9-be44-45dc08b37aa2 available for future browser recovery. Two pending user questions: temporary synthetic Admin permission and replacing shared human browser session with synthetic logins; neither approved yet, do not perform those dependent changes.
+
+## Marketing route history and User/Admin narrow layouts — 20 October
+
+Added forty route/history/layout variations. User/Admin desktop and Creator Back controls pass; all sixteen User/Admin narrow variants reproduce BUG-010. Guest Back remains unexecuted, so no broad case completion claimed. 493 originals: 19 not started / 168 partial / 306 fully assessed (225 Pass / 66 Fail / 15 Needs clarification); 187 incomplete. 3182 historical / 3104 latest checks: {'Pass': 2687, 'Fail': 309, 'Needs clarification': 93, 'Blocked': 15}.
+
+Viewport reset to default. Human account restored CREATOR in normal UI and observer verified. No form submission, Product/profile/calendar/order/credential mutation. Temporary marketing tab closed; original authoring tabs retained. Existing BUG-010 extended to User/Admin; screenshot remains one private runtime proof, no new evidence-file fanout.
+
+All eight MKT001–008 cases remain partial only for actual Guest Back checks. Existing Guest/Creator narrow failures and User/Admin current failures are BUG-010. Two pending user questions remain: temporary synthetic Admin access; replacement of shared human browser session with synthetic logins. No dependent role elevation/session replacement performed.
+
+## User deep-route navbar destinations and Explore overlap — 20 October
+
+Completed NAV-015 with eighteen measured User variations across its three explicit origins. Known BUG-012 causes pointer failure; canonical Library and other exposed destinations work. 493 originals: 19 not started / 167 partial / 307 fully assessed (225 Pass / 67 Fail / 15 Needs clarification); 186 incomplete. 3200 historical / 3122 latest checks: {'Pass': 2699, 'Fail': 312, 'Needs clarification': 96, 'Blocked': 15}.
+
+No Product, cart, wishlist, entitlement, order, password or account deletion mutation. Human account restored CREATOR in normal UI; observer verification follows. Temporary navigation tab closed. Screenshot remains private runtime proof; original authoring tabs retained.
+
+NAV-015 fully assessed Fail for its explicit User-from-Product/search/Library scenario. Generic feature-area role list is not a claim that Creator/Admin/Guest have User-only Library/Cart/Wishlist actions; those roles are covered by separate guards/navigation cases. Explore pointer fails at allthree origins with INPUT hit proof; keyboard and remaining destinations pass. Account Settings remains absent/NC, not invented. Pending synthetic-Admin and shared-browser replacement questions still unanswered.
+
+## Populated Library filters and Hidden navigation — 21 October
+
+Completed populated ACCESS-007 and ACCESS-010; twenty variations recorded and prior Hidden-fixture Blocked superseded. Library filtering works; aria selection fails BUG-005 and Hidden page policy remains NC. 493 originals: 19 not started / 165 partial / 309 fully assessed (225 Pass / 68 Fail / 16 Needs clarification); 184 incomplete. 3220 historical / 3141 latest checks: {'Pass': 2715, 'Fail': 315, 'Needs clarification': 97, 'Blocked': 14}.
+
+Retained labeled nonfinancial test grants: original actor4ACTIVE/1REVOKED, synthetic Creator5ACTIVE/1REVOKED; separate synthetic User still0grants. New controls bothHIDDEN; no order, charge, enrollment or publication performed. Existing grants were not overwritten. Synthetic temporary Admin restored CREATOR; human restored CREATOR in normal UI after User Library checks. Human browser session still signed in at checkpoint; switching to synthetic browser accounts is now explicitly approved.
+
+Both permissions approved by human: synthetic Creator may temporarily become Admin for remaining API tests and must return Creator; shared browser may log out original Gmail-based app session and use synthetic test logins. Do not ask again. ACCESS007 completeFail BUG005; ACCESS010 completeNC Hidden navigation policy, earlier prerequisiteBlocked resolved by attempt2. Next close obsolete agent authoring tabs13/14, log out human on tab23, finish Guest marketing Back/CTA gaps, then ordinary synthetic User login for non-owner browser journeys.
+
+## Guest marketing history and final home CTA — 21 October
+
+Completed nine original marketing cases with final Guest Back/CTA evidence. Eight retain known mobile-layout failure; primary navigation/CTAs pass. No remaining Guest marketing history gap. 493 originals: 19 not started / 156 partial / 318 fully assessed (226 Pass / 76 Fail / 16 Needs clarification); 175 incomplete. 3229 historical / 3150 latest checks: {'Pass': 2724, 'Fail': 315, 'Needs clarification': 97, 'Blocked': 14}.
+
+Original human account role restored CREATOR before approved normal logout. Old agent authoring tabs13/14 closed; their failed local unsaved test form state discarded, persisted Draft fixtures unchanged. Browser tab23 is now stable Guest on pricing after actual logout/reload. No signup, consent, payment or Product mutation; synthetic Creator remains CREATOR. Next ordinary synthetic User sign-in is approved.
+
+MKT001–008 completeFail due BUG010; MKT013 completePass. Do not ask again to switch browser accounts or temporarily elevate synthetic Creator for Admin API tests: both explicitly approved. Browser23 logged out from human account; credentials available in private runtime synthetic-login-credentials-oct20.private.json. All other old authoring tabs are closed.
+
+## 21 October synthetic browser journeys and Admin authorization completion
+
+Completed four original authorization/validation cases; exercised deployed synthetic sign-in, empty Library, free enrollment and cross-account browser-local collections. Remaining browser/provider cases stay open. 493 originals: 19 not started / 152 partial / 322 fully assessed (230 Pass / 76 Fail / 16 Needs clarification); 171 incomplete. 3265 historical / 3186 latest checks: {'Pass': 2760, 'Fail': 315, 'Needs clarification': 97, 'Blocked': 14}.
+
+Synthetic Creator restored after both approved Admin matrices; temporary inert calendar removed. Browser signed in as synthetic Creator. Retained private Draft Membership control and synthetic User ACTIVE free Download entitlement. Browser-local Cart retains original synthetic Consultation. No payment, real provider account mutation or implementation changes.
+
+User now has one ACTIVE FREE_ENROLLMENT Download grant, so zero-entitlement prerequisite no longer applies. Browser23 is synthetic Creator on /app/cart. Download delivery, Admin signed-expiry/path-body controls, Library failure recovery and external provider journeys remain.
+
+## 21 October real storage lifecycle completion and onboarding reset
+
+Completed four more original storage/association cases with actual Spaces; recorded new successful-save wizard reset BUG-064 and deployed synthetic profile persistence. Social editor remains blocked. 493 originals: 19 not started / 148 partial / 326 fully assessed (234 Pass / 76 Fail / 16 Needs clarification); 167 incomplete. 3286 historical / 3207 latest checks: {'Pass': 2778, 'Fail': 316, 'Needs clarification': 98, 'Blocked': 15}.
+
+Synthetic Creator role and original onboardingCompleted=true restored. Retained synthetic profile title, eight new harmless storage objects, nine file rows including one own-key metadata alias; no real user or provider data changed. Browser remains synthetic Creator on Settings.
+
+BUG-064 blocks deployed Additional-information social editor. Root /onboarding remains BUG-035; source-derived /app/onboarding reaches wizard. Synthetic completion flag is restored true. FILE-001 workspace reload/browser and FILE-006 integrity/FILE-010 confirmation flows remain separate.
+
+## 21 October Admin metadata integrity controls complete
+
+Completed confirmation-integrity role matrix; existing cross-owner key vulnerability remains unfixed, and metadata-only missing-object success stays distinguished from delivery. 493 originals: 19 not started / 147 partial / 327 fully assessed (234 Pass / 77 Fail / 16 Needs clarification); 166 incomplete. 3289 historical / 3210 latest checks: {'Pass': 2779, 'Fail': 316, 'Needs clarification': 100, 'Blocked': 15}.
+
+New temporary metadata removed; readback absent. Synthetic Creator restored. Original object bytes unchanged; private URLs/keys outside Git. Failed preliminary harness cleanup also completed.
+
+FILE-006 now fully assessed Fail; implementation unchanged. Browser remains synthetic Creator Settings, completion flag true. Remaining cases include saved-editor dependent browser flows, provider integrations and outstanding responsive/error variations.
+
+## 21 October legacy confirmation integrity and cleanup
+
+Legacy confirmation also accepts unverified synthetic metadata. Missing-object delivery404 is recorded separately from successful API confirmation; no additional cross-owner bypass claim without a revoked-grant control. 493 originals: 19 not started / 147 partial / 327 fully assessed (234 Pass / 77 Fail / 16 Needs clarification); 166 incomplete. 3292 historical / 3213 latest checks: {'Pass': 2780, 'Fail': 316, 'Needs clarification': 102, 'Blocked': 15}.
+
+Two temporary metadata rows removed and absent on readback. Existing objects/grants unchanged; account Creator, onboarding complete.
+
+## 21 October Cart account-boundary browser completion
+
+Completed Cart persistence/account-boundary case through actual deployed synthetic account sign-in and Admin reload; restored Creator. 493 originals: 19 not started / 146 partial / 328 fully assessed (235 Pass / 77 Fail / 16 Needs clarification); 165 incomplete. 3293 historical / 3214 latest checks: {'Pass': 2781, 'Fail': 316, 'Needs clarification': 102, 'Blocked': 15}.
+
+Synthetic role restored CREATOR using normal menu; original one-item synthetic Cart unchanged. Browser23 on Cart. Human remains logged out. No payment or entitlement mutation.
+
+Provider test identities/mailbox availability question pending; continue other reachable cases. Onboarding completion restored true; saved editor and successful-save reset remain separate blockers.
+
+## 21 October external identity and mailbox prerequisites blocked
+
+Recorded 13 external-prerequisite variations as Blocked, not executed. Original completion totals unchanged: provider/mailbox-dependent work remains incomplete; independent tests remain in scope. 493 originals: 19 not started / 146 partial / 328 fully assessed (235 Pass / 77 Fail / 16 Needs clarification); 165 incomplete. 3306 historical / 3227 latest checks: {'Pass': 2781, 'Fail': 316, 'Needs clarification': 102, 'Blocked': 28}.
+
+No browser sign-in, external message, account creation, permission change, or app/database mutation. Existing application state unchanged.
+
+User cannot provide provider identities/mailbox now. Do not ask again unless they offer availability. Keep these dependent variations Blocked and continue independently runnable variants. AUTH-022 script/config failure tests and CAL-004 popup behavior are not blocked solely by this missing identity prerequisite. Browser last known synthetic Creator on Cart; current access must be revalidated before use.
+
+## 21 October concurrent persistence and controlled Google button failures
+
+Assessed concurrent synthetic database writes and independent Google-component failure branches. Uniqueness holds; first-write400 responses need clarification. Deployed checkout503 creates no order. External identity tests remain blocked. 493 originals: 16 not started / 149 partial / 328 fully assessed (234 Pass / 77 Fail / 17 Needs clarification); 165 incomplete. 3327 historical / 3248 latest checks: {'Pass': 2793, 'Fail': 316, 'Needs clarification': 110, 'Blocked': 29}.
+
+Creator remains CREATOR; no Admin role used. Retained one new User FREE_ENROLLMENT Course grant, default synthetic Creator Storefront config and synthetic Membership landing config. Four disabled checkout calls created no Order. Controlled browser tab closed and local fixture server stopped; no Google network/account access or implementation edits. Observer tunnel restored on loopback15432.
+
+Synthetic User now has two ACTIVE free grants (existing Download + new Course). Creator config IDs are recorded in packet. Deployed commerce503 blocks paid journeys/order concurrency; do not silently enable it. Provider identity/mailbox cases remain blocked as user requested. AUTH-022 real SDK behavior untested; controlled adapter rendering does not prove provider acceptance.
+
+## 21 October deployed Creator/Admin navigation and shell matrix
+
+Completed the deployed Creator/Admin management-shell case: six surface checks pass, both saved Workspaces fail existing BUG-001, private Preview shell remains explicitly uncertain. Creator restored. 493 originals: 16 not started / 148 partial / 329 fully assessed (234 Pass / 78 Fail / 17 Needs clarification); 164 incomplete. 3337 historical / 3258 latest checks: {'Pass': 2799, 'Fail': 318, 'Needs clarification': 112, 'Blocked': 29}.
+
+Synthetic role restored CREATOR through normal account menu and verified there. No Product/config fields changed; no publication or deletion. Browser23 retained on private Draft Preview.
+
+Source-defined Draft Preview has no normal Overview launch button; direct route tested explicitly. Saved Workspace crash still blocks authoring/after-reload controls. Provider identities remain unavailable per user. Local Google fixture server stopped; browser25 closed. Error tab24 was temporary and not retained.
+
+## 21 October deployed sidebar breakpoints and builder context complete
+
+Completed desktop sidebar composition and builder/context persistence using actual deployed browser widths and navigation. Existing compact link accessibility defect remains separately recorded. 493 originals: 16 not started / 147 partial / 330 fully assessed (235 Pass / 78 Fail / 17 Needs clarification); 163 incomplete. 3350 historical / 3271 latest checks: {'Pass': 2812, 'Fail': 318, 'Needs clarification': 112, 'Blocked': 29}.
+
+Viewport reset to default. Synthetic role Creator; no profile/Product/config writes in this batch. Browser on Products, expanded sidebar after normal reload.
+
+
+
+## 21 October deployed mobile navigation and Settings overflow
+
+Completed six deployed long-name mobile navigation scenarios; recorded Settings mobile reflow BUG-065 with a short-name control. Synthetic names/role/default viewport restored. 493 originals: 16 not started / 146 partial / 331 fully assessed (235 Pass / 79 Fail / 17 Needs clarification); 162 incomplete. 3370 historical / 3291 latest checks: {'Pass': 2821, 'Fail': 323, 'Needs clarification': 118, 'Blocked': 29}.
+
+Synthetic original names and Creator role restored; default viewport restored. Browser23 retained on Settings. Temporary long name was test data only, no credential or human profile changes.
+
+New BUG-065 documents Settings mobile clipping; do not attribute it to long names or claim navigation controls themselves fail. Custom navigation Escape/focus semantics remain unresolved. Provider cases remain blocked per user; commerce503 blocks deployed paid tests.
+
+## 21 October deployed shared Drawer lifecycle complete
+
+Completed shared Drawer lifecycle across reachable Sales, Storefront and Creator/Admin landing controls. Keyboard trap, Escape, header and visible-backdrop close all restore focus/scroll; synthetic role and viewport restored. 493 originals: 16 not started / 145 partial / 332 fully assessed (236 Pass / 79 Fail / 17 Needs clarification); 161 incomplete. 3382 historical / 3303 latest checks: {'Pass': 2833, 'Fail': 323, 'Needs clarification': 118, 'Blocked': 29}.
+
+Synthetic role restored Creator and verified; original short names retained, default viewport restored, no open dialog. Landing Save remains disabled (no draft changed). One historical synthetic Sales order/item/FAKE attempt/event retained under approved test-data authorization; no checkout, actual payment or entitlement grant. Browser23 retained on Landing builder.
+
+Synthetic Creator Sales now has one seeded Paid read-model order for its private Download; this is not evidence that deployed checkout works (four503 attempts still created0 orders). User still has only two free grants. UX-004 is complete for single Drawers; UX-005 overlap/empty route reachability remains separate.
+
+## 21 October deployed overlapping Drawer edge assessment
+
+Completed reachable Drawer edge case using real deployed history: duplicate titles fail existing BUG-038; this composition keyboard/close cleanup passes. Unsupported zero-focusable branch not fabricated. 493 originals: 16 not started / 144 partial / 333 fully assessed (236 Pass / 80 Fail / 17 Needs clarification); 160 incomplete. 3388 historical / 3309 latest checks: {'Pass': 2837, 'Fail': 324, 'Needs clarification': 119, 'Blocked': 29}.
+
+Dialogs closed, scroll restored, role Creator, default viewport restored. No order, account, Product or configuration mutation; only normal navigation/query history.
+
+BUG-038 now has real deployed overlap-title evidence. Do not claim the local orphaned-child Escape bug reproduces in this deployed history flow; measured close behavior passes. True zero-focusable fallback unexecuted because supported API always includes enabled Close.
+
+## 22 October deployed populated Customer and Sales responsive assessment
+
+Completed populated deployed Sales responsive case; recorded two new overflow issues BUG-066/067. Customer tab/list coverage expanded; actual200%zoom remains blocked and Customer case stays partial. 493 originals: 16 not started / 143 partial / 334 fully assessed (236 Pass / 81 Fail / 17 Needs clarification); 159 incomplete. 3397 historical / 3318 latest checks: {'Pass': 2842, 'Fail': 326, 'Needs clarification': 120, 'Blocked': 30}.
+
+Role Creator, Sales filters cleared, drawer closed, default viewport restored. Retained disabled synthetic Customer and seeded reporting rows unchanged; no payment/access/profile changes.
+
+UX-011 fully Fail; UX-010 remains partial because real200%zoom unavailable. UX-007 still incomplete Settings/Product role families. Provider/mailbox-dependent cases remain Blocked at user request. Browser23 stays signed in as synthetic Creator on Sales. Continue incomplete deployed browser journeys; no implementation fixes.
+
+## 22 October deployed search keyboard role matrix
+
+Completed deployed search keyboard case across all four roles: selection/Enter pass; Escape and missing combobox metadata need clarification. Synthetic Admin access restored to Creator; browser now uses synthetic User. 493 originals: 16 not started / 142 partial / 335 fully assessed (236 Pass / 81 Fail / 18 Needs clarification); 158 incomplete. 3405 historical / 3326 latest checks: {'Pass': 2846, 'Fail': 326, 'Needs clarification': 124, 'Blocked': 30}.
+
+Synthetic Creator restored to CREATOR through normal role API200. Browser23 now signed in normally as synthetic USER, search input cleared, result page retained; default viewport unchanged. No Product, grant, provider or human account change.
+
+User browser session ready for remaining Library/Download journeys. Provider identities/mailbox remain unavailable. Search fullcase is Needs clarification, not a blanket accessibility pass. Initial Admin samples taken before suggestion hydration were discarded; retained matrix waits for visible expected option.
+
+Next browser state: opened Library normally after the search matrix. Synthetic User sees its Course and Download cards; no Download recovery action has been executed or scored. Account remains User.
+
+## 22 October deployed Download delivery and recovery prerequisites
+
+Started Download recovery case with real User browser delivery82bytes and Creator missing-object404 control. Specific grant-change fault test awaits approval after automatic rejection; original grant verified ACTIVE. 493 originals: 15 not started / 143 partial / 335 fully assessed (236 Pass / 81 Fail / 18 Needs clarification); 158 incomplete. 3408 historical / 3329 latest checks: {'Pass': 2848, 'Fail': 326, 'Needs clarification': 124, 'Blocked': 31}.
+
+No grant or object mutation executed. Observer verifies original test grant ACTIVE. Browser23 returned from signed storage to original Download, hydrated as synthetic User; Creator remains CREATOR. Restored loopback observer tunnel is live as terminal session27662.
+
+ACCESS-015 started, remains partial: actual rejected lookup/toast/retry, User missing-object browser outcome/restoration and Admin API branch remain. Approval request for one exact temporary grant revocation is pending; do not perform until human response. Owner-SQL script invocation rejected before process creation, so no restore is needed. Private signed URLs not copied into shared artifacts.
+
+## 22 October deployed User dropdown keyboard assessment
+
+Expanded deployed User dropdown coverage: account/Cart/Wishlist activation and dismissal pass; Logout still skips Tab existingBUG-016. Focus restoration remains Needs clarification. No data changes. 493 originals: 15 not started / 143 partial / 335 fully assessed (236 Pass / 81 Fail / 18 Needs clarification); 158 incomplete. 3413 historical / 3334 latest checks: {'Pass': 2851, 'Fail': 327, 'Needs clarification': 125, 'Blocked': 31}.
+
+All menus closed; synthetic User remains on entitled Download, grant ACTIVE, default viewport unchanged. Cart retains one synthetic Consultation and Wishlist remains empty. No role/access/collection mutation or checkout.
+
+UX-006 remains partial for outstanding Admin/account/Product families and deployed populated Wishlist variation. Grant-revocation permission request for ACCESS-015 remains pending; do not mutate it absent explicit reply. Browser23 retained.
+
+## 22 October populated Wishlist and Admin keyboard/file controls
+
+Recorded populated Wishlist and Admin/Creator account keyboard controls, extended existing Logout bug to Admin, and assessed Admin missing/unknown file API boundaries. Restore verified; no new original fully assessed. 493 originals: 15 not started / 143 partial / 335 fully assessed (236 Pass / 81 Fail / 18 Needs clarification); 158 incomplete. 3422 historical / 3343 latest checks: {'Pass': 2856, 'Fail': 328, 'Needs clarification': 128, 'Blocked': 31}.
+
+Synthetic Creator restored to CREATOR through normal role API200; reloaded browser verifiesCreator Dashboard. All menus closed, default viewport. Retained browser-local synthetic Wishlist1 and Cart1. No grant, file/object or payment mutation; blocked grant-revocation request remains pending.
+
+Browser23 is now synthetic Creator Dashboard. UX-006 remains partial: Product overflow Enter/Space/action-tab/outside role variations not fully measured; existing Creator mobile Escape proof retained. User populated Wishlist and account role matrix now covered. ACCESS-015 still partial: specific revoked-lookup approval pending; User missing-object/recovery not executed. Observer tunnel last session27662.
+
+## 22 October approved deployed Download rejection and recovery
+
+Approved exact-grant fault now passes visible Download error and same-button recovery to82bytes. Restoration verifiedACTIVE; original blocked attempt superseded. Default Swagger gap proceeds separately in isolated harness. 493 originals: 15 not started / 143 partial / 335 fully assessed (236 Pass / 81 Fail / 18 Needs clarification); 158 incomplete. 3425 historical / 3345 latest checks: {'Pass': 2859, 'Fail': 328, 'Needs clarification': 128, 'Blocked': 30}.
+
+Approved grant restoredACTIVE and verified by observer; no other grants/object/profile/role mutations. Browser23 syntheticUser on original entitled Download after Back. Creator remainsCREATOR; menus closed/default viewport. Temporary local default-config harness starts independently on loopback54342 against isolated localDB; stop after its tests.
+
+Approval resolved exact grant-revocation block; do not keep asking. ACCESS-015 remains partial for actual User missing-object/restored-object browser branch. API Creator/Admin missing404 controls alone do not establish that branch. Controlled authorization-rejection UI/retry is now measured. Local default harness session86999/PID85505 is starting; poll this exact process and do not restart solely on observation timeout.
+
+## 22 October default Swagger availability matrix completed
+
+Completed default Swagger case in actual isolated runtime: explicit docsfalse, Guest401 and validappsession400missingresource, no docsserved. Temporary harness stopped; deployed docs-profile evidence remains separate. 493 originals: 15 not started / 142 partial / 336 fully assessed (237 Pass / 81 Fail / 18 Needs clarification); 157 incomplete. 3428 historical / 3348 latest checks: {'Pass': 2862, 'Fail': 328, 'Needs clarification': 128, 'Blocked': 30}.
+
+Temporary exactQaDefaultServer PID85505 terminated withSIGTERM; session86999 terminal143. Isolated PostgreSQL remains unchanged/running for future tests. No deployedconfiguration, grant or role changes. Browser23 remains syntheticUser on entitled Download with cloudgrantACTIVE after approved restore.
+
+ENV-003 fullyPass in required no-docs configuration; do not substitute deployed401 as default-profile proof. ACCESS-015 remains partial only for remaining User missing-object/restored-object branch. Prior exact-grant approval is resolved. Provider/mailbox tests remain explicitlyBlocked peruser. No implementation fixes.
+
+## 22 October public Storefront empty and unavailable matrix completed
+
+Completed deployed empty/missing Storefront case across four viewer roles with explicit API subject boundaries and role-restoration proof. New retained fixture has disabled login and zeroProducts. 493 originals: 15 not started / 141 partial / 337 fully assessed (238 Pass / 81 Fail / 18 Needs clarification); 156 incomplete. 3434 historical / 3354 latest checks: {'Pass': 2868, 'Fail': 328, 'Needs clarification': 128, 'Blocked': 30}.
+
+Temporary Admin restoredCREATOR via normalroleAPI200; hydrated browseraccountlabel verifiesCREATOR. Browser23 on its own emptypublicStorefront. Retained new disabled syntheticCreator/noProducts fixture for future availability tests; no usable password/login or Product/config changes. User testgrant was not touched.
+
+STORE-004 fullyPass. Browser23 currentlyCreator publicStorefront; account shell is intentionally absent on publicroute. To resume management, navigate/app and await actualCreator accountlabel. Emptyfixturef339... is stable, disabled and publiceligible by Creatorrole. Provider/mailbox remain blocked; actual200%zoom still unavailable. No active localdefault harness (stoppedPID85505).
+
+## 22 October deployed Product layouts and dropdown matrix
+
+Completed dropdown family caseFail existingLogout defect; Product matrix passes all tested real-price/state/width variations. Unrendered pricefallback keeps Product originalpartial. Five new synthetic Product fixtures retained for further tests. 493 originals: 15 not started / 140 partial / 338 fully assessed (238 Pass / 82 Fail / 18 Needs clarification); 155 incomplete. 3447 historical / 3367 latest checks: {'Pass': 2880, 'Fail': 328, 'Needs clarification': 129, 'Blocked': 30}.
+
+Creator restored via normalAPI200 and hydratedbrowserlabelCREATOR. Statusall, default1280viewport, zeroopenmenus verified; browser23 onProducts. Retained two new Published Downloads with harmless actual87/86byte files, two Draft recurring Membership controls, one Hidden Course control. Nullprice input normalizedFree; no permanent URL or payment assertion. EmptyCreatorfixturef339... stilldisabled/noProducts.
+
+UX-006 fullyFail existingBUG-016. UX-009 remainspartial solely for explicit PriceNotSet fallback browser render: canonicalcreateprice:null yieldedFree and control was renamed/Hidden. Real current data covers all lifecycle states and four valid backend price formats at all widths/roles. Do not claim fallback already rendered. Published Alpha091b... andBeta6e81... now support Storefront ordering/feature cases. New Product publication was APIsetup, not normalWorkspacePublish proof.
+
+## 22 October Product price fallback and responsive case completed
+
+Completed Product responsive original: actual component PriceNotSet fallback fits at four widths, supplementing deployed real-price/status/role matrix. Controlled props remain distinct from canonical server normalization. 493 originals: 15 not started / 139 partial / 339 fully assessed (239 Pass / 82 Fail / 18 Needs clarification); 154 incomplete. 3451 historical / 3371 latest checks: {'Pass': 2884, 'Fail': 328, 'Needs clarification': 129, 'Blocked': 30}.
+
+Temporary tab26 closed. Only loopback fixture server PID86493 stoppedSIGTERM; original session46907 exited143. Default browser viewport restored. Deployedtab23 retained onCreatorProducts; its role/data unchanged. No cloud metadata, entitlement, storage or configuration mutation.
+
+UX-009 fullyPass using clearly scoped deployedmatrix+actualrow fallback. PublishedAlpha091b.../Beta6e81... now support deployed Storefront ordering/feature checks. Dedicated emptyCreatorf339... remainsdisabled/noProducts. Do not report controlledfallback as serverreturnedmissingprice.
+
+## 22 October Storefront ordering and feature fallback cases completed
+
+Completed Storefront ordering including exactdate IDtie-break and featurefallback cases; confirmed newBUG-068 savedbuilder/public default mismatch. Alltemporary config/status/creation-time controls restored. 493 originals: 15 not started / 137 partial / 341 fully assessed (240 Pass / 83 Fail / 18 Needs clarification); 152 incomplete. 3460 historical / 3380 latest checks: {'Pass': 2892, 'Fail': 329, 'Needs clarification': 129, 'Blocked': 30}.
+
+Original logical Storefront configuration restored/equalityverified; exact original Alpha/Beta creation timestamps restored by guardedSQL/observer. AlphaPublished again; normal modificationtimeadvanced. SyntheticCreatorroleunchanged; browser23 onStorefrontBuilder, defaultviewport, no unsaved changes. NewGammaPublished with harmless87byte actualstoragefile retained. No payments/grants/provider mutations.
+
+STORE-002 fullyPass; STORE-020 fullyFail newBUG-068. UX-009 fullyPass completed earlier thisturn with actualrow fallback. SyntheticCreator now3Published Downloads and11totalProducts; dedicated emptyCreator remainsdisabledzeroProducts. Appbuilder with originaldefaultconfig currently misrepresents publicdefaultfeature/order. Sourceexplainsdifferentdefaultordering; no fix made. Alltemporary timestamp/feature/status mutations restored.
+
+## 22 October default and theme case evidence audit
+
+Closed two original Storefront cases after auditing retained primary evidence against every named requirement. Zero new executions/attempts; mixed isolated/deployed scope preserved. 493 originals: 15 not started / 135 partial / 343 fully assessed (242 Pass / 83 Fail / 18 Needs clarification); 150 incomplete. 3460 historical / 3380 latest checks: {'Pass': 2892, 'Fail': 329, 'Needs clarification': 129, 'Blocked': 30}.
+
+Audit only; no browser/API/DB mutation or new test attempt. Existing tests restored original theme and retained config row. Currentbrowser23 Creatorbuilder remains unchanged from prior checkpoint.
+
+STORE-006/007 now fullyPass because all named original requirements were already evidenced. No new executions counted. NullIDwire is isolatedH2 not a newly observed cloudresponse. Continue missing explicit publicEmail/contact and clipboard-denial branches; do not repeat completed theme actions merely to add rows.
