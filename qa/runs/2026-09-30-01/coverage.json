@@ -8,7 +8,8 @@
     "instructions": "### NAV-001 \u2014 Public application routes\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Published fixtures for each product type and a Creator storefront.\n- **Steps:** Direct-load and reload /app/explore, /app/explore/search?term=sample, /app/product/{id}, /app/product/{id}/{type}, /app/store/{creatorId} as each role.\n- **Expected results:** Routes are not role-guarded; public data and actions follow the feature-specific cases below, without granting protected content.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 2
+    "recorded_variations": 40,
+    "coverage_notes": "Supported Course/Download/Consultation and Explore/search/Storefront direct-load/reload matrix completed for Guest, User, Creator and Admin. Only required Published Membership fixture remains blocked: current publication flow rejects it and no synthetic Published record exists."
   },
   {
     "id": "NAV-002",
@@ -141,9 +142,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-008 \u2014 Authentication loading and null state\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Fresh startup with slow profile response; separately logout leaves null authentication.\n- **Steps:** Direct-load protected routes while profile request is pending, then let it fail; repeat immediately after local logout.\n- **Expected results:** Loading spinner is defined; expected result needs investigation for null and nonloading authentication because ProtectedRoute renders children whereas false redirects.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 10,
+    "assessment_scope": "All four declared role startup/profile pending\u2192503 states tested through unchanged App/router/thunk. Normal User/Creator/Admin menu logout and browser Back prove null-state protected rendering (BUG-073); Guest local-reducer null branch, authenticated User denial and full-reload recovery controls included. Response timing and profile identities are local fixtures; no deployed/backend authorization bypass claim."
   },
   {
     "id": "NAV-009",
@@ -152,9 +154,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### NAV-009 \u2014 Onboarding direct routing\n\n- **Feature area:** Routes, roles and navigation. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin as parameterized. Authenticated account with onboardingCompleted false.\n- **Steps:** Direct-load /onboarding, refresh, then use sign-in redirection.\n- **Expected results:** expected result needs investigation: top-level /onboarding mounts AppRouter while its internal route structure must match an absolute onboarding path; successful routing must be established without assuming a completed onboarding flag.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 5
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 16,
+    "coverage_notes": "All original roles measured on deployed app. Guest redirects to Login. Incomplete User, Creator and Admin direct/refresh/sign-in render their role landing page at /onboarding; /app/onboarding renders the wizard. Routing contract explicitly needs investigation in the original catalog; BUG-035 retained. Synthetic flag and full profile restored."
   },
   {
     "id": "NAV-010",
@@ -938,7 +941,7 @@
     "coverage": "Partially assessed",
     "variations_expanded": false,
     "assessment_scope": "Actual component controlled browser SDK absence, late event, listener cleanup and empty client-id boundary assessed. Real Google SDK missing-ID/error/late-network behavior in isolated deployed integration still unexecuted. No provider identity or successful login claim.",
-    "recorded_variations": 4
+    "recorded_variations": 8
   },
   {
     "id": "AUTH-023",
@@ -1232,7 +1235,7 @@
     "coverage": "Partially assessed",
     "variations_expanded": false,
     "expansion_notes": "Deployed synthetic User/Creator normal HTTPS issuer attributes and valid API session checked; Creator matching-CSRF mutation and single grant confirmed. Browser cookie-policy restriction/reload/expiry variants remain.",
-    "recorded_variations": 2
+    "recorded_variations": 7
   },
   {
     "id": "SEC-014",
@@ -1241,9 +1244,9 @@
     "level": "deployed-service integration",
     "priority": "P0",
     "instructions": "### SEC-014 \u2014 CORS origin and preflight matrix\n\n- **Feature area:** Session, API security and feature flags. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 authentication or data boundary. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest and authenticated role fixtures. Approved origin, unapproved synthetic origin and local-development origin.\n- **Steps:** Send credentialed preflight and actual GET/POST/PUT/PATCH/DELETE requests from each origin.\n- **Expected results:** Configured allowlist supports credentials and listed methods; unlisted origins cannot read credentialed responses. expected result needs investigation for local UI defaults because no localhost origin is listed.\n- **Required environment / external service:** Configured HTTPS deployment and origin-isolated test harness.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Needs clarification",
     "variations_expanded": false,
-    "recorded_variations": 21
+    "recorded_variations": 27
   },
   {
     "id": "SEC-015",
@@ -1265,7 +1268,7 @@
     "instructions": "### PROF-001 \u2014 Onboarding field steps\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. New profile with incomplete onboarding.\n- **Steps:** Use Welcome \u2192 Basic \u2192 About \u2192 Additional \u2192 summary; enter title, bio, tagline, website and synthetic location/social data; advance and reload profile.\n- **Expected results:** Profile updates are sent after initial step; valid saved fields should reload. Requests are not awaited before advancing, so save-failure feedback and partially completed progress need investigation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 11
+    "recorded_variations": 13
   },
   {
     "id": "PROF-002",
@@ -1276,7 +1279,8 @@
     "instructions": "### PROF-002 \u2014 Onboarding input boundaries\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. Title 1/2/50/51, bio 29/30/250/251, tagline 9/10/120/121 characters and invalid/valid website variants.\n- **Steps:** Enter each boundary in its step; blur and click Next.\n- **Expected results:** Declared client validation applies to populated fields; empty optional fields may advance. Title blur trims whitespace; backend profile constraints differ from UI maxima.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 69
+    "recorded_variations": 104,
+    "coverage_notes": "Added35 actual deployed Creator backend checks:26 primary Pass/3Fail existingBUG029 plus6 confirmatory DB-boundary Pass. Original normal onboarding blur/Next remains incomplete; API results do not replace browser criteria. Business profile restored, with one explicit null\u2192empty tagline representation change."
   },
   {
     "id": "PROF-003",
@@ -1287,7 +1291,8 @@
     "instructions": "### PROF-003 \u2014 Onboarding completion and skip\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. onboardingCompleted false; some saved profile fields.\n- **Steps:** Use Skip or final Continue, then logout and sign in again.\n- **Expected results:** Navigation goes /app; expected result needs investigation for completed onboarding because no writable completion flag is saved and sign-in can route back to onboarding.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 9
+    "recorded_variations": 15,
+    "coverage_notes": "Actual deployed User, Creator and Admin Skip -> /app -> normal Logout/password Sign in measured. Completion stays false; sign-in routes back to top-level /onboarding role landing page. Final Continue remains unexecuted due to wizard reset BUG-064. All temporary role/flag changes restored."
   },
   {
     "id": "PROF-004",
@@ -1332,9 +1337,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-007 \u2014 Account settings unavailable actions\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User, Creator or Admin. Account tab with synthetic matching/new credential inputs.\n- **Steps:** Exercise password minimum/mismatch validation, timezone/currency changes, Save, Cancel and Delete Account.\n- **Expected results:** Controls are local/inert; no password, timezone, currency or account deletion API is called; deletion copy does not establish a 30-day server process.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 3
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 12,
+    "assessment_scope": "Unchanged Account Settings component through full local App: User/Creator/Admin short/mismatched/matching validation, native Save/Cancel/Delete Account inertness and reload defaults; twelve profile GETs/no writes. Earlier deployed Creator preference checks retained. Deliberately unavailable services are not claimed as working."
   },
   {
     "id": "PROF-008",
@@ -1406,7 +1412,8 @@
     "coverage": "Fail",
     "variations_expanded": true,
     "expansion_notes": "CompleteexplicitAPIcatalogmatrix in backend-content-session-batch-2026-10-03.json; profilefixturematchesread-only-confirmed deployedlengths. No livebrowser/provider mutation. PROF013FailBUG029; SEC012devsoleAdminguardpolicyNeedsclarification.",
-    "recorded_variations": 1
+    "recorded_variations": 1,
+    "coverage_notes": "Existing complete isolated three-role matrix retained. New deployed synthetic Creator Bio1000/Tagline500/Website255 HTTP400 reproduction and DB width checks in 28October packet confirmBUG029 on deployment; no deployed User/Admin or browser claim."
   },
   {
     "id": "PROF-014",
@@ -1472,9 +1479,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROF-019 \u2014 Profile client reload and forced CSRF header\n\n- **Feature area:** Profile, onboarding and Settings. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Signed-in User/Creator/Admin. Authenticated session with stored title; readable XSRF cookie.\n- **Steps:** Reload app; inspect GET /api/user/userInfo sent by user client; save profile through onboarding/Storefront and reread.\n- **Expected results:** GET uses credentials and X-CSRF-Force client handling; saves use same current-profile endpoint. Successful user profile read does not make Settings save server-backed.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Pass",
     "variations_expanded": false,
-    "recorded_variations": 4,
+    "recorded_variations": 6,
     "assessment_scope": "Current client and actual backend HTTP proof only; catalog normal browser form/reload/onboarding/Storefront requirements remain."
   },
   {
@@ -1484,9 +1491,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-001 \u2014 Explore catalog and local actions\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Published fixtures of COURSE, DOWNLOAD and CONSULTATION; mixed owners and prices.\n- **Steps:** Open /app/explore; inspect title/type/date/price; View Product; return and add to cart twice; toggle wishlist twice.\n- **Expected results:** Summary cards render; View Product resolves ID route, duplicate cart addition disables, wishlist toggles locally. Placeholder images are not proof of stored media rendering.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Pass",
     "variations_expanded": false,
-    "recorded_variations": 2
+    "recorded_variations": 6
   },
   {
     "id": "DISC-002",
@@ -1539,9 +1546,17 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-004 \u2014 Explore Creator link conflict\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Product owned by a real Creator.\n- **Steps:** Click Creator name from Explore card.\n- **Expected results:** expected result needs investigation: action navigates /store/{creatorId}, whereas implemented storefront route is /app/store/{creatorId}.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 6,
+    "assessment_scope": "Fully assessed Fail across Guest/User/Creator/Admin actualbrowsermatrix: visibleCreatorcardactionrouteswrong/store/{ownerId}, producesblankroot, whileimplemented/app/store/{ownerId}works underallfour viewers. CounterpartandownerCreatorprerequisiteconfirmed; existingBUG-004. Allrole/sessioncontrols completed; temporaryAdminrestoredCreator.",
+    "scope_audit": {
+      "assessed": [
+        "Fully assessed Fail across Guest/User/Creator/Admin actualbrowsermatrix: visibleCreatorcardactionrouteswrong/store/{ownerId}, producesblankroot, whileimplemented/app/store/{ownerId}works underallfour viewers. CounterpartandownerCreatorprerequisiteconfirmed; existingBUG-004. Allrole/sessioncontrols completed; temporaryAdminrestoredCreator."
+      ],
+      "remaining": [],
+      "outcome": "Fully assessed Fail across Guest/User/Creator/Admin actualbrowsermatrix: visibleCreatorcardactionrouteswrong/store/{ownerId}, producesblankroot, whileimplemented/app/store/{ownerId}works underallfour viewers. CounterpartandownerCreatorprerequisiteconfirmed; existingBUG-004. Allrole/sessioncontrols completed; temporaryAdminrestoredCreator."
+    }
   },
   {
     "id": "DISC-005",
@@ -1550,9 +1565,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-005 \u2014 Summary visibility conflict\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. DRAFT/HIDDEN/PUBLISHED products with distinctive synthetic titles.\n- **Steps:** As Guest, GET /api/products?ownerId={owner}, /api/products/get-all-products-min with/without userId; search those titles; open returned product cards.\n- **Expected results:** expected result needs investigation: summary/search queries omit lifecycle filtering, while full Product reads and public UI restrict availability. Never infer hidden content access from a visible summary.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 4
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 8,
+    "assessment_scope": "All explicit role/lifecycle/summary/search/returned-card branches exercised on deployed app. Product policy for Draft/Hidden summary exposure remains unresolved."
   },
   {
     "id": "DISC-006",
@@ -1561,9 +1577,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-006 \u2014 Autocomplete threshold and debounce\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Catalog with several matching titles.\n- **Steps:** Type one character, then two; pause at least250ms; rapidly replace term and clear input.\n- **Expected results:** No search below two trimmed characters; requests use trimmed term, page0,size10; suggestions update and clear with input.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 5,
+    "assessment_scope": "Four-role current-source wire/timing/trim/cancellation checks plus retained deployed visible threshold control; no backend search semantic/auth claim."
   },
   {
     "id": "DISC-007",
@@ -1584,9 +1601,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-008 \u2014 Autocomplete failure and dismissal\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Visible suggestions; reject next query; press Escape and click outside.\n- **Steps:** Inspect dropdown and submit search after recovery.\n- **Expected results:** expected result needs investigation for dismissal/error feedback: component has no Escape handler or explicit query error UI; absence of suggestions must not imply no server matches.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 4
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 8,
+    "assessment_scope": "Four-role deployed dismissal observations plus current-source terminal query failure/recovery/submit. Component has no Escape/outside handler or explicit error UI; intended policy requires a product decision, not more test execution."
   },
   {
     "id": "DISC-009",
@@ -1595,9 +1613,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-009 \u2014 Search matching and pagination\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. More than20 products; title and Creator first/last name matches including mixed case.\n- **Steps:** Open /app/explore/search?term={term}; use Next/Prev and reload page2.\n- **Expected results:** Search matches name or Creator name case-insensitively, default newest first; page size20 and URL page state persist; boundaries disable navigation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Fail",
     "variations_expanded": false,
-    "recorded_variations": 3
+    "recorded_variations": 15
   },
   {
     "id": "DISC-010",
@@ -1606,9 +1624,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-010 \u2014 Search zero and failure\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. No matching term and failed request, separately.\n- **Steps:** Search each fixture; restore response and reload.\n- **Expected results:** No-products and cannot-load states are distinct; no stale result should be assumed current.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 4
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 8,
+    "assessment_scope": "Retained deployed zero-result checks and four-role isolated zero\u2192503\u2192restored reload current-source rendering with no prior card."
   },
   {
     "id": "DISC-011",
@@ -1617,9 +1636,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-011 \u2014 Search URL state conflicts\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Page2 of a large result; new term with only one page; malformed/negative page query.\n- **Steps:** Change term through navbar, browser Back/Forward and direct page query.\n- **Expected results:** expected result needs investigation: page state initializes from URL but does not reset on term changes or synchronize later history changes; first-page label uses a truthy number check.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Fail",
     "variations_expanded": false,
-    "recorded_variations": 7
+    "recorded_variations": 19
   },
   {
     "id": "DISC-012",
@@ -1639,9 +1658,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-013 \u2014 Published Product type presentation\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Published Course with sections, Download with files, Consultation with details; Guest.\n- **Steps:** Direct-load each /app/product/{id} and legacy /app/product/{id}/{type}; inspect content outline and primary action.\n- **Expected results:** Public metadata renders; protected bodies/video/file URLs are absent; type comes from fetched Product rather than optional route type.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Pass",
     "variations_expanded": false,
-    "recorded_variations": 3
+    "recorded_variations": 7
   },
   {
     "id": "DISC-014",
@@ -1650,9 +1669,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-014 \u2014 Public Product loading and stale IDs\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Two different products; delayed second response.\n- **Steps:** Open first then navigate to second and reload; fail second fetch.\n- **Expected results:** Old Product is cleared/ID-checked; loading or unavailable state must not expose previous Product as the new one.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 5,
+    "assessment_scope": "Retained deployed missing-ID control; four-role same-route Product ID change through visible harness router links, held/failing second GET and fresh recovery; old content absent."
   },
   {
     "id": "DISC-015",
@@ -1686,7 +1706,20 @@
     "instructions": "### DISC-016 \u2014 Public metadata fallback\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Published Product with missing image, creator profile/config read unavailable.\n- **Steps:** Open Product and inspect hero, pricing and creator area.\n- **Expected results:** Public-safe fallback presentation is used; missing media/profile/config is not replaced with fabricated commercial data.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 5
+    "recorded_variations": 11,
+    "assessment_scope": "Normal deployed missing-image direct/reload now covers Guest/User/Creator/Admin; controlled503profile+landing-config recovery coversall4roles separately. Actual deployed unavailable-metadata matrix outstanding.",
+    "scope_audit": {
+      "assessed": [
+        "Existing controlled real-frontend/synthetic-transport503profile+landing-config fallback matrix passesall4roles; noimage usesdecorativefallback and omits unavailableCreator/About.",
+        "ExistingdeployedCreator and newGuest/User/Admin direct/reload loadactual976x977decorativeplaceholder and preserve suppliedFreeprice/outline; currentCreator areaavailable.",
+        "Three current role-specific API reads confirmPublished/free/noimage; finalSQLProduct/media andfinancial/access countsunchanged; temporaryAdminprofile/browserrestored."
+      ],
+      "remaining": [
+        "Actual deployed Creator-profile/config-unavailable branches for role matrix remain unexecuted. Controlled503results are not live fault evidence.",
+        "A fault-capable deployment or equivalent safe controllable boundary mechanism is notprovisioned; no live service disabled."
+      ],
+      "outcome": "Partial; normaldeployed role matrix complete, controllednegative matrix complete, deployednegative matrix missing."
+    }
   },
   {
     "id": "DISC-017",
@@ -1695,9 +1728,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-017 \u2014 Guest free enrollment call to action\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Free published Course/Download/Consultation.\n- **Steps:** Click free-access primary action.\n- **Expected results:** Navigate to login; no entitlement is granted anonymously.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 5,
+    "assessment_scope": "Guest free Course/Download CTA and anonymous API denial executed. Required free Published Consultation contradicts current positive-price publication contract, confirmed by deployed422 and SQLzero count. That branch is unsupported/unexecuted and requires test prerequisite clarification; it is not recorded Pass."
   },
   {
     "id": "DISC-018",
@@ -1706,9 +1740,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-018 \u2014 Authenticated free enrollment journey\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Signed-in User without entitlement; published free Product.\n- **Steps:** Click free enrollment; await response; open content, reload, then open Library.\n- **Expected results:** ACTIVE entitlement is created, access is refetched and content becomes available; Library reflects server grant.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Pass",
     "variations_expanded": false,
-    "recorded_variations": 3,
+    "recorded_variations": 7,
     "assessment_scope": "Real full-App local non-owner User grants for three types; Course Article/reload/Library verified. Other roles, stored delivery and deployed parity outstanding."
   },
   {
@@ -1718,9 +1752,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-019 \u2014 Existing access and owner actions\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Entitled User; owner Creator; Admin, each with published Product.\n- **Steps:** Open same Product under each fixture.\n- **Expected results:** Entitled buyer sees In Library; owner/Admin gets edit affordance; no additional purchase is required for content access.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Pass",
     "variations_expanded": false,
-    "recorded_variations": 3
+    "recorded_variations": 6
   },
   {
     "id": "DISC-020",
@@ -1729,9 +1763,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-020 \u2014 Paid Product cart journey\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Published positive-price Product owned by another Creator.\n- **Steps:** Click Add to cart; repeat; use Buy now variant.\n- **Expected results:** Product is added locally without duplicate; Buy now navigates Cart. Payment completion is only established by commerce cases.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 16,
+    "assessment_scope": "Actual deployed Guest/User/Creator Add/duplicate/Buy now and cross-login persistence pass; verified Admin exposes management Edit product rather than buyer actions, requiring original Admin parameter clarification.",
+    "coverage_notes": "All eligible paths completed with new foreign-owner Published paid synthetic Consultation, then fixture HIDDEN. No checkout. Normal native Remove restores original Cart. Existing price/surname defects separately scoped, not new Cart bugs; role/profile restored."
   },
   {
     "id": "DISC-021",
@@ -1742,7 +1778,7 @@
     "instructions": "### DISC-021 \u2014 Product lesson rendering conflict\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Entitled Course with HTML fixture and article saved through current Tiptap editor.\n- **Steps:** Open Product lesson content for both; include inert unsafe-markup fixture.\n- **Expected results:** HTML is sanitized before rendering; expected result needs investigation for editor JSON stored as a string and rendered as HTML. Do not assume rich-text round-trip works.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Fail",
     "variations_expanded": true,
-    "recorded_variations": 11,
+    "recorded_variations": 12,
     "scope_audit": {
       "required_scope": "Guest and User/Creator/Admin public Course discovery; authorized HTML/editor JSON reading; inert unsafe markup sanitization.",
       "assessed": [
@@ -1764,9 +1800,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### DISC-022 \u2014 Absent course progress and learner quiz UI\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Entitled Course with VIDEO/ARTICLE/QUIZ lessons.\n- **Steps:** Read content, reload and revisit Library; inspect QUIZ lesson.\n- **Expected results:** No implemented learner quiz submission/player route, completion tracking, resume progress or certificate workflow is exposed; backend quiz APIs are covered separately.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Pass",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 5
   },
   {
     "id": "DISC-023",
@@ -1777,7 +1813,7 @@
     "instructions": "### DISC-023 \u2014 Consultation purchase does not book a time\n\n- **Feature area:** Explore, search and public Product pages. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest; repeat public discovery as User, Creator and Admin. Entitled Consultation with weekly availability.\n- **Steps:** Open Product and Library, inspect possible next actions.\n- **Expected results:** No slot booking, rescheduling, cancellation or generated meeting workflow exists; metadata/access does not establish a scheduled appointment.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1,
+    "recorded_variations": 3,
     "assessment_scope": "Entitled local non-owner User with persisted weekly Consultation availability: Product/Library no booking controls. Other roles/deployed fixture outstanding."
   },
   {
@@ -1799,9 +1835,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-001 \u2014 Management list variants\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Products across all four types and DRAFT/PUBLISHED/HIDDEN states; free/positive/recurring/missing prices.\n- **Steps:** Open /app/products; inspect status, price and updated labels; click Product identity.\n- **Expected results:** All own summaries appear with corresponding labels; identity navigates Overview; missing price differs from Free and Membership recurring labels include interval.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 3
   },
   {
     "id": "PROD-002",
@@ -1822,9 +1858,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-003 \u2014 Management empty and no-match states\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Zero own products, search miss and filter miss in separate fixtures.\n- **Steps:** Open Products; apply impossible search/filter where applicable; clear.\n- **Expected results:** True empty catalog hides controls/count and offers creation; search/filter misses have appropriate clear actions.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 3
   },
   {
     "id": "PROD-004",
@@ -1862,9 +1898,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-006 \u2014 Overview per type\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Owned Course/Download/Consultation/Membership fixtures with content and media.\n- **Steps:** Open /app/products/{id}; inspect summaries; use Edit Product, landing-page builder, preview and Back.\n- **Expected results:** Overview is read-only; section/lesson/file counts and Consultation fields derive from Product; navigation uses respective management routes.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 9
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 24,
+    "assessment_scope": "All four type Overviews, counts/details, read-only controls, landing live previews, edit route failure, Back/reload recovery and list return; Published public-page control. Existing price/null field failures retained; no successful editor claim."
   },
   {
     "id": "PROD-007",
@@ -1938,9 +1975,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-010 \u2014 Create whitespace and server errors\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Whitespace-only name; network failure and server rejection variants.\n- **Steps:** Submit create; restore backend and retry with real name.\n- **Expected results:** expected result needs investigation for whitespace-only draft because UI checks truthiness and Course/Download/Consultation draft permits incomplete name while Membership converter rejects blank names; server failures should retain editable form and avoid claiming successful creation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 21,
+    "assessment_scope": "All four normal creation forms: actual whitespace submissions to deployed API, pre-forward503/422/network failures with retained editable form, then real201 retry/Basic workspace and fresh API/SQL persistence. Mixed incomplete-Draft whitespace policy needs clarification. Hybrid frontend proxy scope; no deployed-origin/auth transport or post-commit idempotency claim."
   },
   {
     "id": "PROD-011",
@@ -2035,9 +2073,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-015 \u2014 Back flush and leave confirmation\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Unsaved draft edit; variants successful and failed PATCH.\n- **Steps:** Immediately click Back; on failure choose Stay, then repeat choosing Leave.\n- **Expected results:** Back flushes pending save before navigation; failure offers leave confirmation. Stay retains edit; Leave may discard pending data explicitly.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 4,
+    "assessment_scope": "Current unchanged workspace handler: real successful immediate Back flush; controlled pre-forward503 with actual confirm-call false/Stay and true/Leave branches; fresh API/SQL and post-debounce absence of discarded save. Confirm boundary is a declared adapter; native modal display/focus not verified."
   },
   {
     "id": "PROD-016",
@@ -2046,8 +2085,8 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-016 \u2014 Preview before autosave\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Saved draft and new local change within debounce window.\n- **Steps:** Immediately click Preview and compare displayed saved fields; return and wait for save, preview again.\n- **Expected results:** expected result needs investigation: Preview does not flush pending shared edits; private preview reads backend state, so unsaved changes may not appear.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
+    "coverage": "Fail",
+    "variations_expanded": true,
     "recorded_variations": 2,
     "scope_audit": {
       "assessed": [
@@ -2060,7 +2099,12 @@
       ],
       "outcome": "Partial: immediate private preview behavior observed; required recovery and second preview remain blocked by BUG-001."
     },
-    "assessment_scope": "Partial: immediate private preview behavior observed; required recovery and second preview remain blocked by BUG-001."
+    "assessment_scope": "Earlier real immediate Preview showed saved backend fields; current deployed Back to workspace fails with empty root/React300 (BUG001). Required user journey is Fail; downstream wait-for-save/second Preview are unexecuted dependencies, not passing checks.",
+    "dependent_steps_unexecuted": [
+      "Wait for save after returning to workspace",
+      "Open a second normal Preview and compare fields"
+    ],
+    "retest_after": "BUG-001"
   },
   {
     "id": "PROD-017",
@@ -2081,9 +2125,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-018 \u2014 Consultation pricing restrictions\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Consultation draft.\n- **Steps:** Open Pricing; enter blank, zero, negative and positive amounts; inspect readiness and publish attempt.\n- **Expected results:** UI only offers one-time; publication requires positive price rather than free Consultation. Draft persistence alone is not readiness.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 6
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 11,
+    "assessment_scope": "Retained native one-time-only Pricing and blank/zero/negative readiness controls plus current deployed null no-op, explicit zero/negative422 and positive fractional persistence loss (BUG024), independently verified bigint schema and restored fixture. No new saved Workspace journey claimed."
   },
   {
     "id": "PROD-019",
@@ -2092,9 +2137,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-019 \u2014 Membership recurring metadata\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Membership draft; MONTH/YEAR intervals and positive EUR amount.\n- **Steps:** Set recurring price and interval; wait save; reload.\n- **Expected results:** Recurring metadata persists; no subscription or checkout is created and publishing remains unavailable.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 4,
+    "assessment_scope": "Actual deployed monthly and yearly positive EUR edits/autosave match fresh API/SQL; Membership Publish disabled, no commercial action and unchanged Sales summary. Required saved-workspace reload fails React300/blank BUG001 while stored metadata survives. Successful rerender is not claimed.",
+    "remaining_checks": "Retest successful saved-workspace recurring controls/reload after BUG001 is fixed. Subscription/payment execution is unsupported and not claimed."
   },
   {
     "id": "PROD-020",
@@ -2103,9 +2150,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-020 \u2014 Readiness navigation and warning separation\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Course/Download/Consultation with multiple blocking fields; no thumbnail or calendar.\n- **Steps:** Open Readiness; use each issue link; correct blockers; inspect warnings.\n- **Expected results:** Blocking issues link to relevant editor; image/calendar warnings do not alone block publication; server may reject additional constraints.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 6
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 18
   },
   {
     "id": "PROD-021",
@@ -2150,7 +2197,14 @@
     "instructions": "### PROD-023 \u2014 Publish ready Consultation\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Consultation with name, positive price/duration, method and valid enabled weekly range; custom location for OTHER.\n- **Steps:** Click Publish; reload public route.\n- **Expected results:** Server accepts PUBLISHED metadata; no booking or calendar event is implied.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 2,
+    "execution_blocker": {
+      "status": "Blocked",
+      "scope": "Persist ready Consultation fields through normal saved Draft flow, then verify actual Publish/public reload",
+      "reason": "Connectivity recovered and synthetic browser sign-in restored, but autosave/Publish flush is blocked by existing BUG030: normal intended-fields Draft PATCH returns400 duplicate uq_consultation_availability_day; exact saved response unchanged.",
+      "recorded_date": "2026-10-26",
+      "does_not_block_independent_variants": true
+    }
   },
   {
     "id": "PROD-024",
@@ -2170,9 +2224,9 @@
     "level": "API integration",
     "priority": "P1",
     "instructions": "### PROD-025 \u2014 Publish Download rejection\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** API integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. No files or metadata whose storage path is blank. Authentication prerequisite: use the stated role session cookies; mutations use matching XSRF-TOKEN cookie and X-XSRF-TOKEN header unless authentication/CSRF denial is the scenario.\n- **Steps:** PATCH status PUBLISHED; compare browser readiness for file with only filename/ID.\n- **Expected results:** Server rejects missing deliverable path with422; expected result needs investigation where UI marks metadata-only file ready.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 16
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 18
   },
   {
     "id": "PROD-026",
@@ -2192,9 +2246,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-027 \u2014 Membership publish unavailable\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Complete Membership draft or Hidden Membership.\n- **Steps:** Inspect Publish; bypass UI with POST/PUT/PATCH status PUBLISHED.\n- **Expected results:** UI disables publication; current validator rejects with422. Do not use older context claiming only409 as expected status.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 4
   },
   {
     "id": "PROD-028",
@@ -2240,9 +2294,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-030 \u2014 Already published browser controls\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator; authenticated owner with synthetic products. Published Course/Download/Consultation.\n- **Steps:** Open workspace and inspect Publish/status actions.\n- **Expected results:** Publish is inactive for already-published state; no browser unpublish action is implied; API lifecycle change is a separate capability.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 6
   },
   {
     "id": "PROD-031",
@@ -2251,9 +2305,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-031 \u2014 Price type across detail and summary\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner; positive-priced Products. Same Product with positive EUR price; detail response string versus summary numeric price.\n- **Steps:** Open Products list \u2192 Overview \u2192 Workspace Pricing \u2192 public Product; reload each and inspect readiness.\n- **Expected results:** expected result needs investigation: summaries carry numbers, detail converters strings and normalizer does not coerce; price formatter/readiness require numbers, so Price unavailable/empty amount/blocker can differ from saved backend price.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 4
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 14,
+    "expansion_notes": "OriginalCreatorowner/samepositiveProductprocedurefullyassessed: normalList/Overview/Edit/publicnavigationandreloadeach. RequiredWorkspacePricing/ReadinessfailsrenderBUG001;listnumericvsdetailstringmismatchBUG002confirmedactualAPI/DB. NoextraAdmin/alltypeorworkingrecoveryprerequisiteinvented. Existingadditionaltypeobservationsretained.",
+    "coverage_notes": "FullyassessedFail: nativeEditandreloadblankcountsasfailedrequiredteststep,notsuccessfulReadinessinspection. PublishedownedDownloadlist\u20ac4.25;OverviewPricenotset;publicPriceunavailable;API/DB4.25exactunchanged."
   },
   {
     "id": "PROD-032",
@@ -2284,8 +2340,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### PROD-033 \u2014 Readiness server error routing\n\n- **Feature area:** Product management, workspace and lifecycle. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner; positive-priced Products. Valid draft; force publication422 with name,price,details.sections,details.lessons,details.files,details.durationMinutes,details.weeklyAvailability and unknown field errors separately.\n- **Steps:** Click Publish with each controlled server validation response; inspect editor error/tab placement; correct and retry.\n- **Expected results:** Known fields map to relevant editor/readiness; unknown fields remain visible in readiness rather than silently discarded; no Published success state after rejection.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "assessment_scope": "Eight controlled server-field error maps, retained Draft, issue destinations and successful response retry tested in actual ProductForm/Redux/API client with synthetic draft facade. Name field edited through UI. Loader/autosave/auth are replaced boundaries; seven field-specific correction paths and normal saved-draft E2E remain unexecuted.",
+    "remaining_checks": "Normal saved-draft browser entry is blocked by BUG-001. Verify actual correction/persistence for price, sections, lessons, files, duration and weekly availability; unknown-field remediation remains at Readiness.",
+    "recorded_variations": 8
   },
   {
     "id": "PAPI-001",
@@ -3229,9 +3288,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### FILE-001 \u2014 Canonical upload lifecycle\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Small synthetic file with distinctive filename and bytes.\n- **Steps:** Select file in Download section; obtain GET /api/products/{p}/sections/{s}/files/presigned-url?filename={name}; PUT bytes to returned presignedUrl; POST confirm-upload; reload workspace.\n- **Expected results:** File appears only after lifecycle completes;201 confirmation returns persisted metadata; Product read suppresses permanent file URL. Actual byte delivery is separate entitlement flow.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 4
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 12,
+    "remaining_checks": "Retest successful saved-workspace render after BUG-001 is fixed; current reload path fails. Controlled bridge does not assess deployed CORS or Admin frontend navigation."
   },
   {
     "id": "FILE-002",
@@ -3252,8 +3312,10 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### FILE-003 \u2014 Upload failures and retry\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Fail presign, PUT, and confirm independently.\n- **Steps:** Select file for each failure; restore dependency; retry using UI.\n- **Expected results:** Failure state does not claim completed file; successful retry must persist metadata once per completed operation. Orphaned object after confirm failure is not assumed cleaned.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "remaining_checks": "Retest stale failure feedback after BUG-074 is fixed. No orphan cleanup assertion.",
+    "recorded_variations": 6
   },
   {
     "id": "FILE-004",
@@ -3378,7 +3440,8 @@
     "instructions": "### FILE-010 \u2014 File delete confirmation\n\n- **Feature area:** Download upload, metadata and delivery preparation. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Download Product and section. Two persisted files in section.\n- **Steps:** Cancel remove, then confirm; reload; repeat API DELETE /api/products/{p}/sections/{s}/files/{fileId}.\n- **Expected results:** Confirmed deletion returns204 and removes metadata; another file remains. Object-store deletion is not implemented by this metadata removal.\n- **Required environment / external service:** Frontend/backend plus isolated DigitalOcean Spaces bucket and permitted CORS; synthetic non-sensitive files.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 7,
+    "coverage_notes": "Actual deployed Creator two-file Cancel/Confirm journey now measured after explicit Alpha approval. Alpha metadata removed, Beta preserved; required editor reload fails BUG-001. Same-ID repeat DELETE404 leaves exact post-removal state; Overview reports one remaining file; the API identifies it as Beta. First browser DELETE wire status not captured. Admin and isolated bucket scope remain incomplete. No confirmation or restoration pending."
   },
   {
     "id": "FILE-011",
@@ -3426,10 +3489,11 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-001 \u2014 Thumbnail upload and replacement\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Small JPEG/PNG/WebP/GIF fixture; existing thumbnail variant.\n- **Steps:** Select thumbnail in Media; await response; replace with another image; reload workspace, Overview and public page.\n- **Expected results:** Stored thumbnail URL updates Product views; replacement attempts old-object cleanup and uses generated Product-scoped storage key.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "coverage_note": "ActualdeployedCoursePNGinitial/retryfailure20October; otherroles/types/formats/replacements/CDNunexecuted. No successfulstoragepass.",
-    "recorded_variations": 2
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "coverage_note": "Normal native journey assessed Fail at editor prerequisite in all8cells.32formatmetadataPass,8four-formatdeliveryFail,8UIentryFail,8privateGIFpreviewFail. Downstream successful native/public-page reload and physical cleanup unclaimed; alternative scope explicit. Roles restored,20gallery DTOs preserved.",
+    "recorded_variations": 60,
+    "assessment_scope": "Owner/Admin\u00d7four types and four real image formats: explicit API initial/replacement metadata passes; normal saved editor fails before native Media picker; returned images403 and finalGIFprivatePreview broken."
   },
   {
     "id": "MEDIA-002",
@@ -3438,10 +3502,11 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-002 \u2014 Thumbnail deletion\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Product with thumbnail.\n- **Steps:** Remove image; reload; DELETE /api/products/image?productId={p} directly for API variant.\n- **Expected results:** Thumbnail metadata is removed and fallback presentation returns; other gallery/promo data remains.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8,
-    "assessment_scope": "Owner/Admin \u00d7 four types API validation/recovery/removal on real migrated local PostgreSQL; required deployed storage/browser assertions remain."
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 32,
+    "assessment_scope": "Owner/Admin \u00d7 four types API validation/recovery/removal on real migrated local PostgreSQL; required deployed storage/browser assertions remain.",
+    "coverage_notes": "Owner/Admin\u00d7four supported types: normal saved workspace entry fails with0controls and2newReact300 entries (BUG-001), preventing native Media removal. Documented API removal/repeat204 preserves exact gallery/promo/business data and fresh private Preview loads decorative fallback976x977 in all eight cells. UI removal click not claimed; role/backend/browser restored."
   },
   {
     "id": "MEDIA-003",
@@ -3452,8 +3517,9 @@
     "instructions": "### MEDIA-003 \u2014 Media request Content-Type reconciliation\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Valid image/video File object.\n- **Steps:** Trigger browser thumbnail/gallery/promo upload; compare transmitted Content-Type/body with raw-stream controller contract.\n- **Expected results:** expected result needs investigation: client inherits application/json default while submitting File; do not assume server MIME validation receives actual media MIME.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 9,
-    "assessment_scope": "Current controlled media browser observations plus actual local backend evidence; deployed/Spaces/browser matrix and persistence assertions remain. See media batch scopes and BUG-042/043."
+    "recorded_variations": 12,
+    "assessment_scope": "Current controlled media browser observations plus actual local backend evidence; deployed/Spaces/browser matrix and persistence assertions remain. See media batch scopes and BUG-042/043.",
+    "coverage_notes": "Deployed native Membership uploads fail but headers/body are not captured. Explicit-header API controls isolate API MIME acceptance; do not infer the native transmitted header/body from them. Remaining supported-type/role/environment scope retained."
   },
   {
     "id": "MEDIA-004",
@@ -3462,10 +3528,12 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-004 \u2014 Gallery append and order\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Product with two images.\n- **Steps:** Add third via POST /api/products/{p}/media/gallery; reorder through UI/PUT gallery/order with all imageIds; reload.\n- **Expected results:** Append persists metadata/URL; requested order is exact supplied permutation with zero-based positions. expected result needs investigation for persistence of position swaps under the unique gallery-position constraint, covered by MEDIA-014.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
+    "coverage": "Fail",
+    "variations_expanded": true,
     "coverage_note": "ActualdeployedCourseGalleryinitialPNGfailure20October; append/orderandotherroles/typesunexecuted.",
-    "recorded_variations": 2
+    "recorded_variations": 37,
+    "assessment_scope": "Deployed Creator-owner/Admin\u00d7four types: third image append and repeated canonical GET pass; valid full permutation400 exact rollback BUG-040, normal editor0controls BUG-001, saved Preview image delivery403 BUG-069.",
+    "coverage_notes": "32variations cover eight role/type cells. Two-image prerequisite exact; only last synthetic image removed/replaced. Final observer SQL verifies same3IDs and0..2positions, privateDrafts, no grants, restored roles."
   },
   {
     "id": "MEDIA-005",
@@ -3474,10 +3542,11 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-005 \u2014 Gallery capacity\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. 20 saved gallery images.\n- **Steps:** Attempt21st upload; removeone then upload again.\n- **Expected results:** Maximum 20 enforced;21st rejected without adding metadata; freed slot permits valid upload.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 10,
-    "assessment_scope": "Current controlled media browser observations plus actual local backend evidence; deployed/Spaces/browser matrix and persistence assertions remain. See media batch scopes and BUG-042/043."
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 50,
+    "assessment_scope": "Actual deployed Creator-owner/Admin\u00d7four types,32 passing explicit API metadata-capacity variations and8 failed normal saved-editor entries. Native upload/removal UI unavailable BUG-001; media delivery separate BUG-069.",
+    "coverage_notes": "20-image maximum, rejected21st exact rollback, deleting a new last image and successful freed-slot reupload pass all8APIcells. All8normal Overview\u2192Edit entries fail blank React300 before gallery controls. Roles restored, fixtures private, commerce unchanged."
   },
   {
     "id": "MEDIA-006",
@@ -3486,10 +3555,11 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-006 \u2014 Gallery reorder validation\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Three saved images; duplicate, missing and foreign image IDs.\n- **Steps:** PUT /api/products/{p}/media/gallery/order with each invalid set.\n- **Expected results:** Invalid permutation rejected; existing ordering remains unchanged.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 32,
-    "assessment_scope": "Local API/database assertions recorded; required deployed storage/browser proof remains."
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 64,
+    "assessment_scope": "Local API/database assertions recorded; required deployed storage/browser proof remains.",
+    "coverage_notes": "Deployed Creator-owner and verified temporary Admin each reject duplicate/missing/existing-foreign/empty sets on Course, Download, Consultation and Membership with three persisted gallery entries. All32 requests400 and exact canonical state unchanged; role/profile restored. Valid swaps, cross-owner Admin override and media delivery are separate cases, not claimed."
   },
   {
     "id": "MEDIA-007",
@@ -3498,10 +3568,11 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-007 \u2014 Gallery deletion\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Gallery with multiple images.\n- **Steps:** DELETE /api/products/{p}/media/gallery/{imageId}; reload; try foreign/missing image ID.\n- **Expected results:** Target removal persists and remaining positions normalize; foreign/missing association rejects.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 17,
-    "assessment_scope": "Current controlled media browser observations plus actual local backend evidence; deployed/Spaces/browser matrix and persistence assertions remain. See media batch scopes and BUG-042/043."
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 41,
+    "assessment_scope": "Current controlled media browser observations plus actual local backend evidence; deployed/Spaces/browser matrix and persistence assertions remain. See media batch scopes and BUG-042/043.",
+    "coverage_notes": "All24 deployed owner/Admin\u00d7four-type checks: valid first-image deletion204 normalizes survivor; repeat missing404 and real wrong-parent image404 preserve both full Product DTOs. Thumbnail/promo/business fields preserved. Metadata/API reload scope; physical storage deletion not independently observed."
   },
   {
     "id": "MEDIA-008",
@@ -3510,10 +3581,11 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-008 \u2014 Promo video lifecycle\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. MP4 and WebM fixtures; existing promo variant.\n- **Steps:** POST /api/products/{p}/media/promo-video; replace, reload and play; DELETE same path.\n- **Expected results:** Single promo metadata persists with READY state; replacement/removal updates Product; no transcoding/progress pipeline is implied.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8,
-    "assessment_scope": "Owner/Admin \u00d7 four types API validation/recovery/removal on real migrated local PostgreSQL; required deployed storage/browser assertions remain."
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 54,
+    "assessment_scope": "Deployed owner/Admin\u00d7four types, correct-MIME MP4/WebM replacement, fresh GET, actual private Preview, direct403 delivery and DELETE/repeat. Metadata passes; playback fails BUG-069.",
+    "coverage_notes": "24passingAPI lifecycle variations,16failingreal Preview playback variations and4passingowner deletion Preview variations. Preserves20gallery records, roles restored, no publication or commercial changes. No native saved-editor upload or physical cleanup pass claimed."
   },
   {
     "id": "MEDIA-009",
@@ -3522,10 +3594,11 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-009 \u2014 Image validation boundary\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. JPEG/PNG/WebP/GIF files >0 up to10MiB; zero,10MiB+1 and unsupported MIME variants.\n- **Steps:** Select via UI and bypass with POST image/gallery raw bytes.\n- **Expected results:** Allowed files satisfy size/MIME rules; invalid cases reject and previous media remains. Client extension is not proof of actual bytes being safe.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 16,
-    "assessment_scope": "Owner/Admin \u00d7 four types API validation/recovery/removal on real migrated local PostgreSQL; required deployed storage/browser assertions remain."
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 140,
+    "assessment_scope": "Deployed owner/Admin\u00d7four types\u00d7thumbnail/gallery: zero/oversize/MIME rejection preserves full canonical+DBmedia; smallallowedformats succeed, exact10MiBfails413BUG-078; normal native entry failsBUG-001.",
+    "coverage_notes": "112API matrix checks(96Pass/16Fail),8nativeentryFail,4thresholdprobes(2Pass/2Fail).1MiBaccepted/1MiB+1rejected on both endpoints. Exact original3galleryIDs retained, tinyGIFthumbs, roles restored."
   },
   {
     "id": "MEDIA-010",
@@ -3534,10 +3607,11 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-010 \u2014 Promo validation boundary\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. MP4/WebM >0 up to100MiB; zero,100MiB+1 and unsupported MIME.\n- **Steps:** Select via UI and POST raw promo request for each.\n- **Expected results:** Invalid size/MIME rejected; no successful promo metadata for rejected upload.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8,
-    "assessment_scope": "Owner/Admin \u00d7 four types API validation/recovery/removal on real migrated local PostgreSQL; required deployed storage/browser assertions remain."
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 80,
+    "assessment_scope": "Deployed owner/Admin\u00d7fourtypes: zero/unsupported MIME/over-limit public rejection preserves full Product/media DB hashes;1MiBMP4 and smallMP4/WebM succeed; declared valid100MiB and1MiB+1 uploads reject early413BUG078. Normal native entry failsBUG001.",
+    "coverage_notes": "64APIattempts(48Pass/16Fail) plus8nativeentryFail. Explicit Expect/Continue metrics prove0bodybytes transmitted for large rejected requests; no backend maxguard/storage pass claimed. Exact original galleries/thumbnail retained, final tinyWebMpromo, roles restored."
   },
   {
     "id": "MEDIA-011",
@@ -3546,10 +3620,11 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### MEDIA-011 \u2014 Media ownership matrix\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; disposable Product of each supported type. Nonowner Creator, User, Guest and Admin.\n- **Steps:** Call thumbnail POST/DELETE, gallery POST/DELETE/order PUT and promo POST/DELETE with valid fixture requests.\n- **Expected results:** Guest/User/nonowner denied; Admin permitted across owners. No foreign media metadata mutation.\n- **Required environment / external service:** Frontend/backend and isolated DigitalOcean Spaces storage with accessible test media.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 140,
-    "assessment_scope": "Ownership and capacity proved with migrated local PostgreSQL and mock storage; deployed browser/Spaces requirements remain."
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 280,
+    "assessment_scope": "Ownership and capacity proved with migrated local PostgreSQL and mock storage; deployed browser/Spaces requirements remain.",
+    "coverage_notes": "Full deployed140-cell matrix: seven media endpoints\u00d7four Product types\u00d7owner/Admin/nonowner Creator/User/Guest. Admin crosses owner IDs; valid requests succeed or deny as expected. Denied state is exact via canonical API or full PostgreSQL parent/media rows. Guest verified profile401 with XSRF-only/no auth cookies; roles/profile restored. No byte-delivery or external object rollback claim."
   },
   {
     "id": "MEDIA-012",
@@ -3584,8 +3659,9 @@
     "instructions": "### MEDIA-014 \u2014 Gallery position swap under database uniqueness\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; isolated migrated PostgreSQL and disposable media. Two or more persisted gallery images with positions0,1,2.\n- **Steps:** PUT /api/products/{p}/media/gallery/order with firsttwoIDs swapped; GET Product after response; repeat deleting middle image.\n- **Expected results:** expected result needs investigation: service assigns final positions and saveAll while migration enforces immediate unique(product_id,kind,gallery_position); successful ordering cannot be presumed from in-memory response construction.\n- **Required environment / external service:** Test deployment with PostgreSQL, isolated Spaces and explicit media-size/gallery-limit overrides.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 32,
-    "assessment_scope": "Local API/database assertions recorded; required deployed storage/browser proof remains."
+    "recorded_variations": 35,
+    "assessment_scope": "Local API/database assertions recorded; required deployed storage/browser proof remains.",
+    "coverage_notes": "Current-deployment Creator-owner/Admin\u00d7four-type valid3-ID swaps400 unique-violation with exact canonical rollback additionally measured in MEDIA-004 packet deployed-gallery-append-valid-order-and-ui-eight-cells-2026-10-27. Prior deployed Membership three/two-image swaps and middle deletion retained. Explicit isolated/limit-override prerequisite remains unestablished; original stays partial, no configured-environment claim."
   },
   {
     "id": "MEDIA-015",
@@ -3595,7 +3671,9 @@
     "priority": "P1",
     "instructions": "### MEDIA-015 \u2014 Configured media limits versus fixed browser limits\n\n- **Feature area:** Product thumbnail, gallery and promotional video. **Test level:** deployed-service integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; isolated migrated PostgreSQL and disposable media. Backend image/video/gallery limit set below defaults; separate above-default deployment.\n- **Steps:** Select files/count near configured boundary through browser and send equivalent authorized raw API requests.\n- **Expected results:** Backend uses configured limits; browser hardcodes10MiB/100MiB/20. Below-default accepted selections can be server-rejected; above-default supported API uploads can remain UI-blocked.\n- **Required environment / external service:** Test deployment with PostgreSQL, isolated Spaces and explicit media-size/gallery-limit overrides.\n",
     "coverage": "Not run",
-    "variations_expanded": false
+    "variations_expanded": false,
+    "coverage_notes": "Current public image and promo routes both have measured1MiB effective request cap:1MiB200,1MiB+1/declared image10MiB/promo100MiB413(BUG078). Promo Expect/Continue rejects before body transfer. This does not provision below/above configured backend-limit deployments; original custom-limit prerequisites remain unexecuted and case stays partial.",
+    "recorded_variations": 1
   },
   {
     "id": "MEDIA-016",
@@ -3616,9 +3694,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONS-001 \u2014 Details round-trip\n\n- **Feature area:** Consultation details and weekly availability. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Consultation draft. Duration30/45/50/60/75/90/120; ZOOM/GOOGLE_MEET/PHONE/OTHER fixtures; valid weekly window.\n- **Steps:** Set duration, method, location where needed, buffers, daily limit, confirmation message and policy; wait save; reload.\n- **Expected results:** Supported metadata persists in Consultation details; meeting method does not create an external room/event.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 10
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 19,
+    "coverage_notes": "All seven declared durations and four meeting methods now measured for Creator owner (retained prior deployed persistence observations) and Admin (current native browser controls with valid weekly window, buffers/capacity/message/policy and OTHER instructions). Admin saves fail BUG-030 with exact canonical rollback; required full reload fails BUG-001, matching prior Creator reopen failure. No booking or external meeting created. Temporary Admin restored Creator exactly."
   },
   {
     "id": "CONS-002",
@@ -3627,10 +3706,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONS-002 \u2014 Weekly availability editing\n\n- **Feature area:** Consultation details and weekly availability. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Consultation draft. Draft with seven days.\n- **Steps:** Enable day; add two nonoverlapping ranges; edit times; remove range; disable another day; save/reload.\n- **Expected results:** Weekly day/window metadata persists; disabled day is not offered as enabled availability; no appointment inventory is generated.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 5,
-    "coverage_note": "Post-migrationavailabilitysavefailsdeployeduniquenessBUG030; prior deploymentgapBUG023resolved. Othercases/controlsremainasrecorded."
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 18,
+    "coverage_note": "Post-migrationavailabilitysavefailsdeployeduniquenessBUG030; prior deploymentgapBUG023resolved. Othercases/controlsremainasrecorded.",
+    "coverage_notes": "Original named weekly sequence now measured on deployed app for both Creator owner and Admin: enable day, two nonoverlapping ranges, native time edits, remove range, disable other day, actual save and full reload. Local controls pass. Both persistence attempts roll back with duplicate weekday constraint BUG-030; required reload crashes BUG-001. No scheduling/provider success claimed. Synthetic role/profile restored."
   },
   {
     "id": "CONS-003",
@@ -3639,9 +3719,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONS-003 \u2014 Weekly range validation\n\n- **Feature area:** Consultation details and weekly availability. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Consultation draft. Enabled day with empty start/end, reverse/equal times and overlapping ranges; adjacent ranges variant.\n- **Steps:** Edit each invalid variant then adjacent valid ranges; inspect inline readiness and PATCH response.\n- **Expected results:** Missing/reversed/overlap rejected by corresponding validation; touching endpoints are nonoverlapping. No automatic overnight interpretation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 6
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 18,
+    "assessment_scope": "Creator browser six inline/readiness variants plus deployed Creator/Admin six PATCH publication/rollback variants each; adjacent valid replacement fails BUG-030."
   },
   {
     "id": "CONS-004",
@@ -3650,9 +3731,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CONS-004 \u2014 Availability defaults conflict\n\n- **Feature area:** Consultation details and weekly availability. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Consultation draft. New Consultation with absent details; existing backend normalized days disabled.\n- **Steps:** Open Availability, reload without edits, compare returned details and displayed defaults.\n- **Expected results:** expected result needs investigation: frontend default weekdays9\u201317 differ from backend normalized disabled days, and frontend fills enabled empty windows.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 3
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 9
   },
   {
     "id": "CONS-005",
@@ -3740,7 +3821,7 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### CAL-002 \u2014 Google connect success\n\n- **Feature area:** Calendar provider integration. **Test level:** deployed-service integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator or Admin; provider test identity. Selected GOOGLE; valid authenticated account and CSRF.\n- **Steps:** POST /api/calendars/connect; open authorizationUrl; consent; return GET /api/calendars/oauth/GOOGLE/callback?code={fixture}&state={fixture}; GET /api/calendars.\n- **Expected results:** Signed short-lived state binds user/provider; encrypted tokens stored; own connection returned without secret tokens. Callback remains authenticated/role-guarded.\n- **Required environment / external service:** HTTPS frontend/backend, provider test OAuth app, configured state-signing/encryption and redirect URIs; no real calendar data.\n",
-    "coverage": "Not run",
+    "coverage": "Partially assessed",
     "variations_expanded": false,
     "execution_blocker": {
       "status": "Blocked",
@@ -3749,7 +3830,8 @@
       "recorded_date": "2026-10-21",
       "does_not_block_independent_variants": true
     },
-    "recorded_variations": 1
+    "recorded_variations": 2,
+    "coverage_notes": "Actual deployed Creator init200 returns signed state and Google authorization URL; URL not opened. Provider consent/token exchange and real identity success remain blocked by user prerequisite. Profile/calendar unchanged."
   },
   {
     "id": "CAL-003",
@@ -3758,7 +3840,7 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### CAL-003 \u2014 Microsoft connect contract\n\n- **Feature area:** Calendar provider integration. **Test level:** deployed-service integration. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator or Admin; provider test identity. Selected MICROSOFT with provider test app.\n- **Steps:** Initialize connect, consent and callback; list calendars.\n- **Expected results:** expected result needs investigation for URL/form encoding in Microsoft client and external exchange contract; only successful callback/list establishes connection, not opening consent.\n- **Required environment / external service:** HTTPS frontend/backend, provider test OAuth app, configured state-signing/encryption and redirect URIs; no real calendar data.\n",
-    "coverage": "Not run",
+    "coverage": "Partially assessed",
     "variations_expanded": false,
     "execution_blocker": {
       "status": "Blocked",
@@ -3767,7 +3849,8 @@
       "recorded_date": "2026-10-21",
       "does_not_block_independent_variants": true
     },
-    "recorded_variations": 1
+    "recorded_variations": 3,
+    "coverage_notes": "Actual deployed Microsoft connect init400 before provider access: unencoded scope spaces rejected by build(true), new BUG-081. Actual Settings Connect stays without visible error feedback; no calendar created. Normal full Creator profile/calendar unchanged. Actual consent/exchange and Admin scope remain unexecuted."
   },
   {
     "id": "CAL-004",
@@ -3999,9 +4082,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-005 \u2014 Native editor validation\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Blank title/body, missing asset, zero/oversize file and unsupported browser type variants.\n- **Steps:** Attempt Post/Video/Resource save with each invalid field; correct and retry.\n- **Expected results:** Client blocks required data/selection restrictions; server also enforces metadata constraints. Correcting editor data enables metadata save only.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 36,
+    "coverage_notes": "All named blank/whitespace/missing/zero/oversize/unsupported inputs and correction attempts exercised in deployed Creator-owner Draft. Post correction persists; supported Video/Resource correction fails BUG-055. Zero-byte client cause remains inconclusive, with server rejection separately verified. Admin/Hidden permutations and saved-editor reload are not claimed."
   },
   {
     "id": "MEM-006",
@@ -4021,9 +4105,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-007 \u2014 Video MIME client/server difference\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Non-video MIME in otherwise valid VIDEO metadata request.\n- **Steps:** POST native VIDEO through API, then load browser editor.\n- **Expected results:** expected result needs investigation: browser requires video/*, but backend metadata validation does not enforce video-specific MIME.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 5
   },
   {
     "id": "MEM-008",
@@ -4077,9 +4161,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-012 \u2014 Included Product picker\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Own Course/Download across all lifecycle states; Consultation/Membership and alreadyincluded entries.\n- **Steps:** Open picker, search mixed-case title, select multiple, cancel; reopen and confirm.\n- **Expected results:** Eligible Course/Download entries only; selected set persists only on confirm; no eligible/no search matches are distinct. Alreadyincluded/unsupported entries excluded.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 5
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 10
   },
   {
     "id": "MEM-013",
@@ -4190,9 +4274,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-019 \u2014 Editor errors and retry\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Reject aggregate load, native save, deletion and feed save separately.\n- **Steps:** Open Content; perform action; restore service and use available retry/reopen; reload.\n- **Expected results:** Failure must not be treated as persisted data; expected result needs investigation for any editor optimism surviving rejected mutation. Reload is authoritative.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 4,
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 9,
     "scope_audit": {
       "assessed": [
         "Scoped POST503 before backend call shows retained Post title/body and explicit retry feedback. Actual aggregate has zero content.",
@@ -4236,9 +4320,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-021 \u2014 Unavailable Membership runtime\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** deliberately unavailable. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner or Admin; DRAFT/HIDDEN Membership. Complete authored feed and recurring price.\n- **Steps:** Inspect readiness, public preview and cart; attempt publishing/checkout via supported APIs.\n- **Expected results:** Publishing unavailable, checkout rejects recurring/Membership; no recurring billing, subscription renewal/cancel, member management, included-product access propagation or live membership entitlements is established.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 10,
+    "coverage_notes": "Original exclusion scope complete using retained actual browser readiness/private-preview/Cart rejection (current Cart guard source hash matches) plus current normal HTTP PostgreSQL tests. Working fake-gateway Course positive control201/PENDING proves service availability; all12 User/Creator/Admin Membership checkout variants reject422 by type, and all8 Creator/Admin publications reject422. DRAFT/HIDDEN \u00d7 MONTH/YEAR; exact Product/feed rollback and no Membership Orders/entitlements. Isolated vs deployed scopes explicit: cloud checkout still503; no cloud configuration changed. Local services stopped."
   },
   {
     "id": "MEM-022",
@@ -4258,9 +4343,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### MEM-023 \u2014 Membership readiness changes without runtime publish\n\n- **Feature area:** Membership authoring, included Products and feed. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; DRAFT Membership. Empty feed then Draft Post then Published Post/valid included Product; binary native published item variant.\n- **Steps:** Inspect Readiness after each change and while aggregate loading; use issue links.\n- **Expected results:** Readiness evaluates title/recurring price/interval/published content; draft and metadata-only binary warnings persist where appropriate; Publish remains disabled even with no authoring blockers.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 16
   },
   {
     "id": "ACCESS-001",
@@ -4372,9 +4457,10 @@
     "level": "browser E2E",
     "priority": "P0",
     "instructions": "### ACCESS-009 \u2014 Library empty, loading and recovery\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. No entitlements; delayed response; failed response separately.\n- **Steps:** Open each Library content tab; restore backend and reload.\n- **Expected results:** Distinct loading, empty and alert states; reload refetches rather than fabricating content.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 13
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 24,
+    "assessment_scope": "Retained deployed zero API User/Creator and Admin empty browser; current-source User/Admin four-tab explicit empty/delay/failure/reload matrix, Wishlist independence and Creator GUI guard. Faults synthetic; no cloud outage/auth claim."
   },
   {
     "id": "ACCESS-010",
@@ -4420,9 +4506,9 @@
     "level": "deployed-service integration",
     "priority": "P0",
     "instructions": "### ACCESS-013 \u2014 Download authorized URL contract\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. ACTIVE holder, owner and Admin variants; stored synthetic file.\n- **Steps:** GET entitlement download endpoint; inspect expiry metadata without retaining URL; use URL in isolated browser.\n- **Expected results:** Short-lived URL valid for tenminutes; access path increments download count; service does not return permanent public link.\n- **Required environment / external service:** Test frontend/backend and isolated DigitalOcean Spaces bucket; signed URLs retained only privately by harness.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Pass",
     "variations_expanded": false,
-    "recorded_variations": 4
+    "recorded_variations": 8
   },
   {
     "id": "ACCESS-014",
@@ -4431,9 +4517,9 @@
     "level": "deployed-service integration",
     "priority": "P0",
     "instructions": "### ACCESS-014 \u2014 Download expiration and retry\n\n- **Feature area:** Entitlements, Library and protected delivery. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P0 \u2014 paid or private content access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated User; Creator/Admin API variants explicitly included. Expired signed URL; still-active entitlement.\n- **Steps:** Use expired URL; request a fresh one and download again.\n- **Expected results:** Expired URL is denied by object storage; new authorized URL permits stored bytes; old expiry does not revoke entitlement.\n- **Required environment / external service:** Test frontend/backend and isolated DigitalOcean Spaces bucket; signed URLs retained only privately by harness.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Pass",
     "variations_expanded": false,
-    "recorded_variations": 2
+    "recorded_variations": 5
   },
   {
     "id": "ACCESS-015",
@@ -4497,9 +4583,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-003 \u2014 Wishlist toggles and removal\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Explore cards and Library Wishlist.\n- **Steps:** Toggle heart on/off; open /app/library/my-wishlist; remove item and reload.\n- **Expected results:** wishlist:v1 reflects local selection and persists reload; no wishlist backend endpoint exists.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Needs clarification",
     "variations_expanded": false,
-    "recorded_variations": 6,
+    "recorded_variations": 7,
     "assessment_scope": "Normal toggle on/off persistence verified for all roles; User/Admin/Guest synthetic User Library removal/reload succeeds. Creator Library denied by intentional route policy; Explore removal works. Keep partial until catalog Creator Library step/access expectation is resolved; no unsupported Creator Library removal pass claimed."
   },
   {
@@ -4509,9 +4595,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-004 \u2014 Wishlist move to cart\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Wished item absent/present in cart variants.\n- **Steps:** Use wishlist move-to-cart action; inspect both lists and reload.\n- **Expected results:** When absent from cart, Move to cart adds one item and removes it from wishlist; when already in cart the browser button is disabled. Reload retains both local lists; no entitlement grant.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Needs clarification",
     "variations_expanded": false,
-    "recorded_variations": 7,
+    "recorded_variations": 8,
     "assessment_scope": "Normal Wishlist move when absent, disabled when already present, both lists after reload/no grant verified for User/Admin/Guest synthetic User. Creator Cart->Wishlist works and Explore sees selection, but reverse Library Wishlist route denied. Keep partial until Creator step expectation is resolved; no new application bug asserted for intentional route policy."
   },
   {
@@ -4521,10 +4607,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CART-005 \u2014 Storage malformed or denied\n\n- **Feature area:** Cart, wishlist and browser checkout. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** User; Guest local collection variants and Creator/Admin Cart routes. Malformed JSON in cart/wishlist storage; storage reads/writes denied by browser separately.\n- **Steps:** Reload collections; add/remove items.\n- **Expected results:** Parse/access exceptions are caught where implemented; expected result needs investigation for valid JSON with wrong shape because no schema validation protects reducers.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 16,
-    "assessment_scope": "Actual browser malformed JSON cart/wishlist across User/Creator/Admin/Guest recovered; valid wrong-shaped JSON across roles fails BUG-050. Actual browser storage read/write denial remains untested; case incomplete."
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 28,
+    "assessment_scope": "Retained actual browser malformed JSON and valid wrong-shaped JSON role matrices plus twelve full-App native Storage SecurityError scenarios complete the specified failure classes. Read/write/access denial exceptions are controlled, not native policy-setting changes. Existing wrong-shape crash BUG050 determines overall Fail; denial guards and in-memory collection operations pass.",
+    "remaining_checks": "Retest wrong-shaped storage schema handling after BUG050 is fixed. Cookie-policy, payment/sessionStorage and cross-device requirements remain in their own cases."
   },
   {
     "id": "CART-006",
@@ -5338,9 +5425,17 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-001 \u2014 Public storefront visibility and identity\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Creator with Published, Draft and Hidden Products; explicit publicEmail separate from login email.\n- **Steps:** Open /app/store/{creatorId}; GET /api/storefronts/{creatorId}.\n- **Expected results:** Only Published Products exposed; public profile includes explicit publicEmail and never falls back to login email; image may be null. Public read requires Creator role to still exist.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 4
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 7,
+    "assessment_scope": "Fully assessed Fail: Published-only publiccatalog inclDraft/Hidden omissions; explicitpublicEmail separatefromlogin and empty/nullnofallback; nullimage/placeholder; actualGuest/User/Creatorpresentation and publicAPIoracles; Creatorroleexistencerequirement separatelyconfirmedSTORE-004. Existing literal-null nameBUG-003 remains currentviaAPIboolean and retainedGuest/CreatorUIevidence. Syntheticprofilefield restoredexactly; no claim of every viewer/data Cartesian permutation.",
+    "scope_audit": {
+      "assessed": [
+        "Fully assessed Fail: Published-only publiccatalog inclDraft/Hidden omissions; explicitpublicEmail separatefromlogin and empty/nullnofallback; nullimage/placeholder; actualGuest/User/Creatorpresentation and publicAPIoracles; Creatorroleexistencerequirement separatelyconfirmedSTORE-004. Existing literal-null nameBUG-003 remains currentviaAPIboolean and retainedGuest/CreatorUIevidence. Syntheticprofilefield restoredexactly; no claim of every viewer/data Cartesian permutation."
+      ],
+      "remaining": [],
+      "outcome": "Fully assessed Fail: Published-only publiccatalog inclDraft/Hidden omissions; explicitpublicEmail separatefromlogin and empty/nullnofallback; nullimage/placeholder; actualGuest/User/Creatorpresentation and publicAPIoracles; Creatorroleexistencerequirement separatelyconfirmedSTORE-004. Existing literal-null nameBUG-003 remains currentviaAPIboolean and retainedGuest/CreatorUIevidence. Syntheticprofilefield restoredexactly; no claim of every viewer/data Cartesian permutation."
+    }
   },
   {
     "id": "STORE-002",
@@ -5411,9 +5506,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-005 \u2014 Public loading and failure recovery\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Delayed/failed storefront GET; two Creator IDs.\n- **Steps:** Navigate between stores; fail second request; restore and reload.\n- **Expected results:** Loading/unavailable states replace failed data; expected result needs investigation for any stale prior-store content. Reload fetches requested Creator.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 6,
+    "assessment_scope": "Retained deployed public navigation recovery; four-role in-place uncached/cached Storefront switch failure/recovery and Creator builder delayed/failed config GET/reload. Isolated fault transport, no cloud outage."
   },
   {
     "id": "STORE-006",
@@ -5482,9 +5578,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-010 \u2014 Save failure and dirty state\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Unsaved config; fail PATCH.\n- **Steps:** Save, inspect failure, restore backend and retry; reload.\n- **Expected results:** Failure does not claim persistent update; draft remains reviewable, successful retry establishes server config.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 8,
+    "assessment_scope": "Retained deployed rejected reorder/dirty/reset and actual local backend legal-theme recovery; current-source held transient503\u2192retry200/reload, old public theme after failure, four-role saved public render. Synthetic fault transport, no cloud outage/durability claim."
   },
   {
     "id": "STORE-011",
@@ -5493,10 +5590,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-011 \u2014 Inline profile field save\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Creator with synthetic display name, tagline, bio, website and publicEmail.\n- **Steps:** Edit each inline field and Save; reload GET profile and public storefront; reset theme independently.\n- **Expected results:** Profile field save invokes profile API immediately and is independent of storefront config Save/Reset; display name splits first token/rest; no avatar upload here.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 5,
-    "coverage_note": "Deployed Creator publicemailnormalUIset/persistence/clear/restorationverified; remaininginlinefieldvariantsoutstanding."
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 19,
+    "coverage_note": "Deployed Creator publicemailnormalUIset/persistence/clear/restorationverified; remaininginlinefieldvariantsoutstanding.",
+    "assessment_scope": "Existing immediate inline-save/profile/public-API persistence evidence retained. New actual inline Bio save persists exactly but public renderer substitutes biography/title fallbacks after reload (BUG075). Business config independence still passes; public presentation determines updated Fail."
   },
   {
     "id": "STORE-012",
@@ -5505,9 +5603,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### STORE-012 \u2014 Inline profile validation\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Blank display name, malformed/oversize publicEmail and oversize text fixtures.\n- **Steps:** Save each invalid field; cancel editor and reload.\n- **Expected results:** Profile API constraints reject invalid data; original server value remains; no login email published as fallback.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 18,
+    "assessment_scope": "Deployed blank display name, first/last101,title101,tagline501,bio1001,website256/257,malformed/321 public-email browser rejection plus actual400/readback; prior six Cancels and invalid\u2192valid stale-error BUG033 retained. All original fields/config preserved."
   },
   {
     "id": "STORE-013",
@@ -5518,7 +5617,16 @@
     "instructions": "### STORE-013 \u2014 Copy and open public link\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner for builder; Guest/all roles for public storefront. Creator with valid storefront; clipboard allowed/denied variants.\n- **Steps:** Click Copy link; paste into isolated text target; click Open storefront.\n- **Expected results:** Link is origin plus /app/store/{id}; copy success feedback resets after delay; denied clipboard returns idle without false copied state; Open uses separate window.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 3
+    "recorded_variations": 8,
+    "scope_audit": {
+      "assessed": [
+        "Retained nativeChrome copyURL/windowopen and feedbackreset. Actualpage controlledNotAllowedErroridle/after-success branches nowpass; origin/pathattempt exact."
+      ],
+      "remaining": [
+        "NativeCopy\u2192pasteintotexttarget notverified incurrentIAB becauseclipboardreaderempty despitecopiedfeedback."
+      ],
+      "outcome": "Partially assessed"
+    }
   },
   {
     "id": "STORE-014",
@@ -5608,7 +5716,8 @@
     "instructions": "### STORE-019 \u2014 Public profile links and optional contact\n\n- **Feature area:** Public storefront and Creator storefront builder. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest for presentation; Creator owner for public profile setup. Explicit publicEmail; website with scheme, schemeless website and synthetic social URL variants.\n- **Steps:** Open Storefront and click website/social/mail links in isolated browser; repeat without publicEmail.\n- **Expected results:** Public email uses mailto only explicit publicEmail; external links open new target with noreferrer. expected result needs investigation for unsafe/schemeless URL handling because profile DTO lacks scheme validation and links use raw values.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 2
+    "recorded_variations": 8,
+    "coverage_notes": "Mac unlocked; normal deployed Storefront and reserved mailto anchor rendered. Native activation rejected by browser-tool security policy; no workaround/mail sent. Temporary contact fully restored and page reload has zero mailto anchors. Existing scheme-policy clarification remains."
   },
   {
     "id": "STORE-020",
@@ -5744,19 +5853,19 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-009 \u2014 Landing loading/error recovery\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Delay/reject Product or landing config load/save independently.\n- **Steps:** Open builder; change config if available; Save failure then retry/reload.\n- **Expected results:** Product loading/unavailable and config error states are distinguished; no saved-success claim on rejected PATCH.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 7,
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 15,
     "scope_audit": {
       "assessed": [
-        "Normal forbidden landing config read/save403 distinguished from successful save. Save keeps draft and inline error but also produces unhandled runtime rejection, new BUG-052. Owner config remains unchanged."
+        "All four types \u00d7 Creator/Admin current-source independent Product/config load and Save failure/recovery matrix.",
+        "Retained actual four-type rejected saves and real successful same-order recovery.",
+        "BUG052 unhandled save rejection remains."
       ],
-      "remaining": [
-        "All-type delayed Product/config load/save and successful recovery/retry matrix remains."
-      ],
-      "outcome": "Partial; specific rejected-Save handling Fail."
+      "remaining": [],
+      "outcome": "Fully assessed Fail; application fixes outside this test pass."
     },
-    "assessment_scope": "Partial; specific rejected-Save handling Fail."
+    "assessment_scope": "Creator/Admin four-type independent Product/config load-delay/failure, rejected Save, draft/no-success and successful retry/reload matrix plus retained actual rejected/successful save evidence. Overall Fail retains unhandled rejection BUG052; local response gates do not establish cloud outage/auth parity."
   },
   {
     "id": "LAND-010",
@@ -5765,9 +5874,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-010 \u2014 Private preview per lifecycle\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Owner Creator with Draft/Hidden/Published Product.\n- **Steps:** Open /app/products/{p}/preview; inspect status strip, content and Back to workspace; reload.\n- **Expected results:** Manager Product/config read renders saved state across statuses; Back navigates editor; preview is not an actual checkout/enrollment operation.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 12
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 56,
+    "assessment_scope": "22 currently supported Creator/Admin/type/status combinations plus4 Hidden reattempts; read/reload/content/pricing and Back tested. Published Membership deliberately unavailable; foreign-Creator profile fallback remains LAND-012."
   },
   {
     "id": "LAND-011",
@@ -5796,9 +5906,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### LAND-012 \u2014 Preview Creator profile fallback\n\n- **Feature area:** Product landing configuration and private preview. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator owner/Admin; Product of each supported type. Owner Creator; Admin viewing another Creator; failed public storefront lookup.\n- **Steps:** Open private preview under each condition.\n- **Expected results:** Owner uses own profile/config, Admin uses public storefront fallback; profile/config load failure yields unavailable/fallback as coded, not invented private profile details.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 13,
+    "assessment_scope": "Actual deployed owner profile branch and four Admin other-owner public fallback previews; eight isolated current-source failure/recovery branches cover all four types with trace-confirmed503/200. Public source name formatting BUG-003 remains separate."
   },
   {
     "id": "LAND-013",
@@ -5928,7 +6039,7 @@
       "outcome": "Fully assessed Needs clarification: refresh revocation and fresh login work acrossall6transitions; immediateaccess-permissionrevocationisnotimplementeduniformlyandthecatalogexplicitlyleavesitsintendedpolicyopen. Measuredbehaviorisrecordedwithoutdeclaringanunsupportedpass/failpolicy."
     },
     "assessment_scope": "Fully assessed Needs clarification: refresh revocation and fresh login work acrossall6transitions; immediateaccess-permissionrevocationisnotimplementeduniformlyandthecatalogexplicitlyleavesitsintendedpolicyopen. Measuredbehaviorisrecordedwithoutdeclaringanunsupportedpass/failpolicy.",
-    "recorded_variations": 8
+    "recorded_variations": 9
   },
   {
     "id": "ADMIN-006",
@@ -6131,9 +6242,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### SALES-001 \u2014 Sales summary period matrix\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. Orders across today/7d/30d/90d, retainedPAID, REFUNDED and FAILED timestamps.\n- **Steps:** Open /app/sales; select each period; GET /api/creator/sales/summary?period={period}.\n- **Expected results:** Retained paid revenue/count based on paidAt, refunds on refundedAt, failures on failedAt; UTC calendar window and equal previous period determine comparison, not local browser midnight.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 12
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 20,
+    "assessment_scope": "Current deployed four-period mobile browser/API/read-only SQL parity and authenticated owner isolation against existing foreign Creator data, plus retained nonzero refund/failure seeded browser cards and actual backend exact UTC current/previous microsecond/day boundaries. No deployed clock or payment claim."
   },
   {
     "id": "SALES-002",
@@ -6142,9 +6254,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### SALES-002 \u2014 Order ledger filters and paging\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. More than6 own orders; product and buyer/order-ID search matches.\n- **Steps:** Search; choose all/paid/failed/refunded/pending status, Product, each period and sort; page forward/back.\n- **Expected results:** UI sends pageSize6; filters reset page0; API filters ledger by createdAt; summary depends only on period, not ledger search/status/Product.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 11,
+    "assessment_scope": "Retained full deployed filter/search/period/sort/reset matrix and actual backend created-vs-paid boundary; fresh20-query API/SQL and native6/2/status/Product/search/amount checks. PageSize6 source/behavior triangulation explicitly not intercepted wire."
   },
   {
     "id": "SALES-003",
@@ -6164,9 +6277,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### SALES-004 \u2014 Ledger sorting and snapshot values\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. Orders with tied/distinct amounts/dates; Product title/price changed after order.\n- **Steps:** Choose newest/oldest/amount-desc/amount-asc; inspect multi-item order.\n- **Expected results:** Order financial values/title snapshots remain historical, unaffected by current Product changes; sorting uses ledger values.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 6
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 8,
+    "assessment_scope": "Deployed Product title/price PATCH, native historical multi-item Order/current Product/Back, unchanged Order/item row hashes and Sales summary. Retained deployed four-sort ledger and actual local tie breakers. Workspace authoring is excluded (BUG-001); current Product price display is tracked separately (BUG-002)."
   },
   {
     "id": "SALES-005",
@@ -6186,9 +6300,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### SALES-006 \u2014 Order detail and access states\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. Single/multi-item paid, refunded and failed orders.\n- **Steps:** Open drawer; inspect buyer, item rows, amount, status and access.\n- **Expected results:** Read-only snapshot items shown; access matches specific purchase item entitlement; singular compatibility Product only for one item; no refund/retry-payment/subscription controls implied.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 7
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 12,
+    "assessment_scope": "Current all-eight API/SQL snapshot/buyer/amount/status and specific purchase-item access mapping plus single/multi serialized compatibility; native four current detail states with retained real Pending/Refunded multi and actual post-edit compatibility cases. No commerce/grant mutation."
   },
   {
     "id": "SALES-007",
@@ -6199,7 +6314,7 @@
     "instructions": "### SALES-007 \u2014 Sales empty versus no results\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. No commerce history, unmatched search, unmatched filters separately.\n- **Steps:** Open Sales/apply refinements and use provided clear controls.\n- **Expected results:** True empty, search miss and filter miss differ; clear resets relevant state; controls appear only when data/refinements justify them.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
     "coverage": "Pass",
     "variations_expanded": true,
-    "recorded_variations": 5
+    "recorded_variations": 6
   },
   {
     "id": "SALES-008",
@@ -6208,9 +6323,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### SALES-008 \u2014 Sales unavailable and recovery\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. Delay first load; summary failure and ledger failure separately.\n- **Steps:** Open Sales; restore service and change period/filter or reload.\n- **Expected results:** Loading and unavailable state appear; current copy about APIs being unconnected is not proof backend is absent; recovered requests populate actual data.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 4,
+    "assessment_scope": "Independent current-source ledger versus summary held503/reload recovery using copied actual synthetic owner reports, plus retained deployed browser/API/database owner baseline/isolation. Faults synthetic; no deliberate cloud outage or payment assertion."
   },
   {
     "id": "SALES-009",
@@ -6219,9 +6335,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### SALES-009 \u2014 Order detail missing and stale\n\n- **Feature area:** Creator Sales and order detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic commerce history; another Creator for isolation. Unknown/foreign order ID; rapid drawer selection switch; detail request failure.\n- **Steps:** Open ?order={id} and switch to another; inspect drawer.\n- **Expected results:** No foreign/stale order details; exact empty/error feedback needs investigation where currentOrder is absent without distinct detail-error rendering.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 7,
+    "assessment_scope": "Actual deployed own200 and foreign/unknown404, current-source normal ledger delayed/out-of-order200,503,unknown/foreign404/reload and valid recovery. BUG072 closes current valid drawer; missing/pending feedback policy separately Needs clarification. Fault transport synthetic."
   },
   {
     "id": "SALES-010",
@@ -6316,9 +6433,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CUSTOM-004 \u2014 Customer list empty and recovery\n\n- **Feature area:** Creator Customers and customer detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic buyers and entitlement holders. No relationships, unmatched search/filter, delayed/error response variants.\n- **Steps:** Open Customers; clear search/filter; restore service/reload.\n- **Expected results:** Distinct empty/no-match/loading/unavailable states; no fabricated customer rows.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 9
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 11,
+    "assessment_scope": "Fresh deployed unmatched search/filter/clear with four real rows plus current-source truezero/delay/unavailable/restored-populated matrix. Synthetic failures and sanitized fixture rows, no cloud outage."
   },
   {
     "id": "CUSTOM-005",
@@ -6382,9 +6500,9 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### CUSTOM-010 \u2014 Customer detail loading and ID change\n\n- **Feature area:** Creator Customers and customer detail. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with own synthetic buyers and entitlement holders. Delayed next-customer response; unknown ID and request failure.\n- **Steps:** Navigate rapidly between customers; reload target.\n- **Expected results:** expected result needs investigation for stale detail because component renders stored customer until loading/error gates clear; no prior customer should be presumed requested target.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 4,
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 8,
     "scope_audit": {
       "assessed": [
         "Own synthetic customer200 renders normally; foreign existing customer404 exposes no prior detail but incorrectly says APIs are not connected, including reload. Returning to own customer recovers. New BUG-053."
@@ -6394,7 +6512,7 @@
       ],
       "outcome": "Partial; specific404 error-copy Fail."
     },
-    "assessment_scope": "Partial; specific404 error-copy Fail."
+    "assessment_scope": "Retained deployed ordinary target/reload plus current-source held next-ID, out-of-order old/new200, fresh loading,503,unknown404/reload and recovery. BUG071 wrong target confirmed; BUG053 existing copy; controlled transport, no deployed latency/security claim."
   },
   {
     "id": "CUSTOM-011",
@@ -6425,10 +6543,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-001 \u2014 Analytics periods and metric toggle\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. 7d/30d/90d fixture events straddling UTC boundaries.\n- **Steps:** Open /app/analytics; select each period; toggle Revenue/Orders; GET /api/creator/analytics/overview?period={period}.\n- **Expected results:** Metrics/chart update from period response; toggle changes displayed series, not persisted data; UTC boundaries match reporting window.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 11,
-    "coverage_note": "Additional actual deployed browser/API/cloud database evidence recorded20October; remaining acceptance variants not inferred."
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 14,
+    "coverage_note": "Completed24October using current deployed browser/API/independent SQL and retained actual UTC edge/denominator backend matrices; controlled clock boundaries remain explicitly local.",
+    "assessment_scope": "All three current deployed periods and both native chart toggles, actual response equality/scoped SQL fingerprint immutability, plus retained exact UTC nonUTC-clock edge tests."
   },
   {
     "id": "ANALYTICS-002",
@@ -6437,10 +6556,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-002 \u2014 Analytics bucket construction\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Known daily amounts including days withzero;90day fixture.\n- **Steps:** Inspect performance and customer-growth chart/response.\n- **Expected results:** 7/30 use daily buckets;90days use13 buckets (twelve7day plusone6day); zero buckets present and sums match period metrics.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8,
-    "coverage_note": "Additional actual deployed browser/API/cloud database evidence recorded20October; remaining acceptance variants not inferred."
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 11,
+    "coverage_note": "Completed24October using current deployed browser/API/independent SQL and retained actual UTC edge/denominator backend matrices; controlled clock boundaries remain explicitly local.",
+    "assessment_scope": "Every current serialized daily/weekly bucket and sum equals independent SQL; customer/payment shared series equal; native chart rendering and retained complete tooltip/zero/split-edge backend cases."
   },
   {
     "id": "ANALYTICS-003",
@@ -6449,10 +6569,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-003 \u2014 Analytics totals and deltas\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Retained paid, refunds, failed payments and new/existing customers in current/previous window.\n- **Steps:** Read overview response and cards.\n- **Expected results:** Revenue/orders use current retained paid; customer total is lifetime relationships while growth/delta uses period additions; zero previous denominator handled without NaN/infinity.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 9,
-    "coverage_note": "Additional actual deployed browser/API/cloud database evidence recorded20October; remaining acceptance variants not inferred."
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 12,
+    "coverage_note": "Completed24October using current deployed browser/API/independent SQL and retained actual UTC edge/denominator backend matrices; controlled clock boundaries remain explicitly local.",
+    "assessment_scope": "Current/previous paid totals, lifetime versus period relationships and growth/deltas reconcile with SQL/cards; retained failed-only, revoked/lifetime, nonzero/equal/zero previous and refunded semantics."
   },
   {
     "id": "ANALYTICS-004",
@@ -6461,10 +6582,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-004 \u2014 Product ranking\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Multi-item orders, refund, tied revenue and no-sales products.\n- **Steps:** Inspect Product performance list and API.\n- **Expected results:** Retained paid item revenue, distinct ordercount and revenue share computed; refunds excluded; shares rounded toone decimal, not duplicated order revenue per item.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 5,
-    "coverage_note": "Additional actual deployed browser/API/cloud database evidence recorded20October; remaining acceptance variants not inferred."
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 8,
+    "coverage_note": "Completed24October; no new cloud commerce mutation.",
+    "assessment_scope": "Current deployed three-period browser/API independent line-item sums, distinct-order counts, historical names, shares, rankings and no-sales exclusion; retained actual tied/refunded backend fixtures and prior deployed nontrivial shares."
   },
   {
     "id": "ANALYTICS-005",
@@ -6473,10 +6595,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-005 \u2014 Payment health\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Paid+refunded denominator fixture, failed events and no orders variant.\n- **Steps:** Inspect payment health cards/response.\n- **Expected results:** Refund rate refunded / (paid + refunded) \u00d7 100 with safezero; failedcount uses supported events; no payment provider operational telemetry inferred.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8,
-    "coverage_note": "Additional actual deployed browser/API/cloud database evidence recorded20October; remaining acceptance variants not inferred."
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 11,
+    "coverage_note": "Completed24October; current synthetic-owner failures/refunds zero, retained nonzero variants explicitly scoped.",
+    "assessment_scope": "Current deployed three-period browser/API independent paid/refunded/failed event counts and series sums; retained actual nonzero refund denominator/failure and no-order safe-zero cases. Reporting only, no provider operation claim."
   },
   {
     "id": "ANALYTICS-006",
@@ -6497,10 +6620,11 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-007 \u2014 Analytics loading, empty and failure\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Delayed initial response, zero-history response and failed response variants.\n- **Steps:** Open Analytics, change period and restore service/reload.\n- **Expected results:** Loading/empty/unavailable presentation distinct; valid zero history renders honest zeros; failed response does not become mock data.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 5,
-    "coverage_note": "Additional actual deployed browser/API/cloud database evidence recorded20October; remaining acceptance variants not inferred."
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 8,
+    "coverage_note": "Additional actual deployed browser/API/cloud database evidence recorded20October; remaining acceptance variants not inferred.",
+    "assessment_scope": "Actual empty-seller deployed three-period browser/API/SQL baseline and current-source local503\u2192real-empty-copy reload recovery, plus retained loading/populated recovery."
   },
   {
     "id": "ANALYTICS-008",
@@ -6520,9 +6644,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-009 \u2014 Dashboard greeting and metrics\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Creator with/without firstName; morning/afternoon/evening browser clock fixture.\n- **Steps:** Open /app; inspect greeting and metric links.\n- **Expected results:** Greeting reflects local day part/name fallback; supported30day metrics link Sales/Customers/Analytics; active Membership unavailable.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 15,
+    "assessment_scope": "Deployed ready-metric native links and noninteractive unavailable Membership card plus12 current-source local-clock/name fixtures covering00/11/12/17/18/23 and omitted-firstName fallback. No cloud profile/time modification."
   },
   {
     "id": "ANALYTICS-010",
@@ -6531,9 +6656,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-010 \u2014 Dashboard top products and activity\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. More thanfive selling Products andten recent order/Product events.\n- **Steps:** GET /api/creator/dashboard/summary and inspect dashboard.\n- **Expected results:** Topfive revenue ranking with bar relative to leader; tenlatest activity items; order activity reflects current state and Product update events.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 2
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 4,
+    "assessment_scope": "Actual deployed >five-selling fixture verifies topfive cutoff/leader-relative bars and ten newest mixed order/Product activity against SQL; six direct synthetic read-model Orders retained, no provider/checkout/entitlement claim."
   },
   {
     "id": "ANALYTICS-011",
@@ -6542,9 +6668,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-011 \u2014 Dashboard needs-attention links\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Failed payments, drafts and published missing-image products;one versus multiple relevant Products.\n- **Steps:** Activate each attention item.\n- **Expected results:** Links route to filtered/appropriate management destination;one applicable Product can link editor, multiple to list; no unsupported fix action implied.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 6
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 9,
+    "assessment_scope": "Actual deployed failed-payment action and single/multiple Draft/missing-image count branches with native destinations; bounded fixture metadata/status changes fully restored. Single-image canonical editor blank repeats BUG001, so fullFail rather than remaining partial."
   },
   {
     "id": "ANALYTICS-012",
@@ -6553,9 +6680,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-012 \u2014 Dashboard loading/unavailable/empty\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Delay/fail summary then return empty real report.\n- **Steps:** Open /app; restore/reload.\n- **Expected results:** Metric loading states first, unavailable dashes on failure and empty activity/product copy; no invented business figures.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 1
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 4,
+    "assessment_scope": "Actual deployed genuine no-seller-history Dashboard/API/SQL and current-source fourUnavailable\u2192real-empty-copy reload recovery, plus retained four loading skeletons."
   },
   {
     "id": "ANALYTICS-013",
@@ -6564,9 +6692,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### ANALYTICS-013 \u2014 Dashboard scope and role\n\n- **Feature area:** Creator Analytics and Dashboard. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 core user flow. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Creator with deterministic synthetic business history. Another Creator with different history; Guest/User/Admin API sessions.\n- **Steps:** GET /api/creator/dashboard/summary, adding forged creatorId; open respective role home.\n- **Expected results:** Current Creator data only; nonCreator API role denied; browser home uses own role-specific route.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 6
+    "coverage": "Pass",
+    "variations_expanded": true,
+    "recorded_variations": 12,
+    "assessment_scope": "Current deployed own/forged Creator scope and Guest/User/Admin fresh API denials; real native fresh-role homes for all four roles, exact Creator restoration; retained distinct actual two-Creator history matrix. Old-token profile divergence separately ADMIN005 NeedsClarification."
   },
   {
     "id": "ANALYTICS-014",
@@ -6586,10 +6715,11 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### LOCAL-001 \u2014 Product notifications lifecycle\n\n- **Feature area:** Local notifications, fixture displays and absent client capabilities. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 honest state presentation. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Authenticated Creator; synthetic Product actions. Fresh Redux notification list.\n- **Steps:** Create Product, update shared fields, add image, create/update section and lesson; open bell after each successful action; reload.\n- **Expected results:** Fulfilled Product listeners append unread success notifications; reload clears session-only list; no notification backend persistence or delivery subscription.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 8,
-    "assessment_scope": "Actual current store/listeners/thunks/dropdown with controlled real browserXHR. Complete current menu contract/failed-action notification contract for LOCAL-002/003; LOCAL-001 normal backend/storage/authoring journey remains. See BUG-045 and existing BUG-027 extension."
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 19,
+    "assessment_scope": "Actual deployed normal Creator Course/shared-fields/section/lesson actions generate8visible successes; image native upload fails with no false success; Preview reload clears list and persists real content. Contrast fails; source/control read-flag scope explicit.",
+    "coverage_notes": "9newPass/2Fail. Course retainedprivate, API/SQL persistence checked, no commerce/access changes. Builder lacks bell, so cumulative inspection uses normal Preview; per-action opening and deployed successful image-notice remain unexecuted after measured workflow failure."
   },
   {
     "id": "LOCAL-002",
@@ -6794,9 +6924,11 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-007 \u2014 Shared tab semantics\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Settings/Product tabs; Customer detail tabs separately.\n- **Steps:** Activate each by keyboard; inspect tablist/tab/tabpanel relationships; try Left/Right/Home/End.\n- **Expected results:** Click/Enter activation and selected state present; expected result needs investigation for complete roving focus/arrow support and shared-tab aria-controls/label linkage absent in implementation.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 11
+    "coverage": "Needs clarification",
+    "variations_expanded": true,
+    "recorded_variations": 19,
+    "assessment_scope": "Settings, Product and Customer tab families now have actual keyboard activation and semantic-link observations. Retained deployed Creator Settings/Customer coverage is complemented by local User/Admin full-App profiles and ProductForm draft-boundary tests. Settings missing reciprocal linkage and all families missing arrow/roving interaction are observed; acceptance policy is undefined. No deployed editor recovery/auth permission or screen-reader certification claim.",
+    "remaining_checks": "No unobserved interaction-family requirement remains for this case. Define expected full arrow/roving and Settings linkage policy, then retest any changes; other UX cases retain their own responsive/focus requirements."
   },
   {
     "id": "UX-008",
@@ -6845,7 +6977,8 @@
     "instructions": "### UX-010 \u2014 Customers responsive list/detail\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Long synthetic name/email, multi-item purchases and access.\n- **Steps:** Open list/detail tabs at375/768/1440px and200%zoom.\n- **Expected results:** Mobile cards preserve identity/status/products/spend/activity; detail tabs/content remain navigable. Overflow and reading order require investigation where CSS alone cannot establish accessibility.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 11
+    "recorded_variations": 11,
+    "coverage_notes": "NativeChromezoomprerequisiterechecked28Oct. NoChromeconnector; nativeChromeinterruptedwhileuseractivelyusingexistingwindow. Noverifiedtemporarytestwindow/appnavigation/200%zoom; otherresponsiveevidenceretained."
   },
   {
     "id": "UX-011",
@@ -6884,9 +7017,11 @@
     "level": "browser E2E",
     "priority": "P2",
     "instructions": "### UX-013 \u2014 Storefront and landing responsive builders\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Long public biography/marketing text and gallery.\n- **Steps:** At widths around640(Storefront) and768(landing), open customization controls, edit, save and preview.\n- **Expected results:** Controls move to Drawer at coded breakpoints; public preview remains single-column usable; Save/Reset reachable without overlap.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "recorded_variations": 4
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "recorded_variations": 13,
+    "assessment_scope": "Real Storefront375/640/641/1440 and gallery-backed Landing375/768/769/1440 local edit/Reset/persisted Save/preview/reload exercised with measured dimensions and long copy. Drawer boundaries640/768 verified. Layout/operations pass; public biography ignored BUG075 and retained media loading BUG069 prevent complete preview success.",
+    "remaining_checks": "Retest actual public long-biography and successful gallery rendering after BUG075/069 fixes. 200%zoom is not a requirement of this particular case and remains unexecuted in the cases that name it."
   },
   {
     "id": "UX-014",
@@ -6897,7 +7032,8 @@
     "instructions": "### UX-014 \u2014 Workspace responsive authoring\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Course,Download,Consultation,Membership drafts.\n- **Steps:** At375/768/1440px switch tabs, add nested content, edit price/readiness, open uploader and leave.\n- **Expected results:** Focused editor/navigation adapts without hiding required controls; keyboard path can reach active editor and save status. Drag-only alternatives need investigation where ordering lacks buttons.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 46,
+    "coverage_notes": "Creator/Adminfreshworkspacesnowspanall4types; Adminmeasured375/768/1440Mediawith8narrowFail/4desktopPass plusnormalCourseSection/Downloadrealfile/MembershipPostpersistence. Consultationautosavefailsbothroles. AdminselfMembershipcreationdeniedbutproperCreatorownerpathworks. Originalremainspartial:fulleachaction/width/keyboard/nestededitorcoverageandnormalreopenunfinished. TemporaryAdminrestoredCreatorwithexactprofile."
   },
   {
     "id": "UX-015",
@@ -6919,7 +7055,7 @@
     "instructions": "### UX-016 \u2014 Form names, errors and focus\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Signup/login/onboarding/Settings/Product/native Membership/Contact forms.\n- **Steps:** Navigate only by keyboard; submit invalid data; inspect label association/error descriptions and announced status; correct inputs.\n- **Expected results:** expected result needs investigation for unlabeled/custom controls and broken aria-describedby references; existing visible validation must remain operable without pointer.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 7,
+    "recorded_variations": 8,
     "coverage_note": "Deployed three-role native disabled semantics failBUG062; remaining formnames/errors/focus variants unchanged."
   },
   {
@@ -6931,7 +7067,8 @@
     "instructions": "### UX-017 \u2014 Status announcement and noncolor indicators\n\n- **Feature area:** Responsive layout, keyboard and accessibility. **Test level:** browser E2E. **Implementation state:** partial. **Priority:** P2 \u2014 usability and access. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Guest, User, Creator and Admin according to route permissions. Load/error/save/status fixtures across Products, reports, Library and checkout.\n- **Steps:** Trigger loading, error, success and disabled action; inspect accessibility tree and reduced-motion preference.\n- **Expected results:** States with role=alert/status or aria-live announce as coded; statuses also have text. Contrast/reduced-motion/announcement gaps need investigation, not an assumed accessibility pass.\n- **Required environment / external service:** Frontend/browser test environment with keyboard, screen-reader/accessible-tree inspection and viewport/zoom controls; backend fixtures where page requires data.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 2,
+    "coverage_notes": "Added actual deployed freshCourse Product status aria-live=polite, visible nestedSaving/Saved, readinesslive and emptymediarole=status. DOM-only verification; screen-readerannouncements/reducedmotion/otherfamilies remain."
   },
   {
     "id": "UX-018",
@@ -6964,7 +7101,7 @@
     "instructions": "### ENV-002 \u2014 Documentation proxy path boundary\n\n- **Feature area:** Deployed dependencies, configuration and persistence boundaries. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 deployment-dependent availability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Synthetic authorized role fixtures; infrastructure harness only where explicitly stated. Frontend hosting with checked-in redirect rules.\n- **Steps:** Open /docs/{syntheticPath} in isolated deployment.\n- **Expected results:** expected result needs investigation: catch-all SPA rule precedes docs proxy and proxy target is placeholder; do not assume deployed documentation navigation works from app link.\n- **Required environment / external service:** Already-provisioned isolated deployment matching repository configuration; no deployment-specific addresses or secrets in case data.\n",
     "coverage": "Partially assessed",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 2
   },
   {
     "id": "ENV-003",
@@ -7014,7 +7151,7 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### ENV-005 \u2014 Mail delivery success and provider rejection\n\n- **Feature area:** Deployed dependencies, configuration and persistence boundaries. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 deployment-dependent availability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Synthetic authorized role fixtures; infrastructure harness only where explicitly stated. Fresh registration fixture; SendGrid test mailbox; controlled provider2xx/non2xx/IOException.\n- **Steps:** Register under each provider response; inspect registration response and test mailbox, then attempt verification/re-registration.\n- **Expected results:** 2xx delivery request creates usable verification message; failures throw email error. expected result needs investigation for registration persistence/rollback after send failure; no inbox delivery assumed solely from API2xx.\n- **Required environment / external service:** Already-provisioned isolated deployment matching repository configuration; no deployment-specific addresses or secrets in case data.\n",
-    "coverage": "Not run",
+    "coverage": "Partially assessed",
     "variations_expanded": false,
     "execution_blocker": {
       "status": "Blocked",
@@ -7023,7 +7160,8 @@
       "recorded_date": "2026-10-21",
       "does_not_block_independent_variants": true
     },
-    "recorded_variations": 1
+    "recorded_variations": 18,
+    "coverage_notes": "ControlledproviderbranchesnowexecutedwithfreshactualSpringMVC/security/JPA/H2andunmockedEmailService:200/202/299accept;199/300/400/401/429/500/IOExceptionregistration400. Disableduser/tokenpersistandretry401noresend(BUG080),policyNC. IsolatedDBmanualverify/loginpositivecontrols; no liveSendGrid/mailbox/deployedPGclaim. Realinboxflowremainsuserblocked."
   },
   {
     "id": "ENV-006",
@@ -7032,9 +7170,9 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### ENV-006 \u2014 Object-store accessibility and CDN behavior\n\n- **Feature area:** Deployed dependencies, configuration and persistence boundaries. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 deployment-dependent availability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Synthetic authorized role fixtures; infrastructure harness only where explicitly stated. Uploaded thumbnail/gallery/promo and protected Download file in isolated storage.\n- **Steps:** Read public media URLs and authorized signed Download URL; attempt unsigned Download URL only for disposable fixture.\n- **Expected results:** Public presentation media must be retrievable by browser; expected result needs investigation for bucket/CDN privacy because suppressing Download URLs in API does not establish object ACL. No real private object is used.\n- **Required environment / external service:** Already-provisioned isolated deployment matching repository configuration; no deployment-specific addresses or secrets in case data.\n",
-    "coverage": "Partially assessed",
+    "coverage": "Fail",
     "variations_expanded": false,
-    "recorded_variations": 1
+    "recorded_variations": 3
   },
   {
     "id": "ENV-007",
@@ -7055,10 +7193,11 @@
     "level": "deployed-service integration",
     "priority": "P1",
     "instructions": "### ENV-008 \u2014 Persistence constraints through supported mutations\n\n- **Feature area:** Deployed dependencies, configuration and persistence boundaries. **Test level:** deployed-service integration. **Implementation state:** server-backed. **Priority:** P1 \u2014 deployment-dependent availability. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Synthetic authorized role fixtures; infrastructure harness only where explicitly stated. Isolated PostgreSQL schema with migrations applied; concurrent equivalent role/entitlement/order/config mutations.\n- **Steps:** Repeat API operations that create same logical role, grant, idempotent order, storefront/landing config and gallery ordering; read via APIs.\n- **Expected results:** Single-role, user/Product entitlement, buyer/key order, unique config and media-order constraints preserve identity; constraint conflicts must not yield duplicate logical records. API-visible conflict mapping needs investigation under races.\n- **Required environment / external service:** Already-provisioned isolated deployment matching repository configuration; no deployment-specific addresses or secrets in case data.\n",
-    "coverage": "Partially assessed",
-    "variations_expanded": false,
-    "assessment_scope": "Deployed synthetic-row PostgreSQL constraints for concurrent same-role, first grant, first Storefront/Landing config and repeat configs assessed. First writes can return raw unique-constraint400; one identity remains and sequential retry succeeds. Order race blocked by deployed commerce503; gallery-order race and strict isolated-schema execution untested.",
-    "recorded_variations": 14
+    "coverage": "Fail",
+    "variations_expanded": true,
+    "assessment_scope": "Deployed synthetic-row same-role/grant/config races retained; gallery no-op and valid-swap request pairs now measured across four types with client overlap and exact API/fullmedia-row preservation. Valid swaps failBUG040. Commerce idempotency race still503-blocked; strict isolated-schema execution untested.",
+    "recorded_variations": 29,
+    "coverage_notes": "All original logical families now exercised via real HTTP against separate PostgreSQL15.19 with all40 actual migrations: role, free grant, buyer/key Order, Storefront/Landing config and gallery order. Three independent fresh-fixture concurrent pairs per family, observed overlap and API readbacks plus SQL uniqueness. No duplicate identity in21pairs. Orders/no-op order pass; other first-write races return one success/one400 unique violation, mapping NC. Valid gallery swaps both400 and retain old order, existing BUG-040 Fail. Local-only configuration/provider-boundary scope explicit; no cloud17 parity or binary claim. JVM and private cluster stopped."
   },
   {
     "id": "ENV-009",
@@ -7221,8 +7360,10 @@
     "level": "browser E2E",
     "priority": "P1",
     "instructions": "### JOURNEY-004 \u2014 Edit after historical purchase\n\n- **Feature area:** Cross-feature journeys and recovery. **Test level:** browser E2E. **Implementation state:** server-backed. **Priority:** P1 \u2014 end-to-end consistency. **Status:** Proposed; awaiting execution.\n- **Role / starting state / prerequisites / test data:** Separate synthetic Guest/User, Creator owner, second Creator and Admin fixtures. Product with paid Order and Creator reporting.\n- **Steps:** Change Product title/price/thumbnail; read Order and reports; new buyer starts checkout.\n- **Expected results:** Old immutable financial snapshot remains; new checkout uses current server price; content/marketing surfaces use current Product metadata.\n- **Required environment / external service:** Test frontend and backend with persistent test data; no external service unless specified.\n",
-    "coverage": "Not run",
-    "variations_expanded": false
+    "coverage": "Partially assessed",
+    "variations_expanded": false,
+    "assessment_scope": "Deployed title/price edits preserved financial snapshots while the Product overview showed the current title. Thumbnail edits and new buyer checkout using the current server price remain untested. No payment was processed.",
+    "recorded_variations": 1
   },
   {
     "id": "JOURNEY-005",
