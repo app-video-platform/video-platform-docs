@@ -1,5 +1,215 @@
 # Execution summary
 
+## 1 November deployed responsive primary and authoring actions
+
+Added20deployed checks:19Pass/1Fail over public/auth/marketing/workspaceactions at requiredwidths. Reproduced newBUG091 staleautocompleteEnter; directSubmit recovers. ThreeprivateDrafts retained, Creator/viewport restored.445/493originalsassessed;48incomplete, acceptance gates remain. 493 originals: 5 not started / 43 partial / 445 fully assessed (287 Pass / 125 Fail / 33 Needs clarification); 48 incomplete. 5129 historical / 5025 latest checks: {'Pass': 4091, 'Fail': 694, 'Needs clarification': 205, 'Blocked': 35}.
+
+Three new synthetic privateDrafts retained as authorized:CourseEUR13/two sections/oneArticle;DownloadEUR8/oneemptygroup/0files;MembershipEUR5monthly/oneDraftPost. No publication, real upload, deletion, payments, grants, mail, profile/role/configuration changes. Creator restored and viewport reset; tab22 retained. No implementation/deployment changes.
+
+## 1 November checkout status and disabled-action checks
+
+Added5Pass checkout client checks using declared nonfinancial responses. Native disabled repeat guard and textual polite status/retry/cleared-cart transitions verified.445/493 assessed;48 incomplete. UX014/UX015 supporting checks remain runnable; UX017 now needs native assistive/preference verification. 493 originals: 5 not started / 43 partial / 445 fully assessed (287 Pass / 125 Fail / 33 Needs clarification); 48 incomplete. 5109 historical / 5005 latest checks: {'Pass': 4072, 'Fail': 693, 'Needs clarification': 205, 'Blocked': 35}.
+
+Isolated tab21 closed and webpack session49306 stopped with terminal0. No cloud account, role, order, grant, payment, object or configuration mutation.
+
+## 1 November report and Library status semantics
+
+Added9status checks:6DOMPass/3Needsclarification over18localbrowserstates. Report/Library semantics measured with held503/200fixtures, notspeech/businessintegration.445/493 assessed;48incomplete. Localserver stopped; deployedCreator intact. Checkout/status andresponsive checks remain runnable. 493 originals: 5 not started / 43 partial / 445 fully assessed (287 Pass / 125 Fail / 33 Needs clarification); 48 incomplete. 5104 historical / 5000 latest checks: {'Pass': 4067, 'Fail': 693, 'Needs clarification': 205, 'Blocked': 35}.
+
+Read-only webpack fixture session10610 gracefully stopped withterminal0; localtesttab20closed. Deployed originalCreator confirmed and tab3retained, no role change. No backend/DB/export, mail, payment, object operation, configuration or implementation change.
+
+## 1 November Product preview media alternatives and availability gate
+
+Added4namingPass checks and1playable-mediaBlocked. ExistingBUG069 reconfirmed; labels alone do not prove delivery/accessibility.445/493 assessed;48incomplete,45gated/3runnable. No appdata/configuration changes. 493 originals: 5 not started / 43 partial / 445 fully assessed (287 Pass / 125 Fail / 33 Needs clarification); 48 incomplete. 5095 historical / 4991 latest checks: {'Pass': 4061, 'Fail': 693, 'Needs clarification': 202, 'Blocked': 35}.
+
+No Product/profile/media/order/grant/role change. Browser session normalCreator; currenttab3onlyviews an existing privatepreview. No file chooser, native confirmation, Admin restoration or local server pending.
+
+## 31 October signed-in marketing pointer and keyboard cohorts
+
+Added15 deployed signed-role marketing checks:12Pass/3Fail. Allrolesnowhavepresentation/focus/resize evidence; BUG047confirmedwithcurrentCSSOM.445/493 assessed;48incomplete,44gated/4runnable. Creatorprofileexactlyrestored, Userunchanged; viewportreset andliveeditor18retained. 493 originals: 5 not started / 43 partial / 445 fully assessed (287 Pass / 125 Fail / 33 Needs clarification); 48 incomplete. 5090 historical / 4986 latest checks: {'Pass': 4057, 'Fail': 693, 'Needs clarification': 202, 'Blocked': 34}.
+
+Viewport reset. PrimarysyntheticCreator restored usingnormalrolecontrol, fullbrowserreloadCreator/app and exactfullprofileAPIcomparison. SeparateUser verifiedUSER. No Product/order/grant/profile/collection/provider mutation. Dashboardtab19and recoveredliveMembershipeditor18retained; noAdmincleanup/nativeconfirmation/localservice pending.
+
+## 31 October native Video and Resource keyboard correction checks
+
+Added4 native keyboard checks:2Pass/2Fail. Title error links/correction work; file selection loss repeatsBUG055. Exact aggregate/profile unchanged afterCancel.445/493 assessed;48 incomplete.43remaining cases now gated and5still have runnable supporting work; no role/publication changes. 493 originals: 5 not started / 43 partial / 445 fully assessed (287 Pass / 125 Fail / 33 Needs clarification); 48 incomplete. 5075 historical / 4971 latest checks: {'Pass': 4045, 'Fail': 690, 'Needs clarification': 202, 'Blocked': 34}.
+
+Both unsaved Video/Resource forms cancelled by keyboard; exact canonical aggregate unchanged, only existingDraftPost remains. Complete Creator profile matches before-testbaseline. Parent remainsprivateDraft; live tab18retained. Course/privatePost fixtures from preceding batch remain as authorized. No deletion, role mutation, native dialog or local service pending.
+
+## 31 October Settings and native workspace keyboard validation
+
+Added4 actual deployed keyboard checks:3Pass/1Fail. Settings repeatsBUG008; Course Readiness and Post correction/persistence pass.445/493 assessed;48 incomplete. Complete profile unchanged; two new privateDraft fixtures and one Draft Post retained. No publication or role changes. 493 originals: 5 not started / 43 partial / 445 fully assessed (287 Pass / 125 Fail / 33 Needs clarification); 48 incomplete. 5071 historical / 4967 latest checks: {'Pass': 4043, 'Fail': 688, 'Needs clarification': 202, 'Blocked': 34}.
+
+Settings local edits cleared by reload; complete persisted Creator profile matches private baseline. Course title restored and canonical DRAFT verified. New Membership and its single Post retained as private Draft test fixtures, as authorized persistent synthetic data. Live original editor tab18retained to avoid known saved-editor reload blocker; no pending deletion, role restoration, publication or native confirmation. No local server started.
+
+## 31 October deployed Contact and authentication keyboard checks
+
+Added7 deployed keyboard checks:4Pass/3Fail. NewBUG089 unassociated login errors andBUG090 unnamed visibility buttons; existingBUG034 confirmed deployed.445/493 assessed;48 incomplete. Creator restored, form values cleared and no messages/accounts/reset requests sent. 493 originals: 5 not started / 43 partial / 445 fully assessed (287 Pass / 125 Fail / 33 Needs clarification); 48 incomplete. 5067 historical / 4963 latest checks: {'Pass': 4040, 'Fail': 687, 'Needs clarification': 202, 'Blocked': 34}.
+
+Contact reload verified all values empty and agreementunchecked. Signup/recovery temporary values discarded by navigation; no valid registration, reset request or agreement activation. Normal original Creator password sign-in and cold reload restore Creator/app. Tab17retained; no role mutations, deployed data changes or local services.
+
+## 31 October Download file recovery and complete readiness-case audit
+
+Completed real persisted Download-file correction and audited all8named validation branches. PROD033 now fully assessedFail because BUG060 loses a pending correction on tab switch; positive file recoveryPass.445/493 assessed;48 incomplete (42gated,6withrunnable supporting checks). No implementation/cloud changes; local services stopped. 493 originals: 5 not started / 43 partial / 445 fully assessed (287 Pass / 125 Fail / 33 Needs clarification); 48 incomplete. 5060 historical / 4956 latest checks: {'Pass': 4036, 'Fail': 684, 'Needs clarification': 202, 'Blocked': 34}.
+
+Backend session91260 terminal0; application context and PostgreSQL stopped. Webpack62277 requested graceful stop and terminal verified separately. Storage73867 stopped viaCtrl-C(exit130 expected). Local tab15 closed. Deployed tab16 at original Creator /app retained; no cloud data, account roles, configuration or implementation changed.
+
+## 31 October persisted nested correction and actual publication retries
+
+Completed2 actual persisted nested correction/publication journeys and reconfirmed fast-tab autosave loss BUG060.2Pass/1Fail added.444/493 assessed;49 incomplete. Real local backend/DB stopped; no deployed changes or implementation fixes. 493 originals: 5 not started / 44 partial / 444 fully assessed (287 Pass / 124 Fail / 33 Needs clarification); 49 incomplete. 5059 historical / 4955 latest checks: {'Pass': 4035, 'Fail': 684, 'Needs clarification': 202, 'Blocked': 34}.
+
+Webpack session4016 terminal0; backend session7553 terminal1 from final metrics query only, application context closed and PostgreSQL stopped. Separate read-only final database audit terminal0 verifies2Published Products,1synthetic User,40migrations,0orders and stops cluster. Local tabs12/13 closed; fresh deployed tab14 at original Creator /app retained. No deployed mutation, provider request or pending role/confirmation.
+
+## 31 October normal publication field correction and retry
+
+Added3 passing actual-form correction/retry checks in isolated controlled-response harness. Changed payloads and Published state verified; no deployed data or implementation changes.444/493 fully assessed;49 incomplete. Local server stopped, Creator session retained. 493 originals: 5 not started / 44 partial / 444 fully assessed (287 Pass / 124 Fail / 33 Needs clarification); 49 incomplete. 5056 historical / 4952 latest checks: {'Pass': 4033, 'Fail': 683, 'Needs clarification': 202, 'Blocked': 34}.
+
+Local test tab9 closed and webpack server sessions83666 and38074 gracefully stopped with terminal exit0. Deployed account and data untouched. Fresh deployed tab10 shows original Synthetic QA Creator /CREATOR at/app and is retained. No pending confirmation, role restoration or local server.
+
+## 31 October Admin Library primary navigation at four widths
+
+Completed20 actual Admin Library Open actions, recorded as3Pass/2Needs clarification. Nonpublic targets show availability guard; no invented access success. All current User/Admin Library Open controls now covered atfourwidths.444/493 assessed;49 incomplete. Creator profile restored exactly, User unchanged. 493 originals: 5 not started / 44 partial / 444 fully assessed (287 Pass / 124 Fail / 33 Needs clarification); 49 incomplete. 5053 historical / 4949 latest checks: {'Pass': 4030, 'Fail': 683, 'Needs clarification': 202, 'Blocked': 34}.
+
+Normal dev-role control restored Creator; full browser reload and separate normal API login verify original complete Creator profile exactly. Separate User profile200 confirms USER unchanged. Viewport reset; browser tab8 Creator /app retained. No business data, grants, calendar, checkout, storage or collection mutation. No native confirmation or local process pending.
+
+## 31 October User Library primary navigation at four widths
+
+Completed12 actual deployed User Library Open actions, recorded as3 groupedPass checks. All target Product headings match; original Creator session restored after cold reload.444/493 fully assessed;49 incomplete. No implementation changes. 493 originals: 5 not started / 44 partial / 444 fully assessed (287 Pass / 124 Fail / 33 Needs clarification); 49 incomplete. 5048 historical / 4944 latest checks: {'Pass': 4027, 'Fail': 683, 'Needs clarification': 200, 'Blocked': 34}.
+
+Normal User logout followed by original Creator password login and full reload verified Creator /app. Temporary viewport override reset; tab8 retained. No role, Product, entitlement, order, file, calendar or local collection mutation; no local server started.
+
+## 31 October native Storefront paste retry
+
+Retried outstanding Storefront native paste; Copy feedback appears, but browser clipboard transport still cannot paste. RemainsBlocked, not a Product failure.444/493 fully assessed;49 incomplete. Local server stopped and Creator session retained. 493 originals: 5 not started / 44 partial / 444 fully assessed (287 Pass / 124 Fail / 33 Needs clarification); 49 incomplete. 5045 historical / 4941 latest checks: {'Pass': 4024, 'Fail': 683, 'Needs clarification': 200, 'Blocked': 34}.
+
+Local static server stopped with terminal exit0 after Ctrl-C; isolated target tab closed. Deployed tab6 returned to Creator /app and retained. No account, Storefront, Product or data changes.
+
+## 29 October remaining public role layouts and email guidance readability
+
+Saved32 deployed checks:10Pass/22Fail, covering96 role/page/width cells and15 search/Storefront actions. ExistingBUG-057 also affects deployed email-sent guidance, so AUTH-009 nowFail; historical semantic success retained.444/493 fully assessed,49 incomplete. Creator restored; no implementation changes. 493 originals: 5 not started / 44 partial / 444 fully assessed (287 Pass / 124 Fail / 33 Needs clarification); 49 incomplete. 5044 historical / 4941 latest checks: {'Pass': 4024, 'Fail': 683, 'Needs clarification': 200, 'Blocked': 34}.
+
+Synthetic Creator restored through normal role control and password login, cold reload verified; separate API exact profile CREATOR and User USER verified. No pending native dialog. Viewport reset; tab24 at Creator /app was retained. No Product, checkout, grant, calendar, storage, collection or provider changes. No local services started.
+
+## 29 October Creator public-page reflow and long Download title overflow
+
+Completed Creator public-page layout andnavigation checks; newBUG088 confirmslongDownloadtitleoverflowat768afterreload.444/493assessed,49incomplete. Creatorunchanged, viewportreset. 493 originals: 5 not started / 44 partial / 444 fully assessed (288 Pass / 123 Fail / 33 Needs clarification); 49 incomplete. 5012 historical / 4909 latest checks: {'Pass': 4014, 'Fail': 661, 'Needs clarification': 200, 'Blocked': 34}.
+
+Viewportoverride reset. Newtab23returnedCreator/app andmarkedhandoff; priorretained20wasnotused/remarkedandissubjecttonormaltemporarytabcleanup. OriginalroleunchangedCREATOR, no nativeconfirmationorAdmincleanup pending. No Product/profile/order/grant/calendar/storage/contact/paymentorcollectionaction. ExistingCartstilloneQAConsultationEUR15; no checkout. Read-onlyAPIpreflightusesseparatenormalcookiejar; no cloudconfigurationchanges/localserverstarted.
+
+## 29 October User and Admin marketing matrix with role restoration
+
+Completed User/Adminmarketingmatrices andkeyboardactions; allfourmarketingrolecohorts nowcovered. ExpandedexistingBUG087;444/493assessed,49incomplete. Creatorrestoredexactly. 493 originals: 5 not started / 44 partial / 444 fully assessed (288 Pass / 123 Fail / 33 Needs clarification); 49 incomplete. 5003 historical / 4900 latest checks: {'Pass': 4011, 'Fail': 655, 'Needs clarification': 200, 'Blocked': 34}.
+
+OriginalCreatorrestoredthroughnormalUIrolecontrol andcoldAppreload; exactfullprofilematchesbaseline viaindependentnormalAPI. SeparateUser remainsUSER/exactUUID. Usercart/wishlistbadgesremain1/1; no collectionactiontaken. Viewportoverride reset, tab20Creator/appmarkedhandoff. Credentialreferencescleared. No Product/order/grant/calendar/profilebusinessfields/storage/payment/contactchanges; normalauthsessionrecords andapprovedtemporaryrolechange are partofsetup/cleanup. No localserverstarted.
+
+## 29 October Guest marketing matrix and normal Creator sign-in recovery
+
+Completed Guest marketing layout andDemo/Pricingkeyboardmatrix; expandedBUG087 forclippedSignIn/Register. NormalCreatorrestoredviaEnter;444/493assessed,49incomplete. 493 originals: 5 not started / 44 partial / 444 fully assessed (288 Pass / 123 Fail / 33 Needs clarification); 49 incomplete. 4983 historical / 4880 latest checks: {'Pass': 4007, 'Fail': 639, 'Needs clarification': 200, 'Blocked': 34}.
+
+NormalCreatorpasswordSignIn withkeyboardEnter restores actualCreatorDashboard/tab20; fullprofile exactlymatchesoriginalAPIbaseline androleCREATOR. Viewportoverride reset; tab20markedhandoff. No roles/profile/Product/order/grant/storage/payment/contact changes; normal authsessionscreatedbylogout/login. DirectAPIprobe22 reached browserHTTPerrorpage; URLpolicy preventedreacquiringthaterrorpage, no bypass/readperformed. Probeisunmarkedtemporaryandwillcloseatturncleanup; nohumaninput/dialogpending. CredentialreferencesclearedfromcontrolREPL. No localserverstarted.
+
+## 29 October protected Product browser confirmation and final Creator restoration
+
+Completed approved protectedProduct browser confirmation and Creator restoration. ADMIN010 fullyNeedsclarification for silentfeedback, withseparateAPI409/retentionPass.444/493assessed;49incomplete. 493 originals: 5 not started / 44 partial / 444 fully assessed (288 Pass / 123 Fail / 33 Needs clarification); 49 incomplete. 4972 historical / 4869 latest checks: {'Pass': 4004, 'Fail': 631, 'Needs clarification': 200, 'Blocked': 34}.
+
+No native dialog pending. OriginalsyntheticCreator restored bynormal browserrolecontrol; exactfullprofile/existingConsultationhash/access andcoldCreatorpageverified. Tab20 nowon/app asCreator andmarkedhandoff. Auxiliarytab21closed. Two priorclose attempts timedout atfocus beforeclosingtab20; theydidnotcancel thehuman-confirmed action. ProtectedProduct remains exact/HIDDEN with1activePurchase; disposableDraft remainsdeleted. No newdeletion/fixturecreation, cloudconfiguration or realaccountchange. Calendarservers/tabsremainclosed.
+
+## 29 October native calendar popup restriction and allowed controls
+
+Added real-browser calendar popup boundary checks:5Pass/4Needsclarification inisolatedHTTP/CSPfixtures. No providerlogin orcloudchange;443/493assessed,50incomplete. 493 originals: 5 not started / 45 partial / 443 fully assessed (288 Pass / 123 Fail / 32 Needs clarification); 50 incomplete. 4971 historical / 4869 latest checks: {'Pass': 4004, 'Fail': 631, 'Needs clarification': 199, 'Blocked': 35}.
+
+Calendarparenttab15 andall4syntheticauthorizationpopupsclosed. BothWebpackservers91216/51045 exit0; ports54401/54402 independentlyclosed. No cloudrole/profile/account/calendarconnection/grant/provider permission or databasechange. No provideridentityvisited; only localHTMLauthorizationtarget. Globalbrowserpopup settings unchanged; only isolatedresponseCSPvaried.
+
+## 29 October actual browser SDK denial and auth bootstrap assessment
+
+Closed AUTH022 bootstrap assessment asNeedsclarification after actual browser SDK denial and fallback validation.443/493 assessed;50incomplete. RealGoogle identity/mailbox cases remainblocked; no persistent changes. 493 originals: 5 not started / 45 partial / 443 fully assessed (288 Pass / 123 Fail / 32 Needs clarification); 50 incomplete. 4962 historical / 4860 latest checks: {'Pass': 3999, 'Fail': 631, 'Needs clarification': 195, 'Blocked': 35}.
+
+Isolated SDK tab14 closed. Webpack server54763 gracefully exited0; loopback54389 independently confirmed closed. No APIauthrequests, provideridentity/tokenexchange, account/role/profile/Product/database writes or cloudsecuritypolicychange. CSP applies only isolated testserver; no browser/globalprivacysettingmodified.
+
+## 29 October deployed marketing reflow and keyboard actions
+
+Completed Creator marketing layout matrix and Demo/Pricing keyboard actions. NewBUG087: narrow marketing navigation clips Contact/account actions.442/493assessed;51incomplete; no persistent changes. 493 originals: 5 not started / 46 partial / 442 fully assessed (288 Pass / 123 Fail / 31 Needs clarification); 51 incomplete. 4960 historical / 4858 latest checks: {'Pass': 3998, 'Fail': 631, 'Needs clarification': 194, 'Blocked': 35}.
+
+Temporary marketing tab12 closed, explicitviewportoverride reset. All changes were local Demo/Pricing presentation state. No messages, terms acceptance, account/role/Profile/Product/storage/payment changes or local services. Original synthetic account remains Creator.
+
+## 29 October deployed catalog and public icon alternatives
+
+Added deployed catalog/account keyboard and public media-alternative checks:2Pass and1repeatFail BUG022.442/493 assessed;51 incomplete; Creator restored, no destructive action pending. 493 originals: 5 not started / 46 partial / 442 fully assessed (288 Pass / 123 Fail / 31 Needs clarification); 51 incomplete. 4950 historical / 4848 latest checks: {'Pass': 3996, 'Fail': 623, 'Needs clarification': 194, 'Blocked': 35}.
+
+Temporary accessibility tab11 closed. Account menu closed with Escape before public navigation. No Product, role, grant, profile, file or configuration changes; original Creator remains restored from prior checkpoint. Recovery tab10 was last observed Creator on/app; no old native-dialog outcome asserted.
+
+## 29 October purchased Product API deletion guard and Creator restoration
+
+Protected Product API deletion guard409 and exact retention pass; Creator profile/access and browser role restored. Browser rejection feedback remains unobserved;442/493 assessed,51 incomplete. 493 originals: 5 not started / 46 partial / 442 fully assessed (288 Pass / 123 Fail / 31 Needs clarification); 51 incomplete. 4947 historical / 4846 latest checks: {'Pass': 3994, 'Fail': 623, 'Needs clarification': 194, 'Blocked': 35}.
+
+Synthetic account restored CREATOR through normal API; exact original full profile, existing Consultation hash and existing access verified. Fresh tab10 cold reload visibly showed Creator navigation/account role. Specifically approved disposable Draft remains deleted; protected Product unchanged with one active purchase entitlement. Original guard-result tab9 is no longer present in latest browser inventory, so no pending dialog is asserted. No local server started or real account modified.
+
+## 29 October reporting operation reconciliation and approved Draft removal
+
+Completed reporting reconciliation:20Pass acrossactualfree/paid/failed/refund operations andfourbrowserreports. ApproveddeployedDraft deletion/listrefresh alsoPass; guard confirmation/Creator restorationpending.442/493assessed;51incomplete. Localservicesstopped; no realpayments. 493 originals: 5 not started / 46 partial / 442 fully assessed (288 Pass / 123 Fail / 31 Needs clarification); 51 incomplete. 4945 historical / 4845 latest checks: {'Pass': 3993, 'Fail': 623, 'Needs clarification': 194, 'Blocked': 35}.
+
+Local reporting browser tab closed; frontend proxy and actual backend exit0. Private PostgreSQL stopped; ports54382/58084/55581 closed and postmaster.pid absent. Synthetic local final5Users/3Courses/2orders/3grants retained in stopped privateDB, only1free grantActive and2purchase grantsRevoked. No real payment/provider/S3/mail calls; mocks verifiedunused. Deployed approved disposableDraft removed and matchingAdmin list refreshed; protectedProduct remained exact200 before its guard attempt. IMPORTANT: deployed synthetic account remains temporarilyADMIN while its specifically approved native guard confirmation awaits human OK; originalCreator restoration is still required after that step. No claim of completed global role cleanup. Read-only observer tunnel remains available.
+
+## 29 October public metadata fallbacks across four roles
+
+Completed public metadata fallback case:16Pass acrossGuest/User/Creator/Admin, including independent and combined optional-read failures.441/493 assessed;52 incomplete. No new issue or cloud changes; isolated services stopped. Deletion approval remains pending. 493 originals: 5 not started / 47 partial / 441 fully assessed (287 Pass / 123 Fail / 31 Needs clarification); 52 incomplete. 4924 historical / 4824 latest checks: {'Pass': 3972, 'Fail': 623, 'Needs clarification': 194, 'Blocked': 35}.
+
+Guest/online fixture mode restored and final public metadata recovery verified. Temporary browser tab closed; frontend proxy and Java backend exited0. Private PostgreSQL cluster stopped, postmaster.pid absent, loopback54381/58083/55581 confirmed closed. Final database40migrations/3syntheticUsers/1seededProduct/0orders/0entitlements. No cloud role, account, Product, storage, calendar or commerce change. Private normal-login cookies stay at the loopback adapter; no credentials copied to shared evidence. S3/mail/Google identity mocks verified unused. No app implementation edit.
+
+## 29 October Admin Cancel recheck and verified deletion prerequisites
+
+Rechecked Admin Cancel with human assistance and verified both synthetic targets remain. Existing confirmation-control block persists; specific deletion approval pending.440/493 assessed;53 incomplete. Distinct-check count unchanged; Creator restored and read-only DB tunnel recovered. 493 originals: 5 not started / 48 partial / 440 fully assessed (286 Pass / 123 Fail / 31 Needs clarification); 53 incomplete. 4908 historical / 4808 latest checks: {'Pass': 3956, 'Fail': 623, 'Needs clarification': 194, 'Blocked': 35}.
+
+No deletion confirmed. Both synthetic Products remain with originalDraft/Hidden status. Original Creator full profile restored exactly and normal browser role control also returned to Creator; test tab5 on/app marked handoff. Other account roles, Product data and existing grants unchanged. Read-only SSH tunnel reconnected only after confirmed loopback refusal; observer queries succeed, no server configuration/database writes. No local app server/cluster started. No native Chrome or unrelated window inspection.
+
+## 29 October deployed Consultation Library and role comparisons
+
+Completed deployed Consultation Library/role comparisons:5Pass, no scheduling workflow.440/493 assessed;53 incomplete. Exact Creator profile, Consultation and existing access restored; normal browser session available. No new issue or local services. 493 originals: 5 not started / 48 partial / 440 fully assessed (286 Pass / 123 Fail / 31 Needs clarification); 53 incomplete. 4906 historical / 4808 latest checks: {'Pass': 3956, 'Fail': 623, 'Needs clarification': 194, 'Blocked': 35}.
+
+Synthetic account restored to Creator with exact full original profile; canonical Product hash and existing entitlement unchanged. No grant, purchase, appointment, content, real-account or external-calendar change. Existing Cart/wishlist untouched. Normal password sign-in restores the synthetic Creator browser session on Dashboard; user-provided tab4 marked handoff. No local test server/cluster started. Earlier interrupted attempt restored Creator before pause; stale-tab/bridge errors recovered through a fresh same-browser tab and are not scored as application bugs. No native Chrome input performed.
+
+## 29 October public and private backend-outage recovery
+
+Completed ENV010 isolated public/private outage and recovery sequence:5Pass/1Fail. NewBUG086 treats profile503 as unexplainedSignIn.439/493 assessed;54 incomplete. No cloud interruption; temporary browser/backend/proxy/database stopped. 493 originals: 5 not started / 49 partial / 439 fully assessed (285 Pass / 123 Fail / 31 Needs clarification); 54 incomplete. 4901 historical / 4803 latest checks: {'Pass': 3951, 'Fail': 623, 'Needs clarification': 194, 'Blocked': 35}.
+
+Temporary browser tab closed. Frontend proxy exited0; Java backend and private PostgreSQL cluster stopped, ports54380/58082/55581 verified closed and postmaster.pid absent. Final read-only database audit confirms40migrations,1syntheticUser/1seededCourse and0calendars/orders/entitlements. No cloud service or real account touched; no browser mutation request. Two instrumentation mistakes are excluded from app results: first preflight used unsupported FREE pricing_model; corrected fresh v2 database uses ONE_TIME. After completed browser work, Java final count used nonexistent orders table and exited1; independent read-only audit against commerce_orders then succeeded and cluster stopped. No application failure is inferred from those harness mistakes.
+
+## 29 October Calendar callback session rejection and fresh retry
+
+Added12 passing isolated Calendar callback session/retry checks; absent/expired auth never exchanges provider code or associates an account.438/493 assessed;55 incomplete. Live provider identity flow remains blocked; backend and database stopped. No cloud changes. 493 originals: 6 not started / 49 partial / 438 fully assessed (285 Pass / 122 Fail / 31 Needs clarification); 55 incomplete. 4895 historical / 4797 latest checks: {'Pass': 3946, 'Fail': 622, 'Needs clarification': 194, 'Blocked': 35}.
+
+All four temporary calendar connections removed through normal DELETE204; final connected-calendar rows0. Java backend exited0; PostgreSQL cluster stopped, postmaster.pid absent and loopback58081/55581 confirmed closed. Two synthetic enabled local accounts retained only in private stopped test database. Main299source hashes verified unchanged before using actual compiled classes. No cloud/profile/Product/role/commerce mutation; no live provider request and no credentials/state/JWT copied into shared evidence.
+
+## 29 October actual social editor and controlled location checks
+
+Added10 isolated browser checks:6Pass/2Fail/2Needsclarification. NewBUG084 ignores original social-link restoration; BUG085 throws on reverse-geocoding503.438/493 assessed;55 incomplete. Both cases remain partial; no cloud mutations and temporary tab/server closed. 493 originals: 7 not started / 48 partial / 438 fully assessed (285 Pass / 122 Fail / 31 Needs clarification); 55 incomplete. 4883 historical / 4785 latest checks: {'Pass': 3934, 'Fail': 622, 'Needs clarification': 194, 'Blocked': 35}.
+
+All synthetic UI controls reset to one original Facebook entry and null location. Temporary IAB tab closed; loopback54379 fixture server exited0 and port verified closed. No cloud API requests, real geolocation permissions, profile/role/Product/config changes or database modifications. No application implementation edit. Failed initial fixture build from docs cwd and an exact-label selector miss are preflight/tooling failures, not application bugs.
+
+## 29 October clean-browser profile persistence and remaining scope
+
+Saved clean-Incognito profile Pass and unchanged API fixture/config invariants; media preview unresolved and geolocation branch lacks an entry point.438/493 assessed;55 incomplete. No mutations or local services started; approved native test-window context restoration pending. 493 originals: 8 not started / 47 partial / 438 fully assessed (285 Pass / 122 Fail / 31 Needs clarification); 55 incomplete. 4873 historical / 4775 latest checks: {'Pass': 3928, 'Fail': 620, 'Needs clarification': 192, 'Blocked': 35}.
+
+Read-only browser/API work; no Product/profile/config/role/commerce changes. Exact Creator profile and all selected canonical records unchanged. Existing IAB returned to normal synthetic Creator Settings Profile. Native input stopped on context mismatch; no unrelated window inspected or changed. No location permission, simulator, local server, harness or database cluster started. No raw credentials, signed URLs or private browser chrome retained in shared evidence.
+
+## 29 October real Chrome200percent Customer and reporting checks
+
+Completed native200percent zoom checks. UX010 fully assessedFail with prior narrow overflow retained; UX012 fully assessedNeedsclarification for nonvisual chart contract.438/493assessed;55incomplete. Dedicated Incognito window normal Creator/100percent; no cloud mutations or unrelated-tab changes. 493 originals: 8 not started / 47 partial / 438 fully assessed (285 Pass / 122 Fail / 31 Needs clarification); 55 incomplete. 4869 historical / 4771 latest checks: {'Pass': 3926, 'Fail': 620, 'Needs clarification': 190, 'Blocked': 35}.
+
+Only the newly created Incognito app test window is used after explicit human approval. Normal synthetic Creator sign-in; no role/profile/Product/calendar/commerce mutation. Read-only profile oracle exact. Browser zoom reset100percent; dedicated window remains signed in on Dashboard for remaining tests. Unrelated existing tabs/settings left unchanged. Shared AX contains app subtree only with emails redacted; saved PNGs crop browser chrome/bookmarks without modifying page pixels, and raw full-window images are discarded. No real location request/simulator or local harness was started. Local HTTP/PostgreSQL services remain stopped; no pending data/role restoration.
+
+## 29 October native zoom requires a dedicated approved test window
+
+Native zoom remainsBlocked after automatic review denied inspecting an unrelated Chrome window. Dedicated app-only Incognito window requested; no workaround or private inspection.436/493 assessed;57incomplete. Controlled calendar results and cleanup are saved separately. 493 originals: 8 not started / 49 partial / 436 fully assessed (285 Pass / 121 Fail / 30 Needs clarification); 57 incomplete. 4863 historical / 4766 latest checks: {'Pass': 3921, 'Fail': 620, 'Needs clarification': 189, 'Blocked': 36}.
+
+No Chrome content inspected, no keyboard/mouse/window operation, no preference or cookie change. User asked to prepare and explicitly authorize a separate app-only test window. Existing IAB remains on synthetic Creator Calendar Settings. Local HTTP/backend database services stopped; no pending role/data restoration.
+
+## 28 October controlled calendar provider responses, saved29October
+
+Saved controlled calendar matrix:6Pass/4Fail aggregated variations. NewBUG082 accepts blank Microsoft token; newBUG083 corrupts form values; BUG063 callback/list failure confirmed.436/493 assessed;57incomplete. Real identities remain blocked. All isolated services and fixture connections cleaned up. 493 originals: 8 not started / 49 partial / 436 fully assessed (285 Pass / 121 Fail / 30 Needs clarification); 57 incomplete. 4862 historical / 4766 latest checks: {'Pass': 3921, 'Fail': 620, 'Needs clarification': 189, 'Blocked': 36}.
+
+All10 synthetic connection rows created by callback controls were removed through normal API DELETE204, each followed by list200/empty. Final migrated DB has2synthetic users,0calendars/Orders/entitlements. Local HTTP context closed/JVMexit0; isolated PostgreSQL cluster stopped by normal approved command on29October after prior review-quota interruption. Private logs/generated credentials/state/token bodies remain outside Git; observations retain only outcomes and form round-trip booleans. No cloud calls/changes, actual provider identities/consent, calendar data, real tokens, email or S3 operations. Other provider mocks verified unused. No pending role/data restoration.
+
 ## 28 October deployed Microsoft Connect fails before consent
 
 Added three deployed calendar checks (one Pass, two Fail). NewBUG-081: Microsoft Connect fails before consent because scope spaces are unescaped, with no visible Settings error. CAL-002/003 now partially assessed;57 originals remain incomplete. Provider identities still unavailable; no cloud mutations. 493 originals: 9 not started / 48 partial / 436 fully assessed (285 Pass / 121 Fail / 30 Needs clarification); 57 incomplete. 4852 historical / 4756 latest checks: {'Pass': 3915, 'Fail': 616, 'Needs clarification': 189, 'Blocked': 36}.
