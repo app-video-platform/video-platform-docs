@@ -1,5 +1,30 @@
 # Progress
 
+## Pause handoff — 2 November 2026
+
+Testing is paused at the user's request. No further execution is scheduled by this handoff.
+
+- Original catalog:493 cases;445 assessed (287 Pass,125 Fail,33 Needs clarification),48 incomplete (43 partial,5 not started).
+- Latest variations:5025 recorded, including35 Blocked;5129 historical attempts. These are not counts of completed original cases.
+- Remaining per-case steps and gates: [coverage.json](coverage.json), field `remaining_execution_audit`.
+- Outcomes: [results.csv](results.csv) and [results.jsonl](results.jsonl). Defects: [issues](issues/), including latest [BUG-091](issues/BUG-091.md).
+- Execution scope and cleanup: [session-notes.md](session-notes.md) and the existing consolidated evidence file. Local/simulated passes do not establish deployed integration success. Deployed rechecks of local-only coverage are additional to the48 incomplete originals and are not fully enumerated.
+
+Prerequisites to prepare separately from bug fixes:
+
+1. A dedicated controllable test browser/profile for native200%zoom, reduced-motion preference, popup blocking/restoration, third-party-cookie restrictions, native clipboard/paste, clean sessions and timezone comparisons.
+2. Screen-reader output that can be observed, or manual assistance verifying spoken announcements. DOM attributes alone do not establish actual speech.
+3. A dedicated receiving mailbox and configured email integration for live registration and verification delivery/link flows.
+4. Authorized Google and Microsoft test identities for sign-in/calendar consent and retries. Certain negative Google token cases additionally require legitimate provider-signed token fixtures; normal accounts alone may not supply them.
+5. Isolated disposable Spaces storage, scoped credentials and harmless image/video/Download fixtures; controlled storage failure/recovery and native request inspection for object/MIME/cleanup tests.
+6. A separate test deployment with its own database/storage, configurable media-limit variants and enabledFAKEcheckout for nonfinancial order/refund/access journeys. Do not alter the main development environment implicitly. Existing log and read-only database access are sufficient for diagnosis.
+7. Configured Uppy Companion and authorized remote provider accounts/files for actual remote imports.
+8. An isolated hosting setup matching the checked-in documentation proxy rules for path-boundary verification.
+
+Some cases have both prerequisites and defect gates; preparing the environment does not remove the defect dependency. Published Membership remains unsupported by the current publication/schema path and must not be forced through database changes. Native mailto activation was rejected by browser-tool policy; it needs an allowed/manual check, not a policy bypass. Credentials belong outside Git and chat.
+
+On explicit resume, recheck browser/session, tunnel/log access and fixture state; retained browser tabs are not guaranteed to survive the break. Preserve historical attempts and the original493-case catalog. Continue from each case's recorded gate rather than repeating completed matrices. No implementation fix, deployment, commit or push is part of this pause handoff.
+
 ## Backend deployment recovered — 20 October 2026
 
 The tested backend commit `1b860413436d5f850af0ecc228c5b613ebae4836` was pushed directly to Dokku main. Remote build and release completed. Cloud Liquibase now records all40 changesets;39 and40 executed successfully, their three tables exist, and the lock is released. Spring Boot started successfully; signed-in Dashboard, Product media reads and seven-day Consultation availability defaults pass smoke checks. All135 backend tests passed before deployment. No new database export was made, as requested. No migration source edit was necessary.
@@ -7,7 +32,7 @@ The tested backend commit `1b860413436d5f850af0ecc228c5b613ebae4836` was pushed 
 Earlier deployment-gap and upload results remain historical evidence. Recheck affected cases on this upgraded backend; do not assume media uploads or existing application issues are fixed. GitHub automatic deployment remains unconfigured because required repository Actions secrets are absent. Old fresh forms and the initial post-deployment tab13 were not retained. Current browser state is recorded below.
 
 
-Run in progress. Last checkpoint: 2026-11-01T11:50:10.515999+00:00
+Testing paused by user on 2 November 2026. Last execution checkpoint: 2026-11-01T11:50:10.515999+00:00
 
 ## Deployed verification scope — 21 October 2026
 
