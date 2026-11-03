@@ -1,5 +1,28 @@
 # Execution summary
 
+## Current frontend implementation status — 3 November 2026
+
+This update records merged frontend fixes separately from the historical execution checkpoint below. Trello remains the operational issue board; no ticket or case is declared fully resolved by a source merge.
+
+| Issue | Milestone / PR | Frontend implementation | Synthetic frontend verification | Live-backend E2E | Deployment/final QA |
+| --- | --- | --- | --- | --- | --- |
+| [BUG-058](issues/BUG-058.md) | M1 / [#71](https://github.com/app-video-platform/video-platform-ui/pull/71) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-073](issues/BUG-073.md) | M1 / [#71](https://github.com/app-video-platform/video-platform-ui/pull/71) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-026](issues/BUG-026.md) | M1 / [#71](https://github.com/app-video-platform/video-platform-ui/pull/71) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-086](issues/BUG-086.md) | M1 / [#71](https://github.com/app-video-platform/video-platform-ui/pull/71) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-001](issues/BUG-001.md) | M2 / [#72](https://github.com/app-video-platform/video-platform-ui/pull/72) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-018](issues/BUG-018.md) | M2 / [#72](https://github.com/app-video-platform/video-platform-ui/pull/72) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-060](issues/BUG-060.md) | M2 / [#72](https://github.com/app-video-platform/video-platform-ui/pull/72) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-077](issues/BUG-077.md) | M2 / [#72](https://github.com/app-video-platform/video-platform-ui/pull/72) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+
+M1 merged as `52413ed`; M2 merged as `7c13a37` into frontend main. M1 PR verification records 627 tests / 102 suites. Final M2 verification records 664 tests / 103 suites, including M1/M2 compatibility. Both record TypeScript, lint (0 errors, 205 existing warnings), production build (3 performance warnings), and earlier synthetic browser passes. M1 browser checks were not rerun during PR preparation; M2 browser checks used intercepted HTTP and fixture destinations before final integration and were not rerun afterward.
+
+Retest real cookie rotation, cross-origin deployment, refresh/logout ordering, account/role changes, saved workspace/Article persistence, nested navigation failure/retry and Membership load recovery. Confirm the deployed revision first. Browser termination and forced/history navigation have no asynchronous save guarantee. M3 is separate ongoing work and is not complete here.
+
+The local checkout originally contained only BUG-001–008. The eight affected reports now include their current GitHub-main historical text plus resolution notes; other historical run files below remain this checkout's September checkpoint. Later source-run updates are available in the [upstream historical summary](https://github.com/app-video-platform/video-platform-docs/blob/main/qa/runs/2026-09-30-01/summary.md). No execution results, coverage counts or case outcomes were recomputed, and the retained fixture/session information below is historical, not a current environment check.
+
+## Historical September checkpoint
+
 Run in progress. [Progress](progress.md) and [session notes](session-notes.md) contain the current checkpoint. [JSONL results](results.jsonl) are authoritative; [CSV results](results.csv) can be opened in Excel.
 
 ## Checkpoint at 203 variations

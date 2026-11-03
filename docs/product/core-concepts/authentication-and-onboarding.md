@@ -49,6 +49,12 @@ Onboarding can collect profile title, bio, tagline, website, location, and socia
 
 Role routing sends Administrators to Admin, Creators to the Creator dashboard, and End Users to the customer home area.
 
+### Session checks and recovery
+
+Private pages wait until the app confirms your identity and role. A temporarily unavailable profile service shows **Unable to verify your session** with **Retry**. An already-open workspace at the same address can retain its local edits while hidden during that same-session check. Changing address or account ends that retention. Invalid authentication sends you to Sign in.
+
+Logging out immediately removes access to private pages, including through browser Back, and clears account-owned cached data before another account uses the app. A failed server logout request does not restore the previous identity in the current page.
+
 ## Current limitations
 
 - Forgot password shows a multi-step reset interface, but the visible flow does not currently call the backend reset endpoint.

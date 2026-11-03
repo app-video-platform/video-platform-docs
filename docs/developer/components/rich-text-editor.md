@@ -55,3 +55,9 @@ export default function LessonEditor() {
 <br></br>
 <br></br>
 > Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025
+
+### Article initialization and preservation
+
+In the Course `LessonEditor`, initialization depends on both `lesson.id` and `lesson.content`. Reopening/remounting reads the current draft body; loading the saved workspace reads persisted content. Changing initialization props does not reset an already-mounted Tiptap editor during typing, and opening alone emits no body edit. Supported Tiptap documents and plain-text fallback are retained; unsupported structured JSON shows an alert without mounting an editor that could replace the saved body. This M2 change does not repair Article reader BUG-021.
+
+See [saved workspace lifecycle](../architecture/state-and-data-flow.md#saved-workspace-and-nested-authoring) for separate Lesson autosave and navigation behavior.

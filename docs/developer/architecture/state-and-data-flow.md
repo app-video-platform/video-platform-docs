@@ -124,3 +124,33 @@ Use this as a practical guide:
 | Search/autocomplete server state | Existing React Query pattern. |
 | Form draft and UI interaction state | Local component or feature hook, including unsaved Storefront Builder and Product Landing Page Builder config drafts. |
 | Reusable browser-saved cart/wishlist behavior | Existing Redux slices and persistence patterns. |
+
+## Account and session boundaries
+
+M1 keeps `sessionStatus` (`resolving`, `authenticated`, `unauthenticated`, `unavailable`) and `sessionVersion` in the Auth slice. Login attempts, explicit logout, authentication invalidation and identity/role transitions advance the version. Local logout applies before the server request settles and remains effective on failure.
+
+`src/core/store/root-reducer.ts` atomically clears account-owned Admin, reporting, Product, Membership, notification, review and Creator presentation state when the version changes. Product reads mix public metadata and private drafts, so the entire Product cache is cleared. Separate public Storefront reads remain; public landing-config entries also written by Creator saves are removed. Cart/Wishlist retain their browser-local shopping lifecycle and are not entitlements. Current React Query search/autocomplete reads are public catalogue data.
+
+`session.middleware.ts` must run before Product notification listeners. It associates thunk request IDs with session versions and drops old-session fulfillments and rejections before reducers/listeners, preventing cache repopulation and stale notifications. Add new account-owned thunk namespaces to its scoped-prefix list. Public Storefront and landing-config fetches are exempt. This does not replace feature-level query/entity freshness checks. The [HTTP client](../api/http-client.md) also rejects stale private responses.
+
+## Saved workspace and nested authoring
+
+M2 preserves the shared `ProductForm`, two-step Draft creation and separate persistence contracts. All hooks execute before loading/error/access returns for saved Course, Download, Consultation and Membership workspaces. `use-product-loader.hooks.ts` ignores completions after cleanup or route identity changes; changing the legacy normalization callback alone does not reload or replace the draft.
+
+`use-nested-autosave.hook.ts` keeps each Section/Lesson's last confirmed snapshot, latest dirty revision, two-second debounce and in-flight promise. Writes serialize per entity and newer edits follow the in-flight revision. Failure retains dirty state and exposes inline retry. Reordering uses the same queue; deletion waits for relevant mounted saves.
+
+`nested-autosave-context.ts` registers mounted flush handles, not another persistence store. Workspace tabs await nested writes before unmounting editors. Products departure, Preview and Publish flush nested writes, then Product details, then recheck nested writes. Waiting shows **Saving changes before continuing…**; failure keeps the editor and offers **Retry saving**. Retry saves in place, after which the user chooses navigation again.
+
+Product details exclude Sections/Lessons and Membership content/feed from their autosave payloads. Sections, Lessons, Download files, Membership operations and Product media keep their separate APIs and feedback. Header save status does not guarantee successful uploads or every independent operation. `beforeunload` warns best-effort; browser termination and forced/history navigation have no asynchronous persistence guarantee with the current BrowserRouter.
+
+Membership aggregate request state is keyed by Product ID and request ID with loading/loaded/failed status and error. `ProductForm` loads an unrequested aggregate once, then requires **Retry Membership load** after failure. Rerenders/tab changes do not automatically retry. Only the matching request owns its result. Membership publishing, checkout, subscriptions, entitlements, member access and binary Video/Resource delivery remain unavailable; Course binary video persistence remains backend-pending.
+
+M1+M2 integration tests use the real guard, root reducer, session middleware and HTTP interceptors. Dirty Section/Lesson revisions pause during unavailable confirmed identity and survive mounted same-session recovery; old-session nested saves cannot restore state or navigate the new account. Frontend cancellation cannot revoke a server write that already committed.
+
+## Verification boundary
+
+Merged [M1 PR #71](https://github.com/app-video-platform/video-platform-ui/pull/71) records 627 tests across 102 suites, TypeScript, lint (0 errors, 205 existing warnings), production build (3 performance warnings), and earlier mocked-HTTP browser checks not rerun during PR preparation.
+
+Merged [M2 PR #72](https://github.com/app-video-platform/video-platform-ui/pull/72) and `M2_DOCUMENTATION_HANDOFF.md` record 664 tests across 103 suites after M1 integration, including 29 focused compatibility tests (21 workspace integration tests). TypeScript, lint (0 errors, 205 existing warnings) and production build (3 performance warnings) passed. Earlier intercepted-HTTP browser checks passed for four-type reopen/reload, Article round trips, nested navigation/failure/retry and Membership recovery on the original M2 baseline; fixture destination pages were used and checks were not rerun after final integration.
+
+These establish merged frontend implementation and synthetic verification. Live-backend E2E remains pending for real cookie rotation, cross-origin deployment, refresh/logout ordering, persisted authoring/navigation and account/role journeys. Deployment/final QA confirmation is not established. No new authentication endpoints or backend guarantees are implied.

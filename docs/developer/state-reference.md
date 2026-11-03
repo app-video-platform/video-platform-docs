@@ -39,3 +39,9 @@ Storefront public read-model data and persisted Creator config live in the `stor
 Product Landing Page public and Creator config data lives in the `productLandingPage` slice. The Creator Landing Page Builder keeps unsaved config changes as local draft UI state until Save dispatches the full config update. Product remains the source for canonical Product fields; Storefront config supplies inherited theme; User/Profile or public Storefront data supplies Creator identity when available.
 
 Customers, Sales, Analytics, Dashboard, Storefront, Product Landing Page, and Membership use Redux thunks and services that call Axios. Local mock support, when enabled, intercepts at the Axios boundary rather than replacing feature component data flow.
+
+## Session and authoring lifecycle
+
+Auth also exposes `sessionStatus`, `sessionVersion`, `profileRequestId` and `profileError`. `selectAuthUser` returns confirmed identity; `selectRetainedSessionUser` supports hidden same-session draft continuity only and must not authorize access. Session changes reset private slices and reject stale asynchronous results before listeners.
+
+Membership `selectMembershipRequest` reads Product-keyed request identity, loading/loaded/failed status and error. Failed aggregate loads require deliberate retry. Section/Lesson dirty revisions and flush handles remain local to mounted editors; Product detail autosave does not absorb their payloads. See [State and Data Flow](./architecture/state-and-data-flow.md#saved-workspace-and-nested-authoring) for sequencing, session compatibility and verification limits.

@@ -31,3 +31,11 @@ export const getSomething = async () => {
   return response.data;
 };
 ```
+
+## Cookie refresh and request ownership
+
+`src/core/api/interceptors/refresh-token.ts` coordinates one refresh promise per Axios instance. Concurrent private 401s await `POST api/auth/refresh` with credentials; successful text responses settle every waiter without reading `data.token` or adding Bearer headers. Each original request replays at most once. A failed refresh rejects waiters; a persistent private 401 reports into Auth rather than refreshing indefinitely. Refresh transport times out after 15 seconds.
+
+Synchronous request interceptors capture session ownership when requests are invoked. A session boundary cancels refresh waiters, aborts refresh transport and rejects stale private HTTP responses. Explicit public Storefront, public landing-config and search GETs remain independent. Availability failures are recoverable; invalid authentication ends the frontend session. See [session lifecycle and verification limits](../architecture/state-and-data-flow.md#account-and-session-boundaries).
+
+Frontend cancellation does not revoke a server operation already committed. Real cookie rotation, cross-origin behavior and server refresh/logout ordering still need live-backend E2E verification.

@@ -1,5 +1,11 @@
 # Test run 2026-09-30-01
 
+## Frontend fix follow-up — 3 November 2026
+
+M1 PR #71 and M2 PR #72 are merged; the eight issue notes and [current implementation-status table](summary.md#current-frontend-implementation-status--3-november-2026) distinguish synthetic verification from pending live-backend E2E and unestablished deployment/final QA. Retest against a confirmed deployed revision. Historical execution counts and failures remain unchanged; Trello remains the operational board.
+
+## Historical September checkpoint
+
 Started 30 September 2026 (Europe/Madrid). Execution in progress.
 
 - Target: https://app.serious-debauchery.click/app

@@ -50,6 +50,10 @@ Membership products use the shared builder areas:
 
 Membership products do not use Course or Download sections and do not show Consultation Details.
 
+### Loading and recovery
+
+Saved Membership workspaces reopen in the shared builder. If Membership Content cannot load, it shows a stable error and **Retry Membership load**. Switching tabs or unrelated screen updates do not repeatedly retry the failed request. Use the retry action deliberately after the service recovers. Changing Products keeps loading results and errors associated with the selected Membership.
+
 ### Add membership content
 
 The Membership Content area lets a creator build a Membership feed. Membership content is not organized like Course modules and lessons; it acts as a content hub.

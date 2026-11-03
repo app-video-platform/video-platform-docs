@@ -70,10 +70,14 @@ Route guards use allowed-role lists. For example, admin routes require `ADMIN`, 
 
 Its behavior is:
 
-- If the user is confirmed logged out, redirect to `/auth/login`.
-- If the user is logged in but lacks an allowed role, redirect to `/unauthorized`.
-- If authentication is still loading, show a spinner.
-- Otherwise render the protected child route.
+- `unauthenticated`: redirect to `/auth/login`, including immediately on logout.
+- `authenticated`: render only with a confirmed user and an allowed role; otherwise redirect to `/unauthorized`.
+- `resolving`: show a spinner; unknown sessions never mount protected children.
+- `unavailable`: show **Unable to verify your session** and explicit **Retry** for profile-service availability failures. Profile HTTP 401/403 instead invalidates authentication.
+
+An already-authorized workspace can remain mounted but hidden during same-session verification or outage at the same pathname/query. Retry restores it without discarding local edits. A navigation or account/role boundary removes that retained workspace; its session-version key also handles batched account switches. Profile mutation `loading` alone does not gate authenticated routes. Bootstrap preserves the requested URL.
+
+`selectAuthUser` supplies confirmed identity for visible UI. `selectRetainedSessionUser` is limited to shell selection and draft continuity; it must never authorize routes or expose account controls. See [State and Data Flow](./state-and-data-flow.md) for session ownership.
 
 This is route-level access control. The current implementation does not include a separate permission-policy system.
 

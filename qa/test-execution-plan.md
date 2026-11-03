@@ -120,3 +120,16 @@ After the initial pass, prioritize confirmed defects for a separate repair pass.
 Finish the execution pass when every catalog case and identified variation has a recorded status, every failure has useful evidence and an issue link, and every blocked or unclear case has a specific explanation. Report executed coverage, pass/fail counts, unresolved cases, remaining defects by severity, untested environment variations, and cleanup state. Do not report full success while blocked or unclear cases remain.
 
 Select stable, repeatedly useful journeys for automated regression tests after the first pass establishes their prerequisites and expected behavior. Automation code belongs in the owning implementation repository.
+
+## M1/M2 retest guidance — 3 November 2026
+
+The [run summary](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026) tracks the eight merged frontend implementations. These are implementation/verification annotations, not new ledger Pass results. Preserve the 493-case catalog, original outcomes and evidence; append actual retest attempts only after execution. Trello remains the operational issue board.
+
+| Area | Issues | Required live-backend confirmation |
+| --- | --- | --- |
+| Account isolation and logout guards | BUG-058, BUG-073 | Two-account reporting, pending responses, logout/Back and role boundaries. |
+| Refresh and profile recovery | BUG-026, BUG-086 | Real cookie rotation, concurrent request settlement, cross-origin behavior, refresh/logout ordering and same-session dirty-work recovery. |
+| Saved workspace and Article | BUG-001, BUG-018 | Four-type saved entry/reload, legacy entry, Article body/formatting round trip without a save on open. |
+| Nested saves and Membership recovery | BUG-060, BUG-077 | Persisted Section/Lesson sequencing, tab/Products/Preview/Publish waits, retained edits/retry, Product-scoped stable load failure and deliberate retry. |
+
+Record the deployed frontend revision before retesting. Synthetic checks used intercepted HTTP; M2 browser checks were not rerun after final M1 integration. Browser termination and forced/history navigation do not promise asynchronous persistence. Deployment/final QA remains unestablished; M3 remains separate ongoing work.

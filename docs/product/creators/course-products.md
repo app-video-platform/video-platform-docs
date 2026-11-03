@@ -46,7 +46,7 @@ Course content is organized into sections. A section can have a title and descri
 
 Creators add sections explicitly with the Add section surface. Once a section has the required title, it can be created and then edited. Existing sections can be renamed, described, reordered, or removed.
 
-Section title, description, and position changes are saved after the section exists.
+Section title, description, and position changes are saved after the section exists. Section and Lesson edits save after a two-second pause, with writes sequenced so an older save finishes before a newer revision. Reordering uses the same save flow, and deletion waits for relevant pending edits. Workspace navigation waits for nested saves; failures retain edits with retry feedback. See [Save behavior](./creating-a-product.md#save-behavior) for navigation and browser-close limits.
 
 ### Lessons
 
@@ -62,7 +62,9 @@ Video lessons show a video file uploader. Creators can select a video file in th
 
 Article lessons show a rich text editor for writing article content.
 
-Article content is saved through the current lesson service path as serialized rich-text content. This is separate from durable Course lesson video storage.
+Reopening an Article editor uses its latest saved body and formatting. Opening it without editing does not itself save a replacement body. Ordinary workspace updates preserve active typing. If saved structured content uses an unsupported format, the editor explains that the body has been preserved rather than replacing it with starter text.
+
+Article editing is separate from the customer Article reader, whose rendering limitations remain.
 
 ### Quiz lessons
 

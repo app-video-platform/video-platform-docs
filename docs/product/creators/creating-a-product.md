@@ -100,7 +100,13 @@ The builder autosaves shared product details after changes. Sections, lessons,
 Download files, Membership content, and Product media save through their own
 operation-specific flows after the Product exists.
 
-Creators may see loading or saving behavior while changes are being processed.
+Saved Course, Download, Consultation and Membership workspaces can be reopened from Edit product or reloaded. Loading and load failures are shown before the editor becomes available; creation still starts with a new Draft.
+
+Section and Lesson changes save after a two-second pause. Workspace tab changes wait for pending Section/Lesson saves. Products, Preview and Publish also wait for shared Product detail changes. While waiting, the workspace shows **Saving changes before continuing…**.
+
+If a save fails, the current editor and unsaved text stay available with error feedback. Use **Retry saving** to save in place, then choose the destination again. Individual sections and lessons also provide local retry feedback. Product header save status does not confirm that uploads or every separate Membership/media operation succeeded.
+
+Browser refresh/close warnings are best-effort. Closing the browser, forced navigation or browser Back/Forward does not guarantee completion of pending saves.
 
 ### Readiness and publishing
 

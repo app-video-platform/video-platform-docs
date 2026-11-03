@@ -26,3 +26,7 @@ sidebar_position: 3
 - Sign-in is followed by profile loading through the user service.
 - Product docs should not describe the forgot-password flow as complete until the visible screen actually calls the service.
 - See [Backend Authentication and Security](../backend/authentication-and-security.md) for cookie, refresh, CSRF, and role behavior.
+
+## Frontend session transitions
+
+Auth uses explicit session lifecycle states independently of operation `loading`. Profile 401/403 invalidates authentication; network/availability failures offer Retry without claiming logout. Logout invalidates local identity and private caches immediately, even if the server request fails. No authentication endpoint was added by M1. See [Routing and Access](../architecture/routing-and-access.md#route-guards) and [State and Data Flow](../architecture/state-and-data-flow.md#account-and-session-boundaries).
