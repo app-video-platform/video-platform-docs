@@ -14,10 +14,18 @@ This update records merged frontend fixes separately from the historical executi
 | [BUG-018](issues/BUG-018.md) | M2 / [#72](https://github.com/app-video-platform/video-platform-ui/pull/72) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
 | [BUG-060](issues/BUG-060.md) | M2 / [#72](https://github.com/app-video-platform/video-platform-ui/pull/72) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
 | [BUG-077](issues/BUG-077.md) | M2 / [#72](https://github.com/app-video-platform/video-platform-ui/pull/72) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-035](issues/BUG-035.md) | M3 / [#73](https://github.com/app-video-platform/video-platform-ui/pull/73) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-064](issues/BUG-064.md) | M3 / [#73](https://github.com/app-video-platform/video-platform-ui/pull/73) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-037](issues/BUG-037.md) | M3 / [#73](https://github.com/app-video-platform/video-platform-ui/pull/73) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-036](issues/BUG-036.md) | M3 / [#73](https://github.com/app-video-platform/video-platform-ui/pull/73) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-084](issues/BUG-084.md) | M3 / [#73](https://github.com/app-video-platform/video-platform-ui/pull/73) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
+| [BUG-085](issues/BUG-085.md) | M3 / [#73](https://github.com/app-video-platform/video-platform-ui/pull/73) | Complete and merged | Passed within recorded synthetic scope | Pending | Not established |
 
 M1 merged as `52413ed`; M2 merged as `7c13a37` into frontend main. M1 PR verification records 627 tests / 102 suites. Final M2 verification records 664 tests / 103 suites, including M1/M2 compatibility. Both record TypeScript, lint (0 errors, 205 existing warnings), production build (3 performance warnings), and earlier synthetic browser passes. M1 browser checks were not rerun during PR preparation; M2 browser checks used intercepted HTTP and fixture destinations before final integration and were not rerun afterward.
 
-Retest real cookie rotation, cross-origin deployment, refresh/logout ordering, account/role changes, saved workspace/Article persistence, nested navigation failure/retry and Membership load recovery. Confirm the deployed revision first. Browser termination and forced/history navigation have no asynchronous save guarantee. M3 is separate ongoing work and is not complete here.
+Retest real cookie rotation, cross-origin deployment, refresh/logout ordering, account/role changes, saved workspace/Article persistence, nested navigation failure/retry and Membership load recovery. Confirm the deployed revision first. Browser termination and forced/history navigation have no asynchronous save guarantee.
+
+M3 is merged as `05f25db` in [PR #73](https://github.com/app-video-platform/video-platform-ui/pull/73). Its reported verification passed 689 tests / 108 suites, TypeScript, ESLint (0 errors, 202 existing warnings) and production build. Synthetic browser coverage verified completed-profile redirects only; full incomplete-profile browser onboarding, live-backend profile saves and deployed Nominatim error/retry remain pending. The profile contract persists city/country, not coordinates. M4 remains under implementation and is not documented as merged behavior.
 
 The execution history below is preserved, including its original results and counts. Testing remains paused as recorded in [Progress](progress.md); this documentation merge does not resume QA.
 

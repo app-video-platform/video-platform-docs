@@ -37,6 +37,8 @@ After sign-up, the user is sent to an email-sent screen. Email verification uses
 
 After email/password sign-in, the app loads the user's profile. If onboarding is complete, the user goes to the app. If onboarding is not complete, the user goes to onboarding.
 
+End Users, Creators and Administrators can open the canonical `/onboarding` address after sign-in. `/app/onboarding` remains an alternate entry. Visitors are sent to Sign in. An incomplete profile opens the wizard; a completed profile sees the existing redirect screen with Go now and RESET.
+
 The onboarding flow has five steps:
 
 - Welcome.
@@ -45,7 +47,19 @@ The onboarding flow has five steps:
 - Additional information.
 - Completion.
 
-Onboarding can collect profile title, bio, tagline, website, location, and social links. It can update user profile details while the user moves through the flow.
+Onboarding collects profile title, bio, tagline, website, city/country and social links. Welcome opens Basic Profile without saving. Each profile step waits for a successful save before advancing; saving keeps the wizard in place rather than restarting at Welcome.
+
+### Save and validation feedback
+
+While **Saving profile changes…** is shown, Next, Back and Skip are disabled to avoid duplicate requests. If saving fails, the current step and entered values remain available with **Retry save**. Back and Skip remain disabled until a successful retry; Next can submit again. Retry save uses your current entered values. These retained edits are local to the open wizard, not a promise of recovery after closing or reloading the browser.
+
+Title, Bio, Tagline / Mission and Website show validation messages associated with their controls. Invalid fields communicate their invalid state and error text; correct the value before submitting again.
+
+### Social links and location
+
+In Additional information, confirm a social URL with Enter or its action button. You can change a URL, clear it, or restore the original value after either action. Each platform keeps one link; changes are included in the profile save.
+
+Selecting a location looks up its city and country. A failed reverse lookup shows feedback and **Retry location lookup**, or asks you to choose a valid result. A failed later lookup leaves the previously accepted location in the form. Only city and country are included in the profile save; location coordinates are not saved.
 
 Role routing sends Administrators to Admin, Creators to the Creator dashboard, and End Users to the customer home area.
 
@@ -57,6 +71,8 @@ Logging out immediately removes access to private pages, including through brows
 
 ## Current limitations
 
+- The M3 full incomplete-profile browser journey, live-backend profile saves and deployed location lookup error/retry have not yet been verified end to end.
+- Skip and final Continue navigate to the app; M3 does not add persistence of an onboarding completion flag. RESET reopens the wizard locally.
 - Forgot password shows a multi-step reset interface, but the visible flow does not currently call the backend reset endpoint.
 - The expired email verification message links to a resend-verification path that is not currently documented as a complete workflow.
 - Onboarding copy mentions analytics; current Creator Analytics is server-backed

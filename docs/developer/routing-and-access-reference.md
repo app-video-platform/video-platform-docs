@@ -25,7 +25,8 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/auth/email-sent` | public | - | Email sent page |  |
 | `/auth/verify-email` | public | - | Verify email page | Uses `token` query param |
 | `/auth/forgot-password` | public | - | Password reset screen | Visible flow is incomplete |
-| `/onboarding` | protected | Admin, Creator, User | Onboarding flow |  |
+| `/onboarding` | protected | Admin, Creator, User | Canonical onboarding | Direct Onboarding mount outside AppRouter role-home layout; incomplete wizard or completed-profile redirect/reset |
+| `/app/onboarding` | protected | Admin, Creator, User | Alternate onboarding entry | Existing protected AppRouter entry |
 | `/unauthorized` | public | - | Unauthorized page |  |
 | `/app` | protected | Admin, Creator, User | Role-based app home | Admin, Creator, or End User landing |
 | `/app/explore` | public | - | Explore products |  |

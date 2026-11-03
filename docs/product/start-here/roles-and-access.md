@@ -78,7 +78,7 @@ Administrators can:
 
 ## How it works
 
-Access is based on the user's active role.
+Access is based on the user's active role. End Users, Creators and Administrators share the protected `/onboarding` entry (also available at `/app/onboarding`). Incomplete profiles see the wizard; completed profiles see its redirect/reset screen. Visitors must sign in. See [Authentication and Onboarding](../core-concepts/authentication-and-onboarding.md) for save and retry behavior.
 
 | Area | Visitor | End User | Creator | Administrator |
 |---|:---:|:---:|:---:|:---:|

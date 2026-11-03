@@ -40,7 +40,7 @@ export default function SocialsSection() {
 - State helpers:
     - `completed[id]` shows a green check when a non-empty URL is saved.
     - `removed[id]` shows a red X if cleared after previously set.
-    - `initialValuesById` is used to determine whether the new value equals the original (then a minus icon is shown).
+    - Current trimmed link state determines whether confirmation adds, updates or removes a URL. An original initial value can be restored after editing or clearing; comparison must not use only the initial prop snapshot.
 - Events:
     - Press Enter or click the action button to confirm add/update/remove per platform.
 - Styling hooks:
@@ -53,3 +53,7 @@ export default function SocialsSection() {
 <br></br>
 <br></br>
 > Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025
+
+### Restoration and persistence
+
+Enter and the action button use the same confirmation handler. Empty input removes the platform link; non-empty input updates its existing entry or adds one without duplicates. The component emits local links via `onChange`; the parent owns API persistence. M3 tests cover restoration after editing/clearing and uniqueness. Live-backend onboarding saves remain unverified; see [User API](../api/user.md#onboarding-profile-save-lifecycle).

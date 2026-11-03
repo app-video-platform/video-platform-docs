@@ -52,3 +52,9 @@ title: Input
 <br></br>
 <br></br>
 > Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025
+
+### Onboarding validation associations
+
+Onboarding Title, Bio, Tagline / Mission and Website pass `label`, a stable `name`, and `error={fieldState.error?.message}` through the shared Input/Textarea components. Labels use `htmlFor` with the control ID; error text has a matching name-based error ID and is included in `aria-describedby`. An error sets `aria-invalid`; correction clears validation through React Hook Form. Do not render standalone unassociated labels/error paragraphs instead.
+
+`multi-step-form.component.test.tsx` checks labels, invalid state, description targets and field correction across profile steps. These DOM assertions do not establish screen-reader announcements or full browser E2E behavior. See [User API](../api/user.md#onboarding-profile-save-lifecycle) for save sequencing and verification scope.

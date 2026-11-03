@@ -2,7 +2,9 @@
 
 ## Frontend fix follow-up — 3 November 2026
 
-M1 PR #71 and M2 PR #72 are merged; the eight issue notes and [current implementation-status table](summary.md#current-frontend-implementation-status--3-november-2026) distinguish synthetic verification from pending live-backend E2E and unestablished deployment/final QA. Retest against a confirmed deployed revision. Historical execution counts and failures remain unchanged; Trello remains the operational board.
+M1 PR #71, M2 PR #72 and M3 PR #73 are merged; the fourteen issue notes and [current implementation-status table](summary.md#current-frontend-implementation-status--3-november-2026) distinguish synthetic verification from pending live-backend E2E and unestablished deployment/final QA. Retest against a confirmed deployed revision. Historical execution counts and failures remain unchanged; Trello remains the operational board.
+
+M3 covers BUG-035, BUG-064, BUG-037, BUG-036, BUG-084 and BUG-085. Reported automated verification: 689 tests / 108 suites; synthetic browser coverage: completed-profile redirects only. Full incomplete-profile browser onboarding, live-backend profile persistence and deployed Nominatim error/retry remain pending. City/country are in the profile save contract; coordinates are not. M4 remains ongoing. This documentation update does not resume paused QA or change historical results.
 
 ## Pause handoff — 2 November 2026
 

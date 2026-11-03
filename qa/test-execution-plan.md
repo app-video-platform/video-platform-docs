@@ -134,4 +134,16 @@ The [run summary](runs/2026-09-30-01/summary.md#current-frontend-implementation-
 | Saved workspace and Article | BUG-001, BUG-018 | Four-type saved entry/reload, legacy entry, Article body/formatting round trip without a save on open. |
 | Nested saves and Membership recovery | BUG-060, BUG-077 | Persisted Section/Lesson sequencing, tab/Products/Preview/Publish waits, retained edits/retry, Product-scoped stable load failure and deliberate retry. |
 
-Record the deployed frontend revision before retesting. Synthetic checks used intercepted HTTP; M2 browser checks were not rerun after final M1 integration. Browser termination and forced/history navigation do not promise asynchronous persistence. Deployment/final QA remains unestablished; M3 remains separate ongoing work.
+Record the deployed frontend revision before retesting. Synthetic checks used intercepted HTTP; M2 browser checks were not rerun after final M1 integration. Browser termination and forced/history navigation do not promise asynchronous persistence. Deployment/final QA remains unestablished; M3 is now merged in PR #73; its separate retest scope is below. M4 remains under implementation.
+
+## M3 onboarding retest guidance — 3 November 2026
+
+Use the [existing implementation-status table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026) and six issue resolution notes. M3 automated tests and completed-profile synthetic browser redirects do not change the historical ledger to Pass. Testing remains paused; record new attempts only after authorized execution against a confirmed revision. Trello remains the operational board.
+
+| Area | Issues | Outstanding verification |
+| --- | --- | --- |
+| Canonical routing and progress | BUG-035, BUG-064 | Incomplete USER/CREATOR/ADMIN direct entry, reload, sign-in and successful save without wizard reset; completed-profile redirect and guest denial. |
+| Save rejection and validation | BUG-037, BUG-036 | Real save/reload, retained values and explicit retry; field/error correction and assistive-technology checks beyond automated DOM associations. |
+| Social links and location | BUG-084, BUG-085 | Original-link restoration through actual profile saves; deployed reverse lookup failure/retry while preserving an accepted location. |
+
+The existing profile contract saves city and country only. Coordinates returned by the lookup are not persisted through UpdateUserRequest. No M4 completion or deployment/final QA confirmation is established.

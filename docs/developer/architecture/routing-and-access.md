@@ -18,7 +18,7 @@ For the exhaustive route list, see the [Routing and Access Reference](../routing
 | `/` | `MarketingRouter` | Public marketing site. |
 | `/auth/*` | `AuthRouter` | Auth flows. |
 | `/app/*` | `AppRouter` | Main application experience. |
-| `/onboarding` | `AppRouter` | Protected onboarding route implemented by the app router. |
+| `/onboarding` | `Onboarding` through `ProtectedRoute` | Canonical onboarding outside the app role-home layout; Admin, Creator and User. |
 | `/unauthorized` | Shared page | Public unauthorized page used by role guards. |
 | `/dev-dashboard` | Shared page | Developer dashboard route. |
 
@@ -90,3 +90,9 @@ When adding or changing a route:
 - Add `ProtectedRoute` when the route requires authentication or role checks.
 - Update the [Routing and Access Reference](../routing-and-access-reference.md).
 - Use the [Add a Route playbook](../playbooks/add-a-route.md) for the detailed checklist.
+
+## Onboarding entry and profile updates
+
+`src/App.tsx` directly mounts Onboarding at `/onboarding` through the existing allowed-role guard for ADMIN, CREATOR and USER. Do not delegate that entry to AppRouter's role-home layout. `src/domains/app/routes/app-router.tsx` retains `/app/onboarding` with the same roles. Unresolved authentication never mounts the wizard; missing allowed roles deny access. `Onboarding` selects MultiStepForm for an incomplete profile and CountdownRedirect for a completed profile.
+
+Ordinary `updateUserDetails.pending` loading must not replace an authorized wizard with a spinner. Keep M1 session-status authorization separate from profile mutation loading, preserving progress while the save settles. Authentication/account boundaries still remove the old wizard. See [profile step persistence](../api/user.md#onboarding-profile-save-lifecycle) for async ownership and verification limits.
