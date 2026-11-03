@@ -56,7 +56,7 @@ After a lesson exists, creators can edit the lesson description and choose the c
 
 ### Video lessons
 
-Video lessons show a video file uploader. Creators can select a video file in the editor.
+Video lessons show a video file selector. The selected filename stays visible during ordinary title/description edits and editor updates; explicit removal or replacement still changes the selection, and closing the editor does not promise to retain a File object. Selection is not an upload or playable media: Course video persistence/delivery remains backend-pending.
 
 ### Article lessons
 

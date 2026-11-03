@@ -10,8 +10,10 @@ title: UppyFileUploader
   - `maxNumberOfFiles?: number` — default `10`
   - `maxFileSize?: number` — bytes; default `5 * 1024 * 1024` (5MB) in this wrapper
   - `disableImporters?: boolean` — hide Google Drive / Dropbox / OneDrive / URL / Unsplash (default `false`)
+  - `uploadMode?: 'UPLOAD' | 'SELECT_ONLY'` — default UPLOAD; SELECT_ONLY does not install XHRUpload
+  - `note?: string` — Dashboard helper text
 - **Usage:**
-  - A preconfigured Uppy Dashboard with XHR upload (endpoint `/upload`) and optional importers via Companion.
+  - A Uppy Dashboard with optional importers via Companion. UPLOAD mode installs XHRUpload at `/upload`; SELECT_ONLY emits files for caller-owned persistence without installing a transfer plugin. The Dashboard upload button is hidden.
   - Emits controlled file list via `onFilesChange` so the parent can show previews or push to API.
 - **A11y:**
   - Uppy’s Dashboard is keyboard accessible (focusable, ARIA roles).
@@ -27,6 +29,8 @@ function MediaStep() {
   return (
     <div>
       <UppyFileUploader
+        uploadMode="SELECT_ONLY"
+        disableImporters
         allowedFileTypes={['image/*']}
         maxNumberOfFiles={5}
         maxFileSize={5 * 1024 * 1024}
@@ -40,15 +44,14 @@ function MediaStep() {
 
 
 ### Notes
-- Upload target: This wrapper configures `XHRUpload` to `POST /upload` with `formData` and field name `file`.
-    - Implement that route on your backend or change the endpoint.
+- UPLOAD mode configures `XHRUpload` to `POST /upload` with `formData` and field name `file`; this is not the Product media API or evidence that a production `/upload` route exists. SELECT_ONLY leaves transfer/persistence to the caller.
 - Importers: When `disableImporters=false`, enables Companion integrations:
     - Google Drive, Dropbox, OneDrive, URL, Unsplash (via `https://companion.uppy.io`)
     - If self-hosting Companion, change `companionUrl`.
 - Thumbnails: If `allowedFileTypes` includes `'image/*'`, `ThumbnailGenerator` is enabled to generate previews.
 - Styling: Uppy styles are imported in the component:
     - `@uppy/core/dist/style.css`, `@uppy/dashboard/dist/style.css`
-- Cleanup: Uppy instance is destroyed on unmount to avoid memory leaks.
+- Cleanup deactivates and detaches file-added/file-removed selection listeners before destroying the instance, so destruction cannot emit a false empty selection to the parent.
 - Extensibility:
     - Show upload button and call `uppy.upload()` programmatically.
     - Localize strings or override Dashboard `note`.
@@ -57,3 +60,9 @@ function MediaStep() {
 <br></br>
 <br></br>
 > Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025
+
+### Stable selection ownership
+
+The current `onFilesChange` callback is stored in a ref. Effective allowed-file-type contents are serialized/memoized, so a new equivalent inline array or callback does not recreate Uppy. Initialization depends on restrictions and upload-mode/importer options; actual option changes or unmount still tear down the instance. Genuine user file removal emits the current selection. Do not promise File-object persistence across teardown, route changes or reload.
+
+Membership Video/Resource and Course Video use this wrapper; normal editor rerenders preserve selection. Membership metadata-only saving and Course `pending-video-asset://` references do not establish binary storage, streaming or playback. Shared Uppy tests cover stable ownership/latest callback, actual removal and listener teardown (eight tests total). Editor regression tests support retained Membership selections through validation/Save and Course filename display. Native file selection was not exercised by the available M6 browser automation. See [Product API verification boundary](../api/products.md#m6-verification-boundary).

@@ -45,3 +45,7 @@ Frontend cancellation does not revoke a server operation already committed. Real
 M4 registration performs an explicit credentialed CSRF bootstrap before sending an explicit `X-XSRF-TOKEN` header; see [Auth API](./auth.md#registration-csrf-contract). `csrf.ts` no longer excludes registration, and injects the `XSRF-TOKEN` cookie value for POST/PUT/DELETE/PATCH or `X-CSRF-Force` only when the request does not already carry an explicit header. Preserve the bootstrap-returned header instead of overwriting it with a potentially different browser-readable cookie.
 
 `refresh-token.ts` excludes `api/auth/csrf` alongside the existing authentication endpoints from 401-triggered refresh. A failed guest bootstrap returns its error rather than starting cookie refresh. M1's single refresh promise, bounded replay and session-generation cancellation remain unchanged. Credentialed CSRF bootstrap/register interoperability, cookie issuance and cross-origin CORS still require deployed-backend verification.
+
+## Raw media headers
+
+Product thumbnail, Gallery and Promo API calls override `Content-Type` with the selected raw File's MIME type. Keep the shared Axios JSON default for JSON endpoints; do not change it globally or wrap raw media in JSON/FormData. Download deliverables use their separate presign → direct storage PUT → confirmation flow. See [Product media](./products.md#product-media) for contracts and [M6 verification limits](./products.md#m6-verification-boundary) for the storage/CDN boundary.

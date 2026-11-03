@@ -172,3 +172,16 @@ M5 [PR #75](https://github.com/app-video-platform/video-platform-ui/pull/75) is 
 | Library tabs | BUG-005 | All child routes, Back/Forward, selected state/focus, Left/Right/Home/End and native assistive-technology checks. |
 
 Reported verification: 737 tests / 115 suites, TypeScript, lint (0 errors / 203 warnings), whitespace and a subsequent successful 27.2-second production build (three existing performance warnings). Earlier build-stall cause remains unconfirmed. Live purchase, entitlements/content/file access and browser-storage recovery remain pending; synthetic browser storage and commerce/entitlement coverage was limited.
+
+## M6 upload and selection retest guidance — 3 November 2026
+
+[PR #76](https://github.com/app-video-platform/video-platform-ui/pull/76) is merged; the [existing status table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026) and four issue notes distinguish automated checks from pending browser/live integration. Trello remains the operational tracker. Preserve historical attempts; documentation work does not resume paused QA or execute live-storage mutations.
+
+| Issue | Retest after authorized execution is available |
+| --- | --- |
+| BUG-042 | Select valid Thumbnail, Gallery and Promo files natively; inspect actual MIME headers/raw bodies and confirmed backend metadata, then verify storage/CDN separately (BUG-069). |
+| BUG-055 | Select Membership Video/Resource, edit Title/Description, correct validation and rerender; verify retained selection and Save. Check Course Video filename display, explicit removal/replacement and editor teardown without claiming playable/durable content. |
+| BUG-043 | Upload Gallery image, delete successfully and select the identical name/size/lastModified file again; confirm a new request and saved entry. Include upload failure/retry, failed deletion and concurrent duplicate selection. |
+| BUG-074 | Independently fail presign, storage PUT and confirmation; retry each successfully, verify confirmed rows and obsolete error removal while unrelated/concurrent failures stay visible. |
+
+Reported checks: 756 tests / 116 suites, including eight shared Uppy tests; TypeScript, lint (0 errors / 203 warnings), whitespace and 26.95-second production build passed with three existing webpack performance warnings. The browser reached seeded Course Media but could not select files. Native file-selection E2E, live uploads/storage/CDN, Download retry and orphan cleanup are unverified. No success is inferred before confirmation, and no cleanup of unconfirmed storage objects is promised.

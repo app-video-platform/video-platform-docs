@@ -84,6 +84,10 @@ Image uploads support JPEG, PNG, WebP, and GIF files up to 10 MB per image. Prom
 
 The frontend uses Product media upload APIs that send the selected raw file to the backend. Backend storage persistence is handled behind those APIs; Product media is not implemented as a direct browser-to-Spaces upload flow.
 
+After a successful Gallery image removal, you can select the identical file again. Repeated selection during an upload does not start another identical upload. Failed uploads can be retried; failed deletion keeps the image available with its error feedback.
+
+Thumbnail, Gallery and Promo requests carry the selected supported image/video file type. Correct request formatting alone does not establish successful live storage or CDN delivery; M6 live upload/delivery verification remains pending.
+
 ### Configure the product type
 
 After the shared setup, continue with the page for the selected product type:

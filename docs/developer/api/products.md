@@ -64,7 +64,11 @@ Current frontend validation matches the Product media contract:
 - promo video: MP4 or WebM up to 100 MB
 - gallery: up to 20 images total
 
-The frontend sends selected raw files to these Product media APIs. Spaces persistence is backend-owned behind the API boundary; direct browser-to-Spaces upload is not the current Product media architecture.
+The frontend sends selected raw File bodies to these Product media APIs with an explicit `Content-Type: file.type`. Product media validation rejects missing or unsupported MIME before the API callback. This per-request override does not change shared Axios JSON defaults. Spaces persistence is backend-owned behind the API boundary; direct browser-to-Spaces upload is not the current Product media architecture.
+
+### Gallery signature lifecycle
+
+`product-media/product-media-section.component.tsx` reserves `name:size:lastModified` signatures before awaiting Gallery uploads. Successful uploads map saved image IDs to signatures; upload rejection releases the signature for retry. Only successful deletion releases the matching image reservation. Failed deletion retains both image and duplicate protection. These refs are component-local, not a permanent backend deduplication contract.
 
 ## Product Landing Page config
 
@@ -103,6 +107,12 @@ individual public Product and landing-page reads enforce Published visibility.
 | `confirmFileUploadAPI` | `POST /api/products/:productId/sections/:sectionId/files/confirm-upload` |
 | `deleteSectionFileAPI` | `DELETE /api/products/:productId/sections/:sectionId/files/:fileId` |
 | `uploadDownloadSectionFileAPI` | Composes the presigned upload flow. |
+
+Only `uploadDownloadSectionFileAPI` completion after presign, direct storage PUT and backend confirmation yields a file row. SectionEditor keeps upload status/errors by selected file signature. Retry start removes that file's stale error; success clears only its error; failure restores it and releases the upload reservation. Confirmed rows merge against current section state, preventing out-of-order completions from losing other files. Another file's error remains visible when an older operation succeeds. Failed confirmation may leave storage bytes; no orphan cleanup operation was added.
+
+## M6 verification boundary
+
+M6 [PR #76](https://github.com/app-video-platform/video-platform-ui/pull/76) is merged as `fbc0145` (implementation `4b6cd12`). Reported automated checks passed 756 tests / 116 suites, including eight shared Uppy regressions; TypeScript, ESLint (0 errors / 203 warnings), whitespace and production build passed (26.95 seconds; three existing webpack performance warnings). Browser testing reached seeded Course Media but could not select files through the native chooser. Native selection E2E, live Product media/storage/CDN delivery and Download retries remain unverified; separate BUG-069 access-denied behavior is unchanged. Membership/Course binary upload/delivery remains backend-pending. Metadata acceptance is not proof of public delivery or orphan cleanup.
 
 ## Types
 

@@ -58,6 +58,12 @@ The current upload path requests a presigned upload URL, uploads the selected fi
 - Size when available.
 - Remove action.
 
+### Upload failure and retry
+
+If requesting the upload URL, sending the file or confirming its metadata fails, the file is not shown as confirmed. Retry the selected file: starting its retry removes its obsolete error; a failed retry shows its error again, and successful confirmation clears that file's error. Other files' failures remain visible even when uploads finish in a different order.
+
+M6 live Download retry behavior remains unverified. If file bytes reached storage but confirmation failed, they may remain there; automatic cleanup is not guaranteed.
+
 ### Remove files
 
 Use the Remove action on an uploaded file to delete it from the file group.

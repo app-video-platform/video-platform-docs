@@ -69,7 +69,7 @@ Native Posts, Videos, and Resources are Membership-only content types. They can 
 
 For Videos and Resources, the current builder saves selected file metadata such
 as name, MIME type, size, and any reference returned by the current authoring
-contract. It does not upload or deliver the binary file to members yet.
+contract. The selected file summary stays visible while you change Title/Description, correct validation or make ordinary editor updates. Explicit removal/replacement still changes the selection, and leaving the editor does not promise to retain the selected File. This selection retention does not upload or deliver the binary file to members yet.
 
 Existing Products are separate standalone products that the Membership references. Adding a Course or Download to a Membership does not convert that product into Membership-native content.
 
