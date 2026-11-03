@@ -91,6 +91,15 @@ Creators can currently:
 
 Builder edits update the live preview immediately, but they remain local until the creator selects **Save**. **Reset** discards unsaved landing-page configuration changes.
 
+A rejected landing-page Save keeps the unsaved draft on screen and displays an
+inline error. Permission failures show **You do not have permission to save this
+landing page.** An unavailable resource shows **This landing page is unavailable.**
+Other failures show **Could not save the landing page. Please try again.** A later
+Save can retry the retained draft; **Landing page saved.** appears only after a
+successful save. Retention is local to the open Builder and does not promise
+survival across reload or navigation. Existing ownership checks still prevent
+unauthorized changes.
+
 The Landing Page Builder is not the canonical Product editor. Product name, description, type, status, price, thumbnail, and product-specific contents/settings remain Product-owned and are changed in Product Workspace. Creator identity remains User/Profile-owned. Product Landing Page configuration owns only product-specific public presentation settings, such as marketing copy, hero layout, section visibility, and section order.
 
 Public Product Landing Pages inherit the creator's Storefront theme when available and otherwise use the platform/default Storefront theme. The current Landing Page Builder does not provide product-specific theme overrides.

@@ -14,12 +14,32 @@ sidebar_position: 4
 | Function | Method and URL | Notes |
 |---|---|---|
 | `getUserProfileAPI` | `GET api/user/userInfo` | Loads the authenticated profile and forces CSRF handling for the GET. |
-| `updateUserDetailsAPI` | `PUT api/user/userInfo` | Used by onboarding profile updates. |
+| `updateUserDetailsAPI` | `PUT api/user/userInfo` | Used by onboarding, Settings Profile, and Storefront inline profile updates; returns the updated User. |
 | `changeDevUserRoleAPI` | `PUT api/user/dev/role` | Dev role switcher in the user dropdown. |
 
 ## Notes
 
-Settings profile forms currently do not clearly call the user update service. Onboarding does.
+Settings Profile submits through `methods.handleSubmit(onSubmit)` and awaits
+`dispatch(updateUserDetails(payload)).unwrap()`. Field validation precedes the PUT;
+only fulfillment shows **Profile saved.** Failure shows a safe retry message.
+`PageHeader` supplies a submit-type Save button and profile-operation loading.
+
+The payload contains trimmed `firstName`, `lastName`, `title`, `bio`, `website`,
+`taglineMission`, and `publicEmail`, plus a full `socialLinks` array. Clearing the
+optional public email sends an empty string. Nonempty social handles become
+platform URLs for Facebook, Instagram, X, YouTube, and TikTok; empty handles are
+omitted from that array, so clearing all handles submits `[]`. Hydration resets
+the form from the current User and extracts handle paths from stored social URLs.
+The existing service uses credentials and returns User data; M9 adds no endpoint.
+`UpdateUserRequest` has no phone field, and this form has no profile-image upload.
+
+Bio/Tagline have optional `minLength`/`maxLength` rules (30–250 / 10–120), without
+`required`. Website uses the form's domain-style pattern with optional HTTP(S)
+and `www.` prefixes; it is not unrestricted URI-scheme validation. Other backend
+validation remains authoritative. See [M9 save lifecycles](../architecture/state-and-data-flow.md#profile-and-integration-save-feedback-m9)
+for mutation ownership, session boundaries, safe failure handling and verification
+limits. The same form is shared across Settings roles; live role/save/reload
+verification remains pending.
 
 ## Onboarding profile save lifecycle
 

@@ -60,7 +60,7 @@ The strongest areas of the current frontend are:
 | Creator Sales | Creator-only backend reporting covers retained revenue, paid Orders, full refunds, failures, filters, pagination, immutable item snapshots, payment context, entitlement-derived access, and multi-Product Order itemization. Production payments, subscriptions, refund/retry actions, exports, taxes, and payouts are unavailable. |
 | Creator Analytics | Creator-only backend reporting covers 7/30/90-day Commerce performance, Product ranking, customer growth, memberships where returned by the aggregate, refund rate, and failures. Custom ranges, traffic/conversion analytics, taxes, payouts, and exports are unavailable. |
 | Marketing and reviews | Reviews can be listed and filtered, but reply and moderation controls are incomplete in the UI. Other marketing tabs are mostly placeholders. |
-| Settings | Several settings tabs render forms without saving changes. Calendar connection is the clearest backend-backed setting. |
+| Settings | Supported Profile fields validate and save through the authenticated User API, with success after acceptance. Phone/image editing is unavailable. Calendar initialization has recoverable error feedback; consent and sync remain unverified. Subscription, Privacy, and Notification forms validate locally without saving preferences. Deployed Profile save/reload remains unverified for M9. |
 | Messages | Messages navigation exists in places, but a standalone Messages page is not implemented in the current router. |
 
 ## What should not be documented as available

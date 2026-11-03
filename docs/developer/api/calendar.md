@@ -18,7 +18,30 @@ sidebar_position: 6
 
 ## Current frontend usage
 
-The Settings Calendar tab loads providers, lets the user choose one, and opens the returned authorization URL in a new tab or window.
+`ConnectedCalendarTab` loads provider strings and sends `{ provider, loginHint }`
+through the existing credentialed connection service. `ConnectInitResponse`
+contains optional `authorizationUrl` and `state`; the UI does not expose state or
+backend response details. Authorization URL creation remains backend-owned.
+
+M9 wraps initialization in `try/catch/finally` with local `connecting` and
+`connectError`. Connect requires a provider and is disabled while pending; the
+selector is also disabled. Failure sets an alert, retains the selected provider,
+and releases pending state for retry. Changing the provider clears the error.
+Provider discovery failure has separate generic unavailable feedback.
+
+The component requires an authorization URL that parses with `new URL` and has
+`https:` protocol before `window.open(url, '_blank', 'noopener,noreferrer')`.
+This checks URL syntax/protocol, not successful consent or provider configuration.
+The calendar service logs fixed failure summaries rather than caught response
+objects. Safe UI feedback excludes raw backend/OAuth parameters.
+
+Merged M9 [PR #79](https://github.com/app-video-platform/video-platform-ui/pull/79)
+changes frontend initialization feedback only. The prior BUG-081 backend encoding
+work is separate; its Trello completion status does not establish deployed URL
+correctness or provider success. No backend fix, consent, token exchange, callback,
+synchronization, or cross-origin behavior was verified by M9. Automated tests use
+synthetic HTTPS URLs and stub `window.open`; no real provider URL was opened.
+See [M9 verification limits](../architecture/state-and-data-flow.md#m9-verification-boundary).
 
 Connected-calendar listing, disconnect, and sync management are not currently implemented in the frontend.
 

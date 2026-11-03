@@ -232,3 +232,41 @@ Customer switching/404, Sales selection/close/reload. Deliberate ordering and Ad
 filter races were automated tests, not browser E2E. Deployed detail races, live
 Admin queries, real backend/network timing and final deployment QA remain pending;
 append results only after those retests are actually executed.
+
+## M9 Profile and Calendar feedback retest guidance — 3 November 2026
+
+[PR #79](https://github.com/app-video-platform/video-platform-ui/pull/79) is merged
+as `8674513`, implementation `8cc07e3`. Use the [existing status table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and five issue notes. Confirm deployed frontend/backend revisions before appending
+new attempts. Preserve historical outcomes; this docs update does not resume
+paused QA, mutate live accounts, open real consent URLs, or update Trello. Use
+controlled fixtures for rejected/overlapping saves and Calendar responses.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-008](runs/2026-09-30-01/issues/BUG-008.md) | Enter Bio 29/251, Tagline 9/121 and malformed Website; assert field errors and no invalid User PUT. Native Bio input may stop at 250: preserve the historical distinction from automation fills. Correct fields, test click and keyboard submit, hold the response to ensure success waits for API acceptance, then reload/read back supported fields. Repeat Creator/Admin/User where shared, optional blanks/public-email clearing and social mapping. Confirm phone/image controls remain unavailable. |
+| [BUG-033](runs/2026-09-30-01/issues/BUG-033.md) | Reject a Storefront inline profile save, confirm the editor/draft/error remain, correct and retry, verify accepted value and cleared old alert, then reload/read back. In a controlled environment interleave requests; newer profile state must survive stale success/error, while unrelated Auth/Product/config status remains independent. Check backend write ordering separately. |
+| [BUG-052](runs/2026-09-30-01/issues/BUG-052.md) | Simulate 403, 404, 503 and network failure. Assert safe permission/unavailable/retry feedback, retained local draft, no saved-success and no unhandled promise/runtime rejection. Retry valid owned changes; keep backend ownership checks authoritative and confirm foreign configuration is unchanged. Draft retention does not imply reload persistence. |
+| [BUG-081](runs/2026-09-30-01/issues/BUG-081.md) | Simulate Microsoft initialization failure and retry; verify alert, retained provider and restored Connect/selector. Switch to Google and confirm stale errors clear. Hold pending to test duplicate prevention; cover provider discovery failure and missing/malformed/non-HTTPS authorization URLs. Stub opening for a synthetic HTTPS success; it is initialization only. Verify real cross-origin, consent/callback/token/sync separately under an authorized provider test, never as part of documentation work. |
+| [BUG-009](runs/2026-09-30-01/issues/BUG-009.md) | For all three placeholder tabs enter 1/51 characters and blur, inspect associated errors, correct to 2/50 and verify clearing. Test trim, optional blank and native keyboard focus/blur; confirm the Privacy label. Repeat shared roles where relevant. Leaving/reloading must not be scored as persisted subscription, privacy or notification preference behavior. |
+
+Repeat profile saves across M1 session boundaries and retain M8 read-freshness
+regressions. Component validation/ARIA assertions are not native keyboard or
+assistive-technology E2E evidence. Profile response ownership guards frontend
+state, not atomic or last-write server ordering. Restore any disposable fixtures
+through the normal authorized workflow after actual execution.
+
+PR #79 and the handoff report 848 tests / 125 suites, TypeScript, lint (0 errors /
+185 warnings), whitespace and a roughly 31-second mocks-disabled production build
+with three existing Webpack performance warnings. The final targeted record is
+19 tests / five suites, followed by a 3/3 Profile rerun after optional-email payload
+cleanup; no later full-suite rerun is claimed. No browser-driven/live-backend E2E
+was performed. Deployed Profile save/reload, live Storefront/Landing recovery,
+real Calendar/provider/cross-origin behavior and final deployment QA remain pending.
+
+BUG-081's prior backend work was already reported Dev done 🎉 in Trello; the
+read-only card status confirms operational completion only. The historical scope/
+redirect-encoding failure, backend URL construction, real consent/callbacks,
+token exchange and sync require their own verified evidence. M9 implements
+frontend initialization feedback and does not establish those backend/provider
+outcomes. Trello status remains unchanged.

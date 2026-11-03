@@ -219,6 +219,106 @@ Deployed Product/Customer/Sales races, live Admin queries, backend/network timin
 and final deployment QA remain unverified. Documentation work does not rerun or
 resume the paused QA execution.
 
+## Profile and integration save feedback (M9)
+
+Merged [PR #79](https://github.com/app-video-platform/video-platform-ui/pull/79)
+is main merge `8674513d3015c718bb0b6ff7c1746916b323b758`, implementation
+`8cc07e31fd2f903aedc5709f45be6bcedc21e910` (3 November 2026). GitHub comparison
+confirms that implementation is contained in main with no file differences.
+M9 extends operation ownership to Profile and Landing Page saves while preserving
+[M1 account isolation](#account-and-session-boundaries) and [M8 read freshness](#active-read-request-ownership-m8).
+
+### Profile mutation ownership
+
+`src/core/store/auth-store/auth.slice.ts` keeps `profileUpdateRequestId`,
+`profileUpdateLoading`, and `profileUpdateError` separate from session/profile
+resolution and generic Auth loading/error. `updateUserDetails.pending` claims the
+RTK request ID and clears the prior mutation error. Only the current request may
+fulfill/reject; success releases ownership, clears loading/error and accepts the
+returned User, while current failure exposes only that mutation's error. Stale
+outcomes cannot replace newer shared User data or settle its operation status.
+Unrelated authentication errors are preserved. `beginSession` clears profile
+mutation ownership/status; existing session middleware remains authoritative.
+
+Use `selectProfileUpdateLoading` / `selectProfileUpdateError` for profile updates,
+not generic Auth selectors. `settings-profile-tab.component.tsx` validates through
+React Hook Form submission before awaiting `.unwrap()`; Save is a submit button
+and success follows fulfillment. User response changes rehydrate the form.
+Supported fields, optional email clearing, social URL mapping and validation
+limits are in [User API](../api/user.md#notes). Phone/image editing is disabled.
+
+Storefront inline profile editors dispatch the same operation and retain their
+own field-local failure. Rejection leaves the editor/draft open; successful retry
+clears its error and closes the editor. The page uses profile-update loading and
+no longer turns a generic Auth error into a Storefront save alert. Product-list,
+Storefront-config loading, and config-save feedback remain separate. This guards
+frontend state; it does not serialize concurrent server writes, cancel a committed
+write, or establish backend last-write ordering.
+
+### Landing Page save boundary
+
+`product-landing-page.slice.ts` uses `creatorSaveRequestId`,
+`creatorSaveLoading`, and `creatorSaveError` separately from Creator config read
+status. Real save pending claims the current request; only matching outcomes may
+settle it or update config caches. The thunk maps HTTP 403 to **You do not have
+permission to save this landing page.**, 404 to **This landing page is unavailable.**,
+and other failures to **Could not save the landing page. Please try again.**
+
+`ProductLandingPageBuilder.save` catches the rejected `.unwrap()` at the action
+boundary, preventing an unhandled click-handler rejection. It clears old success
+before the attempt, preserves the local draft on failure, and shows **Landing
+page saved.** only after fulfillment. Draft retention is local to the mounted
+Builder; this introduces no reload persistence, publishing capability or ownership
+bypass. Existing Product-scoped backend config authorization remains authoritative.
+
+### Calendar and placeholder Settings
+
+Calendar initialization uses local `connecting` / `connectError` and a guarded
+async action, not a new Redux request manager. Pending disables Connect/provider
+selection. Rejection or an absent/invalid HTTPS authorization URL sets a safe
+`role="alert"`; `finally` restores controls and provider changes clear old errors.
+The backend creates the URL; only its returned, parseable HTTPS address is opened.
+Calendar logs use fixed failure summaries. See [Calendars API](../api/calendar.md#current-frontend-usage)
+for contract, provider discovery and OAuth verification boundaries.
+
+Subscriptions, Privacy, and Notifications remain React Hook Form placeholders.
+Their input blur handlers trim through `onChange`, call `field.onBlur()`, and
+`trigger(field.name)` with the existing optional 2–50-character title rules.
+Shared Input associates the displayed error through `aria-invalid` and
+`aria-describedby`. Valid correction clears the touched field's error. Privacy
+has the correct label. There is no preference save thunk or new backend support;
+validation alone does not persist these forms. Phone and profile-image editing
+also remain unavailable.
+
+### M9 verification boundary
+
+PR #79 and `M9_DOCUMENTATION_HANDOFF.md` report 848 tests / 125 suites,
+TypeScript, ESLint (0 errors / 185 existing warnings), whitespace checks and a
+mocks-disabled production build in approximately 31 seconds (three existing
+Webpack bundle-size/performance warnings). The handoff records a final targeted
+19-test / five-suite run and a subsequent 3/3 Profile rerun after optional public
+email clearing was adjusted. Do not imply that the full suite was rerun after
+that final adjustment.
+
+Automated evidence inspected: Profile component tests prevent invalid submission,
+assert the supported PUT payload (including empty public email), form-submit
+success and 503 failure; Auth reducer tests reject stale mutation outcomes while
+preserving unrelated Auth errors; Storefront tests cover failed Title save/retry;
+Landing Page component tests cover 403 containment, draft retention and no success,
+with reducer coverage for late failure after newer success. Calendar tests cover
+Microsoft failure/retry and Google's missing URL using stubbed `window.open`.
+Placeholder tests cover blur minimum/maximum, error associations and correction
+in all three forms. Inspect the corresponding tests beside the components and
+`auth-store/auth-slice.test.ts` / `product-landing-page-store/product-landing-page.slice.test.ts`.
+
+No browser-driven or live-backend E2E verification was performed for M9. Deployed
+Profile save/reload and role behavior, live Storefront/Landing recovery, backend
+simultaneous-write ordering, real authorization configuration, cross-origin
+Calendar behavior, real Microsoft/Google consent/callbacks and synchronization
+remain unverified. Prior BUG-081 backend work is separate from M9 initialization
+feedback; an operational Trello completion status is not deployed/provider proof.
+No provider URLs or live-account mutations were exercised for this docs update.
+
 ## Saved workspace and nested authoring
 
 M2 preserves the shared `ProductForm`, two-step Draft creation and separate persistence contracts. All hooks execute before loading/error/access returns for saved Course, Download, Consultation and Membership workspaces. `use-product-loader.hooks.ts` ignores completions after cleanup or route identity changes; changing the legacy normalization callback alone does not reload or replace the draft.

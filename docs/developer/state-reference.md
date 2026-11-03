@@ -67,6 +67,21 @@ Auth also exposes `sessionStatus`, `sessionVersion`, `profileRequestId` and `pro
 
 Membership `selectMembershipRequest` reads Product-keyed request identity, loading/loaded/failed status and error. Failed aggregate loads require deliberate retry. Section/Lesson dirty revisions and flush handles remain local to mounted editors; Product detail autosave does not absorb their payloads. See [State and Data Flow](./architecture/state-and-data-flow.md#saved-workspace-and-nested-authoring) for sequencing, session compatibility and verification limits.
 
+## Profile and Landing Page mutation status
+
+M9 keeps Auth `profileUpdateRequestId`, `profileUpdateLoading`, and
+`profileUpdateError` independent of session/profile resolution and generic Auth
+status. Use `selectProfileUpdateLoading` / `selectProfileUpdateError` for saves
+from Settings or Storefront. Only the current request may settle shared profile
+mutation state; session boundaries invalidate that ownership.
+
+Product Landing Page save uses `creatorSaveRequestId` and the existing
+`selectCreatorProductLandingPageConfigSaveLoading` /
+`selectCreatorProductLandingPageConfigSaveError`, separate from config reads.
+Components catch rejected `.unwrap()` at the action boundary and retain local
+failure/draft feedback where implemented. Calendar initialization and placeholder
+validation remain local component state. See [M9 save lifecycles and verification](./architecture/state-and-data-flow.md#profile-and-integration-save-feedback-m9).
+
 ## Browser-local collection recovery
 
 M5 [PR #75](https://github.com/app-video-platform/video-platform-ui/pull/75) (main merge `10413bf`, implementation `e5a6a84`) validates collections through `src/core/store/collection-storage.utils.ts`. `cart:v1` stores Cart state; `wishlist:v1` stores a Product-summary array. Hydration accepts arrays of valid summaries, deduplicates by exact Product ID (first accepted entry wins), and normalizes date strings. Every item requires a non-empty string ID. Optional summary fields must have supported shapes/enums; Cart additionally requires a finite non-negative numeric price or `free`. Numeric strings and unsupported quantities are rejected; there is one entry per Product and no quantity UI.

@@ -57,6 +57,14 @@ The same public-email concept is also surfaced in Settings. Storefront Builder e
 
 Profile image editing is not part of the current Storefront Builder because a reusable persisted profile-image upload flow is not available there.
 
+A failed inline profile save keeps the editor and entered value available for
+correction and retry, with a field-local error. After a retry is accepted, the
+updated value is shown, the editor closes, and its old failure message clears.
+Profile saves have their own pending/error feedback, separate from loading
+Products or saving Storefront configuration. This recovery does not change
+Storefront publication or visibility rules. Live-backend recovery and deployed
+profile readback were not verified by M9.
+
 ## Customization
 
 Creators can customize the current Storefront presentation with:
