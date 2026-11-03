@@ -12,13 +12,13 @@ title: PasswordsContainer
   - `handleChange(e)` — change handler for both fields (shared in parent form)
 - **Usage:**
   - Renders **two password fields** with:
-    - Visibility toggles (`Eye` / `EyeOff` from `lucide-react`)
+    - Visibility toggles supplied by PasswordInput using `FaEye` / `FaEyeSlash`
     - Live validation checklist (uppercase, number, special char, etc.)
     - Error messages below each field
   - Typically used in sign-up, password-reset, and onboarding flows.
 - **A11y:**
   - Labels are linked to inputs via `htmlFor`.
-  - Focus behavior ensures password rules appear only when editing.
+  - PasswordInput keeps its rules mounted while `showRules` is true, including focus/blur and submission, so guidance does not move the action.
   - Icons are hidden from assistive tech (`aria-hidden` via icon SVG defaults).
 
 ### Example
@@ -55,7 +55,7 @@ function SignUpForm() {
 
 
 ### Notes
-- Internally reuses [`Input`](form-input.md) for each field.
+- Wraps PasswordInput, which uses shared [`Input`](form-input.md). Each visibility button exposes Show/Hide plus its field label and pressed state, preserving the value on toggle. The container still renders its supplied errors separately; M4 sign-in/signup use PasswordInput error props directly, so do not infer that every form now has identical error wiring.
 - Password rules (like “At least 8 characters”) are dynamically colored:
     - `green` → valid rule
     - `red` / `grey` → still unmet

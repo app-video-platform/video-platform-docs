@@ -39,3 +39,9 @@ export const getSomething = async () => {
 Synchronous request interceptors capture session ownership when requests are invoked. A session boundary cancels refresh waiters, aborts refresh transport and rejects stale private HTTP responses. Explicit public Storefront, public landing-config and search GETs remain independent. Availability failures are recoverable; invalid authentication ends the frontend session. See [session lifecycle and verification limits](../architecture/state-and-data-flow.md#account-and-session-boundaries).
 
 Frontend cancellation does not revoke a server operation already committed. Real cookie rotation, cross-origin behavior and server refresh/logout ordering still need live-backend E2E verification.
+
+## Registration and CSRF interceptors
+
+M4 registration performs an explicit credentialed CSRF bootstrap before sending an explicit `X-XSRF-TOKEN` header; see [Auth API](./auth.md#registration-csrf-contract). `csrf.ts` no longer excludes registration, and injects the `XSRF-TOKEN` cookie value for POST/PUT/DELETE/PATCH or `X-CSRF-Force` only when the request does not already carry an explicit header. Preserve the bootstrap-returned header instead of overwriting it with a potentially different browser-readable cookie.
+
+`refresh-token.ts` excludes `api/auth/csrf` alongside the existing authentication endpoints from 401-triggered refresh. A failed guest bootstrap returns its error rather than starting cookie refresh. M1's single refresh promise, bounded replay and session-generation cancellation remain unchanged. Credentialed CSRF bootstrap/register interoperability, cookie issuance and cross-origin CORS still require deployed-backend verification.

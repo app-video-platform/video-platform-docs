@@ -134,7 +134,7 @@ The [run summary](runs/2026-09-30-01/summary.md#current-frontend-implementation-
 | Saved workspace and Article | BUG-001, BUG-018 | Four-type saved entry/reload, legacy entry, Article body/formatting round trip without a save on open. |
 | Nested saves and Membership recovery | BUG-060, BUG-077 | Persisted Section/Lesson sequencing, tab/Products/Preview/Publish waits, retained edits/retry, Product-scoped stable load failure and deliberate retry. |
 
-Record the deployed frontend revision before retesting. Synthetic checks used intercepted HTTP; M2 browser checks were not rerun after final M1 integration. Browser termination and forced/history navigation do not promise asynchronous persistence. Deployment/final QA remains unestablished; M3 is now merged in PR #73; its separate retest scope is below. M4 remains under implementation.
+Record the deployed frontend revision before retesting. Synthetic checks used intercepted HTTP; M2 browser checks were not rerun after final M1 integration. Browser termination and forced/history navigation do not promise asynchronous persistence. Deployment/final QA remains unestablished; M3 is now merged in PR #73; its separate retest scope is below. M4 is merged in PR #74; its retest scope is below.
 
 ## M3 onboarding retest guidance — 3 November 2026
 
@@ -146,4 +146,16 @@ Use the [existing implementation-status table](runs/2026-09-30-01/summary.md#cur
 | Save rejection and validation | BUG-037, BUG-036 | Real save/reload, retained values and explicit retry; field/error correction and assistive-technology checks beyond automated DOM associations. |
 | Social links and location | BUG-084, BUG-085 | Original-link restoration through actual profile saves; deployed reverse lookup failure/retry while preserving an accepted location. |
 
-The existing profile contract saves city and country only. Coordinates returned by the lookup are not persisted through UpdateUserRequest. No M4 completion or deployment/final QA confirmation is established.
+The existing profile contract saves city and country only. Coordinates returned by the lookup are not persisted through UpdateUserRequest. M4 frontend implementation is now merged in PR #74; its deployment/final QA remains unestablished.
+
+## M4 authentication retest guidance — 3 November 2026
+
+Use the [existing implementation-status table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026) and seven issue resolution notes. PR #74 is merged; source/synthetic verification does not turn historical Fail results into Pass. Trello remains the operational board. Testing remains paused; this documentation update does not resume execution.
+
+| Area | Issues | Outstanding verification |
+| --- | --- | --- |
+| Registration | BUG-044 | Confirm deployed CSRF route, matching real cookie/header, credentialed CORS, bootstrap failure/retry, successful live registration and mailbox delivery. |
+| Verification | BUG-007, BUG-057 | Real valid, missing, invalid/used and expired token outcomes, readable guidance and complete mailbox-to-login journey. Service/network rejection currently uses generic invalid/used-link feedback. |
+| Interaction and layout | BUG-056, BUG-089, BUG-090, BUG-011 | Deployed first pointer/Enter submission, field correction/error associations, Show/Hide names/pressed state and narrow-screen reachability; assistive-technology/zoom checks beyond synthetic coverage. |
+
+Synthetic layout checks covered five authentication routes at 320, 375, 768 and 1440px and local Sign in interaction. Successful CSRF registration and invalid/expired verification API responses were not exercised in that browser scope. Confirm deployed revisions and append real retest attempts only after execution; no resend or connected password-reset backend capability is implied.

@@ -33,7 +33,17 @@ Signed-in users can:
 
 ## How it works
 
-After sign-up, the user is sent to an email-sent screen. Email verification uses a token from the verification link and then shows success, expired, or error messaging.
+### Signup and email verification
+
+Successful signup opens **Check your email** at the email-sent screen. While signup is being prepared, the form shows **Preparing secure registration…** and disables repeat submission. Initialization or registration failure leaves the entered values on the form with error feedback; submit again to retry.
+
+Opening a verification link first shows **Verifying your email…**. Success is shown only after the verification request succeeds, with a link to log in. A missing token asks you to check your email again without sending a verification request. Invalid or already-used links show rejection feedback; expired links ask you to contact support for a new link. There is no resend action. Service/network failures currently share the generic invalid-or-used-link message rather than a separate service-unavailable message.
+
+### Sign-in interaction and layout
+
+Sign-in shows email/password validation messages associated with the affected fields. Correcting a value updates an existing error. Password guidance stays visible through focus changes and submission so it does not shift the Sign in action. Show/Hide controls identify their action and visibility state while keeping the entered password.
+
+Signup, sign-in, recovery, email-sent and verification screens adapt to narrow widths. Email-status cards use dark text on white backgrounds with readable verification links. These layout improvements do not make the password-reset flow complete.
 
 After email/password sign-in, the app loads the user's profile. If onboarding is complete, the user goes to the app. If onboarding is not complete, the user goes to onboarding.
 
@@ -74,7 +84,7 @@ Logging out immediately removes access to private pages, including through brows
 - The M3 full incomplete-profile browser journey, live-backend profile saves and deployed location lookup error/retry have not yet been verified end to end.
 - Skip and final Continue navigate to the app; M3 does not add persistence of an onboarding completion flag. RESET reopens the wizard locally.
 - Forgot password shows a multi-step reset interface, but the visible flow does not currently call the backend reset endpoint.
-- The expired email verification message links to a resend-verification path that is not currently documented as a complete workflow.
+- No resend-verification workflow is available. Live registration, mailbox delivery, real verification responses and deployed registration security/cookie integration remain unverified end to end.
 - Onboarding copy mentions analytics; current Creator Analytics is server-backed
   for the implemented preset-period reporting workspace, without Membership
   subscription analytics.
