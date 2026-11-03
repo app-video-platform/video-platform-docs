@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-10-02T08:01:48.697058+00:00",
+  "account_alias": "OWNER-A",
+  "read_only": true,
+  "product": [
+    {
+      "id": "e81643a6-ed56-4b2d-bec1-a52c5870f4a1",
+      "name": "QA-2026-09-30-01 Range Validation",
+      "description": "",
+      "type": "CONSULTATION",
+      "status": "DRAFT",
+      "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "price": 0,
+      "duration_minutes": 30,
+      "meeting_method": "ZOOM",
+      "custom_location": null,
+      "buffer_before_minutes": 0,
+      "buffer_after_minutes": 0,
+      "max_sessions_per_day": 1,
+      "confirmation_message": null,
+      "cancellation_policy": null,
+      "updated_at": "2026-10-02T08:01:27.540028"
+    }
+  ],
+  "availability_tables": [],
+  "calendar_count": [
+    {
+      "connected_calendars": 3
+    }
+  ]
+}

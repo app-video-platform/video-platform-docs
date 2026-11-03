@@ -1,0 +1,68 @@
+{
+  "observed_at": "2026-10-02T13:01:47.753266+00:00",
+  "account_alias": "OWNER-A",
+  "read_only": true,
+  "role_schema": [
+    {
+      "table_name": "roles",
+      "column_name": "role_id",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "roles",
+      "column_name": "role_name",
+      "data_type": "character varying"
+    },
+    {
+      "table_name": "user_roles",
+      "column_name": "user_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "user_roles",
+      "column_name": "role_id",
+      "data_type": "bigint"
+    }
+  ],
+  "own_role_ids": [
+    {
+      "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "role_id": 4
+    }
+  ],
+  "roles": [
+    {
+      "role_id": 3,
+      "role_name": "Creator"
+    },
+    {
+      "role_id": 1,
+      "role_name": "ADMIN"
+    },
+    {
+      "role_id": 2,
+      "role_name": "USER"
+    },
+    {
+      "role_id": 4,
+      "role_name": "CREATOR"
+    }
+  ],
+  "reader_settings": [
+    {
+      "current_user": "vp_test_reader",
+      "read_only": "on",
+      "statement_timeout": "10s"
+    }
+  ],
+  "synthetic_price": [
+    {
+      "id": "deba7b76-1d20-423a-9f69-98cea00ef8bb",
+      "price": 18,
+      "status": "DRAFT",
+      "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "updated_at": "2026-10-02T08:14:25.697204"
+    }
+  ],
+  "synthetic_audit": []
+}

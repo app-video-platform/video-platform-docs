@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-10-01T09:35:37.447527+00:00",
+  "role": "Guest",
+  "request_method": "GET",
+  "request_path": "/api/products?userId=a1ebdc7a-d497-4334-9fed-309aec071b25&ownerId=a1ebdc7a-d497-4334-9fed-309aec071b25",
+  "status": 400,
+  "response_shape": "dict",
+  "raw_response_saved": false,
+  "response_keys": [
+    "message",
+    "status"
+  ],
+  "error_category": {
+    "missing_parameter": false,
+    "ambiguous_handler": true,
+    "not_found": false,
+    "invalid_uuid": false,
+    "invalid_type": false
+  },
+  "body_status": 400
+}

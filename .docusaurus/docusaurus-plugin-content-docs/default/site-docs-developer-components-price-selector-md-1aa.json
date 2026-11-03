@@ -1,7 +1,7 @@
 {
   "id": "developer/components/price-selector",
-  "title": "GalPriceSelector",
-  "description": "GalPriceSelector (quick notes)",
+  "title": "PriceSelector",
+  "description": "PriceSelector (quick notes)",
   "source": "@site/docs/developer/components/price-selector.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/price-selector",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalPriceSelector"
+    "title": "PriceSelector"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalPasswordsContainer",
+    "title": "PasswordsContainer",
     "permalink": "/docs/developer/components/passwords-container"
   },
   "next": {
-    "title": "GalProductCard",
+    "title": "ProductBox",
     "permalink": "/docs/developer/components/product-box"
   }
 }

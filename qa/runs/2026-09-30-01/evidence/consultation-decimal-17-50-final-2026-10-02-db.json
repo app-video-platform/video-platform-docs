@@ -1,0 +1,57 @@
+{
+  "observed_at": "2026-10-02T08:15:38.420570+00:00",
+  "account_alias": "OWNER-A",
+  "read_only": true,
+  "product": [
+    {
+      "id": "deba7b76-1d20-423a-9f69-98cea00ef8bb",
+      "name": "QA-2026-09-30-01 Decimal Pricing",
+      "description": "",
+      "type": "CONSULTATION",
+      "status": "DRAFT",
+      "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "price": 18,
+      "duration_minutes": 0,
+      "meeting_method": null,
+      "custom_location": null,
+      "buffer_before_minutes": 0,
+      "buffer_after_minutes": 0,
+      "max_sessions_per_day": 0,
+      "confirmation_message": null,
+      "cancellation_policy": null,
+      "updated_at": "2026-10-02T08:14:25.697204"
+    }
+  ],
+  "availability_tables": [],
+  "calendar_count": [
+    {
+      "connected_calendars": 3
+    }
+  ],
+  "price_columns": [
+    {
+      "table_name": "consultation_products",
+      "data_type": "bigint",
+      "numeric_precision": 64,
+      "numeric_scale": 0
+    },
+    {
+      "table_name": "course_products",
+      "data_type": "numeric",
+      "numeric_precision": 10,
+      "numeric_scale": 2
+    },
+    {
+      "table_name": "download_products",
+      "data_type": "numeric",
+      "numeric_precision": 19,
+      "numeric_scale": 2
+    },
+    {
+      "table_name": "membership_products",
+      "data_type": "numeric",
+      "numeric_precision": 19,
+      "numeric_scale": 2
+    }
+  ]
+}

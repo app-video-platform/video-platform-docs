@@ -1,0 +1,28 @@
+{
+  "id": "developer/backend/architecture",
+  "title": "Architecture",
+  "description": "Application structure",
+  "source": "@site/docs/developer/backend/architecture.md",
+  "sourceDirName": "developer/backend",
+  "slug": "/developer/backend/architecture",
+  "permalink": "/docs/developer/backend/architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/backend/architecture.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Architecture",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Backend Overview",
+    "permalink": "/docs/developer/backend/"
+  },
+  "next": {
+    "title": "API and Swagger",
+    "permalink": "/docs/developer/backend/api-and-swagger"
+  }
+}

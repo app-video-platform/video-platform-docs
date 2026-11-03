@@ -1,0 +1,80 @@
+{
+  "desktop": [
+    {
+      "filters": [
+        {
+          "name": "Select sales date range",
+          "selected": "Last 30 days",
+          "value": "30d"
+        },
+        {
+          "name": "Filter orders by status",
+          "selected": "Paid",
+          "value": "paid"
+        },
+        {
+          "name": "Filter orders by product",
+          "selected": "QA-2026-09-30-01 Course",
+          "value": "ddd5bb80-183e-48d5-84cd-8819ca082a58"
+        },
+        {
+          "name": "Sort orders",
+          "selected": "Amount: high to low",
+          "value": "amount-desc"
+        }
+      ],
+      "scrollWidth": 768,
+      "snapshot": "SalesTrack orders, payments, refunds, and failed charges.RevenueEUR 0— No changeOrders0— No changeRefundsEUR 0— No changeFailed payments0— No changeSelect...TodayLast 7 daysLast 30 daysLast 90 daysSelect...All statusesPaidFailedRefundedPendingSelect...All productsAstaziCall2?Call?course tryCourseeDescarca!DownloaaadDownload tryingHow to cookQA-2026-09-30-01 ConsultationQA-2026-09-30-01 CourseQA-2026-09-30-01 Download BQA-2026-09-30-01 MembershipSelect...Newest firstOldest firstAmount: high to lowAmount: low to highFilters (2)0 ordersClear filtersNo orders match these filters.Clear filters",
+      "width": 768
+    },
+    {
+      "filters": [
+        {
+          "name": "Select sales date range",
+          "selected": "Last 30 days",
+          "value": "30d"
+        },
+        {
+          "name": "Filter orders by status",
+          "selected": "Paid",
+          "value": "paid"
+        },
+        {
+          "name": "Filter orders by product",
+          "selected": "QA-2026-09-30-01 Course",
+          "value": "ddd5bb80-183e-48d5-84cd-8819ca082a58"
+        },
+        {
+          "name": "Sort orders",
+          "selected": "Amount: high to low",
+          "value": "amount-desc"
+        }
+      ],
+      "scrollWidth": 1440,
+      "snapshot": "SalesTrack orders, payments, refunds, and failed charges.RevenueEUR 0— No changeOrders0— No changeRefundsEUR 0— No changeFailed payments0— No changeSelect...TodayLast 7 daysLast 30 daysLast 90 daysSelect...All statusesPaidFailedRefundedPendingSelect...All productsAstaziCall2?Call?course tryCourseeDescarca!DownloaaadDownload tryingHow to cookQA-2026-09-30-01 ConsultationQA-2026-09-30-01 CourseQA-2026-09-30-01 Download BQA-2026-09-30-01 MembershipSelect...Newest firstOldest firstAmount: high to lowAmount: low to highFilters (2)0 ordersClear filtersNo orders match these filters.Clear filters",
+      "width": 1440
+    }
+  ],
+  "mobileReopen": [
+    {
+      "name": "Select sales date range",
+      "selected": "Last 30 days",
+      "value": "30d"
+    },
+    {
+      "name": "Filter orders by status",
+      "selected": "Paid",
+      "value": "paid"
+    },
+    {
+      "name": "Filter orders by product",
+      "selected": "QA-2026-09-30-01 Course",
+      "value": "ddd5bb80-183e-48d5-84cd-8819ca082a58"
+    },
+    {
+      "name": "Sort orders",
+      "selected": "Amount: high to low",
+      "value": "amount-desc"
+    }
+  ]
+}

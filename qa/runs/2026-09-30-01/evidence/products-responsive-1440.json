@@ -1,0 +1,55 @@
+{
+  "list": {
+    "articles": [
+      {
+        "left": 280,
+        "right": 1392,
+        "text": "QA-2026-09-30-01 ConsultationConsultationPublished€15Updated Sep 30"
+      },
+      {
+        "left": 280,
+        "right": 1392,
+        "text": "Call?ConsultationDraftFreeUpdated Mar 7"
+      },
+      {
+        "left": 280,
+        "right": 1392,
+        "text": "Call2?ConsultationDraftFreeUpdated Feb 7"
+      }
+    ],
+    "scrollWidth": 1440,
+    "width": 1440
+  },
+  "menu": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for Tamas Tyukodi\":\n      - generic: Tamas Tyukodi\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Products\" [level=1]\n  - paragraph: Create and manage everything you sell.\n  - button \"+ Add product\":\n    - generic: + Add product\n  - region \"Product controls\":\n    - textbox \"Search products\":\n      - /placeholder: Search products...\n    - combobox \"Filter by product type\":\n      - option \"All types\"\n      - option \"Course\"\n      - option \"Download\"\n      - option \"Consultation\" [selected]\n      - option \"Membership\"\n    - combobox \"Filter by product status\":\n      - option \"All statuses\" [selected]\n      - option \"Published\"\n      - option \"Draft\"\n    - combobox \"Sort products\":\n      - option \"Recently updated\" [selected]\n      - option \"Newest\"\n      - option \"Oldest\"\n      - option \"Name A-Z\"\n      - option \"Name Z-A\"\n  - generic: 3 products\n  - button \"Clear filters\":\n    - generic: Clear filters\n  - region \"Products\":\n    - generic: Product\n    - generic: Status\n    - generic: Price\n    - generic: Updated\n    - generic: Actions\n    - article:\n      - link \"Open QA-2026-09-30-01 Consultation product overview\":\n        - /url: /app/products/3ebc8873-83aa-430b-8fe2-dad685c0a8d3\n        - generic: QA-2026-09-30-01 Consultation\n        - generic: Consultation\n      - generic: Published\n      - generic: €15\n      - time: Sep 30\n      - button \"Open actions for QA-2026-09-30-01 Consultation\" [expanded] [active]:\n      - menuitem \"Preview\":\n        - text: Preview\n    - article:\n      - link \"Open Call? product overview\":\n        - /url: /app/products/cdc57fba-24b3-4cc5-9114-7a428ec0e1d7\n        - generic: Call?\n        - generic: Consultation\n      - generic: Draft\n      - generic: Free\n      - time: Mar 7\n    - article:\n      - link \"Open Call2? product overview\":\n        - /url: /app/products/787f652c-6882-48d5-83c3-93ccaccb3017\n        - generic: Call2?\n        - generic: Consultation\n      - generic: Draft\n      - generic: Free\n      - time: Feb 7",
+  "overview": {
+    "actions": [
+      {
+        "left": 280,
+        "name": "Products",
+        "right": 402.1171875
+      },
+      {
+        "left": 926.03125,
+        "name": "Edit product",
+        "right": 1045.9453125
+      },
+      {
+        "left": 1053.9453125,
+        "name": "Edit landing page",
+        "right": 1207.9375
+      },
+      {
+        "left": 1215.9375,
+        "name": "View public page",
+        "right": 1367
+      },
+      {
+        "left": 1224.71875,
+        "name": "Edit availability",
+        "right": 1367
+      }
+    ],
+    "scrollWidth": 1440,
+    "width": 1440
+  }
+}

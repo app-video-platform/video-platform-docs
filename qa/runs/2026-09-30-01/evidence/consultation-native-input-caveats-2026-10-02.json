@@ -1,0 +1,12 @@
+{
+  "unscored_evidence": [
+    "consultation-monday-overlapping-ranges-2026-10-02.json",
+    "consultation-negative-buffer-zero-capacity-native-2026-10-02.json"
+  ],
+  "corrections": [
+    "The file named overlapping shows09-12 and14-17; actual overlap proof is the later overlap-confirmed file.",
+    "Numeric trial did not establish negative persisted inputs: observed values were positive5/10 and a display-only0 capacity. No numeric-boundary application result is inferred.",
+    "Time fill attempts alone changed DOM values without updating React-controlled attributes. Equal/reverse/empty boundary results use native keyboard events and matching rendered validation."
+  ],
+  "application_defect_inferred_from_unscored_attempts": false
+}

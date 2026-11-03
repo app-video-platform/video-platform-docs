@@ -18,5 +18,9 @@
   "previous": {
     "title": "ADR 0001: Routing and Role Guards",
     "permalink": "/docs/developer/architecture/adr/routing-and-guards"
+  },
+  "next": {
+    "title": "Backend Overview",
+    "permalink": "/docs/developer/backend/"
   }
 }

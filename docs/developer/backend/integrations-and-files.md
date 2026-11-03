@@ -14,10 +14,26 @@ The backend uses the AWS SDK S3 client against DigitalOcean Spaces.
 The canonical Download upload flow is:
 
 1. The Creator requests a presigned PUT URL for a Product section.
-2. The backend verifies the Product type, ownership, and section relationship.
+2. The backend verifies the Product type, ownership, and section relationship,
+   and records an expiring receipt for the generated key and filename.
 3. The browser uploads the binary directly to object storage.
-4. The client confirms the upload with file metadata and the storage key.
-5. The backend stores a `files_download_products` row.
+4. The client confirms using the server-issued key, filename, byte size, and MIME
+   type before the receipt expires. Canonical and legacy confirmation apply the
+   same receipt checks.
+5. The backend verifies the object size and MIME metadata in Spaces and stores
+   one `files_download_products` row. MIME comparison ignores case and parameters;
+   an empty browser MIME type is treated as `application/octet-stream`.
+   Repeating a successful confirmation returns
+   the same file. Unissued, expired, foreign, missing, or mismatched uploads are
+   rejected; request a new upload URL when a receipt expires.
+
+The optional client URL must match the server-issued URL. The backend computes
+its response URL rather than accepting an arbitrary client URL. Receipts are
+bound to the Product owner, Product, and section; they are removed when the
+owner or section is deleted. Expiry rejects late confirmation without deleting
+the object. Existing file delivery additionally checks that stored keys match
+the owning user and section before signing, including metadata created before
+receipt enforcement.
 
 Object keys are namespaced by user, upload folder, section, generated file UUID,
 and sanitized filename.
@@ -38,7 +54,10 @@ Objects use owner/Product-scoped keys and public CDN URLs. Metadata is stored in
 status. Image limits are 10 MB for JPEG, PNG, WebP, or GIF; promo-video limits
 are 100 MB for MP4 or WebM; gallery count is 20. These defaults are runtime
 configurable. Replacement, removal, reorder, and Product deletion are handled
-server-side. Failed object cleanup is logged after active metadata is removed.
+server-side. Object deletions run only after the database transaction commits;
+a rollback leaves the previous objects untouched. Product deletion checks
+ownership before any metadata or storage cleanup. Failed post-commit object
+cleanup is logged after active metadata is removed.
 
 ### Customer download flow
 

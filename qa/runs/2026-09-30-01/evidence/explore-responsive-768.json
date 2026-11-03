@@ -1,0 +1,36 @@
+{
+  "navbar": [
+    {
+      "left": 202.625,
+      "name": "Product search",
+      "right": 652.625,
+      "tag": "INPUT"
+    },
+    {
+      "left": 202.625,
+      "name": "Submit search",
+      "right": 266.625,
+      "tag": "BUTTON"
+    },
+    {
+      "left": 622.625,
+      "name": "Explore",
+      "right": 679.78125,
+      "tag": "A"
+    },
+    {
+      "left": 679.78125,
+      "name": "Log In",
+      "right": 759.78125,
+      "tag": "BUTTON"
+    },
+    {
+      "left": 769.78125,
+      "name": "Register",
+      "right": 861.15625,
+      "tag": "BUTTON"
+    }
+  ],
+  "scrollWidth": 861,
+  "width": 768
+}

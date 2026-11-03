@@ -1,0 +1,3 @@
+{
+  "snapshot": "- region \"Notifications alt+T\"\n- generic: Password\n- textbox \"Password\"\n- button:\n- generic: Confirm Password\n- textbox \"Confirm Password\"\n- button:\n- button \"Change password\":\n  - generic: Change password\n- button \"Back to Sign In\":\n  - generic: Back to Sign In"
+}

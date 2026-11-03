@@ -1,7 +1,7 @@
 {
   "id": "developer/components/contact-form",
-  "title": "GalContactForm",
-  "description": "GalContactForm (quick notes)",
+  "title": "ContactForm",
+  "description": "ContactForm (quick notes)",
   "source": "@site/docs/developer/components/contact-form.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/contact-form",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalContactForm"
+    "title": "ContactForm"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalCheckboxInput",
+    "title": "CheckboxInput",
     "permalink": "/docs/developer/components/checkbox-input"
   },
   "next": {
-    "title": "GalCtaSection",
+    "title": "CTASection",
     "permalink": "/docs/developer/components/cta-section"
   }
 }

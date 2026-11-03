@@ -1,0 +1,22 @@
+[
+  {
+    "disabled": true,
+    "label": "Select Calendar Providers",
+    "value": ""
+  },
+  {
+    "disabled": false,
+    "label": "Google",
+    "value": "GOOGLE"
+  },
+  {
+    "disabled": false,
+    "label": "Microsoft",
+    "value": "MICROSOFT"
+  },
+  {
+    "disabled": false,
+    "label": "Icloud",
+    "value": "ICLOUD"
+  }
+]

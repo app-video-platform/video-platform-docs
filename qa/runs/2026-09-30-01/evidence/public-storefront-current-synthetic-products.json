@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-10-01T09:00:52.397361+00:00",
+  "method": "GET",
+  "role": "Guest",
+  "exit_code": 0,
+  "root_fields": [
+    "id",
+    "creator",
+    "featuredProductId",
+    "products",
+    "theme"
+  ],
+  "configured_featured_id": null,
+  "product_ids": [
+    {
+      "id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+      "status": "PUBLISHED",
+      "type": "COURSE"
+    },
+    {
+      "id": "3ebc8873-83aa-430b-8fe2-dad685c0a8d3",
+      "status": "PUBLISHED",
+      "type": "CONSULTATION"
+    }
+  ],
+  "creator_fields": [
+    "id",
+    "displayName",
+    "email",
+    "title",
+    "tagline",
+    "bio",
+    "website",
+    "publicEmail",
+    "imageUrl",
+    "socialLinks"
+  ],
+  "public_email_present": false,
+  "email_field_populated": false,
+  "website_present": false,
+  "theme": {
+    "appearance": "DARK",
+    "accentColor": "#ffbd41",
+    "typography": "MODERN"
+  }
+}

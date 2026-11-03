@@ -1,0 +1,34 @@
+{
+  "geometry": {
+    "actions": [
+      {
+        "left": 16,
+        "name": "Products",
+        "right": 138.1171875
+      },
+      {
+        "left": 33,
+        "name": "Edit product",
+        "right": 342
+      },
+      {
+        "left": 33,
+        "name": "Edit landing page",
+        "right": 342
+      },
+      {
+        "left": 33,
+        "name": "View public page",
+        "right": 342
+      },
+      {
+        "left": 33,
+        "name": "Edit availability",
+        "right": 175.28125
+      }
+    ],
+    "scrollWidth": 375,
+    "width": 375
+  },
+  "snapshot": "- region \"Notifications alt+T\"\n- button \"Open navigation\":\n- generic: Galactica\n- button \"T\":\n  - generic: Tamas Tyukodi\n- main:\n  - button \"Products\":\n    - generic: Products\n  - generic: 🎧\n  - generic: Consultation\n  - generic: Published\n  - heading \"QA-2026-09-30-01 Consultation\" [level=1]\n  - paragraph: No description has been added yet.\n  - time: Updated Sep 30\n  - button \"Edit product\":\n    - generic: Edit product\n  - button \"Edit landing page\":\n    - generic: Edit landing page\n  - button \"View public page\":\n    - generic: View public page\n  - heading \"Product details\" [level=2]\n  - term: Status\n  - definition: Published\n  - term: Product type\n  - definition: Consultation\n  - term: Price\n  - definition: Price not set\n  - term: Created\n  - definition:\n    - time: Sep 30\n  - term: Updated\n  - definition:\n    - time: Sep 30\n  - heading \"Consultation setup\" [level=2]\n  - paragraph: Configured appointment details for this product.\n  - button \"Edit availability\":\n    - generic: Edit availability\n  - term: Duration\n  - definition: 30 minutes\n  - term: Meeting method\n  - definition: Phone\n  - term: Buffer before\n  - definition: 5 minutes\n  - term: Buffer after\n  - definition: 0 minutes\n  - term: Max sessions per day\n  - definition: \"3\"\n  - term: Connected calendars\n  - definition: 3 connected\n  - term: Confirmation message\n  - definition: QA fixture only. No booking is scheduled."
+}

@@ -1,0 +1,28 @@
+{
+  "observed_at": "2026-10-02T07:32:45.879682+00:00",
+  "role": "Guest",
+  "request_method": "GET",
+  "request_path": "/api/products?userId=a1ebdc7a-d497-4334-9fed-309aec071b25",
+  "status": 200,
+  "response_shape": "list",
+  "raw_response_saved": false,
+  "returned_count": 2,
+  "status_counts": {
+    "PUBLISHED": 2
+  },
+  "own_synthetic_returned": [
+    {
+      "id": "3ebc8873-83aa-430b-8fe2-dad685c0a8d3",
+      "type": "CONSULTATION",
+      "status": "PUBLISHED"
+    },
+    {
+      "id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+      "type": "COURSE",
+      "status": "PUBLISHED"
+    }
+  ],
+  "lesson_count": 0,
+  "protected_course_fields_all_null": true,
+  "synthetic_article_marker_present": false
+}

@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-10-01T09:35:37.259349+00:00",
+  "role": "Guest",
+  "request_method": "GET",
+  "request_path": "/api/products/00000000-0000-4000-8000-000000000001",
+  "status": 404,
+  "response_shape": "dict",
+  "raw_response_saved": false,
+  "response_keys": [
+    "message",
+    "status"
+  ],
+  "error_category": {
+    "missing_parameter": false,
+    "ambiguous_handler": false,
+    "not_found": true,
+    "invalid_uuid": false,
+    "invalid_type": false
+  },
+  "body_status": 404
+}

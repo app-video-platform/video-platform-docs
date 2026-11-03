@@ -1,0 +1,4 @@
+{
+  "url": "https://app.serious-debauchery.click/app/product/00000000-0000-4000-8000-000000000099",
+  "snapshot": "- region \"Notifications alt+T\"\n- banner:\n  - navigation:\n    - heading \"Galactica\" [level=2]\n    - textbox \"Product search\":\n      - /placeholder: Search...\n    - button \"Submit search\":\n    - link \"Explore\":\n      - /url: /app/explore\n    - button \"Log In\":\n      - generic: Log In\n    - button \"Register\":\n      - generic: Register\n- main:\n  - alert:\n    - heading \"Product unavailable\" [level=1]\n    - paragraph: \"Product not found: 00000000-0000-4000-8000-000000000099\""
+}

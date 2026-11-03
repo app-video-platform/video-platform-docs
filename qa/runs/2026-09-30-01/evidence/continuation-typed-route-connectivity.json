@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-01T08:35:37.799327+00:00",
+  "purpose": "Diagnose browser connection reset during typed Product route read",
+  "checks": [
+    {
+      "url": "https://app.serious-debauchery.click/app",
+      "exit_code": 0,
+      "http_status": "200",
+      "stderr": ""
+    },
+    {
+      "url": "https://serious-debauchery.click/api/products/cb045295-cf70-445c-99a7-46fc0618e58e",
+      "exit_code": 0,
+      "http_status": "200",
+      "stderr": ""
+    }
+  ]
+}

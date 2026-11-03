@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-10-01T06:55:41.716754+00:00",
+  "results": [
+    {
+      "page_requested": 0,
+      "http_status": 200,
+      "content_count": 20,
+      "metadata": {
+        "number": 0,
+        "size": 20,
+        "totalElements": 20,
+        "totalPages": 1,
+        "numberOfElements": 20,
+        "first": true,
+        "last": true,
+        "empty": false
+      },
+      "own_fixture_ids": [
+        "45fb192b-0393-4609-9c9f-736425adc550",
+        "3ebc8873-83aa-430b-8fe2-dad685c0a8d3",
+        "a7991427-a5f7-4e48-a241-0e1a82b52d68",
+        "ddd5bb80-183e-48d5-84cd-8819ca082a58"
+      ]
+    },
+    {
+      "page_requested": 1,
+      "http_status": 200,
+      "content_count": 20,
+      "metadata": {
+        "number": 1,
+        "size": 20,
+        "totalElements": 40,
+        "totalPages": 2,
+        "numberOfElements": 20,
+        "first": false,
+        "last": true,
+        "empty": false
+      },
+      "own_fixture_ids": []
+    }
+  ]
+}

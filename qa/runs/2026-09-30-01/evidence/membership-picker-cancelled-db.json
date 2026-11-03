@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-10-01T09:39:12.777277+00:00",
+  "account_alias": "OWNER-A",
+  "read_only": true,
+  "product": [
+    {
+      "id": "1bef43ff-f9dd-495e-9ab4-c1ce3d6d04d0",
+      "name": "QA-2026-09-30-01 Membership Feed",
+      "status": "DRAFT",
+      "user_id": "a1ebdc7a-d497-4334-9fed-309aec071b25",
+      "price": 0.0,
+      "pricing_model": "RECURRING",
+      "billing_interval": "MONTH",
+      "ordering_mode": "NEWEST_FIRST"
+    }
+  ],
+  "feed": [],
+  "content": [],
+  "included_fixtures": [
+    {
+      "id": "ddd5bb80-183e-48d5-84cd-8819ca082a58",
+      "name": "QA-2026-09-30-01 Course",
+      "status": "DRAFT"
+    },
+    {
+      "id": "a7991427-a5f7-4e48-a241-0e1a82b52d68",
+      "name": "QA-2026-09-30-01 Download B",
+      "status": "DRAFT"
+    }
+  ],
+  "actor_entitlement_count": [
+    {
+      "active_grants": 0
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "controls": [
+    {
+      "left": 16,
+      "name": "Search by name or email",
+      "right": 359
+    },
+    {
+      "left": 16,
+      "name": "Filter by relationship status",
+      "right": 359
+    },
+    {
+      "left": 16,
+      "name": "Filter by product",
+      "right": 359
+    },
+    {
+      "left": 16,
+      "name": "Filter by membership state",
+      "right": 359
+    },
+    {
+      "left": 16,
+      "name": "Sort customers",
+      "right": 359
+    }
+  ],
+  "scrollWidth": 375,
+  "width": 375
+}

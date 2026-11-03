@@ -1,0 +1,237 @@
+[
+  {
+    "key": "sales-period-today",
+    "observed_at": "2026-10-02T14:18:18.297Z",
+    "period": "Today",
+    "summary": [
+      "Revenue EUR 0",
+      "Orders 0",
+      "Refunds EUR 0",
+      "Failed payments 0"
+    ],
+    "empty_heading": "No sales yet"
+  },
+  {
+    "key": "sales-period-last-7-days",
+    "observed_at": "2026-10-02T14:18:18.344Z",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for OWNER-A\":\n      - generic: OWNER-A\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 0\n      - generic: — No change\n    - article:\n      - generic: Orders\n      - strong: \"0\"\n      - generic: — No change\n    - article:\n      - generic: Refunds\n      - strong: EUR 0\n      - generic: — No change\n    - article:\n      - generic: Failed payments\n      - strong: \"0\"\n      - generic: — No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\" [active]:\n      - option \"Today\"\n      - option \"Last 7 days\" [selected]\n      - option \"Last 30 days\"\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Astazi\"\n      - option \"Call2?\"\n      - option \"Call?\"\n      - option \"course try\"\n      - option \"Coursee\"\n      - option \"Descarca!\"\n      - option \"Downloaaad\"\n      - option \"Download trying\"\n      - option \"How to cook\"\n      - option \"QA-2026-09-30-01 Availability\"\n      - option \"QA-2026-09-30-01 Consultation\"\n      - option \"QA-2026-09-30-01 Course\"\n      - option \"QA-2026-09-30-01 Curriculum\"\n      - option \"QA-2026-09-30-01 Decimal Pricing\"\n      - option \"QA-2026-09-30-01 Download B\"\n      - option \"QA-2026-09-30-01 File Delivery\"\n      - option \"QA-2026-09-30-01 Membership\"\n      - option \"QA-2026-09-30-01 Membership Feed\"\n      - option \"QA-2026-09-30-01 Range Validation B\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 0 orders\n  - heading \"No sales yet\" [level=2]\n  - paragraph: Orders will appear here when customers purchase your products.\n  - link \"View products\":\n    - /url: /app/products"
+  },
+  {
+    "key": "sales-period-last-30-days",
+    "observed_at": "2026-10-02T14:18:18.386Z",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for OWNER-A\":\n      - generic: OWNER-A\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 0\n      - generic: — No change\n    - article:\n      - generic: Orders\n      - strong: \"0\"\n      - generic: — No change\n    - article:\n      - generic: Refunds\n      - strong: EUR 0\n      - generic: — No change\n    - article:\n      - generic: Failed payments\n      - strong: \"0\"\n      - generic: — No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\" [active]:\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Astazi\"\n      - option \"Call2?\"\n      - option \"Call?\"\n      - option \"course try\"\n      - option \"Coursee\"\n      - option \"Descarca!\"\n      - option \"Downloaaad\"\n      - option \"Download trying\"\n      - option \"How to cook\"\n      - option \"QA-2026-09-30-01 Availability\"\n      - option \"QA-2026-09-30-01 Consultation\"\n      - option \"QA-2026-09-30-01 Course\"\n      - option \"QA-2026-09-30-01 Curriculum\"\n      - option \"QA-2026-09-30-01 Decimal Pricing\"\n      - option \"QA-2026-09-30-01 Download B\"\n      - option \"QA-2026-09-30-01 File Delivery\"\n      - option \"QA-2026-09-30-01 Membership\"\n      - option \"QA-2026-09-30-01 Membership Feed\"\n      - option \"QA-2026-09-30-01 Range Validation B\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 0 orders\n  - heading \"No sales yet\" [level=2]\n  - paragraph: Orders will appear here when customers purchase your products.\n  - link \"View products\":\n    - /url: /app/products"
+  },
+  {
+    "key": "sales-period-last-90-days",
+    "observed_at": "2026-10-02T14:18:18.425Z",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for OWNER-A\":\n      - generic: OWNER-A\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 0\n      - generic: — No change\n    - article:\n      - generic: Orders\n      - strong: \"0\"\n      - generic: — No change\n    - article:\n      - generic: Refunds\n      - strong: EUR 0\n      - generic: — No change\n    - article:\n      - generic: Failed payments\n      - strong: \"0\"\n      - generic: — No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\" [active]:\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\"\n      - option \"Last 90 days\" [selected]\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Astazi\"\n      - option \"Call2?\"\n      - option \"Call?\"\n      - option \"course try\"\n      - option \"Coursee\"\n      - option \"Descarca!\"\n      - option \"Downloaaad\"\n      - option \"Download trying\"\n      - option \"How to cook\"\n      - option \"QA-2026-09-30-01 Availability\"\n      - option \"QA-2026-09-30-01 Consultation\"\n      - option \"QA-2026-09-30-01 Course\"\n      - option \"QA-2026-09-30-01 Curriculum\"\n      - option \"QA-2026-09-30-01 Decimal Pricing\"\n      - option \"QA-2026-09-30-01 Download B\"\n      - option \"QA-2026-09-30-01 File Delivery\"\n      - option \"QA-2026-09-30-01 Membership\"\n      - option \"QA-2026-09-30-01 Membership Feed\"\n      - option \"QA-2026-09-30-01 Range Validation B\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 0 orders\n  - heading \"No sales yet\" [level=2]\n  - paragraph: Orders will appear here when customers purchase your products.\n  - link \"View products\":\n    - /url: /app/products"
+  },
+  {
+    "key": "sales-status-failed",
+    "observed_at": "2026-10-02T14:21:14.431Z",
+    "controls": [
+      {
+        "name": "Select sales date range",
+        "selected": "Last 90 days"
+      },
+      {
+        "name": "Filter orders by status",
+        "selected": "Failed"
+      },
+      {
+        "name": "Filter orders by product",
+        "selected": "All products"
+      },
+      {
+        "name": "Sort orders",
+        "selected": "Newest first"
+      }
+    ],
+    "headings": [
+      "Sales",
+      "No orders match these filters."
+    ],
+    "summary": "RevenueEUR 0— No changeOrders0— No changeRefundsEUR 0— No changeFailed payments0— No change"
+  },
+  {
+    "key": "sales-status-refunded",
+    "observed_at": "2026-10-02T14:21:14.490Z",
+    "controls": [
+      {
+        "name": "Select sales date range",
+        "selected": "Last 90 days"
+      },
+      {
+        "name": "Filter orders by status",
+        "selected": "Refunded"
+      },
+      {
+        "name": "Filter orders by product",
+        "selected": "All products"
+      },
+      {
+        "name": "Sort orders",
+        "selected": "Newest first"
+      }
+    ],
+    "headings": [
+      "Sales",
+      "No orders match these filters."
+    ],
+    "summary": "RevenueEUR 0— No changeOrders0— No changeRefundsEUR 0— No changeFailed payments0— No change"
+  },
+  {
+    "key": "sales-status-pending",
+    "observed_at": "2026-10-02T14:21:14.514Z",
+    "controls": [
+      {
+        "name": "Select sales date range",
+        "selected": "Last 90 days"
+      },
+      {
+        "name": "Filter orders by status",
+        "selected": "Pending"
+      },
+      {
+        "name": "Filter orders by product",
+        "selected": "All products"
+      },
+      {
+        "name": "Sort orders",
+        "selected": "Newest first"
+      }
+    ],
+    "headings": [
+      "Sales",
+      "No orders match these filters."
+    ],
+    "summary": "RevenueEUR 0— No changeOrders0— No changeRefundsEUR 0— No changeFailed payments0— No change"
+  },
+  {
+    "key": "customers-sort-highest-spend",
+    "observed_at": "2026-10-02T14:22:28.871Z",
+    "headings": [
+      "Customers",
+      "No customers yet"
+    ],
+    "paginationButtons": [],
+    "sort": "Highest spend"
+  },
+  {
+    "key": "customers-sort-lowest-spend",
+    "observed_at": "2026-10-02T14:22:28.894Z",
+    "headings": [
+      "Customers",
+      "No customers yet"
+    ],
+    "paginationButtons": [],
+    "sort": "Lowest spend"
+  },
+  {
+    "key": "customers-sort-name-a-z",
+    "observed_at": "2026-10-02T14:22:28.914Z",
+    "headings": [
+      "Customers",
+      "No customers yet"
+    ],
+    "paginationButtons": [],
+    "sort": "Name A-Z"
+  },
+  {
+    "key": "customers-sort-name-z-a",
+    "observed_at": "2026-10-02T14:22:28.934Z",
+    "headings": [
+      "Customers",
+      "No customers yet"
+    ],
+    "paginationButtons": [],
+    "sort": "Name Z-A"
+  },
+  {
+    "key": "customers-sort-recent-activity",
+    "observed_at": "2026-10-02T14:22:28.956Z",
+    "headings": [
+      "Customers",
+      "No customers yet"
+    ],
+    "paginationButtons": [],
+    "sort": "Recent activity"
+  },
+  {
+    "key": "customers-empty-layout-768",
+    "observed_at": "2026-10-02T14:24:03.026Z",
+    "controls": [
+      {
+        "left": 16,
+        "name": "Search by name or email",
+        "right": 752
+      },
+      {
+        "left": 16,
+        "name": "Filter by relationship status",
+        "right": 378
+      },
+      {
+        "left": 390,
+        "name": "Filter by product",
+        "right": 752
+      },
+      {
+        "left": 16,
+        "name": "Filter by membership state",
+        "right": 378
+      },
+      {
+        "left": 390,
+        "name": "Sort customers",
+        "right": 752
+      }
+    ],
+    "documentWidth": 768,
+    "mainWidth": 768,
+    "width": 768,
+    "headings": [
+      "heading \"Customers\" [level=1]",
+      "heading \"No customers yet\" [level=2]"
+    ]
+  },
+  {
+    "key": "customers-empty-layout-1440",
+    "observed_at": "2026-10-02T14:24:03.091Z",
+    "controls": [
+      {
+        "left": 280,
+        "name": "Search by name or email",
+        "right": 568
+      },
+      {
+        "left": 580,
+        "name": "Filter by relationship status",
+        "right": 734.1484375
+      },
+      {
+        "left": 746.1484375,
+        "name": "Filter by product",
+        "right": 1031.1328125
+      },
+      {
+        "left": 1043.1328125,
+        "name": "Filter by membership state",
+        "right": 1204
+      },
+      {
+        "left": 1216,
+        "name": "Sort customers",
+        "right": 1392
+      }
+    ],
+    "documentWidth": 1440,
+    "mainWidth": 1208,
+    "width": 1440,
+    "headings": [
+      "heading \"Galactica\" [level=2]",
+      "heading \"Customers\" [level=1]",
+      "heading \"No customers yet\" [level=2]"
+    ]
+  }
+]

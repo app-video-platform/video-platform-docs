@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Publish your storefront",
+    "expected": "Your Storefront",
+    "observed": {
+      "active": "3Publish your storefrontLaunch your public page and make your products available instantly.",
+      "bars": 0,
+      "preview": "Your Storefront"
+    }
+  },
+  {
+    "name": "Track your growth",
+    "expected": null,
+    "observed": {
+      "active": "4Track your growthMonitor sales, engagement, and performance from your dashboard.",
+      "bars": 3,
+      "preview": ""
+    }
+  },
+  {
+    "name": "Choose what to sell",
+    "expected": "🎓 Course",
+    "observed": {
+      "active": "1Choose what to sellPick between courses, memberships, or consultation sessions.",
+      "bars": 0,
+      "preview": "🎓 Course🪐 Membership🎧 Consultation"
+    }
+  }
+]

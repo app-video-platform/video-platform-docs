@@ -1,0 +1,5 @@
+{
+  "observed_at": "2026-10-02T08:50:54.558Z",
+  "url": "https://app.serious-debauchery.click/unauthorized",
+  "snapshot": "- region \"Notifications alt+T\"\n- heading \"401 - Unauthorized\" [level=1]\n- paragraph: You are not authorized to view this page.\n- link \"Login\":\n  - /url: /auth/login"
+}

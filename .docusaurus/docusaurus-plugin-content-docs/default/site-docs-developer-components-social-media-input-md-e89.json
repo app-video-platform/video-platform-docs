@@ -1,7 +1,7 @@
 {
   "id": "developer/components/social-media-input",
-  "title": "GalSocialMediaInput",
-  "description": "GalSocialMediaInput (quick notes)",
+  "title": "SocialMediaInput",
+  "description": "SocialMediaInput (quick notes)",
   "source": "@site/docs/developer/components/social-media-input.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/social-media-input",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalSocialMediaInput"
+    "title": "SocialMediaInput"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalSelect",
+    "title": "Select",
     "permalink": "/docs/developer/components/select"
   },
   "next": {
-    "title": "GalSpinner",
+    "title": "Spinner",
     "permalink": "/docs/developer/components/spinner"
   }
 }

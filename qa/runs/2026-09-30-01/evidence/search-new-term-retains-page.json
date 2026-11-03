@@ -1,0 +1,4 @@
+{
+  "url": "https://app.serious-debauchery.click/app/explore/search?term=QA-2026-09-30-01+Consultation&page=1",
+  "snapshot": "- region \"Notifications alt+T\"\n- banner:\n  - navigation:\n    - heading \"Galactica\" [level=2]\n    - textbox \"Product search\":\n      - /placeholder: Search...\n      - text: QA-2026-09-30-01 Consultation\n    - button \"Submit search\" [active]:\n    - listbox:\n      - option \"QA-2026-09-30-01 Consultation\" [selected]:\n        - strong: QA-2026-09-30-01 Consultation\n    - link \"Explore\":\n      - /url: /app/explore\n    - button \"Log In\":\n      - generic: Log In\n    - button \"Register\":\n      - generic: Register\n- main:\n  - heading \"Results for “QA-2026-09-30-01 Consultation”\" [level=1]\n  - paragraph: No products found for “QA-2026-09-30-01 Consultation”.\n  - button \"Prev\"\n  - generic: Page 2 of 1\n  - button \"Next\" [disabled]"
+}

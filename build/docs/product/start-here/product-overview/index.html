@@ -5,8 +5,8 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Product Overview | Video Platform App</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://luxury-klepon-a62307.netlify.app/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://luxury-klepon-a62307.netlify.app/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://luxury-klepon-a62307.netlify.app/docs/product/start-here/product-overview"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Product Overview | Video Platform App"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luxury-klepon-a62307.netlify.app/docs/product/start-here/product-overview"><link data-rh="true" rel="alternate" href="https://luxury-klepon-a62307.netlify.app/docs/product/start-here/product-overview" hreflang="en"><link data-rh="true" rel="alternate" href="https://luxury-klepon-a62307.netlify.app/docs/product/start-here/product-overview" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Product Overview","item":"https://luxury-klepon-a62307.netlify.app/docs/product/start-here/product-overview"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Video Platform App RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Video Platform App Atom Feed"><link rel="stylesheet" href="/assets/css/styles.353a480a.css">
-<script src="/assets/js/runtime~main.d9e12d92.js" defer="defer"></script>
-<script src="/assets/js/main.2f987694.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c44f3a22.js" defer="defer"></script>
+<script src="/assets/js/main.32deed4e.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -44,11 +44,14 @@
 <ul>
 <li class="">View a creator dashboard.</li>
 <li class="">Create and manage products.</li>
-<li class="">Build course, download, consultation, and membership products.</li>
+<li class="">Inspect individual products from Product Overview pages.</li>
+<li class="">Configure product-specific public presentation in Product Landing Page Builder.</li>
+<li class="">Build backend-persisted Course, Download, Consultation, and Membership products.</li>
 <li class="">Set product pricing.</li>
-<li class="">Review customer relationship records in the Customers area when inspection fixtures are enabled.</li>
-<li class="">Review sales metrics and order records in the Sales area when inspection fixtures are enabled.</li>
-<li class="">Review analytics metrics, charts, and summaries in the Analytics area when inspection fixtures are enabled.</li>
+<li class="">Review server-backed customer relationship records in the Customers area.</li>
+<li class="">Review server-backed Sales metrics and itemized Order records.</li>
+<li class="">Review server-backed Analytics metrics, charts, and summaries.</li>
+<li class="">Use the Storefront Builder to edit public profile fields, set public email, customize the Storefront presentation, review product visibility, choose a featured product, order products, and open or copy the public Storefront link.</li>
 <li class="">View and filter reviews by visibility where review data is available.</li>
 <li class="">Connect a calendar provider from settings.</li>
 </ul>
@@ -56,17 +59,21 @@
 <ul>
 <li class="">Browse available products.</li>
 <li class="">Search products.</li>
-<li class="">View product detail pages.</li>
+<li class="">View public Product Landing Pages.</li>
+<li class="">Enroll in free Products where supported.</li>
 <li class="">Add products to a wishlist.</li>
 <li class="">Add products to a shopping cart.</li>
+<li class="">Check out eligible paid non-Membership carts through the current test Commerce flow.</li>
 <li class="">Move products between wishlist and cart.</li>
+<li class="">Enroll in eligible free Products and initiate checkout for eligible paid
+Products after signing in.</li>
 </ul>
 <p>Visitors who are not signed in can:</p>
 <ul>
 <li class="">View the public marketing site.</li>
 <li class="">Browse product exploration pages.</li>
-<li class="">View product detail pages.</li>
-<li class="">View public storefront routes, although storefront content is currently limited.</li>
+<li class="">View public Product Landing Pages.</li>
+<li class="">View public Storefront pages for creators.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-it-works">How it works<a href="#how-it-works" class="hash-link" aria-label="Direct link to How it works" title="Direct link to How it works" translate="no">​</a></h2>
 <p>The application is organized around roles. After sign-in, the app sends each user to a role-appropriate starting area:</p>
@@ -78,15 +85,18 @@
 <p>Some product discovery pages are public. Management pages require sign-in and the correct role.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="current-limitations">Current limitations<a href="#current-limitations" class="hash-link" aria-label="Direct link to Current limitations" title="Direct link to Current limitations" translate="no">​</a></h2>
 <ul>
-<li class="">Checkout and payment are not implemented.</li>
+<li class="">Customer-facing purchase/access paths exist for free enrollment and eligible paid Cart checkout, but no production payment provider or real charging is configured.</li>
 <li class="">The shopping cart and wishlist are stored in the browser, not in a user account.</li>
-<li class="">The user library exists, but most library tabs do not yet show purchased content.</li>
-<li class="">Storefront pages exist as routes, but the current storefront screen is mostly a placeholder.</li>
+<li class="">The user library loads active entitlement-backed Products, but complete Course playback, Download delivery actions, and Consultation booking/session workflows are not all finished end to end.</li>
+<li class="">Creator Product Overview pages are read-only and do not include product-specific analytics, orders, customer counts, inline landing-page editing, SEO controls, or publishing management.</li>
+<li class="">Product Landing Page Builder persists a narrow presentation configuration. It does not provide subscriptions, waitlists, SEO controls, custom domains, arbitrary page-builder blocks, Product-specific theme overrides, checkout configuration, fulfillment, entitlements, or a combined public Product read model.</li>
+<li class="">Storefront theme, featured Product selection, ordering, public profile email, and the public Storefront read model are backend-supported.</li>
 <li class="">Course lessons can be created, but some lesson content editors are not fully persisted.</li>
-<li class="">Membership products can be created in the frontend builder with native content, included Courses/Downloads, ordering, recurring pricing, and readiness feedback, but Membership-specific data is not persisted and does not create subscriptions, publishing, or member access.</li>
-<li class="">Creator Customers has routes, list controls, and detail tabs, but customer-domain records are fixture-backed in inspection/mock mode until production Customer APIs are connected.</li>
-<li class="">Creator Sales has routes, list controls, metrics, and order detail, but financial-domain records are fixture-backed in inspection/mock mode until production order, payment, refund, subscription, renewal, and entitlement APIs are connected.</li>
-<li class="">Creator Analytics has routes, preset period selection, metrics, charts, and summary panels, but analytics-domain records are fixture-backed in inspection/mock mode until production Analytics APIs are connected.</li>
+<li class="">Membership authoring persists native content metadata, included Courses/Downloads, ordering, and recurring pricing. Binary media, subscriptions, checkout, publishing, entitlements, and member access are not implemented.</li>
+<li class="">Creator Customers has server-backed routes, list controls, and detail tabs for the current Customer reporting behavior.</li>
+<li class="">Creator Sales has server-backed routes, list controls, metrics, multi-Product Order detail, and summary/order reads for the current Sales reporting behavior.</li>
+<li class="">Creator Analytics has server-backed routes, preset period selection, metrics, charts, summary panels, and aggregate reporting for the current Analytics behavior.</li>
+<li class="">Subscription and Membership reporting remains unavailable.</li>
 <li class="">Messages, email campaigns, and live-session management are visible in places but not production-ready workflows.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-pages">Related pages<a href="#related-pages" class="hash-link" aria-label="Direct link to Related pages" title="Direct link to Related pages" translate="no">​</a></h2>

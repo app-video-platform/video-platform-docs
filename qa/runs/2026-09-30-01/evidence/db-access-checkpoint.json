@@ -1,0 +1,8 @@
+{
+  "reader": "vp_test_reader",
+  "database": "video_platform_db",
+  "default_transaction_read_only": "on",
+  "statement_timeout": "10s",
+  "owner_storefront_config_rows": 0,
+  "synthetic_course_landing_config_rows": 0
+}

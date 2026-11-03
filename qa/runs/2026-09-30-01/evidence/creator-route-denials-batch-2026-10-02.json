@@ -1,0 +1,74 @@
+[
+  {
+    "key": "creator-library-all-products",
+    "requested_path": "/app/library/all-products",
+    "captured_at": "2026-10-02T17:25:37.120Z",
+    "url": "https://app.serious-debauchery.click/unauthorized",
+    "text": "401 - Unauthorized\n\nYou are not authorized to view this page.\n\nLogin",
+    "loginHref": "/auth/login"
+  },
+  {
+    "key": "creator-library-my-courses",
+    "requested_path": "/app/library/my-courses",
+    "captured_at": "2026-10-02T17:25:56.624Z",
+    "url": "https://app.serious-debauchery.click/unauthorized",
+    "text": "401 - Unauthorized\n\nYou are not authorized to view this page.\n\nLogin",
+    "loginHref": "/auth/login"
+  },
+  {
+    "key": "creator-library-my-download-packages",
+    "requested_path": "/app/library/my-download-packages",
+    "captured_at": "2026-10-02T17:27:06.840Z",
+    "url": "https://app.serious-debauchery.click/unauthorized",
+    "text": "401 - Unauthorized\n\nYou are not authorized to view this page.\n\nLogin",
+    "loginHref": "/auth/login"
+  },
+  {
+    "key": "creator-library-my-consultation",
+    "requested_path": "/app/library/my-consultation",
+    "captured_at": "2026-10-02T17:27:40.880Z",
+    "url": "https://app.serious-debauchery.click/unauthorized",
+    "text": "401 - Unauthorized\n\nYou are not authorized to view this page.\n\nLogin",
+    "loginHref": "/auth/login"
+  },
+  {
+    "key": "creator-library-my-wishlist",
+    "requested_path": "/app/library/my-wishlist",
+    "captured_at": "2026-10-02T17:28:17.703Z",
+    "url": "https://app.serious-debauchery.click/unauthorized",
+    "text": "401 - Unauthorized\n\nYou are not authorized to view this page.\n\nLogin",
+    "loginHref": "/auth/login"
+  },
+  {
+    "key": "creator-admin-users",
+    "requested_path": "/app/admin/users",
+    "captured_at": "2026-10-02T17:28:29.740Z",
+    "url": "https://app.serious-debauchery.click/unauthorized",
+    "text": "401 - Unauthorized\n\nYou are not authorized to view this page.\n\nLogin",
+    "loginHref": "/auth/login"
+  },
+  {
+    "key": "creator-admin-products",
+    "requested_path": "/app/admin/products",
+    "captured_at": "2026-10-02T17:28:58.452Z",
+    "url": "https://app.serious-debauchery.click/unauthorized",
+    "text": "401 - Unauthorized\n\nYou are not authorized to view this page.\n\nLogin",
+    "loginHref": "/auth/login"
+  },
+  {
+    "key": "creator-admin-products-create",
+    "requested_path": "/app/admin/products/create",
+    "captured_at": "2026-10-02T17:29:37.169Z",
+    "url": "https://app.serious-debauchery.click/unauthorized",
+    "text": "401 - Unauthorized\n\nYou are not authorized to view this page.\n\nLogin",
+    "loginHref": "/auth/login"
+  },
+  {
+    "key": "creator-admin-audit",
+    "requested_path": "/app/admin/audit",
+    "captured_at": "2026-10-02T17:30:31.942Z",
+    "url": "https://app.serious-debauchery.click/unauthorized",
+    "text": "401 - Unauthorized\n\nYou are not authorized to view this page.\n\nLogin",
+    "loginHref": "/auth/login"
+  }
+]

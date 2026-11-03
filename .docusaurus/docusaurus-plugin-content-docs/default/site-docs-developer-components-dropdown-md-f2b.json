@@ -1,7 +1,7 @@
 {
   "id": "developer/components/dropdown",
-  "title": "GalDropdown",
-  "description": "GalDropdown (quick notes)",
+  "title": "Dropdown",
+  "description": "Dropdown (quick notes)",
   "source": "@site/docs/developer/components/dropdown.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/dropdown",
@@ -12,7 +12,7 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalDropdown"
+    "title": "Dropdown"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
@@ -20,7 +20,7 @@
     "permalink": "/docs/developer/components/drawer"
   },
   "next": {
-    "title": "GalExpansionGroup",
-    "permalink": "/docs/developer/components/expansion-group"
+    "title": "LegacyExpansionPanel",
+    "permalink": "/docs/developer/components/expansion-panel"
   }
 }

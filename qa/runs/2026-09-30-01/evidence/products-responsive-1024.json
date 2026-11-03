@@ -1,0 +1,55 @@
+{
+  "list": {
+    "articles": [
+      {
+        "left": 100,
+        "right": 1000,
+        "text": "QA-2026-09-30-01 ConsultationConsultationPublished€15Updated Sep 30"
+      },
+      {
+        "left": 100,
+        "right": 1000,
+        "text": "Call?ConsultationDraftFreeUpdated Mar 7"
+      },
+      {
+        "left": 100,
+        "right": 1000,
+        "text": "Call2?ConsultationDraftFreeUpdated Feb 7"
+      }
+    ],
+    "scrollWidth": 1024,
+    "width": 1024
+  },
+  "menu": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - list:\n      - link:\n        - /url: /app\n      - link:\n        - /url: /app/products\n      - link:\n        - /url: /app/customers\n      - link:\n        - /url: /app/sales\n      - link:\n        - /url: /app/analytics\n      - link:\n        - /url: /app/storefront\n    - list:\n      - link:\n        - /url: /app/settings\n      - button \"Help is planned\" [disabled]:\n    - button \"Open account menu for Tamas Tyukodi\":\n- main:\n  - heading \"Products\" [level=1]\n  - paragraph: Create and manage everything you sell.\n  - button \"+ Add product\":\n    - generic: + Add product\n  - region \"Product controls\":\n    - textbox \"Search products\":\n      - /placeholder: Search products...\n    - combobox \"Filter by product type\":\n      - option \"All types\"\n      - option \"Course\"\n      - option \"Download\"\n      - option \"Consultation\" [selected]\n      - option \"Membership\"\n    - combobox \"Filter by product status\":\n      - option \"All statuses\" [selected]\n      - option \"Published\"\n      - option \"Draft\"\n    - combobox \"Sort products\":\n      - option \"Recently updated\" [selected]\n      - option \"Newest\"\n      - option \"Oldest\"\n      - option \"Name A-Z\"\n      - option \"Name Z-A\"\n  - generic: 3 products\n  - button \"Clear filters\":\n    - generic: Clear filters\n  - region \"Products\":\n    - generic: Product\n    - generic: Status\n    - generic: Price\n    - generic: Updated\n    - generic: Actions\n    - article:\n      - link \"Open QA-2026-09-30-01 Consultation product overview\":\n        - /url: /app/products/3ebc8873-83aa-430b-8fe2-dad685c0a8d3\n        - generic: QA-2026-09-30-01 Consultation\n        - generic: Consultation\n      - generic: Published\n      - generic: €15\n      - time: Sep 30\n      - button \"Open actions for QA-2026-09-30-01 Consultation\" [expanded] [active]:\n      - menuitem \"Preview\":\n        - text: Preview\n    - article:\n      - link \"Open Call? product overview\":\n        - /url: /app/products/cdc57fba-24b3-4cc5-9114-7a428ec0e1d7\n        - generic: Call?\n        - generic: Consultation\n      - generic: Draft\n      - generic: Free\n      - time: Mar 7\n    - article:\n      - link \"Open Call2? product overview\":\n        - /url: /app/products/787f652c-6882-48d5-83c3-93ccaccb3017\n        - generic: Call2?\n        - generic: Consultation\n      - generic: Draft\n      - generic: Free\n      - time: Feb 7",
+  "overview": {
+    "actions": [
+      {
+        "left": 100,
+        "name": "Products",
+        "right": 222.1171875
+      },
+      {
+        "left": 125,
+        "name": "Edit product",
+        "right": 244.9140625
+      },
+      {
+        "left": 252.9140625,
+        "name": "Edit landing page",
+        "right": 406.90625
+      },
+      {
+        "left": 414.90625,
+        "name": "View public page",
+        "right": 565.96875
+      },
+      {
+        "left": 832.71875,
+        "name": "Edit availability",
+        "right": 975
+      }
+    ],
+    "scrollWidth": 1024,
+    "width": 1024
+  }
+}

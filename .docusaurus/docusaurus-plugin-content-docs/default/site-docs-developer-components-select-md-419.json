@@ -1,7 +1,7 @@
 {
   "id": "developer/components/select",
-  "title": "GalSelect",
-  "description": "GalSelect (quick notes)",
+  "title": "Select",
+  "description": "Select (quick notes)",
   "source": "@site/docs/developer/components/select.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/select",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalSelect"
+    "title": "Select"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalSearch",
+    "title": "Search",
     "permalink": "/docs/developer/components/search"
   },
   "next": {
-    "title": "GalSocialMediaInput",
+    "title": "SocialMediaInput",
     "permalink": "/docs/developer/components/social-media-input"
   }
 }

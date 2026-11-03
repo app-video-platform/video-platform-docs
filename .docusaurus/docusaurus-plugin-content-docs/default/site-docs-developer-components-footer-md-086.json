@@ -1,7 +1,7 @@
 {
   "id": "developer/components/footer",
-  "title": "GalFooter",
-  "description": "GalFooter (quick notes)",
+  "title": "Footer",
+  "description": "Footer (quick notes)",
   "source": "@site/docs/developer/components/footer.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/footer",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalFooter"
+    "title": "Footer"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalExpansionPanel",
+    "title": "LegacyExpansionPanel",
     "permalink": "/docs/developer/components/expansion-panel"
   },
   "next": {
-    "title": "GalFormInput",
+    "title": "Input",
     "permalink": "/docs/developer/components/form-input"
   }
 }

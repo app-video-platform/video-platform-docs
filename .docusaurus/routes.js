@@ -79,15 +79,15 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '6ee'),
+    component: ComponentCreator('/docs', '67d'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '12e'),
+        component: ComponentCreator('/docs', 'bb3'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', 'd56'),
+            component: ComponentCreator('/docs', 'f6a'),
             routes: [
               {
                 path: '/docs/developer/api/',
@@ -156,6 +156,78 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/docs/developer/backend/',
+                component: ComponentCreator('/docs/developer/backend/', 'e6e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/backend/administration-and-audit',
+                component: ComponentCreator('/docs/developer/backend/administration-and-audit', 'fa9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/backend/api-and-swagger',
+                component: ComponentCreator('/docs/developer/backend/api-and-swagger', 'caa'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/backend/architecture',
+                component: ComponentCreator('/docs/developer/backend/architecture', 'a11'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/backend/authentication-and-security',
+                component: ComponentCreator('/docs/developer/backend/authentication-and-security', '6dd'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/backend/commerce-and-payments',
+                component: ComponentCreator('/docs/developer/backend/commerce-and-payments', '6cf'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/backend/current-limitations',
+                component: ComponentCreator('/docs/developer/backend/current-limitations', '948'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/backend/entitlements-and-content-access',
+                component: ComponentCreator('/docs/developer/backend/entitlements-and-content-access', 'e63'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/backend/integrations-and-files',
+                component: ComponentCreator('/docs/developer/backend/integrations-and-files', '488'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/backend/persistence-and-data-model',
+                component: ComponentCreator('/docs/developer/backend/persistence-and-data-model', '2fb'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/backend/products-and-authoring',
+                component: ComponentCreator('/docs/developer/backend/products-and-authoring', 'e89'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/developer/backend/testing-and-deployment',
+                component: ComponentCreator('/docs/developer/backend/testing-and-deployment', 'ecd'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/docs/developer/components/',
                 component: ComponentCreator('/docs/developer/components/', 'f2d'),
                 exact: true,
@@ -212,12 +284,6 @@ export default [
               {
                 path: '/docs/developer/components/dropdown',
                 component: ComponentCreator('/docs/developer/components/dropdown', '3a0'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/developer/components/expansion-group',
-                component: ComponentCreator('/docs/developer/components/expansion-group', '927'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -512,6 +578,12 @@ export default [
               {
                 path: '/docs/product/creators/sales',
                 component: ComponentCreator('/docs/product/creators/sales', 'b83'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/product/creators/storefront',
+                component: ComponentCreator('/docs/product/creators/storefront', '527'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

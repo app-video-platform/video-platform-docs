@@ -1,0 +1,196 @@
+[
+  {
+    "key": "local-text-refresh-concurrent-reads",
+    "observed_at": "2026-10-02T16:45:13.058Z",
+    "url": "http://127.0.0.1:4317/qa-refresh?mode=text",
+    "result": {
+      "mode": "text",
+      "refreshFinished": true,
+      "transportAuthenticated": true,
+      "checkpoint": true,
+      "outcomes": {
+        "profile": "fulfilled",
+        "dashboard": "pending",
+        "sales": "pending"
+      },
+      "records": [
+        {
+          "method": "get",
+          "url": "api/user/userInfo",
+          "status": 401,
+          "retry": false,
+          "authorization_kind": "absent"
+        },
+        {
+          "method": "get",
+          "url": "api/creator/dashboard/summary",
+          "status": 401,
+          "retry": false,
+          "authorization_kind": "absent"
+        },
+        {
+          "method": "get",
+          "url": "api/creator/sales/summary",
+          "status": 401,
+          "retry": false,
+          "authorization_kind": "absent"
+        },
+        {
+          "method": "post",
+          "url": "api/auth/refresh",
+          "status": "pending"
+        },
+        {
+          "method": "post",
+          "url": "api/auth/refresh",
+          "status": 200,
+          "response_shape": "text Refresh successful"
+        },
+        {
+          "method": "get",
+          "url": "api/user/userInfo",
+          "status": 200,
+          "retry": true,
+          "authorization_kind": "undefined bearer"
+        }
+      ]
+    }
+  },
+  {
+    "key": "local-json-token-positive-control",
+    "observed_at": "2026-10-02T16:45:14.538Z",
+    "url": "http://127.0.0.1:4317/qa-refresh?mode=token",
+    "result": {
+      "mode": "token",
+      "refreshFinished": true,
+      "transportAuthenticated": true,
+      "checkpoint": true,
+      "outcomes": {
+        "profile": "fulfilled",
+        "dashboard": "fulfilled",
+        "sales": "fulfilled"
+      },
+      "records": [
+        {
+          "method": "get",
+          "url": "api/user/userInfo",
+          "status": 401,
+          "retry": false,
+          "authorization_kind": "absent"
+        },
+        {
+          "method": "get",
+          "url": "api/creator/dashboard/summary",
+          "status": 401,
+          "retry": false,
+          "authorization_kind": "absent"
+        },
+        {
+          "method": "get",
+          "url": "api/creator/sales/summary",
+          "status": 401,
+          "retry": false,
+          "authorization_kind": "absent"
+        },
+        {
+          "method": "post",
+          "url": "api/auth/refresh",
+          "status": "pending"
+        },
+        {
+          "method": "post",
+          "url": "api/auth/refresh",
+          "status": 200,
+          "response_shape": "JSON synthetic token"
+        },
+        {
+          "method": "get",
+          "url": "api/user/userInfo",
+          "status": 200,
+          "retry": true,
+          "authorization_kind": "synthetic bearer"
+        },
+        {
+          "method": "get",
+          "url": "api/creator/dashboard/summary",
+          "status": 200,
+          "retry": false,
+          "authorization_kind": "synthetic bearer"
+        },
+        {
+          "method": "get",
+          "url": "api/creator/sales/summary",
+          "status": 200,
+          "retry": false,
+          "authorization_kind": "synthetic bearer"
+        }
+      ]
+    }
+  },
+  {
+    "key": "local-refresh-rejection-concurrent-reads",
+    "observed_at": "2026-10-02T16:47:00.394Z",
+    "url": "http://127.0.0.1:4317/qa-refresh?mode=reject",
+    "result": {
+      "mode": "reject",
+      "refreshFinished": true,
+      "transportAuthenticated": false,
+      "checkpoint": true,
+      "outcomes": {
+        "profile": "rejected 401",
+        "dashboard": "rejected 401",
+        "sales": "rejected 401"
+      },
+      "records": [
+        {
+          "method": "get",
+          "url": "api/user/userInfo",
+          "status": 401,
+          "retry": false,
+          "authorization_kind": "absent"
+        },
+        {
+          "method": "get",
+          "url": "api/creator/dashboard/summary",
+          "status": 401,
+          "retry": false,
+          "authorization_kind": "absent"
+        },
+        {
+          "method": "get",
+          "url": "api/creator/sales/summary",
+          "status": 401,
+          "retry": false,
+          "authorization_kind": "absent"
+        },
+        {
+          "method": "post",
+          "url": "api/auth/refresh",
+          "status": "pending"
+        },
+        {
+          "method": "post",
+          "url": "api/auth/refresh",
+          "status": 401
+        }
+      ]
+    }
+  },
+  {
+    "key": "harness-reproduction-metadata",
+    "captured_at": "2026-10-02T17:16:11.514168+00:00",
+    "source_revision": "12765d4568796f8472124383a221b74d82850c5b",
+    "sources": {
+      "vpqa-refresh-entry.js": {
+        "content": "const axiosModule=require('/Users/tamastyukodi/Development/video-platform-ui/node_modules/axios');\nconst axios=axiosModule.default;\nconst mode=new URLSearchParams(window.location.search).get('mode')||'text';\nconst supported=['text','token','reject'];if(!supported.includes(mode))throw new Error('Unknown fixture mode');\nconst records=[];let refreshed=false,started=false,refreshFinished=false,checkpoint=false;\nconst outcomes={profile:'not started',dashboard:'not started',sales:'not started'};\nconst paths={profile:'api/user/userInfo',dashboard:'api/creator/dashboard/summary',sales:'api/creator/sales/summary'};\nfunction render(){const panel=document.getElementById('qa-refresh-result');if(panel)panel.textContent=JSON.stringify({mode,refreshFinished,transportAuthenticated:refreshed,checkpoint,outcomes,records},null,2);}\nfunction reject401(config){return new axiosModule.AxiosError('Synthetic local401','QA_401',config,null,{status:401,statusText:'Unauthorized',data:{message:'Synthetic local401'},headers:{},config});}\naxios.defaults.adapter=async config=>{\n if(config.url==='api/auth/refresh'){\n  records.push({method:config.method,url:config.url,status:'pending'});render();\n  await new Promise(resolve=>setTimeout(resolve,180));\n  refreshFinished=true;\n  if(mode==='reject'){records.push({method:config.method,url:config.url,status:401});render();throw reject401(config);}\n  refreshed=true;records.push({method:config.method,url:config.url,status:200,response_shape:mode==='text'?'text Refresh successful':'JSON synthetic token'});render();\n  return {status:200,statusText:'OK',data:mode==='text'?'Refresh successful':{token:'qa-synthetic-token'},headers:{},config};\n }\n if(!Object.values(paths).includes(config.url))throw new Error('Unregistered request blocked locally');\n const auth=config.headers?.Authorization;\n records.push({method:config.method,url:config.url,status:refreshed?200:401,retry:config._retry===true,authorization_kind:auth===undefined?'absent':auth==='Bearer undefined'?'undefined bearer':'synthetic bearer'});render();\n if(!refreshed)throw reject401(config);\n return {status:200,statusText:'OK',data:{synthetic:true},headers:{},config};\n};\nwindow.fetch=async()=>{throw new Error('No network allowed by local refresh harness');};\nconst http=require('/Users/tamastyukodi/Development/video-platform-ui/src/core/api/http-client.ts').default;\nconst panel=document.createElement('main');panel.style.cssText='padding:24px;font:16px sans-serif;background:white;color:black';\nconst heading=document.createElement('h1');heading.textContent='Isolated concurrent refresh test';panel.appendChild(heading);\nconst description=document.createElement('p');description.textContent='Mode: '+mode+'. Real shared client/interceptor; synthetic local transport. No actual cookies or credentials.';panel.appendChild(description);\nconst button=document.createElement('button');button.textContent='Run concurrent reads';button.style.cssText='padding:12px';button.onclick=()=>{\n if(started)return;started=true;button.disabled=true;\n for(const [label,url]of Object.entries(paths)){\n  outcomes[label]='pending';http.get(url).then(()=>{outcomes[label]='fulfilled';render();},error=>{outcomes[label]='rejected '+(error.response?.status||'guard');render();});\n }\n render();setTimeout(()=>{checkpoint=true;render();},1000);\n};panel.appendChild(button);\nconst output=document.createElement('pre');output.id='qa-refresh-result';output.setAttribute('role','status');panel.appendChild(output);document.body.replaceChildren(panel);render();\n",
+        "sha256": "848c6db0e031c914debe17ffdbfa876d17f74336ebf287ce84899bbd4b72d9e6"
+      },
+      "vpqa-refresh-webpack.cjs": {
+        "content": "const root='/Users/tamastyukodi/Development/video-platform-ui';\nconst config=require(root+'/webpack.config.js');\nconfig.context=root;\nconfig.entry='/private/tmp/vpqa-refresh-entry.js';\nconfig.output={...config.output,path:'/private/tmp/vpqa-fixture-dist'};\nconfig.devServer={...config.devServer,host:'127.0.0.1',port:4317,open:false};\nconfig.resolve={...config.resolve,modules:[root+'/node_modules','node_modules']};\nmodule.exports=config;\n",
+        "sha256": "a43bd2d03f4c153e23b262fc0cb0078f48747e8df40e2f42983427d10be752e8"
+      }
+    },
+    "scope": "Actual shared HTTP client and refresh interceptor; synthetic Axios transport only. No real credentials or deployed reproduction.",
+    "cleanup": "Local tab closed. All owned servers exited 0; lsof confirms no listener on 4317."
+  }
+]

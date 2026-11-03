@@ -1,0 +1,22 @@
+[
+  {
+    "path": "/app/my-page-preview",
+    "url": "https://app.serious-debauchery.click/app/storefront",
+    "expectedHeadingVisible": true
+  },
+  {
+    "path": "/app/help",
+    "url": "https://app.serious-debauchery.click/app",
+    "expectedHeadingVisible": true
+  },
+  {
+    "path": "/app/dashboard",
+    "url": "https://app.serious-debauchery.click/app",
+    "expectedHeadingVisible": true
+  },
+  {
+    "path": "/app/unknown",
+    "url": "https://app.serious-debauchery.click/app",
+    "expectedHeadingVisible": true
+  }
+]

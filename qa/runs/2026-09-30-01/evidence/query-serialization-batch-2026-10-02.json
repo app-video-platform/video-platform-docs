@@ -1,0 +1,187 @@
+[
+  {
+    "key": "local-query-client-serialization-matrix",
+    "observed_at": "2026-10-02T19:43:32.105Z",
+    "scope": "Actual TypeScript helper and four actual GET client functions, transpiled by installed TypeScript. HTTP module replaced by a network-free request recorder; no real API/authentication/server defaults or UI tested.",
+    "networkRequests": 0,
+    "observations": [
+      {
+        "key": "shared-helper-literal-search-and-zero",
+        "serialized": "search=space+%26+%2B+%E9%9B%AA+caf%C3%A9&page=0",
+        "decoded": {
+          "search": "space & + 雪 café",
+          "page": "0"
+        },
+        "expected": {
+          "search": "space & + 雪 café",
+          "page": "0"
+        },
+        "pass": true
+      },
+      {
+        "key": "shared-helper-omitted-empty-null-undefined-all",
+        "serialized": "page=0&flag=false",
+        "decoded": {
+          "page": "0",
+          "flag": "false"
+        },
+        "expected": {
+          "page": "0",
+          "flag": "false"
+        },
+        "pass": true
+      },
+      {
+        "key": "shared-helper-literal-all-only",
+        "serialized": "different=ALL&other=+all+",
+        "decoded": {
+          "different": "ALL",
+          "other": " all "
+        },
+        "expected": {
+          "different": "ALL",
+          "other": " all "
+        },
+        "pass": true
+      },
+      {
+        "key": "analytics-literal",
+        "request": {
+          "url": "api/creator/analytics/overview?period=30d&search=space+%26+%2B+%E9%9B%AA+caf%C3%A9&page=0",
+          "withCredentials": true
+        },
+        "decoded": {
+          "period": "30d",
+          "search": "space & + 雪 café",
+          "page": "0"
+        },
+        "syntheticResponseReturned": true,
+        "pass": true
+      },
+      {
+        "key": "analytics-cleared",
+        "request": {
+          "url": "api/creator/analytics/overview?page=0",
+          "withCredentials": true
+        },
+        "decoded": {
+          "page": "0"
+        },
+        "syntheticResponseReturned": true,
+        "pass": true
+      },
+      {
+        "key": "customers-literal",
+        "request": {
+          "url": "api/creator/customers?page=0&pageSize=6&sort=last-activity-desc&search=space+%26+%2B+%E9%9B%AA+caf%C3%A9",
+          "withCredentials": true
+        },
+        "decoded": {
+          "page": "0",
+          "pageSize": "6",
+          "sort": "last-activity-desc",
+          "search": "space & + 雪 café"
+        },
+        "syntheticResponseReturned": true,
+        "pass": true
+      },
+      {
+        "key": "customers-cleared",
+        "request": {
+          "url": "api/creator/customers?page=0&pageSize=6&sort=last-activity-desc",
+          "withCredentials": true
+        },
+        "decoded": {
+          "page": "0",
+          "pageSize": "6",
+          "sort": "last-activity-desc"
+        },
+        "syntheticResponseReturned": true,
+        "pass": true
+      },
+      {
+        "key": "sales-summary-literal",
+        "request": {
+          "url": "api/creator/sales/summary?period=30d&search=space+%26+%2B+%E9%9B%AA+caf%C3%A9&page=0",
+          "withCredentials": true
+        },
+        "decoded": {
+          "period": "30d",
+          "search": "space & + 雪 café",
+          "page": "0"
+        },
+        "syntheticResponseReturned": true,
+        "pass": true
+      },
+      {
+        "key": "sales-summary-cleared",
+        "request": {
+          "url": "api/creator/sales/summary?page=0",
+          "withCredentials": true
+        },
+        "decoded": {
+          "page": "0"
+        },
+        "syntheticResponseReturned": true,
+        "pass": true
+      },
+      {
+        "key": "sales-orders-literal",
+        "request": {
+          "url": "api/creator/orders?page=0&pageSize=6&period=30d&sort=newest&search=space+%26+%2B+%E9%9B%AA+caf%C3%A9",
+          "withCredentials": true
+        },
+        "decoded": {
+          "page": "0",
+          "pageSize": "6",
+          "period": "30d",
+          "sort": "newest",
+          "search": "space & + 雪 café"
+        },
+        "syntheticResponseReturned": true,
+        "pass": true
+      },
+      {
+        "key": "sales-orders-cleared",
+        "request": {
+          "url": "api/creator/orders?page=0&pageSize=6&sort=newest",
+          "withCredentials": true
+        },
+        "decoded": {
+          "page": "0",
+          "pageSize": "6",
+          "sort": "newest"
+        },
+        "syntheticResponseReturned": true,
+        "pass": true
+      }
+    ],
+    "sources": [
+      {
+        "path": "src/core/api/services/utils/query-string.ts",
+        "source": "export const buildQueryString = (params: Record<string, unknown>) => {\n  const query = new URLSearchParams();\n\n  Object.entries(params).forEach(([key, value]) => {\n    if (value === undefined || value === null || value === '') {\n      return;\n    }\n\n    if (value === 'all') {\n      return;\n    }\n\n    query.set(key, String(value));\n  });\n\n  return query.toString();\n};\n",
+        "sha256": "bf55bc13bdcbfa0a26650ccbb7aff7a4e9de8eb6a5ff53e4b4b116aeaa563dab"
+      },
+      {
+        "path": "src/core/api/services/analytics/analytics-api.ts",
+        "source": "import httpClient from 'core/api/http-client';\nimport {\n  CreatorAnalyticsOverview,\n  CreatorAnalyticsOverviewQuery,\n} from 'core/api/models';\nimport { buildQueryString } from '../utils/query-string';\n\nexport const getCreatorAnalyticsOverviewAPI = async (\n  query: CreatorAnalyticsOverviewQuery = {},\n): Promise<CreatorAnalyticsOverview> => {\n  const queryString = buildQueryString({\n    period: '30d',\n    ...query,\n  });\n  const response = await httpClient.get<CreatorAnalyticsOverview>(\n    `api/creator/analytics/overview?${queryString}`,\n    { withCredentials: true },\n  );\n\n  return response.data;\n};\n",
+        "sha256": "937023ca133a68debe8c2406d6bb65b789d195c110bc6d8e4f06fa9f066d1603"
+      },
+      {
+        "path": "src/core/api/services/customers/customers-api.ts",
+        "source": "import httpClient from 'core/api/http-client';\nimport {\n  CreatorCustomerDetail,\n  CreatorCustomersPage,\n  CreatorCustomersQuery,\n} from 'core/api/models';\nimport { buildQueryString } from '../utils/query-string';\n\nexport const getCreatorCustomersPageAPI = async (\n  query: CreatorCustomersQuery = {},\n): Promise<CreatorCustomersPage> => {\n  const queryString = buildQueryString({\n    page: 0,\n    pageSize: 6,\n    sort: 'last-activity-desc',\n    ...query,\n  });\n  const response = await httpClient.get<CreatorCustomersPage>(\n    `api/creator/customers?${queryString}`,\n    { withCredentials: true },\n  );\n\n  return response.data;\n};\n\nexport const getCreatorCustomerDetailAPI = async (\n  customerId: string,\n): Promise<CreatorCustomerDetail> => {\n  const response = await httpClient.get<CreatorCustomerDetail>(\n    `api/creator/customers/${customerId}`,\n    { withCredentials: true },\n  );\n\n  return response.data;\n};\n",
+        "sha256": "5428d77e5a6586f4fc54cd9215fc6e9eb36df2829b5a7bec8479e9cdda0625cf"
+      },
+      {
+        "path": "src/core/api/services/sales/sales-api.ts",
+        "source": "import httpClient from 'core/api/http-client';\nimport {\n  CreatorOrdersPage,\n  CreatorOrdersQuery,\n  CreatorSalesSummary,\n  CreatorSalesSummaryQuery,\n  SalesOrderDetail,\n} from 'core/api/models';\nimport { buildQueryString } from '../utils/query-string';\n\nexport const getCreatorSalesSummaryAPI = async (\n  query: CreatorSalesSummaryQuery = {},\n): Promise<CreatorSalesSummary> => {\n  const queryString = buildQueryString({\n    period: '30d',\n    ...query,\n  });\n  const response = await httpClient.get<CreatorSalesSummary>(\n    `api/creator/sales/summary?${queryString}`,\n    { withCredentials: true },\n  );\n\n  return response.data;\n};\n\nexport const getCreatorOrdersPageAPI = async (\n  query: CreatorOrdersQuery = {},\n): Promise<CreatorOrdersPage> => {\n  const queryString = buildQueryString({\n    page: 0,\n    pageSize: 6,\n    period: '30d',\n    sort: 'newest',\n    ...query,\n  });\n  const response = await httpClient.get<CreatorOrdersPage>(\n    `api/creator/orders?${queryString}`,\n    { withCredentials: true },\n  );\n\n  return response.data;\n};\n\nexport const getCreatorOrderDetailAPI = async (\n  orderId: string,\n): Promise<SalesOrderDetail> => {\n  const response = await httpClient.get<SalesOrderDetail>(\n    `api/creator/orders/${orderId}`,\n    { withCredentials: true },\n  );\n\n  return response.data;\n};\n",
+        "sha256": "a3f367b1d7e326ee56e1948c91a40658b81ad102602fe4948eee2064e36358c2"
+      }
+    ],
+    "harness": {
+      "source": "const fs=require('fs'),path=require('path'),crypto=require('crypto'),Module=require('module');\nconst root='/Users/tamastyukodi/Development/video-platform-ui';\nconst ts=require(root+'/node_modules/typescript');\nconst requests=[];\nconst fakeResponse={fixture:'synthetic-local-response',content:[]};\nconst http={get:async(url,config)=>{requests.push({url,withCredentials:config?.withCredentials});return {status:200,data:fakeResponse};},patch:()=>{throw Error('Mutation denied by query harness');},post:()=>{throw Error('Mutation denied by query harness');}};\nconst oldLoad=Module._load;\nModule._load=function(request,parent,isMain){if(request==='core/api/http-client')return http;return oldLoad.call(this,request,parent,isMain);};\nrequire.extensions['.ts']=function(module,filename){const src=fs.readFileSync(filename,'utf8');const out=ts.transpileModule(src,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020,esModuleInterop:true}});module._compile(out.outputText,filename);};\nconst query=require(root+'/src/core/api/services/utils/query-string.ts');\nconst analytics=require(root+'/src/core/api/services/analytics/analytics-api.ts');\nconst customers=require(root+'/src/core/api/services/customers/customers-api.ts');\nconst sales=require(root+'/src/core/api/services/sales/sales-api.ts');\nconst observations=[];\nfunction inspect(key,serialized,expected){const decoded=Object.fromEntries(new URLSearchParams(serialized));const pass=JSON.stringify(decoded)===JSON.stringify(expected);observations.push({key,serialized,decoded,expected,pass});if(!pass)throw Error('Unexpected query shape: '+key);}\n(async()=>{\n const literal='space & + 雪 café';\n inspect('shared-helper-literal-search-and-zero',query.buildQueryString({search:literal,page:0}),{search:literal,page:'0'});\n inspect('shared-helper-omitted-empty-null-undefined-all',query.buildQueryString({search:'',productId:'all',status:null,sort:undefined,page:0,flag:false}),{page:'0',flag:'false'});\n inspect('shared-helper-literal-all-only',query.buildQueryString({search:'all',different:'ALL',other:' all '}),{different:'ALL',other:' all '});\n const clients=[['analytics',analytics.getCreatorAnalyticsOverviewAPI],['customers',customers.getCreatorCustomersPageAPI],['sales-summary',sales.getCreatorSalesSummaryAPI],['sales-orders',sales.getCreatorOrdersPageAPI]];\n for(const [key,fn] of clients){\n  for(const [mode,values] of [['literal',{search:literal,productId:'all',status:null,page:0}],['cleared',{search:'',productId:'all',period:undefined,page:0}]]){\n   const start=requests.length;const response=await fn(values);const req=requests[start];const p=new URL('https://qa.invalid/'+req.url).searchParams;\n   const pass=req.withCredentials===true&&response===fakeResponse&&p.get('page')==='0'&&!p.has('productId')&&!p.has('status')&&(mode==='literal'?p.get('search')===literal:!p.has('search')&&!p.has('period'));\n   observations.push({key:key+'-'+mode,request:req,decoded:Object.fromEntries(p),syntheticResponseReturned:response===fakeResponse,pass});if(!pass)throw Error('Client assertion failed: '+key+'-'+mode);\n  }\n }\n const paths=['src/core/api/services/utils/query-string.ts','src/core/api/services/analytics/analytics-api.ts','src/core/api/services/customers/customers-api.ts','src/core/api/services/sales/sales-api.ts'];\n const sources=paths.map(file=>{const source=fs.readFileSync(path.join(root,file),'utf8');return {path:file,source,sha256:crypto.createHash('sha256').update(source).digest('hex')};});\n const harnessSource=fs.readFileSync(__filename,'utf8');\n const out={key:'local-query-client-serialization-matrix',observed_at:new Date().toISOString(),scope:'Actual TypeScript helper and four actual GET client functions, transpiled by installed TypeScript. HTTP module replaced by a network-free request recorder; no real API/authentication/server defaults or UI tested.',networkRequests:0,observations,sources,harness:{source:harnessSource,sha256:crypto.createHash('sha256').update(harnessSource).digest('hex')},launch:'bundled Node executes /private/tmp/vpqa-query-serialization.cjs'};\n fs.writeFileSync('/Users/tamastyukodi/Development/video-platform-UI-docs/qa/runs/2026-09-30-01/evidence/query-serialization-batch-2026-10-02.json',JSON.stringify([out],null,2)+'\\n');\n process.stdout.write(JSON.stringify({checks:observations.length,passed:observations.filter(o=>o.pass).length,requestsRecorded:requests.length,realNetworkRequests:0})+'\\n');\n})().catch(e=>{process.stderr.write(e.message+'\\n');process.exitCode=1;});\n",
+      "sha256": "241019bd7c8a26a3dc1e5c3a34645fce22e12c68ec52425ac2345ec7c53ecd19"
+    },
+    "launch": "bundled Node executes /private/tmp/vpqa-query-serialization.cjs"
+  }
+]

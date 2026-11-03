@@ -1,0 +1,16 @@
+{
+  "observed_at": "2026-10-02T08:24:20.297Z",
+  "action_started_at": "2026-10-02T08:23:01.137Z",
+  "url": "https://app.serious-debauchery.click/auth/login",
+  "snapshot": "- region \"Notifications alt+T\"\n- generic: Email\n- textbox \"Email\": <redacted>\n- generic: Password\n- textbox \"Password\": <redacted>\n- button:\n- button \"Sign in\" [active]:\n  - generic: Sign in\n- iframe [id=\"gsi_340964_297975\"]:\n  - button \"Accedi con Google. Si apre in una nuova scheda\":\n    - generic: Accedi con Google\n- button \"I forgot my password\"",
+  "diagnostic_categories": [
+    {
+      "timestamp": "2026-10-02T08:22:21.583Z",
+      "http404": false,
+      "http401": false,
+      "unhandledRejection": false,
+      "loginEndpointMentioned": false
+    }
+  ],
+  "raw_logs_saved": false
+}

@@ -1,0 +1,49 @@
+{
+  "heading": "Choose Your Orbit",
+  "primaryNavigation": [
+    {
+      "aria": null,
+      "left": 20,
+      "right": 65.7421875,
+      "text": "Home"
+    },
+    {
+      "aria": null,
+      "left": 95.7421875,
+      "right": 141.6640625,
+      "text": "About"
+    },
+    {
+      "aria": null,
+      "left": 171.6640625,
+      "right": 223.1875,
+      "text": "Pricing"
+    },
+    {
+      "aria": null,
+      "left": 253.1875,
+      "right": 308.953125,
+      "text": "Getting Started"
+    },
+    {
+      "aria": null,
+      "left": 338.953125,
+      "right": 397.6640625,
+      "text": "Contact Us"
+    },
+    {
+      "aria": null,
+      "left": 397.6640625,
+      "right": 470.8984375,
+      "text": "Go to Dashboard"
+    },
+    {
+      "aria": "T",
+      "left": 482.8984375,
+      "right": 614.0078125,
+      "text": "Tamas Tyukodi"
+    }
+  ],
+  "scrollWidth": 614,
+  "width": 375
+}

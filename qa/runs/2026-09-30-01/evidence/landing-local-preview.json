@@ -1,0 +1,8 @@
+{
+  "aboutText": "ABOUT\nA closer look",
+  "layoutClasses": [
+    "product-landing__hero product-landing__hero--media-left",
+    "product-landing__hero-copy",
+    "product-landing__hero-facts"
+  ]
+}

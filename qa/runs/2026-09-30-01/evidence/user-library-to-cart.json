@@ -1,0 +1,5 @@
+{
+  "checked_at": "2026-10-01T09:32:12.100Z",
+  "url": "https://app.serious-debauchery.click/app/cart",
+  "snapshot": "- region \"Notifications alt+T\"\n- banner:\n  - navigation:\n    - heading \"Galactica\" [level=2]\n    - textbox \"Product search\":\n      - /placeholder: Search...\n    - button \"Submit search\":\n    - link \"Explore\":\n      - /url: /app/explore\n    - link \"Library\":\n      - /url: /app/library/all-products\n    - button \"Open wishlist\":\n    - button \"Open shopping cart\":\n    - paragraph: You don't have anything in you shopping cart\n    - button \"Go to checkout\" [active]:\n      - generic: Go to checkout\n    - button:\n    - button \"T\":\n      - generic: Tamas Tyukodi\n- main:\n  - heading \"Shopping Cart\" [level=1]\n  - paragraph: You don't have any products in your shopping cart\n  - heading \"You might also like\" [level=2]"
+}

@@ -1,7 +1,7 @@
 {
   "id": "developer/components/spinner",
-  "title": "GalSpinner",
-  "description": "GalSpinner (quick notes)",
+  "title": "Spinner",
+  "description": "Spinner (quick notes)",
   "source": "@site/docs/developer/components/spinner.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/spinner",
@@ -12,11 +12,11 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalSpinner"
+    "title": "Spinner"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalSocialMediaInput",
+    "title": "SocialMediaInput",
     "permalink": "/docs/developer/components/social-media-input"
   },
   "next": {

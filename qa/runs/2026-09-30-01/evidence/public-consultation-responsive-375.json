@@ -1,0 +1,55 @@
+{
+  "controls": [
+    {
+      "left": 202.625,
+      "name": "Product search",
+      "right": 652.625,
+      "tag": "INPUT"
+    },
+    {
+      "left": 202.625,
+      "name": "Submit search",
+      "right": 266.625,
+      "tag": "BUTTON"
+    },
+    {
+      "left": 622.625,
+      "name": "Explore",
+      "right": 679.78125,
+      "tag": "A"
+    },
+    {
+      "left": 679.78125,
+      "name": "Log In",
+      "right": 759.78125,
+      "tag": "BUTTON"
+    },
+    {
+      "left": 769.78125,
+      "name": "Register",
+      "right": 861.15625,
+      "tag": "BUTTON"
+    },
+    {
+      "left": 73,
+      "name": "Already in cart",
+      "right": 219.359375,
+      "tag": "BUTTON"
+    },
+    {
+      "left": 73,
+      "name": "Buy now",
+      "right": 169.71875,
+      "tag": "BUTTON"
+    }
+  ],
+  "headings": [
+    "Galactica",
+    "QA-2026-09-30-01 Consultation",
+    "Price unavailable",
+    "Session format",
+    "Tamas Tyukodi null"
+  ],
+  "scrollWidth": 861,
+  "width": 375
+}

@@ -1,7 +1,7 @@
 {
   "id": "developer/components/rte-menu-bar",
-  "title": "GalRTEMenuBar",
-  "description": "GalRTEMenuBar (quick notes)",
+  "title": "RTEMenuBar",
+  "description": "RTEMenuBar (quick notes)",
   "source": "@site/docs/developer/components/rte-menu-bar.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/rte-menu-bar",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalRTEMenuBar"
+    "title": "RTEMenuBar"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalRichTextEditor",
+    "title": "RichTextEditor",
     "permalink": "/docs/developer/components/rich-text-editor"
   },
   "next": {
-    "title": "GalSearch",
+    "title": "Search",
     "permalink": "/docs/developer/components/search"
   }
 }

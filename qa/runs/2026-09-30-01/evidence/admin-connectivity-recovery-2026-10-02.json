@@ -1,0 +1,8 @@
+{
+  "observed_at": "2026-10-02T08:59:06.604Z",
+  "frontend_http": 200,
+  "restricted_log_lines": 200,
+  "restricted_error_lines": 6,
+  "database_before_audit_attempt": "timed out; no mutation attempted",
+  "note": "One frontend terminal diagnostic automatic approval review timed out, allowed single retry succeeded. Browser reload recovered."
+}

@@ -1,0 +1,49 @@
+{
+  "heading": "Create Courses ThatInspireScaleTransformLeadConvert",
+  "primaryNavigation": [
+    {
+      "aria": null,
+      "left": 20,
+      "right": 65.7421875,
+      "text": "Home"
+    },
+    {
+      "aria": null,
+      "left": 95.7421875,
+      "right": 141.6640625,
+      "text": "About"
+    },
+    {
+      "aria": null,
+      "left": 171.6640625,
+      "right": 223.1875,
+      "text": "Pricing"
+    },
+    {
+      "aria": null,
+      "left": 253.1875,
+      "right": 308.953125,
+      "text": "Getting Started"
+    },
+    {
+      "aria": null,
+      "left": 338.953125,
+      "right": 397.6640625,
+      "text": "Contact Us"
+    },
+    {
+      "aria": null,
+      "left": 397.6640625,
+      "right": 478.234375,
+      "text": "Sign In"
+    },
+    {
+      "aria": null,
+      "left": 508.234375,
+      "right": 599.6015625,
+      "text": "Register"
+    }
+  ],
+  "scrollWidth": 1062,
+  "width": 375
+}

@@ -1,0 +1,28 @@
+{
+  "id": "developer/backend/administration-and-audit",
+  "title": "Administration and Audit",
+  "description": "Access",
+  "source": "@site/docs/developer/backend/administration-and-audit.md",
+  "sourceDirName": "developer/backend",
+  "slug": "/developer/backend/administration-and-audit",
+  "permalink": "/docs/developer/backend/administration-and-audit",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/backend/administration-and-audit.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "title": "Administration and Audit",
+    "sidebar_position": 9
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Integrations and Files",
+    "permalink": "/docs/developer/backend/integrations-and-files"
+  },
+  "next": {
+    "title": "Testing and Deployment",
+    "permalink": "/docs/developer/backend/testing-and-deployment"
+  }
+}

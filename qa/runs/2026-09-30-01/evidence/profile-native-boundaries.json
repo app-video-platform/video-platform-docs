@@ -1,0 +1,8 @@
+{
+  "bioLength": 250,
+  "bioMaxLength": 250,
+  "errorText": [],
+  "successToast": true,
+  "taglineLength": 121,
+  "taglineMaxLength": 999
+}

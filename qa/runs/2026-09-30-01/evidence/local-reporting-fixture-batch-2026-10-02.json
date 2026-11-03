@@ -1,0 +1,1069 @@
+[
+  {
+    "key": "dashboard-populated",
+    "observed_at": "2026-10-02T14:49:58.938Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Dashboard\" [level=1]\n  - paragraph: Good afternoon, QA.\n  - region \"Business metrics\":\n    - link \"View Revenue details\":\n      - /url: /app/sales\n      - generic \"Revenue\"\n      - strong: \u20ac3,429\n      - 'generic \"Up positive trend: +8% vs prior period\"': \u2191 8% vs prior period\n    - link \"View Sales details\":\n      - /url: /app/sales\n      - generic \"Sales\"\n      - strong: \"48\"\n      - 'generic \"Up positive trend: +2 orders\"': \u2191 2 orders\n    - article:\n      - generic \"Customers\"\n      - strong: 1,284\n      - 'generic \"Up positive trend: +48 this period\"': \u2191 48 this period\n    - article:\n      - generic \"Active memberships\"\n      - strong: \"318\"\n      - 'generic \"Up positive trend: +1.6% vs last 30 days\"': \u2191 1.6% vs last 30 days\n  - heading \"Recent activity\" [level=2]\n  - article:\n    - heading \"New sale\" [level=3]\n    - time: 12 min ago\n    - paragraph: Creator Product Growth System\n    - strong: \u20ac149\n  - article:\n    - heading \"Payment failed\" [level=3]\n    - time: 2h ago\n    - paragraph: Creator Systems Lab \u00b7 Mira Patel\n    - generic: Retry scheduled\n  - 'link \"Open Product updated: Launch Toolkit\"':\n    - /url: /app/products/prod-launch-toolkit\n    - heading \"Product updated\" [level=3]\n    - time: Yesterday\n    - paragraph: Launch Toolkit\n  - heading \"Top products\" [level=2]\n  - generic: Revenue\n  - link \"Open Creator Product Growth System product overview\":\n    - /url: /app/products/prod-course-growth\n    - generic: C\n    - heading \"Creator Product Growth System\" [level=3]\n    - text: Course\n    - strong: \u20ac1,192\n    - generic \"Creator Product Growth System revenue share 100%\"\n  - link \"Open Launch Toolkit product overview\":\n    - /url: /app/products/prod-launch-toolkit\n    - generic: L\n    - heading \"Launch Toolkit\" [level=3]\n    - text: Download\n    - strong: \u20ac392\n    - generic \"Launch Toolkit revenue share 33%\"\n  - heading \"Needs attention\" [level=2]\n  - article:\n    - generic: Medium priority\n    - heading \"Membership is missing a thumbnail\" [level=3]\n    - paragraph: Creator Systems Lab membership\n    - button \"Add media\":\n      - generic: Add media\n  - article:\n    - generic: High priority\n    - heading \"Consultation calendar disconnected\" [level=3]\n    - paragraph: Offer audit consultation\n    - button \"Reconnect\":\n      - generic: Reconnect\n  - article:\n    - generic: Low priority\n    - heading \"Two draft products are close to publish-ready\" [level=3]\n    - paragraph: Launch Toolkit and Creator Systems Lab\n    - button \"Review drafts\":\n      - generic: Review drafts\n  - article:\n    - generic: Low priority\n    - heading \"No routed action exists yet\" [level=3]\n    - paragraph: Backend-owned reminder\n    - button \"No action\" [disabled]:\n      - generic: No action"
+  },
+  {
+    "key": "dashboard-revenue-link-sales",
+    "observed_at": "2026-10-02T14:49:59.020Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - status:\n    - heading \"Loading sales\" [level=2]"
+  },
+  {
+    "key": "sales-populated",
+    "observed_at": "2026-10-02T14:50:14.003Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\":\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Product Growth System\"\n      - option \"Creator Systems Lab\"\n      - option \"Launch Toolkit\"\n      - option \"Founder Positioning Intensive\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 56 orders\n  - region \"Orders ledger\":\n    - generic: Date\n    - generic: Customer\n    - generic: Product\n    - generic: Status\n    - generic: Type\n    - generic: Amount\n    - article:\n      - button \"Open ORD-2026-00124 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00124\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - link \"Open Creator Product Growth System product overview\":\n        - /url: /app/products/prod-course-growth\n        - generic: Creator Product Growth System\n        - generic: Course \u00b7 \u20ac149\n      - generic: Access granted\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac198\n    - article:\n      - button \"Open ORD-2026-00123 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00123\n      - link \"Open Alex Rivera customer profile\":\n        - /url: /app/customers/cust-alex-rivera\n        - generic: Alex Rivera\n        - generic: alex.rivera@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Paid\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00121 order detail\":\n        - generic: Aug 8\n        - generic: ORD-2026-00121\n      - link \"Open Jamie Chen customer profile\":\n        - /url: /app/customers/cust-jamie-chen\n        - generic: Jamie Chen\n        - generic: jamie.chen@example.test\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Refunded\n      - generic: One-time\n      - generic: \u20ac49\n    - article:\n      - button \"Open ORD-2026-00120 order detail\":\n        - generic: Aug 7\n        - generic: ORD-2026-00120\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Failed\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00119 order detail\":\n        - generic: Aug 5\n        - generic: ORD-2026-00119\n      - link \"Open Noah Smith customer profile\":\n        - /url: /app/customers/cust-noah-smith\n        - generic: Noah Smith\n        - generic: noah.smith@example.test\n      - link \"Open Founder Positioning Intensive product overview\":\n        - /url: /app/products/prod-consulting\n        - generic: Founder Positioning Intensive\n        - generic: Consultation \u00b7 \u20ac250\n      - generic: No access granted\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac250\n    - article:\n      - button \"Open ORD-2026-00118 order detail\":\n        - generic: Jul 28\n        - generic: ORD-2026-00118\n      - generic: Samira Longlastname-With-Company-Identifier\n      - generic: samira.long.identity@example.test\n      - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n        - /url: /app/products/prod-download-system\n        - generic: The Very Long Product Operations Template Pack for Launch Teams\n        - generic: Download \u00b7 \u20ac99\n      - generic: No access granted\n      - generic: Pending\n      - generic: One-time\n      - generic: \u20ac99\n  - navigation \"Order pages\":\n    - button \"Previous\" [disabled]:\n      - generic: Previous\n    - generic: Page 1 of 10\n    - button \"Next\":\n      - generic: Next"
+  },
+  {
+    "key": "sales-paid-multi-item-detail",
+    "observed_at": "2026-10-02T14:51:09.505Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\":\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Product Growth System\"\n      - option \"Creator Systems Lab\"\n      - option \"Launch Toolkit\"\n      - option \"Founder Positioning Intensive\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 56 orders\n  - region \"Orders ledger\":\n    - generic: Date\n    - generic: Customer\n    - generic: Product\n    - generic: Status\n    - generic: Type\n    - generic: Amount\n    - article:\n      - button \"Open ORD-2026-00124 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00124\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - link \"Open Creator Product Growth System product overview\":\n        - /url: /app/products/prod-course-growth\n        - generic: Creator Product Growth System\n        - generic: Course \u00b7 \u20ac149\n      - generic: Access granted\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac198\n    - article:\n      - button \"Open ORD-2026-00123 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00123\n      - link \"Open Alex Rivera customer profile\":\n        - /url: /app/customers/cust-alex-rivera\n        - generic: Alex Rivera\n        - generic: alex.rivera@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Paid\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00121 order detail\":\n        - generic: Aug 8\n        - generic: ORD-2026-00121\n      - link \"Open Jamie Chen customer profile\":\n        - /url: /app/customers/cust-jamie-chen\n        - generic: Jamie Chen\n        - generic: jamie.chen@example.test\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Refunded\n      - generic: One-time\n      - generic: \u20ac49\n    - article:\n      - button \"Open ORD-2026-00120 order detail\":\n        - generic: Aug 7\n        - generic: ORD-2026-00120\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Failed\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00119 order detail\":\n        - generic: Aug 5\n        - generic: ORD-2026-00119\n      - link \"Open Noah Smith customer profile\":\n        - /url: /app/customers/cust-noah-smith\n        - generic: Noah Smith\n        - generic: noah.smith@example.test\n      - link \"Open Founder Positioning Intensive product overview\":\n        - /url: /app/products/prod-consulting\n        - generic: Founder Positioning Intensive\n        - generic: Consultation \u00b7 \u20ac250\n      - generic: No access granted\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac250\n    - article:\n      - button \"Open ORD-2026-00118 order detail\":\n        - generic: Jul 28\n        - generic: ORD-2026-00118\n      - generic: Samira Longlastname-With-Company-Identifier\n      - generic: samira.long.identity@example.test\n      - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n        - /url: /app/products/prod-download-system\n        - generic: The Very Long Product Operations Template Pack for Launch Teams\n        - generic: Download \u00b7 \u20ac99\n      - generic: No access granted\n      - generic: Pending\n      - generic: One-time\n      - generic: \u20ac99\n  - navigation \"Order pages\":\n    - button \"Previous\" [disabled]:\n      - generic: Previous\n    - generic: Page 1 of 10\n    - button \"Next\":\n      - generic: Next\n- button \"Close drawer\"\n- 'dialog \"Order #ORD-2026-00124 Paid\"':\n  - banner:\n    - generic: \"Order #ORD-2026-00124\"\n    - generic: Paid\n    - button \"Close drawer\" [active]:\n  - region \"Order summary\":\n    - strong: \u20ac198\n    - generic: One-time\n    - time: Aug 10, 2026, 16:32\n  - heading \"Customer\" [level=2]\n  - paragraph: Maya Johnson\n  - paragraph: maya.johnson@example.test\n  - link \"View customer\":\n    - /url: /app/customers/cust-maya-johnson\n  - heading \"Items\" [level=2]\n  - article:\n    - paragraph: Creator Product Growth System\n    - paragraph: Course \u00b7 \u20ac149\n    - generic: Access granted\n    - link \"View product overview\":\n      - /url: /app/products/prod-course-growth\n  - article:\n    - paragraph: Launch Toolkit\n    - paragraph: Download \u00b7 \u20ac49\n    - generic: Access revoked\n    - paragraph: Refund removed access to the download package.\n    - link \"View product overview\":\n      - /url: /app/products/prod-launch-toolkit\n  - heading \"Payment\" [level=2]\n  - term: Provider\n  - definition: Stripe\n  - term: Payment method\n  - definition: Visa ending 4242\n  - term: Transaction ID\n  - definition: pi_3QcreatorPaid124\n  - term: Payment date\n  - definition: Aug 10, 2026, 16:32\n  - term: Currency\n  - definition: EUR\n  - heading \"Order Summary\" [level=2]\n  - term: Total\n  - definition: \u20ac198"
+  },
+  {
+    "key": "sales-detail-ORD-2026-00123",
+    "observed_at": "2026-10-02T14:52:16.595Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\":\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Product Growth System\"\n      - option \"Creator Systems Lab\"\n      - option \"Launch Toolkit\"\n      - option \"Founder Positioning Intensive\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 56 orders\n  - region \"Orders ledger\":\n    - generic: Date\n    - generic: Customer\n    - generic: Product\n    - generic: Status\n    - generic: Type\n    - generic: Amount\n    - article:\n      - button \"Open ORD-2026-00124 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00124\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - link \"Open Creator Product Growth System product overview\":\n        - /url: /app/products/prod-course-growth\n        - generic: Creator Product Growth System\n        - generic: Course \u00b7 \u20ac149\n      - generic: Access granted\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac198\n    - article:\n      - button \"Open ORD-2026-00123 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00123\n      - link \"Open Alex Rivera customer profile\":\n        - /url: /app/customers/cust-alex-rivera\n        - generic: Alex Rivera\n        - generic: alex.rivera@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Paid\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00121 order detail\":\n        - generic: Aug 8\n        - generic: ORD-2026-00121\n      - link \"Open Jamie Chen customer profile\":\n        - /url: /app/customers/cust-jamie-chen\n        - generic: Jamie Chen\n        - generic: jamie.chen@example.test\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Refunded\n      - generic: One-time\n      - generic: \u20ac49\n    - article:\n      - button \"Open ORD-2026-00120 order detail\":\n        - generic: Aug 7\n        - generic: ORD-2026-00120\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Failed\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00119 order detail\":\n        - generic: Aug 5\n        - generic: ORD-2026-00119\n      - link \"Open Noah Smith customer profile\":\n        - /url: /app/customers/cust-noah-smith\n        - generic: Noah Smith\n        - generic: noah.smith@example.test\n      - link \"Open Founder Positioning Intensive product overview\":\n        - /url: /app/products/prod-consulting\n        - generic: Founder Positioning Intensive\n        - generic: Consultation \u00b7 \u20ac250\n      - generic: No access granted\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac250\n    - article:\n      - button \"Open ORD-2026-00118 order detail\":\n        - generic: Jul 28\n        - generic: ORD-2026-00118\n      - generic: Samira Longlastname-With-Company-Identifier\n      - generic: samira.long.identity@example.test\n      - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n        - /url: /app/products/prod-download-system\n        - generic: The Very Long Product Operations Template Pack for Launch Teams\n        - generic: Download \u00b7 \u20ac99\n      - generic: No access granted\n      - generic: Pending\n      - generic: One-time\n      - generic: \u20ac99\n  - navigation \"Order pages\":\n    - button \"Previous\" [disabled]:\n      - generic: Previous\n    - generic: Page 1 of 10\n    - button \"Next\":\n      - generic: Next\n- button \"Close drawer\"\n- 'dialog \"Order #ORD-2026-00123 Paid\"':\n  - banner:\n    - generic: \"Order #ORD-2026-00123\"\n    - generic: Paid\n    - button \"Close drawer\" [active]:\n  - region \"Order summary\":\n    - strong: \u20ac39\n    - generic: Renewal\n    - time: Aug 10, 2026, 11:18\n  - heading \"Customer\" [level=2]\n  - paragraph: Alex Rivera\n  - paragraph: alex.rivera@example.test\n  - link \"View customer\":\n    - /url: /app/customers/cust-alex-rivera\n  - heading \"Items\" [level=2]\n  - article:\n    - paragraph: Creator Systems Lab\n    - paragraph: Membership \u00b7 \u20ac39\n    - generic: Access granted\n    - link \"View product overview\":\n      - /url: /app/products/prod-membership-lab\n  - heading \"Payment\" [level=2]\n  - term: Provider\n  - definition: Stripe\n  - term: Payment method\n  - definition: Mastercard ending 1881\n  - term: Transaction ID\n  - definition: pi_3QcreatorRenewal123\n  - term: Payment date\n  - definition: Aug 10, 2026, 11:18\n  - term: Currency\n  - definition: EUR\n  - heading \"Order Summary\" [level=2]\n  - term: Total\n  - definition: \u20ac39\n  - heading \"Subscription\" [level=2]\n  - term: Membership\n  - definition: Creator Systems Lab\n  - term: Billing price\n  - definition: \u20ac39 / month\n  - term: State\n  - definition: Active\n  - term: Next billing\n  - definition: Sep 10, 2026, 11:18"
+  },
+  {
+    "key": "sales-detail-ORD-2026-00121",
+    "observed_at": "2026-10-02T14:52:16.970Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\":\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Product Growth System\"\n      - option \"Creator Systems Lab\"\n      - option \"Launch Toolkit\"\n      - option \"Founder Positioning Intensive\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 56 orders\n  - region \"Orders ledger\":\n    - generic: Date\n    - generic: Customer\n    - generic: Product\n    - generic: Status\n    - generic: Type\n    - generic: Amount\n    - article:\n      - button \"Open ORD-2026-00124 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00124\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - link \"Open Creator Product Growth System product overview\":\n        - /url: /app/products/prod-course-growth\n        - generic: Creator Product Growth System\n        - generic: Course \u00b7 \u20ac149\n      - generic: Access granted\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac198\n    - article:\n      - button \"Open ORD-2026-00123 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00123\n      - link \"Open Alex Rivera customer profile\":\n        - /url: /app/customers/cust-alex-rivera\n        - generic: Alex Rivera\n        - generic: alex.rivera@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Paid\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00121 order detail\":\n        - generic: Aug 8\n        - generic: ORD-2026-00121\n      - link \"Open Jamie Chen customer profile\":\n        - /url: /app/customers/cust-jamie-chen\n        - generic: Jamie Chen\n        - generic: jamie.chen@example.test\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Refunded\n      - generic: One-time\n      - generic: \u20ac49\n    - article:\n      - button \"Open ORD-2026-00120 order detail\":\n        - generic: Aug 7\n        - generic: ORD-2026-00120\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Failed\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00119 order detail\":\n        - generic: Aug 5\n        - generic: ORD-2026-00119\n      - link \"Open Noah Smith customer profile\":\n        - /url: /app/customers/cust-noah-smith\n        - generic: Noah Smith\n        - generic: noah.smith@example.test\n      - link \"Open Founder Positioning Intensive product overview\":\n        - /url: /app/products/prod-consulting\n        - generic: Founder Positioning Intensive\n        - generic: Consultation \u00b7 \u20ac250\n      - generic: No access granted\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac250\n    - article:\n      - button \"Open ORD-2026-00118 order detail\":\n        - generic: Jul 28\n        - generic: ORD-2026-00118\n      - generic: Samira Longlastname-With-Company-Identifier\n      - generic: samira.long.identity@example.test\n      - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n        - /url: /app/products/prod-download-system\n        - generic: The Very Long Product Operations Template Pack for Launch Teams\n        - generic: Download \u00b7 \u20ac99\n      - generic: No access granted\n      - generic: Pending\n      - generic: One-time\n      - generic: \u20ac99\n  - navigation \"Order pages\":\n    - button \"Previous\" [disabled]:\n      - generic: Previous\n    - generic: Page 1 of 10\n    - button \"Next\":\n      - generic: Next\n- button \"Close drawer\"\n- 'dialog \"Order #ORD-2026-00121 Refunded\"':\n  - banner:\n    - generic: \"Order #ORD-2026-00121\"\n    - generic: Refunded\n    - button \"Close drawer\" [active]:\n  - region \"Order summary\":\n    - strong: \u20ac49\n    - generic: One-time\n    - time: Aug 8, 2026, 13:42\n  - heading \"Customer\" [level=2]\n  - paragraph: Jamie Chen\n  - paragraph: jamie.chen@example.test\n  - link \"View customer\":\n    - /url: /app/customers/cust-jamie-chen\n  - heading \"Items\" [level=2]\n  - article:\n    - paragraph: Launch Toolkit\n    - paragraph: Download \u00b7 \u20ac49\n    - generic: Access revoked\n    - link \"View product overview\":\n      - /url: /app/products/prod-launch-toolkit\n  - heading \"Payment\" [level=2]\n  - term: Provider\n  - definition: Stripe\n  - term: Payment method\n  - definition: Visa ending 2222\n  - term: Transaction ID\n  - definition: pi_3QcreatorRefund121\n  - term: Payment date\n  - definition: Aug 8, 2026, 13:42\n  - term: Currency\n  - definition: EUR\n  - heading \"Order Summary\" [level=2]\n  - term: Total\n  - definition: \u20ac49\n  - heading \"Refund\" [level=2]\n  - term: Amount refunded\n  - definition: \u20ac49\n  - term: Refund date\n  - definition: Aug 9, 2026, 12:05\n  - term: Reason\n  - definition: Customer request"
+  },
+  {
+    "key": "sales-detail-ORD-2026-00120",
+    "observed_at": "2026-10-02T14:52:17.325Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\":\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Product Growth System\"\n      - option \"Creator Systems Lab\"\n      - option \"Launch Toolkit\"\n      - option \"Founder Positioning Intensive\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 56 orders\n  - region \"Orders ledger\":\n    - generic: Date\n    - generic: Customer\n    - generic: Product\n    - generic: Status\n    - generic: Type\n    - generic: Amount\n    - article:\n      - button \"Open ORD-2026-00124 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00124\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - link \"Open Creator Product Growth System product overview\":\n        - /url: /app/products/prod-course-growth\n        - generic: Creator Product Growth System\n        - generic: Course \u00b7 \u20ac149\n      - generic: Access granted\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac198\n    - article:\n      - button \"Open ORD-2026-00123 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00123\n      - link \"Open Alex Rivera customer profile\":\n        - /url: /app/customers/cust-alex-rivera\n        - generic: Alex Rivera\n        - generic: alex.rivera@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Paid\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00121 order detail\":\n        - generic: Aug 8\n        - generic: ORD-2026-00121\n      - link \"Open Jamie Chen customer profile\":\n        - /url: /app/customers/cust-jamie-chen\n        - generic: Jamie Chen\n        - generic: jamie.chen@example.test\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Refunded\n      - generic: One-time\n      - generic: \u20ac49\n    - article:\n      - button \"Open ORD-2026-00120 order detail\":\n        - generic: Aug 7\n        - generic: ORD-2026-00120\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Failed\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00119 order detail\":\n        - generic: Aug 5\n        - generic: ORD-2026-00119\n      - link \"Open Noah Smith customer profile\":\n        - /url: /app/customers/cust-noah-smith\n        - generic: Noah Smith\n        - generic: noah.smith@example.test\n      - link \"Open Founder Positioning Intensive product overview\":\n        - /url: /app/products/prod-consulting\n        - generic: Founder Positioning Intensive\n        - generic: Consultation \u00b7 \u20ac250\n      - generic: No access granted\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac250\n    - article:\n      - button \"Open ORD-2026-00118 order detail\":\n        - generic: Jul 28\n        - generic: ORD-2026-00118\n      - generic: Samira Longlastname-With-Company-Identifier\n      - generic: samira.long.identity@example.test\n      - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n        - /url: /app/products/prod-download-system\n        - generic: The Very Long Product Operations Template Pack for Launch Teams\n        - generic: Download \u00b7 \u20ac99\n      - generic: No access granted\n      - generic: Pending\n      - generic: One-time\n      - generic: \u20ac99\n  - navigation \"Order pages\":\n    - button \"Previous\" [disabled]:\n      - generic: Previous\n    - generic: Page 1 of 10\n    - button \"Next\":\n      - generic: Next\n- button \"Close drawer\"\n- 'dialog \"Order #ORD-2026-00120 Failed\"':\n  - banner:\n    - generic: \"Order #ORD-2026-00120\"\n    - generic: Failed\n    - button \"Close drawer\" [active]:\n  - region \"Order summary\":\n    - strong: \u20ac39\n    - generic: Renewal\n    - time: Aug 7, 2026, 10:36\n  - heading \"Customer\" [level=2]\n  - paragraph: Mira Patel\n  - paragraph: mira.patel@example.test\n  - link \"View customer\":\n    - /url: /app/customers/cust-mira-patel\n  - heading \"Items\" [level=2]\n  - article:\n    - paragraph: Creator Systems Lab\n    - paragraph: Membership \u00b7 \u20ac39\n    - generic: Access granted\n    - link \"View product overview\":\n      - /url: /app/products/prod-membership-lab\n  - heading \"Payment\" [level=2]\n  - term: Provider\n  - definition: Stripe\n  - term: Payment method\n  - definition: Card ending 0341\n  - term: Transaction ID\n  - definition: pi_3QcreatorFailed120\n  - term: Payment date\n  - definition: Unavailable\n  - term: Currency\n  - definition: EUR\n  - heading \"Order Summary\" [level=2]\n  - term: Total\n  - definition: \u20ac39\n  - heading \"Subscription\" [level=2]\n  - term: Membership\n  - definition: Creator Systems Lab\n  - term: Billing price\n  - definition: \u20ac39 / month\n  - term: State\n  - definition: Past due\n  - term: Next billing\n  - definition: Aug 12, 2026, 10:36\n  - heading \"Failed payment\" [level=2]\n  - paragraph: Payment failed\n  - paragraph: Card was declined.\n  - paragraph: Retry scheduled Aug 12, 2026, 10:36"
+  },
+  {
+    "key": "sales-detail-ORD-2026-00118",
+    "observed_at": "2026-10-02T14:52:17.677Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\":\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Product Growth System\"\n      - option \"Creator Systems Lab\"\n      - option \"Launch Toolkit\"\n      - option \"Founder Positioning Intensive\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 56 orders\n  - region \"Orders ledger\":\n    - generic: Date\n    - generic: Customer\n    - generic: Product\n    - generic: Status\n    - generic: Type\n    - generic: Amount\n    - article:\n      - button \"Open ORD-2026-00124 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00124\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - link \"Open Creator Product Growth System product overview\":\n        - /url: /app/products/prod-course-growth\n        - generic: Creator Product Growth System\n        - generic: Course \u00b7 \u20ac149\n      - generic: Access granted\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac198\n    - article:\n      - button \"Open ORD-2026-00123 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00123\n      - link \"Open Alex Rivera customer profile\":\n        - /url: /app/customers/cust-alex-rivera\n        - generic: Alex Rivera\n        - generic: alex.rivera@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Paid\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00121 order detail\":\n        - generic: Aug 8\n        - generic: ORD-2026-00121\n      - link \"Open Jamie Chen customer profile\":\n        - /url: /app/customers/cust-jamie-chen\n        - generic: Jamie Chen\n        - generic: jamie.chen@example.test\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Refunded\n      - generic: One-time\n      - generic: \u20ac49\n    - article:\n      - button \"Open ORD-2026-00120 order detail\":\n        - generic: Aug 7\n        - generic: ORD-2026-00120\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Failed\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00119 order detail\":\n        - generic: Aug 5\n        - generic: ORD-2026-00119\n      - link \"Open Noah Smith customer profile\":\n        - /url: /app/customers/cust-noah-smith\n        - generic: Noah Smith\n        - generic: noah.smith@example.test\n      - link \"Open Founder Positioning Intensive product overview\":\n        - /url: /app/products/prod-consulting\n        - generic: Founder Positioning Intensive\n        - generic: Consultation \u00b7 \u20ac250\n      - generic: No access granted\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac250\n    - article:\n      - button \"Open ORD-2026-00118 order detail\":\n        - generic: Jul 28\n        - generic: ORD-2026-00118\n      - generic: Samira Longlastname-With-Company-Identifier\n      - generic: samira.long.identity@example.test\n      - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n        - /url: /app/products/prod-download-system\n        - generic: The Very Long Product Operations Template Pack for Launch Teams\n        - generic: Download \u00b7 \u20ac99\n      - generic: No access granted\n      - generic: Pending\n      - generic: One-time\n      - generic: \u20ac99\n  - navigation \"Order pages\":\n    - button \"Previous\" [disabled]:\n      - generic: Previous\n    - generic: Page 1 of 10\n    - button \"Next\":\n      - generic: Next\n- button \"Close drawer\"\n- 'dialog \"Order #ORD-2026-00118 Pending\"':\n  - banner:\n    - generic: \"Order #ORD-2026-00118\"\n    - generic: Pending\n    - button \"Close drawer\" [active]:\n  - region \"Order summary\":\n    - strong: \u20ac99\n    - generic: One-time\n    - time: Jul 28, 2026, 20:15\n  - heading \"Customer\" [level=2]\n  - paragraph: Samira Longlastname-With-Company-Identifier\n  - paragraph: samira.long.identity@example.test\n  - heading \"Items\" [level=2]\n  - article:\n    - paragraph: The Very Long Product Operations Template Pack for Launch Teams\n    - paragraph: Download \u00b7 \u20ac99\n    - generic: No access granted\n    - link \"View product overview\":\n      - /url: /app/products/prod-download-system\n  - heading \"Payment\" [level=2]\n  - term: Provider\n  - definition: Stripe\n  - term: Transaction ID\n  - definition: pi_3QcreatorPending118\n  - term: Payment date\n  - definition: Unavailable\n  - term: Currency\n  - definition: EUR\n  - heading \"Order Summary\" [level=2]\n  - term: Total\n  - definition: \u20ac99"
+  },
+  {
+    "key": "sales-mixed-case-search-resets-page",
+    "observed_at": "2026-10-02T14:53:25.226Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\" [active]:\n      - /placeholder: Search customer, email, or order ID...\n      - text: <redacted>\n    - combobox \"Select sales date range\":\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Product Growth System\"\n      - option \"Creator Systems Lab\"\n      - option \"Launch Toolkit\"\n      - option \"Founder Positioning Intensive\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 2 orders\n  - button \"Clear filters\":\n    - generic: Clear filters\n  - region \"Orders ledger\":\n    - generic: Date\n    - generic: Customer\n    - generic: Product\n    - generic: Status\n    - generic: Type\n    - generic: Amount\n    - article:\n      - button \"Open ORD-2026-00120 order detail\":\n        - generic: Aug 7\n        - generic: ORD-2026-00120\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Failed\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00118 order detail\":\n        - generic: Jul 28\n        - generic: ORD-2026-00118\n      - generic: Samira Longlastname-With-Company-Identifier\n      - generic: samira.long.identity@example.test\n      - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n        - /url: /app/products/prod-download-system\n        - generic: The Very Long Product Operations Template Pack for Launch Teams\n        - generic: Download \u00b7 \u20ac99\n      - generic: No access granted\n      - generic: Pending\n      - generic: One-time\n      - generic: \u20ac99"
+  },
+  {
+    "key": "customers-populated",
+    "observed_at": "2026-10-02T14:53:54.502Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\" [active]:\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Customers\" [level=1]\n  - paragraph: Understand your customers and their relationships.\n  - region \"Customer controls\":\n    - textbox \"Search by name or email\":\n      - /placeholder: Search by name or email...\n    - combobox \"Filter by relationship status\":\n      - option \"All statuses\" [selected]\n      - option \"Active member\"\n      - option \"Past due\"\n      - option \"Buyer\"\n      - option \"Waitlist\"\n    - combobox \"Filter by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Systems Lab membership\"\n      - option \"Creator Product Growth System\"\n      - option \"Launch Toolkit\"\n      - option \"Offer audit consultation\"\n    - combobox \"Filter by membership state\":\n      - option \"All membership\" [selected]\n      - option \"Active\"\n      - option \"Past due\"\n      - option \"Cancelled\"\n      - option \"No membership\"\n    - combobox \"Sort customers\":\n      - option \"Recent activity\" [selected]\n      - option \"Highest spend\"\n      - option \"Lowest spend\"\n      - option \"Name A-Z\"\n      - option \"Name Z-A\"\n  - generic: 8 customers\n  - region \"Customers\":\n    - generic: Customer\n    - generic: Status\n    - generic: Products\n    - generic: Total spend\n    - generic: Last activity\n    - article:\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: MJ\n        - generic: Maya Johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - generic: Active member\n      - strong: 3 products\n      - generic: Membership \u00b7 Course \u00b7 +1\n      - generic: \u20ac1,249\n      - generic: 2h ago\n    - article:\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: MP\n        - generic: Mira Patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - generic: Past due\n      - strong: 2 products\n      - generic: Membership \u00b7 Consultation\n      - generic: \u20ac714\n      - generic: 7h ago\n    - article:\n      - link \"Open Noah Kim customer profile\":\n        - /url: /app/customers/cust-noah-kim\n        - generic: NK\n        - generic: Noah Kim\n        - generic: Noah Kim\n        - generic: noah.kim@example.test\n      - generic: Buyer\n      - strong: 2 products\n      - generic: Course \u00b7 Download\n      - generic: \u20ac298\n      - generic: Unavailable\n    - article:\n      - link \"Open Elena Garcia customer profile\":\n        - /url: /app/customers/cust-elena-garcia\n        - generic: EG\n        - generic: Elena Garcia\n        - generic: Elena Garcia\n        - generic: elena.garcia@example.test\n      - generic: Waitlist\n      - strong: No products\n      - generic: Waitlist only\n      - generic: \u20ac0\n      - generic: Unavailable\n    - article:\n      - link \"Open Jules Carter customer profile\":\n        - /url: /app/customers/cust-jules-carter\n        - generic: JC\n        - generic: Jules Carter\n        - generic: Jules Carter\n        - generic: jules.carter@example.test\n      - generic: Active member\n      - strong: 1 product\n      - generic: Membership\n      - generic: \u20ac39\n      - generic: Unavailable\n    - article:\n      - link \"Open Sabrina Longlastname-With-Company-Identifier customer profile\":\n        - /url: /app/customers/cust-samira-long\n        - generic: SL\n        - generic: Sabrina Longlastname-With-Company-Identifier\n        - generic: Sabrina Longlastname-With-Company-Identifier\n        - generic: sabrina.long.identity@example.test\n      - generic: Buyer\n      - strong: 1 product\n      - generic: Download\n      - generic: \u20ac99\n      - generic: Unavailable\n  - navigation \"Customer pages\":\n    - button \"Previous\" [disabled]:\n      - generic: Previous\n    - generic: Page 1 of 2\n    - button \"Next\":\n      - generic: Next"
+  },
+  {
+    "key": "customer-maya-overview",
+    "observed_at": "2026-10-02T14:54:42.770Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - link \"Back to Customers\":\n    - /url: /app/customers\n    - text: Back to Customers\n  - generic: MJ\n  - generic: Maya Johnson\n  - heading \"Maya Johnson\" [level=1]\n  - generic: Active member\n  - paragraph: maya.johnson@example.test\n  - generic: Customer since Unavailable\n  - region \"Customer summary\":\n    - article:\n      - generic: Total spent\n      - strong: \u20ac1,249\n    - article:\n      - generic: Orders\n      - strong: \"7\"\n    - article:\n      - generic: Active access\n      - strong: 3 products\n    - article:\n      - generic: Membership\n      - strong: Active\n  - tablist \"Customer detail sections\":\n    - tab \"Overview\" [selected]\n    - tab \"Purchases\"\n    - tab \"Access\"\n    - tab \"Notes\"\n  - tabpanel \"Overview\":\n    - heading \"About\" [level=2]\n    - term: Email\n    - definition: maya.johnson@example.test\n    - term: Phone\n    - definition: Unavailable\n    - term: Location\n    - definition: Unavailable\n    - term: Language\n    - definition: Unavailable\n    - term: Timezone\n    - definition: Unavailable\n    - term: Customer since\n    - definition: Unavailable\n    - heading \"Relationship\" [level=2]\n    - term: Status\n    - definition: Active member\n    - term: Membership\n    - definition: Active\n    - term: Products\n    - definition: Creator Systems Lab membership, Creator Product Growth System, Launch Toolkit\n    - term: Tags\n    - definition:\n      - generic: Founding member\n    - heading \"Recent activity\" [level=2]\n    - paragraph: No customer-specific activity is available yet."
+  },
+  {
+    "key": "customer-maya-purchases",
+    "observed_at": "2026-10-02T14:54:43.064Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - link \"Back to Customers\":\n    - /url: /app/customers\n    - text: Back to Customers\n  - generic: MJ\n  - generic: Maya Johnson\n  - heading \"Maya Johnson\" [level=1]\n  - generic: Active member\n  - paragraph: maya.johnson@example.test\n  - generic: Customer since Unavailable\n  - region \"Customer summary\":\n    - article:\n      - generic: Total spent\n      - strong: \u20ac1,249\n    - article:\n      - generic: Orders\n      - strong: \"7\"\n    - article:\n      - generic: Active access\n      - strong: 3 products\n    - article:\n      - generic: Membership\n      - strong: Active\n  - tablist \"Customer detail sections\":\n    - tab \"Overview\"\n    - tab \"Purchases\" [active] [selected]\n    - tab \"Access\"\n    - tab \"Notes\"\n  - tabpanel \"Purchases\":\n    - heading \"Purchases\" [level=2]\n    - article:\n      - heading \"Creator Systems Lab membership\" [level=3]\n      - text: Membership\n      - generic: Aug 11\n      - strong: \u20ac39\n      - generic: Paid\n      - generic: Monthly"
+  },
+  {
+    "key": "customer-maya-access",
+    "observed_at": "2026-10-02T14:54:43.369Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - link \"Back to Customers\":\n    - /url: /app/customers\n    - text: Back to Customers\n  - generic: MJ\n  - generic: Maya Johnson\n  - heading \"Maya Johnson\" [level=1]\n  - generic: Active member\n  - paragraph: maya.johnson@example.test\n  - generic: Customer since Unavailable\n  - region \"Customer summary\":\n    - article:\n      - generic: Total spent\n      - strong: \u20ac1,249\n    - article:\n      - generic: Orders\n      - strong: \"7\"\n    - article:\n      - generic: Active access\n      - strong: 3 products\n    - article:\n      - generic: Membership\n      - strong: Active\n  - tablist \"Customer detail sections\":\n    - tab \"Overview\"\n    - tab \"Purchases\"\n    - tab \"Access\" [active] [selected]\n    - tab \"Notes\"\n  - tabpanel \"Access\":\n    - heading \"Access\" [level=2]\n    - article:\n      - heading \"Launch Toolkit\" [level=3]\n      - text: Download\n      - generic: Active\n      - generic: Manual grant\n      - generic: Granted Jul 15\n      - generic: No end date\n    - article:\n      - heading \"Creator Product Growth System\" [level=3]\n      - text: Course\n      - generic: Active\n      - generic: Free enrollment\n      - generic: Granted Aug 10\n      - generic: No end date"
+  },
+  {
+    "key": "customer-maya-notes",
+    "observed_at": "2026-10-02T14:54:43.679Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - link \"Back to Customers\":\n    - /url: /app/customers\n    - text: Back to Customers\n  - generic: MJ\n  - generic: Maya Johnson\n  - heading \"Maya Johnson\" [level=1]\n  - generic: Active member\n  - paragraph: maya.johnson@example.test\n  - generic: Customer since Unavailable\n  - region \"Customer summary\":\n    - article:\n      - generic: Total spent\n      - strong: \u20ac1,249\n    - article:\n      - generic: Orders\n      - strong: \"7\"\n    - article:\n      - generic: Active access\n      - strong: 3 products\n    - article:\n      - generic: Membership\n      - strong: Active\n  - tablist \"Customer detail sections\":\n    - tab \"Overview\"\n    - tab \"Purchases\"\n    - tab \"Access\"\n    - tab \"Notes\" [active] [selected]\n  - tabpanel \"Notes\":\n    - heading \"Notes\" [level=2]\n    - article:\n      - paragraph: Prefers launch planning examples from solo-creator businesses.\n      - generic: Maya Rivera \u00b7 Aug 1"
+  },
+  {
+    "key": "analytics-30d-populated",
+    "observed_at": "2026-10-02T14:55:45.166Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\" [active]:\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Analytics\" [level=1]\n  - paragraph: Understand how your business is performing over time.\n  - combobox \"Select analytics date range\":\n    - option \"Last 7 days\"\n    - option \"Last 30 days\" [selected]\n    - option \"Last 90 days\"\n  - region \"Business metrics\":\n    - article:\n      - generic: Revenue\n      - strong: \u20ac3,429\n      - 'generic \"Up positive trend: +8.0% vs previous 30 days\"': \u2191 +8.0% vs previous 30 days\n    - article:\n      - generic: Orders\n      - strong: \"48\"\n      - 'generic \"Up positive trend: +2.0% vs previous 30 days\"': \u2191 +2.0% vs previous 30 days\n    - article:\n      - generic: Customers\n      - strong: 1,284\n      - 'generic \"Up positive trend: +11.6% vs previous 30 days\"': \u2191 +11.6% vs previous 30 days\n    - article:\n      - generic: Active memberships\n      - strong: \"318\"\n      - 'generic \"Up positive trend: +1.6% vs previous 30 days\"': \u2191 +1.6% vs previous 30 days\n  - heading \"Performance\" [level=2]\n  - paragraph: Revenue over the last 30 days.\n  - group \"Performance metric\":\n    - button \"Revenue\" [pressed]:\n      - generic: Revenue\n    - button \"Orders\":\n      - generic: Orders\n  - img \"Revenue performance chart\":\n    - application:\n      - generic: Day 1\n      - generic: Day 7\n      - generic: Day 13\n      - generic: Day 19\n      - generic: Day 25\n      - generic: \u20ac0\n      - generic: \u20ac900\n      - generic: \u20ac1.8K\n      - generic: \u20ac2.7K\n      - generic: \u20ac3.6K\n  - paragraph: Revenue increased 8.0% compared with the previous 30 days.\n  - heading \"Product performance\" [level=2]\n  - paragraph: Revenue, orders, and share by product.\n  - link \"Open Creator Product Growth System product overview\":\n    - /url: /app/products/prod-course-growth\n    - generic: \"1\"\n    - generic: C\n    - strong: Creator Product Growth System\n    - generic: Course\n    - strong: \u20ac1,192\n    - generic: Revenue\n    - strong: \"8\"\n    - generic: Orders\n    - strong: 34.8%\n    - generic: Share\n    - generic \"Creator Product Growth System revenue share 34.8%\"\n  - link \"Open Creator Systems Lab product overview\":\n    - /url: /app/products/prod-membership-lab\n    - generic: \"2\"\n    - generic: C\n    - strong: Creator Systems Lab\n    - generic: Membership\n    - strong: \u20ac897\n    - generic: Revenue\n    - strong: \"23\"\n    - generic: Orders\n    - strong: 26.2%\n    - generic: Share\n    - generic \"Creator Systems Lab revenue share 26.2%\"\n  - link \"Open Founder Positioning Intensive product overview\":\n    - /url: /app/products/prod-consulting\n    - generic: \"3\"\n    - generic: F\n    - strong: Founder Positioning Intensive\n    - generic: Consultation\n    - strong: \u20ac750\n    - generic: Revenue\n    - strong: \"3\"\n    - generic: Orders\n    - strong: 21.9%\n    - generic: Share\n    - generic \"Founder Positioning Intensive revenue share 21.9%\"\n  - link \"Open Launch Toolkit product overview\":\n    - /url: /app/products/prod-launch-toolkit\n    - generic: \"4\"\n    - generic: L\n    - strong: Launch Toolkit\n    - generic: Download\n    - strong: \u20ac392\n    - generic: Revenue\n    - strong: \"8\"\n    - generic: Orders\n    - strong: 11.4%\n    - generic: Share\n    - generic \"Launch Toolkit revenue share 11.4%\"\n  - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n    - /url: /app/products/prod-download-system\n    - generic: \"5\"\n    - generic: T\n    - strong: The Very Long Product Operations Template Pack for Launch Teams\n    - generic: Download\n    - strong: \u20ac198\n    - generic: Revenue\n    - strong: \"2\"\n    - generic: Orders\n    - strong: 5.8%\n    - generic: Share\n    - generic \"The Very Long Product Operations Template Pack for Launch Teams revenue share 5.8%\"\n  - heading \"Customer growth\" [level=2]\n  - paragraph: 1,284 total customers \u00b7 +48 this period\n  - img \"Customer growth chart\":\n    - application:\n      - generic: Day 1\n      - generic: Day 8\n      - generic: Day 15\n      - generic: Day 22\n      - generic: Day 29\n      - generic: \"0\"\n      - generic: \"15\"\n      - generic: \"30\"\n      - generic: \"45\"\n      - generic: \"60\"\n  - paragraph: You gained 48 new customers in the last 30 days.\n  - heading \"Memberships\" [level=2]\n  - paragraph: New and cancelled memberships over the selected period.\n  - generic \"Membership summary values\":\n    - generic: Active\n    - strong: \"318\"\n    - generic: New\n    - strong: \"34\"\n    - generic: Cancelled\n    - strong: \"5\"\n    - generic: Churn rate\n    - strong: 1.6%\n  - list \"Chart legend\":\n    - generic: New memberships\n    - generic: Cancelled memberships\n  - img \"Membership movement chart\":\n    - application:\n      - generic: Day 1\n      - generic: Day 8\n      - generic: Day 15\n      - generic: Day 22\n      - generic: Day 29\n      - generic: \"0\"\n      - generic: \"0.5\"\n      - generic: \"1\"\n      - generic: \"1.5\"\n      - generic: \"2\"\n  - paragraph: You're gaining more members than you're losing.\n  - heading \"Payment health\" [level=2]\n  - paragraph: Refund and failed-payment trends.\n  - article:\n    - generic: Refund rate\n    - strong: 2.1%\n    - generic: \u2193 0.7pp vs previous 30 days\n  - article:\n    - generic: Failed payments\n    - strong: \"4\"\n    - generic: \u2193 1 vs previous 30 days\n  - img \"Mini trend chart for refunds and failed payments\":\n    - application\n  - paragraph: Payment health is based on aggregate refund and failed-payment movement, not individual sales events.\n- generic: \"0.5\""
+  },
+  {
+    "key": "analytics-90d-orders",
+    "observed_at": "2026-10-02T14:56:24.100Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Analytics\" [level=1]\n  - paragraph: Understand how your business is performing over time.\n  - combobox \"Select analytics date range\":\n    - option \"Last 7 days\"\n    - option \"Last 30 days\"\n    - option \"Last 90 days\" [selected]\n  - region \"Business metrics\":\n    - article:\n      - generic: Revenue\n      - strong: \u20ac9,326\n      - 'generic \"Up positive trend: +8.0% vs previous 90 days\"': \u2191 +8.0% vs previous 90 days\n    - article:\n      - generic: Orders\n      - strong: \"147\"\n      - 'generic \"Up positive trend: +2.0% vs previous 90 days\"': \u2191 +2.0% vs previous 90 days\n    - article:\n      - generic: Customers\n      - strong: 1,284\n      - 'generic \"Up positive trend: +11.6% vs previous 90 days\"': \u2191 +11.6% vs previous 90 days\n    - article:\n      - generic: Active memberships\n      - strong: \"318\"\n      - 'generic \"Up positive trend: +1.6% vs previous 90 days\"': \u2191 +1.6% vs previous 90 days\n  - heading \"Performance\" [level=2]\n  - paragraph: Orders over the last 90 days.\n  - group \"Performance metric\":\n    - button \"Revenue\":\n      - generic: Revenue\n    - button \"Orders\" [active] [pressed]:\n      - generic: Orders\n  - img \"Orders performance chart\":\n    - application:\n      - generic: Week 1\n      - generic: Week 3\n      - generic: Week 5\n      - generic: Week 7\n      - generic: Week 9\n      - generic: Week 11\n      - generic: Week 13\n      - generic: \"0\"\n      - generic: \"40\"\n      - generic: \"80\"\n      - generic: \"120\"\n      - generic: \"160\"\n  - paragraph: Orders increased 2.0% compared with the previous 90 days.\n  - heading \"Product performance\" [level=2]\n  - paragraph: Revenue, orders, and share by product.\n  - link \"Open Creator Product Growth System product overview\":\n    - /url: /app/products/prod-course-growth\n    - generic: \"1\"\n    - generic: C\n    - strong: Creator Product Growth System\n    - generic: Course\n    - strong: \u20ac1,192\n    - generic: Revenue\n    - strong: \"8\"\n    - generic: Orders\n    - strong: 34.8%\n    - generic: Share\n    - generic \"Creator Product Growth System revenue share 34.8%\"\n  - link \"Open Creator Systems Lab product overview\":\n    - /url: /app/products/prod-membership-lab\n    - generic: \"2\"\n    - generic: C\n    - strong: Creator Systems Lab\n    - generic: Membership\n    - strong: \u20ac897\n    - generic: Revenue\n    - strong: \"23\"\n    - generic: Orders\n    - strong: 26.2%\n    - generic: Share\n    - generic \"Creator Systems Lab revenue share 26.2%\"\n  - link \"Open Founder Positioning Intensive product overview\":\n    - /url: /app/products/prod-consulting\n    - generic: \"3\"\n    - generic: F\n    - strong: Founder Positioning Intensive\n    - generic: Consultation\n    - strong: \u20ac750\n    - generic: Revenue\n    - strong: \"3\"\n    - generic: Orders\n    - strong: 21.9%\n    - generic: Share\n    - generic \"Founder Positioning Intensive revenue share 21.9%\"\n  - link \"Open Launch Toolkit product overview\":\n    - /url: /app/products/prod-launch-toolkit\n    - generic: \"4\"\n    - generic: L\n    - strong: Launch Toolkit\n    - generic: Download\n    - strong: \u20ac392\n    - generic: Revenue\n    - strong: \"8\"\n    - generic: Orders\n    - strong: 11.4%\n    - generic: Share\n    - generic \"Launch Toolkit revenue share 11.4%\"\n  - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n    - /url: /app/products/prod-download-system\n    - generic: \"5\"\n    - generic: T\n    - strong: The Very Long Product Operations Template Pack for Launch Teams\n    - generic: Download\n    - strong: \u20ac198\n    - generic: Revenue\n    - strong: \"2\"\n    - generic: Orders\n    - strong: 5.8%\n    - generic: Share\n    - generic \"The Very Long Product Operations Template Pack for Launch Teams revenue share 5.8%\"\n  - heading \"Customer growth\" [level=2]\n  - paragraph: 1,284 total customers \u00b7 +127 this period\n  - img \"Customer growth chart\":\n    - application:\n      - generic: Week 1\n      - generic: Week 3\n      - generic: Week 5\n      - generic: Week 7\n      - generic: Week 9\n      - generic: Week 11\n      - generic: Week 13\n      - generic: \"0\"\n      - generic: \"35\"\n      - generic: \"70\"\n      - generic: \"105\"\n      - generic: \"140\"\n  - paragraph: You gained 127 new customers in the last 90 days.\n  - heading \"Memberships\" [level=2]\n  - paragraph: New and cancelled memberships over the selected period.\n  - generic \"Membership summary values\":\n    - generic: Active\n    - strong: \"318\"\n    - generic: New\n    - strong: \"34\"\n    - generic: Cancelled\n    - strong: \"5\"\n    - generic: Churn rate\n    - strong: 1.6%\n  - list \"Chart legend\":\n    - generic: New memberships\n    - generic: Cancelled memberships\n  - img \"Membership movement chart\":\n    - application:\n      - generic: Week 1\n      - generic: Week 3\n      - generic: Week 5\n      - generic: Week 7\n      - generic: Week 9\n      - generic: Week 11\n      - generic: Week 13\n      - generic: \"0\"\n      - generic: \"0.5\"\n      - generic: \"1\"\n      - generic: \"1.5\"\n      - generic: \"2\"\n  - paragraph: You're gaining more members than you're losing.\n  - heading \"Payment health\" [level=2]\n  - paragraph: Refund and failed-payment trends.\n  - article:\n    - generic: Refund rate\n    - strong: 2.1%\n    - generic: \u2193 0.7pp vs previous 90 days\n  - article:\n    - generic: Failed payments\n    - strong: \"4\"\n    - generic: \u2193 1 vs previous 90 days\n  - img \"Mini trend chart for refunds and failed payments\":\n    - application\n  - paragraph: Payment health is based on aggregate refund and failed-payment movement, not individual sales events.\n- generic: \"35\""
+  },
+  {
+    "key": "analytics-populated-layout-375",
+    "observed_at": "2026-10-02T14:56:55.801Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "charts": [
+      {
+        "left": 33,
+        "name": "Orders performance chart",
+        "right": 342,
+        "width": 309
+      },
+      {
+        "left": 33,
+        "name": "Customer growth chart",
+        "right": 342,
+        "width": 309
+      },
+      {
+        "left": 33,
+        "name": "Membership movement chart",
+        "right": 342,
+        "width": 309
+      },
+      {
+        "left": 33,
+        "name": "Mini trend chart for refunds and failed payments",
+        "right": 342,
+        "width": 309
+      }
+    ],
+    "documentWidth": 375,
+    "longProductLinks": [
+      {
+        "left": 33,
+        "name": "Open The Very Long Product Operations Template Pack for Launch Teams product overview",
+        "right": 342,
+        "title": "The Very Long Product Operations Template Pack for Launch Teams"
+      }
+    ],
+    "width": 375
+  },
+  {
+    "key": "analytics-populated-layout-768",
+    "observed_at": "2026-10-02T14:56:55.954Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "charts": [
+      {
+        "left": 41,
+        "name": "Orders performance chart",
+        "right": 727,
+        "width": 686
+      },
+      {
+        "left": 41,
+        "name": "Customer growth chart",
+        "right": 727,
+        "width": 686
+      },
+      {
+        "left": 41,
+        "name": "Membership movement chart",
+        "right": 727,
+        "width": 686
+      },
+      {
+        "left": 41,
+        "name": "Mini trend chart for refunds and failed payments",
+        "right": 727,
+        "width": 686
+      }
+    ],
+    "documentWidth": 768,
+    "longProductLinks": [
+      {
+        "left": 41,
+        "name": "Open The Very Long Product Operations Template Pack for Launch Teams product overview",
+        "right": 727,
+        "title": "The Very Long Product Operations Template Pack for Launch Teams"
+      }
+    ],
+    "width": 768
+  },
+  {
+    "key": "analytics-populated-layout-1440",
+    "observed_at": "2026-10-02T14:56:56.104Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "charts": [
+      {
+        "left": 305,
+        "name": "Orders performance chart",
+        "right": 935,
+        "width": 630
+      },
+      {
+        "left": 305,
+        "name": "Customer growth chart",
+        "right": 799,
+        "width": 494
+      },
+      {
+        "left": 873,
+        "name": "Membership movement chart",
+        "right": 1367,
+        "width": 494
+      },
+      {
+        "left": 769,
+        "name": "Mini trend chart for refunds and failed payments",
+        "right": 1367,
+        "width": 598
+      }
+    ],
+    "documentWidth": 1440,
+    "longProductLinks": [
+      {
+        "left": 1009,
+        "name": "Open The Very Long Product Operations Template Pack for Launch Teams product overview",
+        "right": 1366.9921875,
+        "title": "The Very Long Product Operations Template Pack for Launch Teams"
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "key": "analytics-chart-keyboard-right",
+    "observed_at": "2026-10-02T14:57:23.955Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Analytics\" [level=1]\n  - paragraph: Understand how your business is performing over time.\n  - combobox \"Select analytics date range\":\n    - option \"Last 7 days\"\n    - option \"Last 30 days\"\n    - option \"Last 90 days\" [selected]\n  - region \"Business metrics\":\n    - article:\n      - generic: Revenue\n      - strong: \u20ac9,326\n      - 'generic \"Up positive trend: +8.0% vs previous 90 days\"': \u2191 +8.0% vs previous 90 days\n    - article:\n      - generic: Orders\n      - strong: \"147\"\n      - 'generic \"Up positive trend: +2.0% vs previous 90 days\"': \u2191 +2.0% vs previous 90 days\n    - article:\n      - generic: Customers\n      - strong: 1,284\n      - 'generic \"Up positive trend: +11.6% vs previous 90 days\"': \u2191 +11.6% vs previous 90 days\n    - article:\n      - generic: Active memberships\n      - strong: \"318\"\n      - 'generic \"Up positive trend: +1.6% vs previous 90 days\"': \u2191 +1.6% vs previous 90 days\n  - heading \"Performance\" [level=2]\n  - paragraph: Orders over the last 90 days.\n  - group \"Performance metric\":\n    - button \"Revenue\":\n      - generic: Revenue\n    - button \"Orders\" [pressed]:\n      - generic: Orders\n  - img \"Orders performance chart\":\n    - strong: Week 13\n    - term: Orders\n    - definition: \"0\"\n    - application [active]:\n      - generic: Week 1\n      - generic: Week 3\n      - generic: Week 5\n      - generic: Week 7\n      - generic: Week 9\n      - generic: Week 11\n      - generic: Week 13\n      - generic: \"0\"\n      - generic: \"40\"\n      - generic: \"80\"\n      - generic: \"120\"\n      - generic: \"160\"\n  - paragraph: Orders increased 2.0% compared with the previous 90 days.\n  - heading \"Product performance\" [level=2]\n  - paragraph: Revenue, orders, and share by product.\n  - link \"Open Creator Product Growth System product overview\":\n    - /url: /app/products/prod-course-growth\n    - generic: \"1\"\n    - generic: C\n    - strong: Creator Product Growth System\n    - generic: Course\n    - strong: \u20ac1,192\n    - generic: Revenue\n    - strong: \"8\"\n    - generic: Orders\n    - strong: 34.8%\n    - generic: Share\n    - generic \"Creator Product Growth System revenue share 34.8%\"\n  - link \"Open Creator Systems Lab product overview\":\n    - /url: /app/products/prod-membership-lab\n    - generic: \"2\"\n    - generic: C\n    - strong: Creator Systems Lab\n    - generic: Membership\n    - strong: \u20ac897\n    - generic: Revenue\n    - strong: \"23\"\n    - generic: Orders\n    - strong: 26.2%\n    - generic: Share\n    - generic \"Creator Systems Lab revenue share 26.2%\"\n  - link \"Open Founder Positioning Intensive product overview\":\n    - /url: /app/products/prod-consulting\n    - generic: \"3\"\n    - generic: F\n    - strong: Founder Positioning Intensive\n    - generic: Consultation\n    - strong: \u20ac750\n    - generic: Revenue\n    - strong: \"3\"\n    - generic: Orders\n    - strong: 21.9%\n    - generic: Share\n    - generic \"Founder Positioning Intensive revenue share 21.9%\"\n  - link \"Open Launch Toolkit product overview\":\n    - /url: /app/products/prod-launch-toolkit\n    - generic: \"4\"\n    - generic: L\n    - strong: Launch Toolkit\n    - generic: Download\n    - strong: \u20ac392\n    - generic: Revenue\n    - strong: \"8\"\n    - generic: Orders\n    - strong: 11.4%\n    - generic: Share\n    - generic \"Launch Toolkit revenue share 11.4%\"\n  - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n    - /url: /app/products/prod-download-system\n    - generic: \"5\"\n    - generic: T\n    - strong: The Very Long Product Operations Template Pack for Launch Teams\n    - generic: Download\n    - strong: \u20ac198\n    - generic: Revenue\n    - strong: \"2\"\n    - generic: Orders\n    - strong: 5.8%\n    - generic: Share\n    - generic \"The Very Long Product Operations Template Pack for Launch Teams revenue share 5.8%\"\n  - heading \"Customer growth\" [level=2]\n  - paragraph: 1,284 total customers \u00b7 +127 this period\n  - img \"Customer growth chart\":\n    - application:\n      - generic: Week 1\n      - generic: Week 3\n      - generic: Week 5\n      - generic: Week 7\n      - generic: Week 9\n      - generic: Week 11\n      - generic: Week 13\n      - generic: \"0\"\n      - generic: \"35\"\n      - generic: \"70\"\n      - generic: \"105\"\n      - generic: \"140\"\n  - paragraph: You gained 127 new customers in the last 90 days.\n  - heading \"Memberships\" [level=2]\n  - paragraph: New and cancelled memberships over the selected period.\n  - generic \"Membership summary values\":\n    - generic: Active\n    - strong: \"318\"\n    - generic: New\n    - strong: \"34\"\n    - generic: Cancelled\n    - strong: \"5\"\n    - generic: Churn rate\n    - strong: 1.6%\n  - list \"Chart legend\":\n    - generic: New memberships\n    - generic: Cancelled memberships\n  - img \"Membership movement chart\":\n    - application:\n      - generic: Week 1\n      - generic: Week 3\n      - generic: Week 5\n      - generic: Week 7\n      - generic: Week 9\n      - generic: Week 11\n      - generic: Week 13\n      - generic: \"0\"\n      - generic: \"0.5\"\n      - generic: \"1\"\n      - generic: \"1.5\"\n      - generic: \"2\"\n  - paragraph: You're gaining more members than you're losing.\n  - heading \"Payment health\" [level=2]\n  - paragraph: Refund and failed-payment trends.\n  - article:\n    - generic: Refund rate\n    - strong: 2.1%\n    - generic: \u2193 0.7pp vs previous 90 days\n  - article:\n    - generic: Failed payments\n    - strong: \"4\"\n    - generic: \u2193 1 vs previous 90 days\n  - img \"Mini trend chart for refunds and failed payments\":\n    - application\n  - paragraph: Payment health is based on aggregate refund and failed-payment movement, not individual sales events.\n- generic: \"35\""
+  },
+  {
+    "key": "analytics-chart-keyboard-series",
+    "observed_at": "2026-10-02T14:58:18.071Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "points": [
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      },
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      },
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      },
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      },
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      },
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      },
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      },
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      },
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      },
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      },
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      },
+      {
+        "label": "Week 13",
+        "metric": "Orders",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "key": "customers-populated-layout-375",
+    "observed_at": "2026-10-02T15:01:01.352Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "documentWidth": 375,
+    "rows": [
+      {
+        "clientWidth": 341,
+        "label": "Open Maya Johnson customer profile",
+        "left": 16,
+        "right": 359,
+        "scrollWidth": 341
+      },
+      {
+        "clientWidth": 341,
+        "label": "Open Mira Patel customer profile",
+        "left": 16,
+        "right": 359,
+        "scrollWidth": 341
+      },
+      {
+        "clientWidth": 341,
+        "label": "Open Noah Kim customer profile",
+        "left": 16,
+        "right": 359,
+        "scrollWidth": 341
+      },
+      {
+        "clientWidth": 341,
+        "label": "Open Elena Garcia customer profile",
+        "left": 16,
+        "right": 359,
+        "scrollWidth": 341
+      },
+      {
+        "clientWidth": 341,
+        "label": "Open Jules Carter customer profile",
+        "left": 16,
+        "right": 359,
+        "scrollWidth": 341
+      },
+      {
+        "clientWidth": 341,
+        "label": "Open Sabrina Longlastname-With-Company-Identifier customer profile",
+        "left": 16,
+        "right": 359,
+        "scrollWidth": 341
+      }
+    ],
+    "width": 375
+  },
+  {
+    "key": "customers-populated-layout-768",
+    "observed_at": "2026-10-02T15:01:01.404Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "documentWidth": 768,
+    "rows": [
+      {
+        "clientWidth": 734,
+        "label": "Open Maya Johnson customer profile",
+        "left": 16,
+        "right": 752,
+        "scrollWidth": 734
+      },
+      {
+        "clientWidth": 734,
+        "label": "Open Mira Patel customer profile",
+        "left": 16,
+        "right": 752,
+        "scrollWidth": 734
+      },
+      {
+        "clientWidth": 734,
+        "label": "Open Noah Kim customer profile",
+        "left": 16,
+        "right": 752,
+        "scrollWidth": 734
+      },
+      {
+        "clientWidth": 734,
+        "label": "Open Elena Garcia customer profile",
+        "left": 16,
+        "right": 752,
+        "scrollWidth": 734
+      },
+      {
+        "clientWidth": 734,
+        "label": "Open Jules Carter customer profile",
+        "left": 16,
+        "right": 752,
+        "scrollWidth": 734
+      },
+      {
+        "clientWidth": 734,
+        "label": "Open Sabrina Longlastname-With-Company-Identifier customer profile",
+        "left": 16,
+        "right": 752,
+        "scrollWidth": 734
+      }
+    ],
+    "width": 768
+  },
+  {
+    "key": "customers-populated-layout-1440",
+    "observed_at": "2026-10-02T15:01:01.462Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "documentWidth": 1440,
+    "rows": [
+      {
+        "clientWidth": 1110,
+        "label": "Open Maya Johnson customer profile",
+        "left": 280,
+        "right": 1392,
+        "scrollWidth": 1110
+      },
+      {
+        "clientWidth": 1110,
+        "label": "Open Mira Patel customer profile",
+        "left": 280,
+        "right": 1392,
+        "scrollWidth": 1110
+      },
+      {
+        "clientWidth": 1110,
+        "label": "Open Noah Kim customer profile",
+        "left": 280,
+        "right": 1392,
+        "scrollWidth": 1110
+      },
+      {
+        "clientWidth": 1110,
+        "label": "Open Elena Garcia customer profile",
+        "left": 280,
+        "right": 1392,
+        "scrollWidth": 1110
+      },
+      {
+        "clientWidth": 1110,
+        "label": "Open Jules Carter customer profile",
+        "left": 280,
+        "right": 1392,
+        "scrollWidth": 1110
+      },
+      {
+        "clientWidth": 1110,
+        "label": "Open Sabrina Longlastname-With-Company-Identifier customer profile",
+        "left": 280,
+        "right": 1392,
+        "scrollWidth": 1110
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "key": "customer-long-profile-375-overview",
+    "observed_at": "2026-10-02T15:01:24.936Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- button \"Open navigation\":\n- generic: Galactica\n- button \"QF\":\n  - generic: QA Fixture\n- main:\n  - link \"Back to Customers\":\n    - /url: /app/customers\n    - text: Back to Customers\n  - generic: SL\n  - generic: Sabrina Longlastname-With-Company-Identifier\n  - heading \"Sabrina Longlastname-With-Company-Identifier\" [level=1]\n  - generic: Buyer\n  - paragraph: sabrina.long.identity@example.test\n  - generic: Customer since Unavailable\n  - region \"Customer summary\":\n    - article:\n      - generic: Total spent\n      - strong: \u20ac99\n    - article:\n      - generic: Orders\n      - strong: \"1\"\n    - article:\n      - generic: Active access\n      - strong: 1 product\n    - article:\n      - generic: Membership\n      - strong: None\n  - tablist \"Customer detail sections\":\n    - tab \"Overview\" [selected]\n    - tab \"Purchases\"\n    - tab \"Access\"\n    - tab \"Notes\"\n  - tabpanel \"Overview\":\n    - heading \"About\" [level=2]\n    - term: Email\n    - definition: sabrina.long.identity@example.test\n    - term: Phone\n    - definition: Unavailable\n    - term: Location\n    - definition: Unavailable\n    - term: Language\n    - definition: Unavailable\n    - term: Timezone\n    - definition: Unavailable\n    - term: Customer since\n    - definition: Unavailable\n    - heading \"Relationship\" [level=2]\n    - term: Status\n    - definition: Buyer\n    - term: Membership\n    - definition: None\n    - term: Products\n    - definition: Launch Toolkit\n    - term: Tags\n    - definition: No tags\n    - heading \"Recent activity\" [level=2]\n    - paragraph: No customer-specific activity is available yet.\n- generic: \"35\""
+  },
+  {
+    "key": "customer-long-profile-375-purchases",
+    "observed_at": "2026-10-02T15:02:13.091Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "panel": "Purchases\n\nNo purchase history is available for this customer.",
+    "documentWidth": 375,
+    "tabs": [
+      {
+        "left": 16,
+        "name": "Overview",
+        "right": 110.375,
+        "selected": "false"
+      },
+      {
+        "left": 114.375,
+        "name": "Purchases",
+        "right": 213.1953125,
+        "selected": "true"
+      },
+      {
+        "left": 217.1953125,
+        "name": "Access",
+        "right": 289.0234375,
+        "selected": "false"
+      },
+      {
+        "left": 293.0234375,
+        "name": "Notes",
+        "right": 359,
+        "selected": "false"
+      }
+    ],
+    "width": 375
+  },
+  {
+    "key": "customer-long-profile-375-access",
+    "observed_at": "2026-10-02T15:02:13.406Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "panel": "Access\n\nNo active or historical access records are available for this customer.",
+    "documentWidth": 375,
+    "tabs": [
+      {
+        "left": 16,
+        "name": "Overview",
+        "right": 110.375,
+        "selected": "false"
+      },
+      {
+        "left": 114.375,
+        "name": "Purchases",
+        "right": 213.1953125,
+        "selected": "false"
+      },
+      {
+        "left": 217.1953125,
+        "name": "Access",
+        "right": 289.0234375,
+        "selected": "true"
+      },
+      {
+        "left": 293.0234375,
+        "name": "Notes",
+        "right": 359,
+        "selected": "false"
+      }
+    ],
+    "width": 375
+  },
+  {
+    "key": "customer-long-profile-375-notes",
+    "observed_at": "2026-10-02T15:02:13.711Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "panel": "Notes\n\nInternal notes are not connected to a production persistence API yet.",
+    "documentWidth": 375,
+    "tabs": [
+      {
+        "left": 16,
+        "name": "Overview",
+        "right": 110.375,
+        "selected": "false"
+      },
+      {
+        "left": 114.375,
+        "name": "Purchases",
+        "right": 213.1953125,
+        "selected": "false"
+      },
+      {
+        "left": 217.1953125,
+        "name": "Access",
+        "right": 289.0234375,
+        "selected": "false"
+      },
+      {
+        "left": 293.0234375,
+        "name": "Notes",
+        "right": 359,
+        "selected": "true"
+      }
+    ],
+    "width": 375
+  },
+  {
+    "key": "sales-populated-filter-layout-768",
+    "observed_at": "2026-10-02T15:06:21.987Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "documentWidth": 768,
+    "filterButton": "Filters (2)",
+    "orderButtons": [
+      {
+        "label": "Open ORD-2026-00124 order detail",
+        "left": 686.3203125,
+        "right": 739
+      }
+    ],
+    "rows": [
+      {
+        "clientWidth": 734,
+        "left": 16,
+        "right": 752,
+        "scrollWidth": 734,
+        "text": "Aug 10ORD-2026-00124Maya Johnsonmaya.johnson@example.testCreator Product Growth SystemCourse \u00b7 \u20ac149Access grantedLaunch ToolkitDownload \u00b7 \u20ac49Access revokedPaidOne-time\u20ac198"
+      }
+    ],
+    "visibleSelects": [],
+    "width": 768
+  },
+  {
+    "key": "sales-populated-filter-layout-1440",
+    "observed_at": "2026-10-02T15:06:22.025Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "documentWidth": 1440,
+    "filterButton": "Filters (2)",
+    "orderButtons": [
+      {
+        "label": "Open ORD-2026-00124 order detail",
+        "left": 297,
+        "right": 426.25
+      }
+    ],
+    "rows": [
+      {
+        "clientWidth": 1110,
+        "left": 280,
+        "right": 1392,
+        "scrollWidth": 1110,
+        "text": "Aug 10ORD-2026-00124Maya Johnsonmaya.johnson@example.testCreator Product Growth SystemCourse \u00b7 \u20ac149Access grantedLaunch ToolkitDownload \u00b7 \u20ac49Access revokedPaidOne-time\u20ac198"
+      }
+    ],
+    "visibleSelects": [
+      {
+        "name": "Select sales date range",
+        "selected": "Last 30 days"
+      },
+      {
+        "name": "Filter orders by status",
+        "selected": "Paid"
+      },
+      {
+        "name": "Filter orders by product",
+        "selected": "Creator Product Growth System"
+      },
+      {
+        "name": "Sort orders",
+        "selected": "Newest first"
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "key": "sales-populated-filter-layout-375",
+    "observed_at": "2026-10-02T15:06:22.058Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "documentWidth": 375,
+    "filterButton": "Filters (2)",
+    "orderButtons": [
+      {
+        "label": "Open ORD-2026-00124 order detail",
+        "left": 293.3203125,
+        "right": 346
+      }
+    ],
+    "rows": [
+      {
+        "clientWidth": 341,
+        "left": 16,
+        "right": 359,
+        "scrollWidth": 341,
+        "text": "Aug 10ORD-2026-00124Maya Johnsonmaya.johnson@example.testCreator Product Growth SystemCourse \u00b7 \u20ac149Access grantedLaunch ToolkitDownload \u00b7 \u20ac49Access revokedPaidOne-time\u20ac198"
+      }
+    ],
+    "visibleSelects": [],
+    "width": 375
+  },
+  {
+    "key": "sales-mobile-retained-filters",
+    "origin": "http://127.0.0.1:4317",
+    "observed_at": "2026-10-02T15:07:04.997Z",
+    "fixture_adapter": true,
+    "controls": [
+      {
+        "name": "Select sales date range",
+        "selected": "Last 30 days"
+      },
+      {
+        "name": "Filter orders by status",
+        "selected": "Paid"
+      },
+      {
+        "name": "Filter orders by product",
+        "selected": "Creator Product Growth System"
+      },
+      {
+        "name": "Sort orders",
+        "selected": "Newest first"
+      }
+    ]
+  },
+  {
+    "key": "sales-mobile-keyboard-order-activation",
+    "origin": "http://127.0.0.1:4317",
+    "observed_at": "2026-10-02T15:08:16.118Z",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- button \"Open navigation\":\n- generic: Galactica\n- button \"QF\":\n  - generic: QA Fixture\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - button \"Filters (2)\":\n      - generic: Filters (2)\n  - generic: 1 order\n  - button \"Clear filters\":\n    - generic: Clear filters\n  - region \"Orders ledger\":\n    - article:\n      - button \"Open ORD-2026-00124 order detail\":\n        - generic: Aug 10\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - link \"Open Creator Product Growth System product overview\":\n        - /url: /app/products/prod-course-growth\n        - generic: Creator Product Growth System\n        - generic: Course \u00b7 \u20ac149\n      - generic: Access granted\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac198\n- generic: \"35\"\n- button \"Close drawer\"\n- 'dialog \"Order #ORD-2026-00124 Paid\"':\n  - banner:\n    - generic: \"Order #ORD-2026-00124\"\n    - generic: Paid\n    - button \"Close drawer\" [active]:\n  - region \"Order summary\":\n    - strong: \u20ac198\n    - generic: One-time\n    - time: Aug 10, 2026, 16:32\n  - heading \"Customer\" [level=2]\n  - paragraph: Maya Johnson\n  - paragraph: maya.johnson@example.test\n  - link \"View customer\":\n    - /url: /app/customers/cust-maya-johnson\n  - heading \"Items\" [level=2]\n  - article:\n    - paragraph: Creator Product Growth System\n    - paragraph: Course \u00b7 \u20ac149\n    - generic: Access granted\n    - link \"View product overview\":\n      - /url: /app/products/prod-course-growth\n  - article:\n    - paragraph: Launch Toolkit\n    - paragraph: Download \u00b7 \u20ac49\n    - generic: Access revoked\n    - paragraph: Refund removed access to the download package.\n    - link \"View product overview\":\n      - /url: /app/products/prod-launch-toolkit\n  - heading \"Payment\" [level=2]\n  - term: Provider\n  - definition: Stripe\n  - term: Payment method\n  - definition: Visa ending 4242\n  - term: Transaction ID\n  - definition: pi_3QcreatorPaid124\n  - term: Payment date\n  - definition: Aug 10, 2026, 16:32\n  - term: Currency\n  - definition: EUR\n  - heading \"Order Summary\" [level=2]\n  - term: Total\n  - definition: \u20ac198"
+  },
+  {
+    "key": "analytics-7d-revenue",
+    "origin": "http://127.0.0.1:4317",
+    "observed_at": "2026-10-02T15:13:17.646Z",
+    "fixture_adapter": true,
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\" [active]:\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Analytics\" [level=1]\n  - paragraph: Understand how your business is performing over time.\n  - combobox \"Select analytics date range\":\n    - option \"Last 7 days\" [selected]\n    - option \"Last 30 days\"\n    - option \"Last 90 days\"\n  - region \"Business metrics\":\n    - article:\n      - generic: Revenue\n      - strong: \u20ac958\n      - 'generic \"Up positive trend: +8.0% vs previous 7 days\"': \u2191 +8.0% vs previous 7 days\n    - article:\n      - generic: Orders\n      - strong: \"14\"\n      - 'generic \"Up positive trend: +2.0% vs previous 7 days\"': \u2191 +2.0% vs previous 7 days\n    - article:\n      - generic: Customers\n      - strong: 1,284\n      - 'generic \"Up positive trend: +11.6% vs previous 7 days\"': \u2191 +11.6% vs previous 7 days\n    - article:\n      - generic: Active memberships\n      - strong: \"318\"\n      - 'generic \"Up positive trend: +1.6% vs previous 7 days\"': \u2191 +1.6% vs previous 7 days\n  - heading \"Performance\" [level=2]\n  - paragraph: Revenue over the last 7 days.\n  - group \"Performance metric\":\n    - button \"Revenue\" [pressed]:\n      - generic: Revenue\n    - button \"Orders\":\n      - generic: Orders\n  - img \"Revenue performance chart\":\n    - application:\n      - generic: Aug 5\n      - generic: Aug 6\n      - generic: Aug 7\n      - generic: Aug 8\n      - generic: Aug 9\n      - generic: Aug 10\n      - generic: Aug 11\n      - generic: \u20ac0\n      - generic: \u20ac250\n      - generic: \u20ac500\n      - generic: \u20ac750\n      - generic: \u20ac1K\n  - paragraph: Revenue increased 8.0% compared with the previous 7 days.\n  - heading \"Product performance\" [level=2]\n  - paragraph: Revenue, orders, and share by product.\n  - link \"Open Creator Product Growth System product overview\":\n    - /url: /app/products/prod-course-growth\n    - generic: \"1\"\n    - generic: C\n    - strong: Creator Product Growth System\n    - generic: Course\n    - strong: \u20ac1,192\n    - generic: Revenue\n    - strong: \"8\"\n    - generic: Orders\n    - strong: 34.8%\n    - generic: Share\n    - generic \"Creator Product Growth System revenue share 34.8%\"\n  - link \"Open Creator Systems Lab product overview\":\n    - /url: /app/products/prod-membership-lab\n    - generic: \"2\"\n    - generic: C\n    - strong: Creator Systems Lab\n    - generic: Membership\n    - strong: \u20ac897\n    - generic: Revenue\n    - strong: \"23\"\n    - generic: Orders\n    - strong: 26.2%\n    - generic: Share\n    - generic \"Creator Systems Lab revenue share 26.2%\"\n  - link \"Open Founder Positioning Intensive product overview\":\n    - /url: /app/products/prod-consulting\n    - generic: \"3\"\n    - generic: F\n    - strong: Founder Positioning Intensive\n    - generic: Consultation\n    - strong: \u20ac750\n    - generic: Revenue\n    - strong: \"3\"\n    - generic: Orders\n    - strong: 21.9%\n    - generic: Share\n    - generic \"Founder Positioning Intensive revenue share 21.9%\"\n  - link \"Open Launch Toolkit product overview\":\n    - /url: /app/products/prod-launch-toolkit\n    - generic: \"4\"\n    - generic: L\n    - strong: Launch Toolkit\n    - generic: Download\n    - strong: \u20ac392\n    - generic: Revenue\n    - strong: \"8\"\n    - generic: Orders\n    - strong: 11.4%\n    - generic: Share\n    - generic \"Launch Toolkit revenue share 11.4%\"\n  - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n    - /url: /app/products/prod-download-system\n    - generic: \"5\"\n    - generic: T\n    - strong: The Very Long Product Operations Template Pack for Launch Teams\n    - generic: Download\n    - strong: \u20ac198\n    - generic: Revenue\n    - strong: \"2\"\n    - generic: Orders\n    - strong: 5.8%\n    - generic: Share\n    - generic \"The Very Long Product Operations Template Pack for Launch Teams revenue share 5.8%\"\n  - heading \"Customer growth\" [level=2]\n  - paragraph: 1,284 total customers \u00b7 +13 this period\n  - img \"Customer growth chart\":\n    - application:\n      - generic: Aug 5\n      - generic: Aug 6\n      - generic: Aug 7\n      - generic: Aug 8\n      - generic: Aug 9\n      - generic: Aug 10\n      - generic: Aug 11\n      - generic: \"0\"\n      - generic: \"4\"\n      - generic: \"8\"\n      - generic: \"12\"\n      - generic: \"16\"\n  - paragraph: You gained 13 new customers in the last 7 days.\n  - heading \"Memberships\" [level=2]\n  - paragraph: New and cancelled memberships over the selected period.\n  - generic \"Membership summary values\":\n    - generic: Active\n    - strong: \"318\"\n    - generic: New\n    - strong: \"34\"\n    - generic: Cancelled\n    - strong: \"5\"\n    - generic: Churn rate\n    - strong: 1.6%\n  - list \"Chart legend\":\n    - generic: New memberships\n    - generic: Cancelled memberships\n  - img \"Membership movement chart\":\n    - application:\n      - generic: Aug 5\n      - generic: Aug 6\n      - generic: Aug 7\n      - generic: Aug 8\n      - generic: Aug 9\n      - generic: Aug 10\n      - generic: Aug 11\n      - generic: \"0\"\n      - generic: \"0.5\"\n      - generic: \"1\"\n      - generic: \"1.5\"\n      - generic: \"2\"\n  - paragraph: You're gaining more members than you're losing.\n  - heading \"Payment health\" [level=2]\n  - paragraph: Refund and failed-payment trends.\n  - article:\n    - generic: Refund rate\n    - strong: 2.1%\n    - generic: \u2193 0.7pp vs previous 7 days\n  - article:\n    - generic: Failed payments\n    - strong: \"4\"\n    - generic: \u2193 1 vs previous 7 days\n  - img \"Mini trend chart for refunds and failed payments\":\n    - application\n  - paragraph: Payment health is based on aggregate refund and failed-payment movement, not individual sales events.\n- generic: \"4\""
+  },
+  {
+    "key": "deployed-dashboard-after-local-closed",
+    "observed_at": "2026-10-02T15:14:04.206Z",
+    "origin": "https://app.serious-debauchery.click",
+    "fixture_adapter": false,
+    "account_alias": "OWNER-A",
+    "metrics": "REVENUE\nEUR 0\n\u2014 No change\nSALES\n0\n\u2014 No change\nCUSTOMERS\n0\n\u2014 +0 this period\nACTIVE MEMBERSHIPS\nUnavailable\nMore business data is needed."
+  },
+  {
+    "key": "deployed-sales-after-local-closed",
+    "observed_at": "2026-10-02T15:15:04.863Z",
+    "origin": "https://app.serious-debauchery.click",
+    "fixture_adapter": false,
+    "account_alias": "OWNER-A",
+    "summary": "Revenue\nEUR 0\n\u2014 No change\nOrders\n0\n\u2014 No change\nRefunds\nEUR 0\n\u2014 No change\nFailed payments\n0\n\u2014 No change",
+    "noSales": true,
+    "orderRows": 0
+  },
+  {
+    "key": "deployed-customers-after-local-closed",
+    "observed_at": "2026-10-02T15:18:24.795Z",
+    "origin": "https://app.serious-debauchery.click",
+    "fixture_adapter": false,
+    "account_alias": "OWNER-A",
+    "emptyHeading": true,
+    "customerCountText": "0 customers"
+  },
+  {
+    "key": "deployed-analytics-after-local-closed",
+    "observed_at": "2026-10-02T15:18:59.059Z",
+    "origin": "https://app.serious-debauchery.click",
+    "fixture_adapter": false,
+    "account_alias": "OWNER-A",
+    "metrics": "Revenue\nEUR 0\n\u2014 No change\nOrders\n0\n\u2014 No change\nCustomers\n0\n\u2014 No change",
+    "noProductData": true,
+    "noMembershipData": true,
+    "zeroGrowth": true
+  },
+  {
+    "key": "local-dashboard-already-failed-before-wait",
+    "observed_at": "2026-10-02T15:23:13.538Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app?qaFault=dashboard",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Dashboard\" [level=1]\n  - paragraph: Good afternoon, QA.\n  - region \"Business metrics\":\n    - article:\n      - generic \"Revenue\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n    - article:\n      - generic \"Sales\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n    - article:\n      - generic \"Customers\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n    - article:\n      - generic \"Active memberships\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n  - heading \"Recent activity\" [level=2]\n  - paragraph: Activity will appear here once business events are available.\n  - heading \"Top products\" [level=2]\n  - generic: Revenue\n  - paragraph: Product performance is unavailable until revenue data exists.\n  - heading \"Needs attention\" [level=2]\n  - paragraph: No deterministic attention states are available yet."
+  },
+  {
+    "key": "local-dashboard-after-503",
+    "observed_at": "2026-10-02T15:23:13.598Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app?qaFault=dashboard",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Dashboard\" [level=1]\n  - paragraph: Good afternoon, QA.\n  - region \"Business metrics\":\n    - article:\n      - generic \"Revenue\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n    - article:\n      - generic \"Sales\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n    - article:\n      - generic \"Customers\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n    - article:\n      - generic \"Active memberships\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n  - heading \"Recent activity\" [level=2]\n  - paragraph: Activity will appear here once business events are available.\n  - heading \"Top products\" [level=2]\n  - generic: Revenue\n  - paragraph: Product performance is unavailable until revenue data exists.\n  - heading \"Needs attention\" [level=2]\n  - paragraph: No deterministic attention states are available yet."
+  },
+  {
+    "key": "local-dashboard-initial-loading-captured",
+    "observed_at": "2026-10-02T15:23:33.167Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app?qaFault=dashboard",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Dashboard\" [level=1]\n  - paragraph: Good afternoon, QA.\n  - region \"Business metrics\":\n    - article:\n      - generic \"Revenue\"\n    - article:\n      - generic \"Sales\"\n    - article:\n      - generic \"Customers\"\n    - article:\n      - generic \"Active memberships\"\n  - heading \"Recent activity\" [level=2]\n  - paragraph: Activity will appear here once business events are available.\n  - heading \"Top products\" [level=2]\n  - generic: Revenue\n  - paragraph: Product performance is unavailable until revenue data exists.\n  - heading \"Needs attention\" [level=2]\n  - paragraph: No deterministic attention states are available yet."
+  },
+  {
+    "key": "local-dashboard-delayed-503-confirmed",
+    "observed_at": "2026-10-02T15:24:00.275Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app?qaFault=dashboard",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Dashboard\" [level=1]\n  - paragraph: Good afternoon, QA.\n  - region \"Business metrics\":\n    - article:\n      - generic \"Revenue\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n    - article:\n      - generic \"Sales\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n    - article:\n      - generic \"Customers\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n    - article:\n      - generic \"Active memberships\"\n      - strong: Unavailable\n      - generic: More business data is needed.\n  - heading \"Recent activity\" [level=2]\n  - paragraph: Activity will appear here once business events are available.\n  - heading \"Top products\" [level=2]\n  - generic: Revenue\n  - paragraph: Product performance is unavailable until revenue data exists.\n  - heading \"Needs attention\" [level=2]\n  - paragraph: No deterministic attention states are available yet."
+  },
+  {
+    "key": "local-dashboard-restored-after-reload",
+    "observed_at": "2026-10-02T15:24:01.234Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Dashboard\" [level=1]\n  - paragraph: Good afternoon, QA.\n  - region \"Business metrics\":\n    - link \"View Revenue details\":\n      - /url: /app/sales\n      - generic \"Revenue\"\n      - strong: \u20ac3,429\n      - 'generic \"Up positive trend: +8% vs prior period\"': \u2191 8% vs prior period\n    - link \"View Sales details\":\n      - /url: /app/sales\n      - generic \"Sales\"\n      - strong: \"48\"\n      - 'generic \"Up positive trend: +2 orders\"': \u2191 2 orders\n    - article:\n      - generic \"Customers\"\n      - strong: 1,284\n      - 'generic \"Up positive trend: +48 this period\"': \u2191 48 this period\n    - article:\n      - generic \"Active memberships\"\n      - strong: \"318\"\n      - 'generic \"Up positive trend: +1.6% vs last 30 days\"': \u2191 1.6% vs last 30 days\n  - heading \"Recent activity\" [level=2]\n  - article:\n    - heading \"New sale\" [level=3]\n    - time: 12 min ago\n    - paragraph: Creator Product Growth System\n    - strong: \u20ac149\n  - article:\n    - heading \"Payment failed\" [level=3]\n    - time: 2h ago\n    - paragraph: Creator Systems Lab \u00b7 Mira Patel\n    - generic: Retry scheduled\n  - 'link \"Open Product updated: Launch Toolkit\"':\n    - /url: /app/products/prod-launch-toolkit\n    - heading \"Product updated\" [level=3]\n    - time: Yesterday\n    - paragraph: Launch Toolkit\n  - heading \"Top products\" [level=2]\n  - generic: Revenue\n  - link \"Open Creator Product Growth System product overview\":\n    - /url: /app/products/prod-course-growth\n    - generic: C\n    - heading \"Creator Product Growth System\" [level=3]\n    - text: Course\n    - strong: \u20ac1,192\n    - generic \"Creator Product Growth System revenue share 100%\"\n  - link \"Open Launch Toolkit product overview\":\n    - /url: /app/products/prod-launch-toolkit\n    - generic: L\n    - heading \"Launch Toolkit\" [level=3]\n    - text: Download\n    - strong: \u20ac392\n    - generic \"Launch Toolkit revenue share 33%\"\n  - heading \"Needs attention\" [level=2]\n  - article:\n    - generic: Medium priority\n    - heading \"Membership is missing a thumbnail\" [level=3]\n    - paragraph: Creator Systems Lab membership\n    - button \"Add media\":\n      - generic: Add media\n  - article:\n    - generic: High priority\n    - heading \"Consultation calendar disconnected\" [level=3]\n    - paragraph: Offer audit consultation\n    - button \"Reconnect\":\n      - generic: Reconnect\n  - article:\n    - generic: Low priority\n    - heading \"Two draft products are close to publish-ready\" [level=3]\n    - paragraph: Launch Toolkit and Creator Systems Lab\n    - button \"Review drafts\":\n      - generic: Review drafts\n  - article:\n    - generic: Low priority\n    - heading \"No routed action exists yet\" [level=3]\n    - paragraph: Backend-owned reminder\n    - button \"No action\" [disabled]:\n      - generic: No action"
+  },
+  {
+    "key": "local-analytics-initial-loading",
+    "observed_at": "2026-10-02T15:24:02.087Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/analytics?qaFault=analytics",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Analytics\" [level=1]\n  - paragraph: Understand how your business is performing over time.\n  - combobox \"Select analytics date range\":\n    - option \"Last 7 days\"\n    - option \"Last 30 days\" [selected]\n    - option \"Last 90 days\"\n  - status:\n    - heading \"Loading analytics\" [level=2]\n    - paragraph: Fetching the selected Creator analytics overview."
+  },
+  {
+    "key": "local-analytics-after-controlled-503",
+    "observed_at": "2026-10-02T15:24:27.502Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/analytics?qaFault=analytics",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Analytics\" [level=1]\n  - paragraph: Understand how your business is performing over time.\n  - combobox \"Select analytics date range\":\n    - option \"Last 7 days\"\n    - option \"Last 30 days\" [selected]\n    - option \"Last 90 days\"\n  - status:\n    - heading \"Analytics data is not available yet\" [level=2]\n    - paragraph: Trends will appear here once revenue, order, customer, membership, and payment analytics APIs are connected."
+  },
+  {
+    "key": "local-analytics-reloaded-with-response-restored",
+    "observed_at": "2026-10-02T15:24:28.591Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/analytics",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Analytics\" [level=1]\n  - paragraph: Understand how your business is performing over time.\n  - combobox \"Select analytics date range\":\n    - option \"Last 7 days\"\n    - option \"Last 30 days\" [selected]\n    - option \"Last 90 days\"\n  - region \"Business metrics\":\n    - article:\n      - generic: Revenue\n      - strong: \u20ac3,429\n      - 'generic \"Up positive trend: +8.0% vs previous 30 days\"': \u2191 +8.0% vs previous 30 days\n    - article:\n      - generic: Orders\n      - strong: \"48\"\n      - 'generic \"Up positive trend: +2.0% vs previous 30 days\"': \u2191 +2.0% vs previous 30 days\n    - article:\n      - generic: Customers\n      - strong: 1,284\n      - 'generic \"Up positive trend: +11.6% vs previous 30 days\"': \u2191 +11.6% vs previous 30 days\n    - article:\n      - generic: Active memberships\n      - strong: \"318\"\n      - 'generic \"Up positive trend: +1.6% vs previous 30 days\"': \u2191 +1.6% vs previous 30 days\n  - heading \"Performance\" [level=2]\n  - paragraph: Revenue over the last 30 days.\n  - group \"Performance metric\":\n    - button \"Revenue\" [pressed]:\n      - generic: Revenue\n    - button \"Orders\":\n      - generic: Orders\n  - img \"Revenue performance chart\":\n    - application:\n      - generic: Day 1\n      - generic: Day 7\n      - generic: Day 13\n      - generic: Day 19\n      - generic: Day 25\n      - generic: \u20ac0\n      - generic: \u20ac900\n      - generic: \u20ac1.8K\n      - generic: \u20ac2.7K\n      - generic: \u20ac3.6K\n  - paragraph: Revenue increased 8.0% compared with the previous 30 days.\n  - heading \"Product performance\" [level=2]\n  - paragraph: Revenue, orders, and share by product.\n  - link \"Open Creator Product Growth System product overview\":\n    - /url: /app/products/prod-course-growth\n    - generic: \"1\"\n    - generic: C\n    - strong: Creator Product Growth System\n    - generic: Course\n    - strong: \u20ac1,192\n    - generic: Revenue\n    - strong: \"8\"\n    - generic: Orders\n    - strong: 34.8%\n    - generic: Share\n    - generic \"Creator Product Growth System revenue share 34.8%\"\n  - link \"Open Creator Systems Lab product overview\":\n    - /url: /app/products/prod-membership-lab\n    - generic: \"2\"\n    - generic: C\n    - strong: Creator Systems Lab\n    - generic: Membership\n    - strong: \u20ac897\n    - generic: Revenue\n    - strong: \"23\"\n    - generic: Orders\n    - strong: 26.2%\n    - generic: Share\n    - generic \"Creator Systems Lab revenue share 26.2%\"\n  - link \"Open Founder Positioning Intensive product overview\":\n    - /url: /app/products/prod-consulting\n    - generic: \"3\"\n    - generic: F\n    - strong: Founder Positioning Intensive\n    - generic: Consultation\n    - strong: \u20ac750\n    - generic: Revenue\n    - strong: \"3\"\n    - generic: Orders\n    - strong: 21.9%\n    - generic: Share\n    - generic \"Founder Positioning Intensive revenue share 21.9%\"\n  - link \"Open Launch Toolkit product overview\":\n    - /url: /app/products/prod-launch-toolkit\n    - generic: \"4\"\n    - generic: L\n    - strong: Launch Toolkit\n    - generic: Download\n    - strong: \u20ac392\n    - generic: Revenue\n    - strong: \"8\"\n    - generic: Orders\n    - strong: 11.4%\n    - generic: Share\n    - generic \"Launch Toolkit revenue share 11.4%\"\n  - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n    - /url: /app/products/prod-download-system\n    - generic: \"5\"\n    - generic: T\n    - strong: The Very Long Product Operations Template Pack for Launch Teams\n    - generic: Download\n    - strong: \u20ac198\n    - generic: Revenue\n    - strong: \"2\"\n    - generic: Orders\n    - strong: 5.8%\n    - generic: Share\n    - generic \"The Very Long Product Operations Template Pack for Launch Teams revenue share 5.8%\"\n  - heading \"Customer growth\" [level=2]\n  - paragraph: 1,284 total customers \u00b7 +48 this period\n  - img \"Customer growth chart\":\n    - application:\n      - generic: Day 1\n      - generic: Day 8\n      - generic: Day 15\n      - generic: Day 22\n      - generic: Day 29\n      - generic: \"0\"\n      - generic: \"15\"\n      - generic: \"30\"\n      - generic: \"45\"\n      - generic: \"60\"\n  - paragraph: You gained 48 new customers in the last 30 days.\n  - heading \"Memberships\" [level=2]\n  - paragraph: New and cancelled memberships over the selected period.\n  - generic \"Membership summary values\":\n    - generic: Active\n    - strong: \"318\"\n    - generic: New\n    - strong: \"34\"\n    - generic: Cancelled\n    - strong: \"5\"\n    - generic: Churn rate\n    - strong: 1.6%\n  - list \"Chart legend\":\n    - generic: New memberships\n    - generic: Cancelled memberships\n  - img \"Membership movement chart\":\n    - application:\n      - generic: Day 1\n      - generic: Day 8\n      - generic: Day 15\n      - generic: Day 22\n      - generic: Day 29\n      - generic: \"0\"\n      - generic: \"0.5\"\n      - generic: \"1\"\n      - generic: \"1.5\"\n      - generic: \"2\"\n  - paragraph: You're gaining more members than you're losing.\n  - heading \"Payment health\" [level=2]\n  - paragraph: Refund and failed-payment trends.\n  - article:\n    - generic: Refund rate\n    - strong: 2.1%\n    - generic: \u2193 0.7pp vs previous 30 days\n  - article:\n    - generic: Failed payments\n    - strong: \"4\"\n    - generic: \u2193 1 vs previous 30 days\n  - img \"Mini trend chart for refunds and failed payments\":\n    - application\n  - paragraph: Payment health is based on aggregate refund and failed-payment movement, not individual sales events.\n- generic: \"0.5\""
+  },
+  {
+    "key": "local-sales-ledger-initial-loading",
+    "observed_at": "2026-10-02T15:24:29.935Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/sales?qaFault=sales-ledger",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - status:\n    - heading \"Loading sales\" [level=2]"
+  },
+  {
+    "key": "local-sales-ledger-after-503",
+    "observed_at": "2026-10-02T15:24:55.146Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/sales?qaFault=sales-ledger",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - status:\n    - heading \"Sales data is not available yet\" [level=2]\n    - paragraph: Orders will appear here once order, payment, refund, and entitlement APIs are connected."
+  },
+  {
+    "key": "local-sales-ledger-recovered-after-reload",
+    "observed_at": "2026-10-02T15:24:56.228Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/sales",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\":\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Product Growth System\"\n      - option \"Creator Systems Lab\"\n      - option \"Launch Toolkit\"\n      - option \"Founder Positioning Intensive\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 56 orders\n  - region \"Orders ledger\":\n    - generic: Date\n    - generic: Customer\n    - generic: Product\n    - generic: Status\n    - generic: Type\n    - generic: Amount\n    - article:\n      - button \"Open ORD-2026-00124 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00124\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - link \"Open Creator Product Growth System product overview\":\n        - /url: /app/products/prod-course-growth\n        - generic: Creator Product Growth System\n        - generic: Course \u00b7 \u20ac149\n      - generic: Access granted\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac198\n    - article:\n      - button \"Open ORD-2026-00123 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00123\n      - link \"Open Alex Rivera customer profile\":\n        - /url: /app/customers/cust-alex-rivera\n        - generic: Alex Rivera\n        - generic: alex.rivera@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Paid\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00121 order detail\":\n        - generic: Aug 8\n        - generic: ORD-2026-00121\n      - link \"Open Jamie Chen customer profile\":\n        - /url: /app/customers/cust-jamie-chen\n        - generic: Jamie Chen\n        - generic: jamie.chen@example.test\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Refunded\n      - generic: One-time\n      - generic: \u20ac49\n    - article:\n      - button \"Open ORD-2026-00120 order detail\":\n        - generic: Aug 7\n        - generic: ORD-2026-00120\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Failed\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00119 order detail\":\n        - generic: Aug 5\n        - generic: ORD-2026-00119\n      - link \"Open Noah Smith customer profile\":\n        - /url: /app/customers/cust-noah-smith\n        - generic: Noah Smith\n        - generic: noah.smith@example.test\n      - link \"Open Founder Positioning Intensive product overview\":\n        - /url: /app/products/prod-consulting\n        - generic: Founder Positioning Intensive\n        - generic: Consultation \u00b7 \u20ac250\n      - generic: No access granted\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac250\n    - article:\n      - button \"Open ORD-2026-00118 order detail\":\n        - generic: Jul 28\n        - generic: ORD-2026-00118\n      - generic: Samira Longlastname-With-Company-Identifier\n      - generic: samira.long.identity@example.test\n      - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n        - /url: /app/products/prod-download-system\n        - generic: The Very Long Product Operations Template Pack for Launch Teams\n        - generic: Download \u00b7 \u20ac99\n      - generic: No access granted\n      - generic: Pending\n      - generic: One-time\n      - generic: \u20ac99\n  - navigation \"Order pages\":\n    - button \"Previous\" [disabled]:\n      - generic: Previous\n    - generic: Page 1 of 10\n    - button \"Next\":\n      - generic: Next"
+  },
+  {
+    "key": "local-sales-summary-delayed-request",
+    "observed_at": "2026-10-02T15:24:57.029Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/sales?qaFault=sales-summary",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\":\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Product Growth System\"\n      - option \"Creator Systems Lab\"\n      - option \"Launch Toolkit\"\n      - option \"Founder Positioning Intensive\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 56 orders\n  - region \"Orders ledger\":\n    - generic: Date\n    - generic: Customer\n    - generic: Product\n    - generic: Status\n    - generic: Type\n    - generic: Amount\n    - article:\n      - button \"Open ORD-2026-00124 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00124\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - link \"Open Creator Product Growth System product overview\":\n        - /url: /app/products/prod-course-growth\n        - generic: Creator Product Growth System\n        - generic: Course \u00b7 \u20ac149\n      - generic: Access granted\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac198\n    - article:\n      - button \"Open ORD-2026-00123 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00123\n      - link \"Open Alex Rivera customer profile\":\n        - /url: /app/customers/cust-alex-rivera\n        - generic: Alex Rivera\n        - generic: alex.rivera@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Paid\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00121 order detail\":\n        - generic: Aug 8\n        - generic: ORD-2026-00121\n      - link \"Open Jamie Chen customer profile\":\n        - /url: /app/customers/cust-jamie-chen\n        - generic: Jamie Chen\n        - generic: jamie.chen@example.test\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Refunded\n      - generic: One-time\n      - generic: \u20ac49\n    - article:\n      - button \"Open ORD-2026-00120 order detail\":\n        - generic: Aug 7\n        - generic: ORD-2026-00120\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Failed\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00119 order detail\":\n        - generic: Aug 5\n        - generic: ORD-2026-00119\n      - link \"Open Noah Smith customer profile\":\n        - /url: /app/customers/cust-noah-smith\n        - generic: Noah Smith\n        - generic: noah.smith@example.test\n      - link \"Open Founder Positioning Intensive product overview\":\n        - /url: /app/products/prod-consulting\n        - generic: Founder Positioning Intensive\n        - generic: Consultation \u00b7 \u20ac250\n      - generic: No access granted\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac250\n    - article:\n      - button \"Open ORD-2026-00118 order detail\":\n        - generic: Jul 28\n        - generic: ORD-2026-00118\n      - generic: Samira Longlastname-With-Company-Identifier\n      - generic: samira.long.identity@example.test\n      - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n        - /url: /app/products/prod-download-system\n        - generic: The Very Long Product Operations Template Pack for Launch Teams\n        - generic: Download \u00b7 \u20ac99\n      - generic: No access granted\n      - generic: Pending\n      - generic: One-time\n      - generic: \u20ac99\n  - navigation \"Order pages\":\n    - button \"Previous\" [disabled]:\n      - generic: Previous\n    - generic: Page 1 of 10\n    - button \"Next\":\n      - generic: Next"
+  },
+  {
+    "key": "local-sales-summary-after-503",
+    "observed_at": "2026-10-02T15:25:22.114Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/sales?qaFault=sales-summary",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\":\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Product Growth System\"\n      - option \"Creator Systems Lab\"\n      - option \"Launch Toolkit\"\n      - option \"Founder Positioning Intensive\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 56 orders\n  - status:\n    - heading \"Sales data is not available yet\" [level=2]\n    - paragraph: Orders will appear here once order, payment, refund, and entitlement APIs are connected."
+  },
+  {
+    "key": "local-sales-summary-recovered-after-reload",
+    "observed_at": "2026-10-02T15:25:22.976Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/sales",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Sales\" [level=1]\n  - paragraph: Track orders, payments, refunds, and failed charges.\n  - region \"Financial summary\":\n    - article:\n      - generic: Revenue\n      - strong: EUR 42,310\n      - generic: \u2191 +12%\n    - article:\n      - generic: Orders\n      - strong: \"56\"\n      - generic: \u2191 +8%\n    - article:\n      - generic: Refunds\n      - strong: EUR 49\n      - generic: \u2193 -2%\n    - article:\n      - generic: Failed payments\n      - strong: \"1\"\n      - generic: \u2014 No change\n  - region \"Sales controls\":\n    - textbox \"Search customer, email, or order ID\":\n      - /placeholder: Search customer, email, or order ID...\n    - combobox \"Select sales date range\":\n      - option \"Today\"\n      - option \"Last 7 days\"\n      - option \"Last 30 days\" [selected]\n      - option \"Last 90 days\"\n    - combobox \"Filter orders by status\":\n      - option \"All statuses\" [selected]\n      - option \"Paid\"\n      - option \"Failed\"\n      - option \"Refunded\"\n      - option \"Pending\"\n    - combobox \"Filter orders by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Product Growth System\"\n      - option \"Creator Systems Lab\"\n      - option \"Launch Toolkit\"\n      - option \"Founder Positioning Intensive\"\n    - combobox \"Sort orders\":\n      - option \"Newest first\" [selected]\n      - option \"Oldest first\"\n      - 'option \"Amount: high to low\"'\n      - 'option \"Amount: low to high\"'\n  - generic: 56 orders\n  - region \"Orders ledger\":\n    - generic: Date\n    - generic: Customer\n    - generic: Product\n    - generic: Status\n    - generic: Type\n    - generic: Amount\n    - article:\n      - button \"Open ORD-2026-00124 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00124\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - link \"Open Creator Product Growth System product overview\":\n        - /url: /app/products/prod-course-growth\n        - generic: Creator Product Growth System\n        - generic: Course \u00b7 \u20ac149\n      - generic: Access granted\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac198\n    - article:\n      - button \"Open ORD-2026-00123 order detail\":\n        - generic: Aug 10\n        - generic: ORD-2026-00123\n      - link \"Open Alex Rivera customer profile\":\n        - /url: /app/customers/cust-alex-rivera\n        - generic: Alex Rivera\n        - generic: alex.rivera@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Paid\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00121 order detail\":\n        - generic: Aug 8\n        - generic: ORD-2026-00121\n      - link \"Open Jamie Chen customer profile\":\n        - /url: /app/customers/cust-jamie-chen\n        - generic: Jamie Chen\n        - generic: jamie.chen@example.test\n      - link \"Open Launch Toolkit product overview\":\n        - /url: /app/products/prod-launch-toolkit\n        - generic: Launch Toolkit\n        - generic: Download \u00b7 \u20ac49\n      - generic: Access revoked\n      - generic: Refunded\n      - generic: One-time\n      - generic: \u20ac49\n    - article:\n      - button \"Open ORD-2026-00120 order detail\":\n        - generic: Aug 7\n        - generic: ORD-2026-00120\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - link \"Open Creator Systems Lab product overview\":\n        - /url: /app/products/prod-membership-lab\n        - generic: Creator Systems Lab\n        - generic: Membership \u00b7 \u20ac39\n      - generic: Access granted\n      - generic: Failed\n      - generic: Renewal\n      - generic: \u20ac39\n    - article:\n      - button \"Open ORD-2026-00119 order detail\":\n        - generic: Aug 5\n        - generic: ORD-2026-00119\n      - link \"Open Noah Smith customer profile\":\n        - /url: /app/customers/cust-noah-smith\n        - generic: Noah Smith\n        - generic: noah.smith@example.test\n      - link \"Open Founder Positioning Intensive product overview\":\n        - /url: /app/products/prod-consulting\n        - generic: Founder Positioning Intensive\n        - generic: Consultation \u00b7 \u20ac250\n      - generic: No access granted\n      - generic: Paid\n      - generic: One-time\n      - generic: \u20ac250\n    - article:\n      - button \"Open ORD-2026-00118 order detail\":\n        - generic: Jul 28\n        - generic: ORD-2026-00118\n      - generic: Samira Longlastname-With-Company-Identifier\n      - generic: samira.long.identity@example.test\n      - link \"Open The Very Long Product Operations Template Pack for Launch Teams product overview\":\n        - /url: /app/products/prod-download-system\n        - generic: The Very Long Product Operations Template Pack for Launch Teams\n        - generic: Download \u00b7 \u20ac99\n      - generic: No access granted\n      - generic: Pending\n      - generic: One-time\n      - generic: \u20ac99\n  - navigation \"Order pages\":\n    - button \"Previous\" [disabled]:\n      - generic: Previous\n    - generic: Page 1 of 10\n    - button \"Next\":\n      - generic: Next"
+  },
+  {
+    "key": "local-customers-initial-loading",
+    "observed_at": "2026-10-02T15:25:23.682Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/customers?qaFault=customers",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Customers\" [level=1]\n  - paragraph: Understand your customers and their relationships.\n  - status:\n    - heading \"Loading customers\" [level=2]"
+  },
+  {
+    "key": "local-customers-after-503",
+    "observed_at": "2026-10-02T15:26:22.795Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/customers?qaFault=customers",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Customers\" [level=1]\n  - paragraph: Understand your customers and their relationships.\n  - status:\n    - heading \"Customer data is not available yet\" [level=2]\n    - paragraph: Customers will appear here once customer, purchase, membership, and waitlist APIs are connected."
+  },
+  {
+    "key": "local-customers-restored-after-reload",
+    "observed_at": "2026-10-02T15:26:24.120Z",
+    "origin": "http://127.0.0.1:4317",
+    "fixture_adapter": true,
+    "synthetic_service_failure": true,
+    "url": "http://127.0.0.1:4317/app/customers",
+    "snapshot": "- region \"Notifications alt+T\"\n- complementary:\n  - navigation \"Creator navigation\":\n    - heading \"Galactica\" [level=2]\n    - list:\n      - link \"Dashboard\":\n        - /url: /app\n        - generic: Dashboard\n      - link \"Products\":\n        - /url: /app/products\n        - generic: Products\n      - link \"Customers\":\n        - /url: /app/customers\n        - generic: Customers\n      - link \"Sales\":\n        - /url: /app/sales\n        - generic: Sales\n      - link \"Analytics\":\n        - /url: /app/analytics\n        - generic: Analytics\n      - link \"Storefront\":\n        - /url: /app/storefront\n        - generic: Storefront\n    - list:\n      - link \"Settings\":\n        - /url: /app/settings\n        - generic: Settings\n      - button \"Help\" [disabled]:\n        - generic: Help\n    - button \"Open account menu for QA Fixture\":\n      - generic: QA Fixture\n      - generic: CREATOR\n    - button \"Collapse sidebar\":\n- main:\n  - heading \"Customers\" [level=1]\n  - paragraph: Understand your customers and their relationships.\n  - region \"Customer controls\":\n    - textbox \"Search by name or email\":\n      - /placeholder: Search by name or email...\n    - combobox \"Filter by relationship status\":\n      - option \"All statuses\" [selected]\n      - option \"Active member\"\n      - option \"Past due\"\n      - option \"Buyer\"\n      - option \"Waitlist\"\n    - combobox \"Filter by product\":\n      - option \"All products\" [selected]\n      - option \"Creator Systems Lab membership\"\n      - option \"Creator Product Growth System\"\n      - option \"Launch Toolkit\"\n      - option \"Offer audit consultation\"\n    - combobox \"Filter by membership state\":\n      - option \"All membership\" [selected]\n      - option \"Active\"\n      - option \"Past due\"\n      - option \"Cancelled\"\n      - option \"No membership\"\n    - combobox \"Sort customers\":\n      - option \"Recent activity\" [selected]\n      - option \"Highest spend\"\n      - option \"Lowest spend\"\n      - option \"Name A-Z\"\n      - option \"Name Z-A\"\n  - generic: 8 customers\n  - region \"Customers\":\n    - generic: Customer\n    - generic: Status\n    - generic: Products\n    - generic: Total spend\n    - generic: Last activity\n    - article:\n      - link \"Open Maya Johnson customer profile\":\n        - /url: /app/customers/cust-maya-johnson\n        - generic: MJ\n        - generic: Maya Johnson\n        - generic: Maya Johnson\n        - generic: maya.johnson@example.test\n      - generic: Active member\n      - strong: 3 products\n      - generic: Membership \u00b7 Course \u00b7 +1\n      - generic: \u20ac1,249\n      - generic: 2h ago\n    - article:\n      - link \"Open Mira Patel customer profile\":\n        - /url: /app/customers/cust-mira-patel\n        - generic: MP\n        - generic: Mira Patel\n        - generic: Mira Patel\n        - generic: mira.patel@example.test\n      - generic: Past due\n      - strong: 2 products\n      - generic: Membership \u00b7 Consultation\n      - generic: \u20ac714\n      - generic: 7h ago\n    - article:\n      - link \"Open Noah Kim customer profile\":\n        - /url: /app/customers/cust-noah-kim\n        - generic: NK\n        - generic: Noah Kim\n        - generic: Noah Kim\n        - generic: noah.kim@example.test\n      - generic: Buyer\n      - strong: 2 products\n      - generic: Course \u00b7 Download\n      - generic: \u20ac298\n      - generic: Unavailable\n    - article:\n      - link \"Open Elena Garcia customer profile\":\n        - /url: /app/customers/cust-elena-garcia\n        - generic: EG\n        - generic: Elena Garcia\n        - generic: Elena Garcia\n        - generic: elena.garcia@example.test\n      - generic: Waitlist\n      - strong: No products\n      - generic: Waitlist only\n      - generic: \u20ac0\n      - generic: Unavailable\n    - article:\n      - link \"Open Jules Carter customer profile\":\n        - /url: /app/customers/cust-jules-carter\n        - generic: JC\n        - generic: Jules Carter\n        - generic: Jules Carter\n        - generic: jules.carter@example.test\n      - generic: Active member\n      - strong: 1 product\n      - generic: Membership\n      - generic: \u20ac39\n      - generic: Unavailable\n    - article:\n      - link \"Open Sabrina Longlastname-With-Company-Identifier customer profile\":\n        - /url: /app/customers/cust-samira-long\n        - generic: SL\n        - generic: Sabrina Longlastname-With-Company-Identifier\n        - generic: Sabrina Longlastname-With-Company-Identifier\n        - generic: sabrina.long.identity@example.test\n      - generic: Buyer\n      - strong: 1 product\n      - generic: Download\n      - generic: \u20ac99\n      - generic: Unavailable\n  - navigation \"Customer pages\":\n    - button \"Previous\" [disabled]:\n      - generic: Previous\n    - generic: Page 1 of 2\n    - button \"Next\":\n      - generic: Next"
+  },
+  {
+    "key": "controlled-failure-harness-console",
+    "observed_at": "2026-10-02T15:26:24.174Z",
+    "entries": [
+      {
+        "level": "info",
+        "message": "[QA controlled failure] dashboard get api/creator/dashboard/summary 503 after 15000ms",
+        "timestamp": "2026-10-02T15:22:48.796Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] dashboard get api/creator/dashboard/summary 503 after 15000ms",
+        "timestamp": "2026-10-02T15:22:48.797Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] dashboard get api/creator/dashboard/summary 503 after 15000ms",
+        "timestamp": "2026-10-02T15:23:33.213Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] dashboard get api/creator/dashboard/summary 503 after 15000ms",
+        "timestamp": "2026-10-02T15:23:33.213Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] analytics get api/creator/analytics/overview?period=30d 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:01.933Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] analytics get api/creator/analytics/overview?period=30d 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:01.984Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] analytics get api/creator/analytics/overview?period=30d 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:02.091Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] analytics get api/creator/analytics/overview?period=30d 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:02.092Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] sales-ledger get api/creator/orders?page=0&pageSize=6&period=30d&sort=newest 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:29.881Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] sales-ledger get api/creator/orders?page=0&pageSize=6&period=30d&sort=newest 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:29.901Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] sales-ledger get api/creator/orders?page=0&pageSize=6&period=30d&sort=newest 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:29.987Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] sales-ledger get api/creator/orders?page=0&pageSize=6&period=30d&sort=newest 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:29.988Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] sales-summary get api/creator/sales/summary?period=30d 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:56.927Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] sales-summary get api/creator/sales/summary?period=30d 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:56.989Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] sales-summary get api/creator/sales/summary?period=30d 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:57.096Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] sales-summary get api/creator/sales/summary?period=30d 503 after 15000ms",
+        "timestamp": "2026-10-02T15:24:57.105Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] customers get api/creator/customers?page=0&pageSize=6&sort=last-activity-desc 503 after 15000ms",
+        "timestamp": "2026-10-02T15:25:23.649Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] customers get api/creator/customers?page=0&pageSize=6&sort=last-activity-desc 503 after 15000ms",
+        "timestamp": "2026-10-02T15:25:23.659Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] customers get api/creator/customers?page=0&pageSize=6&sort=last-activity-desc 503 after 15000ms",
+        "timestamp": "2026-10-02T15:25:23.740Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      },
+      {
+        "level": "info",
+        "message": "[QA controlled failure] customers get api/creator/customers?page=0&pageSize=6&sort=last-activity-desc 503 after 15000ms",
+        "timestamp": "2026-10-02T15:25:23.740Z",
+        "url": "webpack://video-platform-ui/../../../../private/tmp/vpqa-fault-entry.js?"
+      }
+    ]
+  },
+  {
+    "key": "controlled-failure-harness-reproduction-and-cleanup",
+    "frontend_revision": "12765d4568796f8472124383a221b74d82850c5b",
+    "deployed_revision": "unknown",
+    "local_url": "http://127.0.0.1:4317",
+    "environment": {
+      "REACT_APP_USE_MOCKS": "false",
+      "REACT_APP_BASE_PATH": "http://127.0.0.1:9/",
+      "REACT_APP_GOOGLE_CLIENT_ID": "qa-local-not-for-oauth"
+    },
+    "files": [
+      {
+        "name": "vpqa-fault-entry.js",
+        "sha256": "ba23bccd20dd538c829cc8fbbfaddcb2ed533afa26911d763a9c7aa2097401f0",
+        "source": "const base = '/Users/tamastyukodi/Development/video-platform-ui';\nconst http = require('/Users/tamastyukodi/Development/video-platform-ui/src/core/api/http-client.ts').default;\nconst MockAdapter = require('/Users/tamastyukodi/Development/video-platform-ui/node_modules/axios-mock-adapter').default;\nconst mock = new MockAdapter(http, {delayResponse: 80});\nmock.onGet('api/user/userInfo').reply(200, {id:'qa-local-creator',firstName:'QA',lastName:'Fixture',email:'qa@example.test',roles:['CREATOR'],onboardingCompleted:true});\nconst qaFault = new URLSearchParams(window.location.search).get('qaFault') || '';\nconst faultPatterns = {\n 'dashboard': /^api\\/creator\\/dashboard\\/summary/,\n 'sales-summary': /^api\\/creator\\/sales\\/summary/,\n 'sales-ledger': /^api\\/creator\\/orders(?:\\?|$)/,\n 'analytics': /^api\\/creator\\/analytics\\/overview/,\n 'customers': /^api\\/creator\\/customers(?:\\?|$)/,\n};\nif (faultPatterns[qaFault]) {\n mock.onGet(faultPatterns[qaFault]).reply(request => {\n  console.info('[QA controlled failure]',qaFault,request.method,request.url,'503 after 15000ms');\n  return new Promise(resolve => setTimeout(() => resolve([503,{message:'Synthetic isolated QA service failure'}]),15000));\n });\n}\nrequire('/Users/tamastyukodi/Development/video-platform-ui/src/core/api/test-fixtures/creator-dashboard-http.mock.ts').registerCreatorDashboardTestMocks(mock);\nrequire('/Users/tamastyukodi/Development/video-platform-ui/src/core/api/test-fixtures/creator-customers-http.mock.ts').registerCreatorCustomersTestMocks(mock);\nrequire('/Users/tamastyukodi/Development/video-platform-ui/src/core/api/test-fixtures/creator-sales-http.mock.ts').registerCreatorSalesTestMocks(mock);\nrequire('/Users/tamastyukodi/Development/video-platform-ui/src/core/api/test-fixtures/creator-analytics-http.mock.ts').registerCreatorAnalyticsTestMocks(mock);\nmock.onGet(/api\\/products\\?(?:ownerId|userId)=/).reply(200,[]);\nmock.onAny().reply(config=>[501,{message:'Unregistered local QA request',method:config.method,url:config.url}]);\nconsole.info('[QA fixture harness] Explicit adapter installed; unmatched requests stay local (501). No real API authentication.');\nimport('/Users/tamastyukodi/Development/video-platform-ui/src/index.tsx');\n"
+      },
+      {
+        "name": "vpqa-fault-webpack.cjs",
+        "sha256": "0fd5147201c3d2cc7e40cd102827d9c700cfbb227c6ca463e3745823589ebdb8",
+        "source": "const root='/Users/tamastyukodi/Development/video-platform-ui';\nconst config=require(root+'/webpack.config.js');\nconfig.context=root;\nconfig.entry='/private/tmp/vpqa-fault-entry.js';\nconfig.output={...config.output,path:'/private/tmp/vpqa-fixture-dist'};\nconfig.devServer={...config.devServer,host:'127.0.0.1',port:4317,open:false};\nconfig.resolve={...config.resolve,modules:[root+'/node_modules','node_modules']};\nmodule.exports=config;\n"
+      }
+    ],
+    "command": "REACT_APP_USE_MOCKS=false REACT_APP_BASE_PATH=http://127.0.0.1:9/ REACT_APP_GOOGLE_CLIENT_ID=qa-local-not-for-oauth /Users/tamastyukodi/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node node_modules/webpack-cli/bin/cli.js serve --config /private/tmp/vpqa-fault-webpack.cjs --mode development",
+    "cwd": "/Users/tamastyukodi/Development/video-platform-ui",
+    "fault_modes": [
+      "dashboard",
+      "analytics",
+      "sales-ledger",
+      "sales-summary",
+      "customers"
+    ],
+    "fault_behavior": "qaFault query selects one GET prefix to resolve 503 after15000ms; other registered requests remain fixture-backed; unmatched shared-client requests501. Remove qaFault and load same local route to recover with fixture responses. No real service interrupted.",
+    "cleanup": "Local fixture tab closed; server61629 stopped with exit code0; port4317 has no listener; original Creator Dashboard retained; viewport reset. No real account/data/provider changes.",
+    "timing_caveat": "One dashboard waitFor returned a selector deadline before delayed response. Subsequent actual unavailable state and healthy response were observed. Not a product failure. Earlier already-failed snapshot renamed; loading assertions use actual initial-loading snapshot.",
+    "scope": "Local frontend loading/error/recovery only; server-backed cases remain partial. Restricted deployed logs/DB were not re-queried because no persistence/backend assertions were made."
+  }
+]

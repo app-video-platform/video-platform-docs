@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-10-01T08:52:16.875192+00:00",
+  "fixture_id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+  "purpose": "Check anonymous legacy/full-owner-list redaction; retain only synthetic fixture fields",
+  "checks": [
+    {
+      "variant": "legacy-typed",
+      "method": "GET",
+      "role": "Guest",
+      "http_status": "200",
+      "exit_code": 0,
+      "synthetic_fixture_found": true,
+      "lessons": [
+        {
+          "id": "f0a89669-5d92-4c5a-8875-316c3e77dd41",
+          "type": "ARTICLE",
+          "content": null,
+          "videoUrl": null
+        },
+        {
+          "id": "37dbef65-eb38-48ce-b4f9-2a7b913c8bca",
+          "type": "QUIZ",
+          "content": null,
+          "videoUrl": null
+        },
+        {
+          "id": "1b5909b2-9b8d-4a82-ae5b-c7d70ac3a182",
+          "type": "VIDEO",
+          "content": null,
+          "videoUrl": null
+        }
+      ],
+      "status": "PUBLISHED",
+      "synthetic_article_body_exposed": false
+    },
+    {
+      "variant": "full-owner-list",
+      "method": "GET",
+      "role": "Guest",
+      "http_status": "200",
+      "exit_code": 0,
+      "synthetic_fixture_found": true,
+      "lessons": [
+        {
+          "id": "f0a89669-5d92-4c5a-8875-316c3e77dd41",
+          "type": "ARTICLE",
+          "content": null,
+          "videoUrl": null
+        },
+        {
+          "id": "37dbef65-eb38-48ce-b4f9-2a7b913c8bca",
+          "type": "QUIZ",
+          "content": null,
+          "videoUrl": null
+        },
+        {
+          "id": "1b5909b2-9b8d-4a82-ae5b-c7d70ac3a182",
+          "type": "VIDEO",
+          "content": null,
+          "videoUrl": null
+        }
+      ],
+      "status": "PUBLISHED",
+      "synthetic_article_body_exposed": false
+    }
+  ]
+}

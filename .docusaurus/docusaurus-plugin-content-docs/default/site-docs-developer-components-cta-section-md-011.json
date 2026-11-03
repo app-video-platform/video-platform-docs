@@ -1,7 +1,7 @@
 {
   "id": "developer/components/cta-section",
-  "title": "GalCtaSection",
-  "description": "GalCtaSection (quick notes)",
+  "title": "CTASection",
+  "description": "CTASection (quick notes)",
   "source": "@site/docs/developer/components/cta-section.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/cta-section",
@@ -12,11 +12,11 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalCtaSection"
+    "title": "CTASection"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalContactForm",
+    "title": "ContactForm",
     "permalink": "/docs/developer/components/contact-form"
   },
   "next": {

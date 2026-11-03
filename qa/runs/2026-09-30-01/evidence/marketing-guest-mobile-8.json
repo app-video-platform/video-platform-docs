@@ -1,0 +1,49 @@
+{
+  "heading": "See Galactica in action",
+  "primaryNavigation": [
+    {
+      "aria": null,
+      "left": 20,
+      "right": 65.75,
+      "text": "Home"
+    },
+    {
+      "aria": null,
+      "left": 95.75,
+      "right": 141.671875,
+      "text": "About"
+    },
+    {
+      "aria": null,
+      "left": 171.671875,
+      "right": 223.203125,
+      "text": "Pricing"
+    },
+    {
+      "aria": null,
+      "left": 253.203125,
+      "right": 308.96875,
+      "text": "Getting Started"
+    },
+    {
+      "aria": null,
+      "left": 338.96875,
+      "right": 397.6875,
+      "text": "Contact Us"
+    },
+    {
+      "aria": null,
+      "left": 397.6875,
+      "right": 478.265625,
+      "text": "Sign In"
+    },
+    {
+      "aria": null,
+      "left": 508.265625,
+      "right": 599.640625,
+      "text": "Register"
+    }
+  ],
+  "scrollWidth": 600,
+  "width": 375
+}

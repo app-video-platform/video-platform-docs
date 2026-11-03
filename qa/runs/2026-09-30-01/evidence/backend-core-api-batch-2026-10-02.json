@@ -1,0 +1,2041 @@
+[
+  {
+    "key": "isolated-core-api-runtime",
+    "observed_at": "2026-10-02T20:51:24.522204+00:00",
+    "backend_revision": "1b860413436d5f850af0ecc228c5b613ebae4836",
+    "deployment_revision": "unknown; these are not deployed results",
+    "runtime": "Java17; real Spring Boot/MockMvc security chain, application controllers/services/repositories; H2 in-memory PostgreSQL compatibility mode, Hibernate create-drop, Liquibase disabled",
+    "configuration": "test profile; commerce enabled; fake gateway; auto-success=false for catalog harness. Existing CommerceCheckoutIntegrationTest separately uses auto-success=true.",
+    "external_boundaries": "EmailService, GoogleTokenVerifier, S3Client and S3Presigner are explicit mocks; each catalog method verifies no interactions. No real credentials/JWT values, raw HTTP responses or logs saved. No droplet/configuration/real-account mutation.",
+    "maven_command": "JAVA_HOME=<Java17> ./mvnw -q -Dtest=AuthRoleSmokeIntegrationTest,ProductEntitlementIntegrationTest,CommerceCheckoutIntegrationTest test",
+    "existing_supporting_tests": [
+      {
+        "class": "AuthRoleSmokeIntegrationTest",
+        "tests": "5",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time_seconds": "14.997",
+        "test_methods": [
+          "userCannotCreateProductButPromotedCreatorCanCreateAfterNewLogin",
+          "manualRegisterVerifyLoginProfileRefreshAndLogoutSmokeFlow",
+          "publicExploreProductAndStoreProductReadsWorkWithoutAuthentication",
+          "devRoleSwitchChangesCurrentUserRoleAndReissuesAuthCookies",
+          "googleFirstSignInCreatesUserAndProfileReturnsUserRole"
+        ]
+      },
+      {
+        "class": "ProductEntitlementIntegrationTest",
+        "tests": "4",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time_seconds": "0.548",
+        "test_methods": [
+          "publicCourseResponseShowsOutlineButNotLessonBodyUntilEnrolled",
+          "freePublishedProductCanBeEnrolledAndAppearsInLibrary",
+          "draftProductIsNotPubliclyReadable",
+          "paidProductRequiresPaymentAndDoesNotCreateEntitlement"
+        ]
+      },
+      {
+        "class": "CommerceCheckoutIntegrationTest",
+        "tests": "5",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time_seconds": "0.796",
+        "test_methods": [
+          "membershipCannotEnterOneTimeCheckout",
+          "fullRefundRevokesOnlyPurchaseAccess",
+          "fakePaymentCompletesIdempotentlyAndGrantsPurchaseEntitlements",
+          "unrelatedUserCannotReadOrderAndPendingOrderBlocksProductDeletion",
+          "invalidCheckoutRulesAndIdempotencyConflictAreEnforced"
+        ]
+      }
+    ],
+    "runtime_cleanup": "All Maven/custom runners terminal exit0 after focused corrections. Isolated fixtures cleaned by per-test hooks; JVM/H2 shut down. No local listening application server was started.",
+    "sources": [
+      {
+        "name": "CatalogCheckoutMatrixTest.initial.txt",
+        "source": "package com.myproject.video.video_platform.controller.commerce;\n\nimport com.fasterxml.jackson.databind.*;\nimport com.myproject.video.video_platform.common.enums.products.*;\nimport com.myproject.video.video_platform.common.enums.entitlement.*;\nimport com.myproject.video.video_platform.entity.products.*;\nimport com.myproject.video.video_platform.entity.products.course.*;\nimport com.myproject.video.video_platform.entity.products.download.*;\nimport com.myproject.video.video_platform.entity.products.consultation.*;\nimport com.myproject.video.video_platform.entity.products.membership.*;\nimport com.myproject.video.video_platform.entity.entitlement.*;\nimport com.myproject.video.video_platform.entity.user.*;\nimport com.myproject.video.video_platform.repository.auth.*;\nimport com.myproject.video.video_platform.repository.products.*;\nimport com.myproject.video.video_platform.repository.products.course.*;\nimport com.myproject.video.video_platform.repository.products.download.*;\nimport com.myproject.video.video_platform.repository.products.consultation.*;\nimport com.myproject.video.video_platform.repository.commerce.*;\nimport com.myproject.video.video_platform.repository.entitlement.*;\nimport com.myproject.video.video_platform.service.security.*;\nimport com.myproject.video.video_platform.service.mail.*;\nimport jakarta.servlet.http.Cookie;\nimport org.junit.jupiter.api.*;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.boot.test.context.SpringBootTest;\nimport org.springframework.boot.test.mock.mockito.MockBean;\nimport org.springframework.http.MediaType;\nimport org.springframework.test.web.servlet.*;\nimport org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;\nimport software.amazon.awssdk.services.s3.S3Client;\nimport software.amazon.awssdk.services.s3.presigner.S3Presigner;\nimport java.util.*;\nimport java.util.concurrent.*;\nimport java.math.BigDecimal;\nimport java.time.Instant;\nimport static org.junit.jupiter.api.Assertions.*;\nimport static org.mockito.Mockito.verifyNoInteractions;\nimport static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;\n\n@SpringBootTest(properties={\"app.commerce.fake.auto-success=false\"})\nclass CatalogCheckoutMatrixTest extends CommerceCheckoutIntegrationTest {\n  static final Queue<Map<String,Object>> observations=new ConcurrentLinkedQueue<>();\n  @Autowired MockMvc mvc;\n  @Autowired ObjectMapper mapper;\n  @Autowired UserRepository users;\n  @Autowired ProductRepository products;\n  @Autowired DownloadProductRepository downloads;\n  @Autowired ConsultationProductRepository consultations;\n  @Autowired CourseSectionRepository sections;\n  @Autowired CourseLessonRepository lessons;\n  @Autowired ProductEntitlementRepository grants;\n  @Autowired CommerceOrderRepository orders;\n  @Autowired CommercePaymentAttemptRepository attempts;\n  @Autowired CommercePaymentEventRepository events;\n  @Autowired JwtProvider jwt;\n  @MockBean EmailService mail;\n  @MockBean GoogleTokenVerifier google;\n  @MockBean S3Client s3;\n  @MockBean S3Presigner presigner;\n  User buyer,owner,admin;\n  @BeforeEach void catalogFixtures(){\n    buyer=users.findByEmail(\"buyer@example.com\").orElseThrow();owner=users.findByEmail(\"creator@example.com\").orElseThrow();admin=users.findByEmail(\"admin@example.com\").orElseThrow();\n  }\n  @AfterEach void catalogCleanup(){downloads.deleteAll();consultations.deleteAll();verifyNoInteractions(mail,google,s3,presigner);}\n  Cookie auth(User u){return new Cookie(\"JWT_TOKEN\",jwt.generateToken(u));}\n  User extra(String name,User template){User u=new User();u.setUserId(UUID.randomUUID());u.setEmail(name+\"@example.invalid\");u.setPassword(\"synthetic-unused-password\");u.setFirstName(\"QA\");u.setLastName(name);u.setEnabled(true);u.setRoles(Set.copyOf(template.getRoles()));return users.saveAndFlush(u);}\n  Product seed(ProductType type,User creator,String price,ProductStatus state){\n    Product p=switch(type){case COURSE->new CourseProduct();case DOWNLOAD->new DownloadProduct();case CONSULTATION->new ConsultationProduct();case MEMBERSHIP->new MembershipProduct();};\n    p.setName(\"QA \"+type+\" \"+UUID.randomUUID());p.setDescription(\"Synthetic isolated catalog fixture\");p.setUser(creator);p.setType(type);p.setStatus(state);p.setPrice(price==null?null:new BigDecimal(price));p.setPricingModel(type==ProductType.MEMBERSHIP?ProductPricingModel.RECURRING:ProductPricingModel.ONE_TIME);p.setCurrency(ProductCurrency.EUR);if(type==ProductType.MEMBERSHIP)p.setBillingInterval(ProductBillingInterval.MONTH);return products.saveAndFlush(p);\n  }\n  Product paid(){return seed(ProductType.COURSE,owner,\"12.25\",ProductStatus.PUBLISHED);}\n  MockHttpServletRequestBuilder mutation(MockHttpServletRequestBuilder b,User u){return b.cookie(auth(u),new Cookie(\"XSRF-TOKEN\",\"qa-isolated-csrf\")).header(\"X-XSRF-TOKEN\",\"qa-isolated-csrf\").contentType(MediaType.APPLICATION_JSON);}\n  JsonNode perform(String caseId,String label,MockHttpServletRequestBuilder req,int expected) throws Exception {\n    MvcResult result=mvc.perform(req).andReturn();int status=result.getResponse().getStatus();String text=result.getResponse().getContentAsString();JsonNode body=text.isEmpty()?mapper.nullNode():mapper.readTree(text);\n    Map<String,Object> row=new LinkedHashMap<>();row.put(\"case_id\",caseId);row.put(\"label\",label);row.put(\"method\",req.buildRequest(new org.springframework.mock.web.MockServletContext()).getMethod());row.put(\"actual_status\",status);row.put(\"expected_status\",expected);row.put(\"orders\",orders.count());row.put(\"attempts\",attempts.count());row.put(\"events\",events.count());row.put(\"entitlements\",grants.count());row.put(\"observed_at\",Instant.now().toString());observations.add(row);\n    assertEquals(expected,status,caseId+\" \"+label+\" HTTP status\");return body;\n  }\n  JsonNode checkout(String c,String label,User who,List<UUID> ids,String key,int status) throws Exception {MockHttpServletRequestBuilder req=mutation(post(\"/api/commerce/checkout-sessions\"),who).content(mapper.writeValueAsString(Map.of(\"productIds\",ids)));if(key!=null)req.header(\"Idempotency-Key\",key);return perform(c,label,req,status);}\n  void noFinancialRecords(){assertEquals(0,orders.count());assertEquals(0,attempts.count());assertEquals(0,events.count());assertEquals(0,grants.count());}\n  void readyArticle(Product p){CourseSection section=new CourseSection();section.setCourse((CourseProduct)p);section.setTitle(\"QA Section\");section.setDescription(\"QA\");section.setPosition(1);section=sections.saveAndFlush(section);CourseLesson lesson=new CourseLesson();lesson.setSection(section);lesson.setTitle(\"QA Article\");lesson.setDescription(\"QA\");lesson.setPosition(1);lesson.setType(com.myproject.video.video_platform.common.enums.products.course.LessonType.ARTICLE);lesson.setContent(\"QA ready article\");lessons.saveAndFlush(lesson);}\n\n  @Test void pay002PendingOneAndTwentyAcrossTypes() throws Exception {\n    int expectedOrders=0;\n    for(ProductType type:List.of(ProductType.COURSE,ProductType.DOWNLOAD,ProductType.CONSULTATION))for(int count:List.of(1,20)){\n      List<UUID> ids=new ArrayList<>();for(int i=0;i<count;i++)ids.add(seed(type,owner,\"2.25\",ProductStatus.PUBLISHED).getId());\n      JsonNode order=checkout(\"PAY-002\",type+\"-count-\"+count,buyer,ids,\"size-\"+type+count,201);expectedOrders++;\n      assertEquals(\"PENDING\",order.path(\"status\").asText());assertEquals(\"EUR\",order.path(\"currency\").asText());assertEquals(\"FAKE\",order.path(\"provider\").asText());assertEquals(count,order.path(\"items\").size());assertEquals(225L*count,order.path(\"totalMinor\").asLong());assertTrue(order.path(\"checkoutUrl\").isNull()||order.path(\"checkoutUrl\").isMissingNode());assertTrue(Instant.parse(order.path(\"expiresAt\").asText()).isAfter(Instant.now()));\n      for(JsonNode item:order.path(\"items\")){assertEquals(1,item.path(\"quantity\").asInt());assertEquals(225,item.path(\"unitAmountMinor\").asLong());}\n      UUID id=UUID.fromString(order.path(\"orderId\").asText());assertEquals(\"PENDING\",attempts.findByOrderId(id).orElseThrow().getStatus().name());assertEquals(expectedOrders,orders.count());assertEquals(expectedOrders,attempts.count());assertEquals(0,grants.count());assertEquals(0,events.count());\n      JsonNode read=perform(\"PAY-002\",type+\"-count-\"+count+\"-read\",get(\"/api/commerce/orders/\"+id).cookie(auth(buyer)),200);assertEquals(order,read);\n    }\n  }\n  @Test void pay003DtoBoundaries() throws Exception {\n    List<String> bodies=new ArrayList<>(List.of(\"{}\",\"{\\\"productIds\\\":null}\",\"{\\\"productIds\\\":[]}\",\"{\\\"productIds\\\":[null]}\",\"{\\\"productIds\\\":[\\\"not-a-uuid\\\"]}\"));List<UUID> ids=new ArrayList<>();for(int i=0;i<21;i++)ids.add(UUID.randomUUID());bodies.add(mapper.writeValueAsString(Map.of(\"productIds\",ids)));\n    for(int i=0;i<bodies.size();i++){perform(\"PAY-003\",\"invalid-body-\"+i,mutation(post(\"/api/commerce/checkout-sessions\"),buyer).header(\"Idempotency-Key\",\"dto-\"+i).content(bodies.get(i)),400);noFinancialRecords();}\n  }\n  @Test void pay004IdempotencyHeaderBoundaries() throws Exception {\n    UUID p=paid().getId();for(String key:Arrays.asList(null,\"\",\"   \",\"x\".repeat(129))){checkout(\"PAY-004\",\"rejected-key-\"+(key==null?\"missing\":key.length()),buyer,List.of(p),key,400);noFinancialRecords();}\n    checkout(\"PAY-004\",\"length128\",buyer,List.of(p),\"x\".repeat(128),201);JsonNode trim=checkout(\"PAY-004\",\"whitespace-trim\",buyer,List.of(p),\"  qa-trimmed  \",201);JsonNode repeat=checkout(\"PAY-004\",\"trimmed-replay\",buyer,List.of(p),\"qa-trimmed\",201);assertEquals(trim.path(\"orderId\"),repeat.path(\"orderId\"));assertEquals(2,orders.count());assertEquals(0,grants.count());\n  }\n  @Test void pay005StableReplayAcrossEdits() throws Exception {\n    Product a=paid(),b=paid();readyArticle(a);readyArticle(b);JsonNode original=checkout(\"PAY-005\",\"original\",buyer,List.of(a.getId(),b.getId()),\"stable\",201);\n    assertEquals(original,checkout(\"PAY-005\",\"reordered\",buyer,List.of(b.getId(),a.getId()),\"stable\",201));\n    for(String patch:List.of(\"{\\\"name\\\":\\\"QA Updated title\\\"}\",\"{\\\"price\\\":\\\"27.50\\\"}\",\"{\\\"status\\\":\\\"HIDDEN\\\"}\")){\n      perform(\"PAY-005\",\"supported-product-patch\",mutation(patch(\"/api/products/\"+a.getId()),owner).content(patch),200);\n      assertEquals(original,checkout(\"PAY-005\",\"replay-after-patch-\"+patch,buyer,List.of(a.getId(),b.getId()),\"stable\",201));\n    }\n    Product changed=products.findById(a.getId()).orElseThrow();assertEquals(\"QA Updated title\",changed.getName());assertEquals(0,changed.getPrice().compareTo(new BigDecimal(\"27.50\")));assertEquals(ProductStatus.HIDDEN,changed.getStatus());assertEquals(1,orders.count());assertEquals(1,attempts.count());assertEquals(0,grants.count());\n  }\n  @Test void pay006ConflictingPayloadAndBuyerScope() throws Exception {\n    Product a=paid(),b=paid();JsonNode first=checkout(\"PAY-006\",\"original-A\",buyer,List.of(a.getId()),\"scope\",201);\n    checkout(\"PAY-006\",\"changed-B\",buyer,List.of(b.getId()),\"scope\",409);checkout(\"PAY-006\",\"changed-A-plus-B\",buyer,List.of(a.getId(),b.getId()),\"scope\",409);assertEquals(1,orders.count());\n    User other=extra(\"other-buyer\",buyer);JsonNode independent=checkout(\"PAY-006\",\"independent-buyer-key\",other,List.of(a.getId()),\"scope\",201);assertNotEquals(first.path(\"orderId\"),independent.path(\"orderId\"));assertEquals(2,orders.count());assertEquals(2,attempts.count());assertEquals(0,grants.count());\n  }\n  @Test void pay007ConcurrentIdenticalCheckout() throws Exception {\n    Product p=paid();ExecutorService pool=Executors.newFixedThreadPool(2);CountDownLatch start=new CountDownLatch(1);\n    try{List<Future<JsonNode>> calls=new ArrayList<>();for(int i=0;i<2;i++){int n=i;calls.add(pool.submit(()->{start.await();return checkout(\"PAY-007\",\"concurrent-\"+n,buyer,List.of(p.getId()),\"concurrent\",201);}));}start.countDown();JsonNode a=calls.get(0).get(20,TimeUnit.SECONDS),b=calls.get(1).get(20,TimeUnit.SECONDS);assertEquals(a.path(\"orderId\"),b.path(\"orderId\"));assertEquals(1,orders.count());assertEquals(1,attempts.count());assertEquals(1,orders.findAll().get(0).getItems().size());assertEquals(0,grants.count());assertEquals(0,events.count());}finally{pool.shutdownNow();assertTrue(pool.awaitTermination(5,TimeUnit.SECONDS));}\n  }\n  @Test void pay008DuplicateAndMissing() throws Exception {Product p=paid();checkout(\"PAY-008\",\"duplicate\",buyer,List.of(p.getId(),p.getId()),\"duplicate\",422);noFinancialRecords();checkout(\"PAY-008\",\"missing-only\",buyer,List.of(UUID.randomUUID()),\"missing\",422);noFinancialRecords();checkout(\"PAY-008\",\"valid-plus-missing\",buyer,List.of(p.getId(),UUID.randomUUID()),\"partial-missing\",422);noFinancialRecords();}\n  @Test void pay009FreeAndUnpublished() throws Exception {Product valid=paid();List<Product> invalid=List.of(seed(ProductType.COURSE,owner,\"0\",ProductStatus.PUBLISHED),seed(ProductType.COURSE,owner,null,ProductStatus.PUBLISHED),seed(ProductType.COURSE,owner,\"5\",ProductStatus.DRAFT),seed(ProductType.COURSE,owner,\"5\",ProductStatus.HIDDEN));int i=0;for(Product p:invalid){checkout(\"PAY-009\",\"valid-plus-invalid-\"+i,buyer,List.of(valid.getId(),p.getId()),\"state-\"+i++,422);noFinancialRecords();}}\n  @Test void pay010MembershipAndRecurring() throws Exception {Product membership=seed(ProductType.MEMBERSHIP,owner,\"12\",ProductStatus.PUBLISHED);checkout(\"PAY-010\",\"legacy-published-membership\",buyer,List.of(membership.getId()),\"membership\",422);noFinancialRecords();Product recurring=paid();recurring.setPricingModel(ProductPricingModel.RECURRING);recurring.setBillingInterval(ProductBillingInterval.MONTH);products.saveAndFlush(recurring);checkout(\"PAY-010\",\"recurring-course\",buyer,List.of(recurring.getId()),\"recurring\",422);noFinancialRecords();}\n  @Test void pay011OwnerAndAdminSelfPurchase() throws Exception {for(User u:List.of(owner,admin)){Product own=seed(ProductType.COURSE,u,\"5\",ProductStatus.PUBLISHED);checkout(\"PAY-011\",\"self-\"+u.getRoles().iterator().next().getRoleName(),u,List.of(own.getId()),\"self-\"+u.getUserId(),422);noFinancialRecords();}}\n  @Test void pay012MixedCreators() throws Exception {Product a=paid();User other=extra(\"other-creator\",owner);Product b=seed(ProductType.COURSE,other,\"8\",ProductStatus.PUBLISHED);checkout(\"PAY-012\",\"two-creators\",buyer,List.of(a.getId(),b.getId()),\"mixed\",422);noFinancialRecords();}\n  @Test void pay015ReadRoleMatrixAndMissing() throws Exception {Product p=paid();JsonNode order=checkout(\"PAY-015\",\"create-pending\",buyer,List.of(p.getId()),\"read-order\",201);String url=\"/api/commerce/orders/\"+order.path(\"orderId\").asText();assertEquals(order,perform(\"PAY-015\",\"buyer\",get(url).cookie(auth(buyer)),200));assertEquals(order,perform(\"PAY-015\",\"admin\",get(url).cookie(auth(admin)),200));perform(\"PAY-015\",\"seller\",get(url).cookie(auth(owner)),403);perform(\"PAY-015\",\"unrelated-user\",get(url).cookie(auth(extra(\"unrelated\",buyer))),403);perform(\"PAY-015\",\"unknown-order\",get(\"/api/commerce/orders/\"+UUID.randomUUID()).cookie(auth(buyer)),404);perform(\"PAY-015\",\"guest\",get(url),401);assertEquals(1,orders.count());assertEquals(0,grants.count());}\n  @Test void access001FreeEnrollmentAllRolesTypesAndPrices() throws Exception {\n    User second=extra(\"enrollment-product-owner\",owner);int total=0;\n    for(User u:List.of(buyer,owner,admin))for(ProductType type:List.of(ProductType.COURSE,ProductType.DOWNLOAD,ProductType.CONSULTATION))for(String price:Arrays.asList(null,\"0\")){\n      Product p=seed(type,second,price,ProductStatus.PUBLISHED);String label=u.getRoles().iterator().next().getRoleName()+\"-\"+type+\"-\"+(price==null?\"null\":\"zero\");JsonNode created=perform(\"ACCESS-001\",label+\"-enroll\",mutation(post(\"/api/entitlements/products/\"+p.getId()+\"/enroll\"),u),201);assertEquals(\"ACTIVE\",created.path(\"status\").asText());assertEquals(\"FREE_ENROLLMENT\",created.path(\"source\").asText());assertEquals(p.getId().toString(),created.path(\"product\").path(\"id\").asText());total++;\n      ProductEntitlement persisted=grants.findByUserUserIdAndProductId(u.getUserId(),p.getId()).orElseThrow();assertEquals(EntitlementStatus.ACTIVE,persisted.getStatus());assertEquals(EntitlementSource.FREE_ENROLLMENT,persisted.getSource());assertNull(persisted.getPurchaseOrderItemId());assertNull(persisted.getRevokedAt());assertEquals(total,grants.count());\n      JsonNode library=perform(\"ACCESS-001\",label+\"-library\",get(\"/api/entitlements/me\").cookie(auth(u)),200);assertTrue(java.util.stream.StreamSupport.stream(library.spliterator(),false).anyMatch(x->x.path(\"product\").path(\"id\").asText().equals(p.getId().toString())));\n      assertTrue(perform(\"ACCESS-001\",label+\"-access\",get(\"/api/entitlements/products/\"+p.getId()+\"/access\").cookie(auth(u)),200).path(\"hasAccess\").asBoolean());\n    }\n    assertEquals(0,orders.count());assertEquals(0,events.count());\n  }\n  @Test void access003PaidLifecycleAndMissingAllRoles() throws Exception {List<Product> invalid=List.of(seed(ProductType.COURSE,owner,\"5\",ProductStatus.PUBLISHED),seed(ProductType.COURSE,owner,\"0\",ProductStatus.DRAFT),seed(ProductType.COURSE,owner,\"0\",ProductStatus.HIDDEN));for(User u:List.of(buyer,owner,admin)){int i=0;for(Product p:invalid){perform(\"ACCESS-003\",u.getRoles().iterator().next().getRoleName()+\"-\"+p.getStatus(),mutation(post(\"/api/entitlements/products/\"+p.getId()+\"/enroll\"),u),i++==0?402:403);assertEquals(0,grants.count());}perform(\"ACCESS-003\",\"missing-\"+u.getRoles().iterator().next().getRoleName(),mutation(post(\"/api/entitlements/products/\"+UUID.randomUUID()+\"/enroll\"),u),404);assertEquals(0,grants.count());}assertEquals(0,orders.count());}\n  @Test void access006BooleanMatrix() throws Exception {Product p=paid();String url=\"/api/entitlements/products/\"+p.getId()+\"/access\";assertTrue(perform(\"ACCESS-006\",\"owner\",get(url).cookie(auth(owner)),200).path(\"hasAccess\").asBoolean());assertTrue(perform(\"ACCESS-006\",\"admin\",get(url).cookie(auth(admin)),200).path(\"hasAccess\").asBoolean());assertEquals(0,grants.count());ProductEntitlement grant=new ProductEntitlement();grant.setUser(buyer);grant.setProductId(p.getId());grant.setProductType(p.getType());grant.setStatus(EntitlementStatus.ACTIVE);grant.setSource(EntitlementSource.ADMIN_GRANT);grant=grants.saveAndFlush(grant);assertTrue(perform(\"ACCESS-006\",\"active-holder\",get(url).cookie(auth(buyer)),200).path(\"hasAccess\").asBoolean());grant.setStatus(EntitlementStatus.REVOKED);grant.setRevokedAt(Instant.now());grants.saveAndFlush(grant);assertFalse(perform(\"ACCESS-006\",\"revoked-holder\",get(url).cookie(auth(buyer)),200).path(\"hasAccess\").asBoolean());assertFalse(perform(\"ACCESS-006\",\"unrelated\",get(url).cookie(auth(extra(\"access-unrelated\",buyer))),200).path(\"hasAccess\").asBoolean());perform(\"ACCESS-006\",\"guest\",get(url),401);assertEquals(1,grants.count());}\n}\n",
+        "sha256": "626efce42d4e255a9922bcdde2016b8ed7f757b64ef1359ca44054775bd4fc05"
+      },
+      {
+        "name": "CatalogCheckoutMatrixTest.java",
+        "source": "package com.myproject.video.video_platform.controller.commerce;\n\nimport com.fasterxml.jackson.databind.*;\nimport com.myproject.video.video_platform.common.enums.products.*;\nimport com.myproject.video.video_platform.common.enums.entitlement.*;\nimport com.myproject.video.video_platform.entity.products.*;\nimport com.myproject.video.video_platform.entity.products.course.*;\nimport com.myproject.video.video_platform.entity.products.download.*;\nimport com.myproject.video.video_platform.entity.products.consultation.*;\nimport com.myproject.video.video_platform.entity.products.membership.*;\nimport com.myproject.video.video_platform.entity.entitlement.*;\nimport com.myproject.video.video_platform.entity.user.*;\nimport com.myproject.video.video_platform.repository.auth.*;\nimport com.myproject.video.video_platform.repository.products.*;\nimport com.myproject.video.video_platform.repository.products.course.*;\nimport com.myproject.video.video_platform.repository.products.download.*;\nimport com.myproject.video.video_platform.repository.products.consultation.*;\nimport com.myproject.video.video_platform.repository.commerce.*;\nimport com.myproject.video.video_platform.repository.entitlement.*;\nimport com.myproject.video.video_platform.service.security.*;\nimport com.myproject.video.video_platform.service.mail.*;\nimport jakarta.servlet.http.Cookie;\nimport org.junit.jupiter.api.*;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.boot.test.context.SpringBootTest;\nimport org.springframework.boot.test.mock.mockito.MockBean;\nimport org.springframework.http.MediaType;\nimport org.springframework.test.web.servlet.*;\nimport org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;\nimport software.amazon.awssdk.services.s3.S3Client;\nimport software.amazon.awssdk.services.s3.presigner.S3Presigner;\nimport java.util.*;\nimport java.util.concurrent.*;\nimport java.math.BigDecimal;\nimport java.time.Instant;\nimport static org.junit.jupiter.api.Assertions.*;\nimport static org.mockito.Mockito.verifyNoInteractions;\nimport static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;\n\n@SpringBootTest(properties={\"app.commerce.fake.auto-success=false\"})\nclass CatalogCheckoutMatrixTest extends CommerceCheckoutIntegrationTest {\n  static final Queue<Map<String,Object>> observations=new ConcurrentLinkedQueue<>();\n  @Autowired MockMvc mvc;\n  @Autowired ObjectMapper mapper;\n  @Autowired UserRepository users;\n  @Autowired ProductRepository products;\n  @Autowired DownloadProductRepository downloads;\n  @Autowired ConsultationProductRepository consultations;\n  @Autowired CourseSectionRepository sections;\n  @Autowired CourseLessonRepository lessons;\n  @Autowired ProductEntitlementRepository grants;\n  @Autowired CommerceOrderRepository orders;\n  @Autowired org.springframework.jdbc.core.JdbcTemplate jdbc;\n  @Autowired CommercePaymentAttemptRepository attempts;\n  @Autowired CommercePaymentEventRepository events;\n  @Autowired JwtProvider jwt;\n  @MockBean EmailService mail;\n  @MockBean GoogleTokenVerifier google;\n  @MockBean S3Client s3;\n  @MockBean S3Presigner presigner;\n  User buyer,owner,admin;\n  @BeforeEach void catalogFixtures(){\n    buyer=users.findByEmail(\"buyer@example.com\").orElseThrow();owner=users.findByEmail(\"creator@example.com\").orElseThrow();admin=users.findByEmail(\"admin@example.com\").orElseThrow();\n  }\n  @AfterEach void catalogCleanup(){downloads.deleteAll();consultations.deleteAll();verifyNoInteractions(mail,google,s3,presigner);}\n  Cookie auth(User u){return new Cookie(\"JWT_TOKEN\",jwt.generateToken(u));}\n  User extra(String name,User template){User u=new User();u.setUserId(UUID.randomUUID());u.setEmail(name+\"@example.invalid\");u.setPassword(\"synthetic-unused-password\");u.setFirstName(\"QA\");u.setLastName(name);u.setEnabled(true);u.setRoles(Set.copyOf(template.getRoles()));return users.saveAndFlush(u);}\n  Product seed(ProductType type,User creator,String price,ProductStatus state){\n    Product p=switch(type){case COURSE->new CourseProduct();case DOWNLOAD->new DownloadProduct();case CONSULTATION->new ConsultationProduct();case MEMBERSHIP->new MembershipProduct();};\n    p.setName(\"QA \"+type+\" \"+UUID.randomUUID());p.setDescription(\"Synthetic isolated catalog fixture\");p.setUser(creator);p.setType(type);p.setStatus(state);p.setPrice(price==null?null:new BigDecimal(price));p.setPricingModel(type==ProductType.MEMBERSHIP?ProductPricingModel.RECURRING:ProductPricingModel.ONE_TIME);p.setCurrency(ProductCurrency.EUR);if(type==ProductType.MEMBERSHIP)p.setBillingInterval(ProductBillingInterval.MONTH);return products.saveAndFlush(p);\n  }\n  Product paid(){return seed(ProductType.COURSE,owner,\"12.25\",ProductStatus.PUBLISHED);}\n  MockHttpServletRequestBuilder mutation(MockHttpServletRequestBuilder b,User u){return b.cookie(auth(u),new Cookie(\"XSRF-TOKEN\",\"qa-isolated-csrf\")).header(\"X-XSRF-TOKEN\",\"qa-isolated-csrf\").contentType(MediaType.APPLICATION_JSON);}\n  JsonNode perform(String caseId,String label,MockHttpServletRequestBuilder req,int expected) throws Exception {\n    MvcResult result=mvc.perform(req).andReturn();int status=result.getResponse().getStatus();String text=result.getResponse().getContentAsString();JsonNode body=text.isEmpty()?mapper.nullNode():mapper.readTree(text);\n    Map<String,Object> row=new LinkedHashMap<>();row.put(\"case_id\",caseId);row.put(\"label\",label);row.put(\"method\",req.buildRequest(new org.springframework.mock.web.MockServletContext()).getMethod());row.put(\"actual_status\",status);row.put(\"expected_status\",expected);row.put(\"orders\",orders.count());row.put(\"attempts\",attempts.count());row.put(\"events\",events.count());row.put(\"entitlements\",grants.count());row.put(\"observed_at\",Instant.now().toString());observations.add(row);\n    assertEquals(expected,status,caseId+\" \"+label+\" HTTP status\");return body;\n  }\n  JsonNode checkout(String c,String label,User who,List<UUID> ids,String key,int status) throws Exception {MockHttpServletRequestBuilder req=mutation(post(\"/api/commerce/checkout-sessions\"),who).content(mapper.writeValueAsString(Map.of(\"productIds\",ids)));if(key!=null)req.header(\"Idempotency-Key\",key);return perform(c,label,req,status);}\n  void noFinancialRecords(){assertEquals(0,orders.count());assertEquals(0,attempts.count());assertEquals(0,events.count());assertEquals(0,grants.count());}\n  void readyArticle(Product p){CourseSection section=new CourseSection();section.setCourse((CourseProduct)p);section.setTitle(\"QA Section\");section.setDescription(\"QA\");section.setPosition(1);section=sections.saveAndFlush(section);CourseLesson lesson=new CourseLesson();lesson.setSection(section);lesson.setTitle(\"QA Article\");lesson.setDescription(\"QA\");lesson.setPosition(1);lesson.setType(com.myproject.video.video_platform.common.enums.products.course.LessonType.ARTICLE);lesson.setContent(\"QA ready article\");lessons.saveAndFlush(lesson);}\n\n  @Test void pay002PendingOneAndTwentyAcrossTypes() throws Exception {\n    int expectedOrders=0;\n    for(ProductType type:List.of(ProductType.COURSE,ProductType.DOWNLOAD,ProductType.CONSULTATION))for(int count:List.of(1,20)){\n      List<UUID> ids=new ArrayList<>();for(int i=0;i<count;i++)ids.add(seed(type,owner,\"2.25\",ProductStatus.PUBLISHED).getId());\n      JsonNode order=checkout(\"PAY-002\",type+\"-count-\"+count,buyer,ids,\"size-\"+type+count,201);expectedOrders++;\n      assertEquals(\"PENDING\",order.path(\"status\").asText());assertEquals(\"EUR\",order.path(\"currency\").asText());assertEquals(\"FAKE\",order.path(\"provider\").asText());assertEquals(count,order.path(\"items\").size());assertEquals(225L*count,order.path(\"totalMinor\").asLong());assertTrue(order.path(\"checkoutUrl\").isNull()||order.path(\"checkoutUrl\").isMissingNode());assertTrue(Instant.parse(order.path(\"expiresAt\").asText()).isAfter(Instant.now()));\n      Set<UUID> returnedIds=new HashSet<>();Set<String> itemIds=new HashSet<>();assertEquals(225L*count,order.path(\"subtotalMinor\").asLong());for(JsonNode item:order.path(\"items\")){UUID productId=UUID.fromString(item.path(\"productId\").asText());returnedIds.add(productId);itemIds.add(item.path(\"id\").asText());assertEquals(type.name(),item.path(\"productType\").asText());assertEquals(products.findById(productId).orElseThrow().getName(),item.path(\"productName\").asText());assertEquals(1,item.path(\"quantity\").asInt());assertEquals(225,item.path(\"unitAmountMinor\").asLong());assertEquals(225,item.path(\"lineTotalMinor\").asLong());}assertEquals(new HashSet<>(ids),returnedIds);assertEquals(count,itemIds.size());\n      UUID id=UUID.fromString(order.path(\"orderId\").asText());assertEquals(\"PENDING\",attempts.findByOrderId(id).orElseThrow().getStatus().name());assertEquals(expectedOrders,orders.count());assertEquals(expectedOrders,attempts.count());assertEquals(0,grants.count());assertEquals(0,events.count());\n      JsonNode read=perform(\"PAY-002\",type+\"-count-\"+count+\"-read\",get(\"/api/commerce/orders/\"+id).cookie(auth(buyer)),200);assertEquals(order,read);\n    }\n  }\n  @Test void pay003DtoBoundaries() throws Exception {\n    List<String> bodies=new ArrayList<>(List.of(\"{}\",\"{\\\"productIds\\\":null}\",\"{\\\"productIds\\\":[]}\",\"{\\\"productIds\\\":[null]}\",\"{\\\"productIds\\\":[\\\"not-a-uuid\\\"]}\"));List<UUID> ids=new ArrayList<>();for(int i=0;i<21;i++)ids.add(UUID.randomUUID());bodies.add(mapper.writeValueAsString(Map.of(\"productIds\",ids)));\n    for(int i=0;i<bodies.size();i++){perform(\"PAY-003\",\"invalid-body-\"+i,mutation(post(\"/api/commerce/checkout-sessions\"),buyer).header(\"Idempotency-Key\",\"dto-\"+i).content(bodies.get(i)),400);noFinancialRecords();}\n  }\n  @Test void pay004IdempotencyHeaderBoundaries() throws Exception {\n    UUID p=paid().getId();for(String key:Arrays.asList(null,\"\",\"   \",\"x\".repeat(129))){checkout(\"PAY-004\",\"rejected-key-\"+(key==null?\"missing\":key.length()),buyer,List.of(p),key,400);noFinancialRecords();}\n    checkout(\"PAY-004\",\"length128\",buyer,List.of(p),\"x\".repeat(128),201);JsonNode trim=checkout(\"PAY-004\",\"whitespace-trim\",buyer,List.of(p),\"  qa-trimmed  \",201);JsonNode repeat=checkout(\"PAY-004\",\"trimmed-replay\",buyer,List.of(p),\"qa-trimmed\",201);assertEquals(trim.path(\"orderId\"),repeat.path(\"orderId\"));assertEquals(2,orders.count());assertEquals(0,grants.count());\n  }\n  @Test void pay005StableReplayAcrossEdits() throws Exception {\n    Product a=paid(),b=paid();readyArticle(a);readyArticle(b);JsonNode original=checkout(\"PAY-005\",\"original\",buyer,List.of(a.getId(),b.getId()),\"stable\",201);\n    assertEquals(original,checkout(\"PAY-005\",\"reordered\",buyer,List.of(b.getId(),a.getId()),\"stable\",201));\n    for(String patch:List.of(\"{\\\"name\\\":\\\"QA Updated title\\\"}\",\"{\\\"price\\\":\\\"27.50\\\"}\",\"{\\\"status\\\":\\\"HIDDEN\\\"}\")){\n      perform(\"PAY-005\",\"supported-product-patch\",mutation(patch(\"/api/products/\"+a.getId()),owner).content(patch),200);\n      assertEquals(original,checkout(\"PAY-005\",\"replay-after-patch-\"+patch,buyer,List.of(a.getId(),b.getId()),\"stable\",201));\n    }\n    Product changed=products.findById(a.getId()).orElseThrow();assertEquals(\"QA Updated title\",changed.getName());assertEquals(0,changed.getPrice().compareTo(new BigDecimal(\"27.50\")));assertEquals(ProductStatus.HIDDEN,changed.getStatus());assertEquals(1,orders.count());assertEquals(1,attempts.count());assertEquals(0,grants.count());\n  }\n  @Test void pay006ConflictingPayloadAndBuyerScope() throws Exception {\n    Product a=paid(),b=paid();JsonNode first=checkout(\"PAY-006\",\"original-A\",buyer,List.of(a.getId()),\"scope\",201);\n    checkout(\"PAY-006\",\"changed-B\",buyer,List.of(b.getId()),\"scope\",409);checkout(\"PAY-006\",\"changed-A-plus-B\",buyer,List.of(a.getId(),b.getId()),\"scope\",409);assertEquals(1,orders.count());\n    User other=extra(\"other-buyer\",buyer);JsonNode independent=checkout(\"PAY-006\",\"independent-buyer-key\",other,List.of(a.getId()),\"scope\",201);assertNotEquals(first.path(\"orderId\"),independent.path(\"orderId\"));assertEquals(2,orders.count());assertEquals(2,attempts.count());assertEquals(0,grants.count());\n  }\n  @Test void pay007ConcurrentIdenticalCheckout() throws Exception {\n    Product p=paid();ExecutorService pool=Executors.newFixedThreadPool(2);CountDownLatch start=new CountDownLatch(1);\n    try{List<Future<JsonNode>> calls=new ArrayList<>();for(int i=0;i<2;i++){int n=i;calls.add(pool.submit(()->{start.await();return checkout(\"PAY-007\",\"concurrent-\"+n,buyer,List.of(p.getId()),\"concurrent\",201);}));}start.countDown();JsonNode a=calls.get(0).get(20,TimeUnit.SECONDS),b=calls.get(1).get(20,TimeUnit.SECONDS);assertEquals(a.path(\"orderId\"),b.path(\"orderId\"));assertEquals(1,orders.count());assertEquals(1,attempts.count());assertEquals(1L,jdbc.queryForObject(\"SELECT COUNT(*) FROM commerce_order_items\",Long.class));assertEquals(1,a.path(\"items\").size());assertEquals(1,b.path(\"items\").size());assertEquals(0,grants.count());assertEquals(0,events.count());}finally{pool.shutdownNow();assertTrue(pool.awaitTermination(5,TimeUnit.SECONDS));}\n  }\n  @Test void pay008DuplicateAndMissing() throws Exception {Product p=paid();checkout(\"PAY-008\",\"duplicate\",buyer,List.of(p.getId(),p.getId()),\"duplicate\",422);noFinancialRecords();checkout(\"PAY-008\",\"missing-only\",buyer,List.of(UUID.randomUUID()),\"missing\",422);noFinancialRecords();checkout(\"PAY-008\",\"valid-plus-missing\",buyer,List.of(p.getId(),UUID.randomUUID()),\"partial-missing\",422);noFinancialRecords();}\n  @Test void pay009FreeAndUnpublished() throws Exception {Product valid=paid();List<Product> invalid=List.of(seed(ProductType.COURSE,owner,\"0\",ProductStatus.PUBLISHED),seed(ProductType.COURSE,owner,null,ProductStatus.PUBLISHED),seed(ProductType.COURSE,owner,\"5\",ProductStatus.DRAFT),seed(ProductType.COURSE,owner,\"5\",ProductStatus.HIDDEN));int i=0;for(Product p:invalid){checkout(\"PAY-009\",\"valid-plus-invalid-\"+i,buyer,List.of(valid.getId(),p.getId()),\"state-\"+i++,422);noFinancialRecords();}}\n  @Test void pay010MembershipAndRecurring() throws Exception {Product membership=seed(ProductType.MEMBERSHIP,owner,\"12\",ProductStatus.PUBLISHED);checkout(\"PAY-010\",\"legacy-published-membership\",buyer,List.of(membership.getId()),\"membership\",422);noFinancialRecords();Product recurring=paid();recurring.setPricingModel(ProductPricingModel.RECURRING);recurring.setBillingInterval(ProductBillingInterval.MONTH);products.saveAndFlush(recurring);checkout(\"PAY-010\",\"recurring-course\",buyer,List.of(recurring.getId()),\"recurring\",422);noFinancialRecords();}\n  @Test void pay011OwnerAndAdminSelfPurchase() throws Exception {for(User u:List.of(owner,admin)){Product own=seed(ProductType.COURSE,u,\"5\",ProductStatus.PUBLISHED);checkout(\"PAY-011\",\"self-\"+u.getRoles().iterator().next().getRoleName(),u,List.of(own.getId()),\"self-\"+u.getUserId(),422);noFinancialRecords();}}\n  @Test void pay012MixedCreators() throws Exception {Product a=paid();User other=extra(\"other-creator\",owner);Product b=seed(ProductType.COURSE,other,\"8\",ProductStatus.PUBLISHED);checkout(\"PAY-012\",\"two-creators\",buyer,List.of(a.getId(),b.getId()),\"mixed\",422);noFinancialRecords();}\n  @Test void pay015ReadRoleMatrixAndMissing() throws Exception {Product p=paid();JsonNode order=checkout(\"PAY-015\",\"create-pending\",buyer,List.of(p.getId()),\"read-order\",201);String url=\"/api/commerce/orders/\"+order.path(\"orderId\").asText();assertEquals(order,perform(\"PAY-015\",\"buyer\",get(url).cookie(auth(buyer)),200));assertEquals(order,perform(\"PAY-015\",\"admin\",get(url).cookie(auth(admin)),200));perform(\"PAY-015\",\"seller\",get(url).cookie(auth(owner)),403);perform(\"PAY-015\",\"unrelated-user\",get(url).cookie(auth(extra(\"unrelated\",buyer))),403);perform(\"PAY-015\",\"unknown-order\",get(\"/api/commerce/orders/\"+UUID.randomUUID()).cookie(auth(buyer)),404);perform(\"PAY-015\",\"guest\",get(url),401);assertEquals(1,orders.count());assertEquals(0,grants.count());}\n  @Test void access001FreeEnrollmentAllRolesTypesAndPrices() throws Exception {\n    User second=extra(\"enrollment-product-owner\",owner);int total=0;\n    for(User u:List.of(buyer,owner,admin))for(ProductType type:List.of(ProductType.COURSE,ProductType.DOWNLOAD,ProductType.CONSULTATION))for(String price:Arrays.asList(null,\"0\")){\n      Product p=seed(type,second,price,ProductStatus.PUBLISHED);String label=u.getRoles().iterator().next().getRoleName()+\"-\"+type+\"-\"+(price==null?\"null\":\"zero\");JsonNode created=perform(\"ACCESS-001\",label+\"-enroll\",mutation(post(\"/api/entitlements/products/\"+p.getId()+\"/enroll\"),u),201);assertEquals(\"FREE_ENROLLMENT\",created.path(\"source\").asText());assertEquals(p.getId().toString(),created.path(\"product\").path(\"id\").asText());total++;\n      ProductEntitlement persisted=grants.findByUserUserIdAndProductId(u.getUserId(),p.getId()).orElseThrow();assertEquals(EntitlementStatus.ACTIVE,persisted.getStatus());assertEquals(EntitlementSource.FREE_ENROLLMENT,persisted.getSource());assertNull(persisted.getPurchaseOrderItemId());assertNull(persisted.getRevokedAt());assertEquals(total,grants.count());\n      JsonNode library=perform(\"ACCESS-001\",label+\"-library\",get(\"/api/entitlements/me\").cookie(auth(u)),200);assertTrue(java.util.stream.StreamSupport.stream(library.spliterator(),false).anyMatch(x->x.path(\"product\").path(\"id\").asText().equals(p.getId().toString())));\n      assertTrue(perform(\"ACCESS-001\",label+\"-access\",get(\"/api/entitlements/products/\"+p.getId()+\"/access\").cookie(auth(u)),200).path(\"hasAccess\").asBoolean());\n    }\n    assertEquals(0,orders.count());assertEquals(0,events.count());\n  }\n  @Test void access003PaidLifecycleAndMissingAllRoles() throws Exception {List<Product> invalid=List.of(seed(ProductType.COURSE,owner,\"5\",ProductStatus.PUBLISHED),seed(ProductType.COURSE,owner,\"0\",ProductStatus.DRAFT),seed(ProductType.COURSE,owner,\"0\",ProductStatus.HIDDEN));for(User u:List.of(buyer,owner,admin)){int i=0;for(Product p:invalid){perform(\"ACCESS-003\",u.getRoles().iterator().next().getRoleName()+\"-\"+p.getStatus(),mutation(post(\"/api/entitlements/products/\"+p.getId()+\"/enroll\"),u),i++==0?402:403);assertEquals(0,grants.count());}perform(\"ACCESS-003\",\"missing-\"+u.getRoles().iterator().next().getRoleName(),mutation(post(\"/api/entitlements/products/\"+UUID.randomUUID()+\"/enroll\"),u),404);assertEquals(0,grants.count());}assertEquals(0,orders.count());}\n  @Test void access006BooleanMatrix() throws Exception {Product p=paid();String url=\"/api/entitlements/products/\"+p.getId()+\"/access\";assertTrue(perform(\"ACCESS-006\",\"owner\",get(url).cookie(auth(owner)),200).path(\"hasAccess\").asBoolean());assertTrue(perform(\"ACCESS-006\",\"admin\",get(url).cookie(auth(admin)),200).path(\"hasAccess\").asBoolean());assertEquals(0,grants.count());ProductEntitlement grant=new ProductEntitlement();grant.setUser(buyer);grant.setProductId(p.getId());grant.setProductType(p.getType());grant.setStatus(EntitlementStatus.ACTIVE);grant.setSource(EntitlementSource.ADMIN_GRANT);grant=grants.saveAndFlush(grant);assertTrue(perform(\"ACCESS-006\",\"active-holder\",get(url).cookie(auth(buyer)),200).path(\"hasAccess\").asBoolean());grant.setStatus(EntitlementStatus.REVOKED);grant.setRevokedAt(Instant.now());grants.saveAndFlush(grant);assertFalse(perform(\"ACCESS-006\",\"revoked-holder\",get(url).cookie(auth(buyer)),200).path(\"hasAccess\").asBoolean());assertFalse(perform(\"ACCESS-006\",\"unrelated\",get(url).cookie(auth(extra(\"access-unrelated\",buyer))),200).path(\"hasAccess\").asBoolean());perform(\"ACCESS-006\",\"guest\",get(url),401);assertEquals(1,grants.count());}\n}\n",
+        "sha256": "58de7ec7d56099cc67ae0775e7f5c3c1a661d4eefd3f13069d13a0678f0793c9"
+      },
+      {
+        "name": "CatalogApiRunner.java",
+        "source": "package com.myproject.video.video_platform.controller.commerce;\nimport org.junit.platform.launcher.*;\nimport org.junit.platform.launcher.core.*;\nimport org.junit.platform.launcher.listeners.*;\nimport org.junit.platform.engine.discovery.DiscoverySelectors;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport java.util.*;\nimport java.nio.file.*;\npublic class CatalogApiRunner {\n public static void main(String[] args) throws Exception {\n  var builder=LauncherDiscoveryRequestBuilder.request();\n  for(var method:CatalogCheckoutMatrixTest.class.getDeclaredMethods())if(method.isAnnotationPresent(org.junit.jupiter.api.Test.class)){if(args.length==0||Arrays.asList(args).contains(method.getName()))builder.selectors(DiscoverySelectors.selectMethod(CatalogCheckoutMatrixTest.class,method.getName()));}\n  List<Map<String,Object>> results=new ArrayList<>();\n  var listener=new TestExecutionListener(){public void executionFinished(TestIdentifier id,org.junit.platform.engine.TestExecutionResult r){if(id.isTest()){Map<String,Object> m=new LinkedHashMap<>();m.put(\"test\",id.getDisplayName());m.put(\"status\",r.getStatus().name());r.getThrowable().ifPresent(e->m.put(\"error_type\",e.getClass().getName()));results.add(m);}}};\n  var summary=new SummaryGeneratingListener();var launcher=LauncherFactory.create();launcher.registerTestExecutionListeners(listener,summary);launcher.execute(builder.build());\n  Map<String,Object> result=new LinkedHashMap<>();result.put(\"executed_at\",java.time.Instant.now().toString());result.put(\"tests_found\",summary.getSummary().getTestsFoundCount());result.put(\"tests_passed\",summary.getSummary().getTestsSucceededCount());result.put(\"tests_failed\",summary.getSummary().getTestsFailedCount());result.put(\"tests\",results);result.put(\"observations\",CatalogCheckoutMatrixTest.observations);\n  new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(Path.of(\"/private/tmp/vpqa-backend-api-outcomes.json\").toFile(),result);\n  System.out.println(\"CATALOG_API_RESULT tests=\"+summary.getSummary().getTestsFoundCount()+\" passed=\"+summary.getSummary().getTestsSucceededCount()+\" failed=\"+summary.getSummary().getTestsFailedCount());\n  System.exit(summary.getSummary().getTotalFailureCount()>0?1:0);\n }\n}\n",
+        "sha256": "90cab8b01c2a382c78e1d91c63cdbf0ba7bbe6348dfaa3ec0cb5aeacf808775d"
+      }
+    ],
+    "source_references": [
+      {
+        "backend_path": "src/test/java/com/myproject/video/video_platform/controller/commerce/CommerceCheckoutIntegrationTest.java",
+        "sha256": "0e05da0acae40cca9cdaa613dab0e82ce3245c686d37e2574e520f7dbd5e40d4"
+      },
+      {
+        "backend_path": "src/test/java/com/myproject/video/video_platform/controller/smoke/AuthRoleSmokeIntegrationTest.java",
+        "sha256": "44f8b28ca093e68cbff0c1ced59330094370a0de2b323b36d15ffb5c8cf5cfa8"
+      },
+      {
+        "backend_path": "src/test/java/com/myproject/video/video_platform/controller/product/ProductEntitlementIntegrationTest.java",
+        "sha256": "1091d0cacfd3edf2b5236647b23a651874449aaa3265c98d9b2dfc9005b63bbd"
+      },
+      {
+        "backend_path": "src/main/java/com/myproject/video/video_platform/service/commerce/CommerceCheckoutService.java",
+        "sha256": "29c3603d512b41248a8b591299d4d462f0a767380cfb1ae747cb3a8ceb2ccefc"
+      },
+      {
+        "backend_path": "src/main/java/com/myproject/video/video_platform/service/entitlement/ProductEntitlementService.java",
+        "sha256": "813f18b1c3b8cfa17aad20641b32b099b8be1288f6379e1834cc81b166a1ea6e"
+      },
+      {
+        "backend_path": "src/main/java/com/myproject/video/video_platform/service/entitlement/ProductContentAccessService.java",
+        "sha256": "60091f1ffbe024ff1f63aaa9602e6827a07a1ac4f1df40f988680929c44e5a90"
+      }
+    ],
+    "reproduction": "Run listed existing tests on exact backend revision with Java17. Extract java.class.path from a Surefire XML; add matching cached junit-platform-launcher1.11.4. Compile the embedded corrected CatalogCheckoutMatrixTest/CatalogApiRunner outside the repository. Runner selects only declared catalog methods, not inherited baseline tests. Run all declared methods, or pass explicit method names for focused execution. Synthetic test resources remain first on classpath.",
+    "scope_limits": "No browser E2E, real provider/mail/object-store operation, deployed PostgreSQL concurrency, Liquibase/schema migration constraint, third-party-cookie or cloud financial mode assertion. Browser/local approvals are unchanged."
+  },
+  {
+    "key": "initial-catalog-matrix-execution",
+    "execution": {
+      "executed_at": "2026-10-02T20:33:36.858910Z",
+      "tests_found": 15,
+      "tests_passed": 13,
+      "tests_failed": 2,
+      "tests": [
+        {
+          "test": "pay003DtoBoundaries()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "pay008DuplicateAndMissing()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "pay009FreeAndUnpublished()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "pay012MixedCreators()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "access006BooleanMatrix()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "access001FreeEnrollmentAllRolesTypesAndPrices()",
+          "status": "FAILED",
+          "error_type": "org.opentest4j.AssertionFailedError"
+        },
+        {
+          "test": "pay002PendingOneAndTwentyAcrossTypes()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "pay004IdempotencyHeaderBoundaries()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "pay005StableReplayAcrossEdits()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "pay006ConflictingPayloadAndBuyerScope()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "pay007ConcurrentIdenticalCheckout()",
+          "status": "FAILED",
+          "error_type": "org.hibernate.LazyInitializationException"
+        },
+        {
+          "test": "pay010MembershipAndRecurring()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "pay011OwnerAndAdminSelfPurchase()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "pay015ReadRoleMatrixAndMissing()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "access003PaidLifecycleAndMissingAllRoles()",
+          "status": "SUCCESSFUL"
+        }
+      ],
+      "observations": [
+        {
+          "case_id": "PAY-003",
+          "label": "invalid-body-0",
+          "method": "POST",
+          "actual_status": 400,
+          "expected_status": 400,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.077195Z"
+        },
+        {
+          "case_id": "PAY-003",
+          "label": "invalid-body-1",
+          "method": "POST",
+          "actual_status": 400,
+          "expected_status": 400,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.084091Z"
+        },
+        {
+          "case_id": "PAY-003",
+          "label": "invalid-body-2",
+          "method": "POST",
+          "actual_status": 400,
+          "expected_status": 400,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.089303Z"
+        },
+        {
+          "case_id": "PAY-003",
+          "label": "invalid-body-3",
+          "method": "POST",
+          "actual_status": 400,
+          "expected_status": 400,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.094222Z"
+        },
+        {
+          "case_id": "PAY-003",
+          "label": "invalid-body-4",
+          "method": "POST",
+          "actual_status": 400,
+          "expected_status": 400,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.100347Z"
+        },
+        {
+          "case_id": "PAY-003",
+          "label": "invalid-body-5",
+          "method": "POST",
+          "actual_status": 400,
+          "expected_status": 400,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.105229Z"
+        },
+        {
+          "case_id": "PAY-008",
+          "label": "duplicate",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.154910Z"
+        },
+        {
+          "case_id": "PAY-008",
+          "label": "missing-only",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.171010Z"
+        },
+        {
+          "case_id": "PAY-008",
+          "label": "valid-plus-missing",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.182276Z"
+        },
+        {
+          "case_id": "PAY-009",
+          "label": "valid-plus-invalid-0",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.217741Z"
+        },
+        {
+          "case_id": "PAY-009",
+          "label": "valid-plus-invalid-1",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.228600Z"
+        },
+        {
+          "case_id": "PAY-009",
+          "label": "valid-plus-invalid-2",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.240565Z"
+        },
+        {
+          "case_id": "PAY-009",
+          "label": "valid-plus-invalid-3",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.248616Z"
+        },
+        {
+          "case_id": "PAY-012",
+          "label": "two-creators",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.281082Z"
+        },
+        {
+          "case_id": "ACCESS-006",
+          "label": "owner",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.310038Z"
+        },
+        {
+          "case_id": "ACCESS-006",
+          "label": "admin",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.313969Z"
+        },
+        {
+          "case_id": "ACCESS-006",
+          "label": "active-holder",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 1,
+          "observed_at": "2026-10-02T20:33:36.319096Z"
+        },
+        {
+          "case_id": "ACCESS-006",
+          "label": "revoked-holder",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 1,
+          "observed_at": "2026-10-02T20:33:36.338093Z"
+        },
+        {
+          "case_id": "ACCESS-006",
+          "label": "unrelated",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 1,
+          "observed_at": "2026-10-02T20:33:36.345496Z"
+        },
+        {
+          "case_id": "ACCESS-006",
+          "label": "guest",
+          "method": "GET",
+          "actual_status": 401,
+          "expected_status": 401,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 1,
+          "observed_at": "2026-10-02T20:33:36.347101Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-COURSE-null-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 1,
+          "observed_at": "2026-10-02T20:33:36.385685Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "COURSE-count-1",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.423771Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "COURSE-count-1-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.433770Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "COURSE-count-20",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 2,
+          "attempts": 2,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.466356Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "COURSE-count-20-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 2,
+          "attempts": 2,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.473414Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "DOWNLOAD-count-1",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 3,
+          "attempts": 3,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.481971Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "DOWNLOAD-count-1-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 3,
+          "attempts": 3,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.486896Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "DOWNLOAD-count-20",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 4,
+          "attempts": 4,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.514024Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "DOWNLOAD-count-20-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 4,
+          "attempts": 4,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.520100Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "CONSULTATION-count-1",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 5,
+          "attempts": 5,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.527753Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "CONSULTATION-count-1-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 5,
+          "attempts": 5,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.535862Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "CONSULTATION-count-20",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 6,
+          "attempts": 6,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.565887Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "CONSULTATION-count-20-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 6,
+          "attempts": 6,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.571679Z"
+        },
+        {
+          "case_id": "PAY-004",
+          "label": "rejected-key-missing",
+          "method": "POST",
+          "actual_status": 400,
+          "expected_status": 400,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.602532Z"
+        },
+        {
+          "case_id": "PAY-004",
+          "label": "rejected-key-0",
+          "method": "POST",
+          "actual_status": 400,
+          "expected_status": 400,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.605202Z"
+        },
+        {
+          "case_id": "PAY-004",
+          "label": "rejected-key-3",
+          "method": "POST",
+          "actual_status": 400,
+          "expected_status": 400,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.607324Z"
+        },
+        {
+          "case_id": "PAY-004",
+          "label": "rejected-key-129",
+          "method": "POST",
+          "actual_status": 400,
+          "expected_status": 400,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.609188Z"
+        },
+        {
+          "case_id": "PAY-004",
+          "label": "length128",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.615815Z"
+        },
+        {
+          "case_id": "PAY-004",
+          "label": "whitespace-trim",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 2,
+          "attempts": 2,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.621248Z"
+        },
+        {
+          "case_id": "PAY-004",
+          "label": "trimmed-replay",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 2,
+          "attempts": 2,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.624807Z"
+        },
+        {
+          "case_id": "PAY-005",
+          "label": "original",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.646272Z"
+        },
+        {
+          "case_id": "PAY-005",
+          "label": "reordered",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.649859Z"
+        },
+        {
+          "case_id": "PAY-005",
+          "label": "supported-product-patch",
+          "method": "PATCH",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.673509Z"
+        },
+        {
+          "case_id": "PAY-005",
+          "label": "replay-after-patch-{\"name\":\"QA Updated title\"}",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.678002Z"
+        },
+        {
+          "case_id": "PAY-005",
+          "label": "supported-product-patch",
+          "method": "PATCH",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.682630Z"
+        },
+        {
+          "case_id": "PAY-005",
+          "label": "replay-after-patch-{\"price\":\"27.50\"}",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.688329Z"
+        },
+        {
+          "case_id": "PAY-005",
+          "label": "supported-product-patch",
+          "method": "PATCH",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.692441Z"
+        },
+        {
+          "case_id": "PAY-005",
+          "label": "replay-after-patch-{\"status\":\"HIDDEN\"}",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.695598Z"
+        },
+        {
+          "case_id": "PAY-006",
+          "label": "original-A",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.714113Z"
+        },
+        {
+          "case_id": "PAY-006",
+          "label": "changed-B",
+          "method": "POST",
+          "actual_status": 409,
+          "expected_status": 409,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.717162Z"
+        },
+        {
+          "case_id": "PAY-006",
+          "label": "changed-A-plus-B",
+          "method": "POST",
+          "actual_status": 409,
+          "expected_status": 409,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.719789Z"
+        },
+        {
+          "case_id": "PAY-006",
+          "label": "independent-buyer-key",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 2,
+          "attempts": 2,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.725075Z"
+        },
+        {
+          "case_id": "PAY-007",
+          "label": "concurrent-0",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.746312Z"
+        },
+        {
+          "case_id": "PAY-007",
+          "label": "concurrent-1",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.747406Z"
+        },
+        {
+          "case_id": "PAY-010",
+          "label": "legacy-published-membership",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.763229Z"
+        },
+        {
+          "case_id": "PAY-010",
+          "label": "recurring-course",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.768781Z"
+        },
+        {
+          "case_id": "PAY-011",
+          "label": "self-CREATOR",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.782525Z"
+        },
+        {
+          "case_id": "PAY-011",
+          "label": "self-ADMIN",
+          "method": "POST",
+          "actual_status": 422,
+          "expected_status": 422,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.786364Z"
+        },
+        {
+          "case_id": "PAY-015",
+          "label": "create-pending",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.801511Z"
+        },
+        {
+          "case_id": "PAY-015",
+          "label": "buyer",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.804197Z"
+        },
+        {
+          "case_id": "PAY-015",
+          "label": "admin",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.806450Z"
+        },
+        {
+          "case_id": "PAY-015",
+          "label": "seller",
+          "method": "GET",
+          "actual_status": 403,
+          "expected_status": 403,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.808665Z"
+        },
+        {
+          "case_id": "PAY-015",
+          "label": "unrelated-user",
+          "method": "GET",
+          "actual_status": 403,
+          "expected_status": 403,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.811238Z"
+        },
+        {
+          "case_id": "PAY-015",
+          "label": "unknown-order",
+          "method": "GET",
+          "actual_status": 404,
+          "expected_status": 404,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.813451Z"
+        },
+        {
+          "case_id": "PAY-015",
+          "label": "guest",
+          "method": "GET",
+          "actual_status": 401,
+          "expected_status": 401,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.814100Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "USER-PUBLISHED",
+          "method": "POST",
+          "actual_status": 402,
+          "expected_status": 402,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.832021Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "USER-DRAFT",
+          "method": "POST",
+          "actual_status": 403,
+          "expected_status": 403,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.835309Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "USER-HIDDEN",
+          "method": "POST",
+          "actual_status": 403,
+          "expected_status": 403,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.836996Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "missing-USER",
+          "method": "POST",
+          "actual_status": 404,
+          "expected_status": 404,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.839554Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "CREATOR-PUBLISHED",
+          "method": "POST",
+          "actual_status": 402,
+          "expected_status": 402,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.841436Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "CREATOR-DRAFT",
+          "method": "POST",
+          "actual_status": 403,
+          "expected_status": 403,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.842997Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "CREATOR-HIDDEN",
+          "method": "POST",
+          "actual_status": 403,
+          "expected_status": 403,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.844482Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "missing-CREATOR",
+          "method": "POST",
+          "actual_status": 404,
+          "expected_status": 404,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.845880Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "ADMIN-PUBLISHED",
+          "method": "POST",
+          "actual_status": 402,
+          "expected_status": 402,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.847330Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "ADMIN-DRAFT",
+          "method": "POST",
+          "actual_status": 403,
+          "expected_status": 403,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.848858Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "ADMIN-HIDDEN",
+          "method": "POST",
+          "actual_status": 403,
+          "expected_status": 403,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.850365Z"
+        },
+        {
+          "case_id": "ACCESS-003",
+          "label": "missing-ADMIN",
+          "method": "POST",
+          "actual_status": 404,
+          "expected_status": 404,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:33:36.851703Z"
+        }
+      ]
+    },
+    "harness_caveats": "13 success matrices. ACCESS-001 initially expected nonexistent wire status (actual DTO omits it; persisted status is checked in corrected test). PAY-007 initially dereferenced detached lazy items after both API calls had succeeded. These are harness errors, not product failures and are not scored as failed catalog cases."
+  },
+  {
+    "key": "focused-two-matrix-corrections",
+    "execution": {
+      "executed_at": "2026-10-02T20:42:51.876319Z",
+      "tests_found": 2,
+      "tests_passed": 2,
+      "tests_failed": 0,
+      "tests": [
+        {
+          "test": "pay007ConcurrentIdenticalCheckout()",
+          "status": "SUCCESSFUL"
+        },
+        {
+          "test": "access001FreeEnrollmentAllRolesTypesAndPrices()",
+          "status": "SUCCESSFUL"
+        }
+      ],
+      "observations": [
+        {
+          "case_id": "PAY-007",
+          "label": "concurrent-1",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:42:51.506985Z"
+        },
+        {
+          "case_id": "PAY-007",
+          "label": "concurrent-0",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:42:51.506988Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-COURSE-null-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 1,
+          "observed_at": "2026-10-02T20:42:51.563532Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-COURSE-null-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 1,
+          "observed_at": "2026-10-02T20:42:51.571903Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-COURSE-null-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 1,
+          "observed_at": "2026-10-02T20:42:51.577433Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-COURSE-zero-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 2,
+          "observed_at": "2026-10-02T20:42:51.584787Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-COURSE-zero-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 2,
+          "observed_at": "2026-10-02T20:42:51.593779Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-COURSE-zero-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 2,
+          "observed_at": "2026-10-02T20:42:51.600018Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-DOWNLOAD-null-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 3,
+          "observed_at": "2026-10-02T20:42:51.608019Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-DOWNLOAD-null-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 3,
+          "observed_at": "2026-10-02T20:42:51.616559Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-DOWNLOAD-null-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 3,
+          "observed_at": "2026-10-02T20:42:51.620541Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-DOWNLOAD-zero-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 4,
+          "observed_at": "2026-10-02T20:42:51.628226Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-DOWNLOAD-zero-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 4,
+          "observed_at": "2026-10-02T20:42:51.635768Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-DOWNLOAD-zero-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 4,
+          "observed_at": "2026-10-02T20:42:51.640665Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-CONSULTATION-null-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 5,
+          "observed_at": "2026-10-02T20:42:51.646651Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-CONSULTATION-null-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 5,
+          "observed_at": "2026-10-02T20:42:51.654740Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-CONSULTATION-null-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 5,
+          "observed_at": "2026-10-02T20:42:51.658811Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-CONSULTATION-zero-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 6,
+          "observed_at": "2026-10-02T20:42:51.663685Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-CONSULTATION-zero-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 6,
+          "observed_at": "2026-10-02T20:42:51.671056Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "USER-CONSULTATION-zero-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 6,
+          "observed_at": "2026-10-02T20:42:51.674757Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-COURSE-null-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 7,
+          "observed_at": "2026-10-02T20:42:51.680004Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-COURSE-null-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 7,
+          "observed_at": "2026-10-02T20:42:51.686016Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-COURSE-null-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 7,
+          "observed_at": "2026-10-02T20:42:51.689298Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-COURSE-zero-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 8,
+          "observed_at": "2026-10-02T20:42:51.693869Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-COURSE-zero-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 8,
+          "observed_at": "2026-10-02T20:42:51.699369Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-COURSE-zero-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 8,
+          "observed_at": "2026-10-02T20:42:51.702443Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-DOWNLOAD-null-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 9,
+          "observed_at": "2026-10-02T20:42:51.707462Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-DOWNLOAD-null-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 9,
+          "observed_at": "2026-10-02T20:42:51.713236Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-DOWNLOAD-null-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 9,
+          "observed_at": "2026-10-02T20:42:51.716399Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-DOWNLOAD-zero-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 10,
+          "observed_at": "2026-10-02T20:42:51.721565Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-DOWNLOAD-zero-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 10,
+          "observed_at": "2026-10-02T20:42:51.727327Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-DOWNLOAD-zero-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 10,
+          "observed_at": "2026-10-02T20:42:51.730212Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-CONSULTATION-null-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 11,
+          "observed_at": "2026-10-02T20:42:51.734985Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-CONSULTATION-null-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 11,
+          "observed_at": "2026-10-02T20:42:51.741288Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-CONSULTATION-null-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 11,
+          "observed_at": "2026-10-02T20:42:51.744689Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-CONSULTATION-zero-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 12,
+          "observed_at": "2026-10-02T20:42:51.749403Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-CONSULTATION-zero-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 12,
+          "observed_at": "2026-10-02T20:42:51.756699Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "CREATOR-CONSULTATION-zero-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 12,
+          "observed_at": "2026-10-02T20:42:51.763925Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-COURSE-null-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 13,
+          "observed_at": "2026-10-02T20:42:51.769179Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-COURSE-null-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 13,
+          "observed_at": "2026-10-02T20:42:51.780601Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-COURSE-null-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 13,
+          "observed_at": "2026-10-02T20:42:51.783150Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-COURSE-zero-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 14,
+          "observed_at": "2026-10-02T20:42:51.794615Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-COURSE-zero-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 14,
+          "observed_at": "2026-10-02T20:42:51.801039Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-COURSE-zero-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 14,
+          "observed_at": "2026-10-02T20:42:51.803702Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-DOWNLOAD-null-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 15,
+          "observed_at": "2026-10-02T20:42:51.808696Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-DOWNLOAD-null-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 15,
+          "observed_at": "2026-10-02T20:42:51.813778Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-DOWNLOAD-null-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 15,
+          "observed_at": "2026-10-02T20:42:51.816010Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-DOWNLOAD-zero-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 16,
+          "observed_at": "2026-10-02T20:42:51.821107Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-DOWNLOAD-zero-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 16,
+          "observed_at": "2026-10-02T20:42:51.826815Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-DOWNLOAD-zero-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 16,
+          "observed_at": "2026-10-02T20:42:51.829280Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-CONSULTATION-null-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 17,
+          "observed_at": "2026-10-02T20:42:51.833651Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-CONSULTATION-null-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 17,
+          "observed_at": "2026-10-02T20:42:51.839083Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-CONSULTATION-null-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 17,
+          "observed_at": "2026-10-02T20:42:51.841275Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-CONSULTATION-zero-enroll",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 18,
+          "observed_at": "2026-10-02T20:42:51.845583Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-CONSULTATION-zero-library",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 18,
+          "observed_at": "2026-10-02T20:42:51.850890Z"
+        },
+        {
+          "case_id": "ACCESS-001",
+          "label": "ADMIN-CONSULTATION-zero-access",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 0,
+          "attempts": 0,
+          "events": 0,
+          "entitlements": 18,
+          "observed_at": "2026-10-02T20:42:51.853229Z"
+        }
+      ]
+    },
+    "scope": "Only ACCESS-001 and PAY-007 rerun after fixture assertion corrections; both pass."
+  },
+  {
+    "key": "pending-order-item-completion-audit",
+    "execution": {
+      "executed_at": "2026-10-02T20:48:27.681831Z",
+      "tests_found": 1,
+      "tests_passed": 1,
+      "tests_failed": 0,
+      "tests": [
+        {
+          "test": "pay002PendingOneAndTwentyAcrossTypes()",
+          "status": "SUCCESSFUL"
+        }
+      ],
+      "observations": [
+        {
+          "case_id": "PAY-002",
+          "label": "COURSE-count-1",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.397109Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "COURSE-count-1-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 1,
+          "attempts": 1,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.415203Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "COURSE-count-20",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 2,
+          "attempts": 2,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.467337Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "COURSE-count-20-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 2,
+          "attempts": 2,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.488537Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "DOWNLOAD-count-1",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 3,
+          "attempts": 3,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.500610Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "DOWNLOAD-count-1-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 3,
+          "attempts": 3,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.510607Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "DOWNLOAD-count-20",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 4,
+          "attempts": 4,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.551935Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "DOWNLOAD-count-20-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 4,
+          "attempts": 4,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.572564Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "CONSULTATION-count-1",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 5,
+          "attempts": 5,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.584095Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "CONSULTATION-count-1-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 5,
+          "attempts": 5,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.591975Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "CONSULTATION-count-20",
+          "method": "POST",
+          "actual_status": 201,
+          "expected_status": 201,
+          "orders": 6,
+          "attempts": 6,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.621387Z"
+        },
+        {
+          "case_id": "PAY-002",
+          "label": "CONSULTATION-count-20-read",
+          "method": "GET",
+          "actual_status": 200,
+          "expected_status": 200,
+          "orders": 6,
+          "attempts": 6,
+          "events": 0,
+          "entitlements": 0,
+          "observed_at": "2026-10-02T20:48:27.636355Z"
+        }
+      ]
+    },
+    "scope": "PAY-002 rerun only to add required exact product IDs/names/type/unique item IDs/line totals/subtotal checks; passes all six type/size combinations."
+  },
+  {
+    "key": "catalog-expansion-and-results",
+    "matrices": {
+      "PAY-002": {
+        "test_method": "pay002PendingOneAndTwentyAcrossTypes",
+        "assertions": "1/20 unique Course, Download and Consultation items, all Published and2.25EUR from another Creator; six PENDING checkouts and buyer GETs. Exact IDs/names/types/unique item IDs, quantity1,225-minor item/line amounts, subtotal/total, future expiry, fake/null checkoutURL and one pending attempt per order match. No payment event or entitlement.",
+        "status": "Pass"
+      },
+      "PAY-003": {
+        "test_method": "pay003DtoBoundaries",
+        "assertions": "Absent/null/empty productIds, null ID, malformed UUID and21-ID bodies each return400 with valid auth/CSRF/key. Orders, attempts, events and entitlements remain zero after each.",
+        "status": "Pass"
+      },
+      "PAY-004": {
+        "test_method": "pay004IdempotencyHeaderBoundaries",
+        "assertions": "Missing, empty, whitespace-only and129-character keys return400 without financial records.128-character key succeeds. Whitespace-padded key and trimmed replay return the same order; two accepted keys create only two pending orders and no grants.",
+        "status": "Pass"
+      },
+      "PAY-005": {
+        "test_method": "pay005StableReplayAcrossEdits",
+        "assertions": "Same buyer/key returns identical pending order after reordering two IDs and separate supported owner PATCHes of name, price27.50 and statusHIDDEN. DB confirms edits; order JSON/snapshots remain byte-equivalent as parsed JSON, with one order/attempt and no grants.",
+        "status": "Pass"
+      },
+      "PAY-006": {
+        "test_method": "pay006ConflictingPayloadAndBuyerScope",
+        "assertions": "Same buyer/key with B or A+B returns409 and leaves original order only. Another synthetic buyer using the same key and Product A receives an independent order. Final two orders/attempts, no grants.",
+        "status": "Pass"
+      },
+      "PAY-007": {
+        "test_method": "pay007ConcurrentIdenticalCheckout",
+        "assertions": "Two executor threads released by one latch submit identical buyer/key/product checkouts. Both201 responses share one orderId; DB has one order, one attempt and one item, no payment events or entitlements. H2 concurrency scope; not deployed PostgreSQL race coverage.",
+        "status": "Pass"
+      },
+      "PAY-008": {
+        "test_method": "pay008DuplicateAndMissing",
+        "assertions": "Duplicate IDs, unknown-only ID and valid-plus-unknown ID each return422. Orders, attempts, events and entitlements stay zero after each; no partial checkout.",
+        "status": "Pass"
+      },
+      "PAY-009": {
+        "test_method": "pay009FreeAndUnpublished",
+        "assertions": "Otherwise-valid cart plus zero-price, null-price, Draft or Hidden Course each returns422. Orders, attempts, events and grants stay zero; no partial checkout.",
+        "status": "Pass"
+      },
+      "PAY-010": {
+        "test_method": "pay010MembershipAndRecurring",
+        "assertions": "Legacy Published positive-priced recurring Membership and non-Membership Course carrying recurring metadata each return422. No order, attempt, event or entitlement/subscription bypass.",
+        "status": "Pass"
+      },
+      "PAY-011": {
+        "test_method": "pay011OwnerAndAdminSelfPurchase",
+        "assertions": "Creator buyer-owned paid Product and separately legacy Admin buyer-owned paid Product each return422. No orders, attempts, events or grants; Admin role does not bypass self-purchase rejection.",
+        "status": "Pass"
+      },
+      "PAY-012": {
+        "test_method": "pay012MixedCreators",
+        "assertions": "Two Published paid Products from different Creators return422 under valid buyer auth/CSRF. No order, attempt, event or entitlement, including partial checkout.",
+        "status": "Pass"
+      },
+      "PAY-015": {
+        "test_method": "pay015ReadRoleMatrixAndMissing",
+        "assertions": "Known pending order is readable by buyer and Admin with equal order JSON. Selling Creator/unrelated User each403; unknown order404; Guest401. Reads leave one pending order and no grants.",
+        "status": "Pass"
+      },
+      "ACCESS-001": {
+        "test_method": "access001FreeEnrollmentAllRolesTypesAndPrices",
+        "assertions": "User, Creator and Admin each enroll in Published Course/Download/legacy Consultation with null and zero price:18 combinations. Each201 creates one caller-owned ACTIVE/FREE_ENROLLMENT record with null revokedAt/purchase reference; own Library and access=true reads persist it.18 total grants, no monetary order/event.",
+        "status": "Pass"
+      },
+      "ACCESS-003": {
+        "test_method": "access003PaidLifecycleAndMissingAllRoles",
+        "assertions": "User, Creator and Admin each try paid Published, free Draft, free Hidden and missing Product:12 combinations. Paid402, nonpublished403, missing404; zero grants and monetary orders throughout.",
+        "status": "Pass"
+      },
+      "ACCESS-006": {
+        "test_method": "access006BooleanMatrix",
+        "assertions": "Owner, Admin and ACTIVE holder return true; same holder after revocation and unrelated User return false; Guest401. Owner/Admin create no grants. Seeded grant remains a single record; access reads add none.",
+        "status": "Pass"
+      }
+    },
+    "parent_scope": "All explicit role/input/assertion variations for these fifteen API cases are accounted for within the catalog-authorized isolated backend environment. Cloud/browser cases remain separate."
+  }
+]

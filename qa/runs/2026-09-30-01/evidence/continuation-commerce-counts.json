@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-01T07:58:46.326188+00:00",
+  "role": "vp_test_reader",
+  "owner_alias": "OWNER-A",
+  "query_purpose": "Count own commerce orders and confirm chosen synthetic unknown order does not exist",
+  "exit_code": 0,
+  "counts": [
+    "0",
+    "0"
+  ]
+}

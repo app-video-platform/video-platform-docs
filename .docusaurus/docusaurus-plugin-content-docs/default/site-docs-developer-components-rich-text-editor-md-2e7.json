@@ -1,7 +1,7 @@
 {
   "id": "developer/components/rich-text-editor",
-  "title": "GalRichTextEditor",
-  "description": "GalRichTextEditor (quick notes)",
+  "title": "RichTextEditor",
+  "description": "RichTextEditor (quick notes)",
   "source": "@site/docs/developer/components/rich-text-editor.md",
   "sourceDirName": "developer/components",
   "slug": "/developer/components/rich-text-editor",
@@ -12,15 +12,15 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "GalRichTextEditor"
+    "title": "RichTextEditor"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalProductCard",
+    "title": "ProductBox",
     "permalink": "/docs/developer/components/product-box"
   },
   "next": {
-    "title": "GalRTEMenuBar",
+    "title": "RTEMenuBar",
     "permalink": "/docs/developer/components/rte-menu-bar"
   }
 }

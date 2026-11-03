@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-02T07:32:47.326217+00:00",
+  "role": "Guest",
+  "request_method": "GET",
+  "request_path": "/api/products/cb045295-cf70-445c-99a7-46fc0618e58e/landing-page",
+  "status": 200,
+  "response_shape": "dict",
+  "raw_response_saved": false,
+  "response_keys": [
+    "heroLayout",
+    "id",
+    "marketingDescription",
+    "productId",
+    "sectionOrder",
+    "updatedAt",
+    "visibleSections"
+  ]
+}

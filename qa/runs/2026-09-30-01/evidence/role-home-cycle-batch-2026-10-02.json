@@ -1,0 +1,138 @@
+[
+  {
+    "key": "creator-before-home-cycle",
+    "observed_at": "2026-10-02T16:02:57.588055+00:00",
+    "account_alias": "OWNER-A",
+    "query_purpose": "Verify only the supplied account role and reader restrictions",
+    "current_user": "vp_test_reader",
+    "read_only": "on",
+    "statement_timeout": "10s",
+    "roles": [
+      "CREATOR"
+    ]
+  },
+  {
+    "key": "user-home-after-reload-browser",
+    "observed_at": "2026-10-02T16:03:51.967Z",
+    "account_alias": "OWNER-A",
+    "url": "https://app.serious-debauchery.click/app",
+    "libraryHref": "/app/library/all-products",
+    "headings": [
+      "Welcome back, dude!",
+      "Continue your courses",
+      "What to learn next",
+      "New courses you might like",
+      "How about joining our content creator team?"
+    ],
+    "creatorNavigationCount": 0
+  },
+  {
+    "key": "user-home-after-reload",
+    "observed_at": "2026-10-02T16:04:19.115612+00:00",
+    "account_alias": "OWNER-A",
+    "query_purpose": "Verify only the supplied account role and reader restrictions",
+    "current_user": "vp_test_reader",
+    "read_only": "on",
+    "statement_timeout": "10s",
+    "roles": [
+      "USER"
+    ]
+  },
+  {
+    "key": "creator-restored-after-reload-browser",
+    "observed_at": "2026-10-02T16:05:28.493Z",
+    "account_alias": "OWNER-A",
+    "url": "https://app.serious-debauchery.click/app",
+    "dashboardVisible": true,
+    "navigationLinks": [
+      "Dashboard",
+      "Products",
+      "Customers",
+      "Sales",
+      "Analytics",
+      "Storefront",
+      "Settings"
+    ]
+  },
+  {
+    "key": "creator-restored-after-home-reload",
+    "observed_at": "2026-10-02T16:06:11.635207+00:00",
+    "account_alias": "OWNER-A",
+    "query_purpose": "Verify only the supplied account role and reader restrictions",
+    "current_user": "vp_test_reader",
+    "read_only": "on",
+    "statement_timeout": "10s",
+    "roles": [
+      "CREATOR"
+    ]
+  },
+  {
+    "key": "restricted-log-access-after-home-cycle",
+    "observed_at": "2026-10-02T16:08:30.446702+00:00",
+    "command_exit_code": 0,
+    "raw_logs_retained": false,
+    "scope": "Bounded diagnostic access check; aggregate error count is not correlated to the role actions and is not a new defect.",
+    "returned_lines": 200,
+    "error_lines": 6
+  },
+  {
+    "key": "creator-route-denials-role-check",
+    "observed_at": "2026-10-02T17:26:36.390004+00:00",
+    "account_alias": "OWNER-A",
+    "query_purpose": "Verify only the supplied account role and reader restrictions",
+    "current_user": "vp_test_reader",
+    "read_only": "on",
+    "statement_timeout": "10s",
+    "roles": [
+      "CREATOR"
+    ]
+  },
+  {
+    "key": "collection-menus-user-role-check",
+    "observed_at": "2026-10-02T18:01:15.669063+00:00",
+    "account_alias": "OWNER-A",
+    "query_purpose": "Verify only the supplied account role and reader restrictions",
+    "current_user": "vp_test_reader",
+    "read_only": "on",
+    "statement_timeout": "10s",
+    "roles": [
+      "USER"
+    ]
+  },
+  {
+    "key": "collection-menus-creator-restored-role-check",
+    "observed_at": "2026-10-02T18:02:27.248271+00:00",
+    "account_alias": "OWNER-A",
+    "query_purpose": "Verify only the supplied account role and reader restrictions",
+    "current_user": "vp_test_reader",
+    "read_only": "on",
+    "statement_timeout": "10s",
+    "roles": [
+      "CREATOR"
+    ]
+  },
+  {
+    "key": "marketing-user-role-check",
+    "observed_at": "2026-10-02T19:34:46.542634+00:00",
+    "account_alias": "OWNER-A",
+    "query_purpose": "Verify only the supplied account role and reader restrictions",
+    "current_user": "vp_test_reader",
+    "read_only": "on",
+    "statement_timeout": "10s",
+    "roles": [
+      "USER"
+    ]
+  },
+  {
+    "key": "marketing-creator-restored-role-check",
+    "observed_at": "2026-10-02T19:38:47.725782+00:00",
+    "account_alias": "OWNER-A",
+    "query_purpose": "Verify only the supplied account role and reader restrictions",
+    "current_user": "vp_test_reader",
+    "read_only": "on",
+    "statement_timeout": "10s",
+    "roles": [
+      "CREATOR"
+    ]
+  }
+]

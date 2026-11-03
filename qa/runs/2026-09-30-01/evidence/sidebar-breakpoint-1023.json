@@ -1,0 +1,18 @@
+{
+  "buttons": [
+    "Open account menu for Tamas Tyukodi",
+    "Collapse sidebar",
+    "Open navigation",
+    "T",
+    "Open actions for QA-2026-09-30-01 Consultation"
+  ],
+  "nav": {
+    "rect": {
+      "left": 0,
+      "right": 232
+    },
+    "text": "GalacticaDashboardProductsCustomersSalesAnalyticsStorefrontSettingsHelpTamas TyukodiCREATOR"
+  },
+  "scrollWidth": 1728,
+  "width": 1728
+}

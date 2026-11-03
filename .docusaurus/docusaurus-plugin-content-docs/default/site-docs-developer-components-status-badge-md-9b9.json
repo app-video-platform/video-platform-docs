@@ -16,11 +16,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "GalSpinner",
+    "title": "Spinner",
     "permalink": "/docs/developer/components/spinner"
   },
   "next": {
-    "title": "GalTabs",
+    "title": "Tabs",
     "permalink": "/docs/developer/components/tabs"
   }
 }

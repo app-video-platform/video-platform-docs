@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-10-01T08:10:24.869020+00:00",
+  "product_id": "cb045295-cf70-445c-99a7-46fc0618e58e",
+  "query_purpose": "Owned synthetic Course sections and lesson content only",
+  "exit_code": 0,
+  "sections": [
+    {
+      "id": "20e94542-047b-4cc8-bc9d-adc197e683c2",
+      "title": "Draft",
+      "description": "",
+      "position": 1,
+      "created_at": "2026-10-01T08:02:29.558735",
+      "updated_at": "2026-10-01T08:02:29.558754"
+    },
+    {
+      "id": "7cc505f1-127b-420a-9783-e103af710401",
+      "title": "QA Section B",
+      "description": "QA section B description",
+      "position": 2,
+      "created_at": "2026-10-01T08:05:16.937486",
+      "updated_at": "2026-10-01T08:06:23.540668"
+    },
+    {
+      "id": "d87b3e72-d4f9-4f4f-ad4a-6ca6554423cc",
+      "title": "QA Section A Updated",
+      "description": "QA section A updated description",
+      "position": 3,
+      "created_at": "2026-10-01T08:04:41.536419",
+      "updated_at": "2026-10-01T08:09:40.46404"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "f0a89669-5d92-4c5a-8875-316c3e77dd41",
+      "title": "QA Article A",
+      "description": "QA Article description A",
+      "type": "ARTICLE",
+      "position": 1,
+      "video_url": null,
+      "content": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"marks\":[{\"type\":\"bold\"}],\"text\":\"QA article body A\"}]}]}",
+      "created_at": "2026-10-01T08:07:11.430099",
+      "updated_at": "2026-10-01T08:09:06.969844"
+    },
+    {
+      "id": "1b5909b2-9b8d-4a82-ae5b-c7d70ac3a182",
+      "title": "QA Video A",
+      "description": "",
+      "type": "VIDEO",
+      "position": 2,
+      "video_url": null,
+      "content": null,
+      "created_at": "2026-10-01T08:07:40.524942",
+      "updated_at": "2026-10-01T08:07:40.524962"
+    },
+    {
+      "id": "37dbef65-eb38-48ce-b4f9-2a7b913c8bca",
+      "title": "QA Quiz A",
+      "description": "",
+      "type": "QUIZ",
+      "position": 3,
+      "video_url": null,
+      "content": null,
+      "created_at": "2026-10-01T08:07:41.512251",
+      "updated_at": "2026-10-01T08:07:41.512274"
+    }
+  ]
+}

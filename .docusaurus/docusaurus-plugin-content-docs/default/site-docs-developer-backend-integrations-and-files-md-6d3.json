@@ -1,0 +1,28 @@
+{
+  "id": "developer/backend/integrations-and-files",
+  "title": "Integrations and Files",
+  "description": "DigitalOcean Spaces",
+  "source": "@site/docs/developer/backend/integrations-and-files.md",
+  "sourceDirName": "developer/backend",
+  "slug": "/developer/backend/integrations-and-files",
+  "permalink": "/docs/developer/backend/integrations-and-files",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/developer/backend/integrations-and-files.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Integrations and Files",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Persistence and Data Model",
+    "permalink": "/docs/developer/backend/persistence-and-data-model"
+  },
+  "next": {
+    "title": "Administration and Audit",
+    "permalink": "/docs/developer/backend/administration-and-audit"
+  }
+}

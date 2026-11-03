@@ -62,6 +62,8 @@ Checkpoint every 15 case variations or at the end of a feature area. Save progre
 
 Use screenshots for visual defects and meaningful state changes. Successful cases need enough evidence to establish their assertions, without collecting redundant screenshots. A loaded page alone does not establish a successful multi-step journey.
 
+Keep routine successful observations in the result row when its description establishes the assertions. When supporting DOM measurements or diagnostic summaries are needed, append them to one evidence file per feature batch and identify the observation in the result description. Do not create a separate snapshot file for every successful click, filter value, or screen width. Keep separate screenshots and diagnostic excerpts for defects, blockers, or meaningful persisted state changes. Reuse existing evidence when it supports several results.
+
 ## Results and evidence files
 
 Keep the catalog as the specification. Store results per run:

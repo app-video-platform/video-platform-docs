@@ -1,0 +1,607 @@
+2026-10-03 11:43:37 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-03 11:43:37 [main] INFO  c.m.v.v.c.c.CatalogProductOwnershipPublicationTest - Starting CatalogProductOwnershipPublicationTest using Java 17.0.13 with PID 31874 (started by tamastyukodi in /Users/tamastyukodi/Development/video-platform-UI-docs)
+2026-10-03 11:43:37 [main] INFO  c.m.v.v.c.c.CatalogProductOwnershipPublicationTest - The following 1 profile is active: "test"
+2026-10-03 11:43:37 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-03 11:43:37 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75 ms. Found 26 JPA repository interfaces.
+2026-10-03 11:43:49 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-03 11:43:49 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-10-03 11:43:49 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-03 11:43:49 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-03 11:43:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-03 11:43:49 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:videoplatform user=SA
+2026-10-03 11:43:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-03 11:43:49 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-03 11:43:49 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-03 11:43:49 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-03 11:43:49 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 11:43:49 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-03 11:43:50 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-03 11:43:50 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-10-03 11:43:50 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-10-03 11:43:50 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-10-03 11:43:50 [main] INFO  c.m.v.v.c.c.CatalogProductOwnershipPublicationTest - Started CatalogProductOwnershipPublicationTest in 13.638 seconds (process running for 13.995)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=11:00), ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=10:00, endTime=12:00)])]))
+2026-10-03 11:43:51 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:43:51 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:1 */ UUID '414035bd-f024-4839-b2a7-6e7daaa5aad9', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Creating a DownloadProduct: QA isolated DOWNLOAD
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Creating a DownloadProduct: QA isolated DOWNLOAD
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Creating a DownloadProduct: QA isolated DOWNLOAD
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Creating a DownloadProduct: QA isolated DOWNLOAD
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Creating a DownloadProduct: QA isolated DOWNLOAD
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Creating a DownloadProduct: QA isolated DOWNLOAD
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Creating a DownloadProduct: QA isolated DOWNLOAD
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: MembershipProductRequestDto()
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: MembershipProductRequestDto()
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: MembershipProductRequestDto()
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: MembershipProductRequestDto()
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: MembershipProductRequestDto()
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: MembershipProductRequestDto()
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: MembershipProductRequestDto()
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: QA rejected nonowner edit
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: QA rejected nonowner edit
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: QA rejected nonowner edit
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: QA rejected nonowner edit
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA rejected nonowner edit
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA rejected nonowner edit
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA rejected nonowner edit
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA rejected nonowner edit
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.ConsultationProductHandler - Deleting Consultation: 662f2988-9a11-4243-841e-b12b93e4e2e1
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.ConsultationProductHandler - Deleting Consultation: 662f2988-9a11-4243-841e-b12b93e4e2e1
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: MembershipProductRequestDto()
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: MembershipProductRequestDto()
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: QA legitimate shared edit
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Deleted succesfully a DownloadProduct: 43433628-62e7-4c95-b158-fb61141eeb0f
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 43433628-62e7-4c95-b158-fb61141eeb0f
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: b2647bad-f5f5-4ee7-90b8-6eca26543fbf
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Deleted succesfully a DownloadProduct: c6aa233e-4172-454c-9565-57a86271318a
+2026-10-03 11:43:51 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: c6aa233e-4172-454c-9565-57a86271318a
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: a3d27f62-abea-4b9c-b330-155814b82396
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.ConsultationProductHandler - Deleting Consultation: 3cde87f7-e2ed-4089-8ca3-9e781498380a
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.ConsultationProductHandler - Deleted succesfully a Consultation Product: 3cde87f7-e2ed-4089-8ca3-9e781498380a
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 3cde87f7-e2ed-4089-8ca3-9e781498380a
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 8b4f1ebf-9e2f-4811-a337-f3ccc1c00535
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: e1323713-4912-4c9f-ab34-f078df1da3a7
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 74b2f26c-9b0f-4edb-a2be-6d9660e17b53
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Deleted succesfully a DownloadProduct: 87bf70ef-56cd-4364-9140-21522c80556c
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 87bf70ef-56cd-4364-9140-21522c80556c
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 4ba22748-84f1-4a29-88b1-d303aa6c4410
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Deleted succesfully a DownloadProduct: 9ece268c-ebab-4bc2-9864-90a676b12f39
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 9ece268c-ebab-4bc2-9864-90a676b12f39
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: be022c59-d7ff-4934-8dd9-19a9ef03e519
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.ConsultationProductHandler - Deleting Consultation: 66e67d65-46da-43ff-b255-ee9295045f90
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.ConsultationProductHandler - Deleted succesfully a Consultation Product: 66e67d65-46da-43ff-b255-ee9295045f90
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 66e67d65-46da-43ff-b255-ee9295045f90
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: afe087b3-ce77-4451-9952-b062fecb16ad
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 046ffcab-3a53-4db0-b7a5-ed4c46e29a9d
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 5fc3fe0b-e5fe-4c2d-8d1b-adddb4ea238b
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=0, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=null, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=OTHER, customLocation=  , bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:43:52 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=false, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:43:52 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:43:52 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:7 */ UUID 'a38688af-b79b-42f9-b59f-8e6961ea6ac6', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:43:52 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 11:43:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-03 11:43:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-03 11:44:52 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-03 11:44:52 [main] INFO  c.m.v.v.c.c.CatalogProductOwnershipPublicationTest - Starting CatalogProductOwnershipPublicationTest using Java 17.0.13 with PID 31909 (started by tamastyukodi in /Users/tamastyukodi/Development/video-platform-UI-docs)
+2026-10-03 11:44:52 [main] INFO  c.m.v.v.c.c.CatalogProductOwnershipPublicationTest - The following 1 profile is active: "test"
+2026-10-03 11:44:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-03 11:44:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 26 JPA repository interfaces.
+2026-10-03 11:45:04 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-03 11:45:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-10-03 11:45:04 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-03 11:45:04 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-03 11:45:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-03 11:45:04 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:videoplatform user=SA
+2026-10-03 11:45:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-03 11:45:04 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-03 11:45:04 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-03 11:45:04 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-03 11:45:04 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 11:45:05 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-03 11:45:05 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-03 11:45:06 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-10-03 11:45:06 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-10-03 11:45:06 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.c.CatalogProductOwnershipPublicationTest - Started CatalogProductOwnershipPublicationTest in 13.693 seconds (process running for 14.036)
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=11:00), ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=10:00, endTime=12:00)])]))
+2026-10-03 11:45:06 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:45:06 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:1 */ UUID '9713d77c-0634-44f5-a9b5-a2fabfe85157', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Creating a DownloadProduct: QA isolated DOWNLOAD
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Created succesfully a DownloadProduct: QA isolated DOWNLOAD
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: MembershipProductRequestDto()
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Creating a DownloadProduct: QA isolated DOWNLOAD
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Created succesfully a DownloadProduct: QA isolated DOWNLOAD
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: MembershipProductRequestDto()
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: QA legitimate shared edit
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA legitimate shared edit
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: QA legitimate shared edit
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: CourseProductRequestDto(details=null)
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Creating a new Course: QA isolated COURSE
+2026-10-03 11:45:06 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=null)
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=0, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=0, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=0, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=0, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=-1, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=-1, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=-1, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=-1, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=null, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=null, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=null, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=null, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=OTHER, customLocation=  , bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=OTHER, customLocation=  , bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=OTHER, customLocation=  , bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=OTHER, customLocation=  , bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=false, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:45:07 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:45:07 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:23 */ UUID '4fc1cccc-f64c-4ea0-a3f6-8cc0200c8109', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:45:07 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 11:45:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-03 11:45:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-03 11:46:04 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-03 11:46:04 [main] INFO  c.m.v.v.c.c.CatalogProductOwnershipPublicationTest - Starting CatalogProductOwnershipPublicationTest using Java 17.0.13 with PID 31940 (started by tamastyukodi in /Users/tamastyukodi/Development/video-platform-UI-docs)
+2026-10-03 11:46:04 [main] INFO  c.m.v.v.c.c.CatalogProductOwnershipPublicationTest - The following 1 profile is active: "test"
+2026-10-03 11:46:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-03 11:46:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 26 JPA repository interfaces.
+2026-10-03 11:46:16 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-03 11:46:16 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-10-03 11:46:16 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-03 11:46:16 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-03 11:46:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-03 11:46:16 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:videoplatform user=SA
+2026-10-03 11:46:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-03 11:46:16 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-03 11:46:16 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-03 11:46:16 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-03 11:46:16 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 11:46:17 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-03 11:46:17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-03 11:46:18 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-10-03 11:46:18 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-10-03 11:46:18 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.c.c.CatalogProductOwnershipPublicationTest - Started CatalogProductOwnershipPublicationTest in 13.623 seconds (process running for 13.958)
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=11:00), ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=10:00, endTime=12:00)])]))
+2026-10-03 11:46:18 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:46:18 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:1 */ UUID '93c7e6ee-1ffa-43c8-a56e-0d7cbb9adc03', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=11:00), ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=10:00, endTime=12:00)])]))
+2026-10-03 11:46:18 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:46:18 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:4 */ UUID 'b9d865a4-a22f-4659-b21c-b8b8900744c6', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=11:00), ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=10:00, endTime=12:00)])]))
+2026-10-03 11:46:18 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:46:18 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:7 */ UUID '16af683f-0455-4747-8ecf-680504a2a4f7', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=true, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=11:00), ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=10:00, endTime=12:00)])]))
+2026-10-03 11:46:18 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:46:18 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:10 */ UUID '7a09a8d7-779c-477e-bb1b-c64734fbe08a', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: QA legitimate shared edit
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA legitimate shared edit
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: QA legitimate shared edit
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: QA legitimate shared edit
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA legitimate shared edit
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: QA legitimate shared edit
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:18 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=false, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:46:19 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:46:19 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:13 */ UUID '86674e5b-c45b-44e9-9609-0c7820143ba4', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=false, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:46:19 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:46:19 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:16 */ UUID '2641bcbe-7736-4731-ab16-1054ecc32f52', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=false, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:46:19 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:46:19 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:19 */ UUID '8362953e-3f6b-40b0-b825-8a350672c642', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:46:19 [main] INFO  c.m.v.v.c.product.ProductsController - Received create product request: ConsultationProductRequestDto(details=ConsultationProductDetailsDto(durationMinutes=30, meetingMethod=ZOOM, customLocation=null, bufferBeforeMinutes=null, bufferAfterMinutes=null, maxSessionsPerDay=null, confirmationMessage=null, cancellationPolicy=null, connectedCalendars=null, weeklyAvailability=[ConsultationProductDetailsDto.AvailabilityDayDto(day=MONDAY, enabled=false, windows=[ConsultationProductDetailsDto.AvailabilityWindowDto(startTime=09:00, endTime=12:00)])]))
+2026-10-03 11:46:19 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23505, SQLState: 23505
+2026-10-03 11:46:19 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.uq_consultation_availability_day_INDEX_1 ON PUBLIC.consultation_availability_days(consultation_product_id NULLS FIRST, weekday NULLS FIRST) VALUES ( /* key:22 */ UUID '116faadc-a0aa-457d-bd1c-4519ed820f0f', CAST('MONDAY' AS ENUM('FRIDAY', 'MONDAY', 'SATURDAY', 'SUNDAY', 'THURSDAY', 'TUESDAY', 'WEDNESDAY')))"; SQL statement:
+insert into consultation_availability_days (consultation_product_id,enabled,weekday,id) values (?,?,?,?) [23505-232]
+2026-10-03 11:46:19 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 11:46:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-03 11:46:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-03 11:47:59 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-03 11:47:59 [main] INFO  c.m.v.v.c.c.CatalogProductPutDeleteGuardsTest - Starting CatalogProductPutDeleteGuardsTest using Java 17.0.13 with PID 31978 (started by tamastyukodi in /Users/tamastyukodi/Development/video-platform-UI-docs)
+2026-10-03 11:47:59 [main] INFO  c.m.v.v.c.c.CatalogProductPutDeleteGuardsTest - The following 1 profile is active: "test"
+2026-10-03 11:48:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-03 11:48:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 26 JPA repository interfaces.
+2026-10-03 11:48:11 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-03 11:48:11 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-10-03 11:48:11 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-03 11:48:11 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-03 11:48:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-03 11:48:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:videoplatform user=SA
+2026-10-03 11:48:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-03 11:48:11 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-03 11:48:11 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-03 11:48:12 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-03 11:48:12 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 11:48:12 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-03 11:48:13 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-03 11:48:13 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-10-03 11:48:13 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-10-03 11:48:13 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.c.c.CatalogProductPutDeleteGuardsTest - Started CatalogProductPutDeleteGuardsTest in 13.662 seconds (process running for 14.015)
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: CourseProductRequestDto(details=CourseProductDetailsDto(sections=[]))
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: DownloadProductRequestDto(details=DownloadProductDetailsRequestDto(sections=[SectionDownloadProductRequestDto(id=02e1fc6d-51ce-4a48-b9c7-80a4542ac026, title=QA renamed retained group, description=QA updated group, position=1)]))
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: DownloadProductRequestDto(details=DownloadProductDetailsRequestDto(sections=[]))
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: CourseProductRequestDto(details=CourseProductDetailsDto(sections=[]))
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: DownloadProductRequestDto(details=DownloadProductDetailsRequestDto(sections=[SectionDownloadProductRequestDto(id=b60dd099-4b3f-482f-b3a7-aea92ba71751, title=QA renamed retained group, description=QA updated group, position=1)]))
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: DownloadProductRequestDto(details=null)
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.c.product.ProductsController - Received update product request: DownloadProductRequestDto(details=DownloadProductDetailsRequestDto(sections=[]))
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: QA full PUT shared name
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: fa53ab5e-65e0-453f-8c76-6f004d0e4560
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:48:13 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 44effffe-eaa2-4211-be03-6704187b983c
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Deleted succesfully a DownloadProduct: 6ebd0aee-4f11-4260-b4cf-0d4f1af2561a
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 2c137eb6-5a6d-41da-aaac-08a72945df6d
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 82ae7f00-328c-43ab-81c9-cf3130b3f1bf
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Deleted succesfully a DownloadProduct: 18806f94-d784-4ea4-ae17-ebd111ec3add
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 89a33dc6-1d71-4b56-9a80-01ce63792b86
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: b405e564-5288-47e7-a585-0427f35ee10b
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.ConsultationProductHandler - Deleting Consultation: 117a379b-ad0d-4297-8744-8f42c09e1b38
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.ConsultationProductHandler - Deleted succesfully a Consultation Product: 117a379b-ad0d-4297-8744-8f42c09e1b38
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 614a1fcb-6318-4c3d-84c1-ad39efa37b54
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 595eba27-eadc-4261-add5-f6d9178915fc
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Updating Course: null
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.CourseProductHandler - Deleted succesfully a DownloadProduct: 5912a474-0e2c-4a63-811a-b6d3b9775dbc
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 31b3b70a-e094-49bf-92c5-c7d728248491
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 01e6cf0d-a8dc-4121-98d2-8c9fc349bb6d
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updating a download product: null
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Updated succesfully a DownloadProduct: null
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.DownloadProductHandler - Deleted succesfully a DownloadProduct: f60552f1-27d1-4fc7-af69-fe19da5a2774
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 6577d7c5-c9d1-4988-a171-9a5119fa2a69
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.c.product.ProductsController - Received delete product request: 96f1023d-e7d3-45f2-b602-32abc531303e
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.ConsultationProductHandler - Deleting Consultation: 5070cb5d-e955-4c46-b869-69c078718f06
+2026-10-03 11:48:14 [main] INFO  c.m.v.v.s.p.s.ConsultationProductHandler - Deleted succesfully a Consultation Product: 5070cb5d-e955-4c46-b869-69c078718f06
+2026-10-03 11:48:14 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 11:48:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-03 11:48:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-03 12:02:06 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-03 12:02:06 [main] INFO  c.m.v.v.c.c.CatalogQuizMatrixTest - Starting CatalogQuizMatrixTest using Java 17.0.13 with PID 32425 (started by tamastyukodi in /Users/tamastyukodi/Development/video-platform-UI-docs)
+2026-10-03 12:02:06 [main] INFO  c.m.v.v.c.c.CatalogQuizMatrixTest - The following 1 profile is active: "test"
+2026-10-03 12:02:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-03 12:02:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 26 JPA repository interfaces.
+2026-10-03 12:02:18 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-03 12:02:18 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-10-03 12:02:18 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-03 12:02:18 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-03 12:02:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-03 12:02:18 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:videoplatform user=SA
+2026-10-03 12:02:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-03 12:02:18 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-03 12:02:18 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-03 12:02:18 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-03 12:02:18 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 12:02:18 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-03 12:02:19 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-03 12:02:19 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-10-03 12:02:19 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-10-03 12:02:19 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-10-03 12:02:20 [main] INFO  c.m.v.v.c.c.CatalogQuizMatrixTest - Started CatalogQuizMatrixTest in 13.685 seconds (process running for 14.053)
+2026-10-03 12:02:21 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 12:02:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-03 12:02:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-03 12:05:55 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-03 12:05:55 [main] INFO  c.m.v.v.c.c.CatalogNestedAuthoringTest - Starting CatalogNestedAuthoringTest using Java 17.0.13 with PID 32499 (started by tamastyukodi in /Users/tamastyukodi/Development/video-platform-UI-docs)
+2026-10-03 12:05:55 [main] INFO  c.m.v.v.c.c.CatalogNestedAuthoringTest - The following 1 profile is active: "test"
+2026-10-03 12:05:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-03 12:05:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 26 JPA repository interfaces.
+2026-10-03 12:06:06 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-03 12:06:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-10-03 12:06:06 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-03 12:06:06 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-03 12:06:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-03 12:06:06 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:videoplatform user=SA
+2026-10-03 12:06:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-03 12:06:06 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-03 12:06:06 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-03 12:06:07 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-03 12:06:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 12:06:07 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-03 12:06:08 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-03 12:06:08 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-10-03 12:06:08 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-10-03 12:06:08 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-10-03 12:06:08 [main] INFO  c.m.v.v.c.c.CatalogNestedAuthoringTest - Started CatalogNestedAuthoringTest in 13.725 seconds (process running for 14.093)
+2026-10-03 12:06:10 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 12:06:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-03 12:06:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-03 12:07:47 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-03 12:07:47 [main] INFO  c.m.v.v.c.c.CatalogLegacyCourseTest - Starting CatalogLegacyCourseTest using Java 17.0.13 with PID 32546 (started by tamastyukodi in /Users/tamastyukodi/Development/video-platform-UI-docs)
+2026-10-03 12:07:47 [main] INFO  c.m.v.v.c.c.CatalogLegacyCourseTest - The following 1 profile is active: "test"
+2026-10-03 12:07:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-03 12:07:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75 ms. Found 26 JPA repository interfaces.
+2026-10-03 12:07:59 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-03 12:07:59 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-10-03 12:07:59 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-03 12:07:59 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-03 12:07:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-03 12:07:59 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:videoplatform user=SA
+2026-10-03 12:07:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-03 12:07:59 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-03 12:07:59 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-03 12:08:00 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-03 12:08:00 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 12:08:00 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-03 12:08:01 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-03 12:08:01 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-10-03 12:08:01 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-10-03 12:08:01 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-10-03 12:08:01 [main] INFO  c.m.v.v.c.c.CatalogLegacyCourseTest - Started CatalogLegacyCourseTest in 13.701 seconds (process running for 14.068)
+2026-10-03 12:08:01 [main] INFO  c.m.v.v.s.p.c.CourseLessonService - Deleted succesfully a Course lesson: 041c2fb7-966c-43aa-9975-7795601789a2
+2026-10-03 12:08:01 [main] INFO  c.m.v.v.s.p.c.CourseLessonService - Deleted succesfully a Course lesson: 25100a01-9a53-4412-9548-a91bb530121e
+2026-10-03 12:08:01 [main] INFO  c.m.v.v.s.p.c.CourseLessonService - Deleted succesfully a Course lesson: 81221624-1b48-49db-adde-807769f7c8ba
+2026-10-03 12:08:01 [main] INFO  c.m.v.v.s.p.c.CourseLessonService - Deleted succesfully a Course lesson: c609429a-5439-4164-8cf0-f54fc90e8661
+2026-10-03 12:08:01 [main] INFO  c.m.v.v.s.p.c.CourseLessonService - Deleted succesfully a Course lesson: 85001597-cef4-4f93-8df5-019738a7e639
+2026-10-03 12:08:01 [main] INFO  c.m.v.v.s.p.c.CourseLessonService - Deleted succesfully a Course lesson: a8adcc37-3073-46fb-a142-9d1d9f0c403e
+2026-10-03 12:08:02 [main] INFO  c.m.v.v.s.p.c.CourseSectionService - Deleted succesfully a Course section: 37bdb788-c4d8-4fb5-85fc-07cb25934175
+2026-10-03 12:08:02 [main] INFO  c.m.v.v.s.p.c.CourseSectionService - Deleted succesfully a Course section: c68dbc68-6235-4c65-b320-e6942491f373
+2026-10-03 12:08:02 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 12:08:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-03 12:08:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-03 12:13:11 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-03 12:13:11 [main] INFO  c.m.v.v.c.c.CatalogQuizMatrixTest - Starting CatalogQuizMatrixTest using Java 17.0.13 with PID 32686 (started by tamastyukodi in /Users/tamastyukodi/Development/video-platform-UI-docs)
+2026-10-03 12:13:11 [main] INFO  c.m.v.v.c.c.CatalogQuizMatrixTest - The following 1 profile is active: "test"
+2026-10-03 12:13:11 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-03 12:13:11 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 26 JPA repository interfaces.
+2026-10-03 12:13:22 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-03 12:13:22 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-10-03 12:13:22 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-03 12:13:22 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-03 12:13:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-03 12:13:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:videoplatform user=SA
+2026-10-03 12:13:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-03 12:13:22 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-03 12:13:22 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-03 12:13:23 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-03 12:13:23 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 12:13:23 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-03 12:13:24 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-03 12:13:24 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-10-03 12:13:24 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-10-03 12:13:24 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2026-10-03 12:13:24 [main] INFO  c.m.v.v.c.c.CatalogQuizMatrixTest - Started CatalogQuizMatrixTest in 13.732 seconds (process running for 14.104)
+2026-10-03 12:13:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03 12:13:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-03 12:13:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

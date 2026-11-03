@@ -1,0 +1,26 @@
+[
+  {
+    "level": "error",
+    "message": "Error retrieving product with id deba7b76-1d20-423a-9f69-98cea00ef8bb: zi",
+    "timestamp": "2026-10-02T12:20:12.365Z",
+    "url": "https://app.serious-debauchery.click/bundle.js"
+  },
+  {
+    "level": "error",
+    "message": "Failed to load product data Access Denied",
+    "timestamp": "2026-10-02T12:20:12.365Z",
+    "url": "https://app.serious-debauchery.click/bundle.js"
+  },
+  {
+    "level": "error",
+    "message": "Error: Minified React error #300; visit https://reactjs.org/docs/error-decoder.html?invariant=300 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at go (https://app.serious-debauchery.click/bundle.js:2:219541)\n    at Cs (https://app.serious-debauchery.click/bundle.js:2:233375)\n    at kl (https://app.serious-debauchery.click/bundle.js:2:279145)\n    at vc (https://app.serious-debauchery.click/bundle.js:2:267530)\n    at bc (https://app.serious-debauchery.click/bundle.js:2:267458)\n    at gc (https://app.serious-debauchery.click/bundle.js:2:267321)\n    at ic (https://app.serious-debauchery.click/bundle.js:2:264156)\n    at lc (https://app.serious-debauchery.click/bundle.js:2:264538)\n    at $a (https://app.serious-debauchery.click/bundle.js:2:205713)\n    at https://app.serious-debauchery.click/bundle.js:2:262113",
+    "timestamp": "2026-10-02T12:20:12.366Z",
+    "url": "https://app.serious-debauchery.click/bundle.js"
+  },
+  {
+    "level": "error",
+    "message": "Error: Minified React error #300; visit https://reactjs.org/docs/error-decoder.html?invariant=300 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at go (https://app.serious-debauchery.click/bundle.js:2:219541)\n    at Cs (https://app.serious-debauchery.click/bundle.js:2:233375)\n    at kl (https://app.serious-debauchery.click/bundle.js:2:279145)\n    at vc (https://app.serious-debauchery.click/bundle.js:2:267530)\n    at bc (https://app.serious-debauchery.click/bundle.js:2:267458)\n    at gc (https://app.serious-debauchery.click/bundle.js:2:267321)\n    at ic (https://app.serious-debauchery.click/bundle.js:2:264156)\n    at lc (https://app.serious-debauchery.click/bundle.js:2:264538)\n    at $a (https://app.serious-debauchery.click/bundle.js:2:205713)\n    at https://app.serious-debauchery.click/bundle.js:2:262113",
+    "timestamp": "2026-10-02T12:20:12.366Z",
+    "url": "https://app.serious-debauchery.click/bundle.js"
+  }
+]
