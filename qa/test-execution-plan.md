@@ -159,3 +159,16 @@ Use the [existing implementation-status table](runs/2026-09-30-01/summary.md#cur
 | Interaction and layout | BUG-056, BUG-089, BUG-090, BUG-011 | Deployed first pointer/Enter submission, field correction/error associations, Show/Hide names/pressed state and narrow-screen reachability; assistive-technology/zoom checks beyond synthetic coverage. |
 
 Synthetic layout checks covered five authentication routes at 320, 375, 768 and 1440px and local Sign in interaction. Successful CSRF registration and invalid/expired verification API responses were not exercised in that browser scope. Confirm deployed revisions and append real retest attempts only after execution; no resend or connected password-reset backend capability is implied.
+
+## M5 collections and Library retest guidance — 3 November 2026
+
+M5 [PR #75](https://github.com/app-video-platform/video-platform-ui/pull/75) is merged. Use the [existing status table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026) and five issue notes; preserve historical outcomes and append attempts only after authorized execution. Trello remains the operational tracker; paused QA is not resumed by this update.
+
+| Area | Issues | Outstanding verification |
+| --- | --- | --- |
+| Storage recovery | BUG-050, BUG-048 | Actual browser malformed JSON/wrong shapes/invalid entries, storage denial, repeat reload and valid removal/movement. Automated storage tests do not establish browser-surface recovery. |
+| Wishlist move | BUG-006 | Dropdown and Library moves, totals, duplicate avoidance and unsuccessful-move retention/navigation against deployed UI. |
+| Purchased access | BUG-049 | Live Creator free enrollment/paid checkout into shared Library, current-principal entitlements and real Product/file authorization; retain User/Admin/guest controls. |
+| Library tabs | BUG-005 | All child routes, Back/Forward, selected state/focus, Left/Right/Home/End and native assistive-technology checks. |
+
+Reported verification: 737 tests / 115 suites, TypeScript, lint (0 errors / 203 warnings), whitespace and a subsequent successful 27.2-second production build (three existing performance warnings). Earlier build-stall cause remains unconfirmed. Live purchase, entitlements/content/file access and browser-storage recovery remain pending; synthetic browser storage and commerce/entitlement coverage was limited.

@@ -9,7 +9,7 @@ title: Tabs
   - `defaultIndex?`: number — the index of the tab open by default
 - **Usage:**
   - Simple tab switcher UI for organizing related content in a compact view.
-  - Used in library pages, dashboards, and forms with grouped sections.
+  - Used for grouped component content. Library uses its own route-backed links rather than this shared component.
 - **A11y:**
   - Each tab is rendered as a `<button>`.
   - Consider adding `role="tablist"` to the header and `role="tabpanel"` to the content.
@@ -47,3 +47,9 @@ function ProductTabs() {
 <br></br>
 <br></br>
 > Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025
+
+### Library route-backed navigation
+
+`src/domains/app/pages/normal-user-specific/library-page/library-page.component.tsx` derives its active tab from the child pathname. NavLink styling, `aria-selected`, the Outlet content and URL stay aligned through direct entry and history changes. The selected link has `tabIndex=0`, others -1. ArrowLeft/ArrowRight wrap; Home/End select first/last, call navigate and focus the corresponding link. Do not maintain a separate default-selected index for this route tree or infer that shared Tabs gained this keyboard handler.
+
+`library-page.component.test.tsx` checks each child route, ArrowRight focus/navigation and Back/Forward selection. Native screen-reader behavior and full live purchased-content journeys are not established by these component tests.

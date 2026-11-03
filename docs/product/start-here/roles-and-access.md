@@ -60,7 +60,7 @@ Creators can:
 - Access sales, analytics, and settings screens.
 - Complete onboarding screens.
 
-Creators cannot access the user library in the current role setup.
+Creators can access the shared [Library](../customers/library.md) for their entitled purchases/free enrollments and browser-local Wishlist. Product/file access still depends on backend entitlements.
 
 ### Administrators
 
@@ -91,7 +91,7 @@ Access is based on the user's active role. End Users, Creators and Administrator
 | Onboarding | No | Yes | Yes | Yes |
 | Settings | No | Yes | Yes | Yes |
 | Cart | No | Yes | Yes | Yes |
-| Library | No | Yes | No | Yes |
+| Library | No | Yes | Yes | Yes |
 | Creator product management | No | No | Yes | Yes |
 | Creator Storefront Builder | No | No | Yes | No |
 | Customers page | No | No | Yes | No |

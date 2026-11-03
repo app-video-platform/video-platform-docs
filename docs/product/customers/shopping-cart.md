@@ -27,13 +27,13 @@ Customers can:
 - View cart items on the cart page.
 - See a displayed total for cart items.
 - Move cart items to the wishlist.
-- Remove cart items where removal is working correctly.
+- Remove cart items, including the first item.
 - Enroll in a cart containing only free Products.
 - Complete test checkout for eligible paid Course, Download, or Consultation Products.
 
 ## How it works
 
-Adding a product to the cart places it in the browser's saved cart. The cart dropdown shows a compact list of cart items and links to the cart page.
+Adding a valid product to the cart places it in the browser's saved cart once; adding the same product again does not create a second entry. There is no quantity control. The cart dropdown shows a compact list of cart items and links to the cart page.
 
 The cart page shows each item with its title, price, and supporting display information. Customers can move an item to the wishlist or remove it from the cart. The page also shows a total based on the products currently in the cart.
 
@@ -47,6 +47,16 @@ The cart page explicitly tells customers: "Test payment — No real charge will 
 
 Checkout prices and eligibility are recalculated by the backend. In the current deployed test environment, the fake provider can record a successful payment event immediately, grant access, clear the Cart, and open the Library. No card details are collected and no charge is made.
 
+### Saved collection recovery
+
+The app discards unusable saved entries and duplicates rather than allowing malformed browser data to break Cart. An unreadable saved collection can reopen empty. The total is recalculated from accepted item prices, not a previously stored total. If browser storage is unavailable, the app can continue, but keeping changes after reload is not guaranteed.
+
+Cart and Wishlist remain local shopping preferences across sign-out/account changes. They do not represent purchases or access rights, and recovery cannot reconstruct missing server purchases or entitlements.
+
+### Creator checkout destination
+
+Creators, End Users and Administrators use the same Library after successful free enrollment or confirmed paid checkout. A valid backend entitlement is still required for Product and file access. See [Library](./library.md).
+
 ## Current limitations
 
 - A cart containing only free Products can add them to the signed-in user's
@@ -55,7 +65,7 @@ Checkout prices and eligibility are recalculated by the backend. In the current 
 - Cart items are saved in the browser and are not synchronized to a backend account.
 - Products in the cart are not reserved or granted as owned content until free enrollment or a paid Order succeeds.
 - Product images and ratings shown in cart areas include placeholder content.
-- Removing the first item in the cart may not work correctly in the current frontend.
+- M5 live Creator checkout, real entitlement/content/file access and browser-storage recovery have not yet been verified end to end.
 
 ## Related pages
 

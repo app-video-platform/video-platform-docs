@@ -35,12 +35,12 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/app/product/:id/:type` | public | - | Public Product Landing Page compatibility route | Redirects to the ID-only route when the type segment conflicts with loaded Product data |
 | `/app/store/:creatorId` | public | - | Public creator Storefront | Shows the creator profile, persisted Storefront theme, and published products; draft and hidden products are withheld |
 | `/app/cart` | protected | Admin, Creator, User | Shopping cart | Uses free enrollment for free-only carts and Commerce checkout session creation for paid carts |
-| `/app/library` | protected | User, Admin | Library shell |  |
-| `/app/library/all-products` | protected | User, Admin | Library tab | Currently empty |
-| `/app/library/my-consultation` | protected | User, Admin | Library tab | Currently empty |
-| `/app/library/my-courses` | protected | User, Admin | Library tab | Currently empty |
-| `/app/library/my-download-packages` | protected | User, Admin | Library tab | Currently empty |
-| `/app/library/my-wishlist` | protected | User, Admin | Wishlist tab | Useful behavior exists |
+| `/app/library` | protected | User, Creator, Admin | Shared Library shell | Role access permits the UI; backend entitlements still govern content |
+| `/app/library/all-products` | protected | User, Creator, Admin | Library tab | Current-principal entitlement Products, filtered by type where applicable |
+| `/app/library/my-consultation` | protected | User, Creator, Admin | Library tab | Current-principal entitlement Products, filtered by type where applicable |
+| `/app/library/my-courses` | protected | User, Creator, Admin | Library tab | Current-principal entitlement Products, filtered by type where applicable |
+| `/app/library/my-download-packages` | protected | User, Creator, Admin | Library tab | Current-principal entitlement Products, filtered by type where applicable |
+| `/app/library/my-wishlist` | protected | User, Creator, Admin | Wishlist tab | Browser-local Wishlist |
 | `/app/admin` | protected | Admin | Admin dashboard |  |
 | `/app/admin/users` | protected | Admin | Admin user management |  |
 | `/app/admin/products` | protected | Admin | Admin product management |  |

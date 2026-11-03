@@ -62,7 +62,7 @@ The `/app` index route chooses a landing page from the user's primary role. Prim
 ADMIN -> CREATOR -> USER
 ```
 
-Route guards use allowed-role lists. For example, admin routes require `ADMIN`, product-management routes allow `CREATOR` and `ADMIN`, and library routes allow `USER` and `ADMIN`.
+Route guards use allowed-role lists. For example, admin routes require `ADMIN`, product-management routes allow `CREATOR` and `ADMIN`, and Library routes allow `USER`, `CREATOR` and `ADMIN`. These roles share the existing `/app/library/*` route tree, including the checkout destination `/app/library/all-products`. This route permission does not bypass backend entitlement checks for Product/file access.
 
 ## Route guards
 

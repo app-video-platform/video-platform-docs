@@ -14,9 +14,7 @@ Wishlist tab continues to use the browser-saved wishlist.
 
 ## Who can use this
 
-Signed-in End Users can open the Library.
-
-Administrators can also access the Library route. Creators do not currently have access to the Library in the role setup.
+Signed-in End Users, Creators and Administrators can open the same Library routes. Creators use this existing Library after successful free enrollment or confirmed paid checkout; there is no separate Creator Library. Opening the page does not itself grant ownership or bypass backend entitlement checks.
 
 ## What you can do
 
@@ -43,12 +41,15 @@ The Library currently includes tabs for:
 The Library presents product categories as tabs. The Wishlist tab connects to the same wishlist used from product discovery areas and customer navigation.
 
 The All products, Courses, Download Packages, and Consultation sessions tabs
-query active entitlements and render the matching Products.
+query active entitlements and render the matching Products. Server-backed purchases and entitlements remain authoritative; Cart/Wishlist entries do not grant access, and Product/file requests still require server authorization.
+
+The selected tab follows the active address, including direct links and browser Back/Forward. The visible content and accessible selected state follow that same route. Tab enters the selected tab; Left/Right arrows move between tabs with wrapping, while Home/End select the first/last tab and move focus.
 
 ## Current limitations
 
 - The Library lists owned Products, but complete lesson playback, Download delivery actions, and Consultation booking/session management are not all finished end to end.
 - Wishlist and Cart data remain browser-local rather than account-synchronized.
+- M5 live Creator purchase, backend entitlement/content access and live file access remain unverified end to end. Role access to Library is not proof of access to every listed Product.
 
 ## Related pages
 

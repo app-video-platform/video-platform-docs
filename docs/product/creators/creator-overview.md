@@ -27,6 +27,7 @@ Administrators can also access creator product management areas when managing pr
 Creators can currently:
 
 - View a creator dashboard.
+- Use the shared [Library](../customers/library.md) after successful free enrollment or confirmed paid checkout; backend entitlements still determine access.
 - See creator-owned products.
 - Open the Customers area and inspect available customer relationship records.
 - Open the Sales area and inspect available order records.
