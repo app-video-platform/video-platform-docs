@@ -47,6 +47,19 @@ Opening a customer shows a Customer Detail page with a back link to the Customer
 
 On smaller screens, the customer list changes from a table-like layout into stacked customer cards, and the detail tabs remain usable in a compact horizontal tab list.
 
+### Detail loading and recovery
+
+Switching Customers shows loading for the selected profile rather than displaying
+the previous Customer under the new address. Earlier responses cannot replace the
+current selection, and opening another Customer returns its tabs to **Overview**.
+
+A missing or inaccessible Customer shows **Customer not found** and **This customer
+is not available.** The page does not distinguish those two cases. A server,
+network, or unexpected load failure instead shows **Customer details could not be
+loaded** and **Please try again.** Both failure states offer **Retry**; the back
+link returns to the list so another Customer can be opened. Customer details
+remain restricted to the Creator's relationships.
+
 ## Current limitations
 
 - Customer list/detail, spend, completed Orders, Product history, access history, and recent Commerce activity are server-backed.

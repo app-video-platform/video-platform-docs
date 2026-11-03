@@ -40,6 +40,12 @@ Product services are split across:
 
 Creator Product Overview uses `getProductByIdAPI` through the existing single-Product read path. It does not have a dedicated Product Overview backend endpoint.
 
+M8 associates `getProductById` Redux detail reads with the latest request and
+Product ID, leaving HTTP retrieval and response normalization unchanged. Detail
+loading/error is separate from list/mutation status; stale fulfillment/rejection
+cannot overwrite the active read. This does not establish Product existence or
+access without a valid server response. See [request ownership](../architecture/state-and-data-flow.md#active-read-request-ownership-m8).
+
 Publishing supported non-Membership Products uses the same Product update path with `status: PUBLISHED`. Frontend readiness provides immediate guidance, but backend readiness validation is authoritative. Backend readiness failures are surfaced as HTTP `422` responses with a top-level message and field-path/message errors.
 
 Membership Products remain excluded from Product-level publishing even though Membership readiness can be evaluated in the frontend.
@@ -97,6 +103,12 @@ individual public Product and landing-page reads enforce Published visibility.
 | `createLessonAPI` | `POST api/products/:productId/sections/:sectionId/lessons` |
 | `updateLessonDetailsAPI` | `PATCH api/products/:productId/sections/:sectionId/lessons/:lessonId` |
 | `deleteLessonAPI` | `DELETE api/products/:productId/sections/:sectionId/lessons/:lessonId` |
+
+### Course Article and Quiz payloads
+
+Articles remain serialized Tiptap JSON strings in `CourseLesson.content`; the M7 reader converts supported content and sanitizes HTML without changing the stored contract. QuizWizard continues passing `quiz` in the existing nested Lesson create/update payload. `totalScore` is canonical for authoring; no dedicated Quiz persistence or learner-assessment API was added by M7. Payload regression tests establish serialization, not a complete persisted definition/attempt journey. Existing backend Quiz definitions/assessment contracts and their frontend integration remain separate verification work.
+
+Section order saves continue using independent `PATCH api/products/:productId/sections/:sectionId` position updates. M7 serializes batches and reports partial failures; it does not make these requests atomic. See [M7 lifecycle](../architecture/state-and-data-flow.md#m7-course-content-and-ordering) for retry, revision ownership and navigation limitations.
 
 ## Download files
 

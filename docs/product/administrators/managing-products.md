@@ -41,6 +41,14 @@ Each product row shows the product owner name when available and the owner ID. A
 
 Creating a product from this area starts with selecting a creator owner. After that, the shared product builder is used.
 
+Changing search or a filter returns results to the first page. Rows follow the
+current search, owner, type, status, and page; responses from earlier selections
+cannot replace them. Loading hides obsolete rows and disables paging. A
+successful query with no matches shows **No results found.**; a failed query offers
+**Retry** for the current selection. Loading and errors are independent of Audit
+and Users. After a confirmed deletion completes, the list refreshes using the
+filters and page selected at that time.
+
 ## Current limitations
 
 - Product editing uses the same builder as Creator product management and inherits the same limitations.

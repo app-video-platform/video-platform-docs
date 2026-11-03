@@ -45,7 +45,7 @@ Download products use the shared builder areas:
 
 Download files are added inside file groups. A file group needs a title before it can be created and used for file uploads.
 
-Creators can edit file group titles and descriptions after a group exists. File groups can be moved up or down, and deletion requires confirmation.
+Creators can edit file group titles and descriptions after a group exists. File groups can be moved up or down, and deletion requires confirmation. Order changes are queued and show saving/error feedback. **Retry order save** retries the current order; an old ordering error clears only after the relevant order saves successfully. Independent position updates can partly succeed, so failure does not imply rollback or all-or-nothing persistence. After deletion succeeds, the remaining positions are saved.
 
 ### Add files
 

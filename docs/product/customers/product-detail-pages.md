@@ -48,6 +48,12 @@ The page can show type-specific summaries:
 
 Creators configure product-specific public presentation from the Product Landing Page Builder. Product-owned fields such as name, description, price, product status, thumbnail, gallery, promo video, and product contents are edited from Product Workspace instead.
 
+### Course Article reading
+
+Authorized Course readers see supported saved Article text and formatting, including paragraphs, bold, lists and allowed links. Older supported HTML is sanitized; plain text is displayed safely. Empty, malformed or unsupported structured content is omitted rather than shown as editor JSON. Private lesson bodies remain restricted to authorized access; improved formatting does not grant a purchase or entitlement.
+
+M7 Article, Quiz and reorder interactions have automated frontend coverage but were not browser- or live-backend-E2E verified. Complete learner Quiz assessment remains unverified.
+
 ## Current limitations
 
 - The deployed test checkout does not charge a card. With the fake provider

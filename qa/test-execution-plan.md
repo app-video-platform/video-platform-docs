@@ -185,3 +185,50 @@ Reported verification: 737 tests / 115 suites, TypeScript, lint (0 errors / 203 
 | BUG-074 | Independently fail presign, storage PUT and confirmation; retry each successfully, verify confirmed rows and obsolete error removal while unrelated/concurrent failures stay visible. |
 
 Reported checks: 756 tests / 116 suites, including eight shared Uppy tests; TypeScript, lint (0 errors / 203 warnings), whitespace and 26.95-second production build passed with three existing webpack performance warnings. The browser reached seeded Course Media but could not select files. Native file-selection E2E, live uploads/storage/CDN, Download retry and orphan cleanup are unverified. No success is inferred before confirmation, and no cleanup of unconfirmed storage objects is promised.
+
+## M7 Course content retest guidance — 3 November 2026
+
+[PR #77](https://github.com/app-video-platform/video-platform-ui/pull/77) is merged. Use the [existing status table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026) and four resolution notes. Preserve historical outcomes; add new attempts only after authorized execution. Trello remains operational, and paused QA is not resumed by documentation work. Do not run destructive tests on production content.
+
+| Issue | Required retest |
+| --- | --- |
+| BUG-021 | Save paragraphs, bold, lists and permitted links; read/reload as owner and entitled learner, compare safe legacy HTML/text, and verify guest/unauthorized redaction plus unsafe markup/scheme sanitization. |
+| BUG-019 | With multiple questions change Auto-Split 100→200→50; test uneven totals, first-question remainder allocation, invalid empty/zero/negative/fractional input, Manual Split switching and unchanged passing-score behavior. Verify dedicated Quiz persistence separately from Lesson payloads. |
+| BUG-020 | In at least two questions activate second Points/Explanation labels and verify own-field focus, unique IDs, accessible names and keyboard move/remove; add/reorder/remove and repeat. |
+| BUG-059 | Course sections and Download groups: fail a position PATCH, inspect error/saving, retry successfully and ensure the old error clears only after all relevant writes succeed. Safely test partial failure and queued/out-of-order completion against actual server order. |
+
+Reported automated verification passed 781 tests / 119 suites (81 focused / six), TypeScript, lint (0 errors / 195 warnings), whitespace and a 27.065-second production build with three existing performance warnings. Browser compilation/homepage checks passed, but the saved Course route was unavailable, preventing interaction verification. Article/Quiz/reorder browser journeys, live-backend E2E and complete learner assessment remain pending. Multiple position PATCHes are non-atomic, with no automatic rollback/all-or-nothing guarantee or forced-navigation/browser-termination persistence guarantee.
+
+## M8 request freshness retest guidance — 3 November 2026
+
+[PR #78](https://github.com/app-video-platform/video-platform-ui/pull/78) is merged
+into main as `ee826e5`, implementation `a0e0c3b`. Use the [existing implementation
+status table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and five resolution notes. Confirm the deployed revision before recording new
+attempts; preserve the original September-run outcomes and evidence. This update
+does not resume paused execution or change Trello. Use harmless fixtures and
+controlled environments for response ordering; do not mutate production data.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-039](runs/2026-09-30-01/issues/BUG-039.md) | Start Product A, select B while A is pending, resolve B then A; B must remain visible. Also finish A while B is pending and confirm B stays loading, then test real current 404/error, Retry and direct reload. |
+| [BUG-071](runs/2026-09-30-01/issues/BUG-071.md) | Display A then select delayed B: A must disappear rather than appear under B's route. Resolve newer B before older A success/rejection, repeat rapid A → B → A, verify matching identity/loading, current failure/Retry and direct reload. |
+| [BUG-072](runs/2026-09-30-01/issues/BUG-072.md) | Select A then B; resolve B before A success/rejection and confirm B's drawer and URL remain selected. Close during a pending read and release it: no reopening. Reopen the same Order, reload its URL, and check current 404/error/Retry without changing selection. |
+| [BUG-054](runs/2026-09-30-01/issues/BUG-054.md) | Rapidly combine Audit Target ID, mixed-case type, Action and page changes, resolving older queries last. Repeat for Product exact search, owner, type/status and paging. Assert current-filter rows, page reset, loading/disabled paging, empty/error/Retry states, stale errors ignored and independence from Users/role status. Verify any deletion refresh only with disposable nonproduction fixtures. |
+| [BUG-053](runs/2026-09-30-01/issues/BUG-053.md) | Load an owned Customer, then missing/inaccessible Customers: both unavailable cases must have safe identical 404 feedback. Simulate 503/network failure for distinct load/retry messaging. Retry successfully and navigate from failed to valid Customer; no placeholder integration copy, raw backend details or previous-customer error. |
+
+Across the five request channels, include current failure followed by stale
+success, stale rejection while the current request is pending, duplicate
+same-target reads, A → B → A, unmount/clear and account/role changes during pending
+reads. Verify data, loading and errors; request cancellation alone is not a pass.
+Record the actual completion order and selected route/query. Keep server ownership
+and M1 account isolation checks separate from per-view freshness.
+
+PR #78 and the handoff report 836 tests / 121 suites, 58 focused tests / three
+suites, TypeScript, lint (0 errors / 195 warnings), whitespace and a successful
+30.173-second mocks-disabled production build with three existing Webpack
+bundle-size/performance warnings. Synthetic browser coverage: Product Overview,
+Customer switching/404, Sales selection/close/reload. Deliberate ordering and Admin
+filter races were automated tests, not browser E2E. Deployed detail races, live
+Admin queries, real backend/network timing and final deployment QA remain pending;
+append results only after those retests are actually executed.

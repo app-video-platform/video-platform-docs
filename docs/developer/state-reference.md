@@ -24,6 +24,27 @@ Redux Toolkit state lives under `src/core/store`.
 | `shopCart` | `src/core/store/shop-cart/*` | `selectAllShopCartProducts`, `selectShopCartTotal`, `selectCartCount`, `selectCartIds` | Browser-saved cart used by the current free-enrollment and paid-checkout flow; payment/order records stay in backend APIs, not Redux. |
 | `wishlist` | `src/core/store/wishlist/*` | `selectWishlistProducts`, `selectWishlistIds`, `selectWishlistCount`, `makeSelectIsInWishlist` | Browser-saved wishlist with cart interop. |
 
+## Current detail and query status
+
+M8 keeps request ownership in each affected slice. Use these selectors for active
+read status instead of a shared list/mutation flag:
+
+| Channel | Status and identity selectors |
+| --- | --- |
+| Product detail | `selectProductDetailLoading`, `selectProductDetailError`, `selectProductDetailId` |
+| Customer detail | `selectCreatorCustomerDetailLoading`, `selectCreatorCustomerDetailError`, `selectCreatorCustomerDetailStatus`, `selectCreatorCustomerDetailId` |
+| Sales Order detail | `selectCreatorOrderDetailLoading`, `selectCreatorOrderDetailError`, `selectCreatorOrderDetailId` |
+| Admin Products | `selectAdminProductsLoading`, `selectAdminProductsError`, `selectAdminProductsQueryKey` |
+| Admin Audit | `selectAdminAuditLoading`, `selectAdminAuditError`, `selectAdminAuditQueryKey` |
+
+Product detail status is independent of Product lists/mutations. Customer and
+Order detail status remains independent of their lists. Admin Product and Audit
+requests neither consume nor mutate the legacy `selectAdminLoading` /
+`selectAdminError` channel used by Users/role operations. Data selectors remain
+available as listed above, but components must guard data/status against the
+current route or query. See [request ownership and lifecycle](./architecture/state-and-data-flow.md#active-read-request-ownership-m8)
+for pending, completion, clear, retry and session rules.
+
 ## Persistence notes
 
 Auth persistence depends on backend/session behavior through the HTTP client and profile loading.

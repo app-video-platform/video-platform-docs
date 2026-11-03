@@ -56,6 +56,17 @@ On desktop, filters are visible in the toolbar. On smaller screens, filters move
 
 Selecting an order opens a detail drawer while keeping the Sales workspace visible in the background. The URL stores the selected order in the `order` query parameter, so a selected order can be deep-linked or restored on refresh when the Sales detail contract has data for that order.
 
+The drawer stays open while the selected Order loads. Switching Orders replaces
+its contents with loading feedback for the new selection; an earlier response
+cannot replace or close the current drawer. A load failure stays in the drawer
+with **Order details could not be loaded.** and **Retry**, which reloads that Order
+without changing the selection. Retry reloads the Order details; payment actions
+remain unavailable.
+
+Closing the drawer removes the selected Order from the URL. A response arriving
+after closing cannot reopen it. Reopening an Order requests its details again;
+server access checks still determine whether those details are available.
+
 Order detail can show:
 
 - Order amount, type, date, and status.

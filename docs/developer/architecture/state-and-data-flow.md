@@ -133,11 +133,97 @@ M1 keeps `sessionStatus` (`resolving`, `authenticated`, `unauthenticated`, `unav
 
 `session.middleware.ts` must run before Product notification listeners. It associates thunk request IDs with session versions and drops old-session fulfillments and rejections before reducers/listeners, preventing cache repopulation and stale notifications. Add new account-owned thunk namespaces to its scoped-prefix list. Public Storefront and landing-config fetches are exempt. This does not replace feature-level query/entity freshness checks. The [HTTP client](../api/http-client.md) also rejects stale private responses.
 
+## Active read request ownership (M8)
+
+Merged [PR #78](https://github.com/app-video-platform/video-platform-ui/pull/78)
+tracks freshness in the existing slices using Redux Toolkit's `meta.requestId`.
+There is no global request manager or new API contract. Source version:
+implementation `a0e0c3b`, main merge `ee826e5` (3 November 2026); GitHub comparison
+shows the implementation is contained in main with no file differences.
+
+| Read channel | Active selection and status | Implementation |
+| --- | --- | --- |
+| Product detail | `detailRequestId`, `detailProductId`, `detailLoading`, `detailError` | [product.slice.ts](https://github.com/app-video-platform/video-platform-ui/blob/a0e0c3b163a8ff626a6c22580bcc99bc71fd7d9d/src/core/store/product-store/product.slice.ts) and `product.selectors.ts` |
+| Creator Customer detail | `detailRequestId`, `detailCustomerId`, `detailLoading`, `detailError`, HTTP `detailStatus` | [customers.slice.ts](https://github.com/app-video-platform/video-platform-ui/blob/a0e0c3b163a8ff626a6c22580bcc99bc71fd7d9d/src/core/store/customers-store/customers.slice.ts) |
+| Creator Order detail | `detailRequestId`, `detailOrderId`, `detailLoading`, `detailError` | [sales.slice.ts](https://github.com/app-video-platform/video-platform-ui/blob/a0e0c3b163a8ff626a6c22580bcc99bc71fd7d9d/src/core/store/sales-store/sales.slice.ts) |
+| Admin Products / Audit | Independent `productsRequestId` / `auditRequestId`, query keys, loading and errors | [admin.slice.ts](https://github.com/app-video-platform/video-platform-ui/blob/a0e0c3b163a8ff626a6c22580bcc99bc71fd7d9d/src/core/store/admin-store/admin.slice.ts) |
+
+Detail pending records the request and target IDs, clears the prior detail/error,
+and starts its own loading state. Fulfilled and rejected handlers write only
+when both IDs match. Stale completions perform no writes: they cannot replace
+data/errors, erase newer data, or end a newer request's loading. Matching
+completion releases the request ID but retains the target for settled status
+matching. Request IDs distinguish duplicate same-target reads and A → B → A
+navigation; matching the entity ID alone is insufficient.
+
+`clearCurrentProduct`, `clearCurrentCustomer`, and `clearCurrentOrder` invalidate
+pending ownership and clear detail/status. Product Overview, CustomerDetail and
+the Sales selection effect clean up on selection change/unmount. Route/selection
+ID guards prevent another entity from appearing during the render before the
+new request effect runs. The Customer tabs reset to Overview. The Sales drawer's
+open state follows the `order` query parameter, with loading/error/Retry inside
+the drawer; close removes that query and invalidates the pending read.
+
+Product detail consumers use the detail selectors rather than list/mutation
+status. Preview, public Product, landing-page builder and workspace initial
+loading use that channel; existing authoring mutation/autosave feedback remains
+separate. Customer and Sales retain their existing list/detail separation.
+
+Admin pending stores `JSON.stringify(action.meta.arg ?? {})` as the channel's
+query key and clears that channel's results/error. Only the owned request may
+settle. Pages compare a query built with the same field order before showing
+rows/errors: Audit uses action, targetType, targetId, page, size; Products uses
+search, ownerId, type, status, page, size. Filters reset page to zero. Pending or
+query mismatch hides old rows and disables paging; successful empty results and
+errors with Retry are distinct. Input case and service query serialization are
+preserved; the backend determines matching semantics. Product deletion refresh
+reads the latest query ref when it completes rather than an older click closure.
+Product and Audit requests do not modify the legacy Admin `loading`/`error` used
+by Users and role operations; their dedicated selectors isolate all three
+channels. This is a frontend safeguard, not server response-ordering behavior.
+
+Customer detail rejection retains Axios HTTP status and a safe generic message.
+HTTP 404 renders unavailable/not-found feedback; other failures render generic
+load/retry feedback without raw backend details or internal IDs. The same 404
+can represent nonexistent or inaccessible Customers. See [Customers](../../product/creators/customers.md#detail-loading-and-recovery).
+
+These guards complement [M1 session isolation](#account-and-session-boundaries),
+which remains authoritative for account transitions. Navigation/clear invalidates
+state ownership without adding transport cancellation. M1 retains its existing
+session-generation checks, private-cache reset and Axios cancellation; late reads
+cannot populate a new account. Freshness does not authorize reads or revoke
+server operations that have already committed.
+
+### M8 verification boundary
+
+PR #78 and `M8_DOCUMENTATION_HANDOFF.md` report **836 tests / 121 suites** and
+**58 focused tests / three suites**, TypeScript, ESLint (0 errors / 195 warnings),
+whitespace checks, and a production build with mocks disabled in **30.173 seconds**
+(three existing Webpack bundle-size/performance warnings). The two new suites
+contain 54 controlled ownership/component tests; the focused run also includes
+the four Admin reducer tests.
+
+`src/core/store/request-freshness.test.ts` controls responses through actual
+thunks/services/root reducer and M1 middleware: B-before-A, A while B pending,
+stale success/rejection, current failure/retry, A → B → A, duplicate same-ID reads,
+clear/reopen and session changes. `src/domains/app/pages/request-freshness.integration.test.tsx`
+asserts rendered Product/Customer/Sales/Admin behavior, safe Customer 404/503/network
+feedback, combined Admin filters, mixed-case serialization, paging and empty/error
+recovery. `admin-store/admin-slice.test.ts` also asserts legacy Users status stays
+unchanged by Product completion/failure.
+
+Reported local synthetic browser checks covered Product Overview, Customer
+switching/404 feedback and Sales selection/close/reload. Admin filter races and
+controlled response ordering were automated-test coverage, not browser E2E.
+Deployed Product/Customer/Sales races, live Admin queries, backend/network timing
+and final deployment QA remain unverified. Documentation work does not rerun or
+resume the paused QA execution.
+
 ## Saved workspace and nested authoring
 
 M2 preserves the shared `ProductForm`, two-step Draft creation and separate persistence contracts. All hooks execute before loading/error/access returns for saved Course, Download, Consultation and Membership workspaces. `use-product-loader.hooks.ts` ignores completions after cleanup or route identity changes; changing the legacy normalization callback alone does not reload or replace the draft.
 
-`use-nested-autosave.hook.ts` keeps each Section/Lesson's last confirmed snapshot, latest dirty revision, two-second debounce and in-flight promise. Writes serialize per entity and newer edits follow the in-flight revision. Failure retains dirty state and exposes inline retry. Reordering uses the same queue; deletion waits for relevant mounted saves.
+`use-nested-autosave.hook.ts` keeps each Section/Lesson's last confirmed snapshot, latest dirty revision, two-second debounce and in-flight promise. Writes serialize per entity and newer edits follow the in-flight revision. Failure retains dirty state and exposes inline retry. Lesson reordering retains its entity queue. M7 Section/group ordering uses a separate batch queue described below; section detail snapshots omit position. Deletion waits for relevant mounted saves.
 
 `nested-autosave-context.ts` registers mounted flush handles, not another persistence store. Workspace tabs await nested writes before unmounting editors. Products departure, Preview and Publish flush nested writes, then Product details, then recheck nested writes. Waiting shows **Saving changes before continuing…**; failure keeps the editor and offers **Retry saving**. Retry saves in place, after which the user chooses navigation again.
 
@@ -154,3 +240,15 @@ Merged [M1 PR #71](https://github.com/app-video-platform/video-platform-ui/pull/
 Merged [M2 PR #72](https://github.com/app-video-platform/video-platform-ui/pull/72) and `M2_DOCUMENTATION_HANDOFF.md` record 664 tests across 103 suites after M1 integration, including 29 focused compatibility tests (21 workspace integration tests). TypeScript, lint (0 errors, 205 existing warnings) and production build (3 performance warnings) passed. Earlier intercepted-HTTP browser checks passed for four-type reopen/reload, Article round trips, nested navigation/failure/retry and Membership recovery on the original M2 baseline; fixture destination pages were used and checks were not rerun after final integration.
 
 These establish merged frontend implementation and synthetic verification. Live-backend E2E remains pending for real cookie rotation, cross-origin deployment, refresh/logout ordering, persisted authoring/navigation and account/role journeys. Deployment/final QA confirmation is not established. No new authentication endpoints or backend guarantees are implied.
+
+## M7 Course content and ordering
+
+QuizWizard binds Auto-Split to `QuizDraft.totalScore`. `Number(value)` must be a positive integer; empty, zero, negative, fractional and non-numeric drafts show **Enter a whole number greater than zero.** without updating model allocations. `autoSplitQuizPoints` uses floor(total/questionCount) and assigns one remainder point to successive questions in array order. Manual Split uses `syncTotalScoreToPoints` and a read-only total; switching back redistributes it. Passing-score handling is unchanged, not newly validated by this fix. The mode itself remains local editor state.
+
+QuestionCard uses `useId()`-based names/IDs for Points/Explanation, and QuizWizard keys cards by `q.id`. Add/remove/move retain identity for surviving cards, normalize positions when appropriate and preserve label associations. Native button controls expose Move question N up/down and Remove question N names with boundary moves disabled. Do not infer verified screen-reader speech from component focus tests.
+
+CreateProductSections queues complete reorder batches through `orderQueueRef`. Within one batch it dispatches independent position PATCHes concurrently and uses Promise.allSettled; any rejection makes that order fail. Only the latest revision updates saving/error feedback; a successful latest batch clears the order error after every response succeeds. Retry order save uses the current section list. Title/description autosaves omit position, avoiding debounced writes racing the order queue. Deletion flushes registered nested saves, deletes, normalizes remaining positions and enqueues their save.
+
+The order queue is separate from the mounted nested autosave registry; do not extend its navigation contract to guarantee order persistence on unmount, forced/history navigation or browser termination. Independent PATCHes are non-atomic: partial failure can leave partial server positions until retry. There is no automatic rollback or backend transaction; stronger all-or-nothing semantics require a separate backend contract.
+
+Merged [PR #77](https://github.com/app-video-platform/video-platform-ui/pull/77) is main merge `796ceff`, implementation `5ad9510`. PR #77 and M7_DOCUMENTATION_HANDOFF.md report 781 tests / 119 suites, including 81 focused tests / six suites; TypeScript, ESLint (0 errors / 195 warnings), whitespace and production build passed (27.065 seconds; three existing webpack bundle-size/performance warnings). Synthetic browser checks confirmed compilation and homepage rendering only. The saved Course route was unavailable in a separate tab, so Article, Quiz and reorder interactions were not browser-verified. Full browser journeys, live-backend E2E and the complete learner Quiz assessment workflow remain unverified. Multi-PATCH ordering is non-atomic; forced navigation and browser termination have no persistence guarantee. Supported Article formats and sanitization are documented in [RichTextEditor](../components/rich-text-editor.md#article-reader-conversion-and-sanitization); rendering does not change authorization.

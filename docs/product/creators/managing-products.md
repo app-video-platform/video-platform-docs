@@ -68,6 +68,13 @@ The current Product Overview shows type-specific read-only summaries:
 
 Creator product navigation follows this rule: product identity links open Product Overview, while explicit edit/build actions open Product Workspace. This applies to the Products list and relevant Creator surfaces such as Dashboard, Analytics, and Sales where the implementation uses product identity links.
 
+When switching between Products, Overview shows loading for the selected Product
+until its details arrive. An earlier Product's response cannot replace the current
+selection or cause a false **Product not found** state. Loading and error feedback
+belong to the current selection; a failed load offers **Retry**. Product information
+is shown only after a valid response for that Product, subject to existing access
+rules.
+
 ## Landing page builder
 
 The Product Landing Page Builder is the Creator area for configuring the public presentation of a single product.

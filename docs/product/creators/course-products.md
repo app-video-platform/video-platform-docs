@@ -46,7 +46,7 @@ Course content is organized into sections. A section can have a title and descri
 
 Creators add sections explicitly with the Add section surface. Once a section has the required title, it can be created and then edited. Existing sections can be renamed, described, reordered, or removed.
 
-Section title, description, and position changes are saved after the section exists. Section and Lesson edits save after a two-second pause, with writes sequenced so an older save finishes before a newer revision. Reordering uses the same save flow, and deletion waits for relevant pending edits. Workspace navigation waits for nested saves; failures retain edits with retry feedback. See [Save behavior](./creating-a-product.md#save-behavior) for navigation and browser-close limits.
+Section title and description changes save after a two-second pause, with entity writes sequenced. Lesson autosave remains separate. Section reordering uses its own queued order save and shows Saving/error feedback. If it fails, use **Retry order save**; the error clears after the relevant whole order saves successfully. Some positions may already have saved when another fails, so retry is needed to finish the order; there is no all-or-nothing save or automatic rollback. Deletion waits for relevant pending edits and then saves the remaining order. Workspace controls wait for registered nested detail saves; this does not add a guarantee for every independent order write or forced navigation. See [Save behavior](./creating-a-product.md#save-behavior) for navigation and browser-close limits.
 
 ### Lessons
 
@@ -64,7 +64,7 @@ Article lessons show a rich text editor for writing article content.
 
 Reopening an Article editor uses its latest saved body and formatting. Opening it without editing does not itself save a replacement body. Ordinary workspace updates preserve active typing. If saved structured content uses an unsupported format, the editor explains that the body has been preserved rather than replacing it with starter text.
 
-Article editing is separate from the customer Article reader, whose rendering limitations remain.
+The Course reader displays supported saved Article formatting, including paragraphs, bold text, lists and allowed links, rather than editor serialization. Supported older HTML is sanitized and older plain text is displayed safely. Empty, malformed or unsupported structured content is omitted, not displayed as raw JSON. Formatting support is limited to the supported editor formats; it does not change who may read private lesson bodies.
 
 ### Quiz lessons
 
@@ -80,6 +80,12 @@ Quiz lessons show a quiz editor. Creators can configure:
 - Question explanations.
 - Answer shuffling.
 - Question order controls.
+
+In **Auto-Split**, Total points accepts positive whole numbers and immediately updates question allocations. Uneven totals give extra points to earlier questions: 100 across three questions becomes 34, 33, 33. Invalid totals show feedback while retaining the previous valid allocation. If there are more questions than points, later questions can receive zero points.
+
+In **Manual Split**, edit each question's points; the displayed total is calculated from their sum. Returning to Auto-Split redistributes that total. Passing Score keeps its existing behavior. Each question has its own Points and Explanation label/field association, plus named Move up/down and Remove controls. Moving/removing questions keeps those associations intact.
+
+These are authoring controls. Normal Lesson saving does not establish dedicated Quiz-definition persistence or a complete learner assessment workflow; the builder's end-to-end integration with those separate contracts remains unverified.
 
 ### Builder navigation
 

@@ -36,6 +36,13 @@ The Audit page loads admin audit entries into a table. The filter fields refresh
 
 Each row shows the time of the action, the actor, the action name, the target, and before/after summaries. If a before or after summary is not available, the table shows a placeholder dash.
 
+Results follow the current combination of Action, Target type, Target ID, and
+page. Earlier responses cannot replace the rows for a newer selection. While
+loading, obsolete rows are hidden and paging is disabled. A successful query with
+no matches shows **No results found.**; a failed query shows an error with **Retry**
+for the current filters and page. Loading and errors are independent of the Admin
+Products and Users areas.
+
 ## Current limitations
 
 - The Audit area shows user IDs and target IDs rather than full linked detail views.
