@@ -22,6 +22,12 @@ Administrator and End User accounts.
 
 The public Storefront page can be opened by visitors and signed-in users.
 
+Explore and Search Creator links open this public Storefront for Guests, End
+Users, Creators and Administrators. Product-card **View Product** opens a Product
+Landing Page instead. A missing Creator ID does not produce a broken Storefront
+link: Explore retains plain Creator text and search results omit the link.
+Storefront content remains subject to existing public visibility and access rules.
+
 ## What creators can do
 
 Creators can:

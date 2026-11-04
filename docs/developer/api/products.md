@@ -38,6 +38,19 @@ Product services are split across:
 | `addProductPromoVideoAPI` | `POST api/products/:id/media/promo-video` | Replaces the promo video. |
 | `removeProductPromoVideoAPI` | `DELETE api/products/:id/media/promo-video` | Removes the promo video. |
 
+`fetchProducts` uses URLSearchParams and defaults sort to `createdAt,desc`;
+SearchResultsPage supplies size 20 and SmartSearch uses page 0 / size 10. Its
+`SearchResponse` declares `content`, `number`, `size`, `totalElements`,
+`totalPages`, `first`, `last`, `numberOfElements`, `empty`, `pageable`, and sort
+metadata. It exposes no independent continuation token or reliable total-count
+source. Normalizing Product summaries preserves the response metadata.
+
+M10 corrects URL/one-based display behavior while retaining the API's Next
+contract. Public and owner-scoped search have historical contradictory totals;
+[BUG-013 remains a backend dependency](../backend/products-and-authoring.md#pagination-metadata-dependency-bug-013).
+The owner-scoped route in that evidence is not a new SmartSearch filter or
+endpoint introduced by M10.
+
 Creator Product Overview uses `getProductByIdAPI` through the existing single-Product read path. It does not have a dedicated Product Overview backend endpoint.
 
 M8 associates `getProductById` Redux detail reads with the latest request and

@@ -204,6 +204,53 @@ filter. Before using them for a public catalogue, define and test server-side
 visibility semantics across all concrete Product tables, including
 Consultations.
 
+### Pagination metadata dependency (BUG-013)
+
+**Unresolved backend contract defect; M10 provides partial frontend presentation
+improvements only.** The existing [BUG-013 QA report](https://github.com/app-video-platform/video-platform-docs/blob/main/qa/runs/2026-09-30-01/issues/BUG-013.md)
+retains public/deployed evidence and a separate isolated owner-search matrix:
+
+| Contract | Evidence scope |
+| --- | --- |
+| `GET /api/products/search?term=&page=&size=&sort=` | Deployed public search and four-role browser/API recheck; size 20. This is the frontend `fetchProducts` path. |
+| `GET /api/products/search/{userId}/products?term=&page=&size=&sort=` | Isolated owner-scoped QA, size 5, two owners / 12 matches each, four viewer roles and three sorts (24 combinations). No deployed owner-route/browser equivalence is claimed. |
+
+For the same public query and size 20, the recorded metadata contradicts the
+returned content:
+
+| Requested page | Returned Products | totalElements | totalPages | last |
+| --- | --- | --- | --- | --- |
+| 0 | 20 | 20 | 1 | true |
+| 1 | 20 additional IDs | 40 | 2 | true |
+
+The isolated owner-scoped matrix similarly reports 5/1/last=true at page zero,
+10/2/last=true at page one, then returns the remaining two of twelve on page two.
+Correct owner isolation and sort controls passed independently. Sources are
+`qa/runs/2026-09-30-01/issues/BUG-013.md`, its linked public API evidence, and the
+existing Product API evidence packet's
+`isolated-admin-gates-owner-search-consultation-details-matrix` entry. The case
+catalog DISC-012 and retained controller-route evidence confirm the owner path;
+this documentation does not infer a new endpoint or backend implementation.
+
+For a stable catalog and identical term, filters, owner scope, sort and page size,
+all pages must describe the complete matching set consistently: stable
+`totalElements` and `totalPages`, matching page/content identity, and `last=true`
+only on the actual final page. If reliable totals cannot be supplied, a documented
+and correct continuation signal is required. The current frontend contract has
+no independent reliable token/count source. A full page can be truly final, so
+content length cannot safely imply another page or reconstruct total counts.
+
+M10 fixes one-based labels, URL state and empty/out-of-range feedback. Next still
+honors `last`/`totalPages`; those changes do not make undisclosed later rows
+reachable. No backend correction is claimed and BUG-013 remains open.
+
+Backend follow-up: correct metadata for both recorded contracts, then use isolated
+fixtures spanning at least three pages. Compare page zero, page one and final
+pages under identical query/sort/size/scope; cover empty matches, exact full-final
+and partial-final pages, verify actual IDs and no cross-owner leakage, then rerun
+the four-role public UI journey with Next/Prev, direct links and reload. Confirm
+backend and deployed frontend revisions before recording a passing retest.
+
 ## Legacy routes
 
 Legacy typed Product reads/deletes, Course section/lesson routes, and generic

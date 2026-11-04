@@ -270,3 +270,38 @@ redirect-encoding failure, backend URL construction, real consent/callbacks,
 token exchange and sync require their own verified evidence. M9 implements
 frontend initialization feedback and does not establish those backend/provider
 outcomes. Trello status remains unchanged.
+
+## M10 Discovery and Search retest guidance — 4 November 2026
+
+[PR #80](https://github.com/app-video-platform/video-platform-ui/pull/80) is merged
+as `bc248bf`, implementation `97aad2e`. Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and four issue follow-ups. Three frontend fixes are complete; BUG-013 is partial
+and remains open. Confirm the deployed revisions, use harmless stable fixtures
+and append actual attempts only after authorized execution. Documentation does not
+resume paused QA, mutate production data or update Trello.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-004](runs/2026-09-30-01/issues/BUG-004.md) | Guest/User/Creator/Admin: follow an Explore Creator link and Search Creator link to `/app/store/:creatorId`; verify public rendering, direct navigation and reload. Check missing identity fallback and unavailable Storefront responses with controlled APIs, not permissive unknown-ID mocks. Verify Product viewing still opens its separate Product route. |
+| [BUG-014](runs/2026-09-30-01/issues/BUG-014.md) | Open API page 1 (visible page two), submit new and same terms, confirm API page zero and omitted page parameter. Traverse Back/Forward and reload: input, heading, URL, results and page must match. Cover encoded/empty direct terms, malformed/negative/noncanonical/unsafe page replacement, stale prior query response and valid empty/out-of-range Return to first page. |
+| [BUG-091](runs/2026-09-30-01/issues/BUG-091.md) | Highlight query A's option, replace with B and immediately press Enter: B must be searched. Repeat with no highlighted option, intentional current ArrowUp/ArrowDown/Enter selection, mouse selection, Escape and clearing. Delay older suggestion responses; they must not replace current options. Inspect combobox/listbox relationships and selected-current active-descendant, with native assistive-technology checks recorded separately. |
+| [BUG-013](runs/2026-09-30-01/issues/BUG-013.md) | **Backend correction required before final Pass.** With more than one page of stable matching Products, compare public page zero/one/final responses and owner-scoped equivalents using identical query, owner, sort and size. Check actual IDs, complete stable totalElements/totalPages, and last only on the true final page. Include empty, exact full-final and partial-final pages, 24 owner role/sort combinations and owner isolation. After correction, verify Next reaches later IDs, Prev, one-based labels, empty states, direct links and reload in the four-role public UI. |
+
+The recorded defect is public page zero: 20 rows / totalElements=20 /
+totalPages=1 / last=true, while page one contains 20 additional IDs / 40 / 2 /
+last=true. The isolated owner route reproduces 5/1/last=true then 10/2/last=true
+before the final two of twelve matches. The public and owner environments remain
+separate evidence scopes. M10 keeps the API metadata contract; row counts alone
+cannot establish reliable continuation. Refer to the [backend follow-up](../docs/developer/backend/products-and-authoring.md#pagination-metadata-dependency-bug-013).
+Do not count corrected labels or controlled pagination fixtures as a resolved
+backend defect or completed later-page E2E.
+
+PR #80 and the handoff report 874 tests / 127 suites, TypeScript, lint (0 errors /
+185 warnings), a successful mocks-disabled production build with three existing
+Webpack performance warnings, and whitespace checks. Synthetic browser checks:
+Guest Storefront navigation/reload, page=2 new-search reset, Back/Forward and
+immediate Enter after input replacement. Unknown-ID local mock Storefront fallback
+is not authoritative; API-mocked unavailable coverage is separate. No M10
+live-backend/deployed E2E was performed. Deployed navigation/history, real network
+timing, corrected metadata and reliable access to later results remain pending.

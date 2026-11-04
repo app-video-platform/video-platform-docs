@@ -35,7 +35,27 @@ Customers can:
 
 Product cards show the product name, product type, price, and creator information when available. Cards also include actions for viewing the product, saving it to the wishlist, and adding it to the cart.
 
-Search suggestions appear after entering enough text in the search field. Selecting a suggestion opens the matching Product Landing Page. Submitting a search opens the search results page, where matching products are listed with pagination controls.
+Search suggestions appear after at least two characters. Selecting a current
+suggestion searches for its title on the results page; **View Product** on a result
+opens its Product Landing Page.
+
+Use Arrow Down or Arrow Up to highlight a current suggestion, then Enter to search
+for its title. With no highlighted suggestion, Enter searches the current text
+once it has at least two characters. Changing the text clears the previous
+selection immediately, so an earlier
+suggestion cannot be submitted for a different query. Escape closes suggestions
+and clears the highlight; mouse selection also uses a current suggestion.
+
+A new search starts on the first results page, including when submitted from a
+later page. Back, Forward, direct search links and reload restore the corresponding
+search text, heading, results and page. Page labels start at **Page 1**. Invalid
+page addresses return to the first page. An empty later page offers **Return to
+first page** rather than treating the entire search as empty.
+
+Creator links on Explore and Search cards open the public Creator Storefront,
+separately from **View Product**. If Creator identity is missing, Explore shows
+plain Creator text and search results omit that link. Visitors, End Users,
+Creators and Administrators can use the public Storefront destination.
 
 Wishlist and cart actions help customers collect products for later review. These actions do not complete a purchase.
 
@@ -45,6 +65,7 @@ Wishlist and cart actions help customers collect products for later review. Thes
 - Wishlist and cart items are saved in the browser and are not synchronized across devices.
 - Adding a product to the cart does not reserve, buy, or grant access to the product.
 - Product discovery may show creator or storefront information only when that information is available in the product data.
+- Later matching results can remain unreachable when the server incorrectly reports the first page as final. M10 corrects page labels and navigation state, but the underlying pagination defect (BUG-013) still requires backend correction; Next availability is not inferred from the number of visible cards.
 - Storefront pages show published products and link to Product Landing Pages, but they do not complete checkout, payment, or post-purchase access.
 
 ## Related pages

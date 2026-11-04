@@ -319,6 +319,28 @@ remain unverified. Prior BUG-081 backend work is separate from M9 initialization
 feedback; an operational Trello completion status is not deployed/provider proof.
 No provider URLs or live-account mutations were exercised for this docs update.
 
+## Discovery search state (M10)
+
+Product discovery keeps its existing React Query path rather than moving reads
+into the M8 Redux channels. The URL owns committed `term` and zero-based `page` at
+`/app/explore/search`; SmartSearch keeps only the editable/debounced input and
+selection locally. Results key on term/page/size, while autocomplete keys on its
+debounced term. Old responses remain isolated to their keys; changing input also
+invalidates a highlighted prior suggestion before debounce completes.
+
+New/same-term submissions reset page to zero, pagination creates history entries,
+and URL traversal restores committed state. Invalid page normalization uses
+replace, not a feedback effect that overwrites Back/Forward with local page state.
+Canonical Creator links use `appRoutes.store(creatorId)` and the public route.
+
+See [Search request, URL and combobox behavior](../components/search.md#smartsearch-query-ownership-m10)
+for exact keys, page parsing, keyboard behavior and M10 verification. M1 session
+boundaries, Product visibility and M5 entitlements remain unchanged; discovery
+navigation is not access authorization. M10 improves pagination presentation,
+but [BUG-013 still requires backend correction](../backend/products-and-authoring.md#pagination-metadata-dependency-bug-013).
+The client retains the API's last/total-page contract and does not infer unseen
+pages or create a parallel continuation mechanism.
+
 ## Saved workspace and nested authoring
 
 M2 preserves the shared `ProductForm`, two-step Draft creation and separate persistence contracts. All hooks execute before loading/error/access returns for saved Course, Download, Consultation and Membership workspaces. `use-product-loader.hooks.ts` ignores completions after cleanup or route identity changes; changing the legacy normalization callback alone does not reload or replace the draft.
