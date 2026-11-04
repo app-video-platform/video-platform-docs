@@ -127,6 +127,13 @@ Canonical section routes work for Course and Download Products.
 - Services reject section operations for unsupported Product types.
 - Updating or deleting a section verifies that it belongs to the Product path.
 
+Published-content deletion checks run before removing a lesson, file, or section.
+A Published Course must retain at least one section and lesson; a Published
+Download must retain at least one confirmed file. Rejected removals return
+HTTP 422 with field-keyed errors. Hide the Product before removing its final
+required content. Publication updates and removals lock the concrete Product
+row within their transaction to serialize competing requests.
+
 ## Lessons
 
 Lessons are supported only for Course Products.

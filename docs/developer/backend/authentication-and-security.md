@@ -31,6 +31,14 @@ Registration:
 3. Creates a disabled account with the single `USER` role.
 4. Creates and sends an email-verification token.
 
+Account, role association, and verification-token persistence share a
+transaction. If the synchronous mail provider rejects the request or sending
+throws an I/O error, the new account and token roll back. The same email can
+retry normal registration after the provider recovers. A successful response
+means the provider accepted the message, not that mailbox delivery is proven.
+Existing accounts still reject duplicate registration. Previously persisted
+disabled accounts are not deleted by this recovery behavior.
+
 Local login rejects an unverified account. Verification enables the account
 through the verification-token flow.
 
@@ -121,8 +129,9 @@ it. Production must disable this capability deliberately.
 
 - Tracked configuration currently contains sensitive defaults or values. Move
   secrets to environment-managed configuration and rotate exposed credentials.
-- Authentication logging currently risks serializing registration or User data
-  containing password material. Redact sensitive DTOs and entities.
+- Registration and verification-token creation log event names and user IDs.
+  Do not reintroduce logging of passwords, tokens, authentication DTOs, or full
+  User entities.
 - Swagger's docs-profile user is configured in code and should use managed
   credentials before broader exposure.
 - The generic exception handler can disclose exception messages.

@@ -71,7 +71,10 @@ The workflow:
 2. Sets up Temurin Java 17 with Maven caching.
 3. Runs `./mvnw -B -ntp test`.
 4. On a successful push to `main`, configures deployment SSH credentials.
-5. Pushes the tested revision to the configured Dokku application.
+5. Sets the app-scoped Nginx body limit to `100m`, matching the largest default
+   raw-media upload.
+6. Pushes the tested revision to the configured Dokku application, regenerating
+   its proxy configuration with that persisted setting.
 
 Pull requests test but do not deploy. A push to `main` deploys only after the
 test job succeeds.
@@ -84,6 +87,50 @@ PostgreSQL. Dokku/Nginx routes external traffic to the Spring Boot application.
 Deployment-specific hostnames, ports, SSH material, database credentials, and
 provider secrets belong in repository secrets, Dokku configuration, or other
 managed environment configuration—not in source or documentation.
+
+## Media request-body limits
+
+Dokku's Nginx default is `1m`, below the backend's default 10 MiB image and
+100 MiB promo-video limits. Set a per-app limit rather than changing the global
+setting or disabling request limits:
+
+```bash
+dokku nginx:set APP_NAME client-max-body-size 100m
+dokku proxy:build-config APP_NAME
+dokku nginx:report APP_NAME --nginx-computed-client-max-body-size
+nginx -t
+```
+
+Run these commands on the Droplet with deployment permissions. The CI deploy
+job persists `100m` before its Git push; manually applying the setting requires
+the explicit proxy rebuild shown above. Keep the cap and regression check
+aligned if configured backend upload limits change. Application validation
+continues to enforce its own image/video limits.
+
+From the backend repository, check the deployed transport boundary:
+
+```bash
+python3 scripts/check-media-proxy.py https://YOUR_API_HOST
+```
+
+The check sends no cookies or credentials. It uses headers-only requests for
+the 100 MiB boundary and sends one 1 MiB + 1 byte unauthenticated image request.
+Supported sizes must receive `100 Continue` or an early authentication
+rejection; 100 MiB + 1 byte must receive 413. The full smaller request must
+reach authentication and return 401/403. No successful upload, object storage,
+or image/video playback is established by this check. Verify those separately
+with synthetic content after deployment.
+
+For rollback, restore the previously recorded app value and rebuild the proxy.
+If the app previously inherited the global default, unset the override:
+
+```bash
+dokku nginx:set APP_NAME client-max-body-size
+dokku proxy:build-config APP_NAME
+```
+
+[Dokku Nginx properties](https://dokku.com/docs~v0.34.9/networking/proxies/nginx/)
+describe the setting and required proxy rebuild for this deployment generation.
 
 ## Read-only test diagnostics
 

@@ -49,7 +49,12 @@ The frontend sends the file to the backend, which validates ownership, MIME
 type, size, and gallery count before streaming it to Spaces. This flow does not
 use browser presigned uploads.
 
-Objects use owner/Product-scoped keys and public CDN URLs. Metadata is stored in
+Objects use owner/Product-scoped keys, object-level `public-read` ACLs, and
+public CDN URLs. The dedicated public upload method accepts only canonical
+Product presentation keys. Protected Download uploads keep their private
+presigned flow. Presentation object permissions are independent of Product
+status: hiding a Product does not revoke an existing marketing-media URL.
+Metadata is stored in
 `product_media` and returned in Product responses with immediate `READY`
 status. Image limits are 10 MB for JPEG, PNG, WebP, or GIF; promo-video limits
 are 100 MB for MP4 or WebM; gallery count is 20. These defaults are runtime
@@ -58,6 +63,33 @@ server-side. Object deletions run only after the database transaction commits;
 a rollback leaves the previous objects untouched. Product deletion checks
 ownership before any metadata or storage cleanup. Failed post-commit object
 cleanup is logged after active metadata is removed.
+
+### Existing presentation objects after a permission repair
+
+Changing upload code affects new objects. Existing private presentation objects
+need a separate, reviewed object-ACL repair. Select exact `READY` rows from
+`product_media`, verify the owner/Product/kind namespace against the owning
+Product, and confirm that each key identifies presentation media. Do not apply
+this repair to protected Download objects or change the bucket's permissions.
+
+With the existing Spaces credentials configured privately in the AWS CLI,
+inspect and then repair one verified object:
+
+```bash
+aws --endpoint-url "$SPACES_ORIGIN_ENDPOINT" s3api get-object-acl \
+  --bucket "$SPACES_BUCKET" --key "$VERIFIED_PRODUCT_MEDIA_KEY"
+aws --endpoint-url "$SPACES_ORIGIN_ENDPOINT" s3api put-object-acl \
+  --bucket "$SPACES_BUCKET" --key "$VERIFIED_PRODUCT_MEDIA_KEY" --acl public-read
+```
+
+Verify anonymous retrieval from both origin and CDN afterward, including image
+rendering or video playback. A bucket policy can still deny access even when an
+object has a public ACL; inspect that policy if retrieval remains forbidden.
+Use the Spaces CDN cache controls if an earlier denial remains cached. No ACL
+repair runs automatically at application startup or during a migration.
+
+[DigitalOcean object-permission guidance](https://docs.digitalocean.com/products/spaces/how-to/set-file-permissions/)
+explains public object ACLs and temporary access to private files.
 
 ### Customer download flow
 
@@ -103,6 +135,27 @@ client implementation before documenting a provider as production-ready.
 OAuth state binds the provider and authenticated user and has an expiry. State
 integrity and stored provider token confidentiality depend on separate signing
 and encryption configuration.
+
+Microsoft consent initialization encodes scopes, the configured redirect URI,
+signed state, and optional login hint as opaque query values. Consumers should
+navigate to the returned authorization URL without decoding and rebuilding
+it. Initialization alone does not create a connection or prove provider
+consent/token exchange.
+
+Microsoft token redemption uses the form writer for the original authorization
+code, client secret, redirect URI, and other fields. Pass original values to
+the writer so it encodes each field exactly once. This preserves characters
+such as `+`, `&`, and `%` in the values Microsoft decodes. See
+[Microsoft’s token redemption contract](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow#redeem-a-code-for-an-access-token).
+
+Microsoft token exchange requires a nonblank string access token before a
+connection can be encrypted and stored. Missing, blank or wrongly typed access
+values and malformed response bodies fail with a controlled OAuth error.
+Rejected responses do not create a connection.
+
+Provider token expiry is optional. Connection-list and Consultation summaries
+retain connections with an unknown expiry and return a nullable timestamp;
+they do not invent an expiry or expose stored token material.
 
 The frontend currently exposes provider discovery and connection initiation,
 but not the complete list/disconnect management flow.
