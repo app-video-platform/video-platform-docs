@@ -432,3 +432,67 @@ matrix, all Product families, native 200% zoom, complete keyboard traversal,
 full history/reload matrix or deployed/live-backend E2E. Neither build success
 nor these scoped observations establish complete responsive or WCAG compliance.
 M1–M12 contracts and BUG-013's backend dependency remain unchanged.
+
+## M14 Long content and media layout retest guidance — 5 November 2026
+
+[PR #84](https://github.com/app-video-platform/video-platform-ui/pull/84) merged
+as `a5e9bf1` (implementation `9138988`). Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and five M14 issue addenda. Frontend implementation is complete; exact historical
+long-content reproductions are not verified after the fix. Confirm deployed
+revisions and authorized QA before new attempts. Preserve original results,
+measurements, roles, screenshots, investigations and cleanup. This documentation
+update does not resume paused execution or change Trello.
+
+Use retained valid synthetic fixtures or isolated controlled data. Do not mutate
+real accounts, Orders, payments, Product inclusion relationships or upload to
+real storage merely for a documentation audit. Keep layout evidence separate
+from transaction, entitlement and native upload/persistence checks. Native zoom,
+keyboard and pointer observations must be recorded separately from DOM assertions.
+
+| Issue | Required historical-fixture retest |
+| --- | --- |
+| [BUG-066](runs/2026-09-30-01/issues/BUG-066.md) | Retained Customer with long valid combined/individual names, long email and unbroken segments: Overview, Purchases, Access, Notes at 375/768/1440px plus 320px when possible. Measure document/title/identity/panel bounds, verify readable full wrapping, status/actions/links and keyboard interaction. Ordinary Customer fit does not retest the prior 152-character name/112-character email. Reporting remains Creator-only; access-denied roles are not fabricated reporting layout passes. |
+| [BUG-067](runs/2026-09-30-01/issues/BUG-067.md) | Historical two-item Order with long Customer identity/Product titles: mobile transaction cards and desktop ledger at 375/768/1440px plus 320px. Check status/amount alignment, every item and line/Order totals, filters, Order opening, resize/filter retention and keyboard/pointer controls. Verify layout without changing immutable snapshots, payments/refunds or access grants. |
+| [BUG-076](runs/2026-09-30-01/issues/BUG-076.md) | Membership Content → Add content → Existing Product with ordinary, long multiword and long unbroken titles. Check full title/description/status, compact checkbox named Select plus complete title, native checked state/Space and pointer selection, visible focus, readable identity-column width and no drawer/document overflow. Use temporary local selection/cancel or authorized isolated confirmation; do not alter real inclusion relationships for documentation verification. Component tests do not measure the historical collapsed columns. |
+| [BUG-079](runs/2026-09-30-01/issues/BUG-079.md) | Course/Download/Consultation/Membership Media at 375/768/1440px, Creator/Admin where supported: measure parent/dashboard/document bounds and Browse files visibility/keyboard reachability. Compare Thumbnail with Gallery/Promo and desktop. Existing selection/remove/error flows remain separate regression checks. Course's local 309px/702px dimensions do not verify all historical types/roles, native chooser behavior or storage persistence. |
+| [BUG-088](runs/2026-09-30-01/issues/BUG-088.md) | Original valid unbroken Download title at 320/375/768/1440px, direct load and reload: measure hero/title/document bounds, retain full heading, price/actions and no hero-caused document overflow. Add other Product types, themes/layouts, Guest/User/Creator/Admin and authorized private/Builder previews where fixtures permit. Preserve M11 pricing/profile boundaries; ordinary Course fit and a long-title DOM assertion are not a browser Pass for the historical Download. |
+
+### Additional scoped checks and remaining Marketing overflow
+
+Explore action wrapping/reduced mobile padding produced a local synthetic
+Creator document width of 320px at a 320px viewport, versus M13's 366px.
+Retest ordinary and varied Product cards/roles with existing M10 routing/search
+and M13 navigation; do not invent a new issue ID or claim every card fits.
+
+Shared CheckboxInput forwards native checked/disabled states and retains a
+focusable input with a custom focus-visible indicator. Check controlled boolean
+state, disabled/native keyboard behavior and complete accessible names.
+Contact agreement component coverage verifies on/off pointer toggles by reading
+`event.target.checked`; it adds no submission, consent enforcement or backend
+Contact handling. Browser/assistive-technology verification is separate.
+
+Marketing Home/About remain unresolved: M13 recorded 1062px and 762px document
+widths respectively at 320px. These are body findings distinct from corrected
+shared navigation; do not assign an unverified section/root cause or M15 fix.
+See the [current M14 scope](runs/2026-09-30-01/summary.md#m14-implementation-and-remaining-layout-scope--5-november-2026).
+
+### Evidence boundary
+
+PR #84 reports 930 tests / 134 suites, TypeScript, ESLint (0 errors / 183
+warnings), production build (three existing Webpack size/performance warnings)
+and whitespace checks. New component assertions cover full-title picker naming
+and Space selection, mocked Uppy width, full long hero heading/Free price, and
+Contact agreement toggling. Existing Customer/Sales/media tests are behavioral
+regressions, not long-fixture browser geometry tests.
+
+The handoff reports local synthetic Creator ordinary Customer Detail, populated
+Sales, Course Media (Thumbnail/Gallery/Promo) and ordinary Course public hero
+fitting at 320, 375, 390, 480, 768, 1280 and 1440px. Thumbnail measured 309px at
+375px and 702px at 768px. The long Customer/Sales, long-title Membership picker
+and long Download fixtures were unavailable; the local Membership had no
+eligible Products. Guest/Admin, additional Product types, relevant reload/zoom/
+keyboard-pointer matrices, deployed/live-backend E2E and actual native upload
+persistence remain unverified. Neither ordinary-content passes nor CSS/DOM tests
+establish complete responsive conformance. M1–M13 contracts, historical outcomes,
+paused execution and BUG-013's backend dependency remain unchanged.

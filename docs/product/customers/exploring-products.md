@@ -70,7 +70,7 @@ Wishlist and cart actions help customers collect products for later review. Thes
 
 ## Current limitations
 
-- At very narrow widths, an Explore Product-card action can still extend outside the page. Header/search responsiveness does not resolve every Product card or long Product-content layout issue.
+- Product-card actions now wrap on narrow screens. A local Creator check fitted the page at 320px after the earlier action overflow; other card/role variations remain unverified. This does not resolve every long Product-content layout issue.
 
 - Product images in discovery areas are currently placeholders.
 - Wishlist and cart items are saved in the browser and are not synchronized across devices.

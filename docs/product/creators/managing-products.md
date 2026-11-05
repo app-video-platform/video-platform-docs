@@ -139,6 +139,11 @@ Use **Edit product** to open the focused Product Workspace. The current workspac
 
 Product media is generic Product presentation media. Images support JPEG, PNG, WebP, and GIF up to 10 MB each. Promo videos support MP4 and WebM up to 100 MB. Galleries can contain up to 20 images and support ordering/removal. Product media is separate from Course lesson videos, Download deliverables, and Membership Video/Resource binary content.
 
+Thumbnail, Gallery and Promo selection dashboards adapt to the available Media
+workspace width. This layout improvement does not establish successful native
+file selection, upload or persistence. Current local responsive browser checks
+cover a Course workspace; broader Product-type/role checks remain pending.
+
 For supported non-Membership Products, Publish uses the Product Workspace readiness flow and then updates the Product with `status: PUBLISHED`. Backend readiness validation is authoritative and can return field-specific errors that appear in the Readiness area. Membership readiness can be shown, but Membership Product publishing remains unavailable. Unpublish is not implemented.
 
 ## Current limitations

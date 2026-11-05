@@ -47,6 +47,12 @@ Opening a customer shows a Customer Detail page with a back link to the Customer
 
 On smaller screens, the customer list changes from a table-like layout into stacked customer cards, and the detail tabs remain usable in a compact horizontal tab list.
 
+Customer Detail supports wrapping names, emails and other displayed values
+within the page rather than intentionally shortening the main identity to fit.
+Overview, Purchases, Access and Notes remain available. The current responsive
+implementation has ordinary-content checks; unusually long identities still
+need their original narrow-screen browser retest.
+
 ### Detail loading and recovery
 
 Switching Customers shows loading for the selected profile rather than displaying

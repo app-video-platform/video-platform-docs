@@ -71,6 +71,11 @@ This update records merged frontend fixes separately from the historical executi
 | [BUG-087](issues/BUG-087.md) | M13 / [#83](https://github.com/app-video-platform/video-platform-ui/pull/83) | Targeted frontend fix complete and merged; page-body scope separate | Component tests; reported Creator eight-route compact menu at 320px | Pending | Not established |
 | [BUG-012](issues/BUG-012.md) | M13 / [#83](https://github.com/app-video-platform/video-platform-ui/pull/83) | Targeted frontend fix complete and merged; page-body scope separate | Component tests; Creator seven-width header fit and 1440px Explore pointer check | Pending | Not established |
 | [BUG-065](issues/BUG-065.md) | M13 / [#83](https://github.com/app-video-platform/video-platform-ui/pull/83) | Targeted frontend fix complete and merged; page-body scope separate | Reported Creator Profile Settings fit at seven widths; other panels/roles pending | Pending | Not established |
+| [BUG-066](issues/BUG-066.md) | M14 / [#84](https://github.com/app-video-platform/video-platform-ui/pull/84) | Implementation complete and merged; historical-fixture retest pending | Ordinary Customer browser fit; historical long identity pending | Pending | Not established |
+| [BUG-067](issues/BUG-067.md) | M14 / [#84](https://github.com/app-video-platform/video-platform-ui/pull/84) | Implementation complete and merged; historical-fixture retest pending | Populated Sales browser fit; historical long identity/items pending | Pending | Not established |
+| [BUG-076](issues/BUG-076.md) | M14 / [#84](https://github.com/app-video-platform/video-platform-ui/pull/84) | Implementation complete and merged; historical-fixture retest pending | Long-name keyboard component test; historical picker browser geometry pending | Pending | Not established |
+| [BUG-079](issues/BUG-079.md) | M14 / [#84](https://github.com/app-video-platform/video-platform-ui/pull/84) | Implementation complete and merged; historical-fixture retest pending | Creator Course dashboard geometry; other Product/role and upload checks pending | Pending | Not established |
+| [BUG-088](issues/BUG-088.md) | M14 / [#84](https://github.com/app-video-platform/video-platform-ui/pull/84) | Implementation complete and merged; historical-fixture retest pending | Ordinary Course browser fit; historical long Download pending | Pending | Not established |
 
 M1 merged as `52413ed`; M2 merged as `7c13a37` into frontend main. M1 PR verification records 627 tests / 102 suites. Final M2 verification records 664 tests / 103 suites, including M1/M2 compatibility. Both record TypeScript, lint (0 errors, 205 existing warnings), production build (3 performance warnings), and earlier synthetic browser passes. M1 browser checks were not rerun during PR preparation; M2 browser checks used intercepted HTTP and fixture destinations before final integration and were not rerun afterward.
 
@@ -134,6 +139,26 @@ Home/About bounds but do not establish a particular body-section cause.
 proof that the Home/About or Explore-card findings share its cause or ticket
 scope. Keep later page-layout investigation separate; no new issue ID or
 unverified M14/M15 completion/ownership is assigned here.
+
+### M14 implementation and remaining layout scope — 5 November 2026
+
+M14 follow-up — 5 November 2026: [PR #84](https://github.com/app-video-platform/video-platform-ui/pull/84) merged as `a5e9bf16dcea18f51b9108f12a4d54ab6dcf4325`, implementation `91389882bd641a55b4cb1f690b823e2ea3b348b6`, with identical implementation/merge file trees. BUG-066, BUG-067, BUG-076, BUG-079 and BUG-088 have completed frontend implementations for Customer/Sales wrapping, compact accessible picker checkboxes, container-width dashboards and shared hero wrapping. Historical-fixture browser retesting remains pending. PR #84 reports 930 tests / 134 suites, TypeScript, ESLint (0 errors / 183 warnings), production build with three existing Webpack size/performance warnings and `git diff --check`. Tests cover picker full-title naming/Space selection, mocked Dashboard width, long heading/Free price preservation and Contact agreement on/off compatibility; they do not establish long-content geometry or upload persistence.
+
+The handoff reports local synthetic Creator ordinary Customer Detail, populated Sales, Course Media and ordinary Course public hero fit at 320, 375, 390, 480, 768, 1280 and 1440px. Course Thumbnail measured 309px at 375px and 702px at 768px, with Gallery/Promo also fitting. Historical long Customer/Sales content, long-title Membership picker (no eligible local Products) and long Download hero were unavailable for browser measurement. Guest/Admin, other Product types, relevant reload/zoom/keyboard-pointer matrices, actual native uploads and deployed/live-backend E2E remain pending. Use [M14 retest guidance](../../test-execution-plan.md#m14-long-content-and-media-layout-retest-guidance--5-november-2026). Existing Product, Membership, payment and entitlement contracts and historical QA outcomes/counts/evidence remain unchanged; testing stays paused and Trello is unchanged. BUG-013 remains partial/backend-dependent, excluded from sixty-nine frontend-complete follow-ups.
+
+The M13 measurements above remain historical evidence. Current M14 follow-up:
+
+| Surface | Current verified scope | Remaining verification |
+| --- | --- | --- |
+| Explore Product-card actions | Action wrapping and reduced mobile padding implemented; local synthetic Creator document measured 320px at a 320px viewport, compared with M13's 366px. | Other cards/roles and deployed parity; no new issue ID or universal-fit claim. |
+| Marketing Home | No M14 correction; M13's 1062px document at 320px remains an unresolved reported body-overflow finding. | Identify actual overflowing elements; no specific section/root cause is established. |
+| Marketing About | No M14 correction; M13's 762px document at 320px remains an unresolved reported body-overflow finding. | Investigate actual cause/scope before any M15 marketing ownership or fix claim. |
+
+The five issue rows record frontend implementation, not successful retests of
+historical long-content fixtures. Ordinary Customer/Sales/Course passes do not
+supersede their original failures. Contact agreement toggling is a compatibility
+change only; no message submission, consent enforcement or backend handling was
+added. Shared headers remain M13 scope; Home/About content remains separate.
 
 The execution history below is preserved, including its original results and counts. Testing remains paused as recorded in [Progress](progress.md); this documentation merge does not resume QA.
 

@@ -193,12 +193,76 @@ browser matrices, all Product families, native 200% zoom, complete keyboard
 traversal and deployed/live-backend E2E remain unverified. No full responsive or
 WCAG compliance claim follows from these checks.
 
-Home/About bodies and an Explore Product-card action still overflow at 320px;
-header fit is not page-body fit. The precise reported measurements and retest
-scope are retained in the repository's `qa/runs/2026-09-30-01/summary.md` and
-`qa/test-execution-plan.md`. Long Product content such as BUG-088 is a separate
-unresolved scope. Do not assign all Home/About overflow to a specific section or
-claim that later page-layout work has already fixed it.
+M13 recorded Home/About body and Explore Product-card action overflow at 320px;
+header fit is not page-body fit. Those measurements remain in the repository's
+`qa/runs/2026-09-30-01/summary.md` and `qa/test-execution-plan.md`. M14 adds Explore
+action wrapping and shared Product hero changes below, with long-content fixture
+retests still pending. Home/About body overflow remains unresolved; do not assign
+it to a specific section or assume later marketing work has fixed it.
+
+## Long content and media layout (M14)
+
+[PR #84](https://github.com/app-video-platform/video-platform-ui/pull/84) merged
+on 5 November 2026 as `a5e9bf16dcea18f51b9108f12a4d54ab6dcf4325`, implementation
+`91389882bd641a55b4cb1f690b823e2ea3b348b6`. Implementation/merge file trees are
+identical. Source implementation is complete for BUG-066, BUG-067, BUG-076,
+BUG-079 and BUG-088; their original long-content/deployed browser retests are
+not complete.
+
+### Shrink containers before wrapping content
+
+Long user-generated text must fit its allocated Grid/Flex region. Use
+`min-width: 0` on the relevant children, `minmax(0, 1fr)` where the grid track
+must shrink, and `overflow-wrap: anywhere` for unbroken identity/title values.
+Do not discard a full name or accessible label just to mask intrinsic sizing.
+Test element bounds and readable wrapping with genuinely long valid data;
+ordinary-content document fit is not a retest of long-content overflow.
+
+- Customer detail (`customers.styles.scss`): identity/title rows can shrink and wrap; heading nowrap/ellipsis clipping is removed. Detail tabs/panels use shrinkable tracks, and definition values including email wrap. Existing Overview/Purchases/Access/Notes and Creator-only reporting access remain unchanged.
+- Sales (`sales-page.styles.scss`): page and Customer/Product cells can shrink; primary/item text wraps instead of forcing single-line overflow, while status and amount retain their existing layout roles. Desktop ledger/mobile cards, filtering, Order selection and immutable item/amount contracts are unchanged. This does not change checkout, refunds, payments or entitlements.
+- [ProductPicker/CheckboxInput](../components/checkbox-input.md#compact-product-selection-m14): preserve the full accessible selection name independently of the compact visible control so the automatic selection column cannot consume the identity column. Native checked/disabled/focus semantics remain available. Membership includes the same eligible standalone Course/Download Products through the existing domain flow.
+- [Uppy Dashboard](../components/uppy-file-uploader.md#container-width-dashboards-m14): pass available container width and allow Media grid/upload children to shrink. Thumbnail/Gallery/Promo keep their existing selection and Product API paths; width configuration is not upload verification.
+
+Shared `features/product-landing-page/product-landing-page.styles.scss` gives the
+hero-copy grid and h1 `min-width: 0`, adds `overflow-wrap: anywhere` to the full
+title, and uses a shrinkable single-column hero track in the narrow layout.
+The shared renderer is used by the public Product page, authorized private
+preview and Landing Builder live preview. No view-model/API rewrite or title
+truncation was introduced; M11 price normalization/formatting and owner public
+identity/theme boundaries remain unchanged. The new DOM test preserves a long
+heading and Free price, but does not measure its browser bounds.
+
+Explore `.explore-card-actions` now wraps, and the inner content padding reduces
+to `16px 0` at 480px and below. The reported local 320px Explore document now
+measures 320px, compared with M13's 366px. This is a scoped improvement without a
+new issue ID, not proof of every role/card layout. M10 search and M13 navbar
+contracts remain. Marketing Home/About body widths of 1062px/762px at 320px remain
+unresolved; M15 needs to inspect actual causes and scope before claiming a fix.
+
+ContactForm's checkbox compatibility change reads the native boolean checked
+value, preserving on/off interaction. It adds no submission or consent enforcement;
+see [ContactForm](../components/contact-form.md#agreement-compatibility-m14).
+
+### Verification boundary
+
+PR #84 reports 930 tests / 134 suites, TypeScript, ESLint (0 errors / 183
+warnings), production build (three existing Webpack size/performance warnings)
+and `git diff --check`. New assertions cover picker long-title accessible naming
+and Space selection, Dashboard width configuration, long Product heading/Free
+price preservation, and Contact agreement toggling. Existing Customer/Sales/media
+regression tests check behavior; DOM tests and CSS inspection do not establish
+computed long-content geometry or manual assistive-technology behavior.
+
+`M14_DOCUMENTATION_HANDOFF.md` reports local synthetic Creator checks at 320, 375,
+390, 480, 768, 1280 and 1440px for ordinary Customer Detail, populated Sales,
+Course Media and a Course public hero. Thumbnail measured 309px at 375px and
+702px at 768px. Historical long Customer identity, long Sales identity/items,
+long-title Membership picker and long unbroken Download hero were unavailable
+for browser measurement. Guest/Admin, other Product types, reload/zoom/complete
+keyboard-pointer matrices, native uploads and deployed/live-backend E2E remain
+unverified. Marketing Home/About overflow is not fixed. Follow the M14 retest
+matrix in the repository's `qa/test-execution-plan.md`; do not report complete
+responsive or accessibility conformance from these scoped passes.
 
 ## How code usually connects
 

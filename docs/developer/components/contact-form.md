@@ -12,7 +12,7 @@ title: ContactForm
 - **A11y:**
   - Each field has an explicit label via [`Input`](form-input.md)’s `label` prop.
   - Checkbox uses a semantic input and label association.
-  - The submit button (`htmlType="submit"`) is focusable and triggers form submission via keyboard.
+  - The native submit button (`type="submit"`) invokes the local form handler; that handler prevents default submission without sending a message.
 
 ### Example
 ```tsx
@@ -23,8 +23,8 @@ title: ContactForm
 - The form manages state internally (`formData`) for all inputs.
 - `handleSubmit` currently just prevents page reload; extend it to send data via API or email.
 - Reuses:
-    - [`Input`](form-input.md) for text fields and textareas.
-    - [`CheckboxInput`](checkbox-input.md) for consent.
+    - [`Input` and Textarea](form-input.md) for single-line and multiline fields.
+    - [`CheckboxInput`](checkbox-input.md) for the displayed agreement.
     - [`Button`](button.md) for submission.
 - To reset fields after submit, set `formData` back to its initial state.
 - When adding validation, prefer native constraints (`required`) or React Hook Form for complex rules.
@@ -32,3 +32,13 @@ title: ContactForm
 <br></br>
 <br></br>
 > Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025
+
+### Agreement compatibility (M14)
+
+The change handler reads `event.target.checked` for a native checkbox and
+`event.target.value` for text controls. Its boolean `agree` value stays in sync
+with controlled CheckboxInput, allowing the agreement to toggle both on and off.
+`contact-form.component.test.tsx` verifies both pointer toggles and their native
+checked state. This is a compatibility fix for the shared checkbox change; it
+adds no Contact submission, backend handling, agreement validation or new legal
+acceptance requirement. Other Contact behavior is unchanged.
