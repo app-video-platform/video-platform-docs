@@ -237,7 +237,7 @@ to `16px 0` at 480px and below. The reported local 320px Explore document now
 measures 320px, compared with M13's 366px. This is a scoped improvement without a
 new issue ID, not proof of every role/card layout. M10 search and M13 navbar
 contracts remain. Marketing Home/About body widths of 1062px/762px at 320px remain
-unresolved; M15 needs to inspect actual causes and scope before claiming a fix.
+unresolved at M14; the M15 follow-up below records bounded improvements and remaining overflow.
 
 ContactForm's checkbox compatibility change reads the native boolean checked
 value, preserving on/off interaction. It adds no submission or consent enforcement;
@@ -263,6 +263,82 @@ keyboard-pointer matrices, native uploads and deployed/live-backend E2E remain
 unverified. Marketing Home/About overflow is not fixed. Follow the M14 retest
 matrix in the repository's `qa/test-execution-plan.md`; do not report complete
 responsive or accessibility conformance from these scoped passes.
+
+## Marketing interactions and animation ownership (M15)
+
+[PR #85](https://github.com/app-video-platform/video-platform-ui/pull/85) merged
+on 5 November 2026 as `4c381a86bfa1353dda131c80346736df31074d78`, implementation
+`f7eade2004c3313ecf6a9059c3b26f1fefcc9711`; comparison shows identical file trees.
+This is the final planned implementation milestone, not deployment or QA sign-off.
+BUG-034's implementation was delivered in M14; M15 adds regression coverage.
+
+Use [post-mount panel measurement](../components/expansion-panel.md#initial-and-changing-content-height-m15)
+for default-expanded/dynamic content, [boolean native/visual agreement state](../components/contact-form.md#m15-regression-coverage-and-faq-boundary)
+and the matching [Contact FAQ fragment target](../components/footer.md#contact-faq-fragment-m15).
+These do not introduce Contact submission, consent enforcement or backend delivery.
+
+### Reveal lifetime versus interactive CSS
+
+Homepage ProductsSection and FeaturesSection keep interactive reveal targets in
+keyboard order by animating opacity instead of autoAlpha. CTASection does the
+same for its button wrapper. Focus capture on these groups completes their
+existing timeline via a ref, so entering by focus can reveal controls without
+waiting for scroll entry. Headers/illustrations and Trust's reveal may still use
+autoAlpha; do not claim it was removed from every animation. Product focus now
+selects emphasis, Feature focus retains its existing selection, and blur leaving
+the group or mouse exit clears Product/Feature emphasis.
+
+After Product, Feature and Trust reveal completion, GSAP clears inline
+`opacity,visibility` and releases the revealing-state class, allowing CSS
+`is-active`/`is-dimmed` styling to own persistent appearance. Product/Feature CSS
+dims siblings to 0.38; Trust CSS specifies 0.42. Class presence alone cannot
+verify dimming: measure computed opacity after the animation settles and after
+leaving/revisiting the group. Trust has pointer selection in current source;
+it does not gain the Product/Feature focus-capture path.
+
+Existing ScrollTriggers play/reverse reveals on entry/back navigation through
+the viewport. Products, Features and CTA clear timeline refs and revert scoped
+GSAP contexts on cleanup; Trust retains context reversion. These sections retain
+an early prefers-reduced-motion check before animation setup. Preserve those
+paths when editing animations, but do not assume every reverse/revisit lifecycle
+or runtime reduced-motion mode has passed browser testing.
+
+### Bounded responsive follow-up
+
+Home Product cards stack at 1000px and below, with bounded card widths. Home text blocks
+use `min(550px, 100%)` and Feature controls `min(520px, 100%)`. About's Different
+section switches to a shrinkable single-column grid at 768px and below. These are
+verified changed sections, not proof of the exact remaining overflow source.
+The handoff reports Home 485px at both 320/375px; About 464px at 320px, 472px at
+375px and 874px at 768px. Earlier 320px observations were Home 1062px and About
+762px. Headers fit, but both page bodies still overflow. Inspect actual element
+bounds before assigning further causes; no new issue ID or complete mobile
+containment claim follows. The QA summary retains both measurement sets.
+
+### Verification and roadmap boundary
+
+PR #85 reports 934 tests / 135 suites, TypeScript, ESLint (0 errors / 183
+warnings), production build with three existing Webpack size/performance warnings
+and `git diff --check`. Added assertions cover initial/dynamic panel height and
+observer cleanup, Contact fragment targeting, and agreement Tab/Space/native
+versus visual-class state. Heights, ResizeObserver and scrolling are mocked;
+there are no new dedicated homepage computed-opacity/complete traversal tests.
+
+Reported local synthetic Creator checks: default-open Contact answer 50px on
+initial load; direct fragment/Enter footer navigation reaches the FAQ heading;
+FAQ Enter toggle; Tab from hero to Create a Course and from the last Product
+control to Private Storefronts; active Product/Feature opacity 1 and siblings
+0.38. This is not a complete replay of BUG-046's fresh Guest forward-Tab failure.
+Trust hover/computed opacity, complete fresh Guest traversal, runtime reduced
+motion, manual screen-reader output and deployed/live-backend parity remain
+unverified. Contact delivery is unimplemented, not a passing milestone check.
+
+The existing QA status table reconciles 75 distinct original items: 74 have
+completed frontend remediation and BUG-013 remains partial/backend-dependent.
+M12 browser/accessibility gaps, M14 historical long-content retests, M15 runtime
+gaps and Home/About overflow remain open verification/implementation scope. Do
+not describe all 75 issues as resolved or infer production acceptance. Use the
+M15 section of the repository's `qa/test-execution-plan.md` for remaining checks.
 
 ## How code usually connects
 

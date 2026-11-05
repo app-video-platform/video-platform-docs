@@ -496,3 +496,59 @@ keyboard-pointer matrices, deployed/live-backend E2E and actual native upload
 persistence remain unverified. Neither ordinary-content passes nor CSS/DOM tests
 establish complete responsive conformance. M1–M13 contracts, historical outcomes,
 paused execution and BUG-013's backend dependency remain unchanged.
+
+## M15 Marketing interaction retest guidance — 5 November 2026
+
+[PR #85](https://github.com/app-video-platform/video-platform-ui/pull/85) merged
+as `4c381a8` (implementation `f7eade2`). Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and five addenda. M15 is the final planned implementation milestone; the table
+reconciles 74/75 frontend remediations, with BUG-013 partial/backend-dependent.
+This is not all-defect closure, deployment acceptance or authorization to resume
+paused QA/start a new UI milestone. Keep historical outcomes, evidence and cleanup;
+Trello remains unchanged. Confirm deployed revisions before authorized retesting.
+Use synthetic local fixtures; do not send real Contact messages, consent records
+or business mutations merely to audit documentation.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-028](runs/2026-09-30-01/issues/BUG-028.md) | Contact first load/revisit: default-open answer has nonzero visible height and matching aria-expanded; pointer/Enter/Space close/reopen and dynamic content resize work. Inspect each own region, unique IDs and collapsed aria-hidden, without assuming descendant inertness. Include Course reader expansion/content/contrast regression. Test ResizeObserver changes and fallback separately; mock height is not runtime geometry or screen-reader output. |
+| [BUG-034](runs/2026-09-30-01/issues/BUG-034.md) | Preserve timeline: M14 implements native/controlled checkbox and Contact boolean state; M15 adds tests. Guest/authenticated Contact: initially unchecked, pointer and label on/off, Tab from Message, Space on/off, native checked versus visible tick/class, and visible focus. Runtime appearance is separate from a class assertion. No submission, delivery, mandatory consent or legal persistence is implied. |
+| [BUG-061](runs/2026-09-30-01/issues/BUG-061.md) | Footer FAQ pointer/Enter reaches `/contact#faq`, matching section/heading in view. Direct fragment, reload, Back/Forward, same-fragment revisit and narrow header clearance across roles. Observe scroll target separately from keyboard focus; M15 does not transfer heading focus or audit all fragment links. |
+| [BUG-046](runs/2026-09-30-01/issues/BUG-046.md) | Fresh Guest without prior scrolling: complete forward Tab through marketing nav, hero, every Product/Feature control, lower CTA and footer. Record order, computed visibility, reveal/scroll and visible focus; reverse Shift+Tab and repeat relevant authenticated sessions/reload/revisit. Test reduced motion separately. Creator hero→Product and Product→Feature checks are not a complete replay of the historical fresh Guest skip. |
+| [BUG-047](runs/2026-09-30-01/issues/BUG-047.md) | After reveals settle, hover Trust/Product/Feature groups and use their supported focus paths; verify active state, actual computed sibling opacity and normal opacity after exit. Source CSS targets Product/Feature 0.38, Trust 0.42; only Product/Feature 1/0.38 was measured after M15. Repeat navigation/reload, reverse/scroll lifecycle and reduced motion. Do not infer opacity from is-dimmed class presence or invent keyboard Trust selection absent from source. |
+
+### Remaining responsive work
+
+The [M15 measurement comparison](runs/2026-09-30-01/summary.md#m15-homeabout-responsive-follow-up--5-november-2026)
+preserves Home/About 1062/762px at 320px, now reported as 485/464px. Both still
+overflow. Home is also 485px at 375px; About is 472px at 375px and 874px at 768px.
+Headers fit in the reported local Creator checks. Source changes bound Home
+text/Feature widths, stack Product cards and use a single-column About Different
+section; remaining specific overflowing elements were not isolated by the
+handoff. Measure each actual section/control, document and header independently
+at 320/375/768px plus wider controls, roles, browser/zoom and keyboard states.
+Do not assign an unverified root cause, invent issue IDs or declare full mobile
+containment. Preserve M13 headers and M14 Explore improvement as separate scopes.
+
+### Evidence and completion boundary
+
+PR #85 reports 934 tests / 135 suites, TypeScript, ESLint (0 errors / 183
+warnings), production build (three existing Webpack size/performance warnings)
+and whitespace checks. New tests mock panel heights/ResizeObserver and fragment
+scrolling; Contact tests add Tab/Space/native versus visual-class checked state.
+There are no new dedicated homepage complete-traversal/computed-opacity tests.
+
+Reported synthetic Creator browser scope: FAQ initial answer 50px, direct
+fragment/footer Enter positioning, Enter toggling; Tab to Create a Course from
+hero and Private Storefronts after the last Product control; active Product/
+Feature opacity 1 and dimmed siblings 0.38. Trust hover/opacity, full fresh Guest
+traversal, runtime reduced motion, manual screen-reader audit and deployed/live-
+backend parity remain pending. Contact submission/delivery is not implemented
+by these fixes. No full WCAG or universal animation-lifecycle conformance follows.
+
+The existing tracker has 75 unique original items, including one BUG-034 row for
+its M14 fix/M15 regressions: 74 frontend remediations complete, BUG-013 still
+backend-dependent. M12 browser/accessibility gaps, M14 historical long-content
+retests, M15 runtime gaps and Home/About overflow remain. Original failures and
+counts stay unchanged; implementation milestone completion is not QA sign-off.

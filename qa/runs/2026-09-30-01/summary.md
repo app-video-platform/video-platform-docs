@@ -76,6 +76,11 @@ This update records merged frontend fixes separately from the historical executi
 | [BUG-076](issues/BUG-076.md) | M14 / [#84](https://github.com/app-video-platform/video-platform-ui/pull/84) | Implementation complete and merged; historical-fixture retest pending | Long-name keyboard component test; historical picker browser geometry pending | Pending | Not established |
 | [BUG-079](issues/BUG-079.md) | M14 / [#84](https://github.com/app-video-platform/video-platform-ui/pull/84) | Implementation complete and merged; historical-fixture retest pending | Creator Course dashboard geometry; other Product/role and upload checks pending | Pending | Not established |
 | [BUG-088](issues/BUG-088.md) | M14 / [#84](https://github.com/app-video-platform/video-platform-ui/pull/84) | Implementation complete and merged; historical-fixture retest pending | Ordinary Course browser fit; historical long Download pending | Pending | Not established |
+| [BUG-028](issues/BUG-028.md) | M15 / [#85](https://github.com/app-video-platform/video-platform-ui/pull/85) | Implementation complete and merged | Mocked expansion tests; Creator initial answer 50px/Enter; other runtime checks pending | Pending | Not established |
+| [BUG-034](issues/BUG-034.md) | M14 fix / [#84](https://github.com/app-video-platform/video-platform-ui/pull/84); M15 regression / [#85](https://github.com/app-video-platform/video-platform-ui/pull/85) | M14 implementation complete; M15 tests merged | Tab/Space/native-visual class tests; agreement browser retest pending | Pending | Not established |
+| [BUG-061](issues/BUG-061.md) | M15 / [#85](https://github.com/app-video-platform/video-platform-ui/pull/85) | Implementation complete and merged | Mocked fragment test; Creator direct/Enter navigation; history/roles pending | Pending | Not established |
+| [BUG-046](issues/BUG-046.md) | M15 / [#85](https://github.com/app-video-platform/video-platform-ui/pull/85) | Implementation complete and merged | Creator Product/Feature Tab checks; complete fresh Guest traversal pending | Pending | Not established |
+| [BUG-047](issues/BUG-047.md) | M15 / [#85](https://github.com/app-video-platform/video-platform-ui/pull/85) | Implementation complete and merged | Creator Product/Feature opacity 1/0.38; Trust runtime pending | Pending | Not established |
 
 M1 merged as `52413ed`; M2 merged as `7c13a37` into frontend main. M1 PR verification records 627 tests / 102 suites. Final M2 verification records 664 tests / 103 suites, including M1/M2 compatibility. Both record TypeScript, lint (0 errors, 205 existing warnings), production build (3 performance warnings), and earlier synthetic browser passes. M1 browser checks were not rerun during PR preparation; M2 browser checks used intercepted HTTP and fixture destinations before final integration and were not rerun afterward.
 
@@ -159,6 +164,45 @@ historical long-content fixtures. Ordinary Customer/Sales/Course passes do not
 supersede their original failures. Contact agreement toggling is a compatibility
 change only; no message submission, consent enforcement or backend handling was
 added. Shared headers remain M13 scope; Home/About content remains separate.
+
+### M15 final planned milestone and remaining scope — 5 November 2026
+
+M15 follow-up — 5 November 2026: [PR #85](https://github.com/app-video-platform/video-platform-ui/pull/85) merged as `4c381a86bfa1353dda131c80346736df31074d78`, implementation `f7eade2004c3313ecf6a9059c3b26f1fefcc9711`, with identical implementation/merge file trees. BUG-028, BUG-061, BUG-046 and BUG-047 receive panel measurement, Contact fragment and reveal/CSS ownership changes. BUG-034's implementation came from M14 PR #84; M15 adds Tab/Space/native-visual state regressions. PR #85 reports 934 tests / 135 suites, TypeScript, ESLint (0 errors / 183 warnings), production build with three existing Webpack size/performance warnings and whitespace checks. Added tests cover mocked panel mount/growth/cleanup, direct fragment targeting and agreement keyboard/state behavior; no new complete homepage traversal or computed-opacity automation is claimed.
+
+Reported local synthetic Creator checks: default-open FAQ 50px on initial load, direct fragment/footer Enter reaching FAQ, FAQ Enter toggling, Tab from hero to Create a Course and from last Product control to Private Storefronts, active Product/Feature opacity 1 and dimmed siblings 0.38. Trust hover/opacity, complete fresh Guest traversal, reduced-motion runtime, manual screen-reader audit and deployed/live-backend parity remain unverified. Contact submission/delivery and consent enforcement were not added. Follow [M15 retest guidance](../../test-execution-plan.md#m15-marketing-interaction-retest-guidance--5-november-2026). Historical failures/counts/evidence and paused execution remain unchanged; Trello is unchanged.
+
+The existing table reconciles **75 distinct original items: 74 frontend
+remediations complete, one partial/backend-dependent (BUG-013)**. The prior table
+had 70 distinct rows (69 complete plus BUG-013); adding these five distinct issues
+produces 75 without counting BUG-034 twice. Its M14 implementation and M15
+regression timeline are recorded in the same row. This completes the original
+planned implementation sequence, not all QA or all 75 defects as fully resolved.
+BUG-013 still needs backend pagination correction. M12 accessibility/browser gaps,
+M14 historical long-content retests, M15 runtime gaps and Home/About overflow
+remain; no deployment/production sign-off or next UI milestone is implied.
+
+### M15 Home/About responsive follow-up — 5 November 2026
+
+The earlier M13/M14 measurements above remain historical evidence. Source now
+stacks Home Product cards below the compact-layout threshold, bounds Home text/
+Feature widths, and makes About's Different section single-column on narrow
+screens. These are changed sections, not established causes of every remaining
+extent. The handoff does not isolate the remaining overflowing elements.
+
+| Surface | Viewport | Earlier document width | Reported M15 document width | Current outcome |
+| --- | --- | --- | --- | --- |
+| Marketing Home | 320px | 1062px | 485px | Improved; still overflows. |
+| Marketing About | 320px | 762px | 464px | Improved; still overflows. |
+| Marketing Home | 375px | 1062px (handoff before-change observation) | 485px | Still overflows. |
+| Marketing About | 375px | 762px (handoff before-change observation) | 472px | Still overflows. |
+| Marketing About | 768px | Not newly compared in M15 | 874px | Still overflows. |
+
+These are reported local synthetic Creator observations from
+`M15_DOCUMENTATION_HANDOFF.md` at implementation `f7eade2`, not new deployed QA
+attempts or screenshots created by this docs task. Headers fit in these local
+observations; header correction is distinct from page-body containment. Measure
+remaining elements across sections, roles, browsers and zoom before assigning
+root cause or claiming a complete responsive fix. No new issue ID is invented.
 
 The execution history below is preserved, including its original results and counts. Testing remains paused as recorded in [Progress](progress.md); this documentation merge does not resume QA.
 

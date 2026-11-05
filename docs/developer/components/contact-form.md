@@ -42,3 +42,21 @@ with controlled CheckboxInput, allowing the agreement to toggle both on and off.
 checked state. This is a compatibility fix for the shared checkbox change; it
 adds no Contact submission, backend handling, agreement validation or new legal
 acceptance requirement. Other Contact behavior is unchanged.
+
+### M15 regression coverage and FAQ boundary
+
+The agreement implementation came from M14: CheckboxInput forwards checked and
+disabled to its native control, preserves keyboard focus, and Contact reads the
+boolean `event.target.checked`. M15 adds a regression that Tabs from Message to
+the agreement, uses Space twice, and checks native checked state against the
+wrapping label's `checked` class after both transitions. M14's pointer on/off test
+remains. This is additional test coverage, not a second Contact implementation.
+Label interaction uses CheckboxInput's wrapping label; runtime visible-focus and
+role/browser checks still belong in QA.
+
+Contact's FAQ uses [LegacyExpansionPanel](expansion-panel.md#initial-and-changing-content-height-m15),
+including one initially expanded answer. The footer FAQ destination is
+`/contact#faq`; Contact supplies the target and hash scroll handling. Neither FAQ
+copy nor agreement toggling establishes message delivery, mandatory consent,
+legal-agreement persistence or a Contact backend endpoint. The form handler still
+only prevents default submission.

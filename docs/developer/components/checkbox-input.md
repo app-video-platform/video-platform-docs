@@ -53,3 +53,13 @@ not actual drawer geometry. The historical long-title Membership picker was not
 browser-tested because the local Membership had no eligible Products. Check
 ordinary, multiword and unbroken titles with keyboard and pointer input before
 claiming the original layout reproduction passes. See [long-content conventions](../architecture/application-structure.md#long-content-and-media-layout-m14).
+
+### Contact state regression timeline (M15)
+
+M14 implemented native checked/disabled forwarding and focusable input styling;
+Contact's M14 change uses boolean checked state. M15 changes only Contact's tests
+at this boundary: Tab reaches the agreement from Message, Space checks/unchecks
+it, and native checked state matches the label's visual-state class. This does
+not establish computed focus styling, screen-reader output, consent enforcement
+or form delivery. Keep the controlled value and visual class derived from the
+same boolean. See [Contact regression scope](contact-form.md#m15-regression-coverage-and-faq-boundary).
