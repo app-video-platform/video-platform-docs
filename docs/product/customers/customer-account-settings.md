@@ -45,6 +45,11 @@ End Users can:
 
 Settings are organized as tabs. The Profile tab contains basic identity, public information, contact information, and social media fields. The Account tab includes password, preference, and delete-account sections.
 
+On narrow screens, Settings tabs scroll within their own strip. Profile sections
+stack and form actions/social fields adapt to the available width. This does not
+change the [shared validation and save rules](../creators/creator-settings.md#profile-validation-and-saving)
+or the disabled login-email/social-prefix controls.
+
 The shared Profile form saves first/last name, title, Bio, Tagline / Mission,
 Website, public email, and displayed social links. Optional Bio and Tagline values
 must contain 30–250 and 10–120 characters respectively when entered; a nonempty

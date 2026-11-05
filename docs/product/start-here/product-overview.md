@@ -82,7 +82,16 @@ The application is organized around roles. After sign-in, the app sends each use
 
 Some product discovery pages are public. Management pages require sign-in and the correct role.
 
+On narrow marketing pages, **Menu** opens Home, About, Pricing, Getting Started
+and Contact Us, plus **Sign In**/**Register** for visitors or **Go to Dashboard**
+and account actions when signed in. The brand remains visible. Selecting a new
+route closes the compact menu; Escape closes it and returns focus to Menu.
+Navigation appears inline on wider screens. Account actions remain unavailable
+while the app is verifying an unresolved session.
+
 ## Current limitations
+
+- Home and About can still extend horizontally on very narrow screens. The responsive header does not resolve their separate page-content overflow.
 
 - Customer-facing purchase/access paths exist for free enrollment and eligible paid Cart checkout, but no production payment provider or real charging is configured.
 - The shopping cart and wishlist are stored in the browser, not in a user account.

@@ -33,6 +33,15 @@ Customers can:
 
 ## How it works
 
+On narrow marketplace layouts, the search field stays visible in a second header
+row. **Menu** opens Explore and the actions available to the current account;
+visitors see **Log In** and **Register**, while signed-in customers can reach
+Library, Wishlist, Cart, Notifications and their account menu. Creator/Admin
+headers retain their own supported actions rather than adding customer collection
+shortcuts. Selecting a new route closes Menu; Escape closes it and returns focus
+to its trigger. Wider layouts show the navigation inline. The public Creator
+Storefront uses its own page layout rather than this marketplace header.
+
 Product cards show the product name, product type, price, and creator information when available. Cards also include actions for viewing the product, saving it to the wishlist, and adding it to the cart.
 
 Search suggestions appear after at least two characters. Selecting a current
@@ -60,6 +69,8 @@ Creators and Administrators can use the public Storefront destination.
 Wishlist and cart actions help customers collect products for later review. These actions do not complete a purchase.
 
 ## Current limitations
+
+- At very narrow widths, an Explore Product-card action can still extend outside the page. Header/search responsiveness does not resolve every Product card or long Product-content layout issue.
 
 - Product images in discovery areas are currently placeholders.
 - Wishlist and cart items are saved in the browser and are not synchronized across devices.

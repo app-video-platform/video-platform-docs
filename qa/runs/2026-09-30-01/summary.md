@@ -67,6 +67,10 @@ This update records merged frontend fixes separately from the historical executi
 | [BUG-022](issues/BUG-022.md) | M12 / [#82](https://github.com/app-video-platform/video-platform-ui/pull/82) | Frontend fix complete and merged | Automated name/state tests; notification browser check pending | Pending | Not established |
 | [BUG-027](issues/BUG-027.md) | M12 / [#82](https://github.com/app-video-platform/video-platform-ui/pull/82) | Frontend fix complete and merged | Token calculations and region DOM tests; runtime contrast pending | Pending | Not established |
 | [BUG-045](issues/BUG-045.md) | M12 / [#82](https://github.com/app-video-platform/video-platform-ui/pull/82) | Frontend fix complete and merged | Automated mixed read/unread fixtures; browser states pending | Pending | Not established |
+| [BUG-010](issues/BUG-010.md) | M13 / [#83](https://github.com/app-video-platform/video-platform-ui/pull/83) | Targeted frontend fix complete and merged; page-body scope separate | Component tests; reported Creator eight-route header fit at 320px | Pending | Not established |
+| [BUG-087](issues/BUG-087.md) | M13 / [#83](https://github.com/app-video-platform/video-platform-ui/pull/83) | Targeted frontend fix complete and merged; page-body scope separate | Component tests; reported Creator eight-route compact menu at 320px | Pending | Not established |
+| [BUG-012](issues/BUG-012.md) | M13 / [#83](https://github.com/app-video-platform/video-platform-ui/pull/83) | Targeted frontend fix complete and merged; page-body scope separate | Component tests; Creator seven-width header fit and 1440px Explore pointer check | Pending | Not established |
+| [BUG-065](issues/BUG-065.md) | M13 / [#83](https://github.com/app-video-platform/video-platform-ui/pull/83) | Targeted frontend fix complete and merged; page-body scope separate | Reported Creator Profile Settings fit at seven widths; other panels/roles pending | Pending | Not established |
 
 M1 merged as `52413ed`; M2 merged as `7c13a37` into frontend main. M1 PR verification records 627 tests / 102 suites. Final M2 verification records 664 tests / 103 suites, including M1/M2 compatibility. Both record TypeScript, lint (0 errors, 205 existing warnings), production build (3 performance warnings), and earlier synthetic browser passes. M1 browser checks were not rerun during PR preparation; M2 browser checks used intercepted HTTP and fixture destinations before final integration and were not rerun afterward.
 
@@ -103,6 +107,33 @@ Reported synthetic browser checks confirmed public title/bio after reload and th
 M12 follow-up — 4 November 2026: [PR #82](https://github.com/app-video-platform/video-platform-ui/pull/82) is merged as `0effcc78b76c639ab091bc94e921aa394212b2bc`, implementation `f41155f7c24c6744776b87fdb9a64b7302d682f2`, for BUG-038, BUG-062, BUG-015, BUG-016, BUG-017, BUG-022, BUG-027 and BUG-045. The eight frontend fixes cover shared Drawer ownership, native field states, named collapsed navigation and form/menu controls, keyboard Logout, theme pairs and textual unread presentation. PR #82 reports 923 tests / 132 suites, TypeScript, ESLint (0 errors / 185 warnings), production build with three existing Webpack size/performance warnings and `git diff --check`. These are implementation checks, not a new historical QA execution.
 
 Reported synthetic browser checks cover collapsed Creator names, native Settings disabled fields, keyboard account-menu opening, and a single Sales Order Drawer's Escape/focus restoration. Actual Sales Order + Filters overlap, Landing labels, populated read/unread browser states, computed menu and expanded Course Article contrast, manual screen-reader behavior and deployed parity remain pending. Token-pair calculations meeting normal-text targets do not establish complete runtime contrast or WCAG compliance. Axe is not installed as a project dependency; no axe run or screen-reader audit is claimed. Preserve BUG-038 isolated/deployed distinctions and BUG-027 per-surface evidence. Notifications stay session-local, with no new delivery/history/read UI/preferences. Follow [M12 retest guidance](../../test-execution-plan.md#m12-accessibility-and-interaction-retest-guidance--4-november-2026). Historical results/counts/evidence, paused execution and Trello are unchanged; BUG-013 remains partial/backend-dependent and excluded from the sixty frontend-complete follow-ups.
+
+M13 follow-up — 5 November 2026: [PR #83](https://github.com/app-video-platform/video-platform-ui/pull/83) is merged as `62c4cfbcb31a7573a3a43ccaaef34aadb8621175`, implementation `f814170a224edbdcb29e1ad13e589d9c8d328708`, for BUG-010, BUG-087, BUG-012 and BUG-065. Implementation/merge file trees are identical. Targeted shared-header/Settings fixes are frontend-complete, not a claim that all page overflow is resolved. PR #83 reports 927 tests / 133 suites, TypeScript, ESLint (0 errors / 183 warnings), a successful production build with three Webpack size/performance warnings, and `git diff --check`. These are reported implementation checks, not new historical QA execution.
+
+The handoff reports local synthetic Creator marketplace header/search and loaded Profile Settings/action/social rows fitting at 320, 375, 390, 480, 768, 1280 and 1440px; Explore center hit-test and pointer activation at 1440px; all eight marketing routes exposing a 320px-wide header and compact menu. Component tests exercise Guest/User branches and Escape/focus dismissal with mocked child controls; route-change dismissal is source-verified. Full Guest/User/Admin browser matrices, all Product families, native 200% zoom, complete keyboard traversal, route-history/reload and deployed/live-backend E2E remain pending. No responsive/WCAG conformance claim or live data mutation follows. Use [M13 retest guidance](../../test-execution-plan.md#m13-responsive-navigation-and-settings-retest-guidance--5-november-2026); historical results/counts, paused execution and Trello remain unchanged. BUG-013 remains partial/backend-dependent, excluded from the sixty-four frontend-complete follow-ups.
+
+### M13 remaining page-content overflow — 5 November 2026
+
+These are **reported local synthetic Creator observations**, sourced to
+`M13_DOCUMENTATION_HANDOFF.md` at implementation `f814170`, corroborated by PR #83's
+remaining-limitations statement. They are not new deployed QA attempts or new
+screenshot evidence created by this documentation task. Each header fit in the
+reported observations while page content still extended beyond it.
+
+| Surface | Viewport width | Measured document width | Remaining scope |
+| --- | --- | --- | --- |
+| Marketing Home | 320px | 1062px | Page-body overflow; exact contributing sections not isolated. |
+| Marketing About | 320px | 762px | Page-body overflow; exact contributing sections not isolated. |
+| Explore Product-card action | 320px | 366px | Independent card action overflow; reported local document fits at 375px and above. |
+
+These findings are **not fixed by M13**. Investigate element bounds and intrinsic
+sizing separately from the header, then retest affected content and roles.
+[BUG-010](issues/BUG-010.md) and [BUG-087](issues/BUG-087.md) preserve earlier
+Home/About bounds but do not establish a particular body-section cause.
+[BUG-088](issues/BUG-088.md) covers long public Download body overflow; it is not
+proof that the Home/About or Explore-card findings share its cause or ticket
+scope. Keep later page-layout investigation separate; no new issue ID or
+unverified M14/M15 completion/ownership is assigned here.
 
 The execution history below is preserved, including its original results and counts. Testing remains paused as recorded in [Progress](progress.md); this documentation merge does not resume QA.
 

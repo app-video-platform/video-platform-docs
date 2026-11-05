@@ -44,6 +44,12 @@ Creators can:
 
 Settings are organized as tabs. The selected tab is reflected in the page URL so users can return to a specific settings area.
 
+On narrow screens, the tab strip scrolls horizontally inside Settings so other
+tabs remain reachable. Profile sections stack, Save actions can wrap, and social
+prefix/value fields share the available width. This contained tab scrolling is
+separate from scrolling the whole document. Existing field validation, disabled
+controls and save rules still apply.
+
 The Profile tab displays account profile information where available and includes fields for public profile information, contact information, public email, and social media links. Public email is customer-facing and separate from the login email. The same profile-owned public-email field is also editable from the Storefront Builder.
 
 The Account tab shows password, preference, and delete-account sections. Payment Methods shows business information and a payment-provider connection button. Calendar loads available providers and starts a calendar authorization flow.

@@ -130,3 +130,22 @@ function ProductExplorer() {
 <br></br>
 <br></br>
 > Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025
+
+### Responsive container sizing (M13)
+
+The existing Search and SmartSearch are reused at every marketplace header size;
+there is no independent mobile search system. Search's `.search-form` uses
+`width: 100%`, `min-width: 0` and its existing 800px maximum; `.search-input` also
+has `min-width: 0`. SmartSearch keeps `width: 100%`, `min-width: 0` and its 400px
+maximum, overridden to no maximum in the compact TopNavbar search row. The header
+search container can shrink independently from Explore/menu actions. This removes
+the former 450px form minimum overflowing a 400px SmartSearch wrapper.
+
+At 1000px and below, TopNavbar keeps search visible in a second row outside its
+compact menu. Above that width it shares the inline header. Preserve M10 URL
+term/page ownership, new-query reset, history restoration and current-query
+suggestions; M13 changes layout, not query or API behavior. Header fit and pointer
+reachability must be checked independently of page-content bounds. The reported
+local Creator pointer check covers Explore at 1440px; it does not establish all
+roles, Product families, zoom or deployed behavior. See [navigation conventions
+and verification scope](../architecture/application-structure.md#responsive-navigation-and-settings-m13).

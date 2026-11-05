@@ -378,3 +378,57 @@ full WCAG compliance or all runtime/theme/browser combinations. Axe is not a
 project dependency, and no axe run or manual screen-reader audit occurred.
 Record future browser and assistive-technology evidence explicitly. M1–M11
 contracts and BUG-013's backend dependency remain unchanged.
+
+## M13 Responsive navigation and Settings retest guidance — 5 November 2026
+
+[PR #83](https://github.com/app-video-platform/video-platform-ui/pull/83) merged as
+`62c4cfb` (implementation `f814170`). Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and four resolution notes. Confirm deployed revisions and authorized execution
+before new attempts. Preserve historical September outcomes/evidence, including
+later role/viewport findings; this docs update does not resume paused QA or change
+Trello. No real account, Profile, Product, purchase or collection changes are
+needed for documentation verification. Use controlled synthetic data for later
+mutation/validation retests, with authorized cleanup.
+
+Retain existing MKT-001–MKT-008, UX-003 and UX-015 case identities in the original
+[case catalog](test-cases-current-state-29-09-26.md); this matrix supplements
+retesting rather than creating competing cases or scoring original failures Pass.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-010](runs/2026-09-30-01/issues/BUG-010.md) | On `/`, `/about`, `/pricing`, `/getting-started`, `/contact`, `/features`, `/help`, `/demo`, test narrow Menu and inline navigation. Include 320/375/390/480/768/1280/1440px plus 900px and just above. Check brand, Home/About/Pricing/Getting Started/Contact Us, Guest Sign In/Register and authenticated Dashboard/account actions according to confirmed role/session. Keyboard/touch-open, Tab/Shift+Tab, visible focus, Escape/trigger focus, route-change dismissal, direct reload and Back/Forward. Measure header and body separately. |
+| [BUG-087](runs/2026-09-30-01/issues/BUG-087.md) | Repeat all eight routes for settled Guest/User/Creator/Admin, especially Contact and auth/account reachability before horizontal document scrolling. Verify unresolved/unavailable sessions do not expose Guest actions prematurely. Account popup must flow within the compact menu, with reachable vertically overflowing content. Native 200% zoom and complete keyboard traversal remain required; do not infer them from CSS or viewport fit. |
+| [BUG-012](runs/2026-09-30-01/issues/BUG-012.md) | Explore, Search, public Course/Download/Consultation, Cart and Library under existing access rules; assess public Storefront separately because AppLayout bypasses TopNavbar there. Check seven widths plus 1000px/just above: search always visible in the compact second row, supported role/auth/collection controls in Menu, no search/Explore hit-target overlap. Actual pointer-activate Explore at desktop 1280/1440px from deep routes; keyboard activation is a separate check. Recheck absolute Library destination, reload/history, M10 URL term/page/new-query reset and current-query autocomplete. Preserve M12 names/keyboard controls and distinguish header fit from Product-body overflow. |
+| [BUG-065](runs/2026-09-30-01/issues/BUG-065.md) | Creator/Admin/User Settings with long and short synthetic names: inspect every supported tab, contained tab-strip horizontal scrolling vs document width, Profile field/social prefix-value bounds and visible Save/action rows. Cover seven widths and 768px/just above, keyboard reachability/visible focus and native 200% zoom. Preserve M12 disabled Tab skipping vs focusable readOnly controls and M9 validation/persistence using controlled drafts. Calendar style rules are not a completed browser/provider flow; retest selectors/buttons without real consent/account changes. |
+
+### Keep remaining body overflow separate
+
+The [reported M13 measurements](runs/2026-09-30-01/summary.md#m13-remaining-page-content-overflow--5-november-2026)
+are local Creator observations: at 320px, Home document 1062px, About 762px and
+Explore Product-card action 366px, with headers fitting. The handoff reports the
+Explore document fits from 375px in that fixture. Identify actual overflowing
+elements before assigning causes; do not automatically attribute Home/About to
+one section, hide body overflow, create unsupported issue IDs or claim later
+M14/M15 work is complete. Existing [BUG-088](runs/2026-09-30-01/issues/BUG-088.md)
+remains independent long Download body overflow, not repaired by a navbar fix.
+
+### Evidence boundary
+
+PR #83 reports 927 tests / 133 suites, TypeScript, ESLint (0 errors / 183
+warnings), production build (three Webpack size/performance warnings), and
+whitespace checks. Nav component tests cover Guest/authenticated branches and
+Escape/focus; TopNavbar tests mock SmartSearch/dropdown children and exercise a
+User collection branch. Source closes both menus on location changes; new tests
+do not explicitly assert that navigation lifecycle or measure CSS. Existing
+SmartSearch tests retain their M10 scope. No new dedicated Settings geometry
+test was added.
+
+Reported browser scope is local synthetic Creator: marketplace header/search and
+loaded Profile Settings/action/social rows at 320, 375, 390, 480, 768, 1280 and
+1440px; Explore center hit-test/pointer click at 1440px; all eight marketing
+headers and compact menus at 320px. No reported full Guest/User/Admin browser
+matrix, all Product families, native 200% zoom, complete keyboard traversal,
+full history/reload matrix or deployed/live-backend E2E. Neither build success
+nor these scoped observations establish complete responsive or WCAG compliance.
+M1–M12 contracts and BUG-013's backend dependency remain unchanged.
