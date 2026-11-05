@@ -39,7 +39,7 @@ title: LegacyExpansionPanel
   - `aria-expanded`, `aria-controls`, and `aria-disabled` attributes.
   - `role="region"` applied to the content container.
 - Focusable and keyboard-operable by default.
-- Works with screen readers and supports nested interactive content.
+- Each header and content region has an instance-specific ID; `aria-labelledby` gives the region its header name. DOM tests verify distinct relationships and expanded state. Manual screen-reader behavior remains unverified.
 
 ### Behavior
 
@@ -68,3 +68,12 @@ title: LegacyExpansionPanel
 <br></br>
 <br></br>
 > Owner: @aleb, el Hijo del Diablo · Last reviewed: Wed, 22 Oct 2025
+
+### Course reader contrast (M12)
+
+LegacyExpansionPanel uses `--surface-panel` and `--text-primary` for its outer
+surface, header and content surface, with `--border-strong` separators. This
+removes the white-panel/near-white inherited-text mismatch in the Course reader;
+Article rendering and sanitization remain unchanged. Do not treat region-name
+tests or theme-token contrast calculations as computed-style coverage of expanded
+Articles. Follow the [shared contrast checks](../architecture/state-and-data-flow.md#accessibility-and-interaction-conventions-m12).

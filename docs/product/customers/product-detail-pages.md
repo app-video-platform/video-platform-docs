@@ -35,6 +35,13 @@ Customers and visitors can:
 
 Published products render through the public Product Landing Page. The page inherits the Creator's Storefront theme when available and otherwise uses the platform/default Storefront theme.
 
+Saved positive prices use the same Product value as management inspection and
+authorized previews. Free or zero-priced Products display **Free**; configured
+recurring prices retain their monthly/yearly cadence. Missing or invalid prices
+show an unavailable price rather than implying free access. EUR remains the
+supported Product currency. These display rules do not enable Membership
+checkout or change the server's purchase/access requirements.
+
 Product-specific landing-page configuration is server-backed for the current marketing copy, hero layout, supported section visibility, and supported section order behavior.
 
 If the saved configuration omits `visibleSections`, the frontend applies the default optional section set. If `visibleSections` is explicitly saved as an empty array, the Product Landing Page intentionally shows no optional sections.

@@ -100,6 +100,11 @@ The Pricing area includes:
 - Yearly billing interval.
 - A summary of the recurring charge.
 
+Saved recurring prices retain their month/year cadence in Product inspection
+and authorized preview surfaces. A valid saved positive amount is shown as a
+price rather than as unset. This display behavior does not make Membership
+publishing, subscriptions, checkout or member access available.
+
 ### Check readiness
 
 Memberships participate in the Product Workspace Readiness experience. This feedback is guidance only; it does not publish the Membership or change the Product status.

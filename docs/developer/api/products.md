@@ -17,6 +17,39 @@ Product services are split across:
 
 `products-api.ts` re-exports the product service modules.
 
+## Price response normalization (M11)
+
+`src/core/api/models/product/products.types.ts` allows raw Course, Download,
+Consultation and Membership detail response prices as `number | string | null`
+(or absent). Domain Product prices remain `number | 'free' | undefined`.
+`normalizeProductResponse` and `normalizeProductSummary` both use
+`normalizeProductPrice` in `products/utils/product-normalizers.util.ts` at the
+existing Product API boundary; nested content normalization remains in place.
+
+The helper retains the exact `free` sentinel. Numeric inputs must be finite,
+non-negative and no greater than `Number.MAX_SAFE_INTEGER`. String inputs are
+trimmed and must match unsigned plain decimal notation (`^\d+(?:\.\d+)?$`):
+scientific notation, signs, currency text and partial numeric prefixes are not
+accepted. To check decimal-string conversion, leading whole-part zeros and
+trailing fractional zeros are removed for a canonical comparison against
+`Intl.NumberFormat('en-US', { useGrouping: false, maximumFractionDigits: 20 })`
+on the converted number. A mismatch leaves the value unset, including strings
+whose conversion loses represented decimal precision.
+
+Examples: `"12.50"` becomes `12.5`, `"0"` becomes `0`, and `"free"` remains `free`.
+Missing/null/empty, negative, malformed and precision-losing strings such as
+`"9007199254740990.50"` become `undefined`. The round-trip check applies to
+strings; numbers have already been represented as JavaScript numbers. This is
+not arbitrary-precision money support.
+
+Existing Product list/Overview and landing-price formatters retain Free for
+`free`/zero, use the existing currency/cadence fields, and permit up to 20
+fraction digits rather than rounding every fraction to two. The current
+`ProductCurrency` type supports EUR only. Inspection shows **Price not set** and
+landing presentation **Price unavailable** for unset values. Historical Order
+snapshots and checkout amount contracts are unchanged. See [M11 presentation
+and verification](../architecture/state-and-data-flow.md#product-and-storefront-presentation-m11).
+
 ## Product CRUD and discovery
 
 | Function | Method and URL | Notes |

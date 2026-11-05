@@ -49,6 +49,12 @@ Creators can currently:
 
 Creators usually start from the creator dashboard, Products area, Storefront area, Customers area, Sales area, or Analytics area.
 
+Collapsed navigation retains the same accessible destination names as expanded
+navigation, with the current destination identified. Help remains unavailable.
+The account menu offers keyboard-reachable **Logout**: open the menu with Enter or
+Space, Tab to Logout, then activate with Enter or Space. Escape dismisses the menu
+without logging out.
+
 The product workflow has two levels:
 
 - **Product Overview**: inspect a product's identity, status, pricing, dates, and type-specific summary from the normal Creator area.

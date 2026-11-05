@@ -48,11 +48,15 @@ The Profile tab displays account profile information where available and include
 
 The Account tab shows password, preference, and delete-account sections. Payment Methods shows business information and a payment-provider connection button. Calendar loads available providers and starts a calendar authorization flow.
 
+Login email and fixed social-link prefixes are skipped when moving through Profile
+with Tab or Shift+Tab. The editable profile fields remain available for keyboard
+entry and validation.
+
 ### Profile validation and saving
 
 Profile Save supports first and last name, title, Bio, Tagline / Mission, Website,
 public email, and the displayed Facebook, Instagram, X, YouTube, and TikTok social
-links. Login email stays read-only. Phone, Change picture, and Remove picture
+links. Login email is disabled and cannot be edited. Phone, Change picture, and Remove picture
 controls are disabled because those edits are unavailable.
 
 Save validates the form before sending changes. Bio and Tagline are optional;

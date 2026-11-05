@@ -62,6 +62,11 @@ Meeting method controls how the session location is described. If **Other** is s
 
 Buffers let creators reserve time before and after each meeting. The maximum sessions setting limits how many sessions the creator wants to accept in one day.
 
+Product Overview omits Buffer before/after rows when the optional value is
+unset. An explicit zero remains visible as **0 minutes**, and positive buffers
+show their saved minute value. Unset buffers do not appear as literal null or
+undefined durations. Session duration and availability configuration are unchanged.
+
 The confirmation message is the message shown or sent after booking in the intended workflow.
 
 The cancellation policy lets creators choose from the available policy options.

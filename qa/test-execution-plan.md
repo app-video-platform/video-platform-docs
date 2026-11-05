@@ -305,3 +305,76 @@ immediate Enter after input replacement. Unknown-ID local mock Storefront fallba
 is not authoritative; API-mocked unavailable coverage is separate. No M10
 live-backend/deployed E2E was performed. Deployed navigation/history, real network
 timing, corrected metadata and reliable access to later results remain pending.
+
+## M11 Product and Storefront retest guidance — 4 November 2026
+
+[PR #81](https://github.com/app-video-platform/video-platform-ui/pull/81) is merged
+as `a2f5695`, implementation `bfc7a64`. Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and five resolution notes. Confirm deployed frontend/backend revisions before
+new attempts. Preserve original failures and evidence; documentation does not
+resume paused QA, mutate real accounts/Products, or update Trello. Use isolated
+fixtures for price/profile/order changes and restore them through the authorized
+workflow during actual retesting.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-002](runs/2026-09-30-01/issues/BUG-002.md) | Saved positive Download, Course, Consultation and Membership: compare summary/list, Overview, public Product where Published access permits, authorized private preview and Landing Builder; reload. Test number vs numeric-string detail prices, Free/zero, month/year cadence and EUR formatting, malformed/negative/precision-losing strings remaining unset. Keep Membership publication/checkout unavailable; do not use current Product price to rewrite historical Order amounts. |
+| [BUG-075](runs/2026-09-30-01/issues/BUG-075.md) | Save nonblank synthetic title/bio, compare profile/public API values, then view/reload as Guest and authenticated visitor. Check saved copy wins over placeholders, public empty/null/undefined rows are omitted and whitespace-only copy uses empty placeholders. Builder editing must remain available; verify public fields do not expose private profile data. |
+| [BUG-070](runs/2026-09-30-01/issues/BUG-070.md) | Consultation before/after buffers: null and undefined omit rows, zero shows 0 minutes and a positive value shows saved minutes. No literal null/undefined duration. Recheck existing duration/availability independently without inventing booking behavior. |
+| [BUG-068](runs/2026-09-30-01/issues/BUG-068.md) | With multiple Published Products and empty explicit order/feature config, compare freshly loaded Builder vs public API/page. Verify newest createdAt, equal-time signed Java UUID tie-break, eligible first featured Product and no dirty Save/PATCH. Preserve explicit IDs/feature and reject Draft/Hidden from public preview. Exercise absent/invalid remaining creation metadata: Builder must retain supplied remaining order, and parity cannot be scored as guaranteed. Verify Save/Reset and actual deployed timestamp precision/comparator separately. |
+| [BUG-025](runs/2026-09-30-01/issues/BUG-025.md) | Admin foreign Course/Download/Consultation/Membership: compare live Builder and authorized private preview with Creator enabled. Verify Product owner's public identity/theme, never Admin substitution, and no private Creator-config request; then simulate unavailable owner data. Creator-owner control should use own profile/config. Retain backend permission/Published/private-data restrictions. |
+
+PR #81 and the handoff report 913 tests / 129 suites, 48 focused tests / five
+suites, TypeScript, lint (0 errors / 185 warnings), whitespace and a successful
+mocks-disabled production build with three existing Webpack performance warnings.
+Reported synthetic browser checks covered public title/bio after reload and the
+same paid Course's Overview/public/private/owner Builder price. Numeric-string
+Download, null buffers, empty default order and foreign Admin cases were automated
+checks rather than browser E2E. Live four-type normalization, creation metadata,
+Builder/public order parity, cross-owner previews and full deployed E2E remain
+pending. Do not convert those limitations into passing historical tests.
+
+M11 changes no Order/checkout monetary contract, M5 entitlement boundary, M8
+request ownership, M9 profile persistence contract or M10 canonical Storefront
+route. BUG-013 remains open and backend-dependent; these fixes do not repair
+search pagination metadata or count that issue as complete.
+
+## M12 Accessibility and interaction retest guidance — 4 November 2026
+
+[PR #82](https://github.com/app-video-platform/video-platform-ui/pull/82) merged
+as `0effcc7` (implementation `f41155f`). Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and eight appended resolution notes. Confirm deployed revisions before scoring
+new attempts; source merge is not deployed accessibility verification. This docs
+update does not resume paused QA or alter original September outcomes, counts or
+Trello. Use isolated synthetic fixtures; do not change real accounts, Products,
+purchases or generate backend notifications for documentation verification.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-038](runs/2026-09-30-01/issues/BUG-038.md) | Open two shared Drawers; inspect distinct correct title relationships, top-layer focus and Tab/Shift+Tab containment. Escape must close only the top, restore focus inside the remaining dialog and retain scroll lock; final close restores prior overflow and connected trigger. Check close controls, lower-entry removal and cleanup. Repeat actual Sales Order + Filters browser-history composition at mobile width. Preserve isolated lifecycle failure vs deployed title-collision evidence; the old deployed sequence passed Escape/focus/scroll. |
+| [BUG-062](runs/2026-09-30-01/issues/BUG-062.md) | Creator/User/Admin Settings Profile: Tab and Shift+Tab skip disabled login email and social prefixes. Inspect native disabled/readOnly properties, not CSS only. A readOnly control remains focusable; enabled fields accept input and retain M9 validation. Use synthetic drafts without real account writes. |
+| [BUG-015](runs/2026-09-30-01/issues/BUG-015.md) | Collapse/expand Creator navigation and inspect every destination's name, keyboard reachability and current-route aria-current; labels match across states. Named Help remains disabled/unavailable. Record actual assistive-technology output separately from DOM names. |
+| [BUG-016](runs/2026-09-30-01/issues/BUG-016.md) | Creator/User/Admin controlled test sessions: keyboard-open account menu, Tab to native Logout, activate with Enter and Space in separate fresh sessions. Escape dismisses without logout. Check existing M1 session cleanup separately; browser menu opening or mocked dispatch alone is not a real logout Pass. Do not change a real user's session for documentation checks. |
+| [BUG-017](runs/2026-09-30-01/issues/BUG-017.md) | Desktop/mobile Landing customization: find Marketing description by accessible name, click its visible label to focus, verify unique field IDs/description associations. Use synthetic edits to recheck Save/Reset and existing error recovery; no real Product configuration writes. |
+| [BUG-022](runs/2026-09-30-01/issues/BUG-022.md) | Find Notifications button by name; activate from keyboard and check aria-expanded false/true, aria-controls targeting only the mounted open panel, Escape and outside dismissal. Cover empty and synthetic populated menus; record focus behavior without assuming Dropdown restoration. |
+| [BUG-027](runs/2026-09-30-01/issues/BUG-027.md) | Measure computed foreground and effective opaque background for Cart, Wishlist, Notifications and expanded Course Articles. Cover empty/populated, buttons/links/text, hover/active/focus indicators and relevant theme states. Record each surface/browser scope separately, including expanded HTML/JSON Article content. Preserve M5 collection behavior, M7 sanitization and M11 pricing. Token arithmetic is not a full runtime contrast audit. |
+| [BUG-045](runs/2026-09-30-01/issues/BUG-045.md) | Fixture a mixed session-local list: isRead=false shows visible/programmatic Unread text; isRead=true omits it. Check order, empty state, readability and non-color-only distinction. Do not infer mark-as-read/remove UI from reducers or server delivery/history/read synchronization/preferences. No backend notification generation is needed. |
+
+PR #82 reports 923 tests / 132 suites, TypeScript, ESLint (0 errors / 185
+warnings), production build (three existing Webpack size/performance warnings),
+and whitespace checks. Automated coverage includes StrictMode stacked Drawer
+ownership, native input states, sidebar names, mocked keyboard Logout, Textarea
+label IDs, notification state and Course region names. Reported synthetic browser
+checks cover collapsed navigation, Settings disabled controls, account-menu
+opening and a single Sales Order Drawer Escape/focus restoration.
+
+The actual Sales Order + Filters overlap, browser Landing labels, populated
+read/unread states, computed menu/expanded Course Article contrast, manual
+screen-reader behavior and deployed parity remain unverified. Theme-token pair
+calculations reportedly meet WCAG AA normal-text targets; this does not establish
+full WCAG compliance or all runtime/theme/browser combinations. Axe is not a
+project dependency, and no axe run or manual screen-reader audit occurred.
+Record future browser and assistive-technology evidence explicitly. M1–M11
+contracts and BUG-013's backend dependency remain unchanged.

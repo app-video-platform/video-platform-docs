@@ -94,6 +94,18 @@ Placeholder areas may be visible in navigation or tabs, but should be documented
 
 Local mock data can demonstrate intended screen behavior for reviewers, but it should not override the production data paths for customer, financial, analytics, dashboard, Storefront, or Product Landing Page data. Membership authoring persistence should be distinguished from its still-missing subscription and member-access lifecycle.
 
+### Session-local notifications
+
+Where the signed-in header shows the bell, its accessible name is
+**Notifications** and its open/closed state is exposed. Product success messages
+appear in the current session; unread entries show **Unread**, while read entries
+omit that marker. An empty list shows **No notifications to show**.
+
+These messages are cleared on reload and at account/session boundaries. There is
+no persistent history, server delivery/read synchronization, or user-facing
+mark-as-read control. Settings Notifications does not save notification
+preferences.
+
 ## Current limitations
 
 - This page is a product-level maturity summary, not a guarantee of backend behavior outside the current frontend.

@@ -9,6 +9,9 @@ sidebar_position: 7
 
 End Users can access the shared Settings area to view account and profile settings screens.
 
+Login email and fixed social-link prefixes are disabled and skipped by Tab and
+Shift+Tab. Editable profile fields remain available for keyboard entry.
+
 The shared Profile form saves supported account-profile fields. Calendar connection can be initiated; several other Settings tabs remain local forms or incomplete workflows.
 
 ## Who can use this
