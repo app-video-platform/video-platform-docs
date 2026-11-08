@@ -41,6 +41,14 @@ Each product row shows the product owner name when available and the owner ID. A
 
 Creating a product from this area starts with selecting a creator owner. After that, the shared product builder is used.
 
+For another Creator's Product, the Landing Page Builder and authorized private
+preview use the Product owner's available public Creator profile and Storefront
+theme. The live preview's enabled Creator section can show that owner's identity
+across Course, Download, Consultation and Membership. An unavailable owner profile
+is not replaced with the signed-in Admin's identity. Private Creator Storefront
+configuration remains restricted to the Creator owner; Product editing access
+does not broaden that permission. See [Product preview behavior](../creators/managing-products.md#landing-page-builder).
+
 Changing search or a filter returns results to the first page. Rows follow the
 current search, owner, type, status, and page; responses from earlier selections
 cannot replace them. Loading hides obsolete rows and disables paging. A

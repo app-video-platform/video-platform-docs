@@ -9,6 +9,9 @@ sidebar_position: 7
 
 End Users can access the shared Settings area to view account and profile settings screens.
 
+Login email and fixed social-link prefixes are disabled and skipped by Tab and
+Shift+Tab. Editable profile fields remain available for keyboard entry.
+
 The shared Profile form saves supported account-profile fields. Calendar connection can be initiated; several other Settings tabs remain local forms or incomplete workflows.
 
 ## Who can use this
@@ -41,6 +44,11 @@ End Users can:
 ## How it works
 
 Settings are organized as tabs. The Profile tab contains basic identity, public information, contact information, and social media fields. The Account tab includes password, preference, and delete-account sections.
+
+On narrow screens, Settings tabs scroll within their own strip. Profile sections
+stack and form actions/social fields adapt to the available width. This does not
+change the [shared validation and save rules](../creators/creator-settings.md#profile-validation-and-saving)
+or the disabled login-email/social-prefix controls.
 
 The shared Profile form saves first/last name, title, Bio, Tagline / Mission,
 Website, public email, and displayed social links. Optional Bio and Tagline values

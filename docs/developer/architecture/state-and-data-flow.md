@@ -112,6 +112,68 @@ The cart and wishlist are browser-saved with `localStorage`.
 
 Product-related success notifications are created through Redux listener middleware. Sonner is mounted globally for toast UI, but Redux notifications and Sonner usage are not the same system in the current implementation.
 
+## Accessibility and interaction conventions (M12)
+
+M12 is merged in [PR #82](https://github.com/app-video-platform/video-platform-ui/pull/82)
+as `0effcc78b76c639ab091bc94e921aa394212b2bc`, implementation
+`f41155f7c24c6744776b87fdb9a64b7302d682f2`. Merged source does not establish
+that an environment has deployed it or completed accessibility verification.
+
+Use the shared [Drawer ownership contract](../components/drawer.md#overlapping-dialog-ownership-m12)
+for overlapping dialogs and [native field semantics](../components/form-input.md#native-field-states-and-textarea-identity-m12)
+for disabled/read-only fields and Textarea IDs. Labels must target their controls;
+icon-only actions need names; visible actions use native interactive elements.
+Creator SidebarNav supplies `aria-label={route.label}` to links and the disabled
+Help button, preserving names when text disappears on collapse. NavLink retains
+active-route `aria-current`; Help remains unavailable. UserDropdown's native
+Logout button keeps the existing authenticated session flow. Dropdown dismissal
+does not supply a general focus-restoration contract.
+
+### Notification presentation boundary
+
+`NotificationsDropdown` names its button **Notifications**, exposes `aria-expanded`
+and links the mounted panel through `aria-controls`. `notifications.slice.ts`
+initializes new entries with `isRead: false`; the dropdown renders **Unread** when
+`!notification.isRead`, and omits that text for read entries. The visible text is
+also programmatically available, so state is not conveyed solely by color. It
+preserves list order and displays **No notifications to show** for an empty list.
+Tests cover keyboard opening/Escape, mixed read/unread fixtures and empty state.
+
+Product success listeners create these Redux notifications; they are
+session-local and reset on full reload and M1 account/session boundaries. Reducer
+`markAsRead`/remove actions are not user-facing menu controls. M12 adds no server
+delivery/history, persistence, read synchronization, mark-as-read UI or notification
+preferences. Settings Notifications remains an M9 local-validation placeholder;
+Sonner toasts are a separate presentation system.
+
+### Theme pairs and verification boundary
+
+Cart, Wishlist and Notifications dropdown styles pair `--surface-panel-elevated`
+with `--text-primary`, replacing white consumer panels that inherited near-white
+text. Cart/Wishlist primary actions pair `--brand-primary` with `--text-inverse`,
+with existing light/dark brand hover/active variants. LegacyExpansionPanel pairs
+`--surface-panel` with `--text-primary` for Course content and header; its region
+uses instance-specific header/content IDs. M5 collection recovery/transitions,
+M7 Article rendering/sanitization and M11 pricing semantics remain unchanged.
+
+When changing surfaces, check text, links, buttons, state labels and focus
+indicators together across empty/populated/expanded, interactive and relevant
+theme states. An inherited foreground can break a locally chosen background.
+Unread text uses `--brand-primary`; preserve the textual state indicator.
+
+PR #82 reports theme-token pair calculations meeting the WCAG AA normal-text
+target, not measured runtime computed-style combinations. It reports 923 tests /
+132 suites, TypeScript, ESLint (0 errors / 185 warnings), a production build with
+three existing Webpack size/performance warnings, and `git diff --check`.
+Reported synthetic browser checks: collapsed Creator names, Settings disabled
+states, keyboard account-menu opening, and single Sales Order Drawer
+Escape/focus restoration. Actual Sales Order + Filters overlap, browser Landing
+labels, populated notifications, computed contrast across affected menus and
+expanded Course Articles, manual screen-reader behavior and deployed parity
+remain unverified. Axe is not installed as a project dependency; no axe run or
+screen-reader audit is claimed. Automated DOM tests and token arithmetic do not
+establish full WCAG compliance or universal theme/browser coverage. See the M12 retest matrix in the repository's `qa/test-execution-plan.md`.
+
 ## Choosing where state belongs
 
 Use this as a practical guide:
@@ -318,6 +380,120 @@ Calendar behavior, real Microsoft/Google consent/callbacks and synchronization
 remain unverified. Prior BUG-081 backend work is separate from M9 initialization
 feedback; an operational Trello completion status is not deployed/provider proof.
 No provider URLs or live-account mutations were exercised for this docs update.
+
+## Discovery search state (M10)
+
+Product discovery keeps its existing React Query path rather than moving reads
+into the M8 Redux channels. The URL owns committed `term` and zero-based `page` at
+`/app/explore/search`; SmartSearch keeps only the editable/debounced input and
+selection locally. Results key on term/page/size, while autocomplete keys on its
+debounced term. Old responses remain isolated to their keys; changing input also
+invalidates a highlighted prior suggestion before debounce completes.
+
+New/same-term submissions reset page to zero, pagination creates history entries,
+and URL traversal restores committed state. Invalid page normalization uses
+replace, not a feedback effect that overwrites Back/Forward with local page state.
+Canonical Creator links use `appRoutes.store(creatorId)` and the public route.
+
+See [Search request, URL and combobox behavior](../components/search.md#smartsearch-query-ownership-m10)
+for exact keys, page parsing, keyboard behavior and M10 verification. M1 session
+boundaries, Product visibility and M5 entitlements remain unchanged; discovery
+navigation is not access authorization. M10 improves pagination presentation,
+but [BUG-013 still requires backend correction](../backend/products-and-authoring.md#pagination-metadata-dependency-bug-013).
+The client retains the API's last/total-page contract and does not infer unseen
+pages or create a parallel continuation mechanism.
+
+## Product and Storefront presentation (M11)
+
+Merged [PR #81](https://github.com/app-video-platform/video-platform-ui/pull/81)
+is main merge `a2f56952c062c14973761cc4ee8b7a51f42e16bc`, implementation
+`bfc7a643551160c45fce999ead9675f389c53a6e` (4 November 2026). Source comparison
+confirms that implementation is contained in main with no file differences.
+Product price normalization stays at the existing API boundary; [Products API](../api/products.md#price-response-normalization-m11)
+describes exact accepted representations and precision limits. Product
+inspection and landing-price helpers consume normalized values. M8 detail
+request ownership, M1 session boundaries and M5 entitlement enforcement remain
+unchanged; these presentation fixes do not rewrite checkout or Order snapshots.
+
+### Public profile copy and optional values
+
+The shared `features/storefront/components/storefront-public-page.component.tsx`
+`renderEditable` helper prioritizes a non-nullish editable renderer result, then
+an existing value with nonempty `trim()`, then fallback/empty text. Nonblank
+saved copy is returned as supplied. Public Title/Bio outer row guards omit null,
+undefined and empty-string rows; whitespace-only strings reach the helper and
+show **Creator** / **Add a public bio.** The Builder's editable renderers retain
+their controls. This preserves the public profile read model and M9 save behavior;
+it does not expose login email or private Creator configuration.
+
+Consultation Overview now checks both null and undefined before appending
+`minutes` for before/after buffers. Its definition-list helper omits empty rows;
+zero and positive minute values remain visible. Duration, availability and
+Calendar behavior are unchanged.
+
+### Derived Storefront order
+
+`features/storefront/storefront.utils.ts` applies configured IDs first, deduped
+and limited to existing Products. For remaining Products, `orderStorefrontProducts`
+requires valid `createdAt` for every item before deriving newest-created order.
+Equal millisecond times compare available fractional timestamp digits (up to
+nine), then valid UUIDs compare in ascending Java `UUID.compareTo` order: signed
+most-significant 64-bit half, then signed least-significant half. This is not
+ordinary unsigned string ordering. Non-UUID IDs retain the existing lexical
+fallback. The comparator mirrors the recorded public-order convention; it adds
+no new backend sorting guarantee.
+
+If any remaining creation timestamp is missing/invalid, all remaining input
+order is preserved after explicit IDs. Missing metadata cannot establish public
+parity. The Builder derives display order without modifying draft/saved
+`productOrderIds`; dirty comparison and Save/Reset use the config itself. The
+shared view model filters public Products to Published and keeps a valid
+featured ID, otherwise choosing the first eligible Product in effective order.
+Public read-model presentation retains the API's order instead of re-sorting it.
+Deployed creation metadata, timestamp precision and comparator parity still
+require verification.
+
+### Cross-owner landing view model
+
+`ProductLandingPageBuilder` checks Product `userId` against signed-in User ID and
+the Creator role. Only that Creator owner calls `fetchCreatorStorefrontConfig`
+(`GET api/creator/storefront`) and supplies their profile/private theme to the
+view model. Other authorized viewers, including Admin, select the owner-keyed
+public Storefront cache and call `fetchPublicStorefront(product.userId)` when
+needed (`GET api/storefronts/:creatorId`). The shared landing model prefers that
+public Creator profile/theme. A current User profile fallback requires matching
+Product owner ID; unavailable public owner data must not become Admin identity
+or Admin theme. Missing theme uses the existing default. Enabled Creator sections
+require available identity. Product-scoped landing config authorization and
+private/Published Product boundaries remain unchanged; this broadens no private
+Storefront permission.
+
+### M11 verification boundary
+
+PR #81 and `M11_DOCUMENTATION_HANDOFF.md` report 913 tests / 129 suites and 48
+focused tests / five suites, TypeScript, ESLint (0 errors / 185 existing warnings),
+whitespace checks and a successful mocks-disabled production build with three
+existing Webpack asset/entrypoint/performance warnings.
+
+Inspected tests cover price normalization and four-type price presentation,
+month/year and Free semantics, public title/bio plus whitespace fallback,
+null/undefined/zero/positive buffers, explicit/default/missing-metadata order,
+signed-UUID tie-break, featured eligibility and no dirty save from derived order.
+Four-type Admin Builder tests assert owner public identity/theme, no private
+Creator-config request, and no Admin identity substitution when owner data fails.
+Tests also cover public/private price presentation; they do not establish live
+backend parity. Relevant tests sit beside the normalizer, Storefront utilities/
+public component, Overview, Builder, private preview and public Product page.
+
+Reported synthetic browser checks confirmed public Storefront title/bio after
+reload and the same paid Course price in Overview, public Product, private
+preview and owner Landing Builder. String-priced Download, null buffers,
+empty-order and foreign Admin cases were automated coverage, not browser E2E.
+Live Product normalization across all types, deployed creation metadata and
+Builder/public order parity, live Admin cross-owner previews and full deployed
+four-role E2E remain unverified. No backend or deployed business mutation was
+performed for this documentation update. BUG-013's M10 pagination dependency
+remains open and unchanged.
 
 ## Saved workspace and nested authoring
 

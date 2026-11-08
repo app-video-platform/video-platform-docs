@@ -30,10 +30,10 @@ Product-facing access behavior is documented in [Roles and Access](../product/st
 | `/unauthorized` | public | - | Unauthorized page |  |
 | `/app` | protected | Admin, Creator, User | Role-based app home | Admin, Creator, or End User landing |
 | `/app/explore` | public | - | Explore products |  |
-| `/app/explore/search` | public | - | Product search results |  |
+| `/app/explore/search` | public | - | Product search results | URL-owned `term` and zero-based `page`; new submissions omit page, pagination adds history, malformed page normalizes with replace; see [Search](./components/search.md#search-results-and-pagination-m10) |
 | `/app/product/:id` | public | - | Public Product Landing Page | Renders published Products and current purchase/access actions where supported; Membership checkout remains unavailable |
 | `/app/product/:id/:type` | public | - | Public Product Landing Page compatibility route | Redirects to the ID-only route when the type segment conflicts with loaded Product data |
-| `/app/store/:creatorId` | public | - | Public creator Storefront | Shows the creator profile, persisted Storefront theme, and published products; draft and hidden products are withheld |
+| `/app/store/:creatorId` | public | - | Public creator Storefront | Canonical Explore/Search Creator destination built by `appRoutes.store(creatorId)`; outside ProtectedRoute for Guest/User/Creator/Admin. Shows public profile/theme and published Products; missing Creator identity is not linked |
 | `/app/cart` | protected | Admin, Creator, User | Shopping cart | Uses free enrollment for free-only carts and Commerce checkout session creation for paid carts |
 | `/app/library` | protected | User, Creator, Admin | Shared Library shell | Role access permits the UI; backend entitlements still govern content |
 | `/app/library/all-products` | protected | User, Creator, Admin | Library tab | Current-principal entitlement Products, filtered by type where applicable |

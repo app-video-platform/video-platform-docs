@@ -82,7 +82,27 @@ The application is organized around roles. After sign-in, the app sends each use
 
 Some product discovery pages are public. Management pages require sign-in and the correct role.
 
+On narrow marketing pages, **Menu** opens Home, About, Pricing, Getting Started
+and Contact Us, plus **Sign In**/**Register** for visitors or **Go to Dashboard**
+and account actions when signed in. The brand remains visible. Selecting a new
+route closes the compact menu; Escape closes it and returns focus to Menu.
+Navigation appears inline on wider screens. Account actions remain unavailable
+while the app is verifying an unresolved session.
+
+On Contact, the initially expanded FAQ answer is visible without closing and
+reopening it. FAQ headings can be toggled by pointer or keyboard. The footer's
+**FAQ** link opens `/contact#faq` and targets that section. The agreement checkbox
+can be reached by keyboard and toggled with Space; its visible and checked states
+follow the same value. The Contact form does not deliver messages or enforce
+agreement acceptance.
+
+Homepage Product, Feature and lower CTA controls can complete their reveal when
+focused; Product/Feature selection keeps its existing emphasis behavior. This
+interaction improvement is not a completed keyboard or reduced-motion audit.
+
 ## Current limitations
+
+- Home and About still extend horizontally on narrow screens despite improved body layouts and fitting headers. Complete fresh-visitor keyboard traversal, Trust-card dimming and reduced-motion runtime behavior remain unverified.
 
 - Customer-facing purchase/access paths exist for free enrollment and eligible paid Cart checkout, but no production payment provider or real charging is configured.
 - The shopping cart and wishlist are stored in the browser, not in a user account.

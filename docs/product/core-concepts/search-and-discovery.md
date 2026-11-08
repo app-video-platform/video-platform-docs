@@ -35,9 +35,22 @@ Product cards can include customer actions such as saving to wishlist or adding 
 
 Public Storefront pages present a creator profile and that creator's published products. Storefront product cards link to Product Landing Pages.
 
+Creator links from Explore and Search use the public Storefront destination;
+Product viewing remains a separate action. When Creator identity is absent,
+Explore keeps a plain label and Search omits the Creator link.
+
+New searches begin on the first page. Browser history and reload restore the
+committed search and page, and visible numbering starts at one. Autocomplete
+selection belongs to the current input: changing text clears an older highlight,
+Enter uses current text unless a current suggestion has been selected, and Escape
+closes the list. Selecting a suggestion searches its title. See [Exploring
+Products](../customers/exploring-products.md#how-it-works) for keyboard and recovery
+behavior.
+
 ## Current limitations
 
 - Product images in discovery areas are currently placeholders.
+- Search pagination depends on server-provided page information. A known defect can mark the first page as final even when more matching Products exist, leaving Next disabled. Page-label/empty-state improvements do not resolve this backend dependency (BUG-013); reliable later-page access remains pending.
 - Storefront pages lead to Product Landing Pages; they do not process checkout directly.
 - Wishlist and cart actions are saved in the browser and do not represent checkout, payment, or product ownership.
 - Search and cart placement do not grant access. Free enrollment or a successful paid event creates the entitlement.

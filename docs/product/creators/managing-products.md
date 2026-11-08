@@ -68,6 +68,13 @@ The current Product Overview shows type-specific read-only summaries:
 
 Creator product navigation follows this rule: product identity links open Product Overview, while explicit edit/build actions open Product Workspace. This applies to the Products list and relevant Creator surfaces such as Dashboard, Analytics, and Sales where the implementation uses product identity links.
 
+Saved positive Product prices appear consistently in Products, Overview, public
+Product presentation, authorized private preview and the Landing Page Builder.
+Free and zero-priced Products retain **Free** presentation; configured recurring
+prices retain their month/year cadence and EUR formatting. Missing or invalid
+prices remain unset/unavailable rather than becoming Free. This presentation
+change does not alter historical Order amounts or checkout pricing.
+
 When switching between Products, Overview shows loading for the selected Product
 until its details arrive. An earlier Product's response cannot replace the current
 selection or cause a false **Product not found** state. Loading and error feedback
@@ -89,6 +96,9 @@ Creators can currently:
 - Save the full landing-page configuration.
 - Reset unsaved changes back to the last persisted or default configuration.
 
+The **Marketing description** field has an associated visible label; activating
+that label focuses the field, including in mobile customization.
+
 Builder edits update the live preview immediately, but they remain local until the creator selects **Save**. **Reset** discards unsaved landing-page configuration changes.
 
 A rejected landing-page Save keeps the unsaved draft on screen and displays an
@@ -108,6 +118,15 @@ Landing-page configuration is persisted. If a saved configuration omits `visible
 
 Product Preview uses the owner's Creator Storefront configuration for creator-owner previews. Administrator previews use the Product owner's public Storefront theme and fall back to the default Storefront theme when public theme data is unavailable.
 
+The Landing Page Builder follows the same ownership boundary. A Creator editing
+their own Product uses their profile and Creator Storefront theme. An Admin
+editing another Creator's Course, Download, Consultation or Membership uses the
+Product owner's available public identity and Storefront theme in the live
+preview. An enabled Creator section shows that identity when available; an
+unavailable owner profile is not replaced with the Admin's profile. This does not
+grant access to another Creator's private Storefront settings or change Product
+visibility or Membership publication limits.
+
 ## Product Workspace, media, and readiness
 
 Use **Edit product** to open the focused Product Workspace. The current workspace areas are:
@@ -119,6 +138,11 @@ Use **Edit product** to open the focused Product Workspace. The current workspac
 - **Readiness** for known publish blockers, warnings, and backend readiness feedback.
 
 Product media is generic Product presentation media. Images support JPEG, PNG, WebP, and GIF up to 10 MB each. Promo videos support MP4 and WebM up to 100 MB. Galleries can contain up to 20 images and support ordering/removal. Product media is separate from Course lesson videos, Download deliverables, and Membership Video/Resource binary content.
+
+Thumbnail, Gallery and Promo selection dashboards adapt to the available Media
+workspace width. This layout improvement does not establish successful native
+file selection, upload or persistence. Current local responsive browser checks
+cover a Course workspace; broader Product-type/role checks remain pending.
 
 For supported non-Membership Products, Publish uses the Product Workspace readiness flow and then updates the Product with `status: PUBLISHED`. Backend readiness validation is authoritative and can return field-specific errors that appear in the Readiness area. Membership readiness can be shown, but Membership Product publishing remains unavailable. Unpublish is not implemented.
 

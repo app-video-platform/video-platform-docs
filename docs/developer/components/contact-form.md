@@ -12,7 +12,7 @@ title: ContactForm
 - **A11y:**
   - Each field has an explicit label via [`Input`](form-input.md)’s `label` prop.
   - Checkbox uses a semantic input and label association.
-  - The submit button (`htmlType="submit"`) is focusable and triggers form submission via keyboard.
+  - The native submit button (`type="submit"`) invokes the local form handler; that handler prevents default submission without sending a message.
 
 ### Example
 ```tsx
@@ -23,8 +23,8 @@ title: ContactForm
 - The form manages state internally (`formData`) for all inputs.
 - `handleSubmit` currently just prevents page reload; extend it to send data via API or email.
 - Reuses:
-    - [`Input`](form-input.md) for text fields and textareas.
-    - [`CheckboxInput`](checkbox-input.md) for consent.
+    - [`Input` and Textarea](form-input.md) for single-line and multiline fields.
+    - [`CheckboxInput`](checkbox-input.md) for the displayed agreement.
     - [`Button`](button.md) for submission.
 - To reset fields after submit, set `formData` back to its initial state.
 - When adding validation, prefer native constraints (`required`) or React Hook Form for complex rules.
@@ -32,3 +32,31 @@ title: ContactForm
 <br></br>
 <br></br>
 > Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025
+
+### Agreement compatibility (M14)
+
+The change handler reads `event.target.checked` for a native checkbox and
+`event.target.value` for text controls. Its boolean `agree` value stays in sync
+with controlled CheckboxInput, allowing the agreement to toggle both on and off.
+`contact-form.component.test.tsx` verifies both pointer toggles and their native
+checked state. This is a compatibility fix for the shared checkbox change; it
+adds no Contact submission, backend handling, agreement validation or new legal
+acceptance requirement. Other Contact behavior is unchanged.
+
+### M15 regression coverage and FAQ boundary
+
+The agreement implementation came from M14: CheckboxInput forwards checked and
+disabled to its native control, preserves keyboard focus, and Contact reads the
+boolean `event.target.checked`. M15 adds a regression that Tabs from Message to
+the agreement, uses Space twice, and checks native checked state against the
+wrapping label's `checked` class after both transitions. M14's pointer on/off test
+remains. This is additional test coverage, not a second Contact implementation.
+Label interaction uses CheckboxInput's wrapping label; runtime visible-focus and
+role/browser checks still belong in QA.
+
+Contact's FAQ uses [LegacyExpansionPanel](expansion-panel.md#initial-and-changing-content-height-m15),
+including one initially expanded answer. The footer FAQ destination is
+`/contact#faq`; Contact supplies the target and hash scroll handling. Neither FAQ
+copy nor agreement toggling establishes message delivery, mandatory consent,
+legal-agreement persistence or a Contact backend endpoint. The form handler still
+only prevents default submission.

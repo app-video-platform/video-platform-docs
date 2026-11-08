@@ -270,3 +270,285 @@ redirect-encoding failure, backend URL construction, real consent/callbacks,
 token exchange and sync require their own verified evidence. M9 implements
 frontend initialization feedback and does not establish those backend/provider
 outcomes. Trello status remains unchanged.
+
+## M10 Discovery and Search retest guidance — 4 November 2026
+
+[PR #80](https://github.com/app-video-platform/video-platform-ui/pull/80) is merged
+as `bc248bf`, implementation `97aad2e`. Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and four issue follow-ups. Three frontend fixes are complete; BUG-013 is partial
+and remains open. Confirm the deployed revisions, use harmless stable fixtures
+and append actual attempts only after authorized execution. Documentation does not
+resume paused QA, mutate production data or update Trello.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-004](runs/2026-09-30-01/issues/BUG-004.md) | Guest/User/Creator/Admin: follow an Explore Creator link and Search Creator link to `/app/store/:creatorId`; verify public rendering, direct navigation and reload. Check missing identity fallback and unavailable Storefront responses with controlled APIs, not permissive unknown-ID mocks. Verify Product viewing still opens its separate Product route. |
+| [BUG-014](runs/2026-09-30-01/issues/BUG-014.md) | Open API page 1 (visible page two), submit new and same terms, confirm API page zero and omitted page parameter. Traverse Back/Forward and reload: input, heading, URL, results and page must match. Cover encoded/empty direct terms, malformed/negative/noncanonical/unsafe page replacement, stale prior query response and valid empty/out-of-range Return to first page. |
+| [BUG-091](runs/2026-09-30-01/issues/BUG-091.md) | Highlight query A's option, replace with B and immediately press Enter: B must be searched. Repeat with no highlighted option, intentional current ArrowUp/ArrowDown/Enter selection, mouse selection, Escape and clearing. Delay older suggestion responses; they must not replace current options. Inspect combobox/listbox relationships and selected-current active-descendant, with native assistive-technology checks recorded separately. |
+| [BUG-013](runs/2026-09-30-01/issues/BUG-013.md) | **Backend correction required before final Pass.** With more than one page of stable matching Products, compare public page zero/one/final responses and owner-scoped equivalents using identical query, owner, sort and size. Check actual IDs, complete stable totalElements/totalPages, and last only on the true final page. Include empty, exact full-final and partial-final pages, 24 owner role/sort combinations and owner isolation. After correction, verify Next reaches later IDs, Prev, one-based labels, empty states, direct links and reload in the four-role public UI. |
+
+The recorded defect is public page zero: 20 rows / totalElements=20 /
+totalPages=1 / last=true, while page one contains 20 additional IDs / 40 / 2 /
+last=true. The isolated owner route reproduces 5/1/last=true then 10/2/last=true
+before the final two of twelve matches. The public and owner environments remain
+separate evidence scopes. M10 keeps the API metadata contract; row counts alone
+cannot establish reliable continuation. Refer to the [backend follow-up](../docs/developer/backend/products-and-authoring.md#pagination-metadata-dependency-bug-013).
+Do not count corrected labels or controlled pagination fixtures as a resolved
+backend defect or completed later-page E2E.
+
+PR #80 and the handoff report 874 tests / 127 suites, TypeScript, lint (0 errors /
+185 warnings), a successful mocks-disabled production build with three existing
+Webpack performance warnings, and whitespace checks. Synthetic browser checks:
+Guest Storefront navigation/reload, page=2 new-search reset, Back/Forward and
+immediate Enter after input replacement. Unknown-ID local mock Storefront fallback
+is not authoritative; API-mocked unavailable coverage is separate. No M10
+live-backend/deployed E2E was performed. Deployed navigation/history, real network
+timing, corrected metadata and reliable access to later results remain pending.
+
+## M11 Product and Storefront retest guidance — 4 November 2026
+
+[PR #81](https://github.com/app-video-platform/video-platform-ui/pull/81) is merged
+as `a2f5695`, implementation `bfc7a64`. Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and five resolution notes. Confirm deployed frontend/backend revisions before
+new attempts. Preserve original failures and evidence; documentation does not
+resume paused QA, mutate real accounts/Products, or update Trello. Use isolated
+fixtures for price/profile/order changes and restore them through the authorized
+workflow during actual retesting.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-002](runs/2026-09-30-01/issues/BUG-002.md) | Saved positive Download, Course, Consultation and Membership: compare summary/list, Overview, public Product where Published access permits, authorized private preview and Landing Builder; reload. Test number vs numeric-string detail prices, Free/zero, month/year cadence and EUR formatting, malformed/negative/precision-losing strings remaining unset. Keep Membership publication/checkout unavailable; do not use current Product price to rewrite historical Order amounts. |
+| [BUG-075](runs/2026-09-30-01/issues/BUG-075.md) | Save nonblank synthetic title/bio, compare profile/public API values, then view/reload as Guest and authenticated visitor. Check saved copy wins over placeholders, public empty/null/undefined rows are omitted and whitespace-only copy uses empty placeholders. Builder editing must remain available; verify public fields do not expose private profile data. |
+| [BUG-070](runs/2026-09-30-01/issues/BUG-070.md) | Consultation before/after buffers: null and undefined omit rows, zero shows 0 minutes and a positive value shows saved minutes. No literal null/undefined duration. Recheck existing duration/availability independently without inventing booking behavior. |
+| [BUG-068](runs/2026-09-30-01/issues/BUG-068.md) | With multiple Published Products and empty explicit order/feature config, compare freshly loaded Builder vs public API/page. Verify newest createdAt, equal-time signed Java UUID tie-break, eligible first featured Product and no dirty Save/PATCH. Preserve explicit IDs/feature and reject Draft/Hidden from public preview. Exercise absent/invalid remaining creation metadata: Builder must retain supplied remaining order, and parity cannot be scored as guaranteed. Verify Save/Reset and actual deployed timestamp precision/comparator separately. |
+| [BUG-025](runs/2026-09-30-01/issues/BUG-025.md) | Admin foreign Course/Download/Consultation/Membership: compare live Builder and authorized private preview with Creator enabled. Verify Product owner's public identity/theme, never Admin substitution, and no private Creator-config request; then simulate unavailable owner data. Creator-owner control should use own profile/config. Retain backend permission/Published/private-data restrictions. |
+
+PR #81 and the handoff report 913 tests / 129 suites, 48 focused tests / five
+suites, TypeScript, lint (0 errors / 185 warnings), whitespace and a successful
+mocks-disabled production build with three existing Webpack performance warnings.
+Reported synthetic browser checks covered public title/bio after reload and the
+same paid Course's Overview/public/private/owner Builder price. Numeric-string
+Download, null buffers, empty default order and foreign Admin cases were automated
+checks rather than browser E2E. Live four-type normalization, creation metadata,
+Builder/public order parity, cross-owner previews and full deployed E2E remain
+pending. Do not convert those limitations into passing historical tests.
+
+M11 changes no Order/checkout monetary contract, M5 entitlement boundary, M8
+request ownership, M9 profile persistence contract or M10 canonical Storefront
+route. BUG-013 remains open and backend-dependent; these fixes do not repair
+search pagination metadata or count that issue as complete.
+
+## M12 Accessibility and interaction retest guidance — 4 November 2026
+
+[PR #82](https://github.com/app-video-platform/video-platform-ui/pull/82) merged
+as `0effcc7` (implementation `f41155f`). Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and eight appended resolution notes. Confirm deployed revisions before scoring
+new attempts; source merge is not deployed accessibility verification. This docs
+update does not resume paused QA or alter original September outcomes, counts or
+Trello. Use isolated synthetic fixtures; do not change real accounts, Products,
+purchases or generate backend notifications for documentation verification.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-038](runs/2026-09-30-01/issues/BUG-038.md) | Open two shared Drawers; inspect distinct correct title relationships, top-layer focus and Tab/Shift+Tab containment. Escape must close only the top, restore focus inside the remaining dialog and retain scroll lock; final close restores prior overflow and connected trigger. Check close controls, lower-entry removal and cleanup. Repeat actual Sales Order + Filters browser-history composition at mobile width. Preserve isolated lifecycle failure vs deployed title-collision evidence; the old deployed sequence passed Escape/focus/scroll. |
+| [BUG-062](runs/2026-09-30-01/issues/BUG-062.md) | Creator/User/Admin Settings Profile: Tab and Shift+Tab skip disabled login email and social prefixes. Inspect native disabled/readOnly properties, not CSS only. A readOnly control remains focusable; enabled fields accept input and retain M9 validation. Use synthetic drafts without real account writes. |
+| [BUG-015](runs/2026-09-30-01/issues/BUG-015.md) | Collapse/expand Creator navigation and inspect every destination's name, keyboard reachability and current-route aria-current; labels match across states. Named Help remains disabled/unavailable. Record actual assistive-technology output separately from DOM names. |
+| [BUG-016](runs/2026-09-30-01/issues/BUG-016.md) | Creator/User/Admin controlled test sessions: keyboard-open account menu, Tab to native Logout, activate with Enter and Space in separate fresh sessions. Escape dismisses without logout. Check existing M1 session cleanup separately; browser menu opening or mocked dispatch alone is not a real logout Pass. Do not change a real user's session for documentation checks. |
+| [BUG-017](runs/2026-09-30-01/issues/BUG-017.md) | Desktop/mobile Landing customization: find Marketing description by accessible name, click its visible label to focus, verify unique field IDs/description associations. Use synthetic edits to recheck Save/Reset and existing error recovery; no real Product configuration writes. |
+| [BUG-022](runs/2026-09-30-01/issues/BUG-022.md) | Find Notifications button by name; activate from keyboard and check aria-expanded false/true, aria-controls targeting only the mounted open panel, Escape and outside dismissal. Cover empty and synthetic populated menus; record focus behavior without assuming Dropdown restoration. |
+| [BUG-027](runs/2026-09-30-01/issues/BUG-027.md) | Measure computed foreground and effective opaque background for Cart, Wishlist, Notifications and expanded Course Articles. Cover empty/populated, buttons/links/text, hover/active/focus indicators and relevant theme states. Record each surface/browser scope separately, including expanded HTML/JSON Article content. Preserve M5 collection behavior, M7 sanitization and M11 pricing. Token arithmetic is not a full runtime contrast audit. |
+| [BUG-045](runs/2026-09-30-01/issues/BUG-045.md) | Fixture a mixed session-local list: isRead=false shows visible/programmatic Unread text; isRead=true omits it. Check order, empty state, readability and non-color-only distinction. Do not infer mark-as-read/remove UI from reducers or server delivery/history/read synchronization/preferences. No backend notification generation is needed. |
+
+PR #82 reports 923 tests / 132 suites, TypeScript, ESLint (0 errors / 185
+warnings), production build (three existing Webpack size/performance warnings),
+and whitespace checks. Automated coverage includes StrictMode stacked Drawer
+ownership, native input states, sidebar names, mocked keyboard Logout, Textarea
+label IDs, notification state and Course region names. Reported synthetic browser
+checks cover collapsed navigation, Settings disabled controls, account-menu
+opening and a single Sales Order Drawer Escape/focus restoration.
+
+The actual Sales Order + Filters overlap, browser Landing labels, populated
+read/unread states, computed menu/expanded Course Article contrast, manual
+screen-reader behavior and deployed parity remain unverified. Theme-token pair
+calculations reportedly meet WCAG AA normal-text targets; this does not establish
+full WCAG compliance or all runtime/theme/browser combinations. Axe is not a
+project dependency, and no axe run or manual screen-reader audit occurred.
+Record future browser and assistive-technology evidence explicitly. M1–M11
+contracts and BUG-013's backend dependency remain unchanged.
+
+## M13 Responsive navigation and Settings retest guidance — 5 November 2026
+
+[PR #83](https://github.com/app-video-platform/video-platform-ui/pull/83) merged as
+`62c4cfb` (implementation `f814170`). Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and four resolution notes. Confirm deployed revisions and authorized execution
+before new attempts. Preserve historical September outcomes/evidence, including
+later role/viewport findings; this docs update does not resume paused QA or change
+Trello. No real account, Profile, Product, purchase or collection changes are
+needed for documentation verification. Use controlled synthetic data for later
+mutation/validation retests, with authorized cleanup.
+
+Retain existing MKT-001–MKT-008, UX-003 and UX-015 case identities in the original
+[case catalog](test-cases-current-state-29-09-26.md); this matrix supplements
+retesting rather than creating competing cases or scoring original failures Pass.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-010](runs/2026-09-30-01/issues/BUG-010.md) | On `/`, `/about`, `/pricing`, `/getting-started`, `/contact`, `/features`, `/help`, `/demo`, test narrow Menu and inline navigation. Include 320/375/390/480/768/1280/1440px plus 900px and just above. Check brand, Home/About/Pricing/Getting Started/Contact Us, Guest Sign In/Register and authenticated Dashboard/account actions according to confirmed role/session. Keyboard/touch-open, Tab/Shift+Tab, visible focus, Escape/trigger focus, route-change dismissal, direct reload and Back/Forward. Measure header and body separately. |
+| [BUG-087](runs/2026-09-30-01/issues/BUG-087.md) | Repeat all eight routes for settled Guest/User/Creator/Admin, especially Contact and auth/account reachability before horizontal document scrolling. Verify unresolved/unavailable sessions do not expose Guest actions prematurely. Account popup must flow within the compact menu, with reachable vertically overflowing content. Native 200% zoom and complete keyboard traversal remain required; do not infer them from CSS or viewport fit. |
+| [BUG-012](runs/2026-09-30-01/issues/BUG-012.md) | Explore, Search, public Course/Download/Consultation, Cart and Library under existing access rules; assess public Storefront separately because AppLayout bypasses TopNavbar there. Check seven widths plus 1000px/just above: search always visible in the compact second row, supported role/auth/collection controls in Menu, no search/Explore hit-target overlap. Actual pointer-activate Explore at desktop 1280/1440px from deep routes; keyboard activation is a separate check. Recheck absolute Library destination, reload/history, M10 URL term/page/new-query reset and current-query autocomplete. Preserve M12 names/keyboard controls and distinguish header fit from Product-body overflow. |
+| [BUG-065](runs/2026-09-30-01/issues/BUG-065.md) | Creator/Admin/User Settings with long and short synthetic names: inspect every supported tab, contained tab-strip horizontal scrolling vs document width, Profile field/social prefix-value bounds and visible Save/action rows. Cover seven widths and 768px/just above, keyboard reachability/visible focus and native 200% zoom. Preserve M12 disabled Tab skipping vs focusable readOnly controls and M9 validation/persistence using controlled drafts. Calendar style rules are not a completed browser/provider flow; retest selectors/buttons without real consent/account changes. |
+
+### Keep remaining body overflow separate
+
+The [reported M13 measurements](runs/2026-09-30-01/summary.md#m13-remaining-page-content-overflow--5-november-2026)
+are local Creator observations: at 320px, Home document 1062px, About 762px and
+Explore Product-card action 366px, with headers fitting. The handoff reports the
+Explore document fits from 375px in that fixture. Identify actual overflowing
+elements before assigning causes; do not automatically attribute Home/About to
+one section, hide body overflow, create unsupported issue IDs or claim later
+M14/M15 work is complete. Existing [BUG-088](runs/2026-09-30-01/issues/BUG-088.md)
+remains independent long Download body overflow, not repaired by a navbar fix.
+
+### Evidence boundary
+
+PR #83 reports 927 tests / 133 suites, TypeScript, ESLint (0 errors / 183
+warnings), production build (three Webpack size/performance warnings), and
+whitespace checks. Nav component tests cover Guest/authenticated branches and
+Escape/focus; TopNavbar tests mock SmartSearch/dropdown children and exercise a
+User collection branch. Source closes both menus on location changes; new tests
+do not explicitly assert that navigation lifecycle or measure CSS. Existing
+SmartSearch tests retain their M10 scope. No new dedicated Settings geometry
+test was added.
+
+Reported browser scope is local synthetic Creator: marketplace header/search and
+loaded Profile Settings/action/social rows at 320, 375, 390, 480, 768, 1280 and
+1440px; Explore center hit-test/pointer click at 1440px; all eight marketing
+headers and compact menus at 320px. No reported full Guest/User/Admin browser
+matrix, all Product families, native 200% zoom, complete keyboard traversal,
+full history/reload matrix or deployed/live-backend E2E. Neither build success
+nor these scoped observations establish complete responsive or WCAG compliance.
+M1–M12 contracts and BUG-013's backend dependency remain unchanged.
+
+## M14 Long content and media layout retest guidance — 5 November 2026
+
+[PR #84](https://github.com/app-video-platform/video-platform-ui/pull/84) merged
+as `a5e9bf1` (implementation `9138988`). Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and five M14 issue addenda. Frontend implementation is complete; exact historical
+long-content reproductions are not verified after the fix. Confirm deployed
+revisions and authorized QA before new attempts. Preserve original results,
+measurements, roles, screenshots, investigations and cleanup. This documentation
+update does not resume paused execution or change Trello.
+
+Use retained valid synthetic fixtures or isolated controlled data. Do not mutate
+real accounts, Orders, payments, Product inclusion relationships or upload to
+real storage merely for a documentation audit. Keep layout evidence separate
+from transaction, entitlement and native upload/persistence checks. Native zoom,
+keyboard and pointer observations must be recorded separately from DOM assertions.
+
+| Issue | Required historical-fixture retest |
+| --- | --- |
+| [BUG-066](runs/2026-09-30-01/issues/BUG-066.md) | Retained Customer with long valid combined/individual names, long email and unbroken segments: Overview, Purchases, Access, Notes at 375/768/1440px plus 320px when possible. Measure document/title/identity/panel bounds, verify readable full wrapping, status/actions/links and keyboard interaction. Ordinary Customer fit does not retest the prior 152-character name/112-character email. Reporting remains Creator-only; access-denied roles are not fabricated reporting layout passes. |
+| [BUG-067](runs/2026-09-30-01/issues/BUG-067.md) | Historical two-item Order with long Customer identity/Product titles: mobile transaction cards and desktop ledger at 375/768/1440px plus 320px. Check status/amount alignment, every item and line/Order totals, filters, Order opening, resize/filter retention and keyboard/pointer controls. Verify layout without changing immutable snapshots, payments/refunds or access grants. |
+| [BUG-076](runs/2026-09-30-01/issues/BUG-076.md) | Membership Content → Add content → Existing Product with ordinary, long multiword and long unbroken titles. Check full title/description/status, compact checkbox named Select plus complete title, native checked state/Space and pointer selection, visible focus, readable identity-column width and no drawer/document overflow. Use temporary local selection/cancel or authorized isolated confirmation; do not alter real inclusion relationships for documentation verification. Component tests do not measure the historical collapsed columns. |
+| [BUG-079](runs/2026-09-30-01/issues/BUG-079.md) | Course/Download/Consultation/Membership Media at 375/768/1440px, Creator/Admin where supported: measure parent/dashboard/document bounds and Browse files visibility/keyboard reachability. Compare Thumbnail with Gallery/Promo and desktop. Existing selection/remove/error flows remain separate regression checks. Course's local 309px/702px dimensions do not verify all historical types/roles, native chooser behavior or storage persistence. |
+| [BUG-088](runs/2026-09-30-01/issues/BUG-088.md) | Original valid unbroken Download title at 320/375/768/1440px, direct load and reload: measure hero/title/document bounds, retain full heading, price/actions and no hero-caused document overflow. Add other Product types, themes/layouts, Guest/User/Creator/Admin and authorized private/Builder previews where fixtures permit. Preserve M11 pricing/profile boundaries; ordinary Course fit and a long-title DOM assertion are not a browser Pass for the historical Download. |
+
+### Additional scoped checks and remaining Marketing overflow
+
+Explore action wrapping/reduced mobile padding produced a local synthetic
+Creator document width of 320px at a 320px viewport, versus M13's 366px.
+Retest ordinary and varied Product cards/roles with existing M10 routing/search
+and M13 navigation; do not invent a new issue ID or claim every card fits.
+
+Shared CheckboxInput forwards native checked/disabled states and retains a
+focusable input with a custom focus-visible indicator. Check controlled boolean
+state, disabled/native keyboard behavior and complete accessible names.
+Contact agreement component coverage verifies on/off pointer toggles by reading
+`event.target.checked`; it adds no submission, consent enforcement or backend
+Contact handling. Browser/assistive-technology verification is separate.
+
+Marketing Home/About remain unresolved: M13 recorded 1062px and 762px document
+widths respectively at 320px. These are body findings distinct from corrected
+shared navigation; do not assign an unverified section/root cause or M15 fix.
+See the [current M14 scope](runs/2026-09-30-01/summary.md#m14-implementation-and-remaining-layout-scope--5-november-2026).
+
+### Evidence boundary
+
+PR #84 reports 930 tests / 134 suites, TypeScript, ESLint (0 errors / 183
+warnings), production build (three existing Webpack size/performance warnings)
+and whitespace checks. New component assertions cover full-title picker naming
+and Space selection, mocked Uppy width, full long hero heading/Free price, and
+Contact agreement toggling. Existing Customer/Sales/media tests are behavioral
+regressions, not long-fixture browser geometry tests.
+
+The handoff reports local synthetic Creator ordinary Customer Detail, populated
+Sales, Course Media (Thumbnail/Gallery/Promo) and ordinary Course public hero
+fitting at 320, 375, 390, 480, 768, 1280 and 1440px. Thumbnail measured 309px at
+375px and 702px at 768px. The long Customer/Sales, long-title Membership picker
+and long Download fixtures were unavailable; the local Membership had no
+eligible Products. Guest/Admin, additional Product types, relevant reload/zoom/
+keyboard-pointer matrices, deployed/live-backend E2E and actual native upload
+persistence remain unverified. Neither ordinary-content passes nor CSS/DOM tests
+establish complete responsive conformance. M1–M13 contracts, historical outcomes,
+paused execution and BUG-013's backend dependency remain unchanged.
+
+## M15 Marketing interaction retest guidance — 5 November 2026
+
+[PR #85](https://github.com/app-video-platform/video-platform-ui/pull/85) merged
+as `4c381a8` (implementation `f7eade2`). Use the [existing implementation-status
+table](runs/2026-09-30-01/summary.md#current-frontend-implementation-status--3-november-2026)
+and five addenda. M15 is the final planned implementation milestone; the table
+reconciles 74/75 frontend remediations, with BUG-013 partial/backend-dependent.
+This is not all-defect closure, deployment acceptance or authorization to resume
+paused QA/start a new UI milestone. Keep historical outcomes, evidence and cleanup;
+Trello remains unchanged. Confirm deployed revisions before authorized retesting.
+Use synthetic local fixtures; do not send real Contact messages, consent records
+or business mutations merely to audit documentation.
+
+| Issue | Required retest |
+| --- | --- |
+| [BUG-028](runs/2026-09-30-01/issues/BUG-028.md) | Contact first load/revisit: default-open answer has nonzero visible height and matching aria-expanded; pointer/Enter/Space close/reopen and dynamic content resize work. Inspect each own region, unique IDs and collapsed aria-hidden, without assuming descendant inertness. Include Course reader expansion/content/contrast regression. Test ResizeObserver changes and fallback separately; mock height is not runtime geometry or screen-reader output. |
+| [BUG-034](runs/2026-09-30-01/issues/BUG-034.md) | Preserve timeline: M14 implements native/controlled checkbox and Contact boolean state; M15 adds tests. Guest/authenticated Contact: initially unchecked, pointer and label on/off, Tab from Message, Space on/off, native checked versus visible tick/class, and visible focus. Runtime appearance is separate from a class assertion. No submission, delivery, mandatory consent or legal persistence is implied. |
+| [BUG-061](runs/2026-09-30-01/issues/BUG-061.md) | Footer FAQ pointer/Enter reaches `/contact#faq`, matching section/heading in view. Direct fragment, reload, Back/Forward, same-fragment revisit and narrow header clearance across roles. Observe scroll target separately from keyboard focus; M15 does not transfer heading focus or audit all fragment links. |
+| [BUG-046](runs/2026-09-30-01/issues/BUG-046.md) | Fresh Guest without prior scrolling: complete forward Tab through marketing nav, hero, every Product/Feature control, lower CTA and footer. Record order, computed visibility, reveal/scroll and visible focus; reverse Shift+Tab and repeat relevant authenticated sessions/reload/revisit. Test reduced motion separately. Creator hero→Product and Product→Feature checks are not a complete replay of the historical fresh Guest skip. |
+| [BUG-047](runs/2026-09-30-01/issues/BUG-047.md) | After reveals settle, hover Trust/Product/Feature groups and use their supported focus paths; verify active state, actual computed sibling opacity and normal opacity after exit. Source CSS targets Product/Feature 0.38, Trust 0.42; only Product/Feature 1/0.38 was measured after M15. Repeat navigation/reload, reverse/scroll lifecycle and reduced motion. Do not infer opacity from is-dimmed class presence or invent keyboard Trust selection absent from source. |
+
+### Remaining responsive work
+
+The [M15 measurement comparison](runs/2026-09-30-01/summary.md#m15-homeabout-responsive-follow-up--5-november-2026)
+preserves Home/About 1062/762px at 320px, now reported as 485/464px. Both still
+overflow. Home is also 485px at 375px; About is 472px at 375px and 874px at 768px.
+Headers fit in the reported local Creator checks. Source changes bound Home
+text/Feature widths, stack Product cards and use a single-column About Different
+section; remaining specific overflowing elements were not isolated by the
+handoff. Measure each actual section/control, document and header independently
+at 320/375/768px plus wider controls, roles, browser/zoom and keyboard states.
+Do not assign an unverified root cause, invent issue IDs or declare full mobile
+containment. Preserve M13 headers and M14 Explore improvement as separate scopes.
+
+### Evidence and completion boundary
+
+PR #85 reports 934 tests / 135 suites, TypeScript, ESLint (0 errors / 183
+warnings), production build (three existing Webpack size/performance warnings)
+and whitespace checks. New tests mock panel heights/ResizeObserver and fragment
+scrolling; Contact tests add Tab/Space/native versus visual-class checked state.
+There are no new dedicated homepage complete-traversal/computed-opacity tests.
+
+Reported synthetic Creator browser scope: FAQ initial answer 50px, direct
+fragment/footer Enter positioning, Enter toggling; Tab to Create a Course from
+hero and Private Storefronts after the last Product control; active Product/
+Feature opacity 1 and dimmed siblings 0.38. Trust hover/opacity, full fresh Guest
+traversal, runtime reduced motion, manual screen-reader audit and deployed/live-
+backend parity remain pending. Contact submission/delivery is not implemented
+by these fixes. No full WCAG or universal animation-lifecycle conformance follows.
+
+The existing tracker has 75 unique original items, including one BUG-034 row for
+its M14 fix/M15 regressions: 74 frontend remediations complete, BUG-013 still
+backend-dependent. M12 browser/accessibility gaps, M14 historical long-content
+retests, M15 runtime gaps and Home/About overflow remain. Original failures and
+counts stay unchanged; implementation milestone completion is not QA sign-off.

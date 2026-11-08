@@ -22,6 +22,12 @@ Administrator and End User accounts.
 
 The public Storefront page can be opened by visitors and signed-in users.
 
+Explore and Search Creator links open this public Storefront for Guests, End
+Users, Creators and Administrators. Product-card **View Product** opens a Product
+Landing Page instead. A missing Creator ID does not produce a broken Storefront
+link: Explore retains plain Creator text and search results omit the link.
+Storefront content remains subject to existing public visibility and access rules.
+
 ## What creators can do
 
 Creators can:
@@ -57,6 +63,12 @@ The same public-email concept is also surfaced in Settings. Storefront Builder e
 
 Profile image editing is not part of the current Storefront Builder because a reusable persisted profile-image upload flow is not available there.
 
+The public page shows saved nonblank title and biography before placeholder
+copy. Cleared or absent title/biography rows are omitted; values containing only
+spaces use the empty-copy placeholders. The Builder retains its inline edit
+controls for those fields. Guests and signed-in visitors see the available public
+profile information, with no expansion of private profile visibility.
+
 A failed inline profile save keeps the editor and entered value available for
 correction and retry, with a field-local error. After a retry is accepted, the
 updated value is shown, the editor closes, and its old failure message clears.
@@ -88,6 +100,23 @@ Storefront configuration owns:
 These settings are edited as a draft in the Builder. Changing the featured product, product order, appearance, accent color, or typography updates the Builder immediately, but those Storefront configuration changes persist together only when the creator selects **Save changes**.
 
 Selecting **Reset changes** restores the persisted Storefront configuration and discards unsaved Storefront configuration changes.
+
+### Default order and featured fallback
+
+Saved explicit Product ordering takes priority. Remaining Products use newest
+creation time first when valid creation information is available for all of
+them, with a stable Product ID tie-break for equal creation times. If any remaining
+Product lacks valid creation information, the Builder retains their supplied
+order rather than guessing. Exact Builder/public default-order parity therefore
+depends on the metadata returned by the deployed APIs.
+
+A valid saved featured selection remains selected. With no selection, or when a
+previous selection is no longer eligible, the preview features the first eligible
+Published Product in the effective order. Draft and Hidden Products remain
+excluded from the public preview. Derived ordering and featured defaults do not
+save configuration, mark it changed, or enable **Save changes** on their own.
+Explicit Save/Reset behavior is unchanged. The public Storefront uses the order
+returned by its server read; deployed default-order parity still requires retest.
 
 Public profile fields are different: they are owned by User/Profile data. Product identity, type, status, price, thumbnail/canonical Product media, and catalogue details are owned by Product data.
 

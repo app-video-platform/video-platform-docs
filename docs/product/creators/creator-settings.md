@@ -44,15 +44,25 @@ Creators can:
 
 Settings are organized as tabs. The selected tab is reflected in the page URL so users can return to a specific settings area.
 
+On narrow screens, the tab strip scrolls horizontally inside Settings so other
+tabs remain reachable. Profile sections stack, Save actions can wrap, and social
+prefix/value fields share the available width. This contained tab scrolling is
+separate from scrolling the whole document. Existing field validation, disabled
+controls and save rules still apply.
+
 The Profile tab displays account profile information where available and includes fields for public profile information, contact information, public email, and social media links. Public email is customer-facing and separate from the login email. The same profile-owned public-email field is also editable from the Storefront Builder.
 
 The Account tab shows password, preference, and delete-account sections. Payment Methods shows business information and a payment-provider connection button. Calendar loads available providers and starts a calendar authorization flow.
+
+Login email and fixed social-link prefixes are skipped when moving through Profile
+with Tab or Shift+Tab. The editable profile fields remain available for keyboard
+entry and validation.
 
 ### Profile validation and saving
 
 Profile Save supports first and last name, title, Bio, Tagline / Mission, Website,
 public email, and the displayed Facebook, Instagram, X, YouTube, and TikTok social
-links. Login email stays read-only. Phone, Change picture, and Remove picture
+links. Login email is disabled and cannot be edited. Phone, Change picture, and Remove picture
 controls are disabled because those edits are unavailable.
 
 Save validates the form before sending changes. Bio and Tagline are optional;

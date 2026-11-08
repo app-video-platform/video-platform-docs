@@ -52,6 +52,13 @@ If there are no orders, the page shows an empty state with a link back to Produc
 
 On desktop, filters are visible in the toolbar. On smaller screens, filters move into a drawer, and the orders ledger changes into a stacked card-style layout.
 
+Customer and Product text can wrap within the ledger and transaction cards,
+while status, amount and Order actions keep their existing roles. Filtering and
+Order opening are unchanged. Ordinary populated Sales has responsive checks;
+historical unusually long Customer/item text still needs browser retesting.
+This presentation change does not change payments, immutable Order amounts or
+access grants.
+
 ## Order detail
 
 Selecting an order opens a detail drawer while keeping the Sales workspace visible in the background. The URL stores the selected order in the `order` query parameter, so a selected order can be deep-linked or restored on refresh when the Sales detail contract has data for that order.

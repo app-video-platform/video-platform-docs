@@ -77,6 +77,14 @@ Only Course and Download products are eligible for inclusion. Other Membership p
 
 The included-product picker uses the creator's existing product summaries. After products are selected, the Membership Content area shows them alongside native Membership content with title, type, status, and image or product-type icon where available. Creators can remove a product from the feed and select it again later.
 
+The picker shows a compact selection checkbox alongside the Product identity.
+Its accessible name includes **Select** and the complete Product title, while
+the title, type/status and available description remain visible in the row.
+Keyboard users can focus the checkbox and press Space to select it. Long text
+can wrap without a repeated visible selection label consuming the title area.
+The historical long-title picker still needs browser retesting; this does not
+change eligible Products or inclusion relationships.
+
 ### Order membership content
 
 Membership Content supports a unified feed for native content and included Products.
@@ -99,6 +107,11 @@ The Pricing area includes:
 - Monthly billing interval.
 - Yearly billing interval.
 - A summary of the recurring charge.
+
+Saved recurring prices retain their month/year cadence in Product inspection
+and authorized preview surfaces. A valid saved positive amount is shown as a
+price rather than as unset. This display behavior does not make Membership
+publishing, subscriptions, checkout or member access available.
 
 ### Check readiness
 

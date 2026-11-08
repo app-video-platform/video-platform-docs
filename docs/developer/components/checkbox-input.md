@@ -4,14 +4,15 @@ title: CheckboxInput
 
 ### CheckboxInput (quick notes)
 - **Location:** `src/shared/ui/checkbox-input/`
-- **Props:** `label`, `name`, `checked`, `onChange`, `disabled`
+- **Props:** native React input attributes, including `name`, `id`, `checked`, `onChange`, `disabled`, and `aria-label`; optional `label` accepts ReactNode.
 - **Usage:** 
-  - Standard checkbox input with a label, styled using Tailwind classes.
+  - Native checkbox inside a wrapping label, with SCSS styling and a visible custom indicator.
   - Used in settings, product configuration forms, and filter panels.
 - **A11y:**
-  - Properly associates `<label>` with `<input>` via `htmlFor` / `id`.
-  - Uses native checkbox semantics, ensuring full keyboard and screen-reader support.
-  - Adds visible focus outline automatically via Tailwind’s form-checkbox defaults.
+  - The wrapping `<label>` supplies implicit association when visible label content is provided.
+  - `checked` and `disabled` reach the native input. Enabled inputs remain focusable; Space toggles the native control, while disabled controls follow native focus/interaction semantics.
+  - The input is visually reduced to a transparent 1px control rather than `display: none`; `:focus-visible` outlines the adjacent `.checkbox-box`.
+  - DOM/keyboard tests do not establish manual screen-reader output or complete accessibility compliance.
 
 ### Example
 ```tsx
@@ -26,10 +27,39 @@ title: CheckboxInput
 
 ### Notes
 - Always keep `name` unique within a form.
-- The `checked` prop is fully controlled — manage state via `onChange`.
+- When supplying `checked`, keep boolean state synchronized through `onChange` using `event.target.checked`; string `event.target.value` is not the selected state.
 - To disable interaction, use `disabled={true}`.
-- For accessibility, avoid removing the label; if hidden visually, still provide it for screen readers.
+- Give every checkbox a meaningful accessible name: visible `label` content or an `aria-label` for a compact indicator. Do not remove the name to save layout width.
 
 <br></br>
 <br></br>
 > Owner: @aleb, el Hijo del Diablo · Last reviewed: Mon, 20 Oct 2025
+
+### Compact Product selection (M14)
+
+ProductPicker uses `aria-label` with the value `Select ${getProductTitle(product)}` instead of
+a long visible selection label. Its content column still renders the complete
+Product title, type/status and available description. The existing grid remains
+`3rem minmax(0, 1fr) auto`; the checkbox no longer makes its automatic column as
+wide as the full title. Picker/identity containers can shrink, and titles and
+descriptions use `overflow-wrap: anywhere`. The removed mobile grid override no
+longer relocates the checkbox across the row. No new public Checkbox API was
+introduced.
+
+`product-picker.component.test.tsx` focuses a checkbox named **Select** plus a
+long unbroken title, uses Space to select it, verifies the full title remains in
+the DOM, and confirms the existing selected ID. That proves naming/selection,
+not actual drawer geometry. The historical long-title Membership picker was not
+browser-tested because the local Membership had no eligible Products. Check
+ordinary, multiword and unbroken titles with keyboard and pointer input before
+claiming the original layout reproduction passes. See [long-content conventions](../architecture/application-structure.md#long-content-and-media-layout-m14).
+
+### Contact state regression timeline (M15)
+
+M14 implemented native checked/disabled forwarding and focusable input styling;
+Contact's M14 change uses boolean checked state. M15 changes only Contact's tests
+at this boundary: Tab reaches the agreement from Message, Space checks/unchecks
+it, and native checked state matches the label's visual-state class. This does
+not establish computed focus styling, screen-reader output, consent enforcement
+or form delivery. Keep the controlled value and visual class derived from the
+same boolean. See [Contact regression scope](contact-form.md#m15-regression-coverage-and-faq-boundary).
